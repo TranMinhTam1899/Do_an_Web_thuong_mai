@@ -1,0 +1,12 @@
+/* cuttom */
+.left_col, .nav.side-menu>li.active>a, .nav_title, body, .nav-sm ul.nav.child_menu{
+
+    background: #0a4b8f !important;
+  }
+.nav-md ul.nav.child_menu li:before{
+    background: #ffffff !important;
+}
+
+.tile-stats{
+  cursor: pointer !important;
+}
