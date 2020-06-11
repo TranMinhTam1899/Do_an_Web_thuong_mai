@@ -11,17 +11,17 @@
   <title>@yield('title')</title>
 
   <!-- Bootstrap -->
-  <link href="../assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
   <!-- Font Awesome -->
-  <link href="../assets/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
   <!-- NProgress -->
-  <link href="../assets/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
   <!-- bootstrap-daterangepicker -->
-  <link href="../assets/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <link href="{{ asset('assets/admin/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 
   <!-- Custom Theme Style -->
-  <link href="../assets/admin/build/css/custom.min.css" rel="stylesheet">
-  <link href="../assets/admin/production/css/setup.css" rel="stylesheet">
+  <link href="{{ asset('assets/admin/build/css/custom.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/admin/production/css/setup.css') }}" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -30,7 +30,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-optin-monster" aria-hidden="true"></i> <span>Admin</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-optin-monster" aria-hidden="true"></i> <span>Quản trị viên</span></a>
           </div>
 
           <div class="clearfix"></div>

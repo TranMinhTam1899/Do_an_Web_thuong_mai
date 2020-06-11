@@ -10,41 +10,41 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/client/images/4.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/client/images/4.png')}}">
     <!-- Material Design Iconic Font-V2.2.0 -->
-    <link rel="stylesheet" href="assets/client/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/material-design-iconic-font.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/client/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/font-awesome.min.css') }}">
     <!-- Font Awesome Stars-->
-    <link rel="stylesheet" href="assets/client/css/fontawesome-stars.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    <link rel="stylesheet" href="{{ asset('assets/client/css/fontawesome-stars.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css') }}"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <!-- Meanmenu CSS -->
-    <link rel="stylesheet" href="assets/client/css/meanmenu.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/meanmenu.css') }}">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="assets/client/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/owl.carousel.min.css') }}">
     <!-- Slick Carousel CSS -->
-    <link rel="stylesheet" href="assets/client/css/slick.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/slick.css') }}">
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="assets/client/css/animate.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/animate.css') }}">
     <!-- Jquery-ui CSS -->
-    <link rel="stylesheet" href="assets/client/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/jquery-ui.min.css') }}">
     <!-- Venobox CSS -->
-    <link rel="stylesheet" href="assets/client/css/venobox.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/venobox.css') }}">
     <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="assets/client/css/nice-select.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/nice-select.css') }}">
     <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="assets/client/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/magnific-popup.css') }}">
     <!-- Bootstrap V4.1.3 Fremwork CSS -->
-    <link rel="stylesheet" href="assets/client/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/bootstrap.min.css') }}">
     <!-- Helper CSS -->
-    <link rel="stylesheet" href="assets/client/css/helper.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/helper.css') }}">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/client/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/style.css') }}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/client/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
     <!-- Modernizr js -->
-    <script src="assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset (' assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>

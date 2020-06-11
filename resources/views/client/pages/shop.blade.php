@@ -133,7 +133,7 @@
         </header>
         <!-- Begin Li's Content Wraper Area -->
         <div class="content-wraper pb-30">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-9 order-1 order-lg-2">
                         

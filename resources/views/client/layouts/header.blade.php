@@ -11,8 +11,8 @@
                             <div class="header-top-left">
                                 <ul class="phone-wrap">
                                     <li>
-                                        <a href="./Admin/production/shop.html">
-                                            <i class="fa fa-store"></i>
+                                        <a href="{{route('client.seller')}}">
+                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                             <span>Kênh người bán</span>
                                         </a>
                                     </li>

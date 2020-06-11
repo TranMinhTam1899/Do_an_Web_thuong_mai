@@ -3824,7 +3824,8 @@ thead {
     text-transform: capitalize;
     font-weight: 700;
     margin-bottom: 30px;
-    text-align: center;
+	text-align: center;
+	font-family: auto;
 }
 .login-form {
   background-color: #ffffff;
@@ -3938,6 +3939,7 @@ thead {
 	border-radius: 3px;
 	transition: all 0.3s ease-in-out;
 	cursor: pointer;
+	font-family: Montserrat;
 }
 .register-button:hover {
 	background: #ffa704;
@@ -5382,18 +5384,16 @@ button.close span {
 .page-section {
     margin: 5% auto;
 }
-.face-button, .gmail-button {
+.face-button{
     background: #005da3;
     color: white;
     height: 50px;
-    width: 50px;
-    border-radius: 50%;
+    width: 100%;
+/*     border-radius: 50%; */
     font-size: 27px;
 }
-.gmail-button{
-	background: #ff5a00;
-}
-.face-button:hover, .gmail-button:hover {
+
+.face-button:hover{
 	background: #ffa704;
 }
 .logo_bit img{
