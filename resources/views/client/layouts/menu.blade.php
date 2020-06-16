@@ -6,72 +6,43 @@
                 <div class="hb-menu">
                     <nav>
                         <ul>
-                            <li class="dropdown-holder home"><a href="{{ route('client.index')}}">Trang chủ</a></li>
-                            <li class="megamenu-holder"><a href="#">Cửa hàng</a>
+                            <li class="dropdown-holder home"><a href="{{ route('client.index')}}">Home</a></li>
+                            <li class="megamenu-holder"><a href="#">Shop</a>
                                 <ul class="megamenu hb-megamenu">
-                                    <li><a href="shop-left-sidebar.html">Shop Page Layout</a>
+                                    <li><a href="shop-left-sidebar.html">Shop Page</a>
                                         <ul>
-                                            <li><a href="shop-3-column.html">Shop 3 Column</a></li>
-                                            <li><a href="shop-4-column.html">Shop 4 Column</a></li>
-                                            <li><a href="shop-left-sidebar.html">Shop Left Sidebar</a></li>
-                                            <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a>
-                                            </li>
-                                            <li><a href="shop-list.html">Shop List</a></li>
-                                            <li><a href="shop-list-left-sidebar.html">Shop List Left
-                                                    Sidebar</a></li>
-                                            <li><a href="shop-list-right-sidebar.html">Shop List Right
-                                                    Sidebar</a></li>
+                                            <li><a href="shop-3-column.html">Con heo shop</a></li>
+                                            <li><a href="shop-4-column.html">Ca xau shop</a></li>
+                                            <li><a href="shop-left-sidebar.html">Su tu shop</a></li>
+                                            
                                         </ul>
                                     </li>
-                                    <li><a href="single-product-gallery-left.html">Single Product Style</a>
-                                        <ul>
-                                            <li><a href="single-product-carousel.html">Single Product
-                                                    Carousel</a></li>
-                                            <li><a href="single-product-gallery-left.html">Single Product
-                                                    Gallery Left</a></li>
-                                            <li><a href="single-product-gallery-right.html">Single Product
-                                                    Gallery Right</a></li>
-                                            <li><a href="single-product-tab-style-top.html">Single Product
-                                                    Tab Style Top</a></li>
-                                            <li><a href="single-product-tab-style-left.html">Single Product
-                                                    Tab Style Left</a></li>
-                                            <li><a href="single-product-tab-style-right.html">Single Product
-                                                    Tab Style Right</a></li>
-                                        </ul>
-                                    </li>
+                                   
                                     
                                 </ul>
                             </li>
-                            <li class="dropdown-holder"><a href="#">Sản phẩm</a>
+                            <li class="dropdown-holder"><a href="#">Product</a>
                                 <ul class="hb-dropdown">
-                                    <li class="sub-dropdown-holder"><a href="#">Blog
-                                            Grid View</a>
+                                    <li class="sub-dropdown-holder"><a href="#">Phone</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
-                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
-                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            <li><a href="blog-2-column.html">Nokia</a></li>
+                                            <li><a href="blog-3-column.html">Iphone</a></li>
+                                            <li><a href="blog-left-sidebar.html">Asus</a></li>
+                                            <li><a href="blog-right-sidebar.html">Samsung</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Blog List
-                                            View</a>
+                                    <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Laptop</a></li>
+                                    <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Fashion</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-list.html">Blog List</a></li>
-                                            <li><a href="blog-list-left-sidebar.html">List Left Sidebar</a>
-                                            </li>
-                                            <li><a href="blog-list-right-sidebar.html">List Right
-                                                    Sidebar</a></li>
+                                            <li><a href="blog-list.html">Men's wear</a></li>
+                                            <li><a href="blog-list-left-sidebar.html">Women's wear</a></li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Blog
-                                            Details</a>
+                                    <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Foods</a>
                                         
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Blog
-                                            Format</a>
-                                        
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="megamenu-static-holder"><a href="index.html">Pages</a>
@@ -121,9 +92,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('client.about')}}">About</a></li>
-                            <li><a href="{{ route('client.contact')}}">Địa chỉ</a></li>
-                            <li><a href="shop-left-sidebar.html">Phụ Kiện</a></li>
+                            <li><a href="{{ route('client.about')}}">About Us</a></li>
+                            <li><a href="{{ route('client.contact')}}">Contact</a></li>
+                            <li><a href="shop-left-sidebar.html">Help</a></li>
                         </ul>
                     </nav>
                 </div>

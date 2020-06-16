@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //'name' => Str::random(10),
         // $this->call(UsersTableSeeder::class);
+       
     }
 }

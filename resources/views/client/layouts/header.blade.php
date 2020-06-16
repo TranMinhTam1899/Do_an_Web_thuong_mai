@@ -13,7 +13,7 @@
                                   <li>
                                       <a href="{{route('client.seller')}}">
                                           <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                          <span>Kênh người bán</span>
+                                          <span>Shop chennel</span>
                                       </a>
                                   </li>
                               </ul>
@@ -30,7 +30,7 @@
                                       <a href="#">
                                           <i class="fa fa-user-plus pr-1"></i>
                                           <span class="currency-selector-wrapper" data-toggle="modal"
-                                              data-target="#registerModal">Đăng ký</span>
+                                              data-target="#registerModal">Sign up</span>
                                           <!-- Modal Login -->
                                           <div class="modal fade" id="registerModal" tabindex="-1" role="dialog"
                                               aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -114,7 +114,7 @@
                                       <a href="#">
                                           <i class="fa fa-user-circle pr-1"></i>
                                           <span class="language-selector-wrapper" data-toggle="modal"
-                                              data-target="#loginModal">Đăng nhập</span>
+                                              data-target="#loginModal">Sign in</span>
                                           <!-- Modal Login -->
                                           <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
                                               aria-labelledby="exampleModalLabel" aria-hidden="true">
