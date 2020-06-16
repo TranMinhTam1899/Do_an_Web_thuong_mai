@@ -76,6 +76,7 @@ h4 {
 }
 h5 {
 	font-size: 18px;
+	color: #0a4b8f;
 }
 h6 {
 	font-size: 16px;
@@ -1712,6 +1713,10 @@ textarea:focus {
 .hb-menu nav > ul > li:nth-child(n+5) > a::after {
 	content: none;
 }
+.hb-menu nav > ul > li.home > a::after{
+	content: none !important;
+}
+
 .hb-menu nav > ul > li:hover  a::after {
 	transform: rotate(180deg);
 }
@@ -2018,11 +2023,12 @@ textarea:focus {
 .li-product-menu li {
 	display: inline-block;
 	position: relative;
-	padding-right: 30px;
+	/* padding-right: 30px; */
 	z-index: 99;
 }
 .li-product-menu > li > a > span {
 	position: relative;
+	font-family: monospace;
 }
 .li-product-menu > li > a span::before, .li-product-menu > li > a.active span::before {
 	content: "";
@@ -2136,6 +2142,7 @@ textarea:focus {
 }
 .product-review {
 	border-bottom: 1px solid #ebebeb;
+	padding: 0 15px;
 }
 .manufacturer {
 	font-size: 13px;
@@ -2205,6 +2212,7 @@ textarea:focus {
 	font-weight: 500;
 	line-height: 18px;
 	text-transform: capitalize;
+	text-align: center;
 }
 .product_desc .product_desc_info .product_name:hover {
   text-decoration: underline;
@@ -2226,6 +2234,7 @@ textarea:focus {
   font-size: 14px;
   font-weight: 500;
   padding-right: 10px;
+  padding-left: 15px;
 }
 .product_desc .product_desc_info .price-box .new-price-2,
 .featured-price-box .new-price-2 {
@@ -2235,6 +2244,7 @@ textarea:focus {
 .featured-price-box .discount-percentage {
 	float: right;
 	color: #e80f0f;
+	padding-right: 15px;
 }
  .product_desc .product_desc_info .old-price {
   color: #666;
@@ -2245,6 +2255,7 @@ textarea:focus {
 .product_desc .product_desc_info .price-box {
   line-height: 1;
   margin-top: 16px;
+  padding-bottom: 16px;
 }
 .countersection {
     display: inline-block;
@@ -2329,7 +2340,6 @@ textarea:focus {
 	left: 0;
 	margin: 0 auto;
 	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	position: absolute;
 	right: 0;
 	text-align: center;
@@ -2339,7 +2349,6 @@ textarea:focus {
 .single-product-wrap:hover .add-actions {
 	bottom: 0;
 	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 .tab-content .tab-pane {
   display: block;
@@ -2645,9 +2654,10 @@ textarea:focus {
 	display: inline-block;
 	margin: 0;
 	text-align: left;
-	line-height: 20px;
+	line-height: 40px;
 	font-size: 20px;
 	font-weight: 500;
+	text-transform: uppercase;
 }
 .li-trending-product-tab > h2 > span {
 	position: relative;
@@ -2657,7 +2667,6 @@ textarea:focus {
 	content: "";
 	position: absolute;
 	background: #0a4b8f;
-	height: 1px;
 	width: 100%;
 	bottom: -10px;
 	left: 0;

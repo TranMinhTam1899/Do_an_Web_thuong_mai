@@ -44,7 +44,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
     <!-- Modernizr js -->
-    <script src="{{ asset (' assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="{{ asset('assets/client/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
 <body>

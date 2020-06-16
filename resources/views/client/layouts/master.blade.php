@@ -44,18 +44,19 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
     <!-- Modernizr js -->
-    <script src="{{ asset (' assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="../assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
   
         @include('client.layouts.header')
         <!-- Header Area End Here -->
-        <!-- Begin Slider With Banner Area -->
-        @include('client.layouts.slider')
-        <!-- Slider With Banner Area End Here -->
+        
         <!-- content -->
-        @yield('content')
+        <div class="container">
+             @yield('content')
+        </div>
+      
         <!-- end content -->
         <!-- Begin Footer Area -->
         @include('client.layouts.footer')

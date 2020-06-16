@@ -13,7 +13,7 @@
                                         <h2>Chamcham Galaxy S9 | S9+</h2>
                                         <h3>Starting at <span>$1209.00</span></h3>
                                         <div class="default-btn slide-btn">
-                                            <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                            <a class="links" href="#">Shopping Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -26,7 +26,7 @@
                                         <h2>Work Desk Surface Studio 2018</h2>
                                         <h3>Starting at <span>$824.00</span></h3>
                                         <div class="default-btn slide-btn">
-                                            <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
+                                            <a class="links" href="#">Shopping Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,12 +52,12 @@
                     <div class="col-lg-4 col-md-4 text-center pt-xs-30">
                         <div class="li-banner">
                             <a href="#">
-                                <img src="assets/client/images/banner/1_1.jpg" alt="">
+                                <img src="{{asset('assets/client/images/banner/1_1.jpg')}}" alt="">
                             </a>
                         </div>
                         <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
                             <a href="#">
-                                <img src="assets/client/images/banner/1_2.jpg" alt="">
+                                <img src="{{asset('assets/client/images/banner/1_2.jpg')}}" alt="">
                             </a>
                         </div>
                     </div>
