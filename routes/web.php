@@ -153,6 +153,9 @@ Route::get('/client/list-product', function () {
     return view('client.pages.list-product');
 })->name('client.list-product');
 
-
+// 404
+Route::get('/404', function () {
+    return view('client.pages.404');
+})->name('client.404');
 
 

@@ -11,7 +11,7 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
         // DB::table('categories')->insert([
         //     'name' => 'Phone',
         //     'alilas' => 'Phone',

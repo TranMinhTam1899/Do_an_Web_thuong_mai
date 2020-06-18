@@ -2,7 +2,7 @@
             <div class="menu_section">
               <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a href="{{route('admin.index')}}"><i class="fa fa-home"></i> Home </a>
+                <li><a href="{{route('admin.index')}}"><i class="fa fa-home"></i> Trang chủ </a>
                   
                 </li>
                 <li><a><i class="fa fa-shopping-bag" aria-hidden="true"></i> Quản lý cửa hàng<span class="fa fa-chevron-down"></span></a>

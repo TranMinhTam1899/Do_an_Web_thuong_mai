@@ -12,7 +12,8 @@
                               <ul class="phone-wrap">
                                   <li>
                                       <a href="{{route('client.seller')}}">
-                                          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+
                                           <span>Shop chennel</span>
                                       </a>
                                   </li>
@@ -175,11 +176,7 @@
                                                                                                   class="fab fa-facebook-f"></i>
                                                                                           </button>
 
-                                                                                          <button
-                                                                                              class="gmail-button btn mx-1">
-                                                                                              <i
-                                                                                                  class="fab fa-google-plus-g"></i>
-                                                                                          </button>
+                                                                                          
                                                                                       </div>
                                                                                   </div>
                                                                               </div>
@@ -199,6 +196,8 @@
                                       </a>
                                   </li>
                                   <!-- Language Area End Here -->
+                                  
+
                               </ul>
                           </div>
                       </div>
@@ -214,7 +213,7 @@
                       <!-- Begin Header Logo Area -->
                       <div class="col-lg-3">
                           <div class="logo pb-sm-30 pb-xs-30">
-                              <a href="index.html">
+                              <a href="{{ route('client.index')}}">
                                   <img src="{{asset('assets/client/images/menu/logo/3.png')}}" alt="">
                               </a>
                           </div>

@@ -23,24 +23,34 @@
                             </li>
                             <li class="dropdown-holder"><a href="#">Product</a>
                                 <ul class="hb-dropdown">
+                                    <li ><a href="{{ route('client.list-product')}}">All product shop</a></li>
                                     <li class="sub-dropdown-holder"><a href="#">Phone</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <li><a href="blog-2-column.html">Nokia</a></li>
                                             <li><a href="blog-3-column.html">Iphone</a></li>
                                             <li><a href="blog-left-sidebar.html">Asus</a></li>
-                                            <li><a href="blog-right-sidebar.html">Samsung</a>
-                                            </li>
+                                            <li><a href="blog-right-sidebar.html">Samsung</a></li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Laptop</a></li>
+                                    <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Laptop</a>
+                                    <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html">Asus</a></li>
+                                            <li><a href="blog-3-column.html">Macbook</a></li>
+                                            <li><a href="blog-left-sidebar.html">Hp</a></li>
+                                            <li><a href="blog-right-sidebar.html">Lenovo</a></li>
+                                        </ul>
+                                    </li>
                                     <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Fashion</a>
                                         <ul class="hb-dropdown hb-sub-dropdown">
                                             <li><a href="blog-list.html">Men's wear</a></li>
                                             <li><a href="blog-list-left-sidebar.html">Women's wear</a></li>
                                         </ul>
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Foods</a>
-                                        
+                                    <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Clock</a>
+                                    <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html">Fashion watch</a></li>
+                                            <li><a href="blog-3-column.html">Smart watch</a></li>
+                                        </ul>
                                     </li>
                                     
                                 </ul>

@@ -1245,7 +1245,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Header Top*/
 .header-top {
-	background: #f8f9f9;
+	background: #0a4b8f;
 	padding: 12px 0;
 	border-bottom: 1px solid #e1e1e1;
 }
@@ -1265,6 +1265,10 @@ textarea:focus {
 	-webkit-display: flex;
 	-moz-display: flex;
 	-ms--display: flex;
+}
+ul.ht-menu a:hover {
+    color: #fed700;
+    font-size: 14px;
 }
 .ht-menu > li {
 	list-style: none;
@@ -1290,7 +1294,7 @@ textarea:focus {
 	padding-right: 0;
 }
 .ht-menu > li span {
-	font-size: 12px;
+	font-size: 14px;
 }
 /*Header Top Currency*/
 .currency-selector-wrapper, .language-selector-wrapper {
@@ -1466,13 +1470,13 @@ textarea:focus {
 		padding: 0 15px 0 55px;
 }
 .item-icon::before {
-		content: "\f291";
+		content: "\f23d";
 		position: absolute;
 		font-family: fontawesome;
 		left: 10px;
 		top: 6px;
 		display: block;
-		font-size: 20px;
+		font-size: 22px;
 }
 .item-text {
 		position: relative;
@@ -2028,7 +2032,10 @@ textarea:focus {
 }
 .li-product-menu > li > a > span {
 	position: relative;
-	font-family: monospace;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #0056b3;
 }
 .li-product-menu > li > a span::before, .li-product-menu > li > a.active span::before {
 	content: "";
@@ -2578,6 +2585,11 @@ textarea:focus {
 .li-section-title > h2 > span {
 	display: inline-block;
 	position: relative;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #0056b3;
+	text-transform: uppercase;
 }
 .li-section-title > h2 > span::before {
 	opacity: 1;
@@ -2660,8 +2672,12 @@ textarea:focus {
 	text-transform: uppercase;
 }
 .li-trending-product-tab > h2 > span {
-	position: relative;
 	z-index: 999;
+	position: relative;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #0056b3;
 }
 .li-trending-product-tab > h2 > span::before {
 	content: "";
@@ -5381,7 +5397,7 @@ span.required {
   display: none;
 }
 ul.phone-wrap a {
-    font-size: 14px;
+    font-size: 18px;
     color: #ccc;
 }
 ul.phone-wrap a:hover{
@@ -5410,6 +5426,7 @@ button.close span {
 }
 .sidebar-categores-box{
 	background: #0a4b8f;
+	height: 100%;
 }
 .shop.header-top{
 	position: fixed;

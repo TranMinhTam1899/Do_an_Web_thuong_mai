@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="{{ asset('assets/client/css/font-awesome.min.css') }}">
     <!-- Font Awesome Stars-->
     <link rel="stylesheet" href="{{ asset('assets/client/css/fontawesome-stars.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css') }}"
-        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous"> -->
     <!-- Meanmenu CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/meanmenu.css') }}">
     <!-- owl carousel CSS -->
@@ -43,8 +43,7 @@
     <link rel="stylesheet" href="{{ asset('assets/client/style.css') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
-    <!-- Modernizr js -->
-    <script src="../assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
+    
 </head>
 
 <body>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title')</title>
+    <title>@yield('title_shop')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
@@ -83,7 +83,7 @@
     </div>
     <!-- Content Wraper Area End Here -->
     <!-- Begin Footer Area -->
-    @include('client.layouts.footer')
+    @include('client.layouts.js')
 </body>
 
 <!-- shop-list31:48-->

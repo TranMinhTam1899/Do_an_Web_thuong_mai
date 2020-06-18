@@ -38,7 +38,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-optin-monster" aria-hidden="true"></i> <span>Quản trị viên</span></a>
+            <a href="{{route('admin.index')}}" class="site_title"><i class="fa fa-optin-monster" aria-hidden="true"></i> <span>Quản trị viên</span></a>
           </div>
 
           <div class="clearfix"></div>
