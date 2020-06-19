@@ -50,24 +50,20 @@ Danh sách user
                                             aria-describedby="datatable-responsive_info" style="width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0"
+                                                    <!-- <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending"
                                                        >
-                                                        Id</th>
+                                                        Id</th> -->
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 80px;"
                                                      >Username</th>
-                                                    <th class="sorting" tabindex="0"
-                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 176px;"
-                                                        >
-                                                        Password</th>
+                                                
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;"
-                                                       >relo
+                                                       >role
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
@@ -96,11 +92,7 @@ Danh sách user
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Number-order
                                                     </th>
-                                                    <th class="sorting" tabindex="0"
-                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 166px;"
-                                                        aria-label="E-mail: activate to sort column ascending">created
-                                                    </th>
+                                                   
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
@@ -115,26 +107,39 @@ Danh sách user
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
+                                                    </th> 
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">created
+                                                    </th>
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 166px;"
+                                                        aria-label="E-mail: activate to sort column ascending">updated
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1">1</td>
-                                                    <td>tammink</td>
-                                                    <td>123</td>
-                                                    <td>quan tri vien</td>
-                                                    <td>Minh</td>
-                                                    <td>tam</td>
-                                                    <td>tammink@gmail.com</td>
-                                                    <td>08081508</td>
-                                                    <td>37 ho con rua, quan 3, hcm</td>
-                                                    <td>5</td>
-                                                    <td>13/6/2020</td>
-                                                    <td>1</td>
-                                                    <td>1/8/1999</td>
-                                                    <td>1</td>
+                                            <tbody> 
+                                            
+                                                    @foreach ($listUsers as $ur)
+                                                <tr class="odd cus-{{$ur -> id}}">
+                                                    <td>{{$ur -> user_name}}</td> 
+                                                    <td>{{$ur -> role}}</td> 
+                                                    <td>{{$ur -> first_name}}</td>
+                                                    <td>{{$ur -> last_name}}</td>
+                                                    <td>{{$ur -> email}}</td>
+                                                    <td>{{$ur -> phone}}</td>
+                                                    <td>{{$ur -> address}}</td>
+                                                    <td>{{$ur -> num_order}}</td>
+                                                    <td>{{$ur -> gender}}</td>
+                                                    <td>{{$ur -> birthday}}</td>
+                                                    <td>{{$ur -> status}}</td>
+                                                    <td>{{$ur -> created_at}}</td>
+                                                    <td>{{$ur -> updated_at}}</td>
+                                                    
                                                 </tr>
+                                                    @endforeach
                                             </tbody>
                                         </table>
                                     </div>

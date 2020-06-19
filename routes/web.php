@@ -54,9 +54,19 @@ Route::prefix('admin')->group(function(){
             return view('admin.pages.user.add-user');
         })->name('add-user');
 
-        Route::get('/list-user', function () {
-            return view('admin.pages.user.list-user');
-        })->name('list-user');
+        Route::get('/list-user', 'UserController@index')->name('list-user');
+
+
+        // Route::prefix('linh-vuc')->group(function(){
+        //     Route::name('linh-vuc.')->group(function(){
+        //         Route::get('/','LinhVucController@index')->name('danh-sach');
+        //         Route::get('them-moi','LinhVucController@create')->name('them-moi');
+        //         Route::post('them-moi','LinhVucController@store')->name('xu-ly-them-moi');
+        //         Route::get('cap-nhap/{id}','LinhVucController@edit')->name('cap-nhat');
+        //         Route::post('cap-nhap/{id}','LinhVucController@update')->name('xu-ly-cap-nhat');
+        //         Route::get('xoa/{id}', 'LinhVucController@destroy')->name('xoa');
+        //     });
+        // });
 
         // category
         Route::get('/add-category', function () {
@@ -149,9 +159,7 @@ Route::get('/client/contact', function () {
 Route::get('/client/detail', function () {
     return view('client.pages.detail');
 })->name('client.detail');
-Route::get('/client/list-product', function () {
-    return view('client.pages.list-product');
-})->name('client.list-product');
+Route::get('/client/list-product','ProduceController@index')->name('client.list-product');
 
 // 404
 Route::get('/404', function () {

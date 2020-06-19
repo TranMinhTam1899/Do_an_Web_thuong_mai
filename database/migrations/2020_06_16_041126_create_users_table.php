@@ -25,7 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('num_order');
             $table->string('gender');
             $table->string('birthday');
-            $table->integer('status');
+            $table->tinyInteger('role');
+            $table->string('status');
             $table->timestamps();
         });
     }
