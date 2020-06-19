@@ -29,9 +29,9 @@ Home
             <div id="li-new-product" class="tab-pane active show" role="tabpanel">
                 <div class="row">
                     <div class="product-active owl-carousel">
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 px-0">
                             <!-- single-product-wrap start -->
-                            <div class="single-product-wrap">
+                            <div class="single-product-wrap single_overplay">
                                 <div class="product-image">
                                     <a href="{{route('client.detail')}}">
                                         <img src="{{asset('assets/client/images/product/large-size/1.jpg')}}"
@@ -61,9 +61,9 @@ Home
                                             <span class="new-price">$46.80</span>
                                         </div>
                                     </div>
-                                    <div class="add-actions">
+                                    <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart active"><a href="#">Add to cart</a></li>
+                                            <li class="add-cart active"><a href="#"><i class="fa fa-cart-arrow-down fa-7x" aria-hidden="true" ></i></a></li>
                                             <li><a class="links-details" href="wishlist.html"><i
                                                         class="fa fa-heart"></i></a></li>
                                             <li><a href="#" title="quick view" class="quick-view-btn"

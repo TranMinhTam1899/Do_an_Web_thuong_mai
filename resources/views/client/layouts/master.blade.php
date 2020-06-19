@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="{{ asset('assets/client/style.css') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
+
+   <link rel="stylesheet" href="{{ asset('assets/client/css/custom.css') }}">
     
 </head>
 

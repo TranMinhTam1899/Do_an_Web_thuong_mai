@@ -1,0 +1,35 @@
+.single-product-wrap:hover{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.add-actions.action__overplay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 0;
+    background: #0000004a;
+}
+
+.single-product-wrap:hover:before{
+    visibility: hidden;
+}
+
+.action__overplay .add-cart i{
+    font-size: 27px !important; 
+    color: white;
+    line-height: 35px !important;
+    
+}
+.action__overplay .add-actions-link li.add-cart{
+    background: #0363cd;
+    border: none;
+}
+.action__overplay .add-actions-link {
+    /* padding-top: 8rem !important; */
+    position: absolute ;
+    left: 10%;
+    bottom: 20%;
+
+}
