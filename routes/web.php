@@ -73,9 +73,10 @@ Route::prefix('admin')->group(function(){
             return view('admin.pages.category.add-category');
         })->name('add-category');
 
-        Route::get('/list-category', function () {
-            return view('admin.pages.category.list-category');
-        })->name('list-category');
+        Route::get('/list-category', 'CategoryController@index')->name('list-category');
+
+
+
 
         // statistical
 

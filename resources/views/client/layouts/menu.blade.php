@@ -104,7 +104,6 @@
                             </li>
                             <li><a href="{{ route('client.about')}}">About Us</a></li>
                             <li><a href="{{ route('client.contact')}}">Contact</a></li>
-                            <li><a href="shop-left-sidebar.html">Help</a></li>
                         </ul>
                     </nav>
                 </div>

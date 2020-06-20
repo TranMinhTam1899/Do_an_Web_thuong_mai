@@ -11,9 +11,12 @@ Danh sách user
             <div class="x_title">
                 <h2>Danh sách User</h2>
                 <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <li>
+                        <div id="datatable-responsive_filter" class="dataTables_filter">
+                            <label>Search:<input type="search" class="form-control input-sm" placeholder=""
+                                    aria-controls="datatable-responsive"></label></div>
                     </li>
-                   
+
                 </ul>
                 <div class="clearfix"></div>
             </div>
@@ -21,7 +24,7 @@ Danh sách user
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
-                            
+
 
                             <div id="datatable-responsive_wrapper"
                                 class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
@@ -37,9 +40,7 @@ Danh sách user
                                                 </select> entries</label></div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div id="datatable-responsive_filter" class="dataTables_filter">
-                                            <label>Search:<input type="search" class="form-control input-sm"
-                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -57,22 +58,22 @@ Danh sách user
                                                         Id</th> -->
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 80px;"
-                                                     >Username</th>
-                                                
+                                                        style="width: 80px;">Username</th>
+
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 81px;"
-                                                       >role
+                                                        style="width: 81px;">role
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 34px;"
-                                                        aria-label="Age: activate to sort column ascending">first-name</th>
+                                                        aria-label="Age: activate to sort column ascending">first-name
+                                                    </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 74px;"
-                                                        aria-label="Start date: activate to sort column ascending">last-name</th>
+                                                        aria-label="Start date: activate to sort column ascending">
+                                                        last-name</th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 60px;"
@@ -90,9 +91,10 @@ Danh sách user
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
-                                                        aria-label="E-mail: activate to sort column ascending">Number-order
+                                                        aria-label="E-mail: activate to sort column ascending">
+                                                        Number-order
                                                     </th>
-                                                   
+
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
@@ -107,7 +109,7 @@ Danh sách user
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
-                                                    </th> 
+                                                    </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
@@ -120,12 +122,12 @@ Danh sách user
                                                     </th>
                                                 </tr>
                                             </thead>
-                                            <tbody> 
-                                            
-                                                    @foreach ($listUsers as $ur)
+                                            <tbody>
+
+                                                @foreach ($listUsers as $ur)
                                                 <tr class="odd cus-{{$ur -> id}}">
-                                                    <td>{{$ur -> user_name}}</td> 
-                                                    <td>{{$ur -> role}}</td> 
+                                                    <td>{{$ur -> user_name}}</td>
+                                                    <td>{{$ur -> role}}</td>
                                                     <td>{{$ur -> first_name}}</td>
                                                     <td>{{$ur -> last_name}}</td>
                                                     <td>{{$ur -> email}}</td>
@@ -137,51 +139,14 @@ Danh sách user
                                                     <td>{{$ur -> status}}</td>
                                                     <td>{{$ur -> created_at}}</td>
                                                     <td>{{$ur -> updated_at}}</td>
-                                                    
+
                                                 </tr>
-                                                    @endforeach
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="dataTables_info" id="datatable-responsive_info" role="status"
-                                            aria-live="polite">Showing 1 to 10 of 57 entries</div>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <div class="dataTables_paginate paging_simple_numbers"
-                                            id="datatable-responsive_paginate">
-                                            <ul class="pagination">
-                                                <li class="paginate_button previous disabled"
-                                                    id="datatable-responsive_previous"><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="0"
-                                                        tabindex="0">Previous</a></li>
-                                                <li class="paginate_button active"><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="1"
-                                                        tabindex="0">1</a></li>
-                                                <li class="paginate_button "><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="2"
-                                                        tabindex="0">2</a></li>
-                                                <li class="paginate_button "><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="3"
-                                                        tabindex="0">3</a></li>
-                                                <li class="paginate_button "><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="4"
-                                                        tabindex="0">4</a></li>
-                                                <li class="paginate_button "><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="5"
-                                                        tabindex="0">5</a></li>
-                                                <li class="paginate_button "><a href="#"
-                                                        aria-controls="datatable-responsive" data-dt-idx="6"
-                                                        tabindex="0">6</a></li>
-                                                <li class="paginate_button next" id="datatable-responsive_next"><a
-                                                        href="#" aria-controls="datatable-responsive" data-dt-idx="7"
-                                                        tabindex="0">Next</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
 
 
@@ -189,6 +154,34 @@ Danh sách user
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5">
+        <div class="dataTables_info" id="datatable-responsive_info" role="status" aria-live="polite">Showing 1 to 10 of
+            57 entries</div>
+    </div>
+    <div class="col-sm-7">
+        <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
+            <ul class="pagination">
+                <li class="paginate_button previous disabled" id="datatable-responsive_previous"><a href="#"
+                        aria-controls="datatable-responsive" data-dt-idx="0" tabindex="0">Previous</a></li>
+                <li class="paginate_button active"><a href="#" aria-controls="datatable-responsive" data-dt-idx="1"
+                        tabindex="0">1</a></li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="2"
+                        tabindex="0">2</a></li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="3"
+                        tabindex="0">3</a></li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="4"
+                        tabindex="0">4</a></li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="5"
+                        tabindex="0">5</a></li>
+                <li class="paginate_button "><a href="#" aria-controls="datatable-responsive" data-dt-idx="6"
+                        tabindex="0">6</a></li>
+                <li class="paginate_button next" id="datatable-responsive_next"><a href="#"
+                        aria-controls="datatable-responsive" data-dt-idx="7" tabindex="0">Next</a></li>
+            </ul>
         </div>
     </div>
 </div>

@@ -13,7 +13,9 @@ Danh sách category
             <div class="x_title">
                 <h2>Danh sách loại sản phẩm</h2>
                 <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <li> <div id="datatable-responsive_filter" class="dataTables_filter">
+                                            <label>Search:<input type="search" class="form-control input-sm"
+                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
                     </li>
 
                 </ul>
@@ -39,9 +41,7 @@ Danh sách category
                                                 </select> entries</label></div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div id="datatable-responsive_filter" class="dataTables_filter">
-                                            <label>Search:<input type="search" class="form-control input-sm"
-                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
+                                       
                                     </div>
                                 </div>
                                 <div class="row">
@@ -52,10 +52,10 @@ Danh sách category
                                             aria-describedby="datatable-responsive_info" style="width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                <th class="sorting_asc" tabindex="0"
+                                                <!-- <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
-                                                        Id</th>
+                                                        Id</th> -->
                                                     <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
@@ -72,19 +72,32 @@ Danh sách category
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach ($listCategorys as $cate)
                                                 <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1">1</td>
-                                                    <td>Điện thoại</td>
-                                                    <td>sdcgvsfxv</td>
+                                                    <!-- <td tabindex="0" class="sorting_1">1</td> -->
+                                                    <td>{{$cate -> name}}</td>
+                                                    <td>{{$cate -> alilas}}</td>
                                                     
-                                                    <td>1</td>
+                                                    <td>{{$cate -> status}}</td>
                                                     
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row">
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
                                     <div class="col-sm-5">
                                         <div class="dataTables_info" id="datatable-responsive_info" role="status"
                                             aria-live="polite">Showing 1 to 10 of 57 entries</div>
@@ -122,14 +135,4 @@ Danh sách category
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
