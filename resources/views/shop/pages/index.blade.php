@@ -14,8 +14,8 @@ Home shop
     <div class="seller_content">
         <div class="row">
             <div class="col-md-4 col-sm-4 text-center">
-                <div class="seller_item">
-                    <p class="seller_num">0</p>
+                <div class="seller_item about-image-wrap btn  btn-success">
+                    <p class="seller_num text-white">0</p>
                     <span>Sản phẩm chờ xử lý</span>
                 </div>
             </div>

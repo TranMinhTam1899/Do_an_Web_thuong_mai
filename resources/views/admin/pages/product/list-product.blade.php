@@ -11,7 +11,9 @@ Danh sách sản phẩm
             <div class="x_title">
                 <h2>Danh sách sản phẩm</h2>
                 <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <li><div id="datatable-responsive_filter" class="dataTables_filter">
+                                            <label>Search:<input type="search" class="form-control input-sm"
+                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
                     </li>
 
                 </ul>
@@ -35,9 +37,7 @@ Danh sách sản phẩm
                                                 </select> entries</label></div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div id="datatable-responsive_filter" class="dataTables_filter">
-                                            <label>Search:<input type="search" class="form-control input-sm"
-                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
+                                        
                                     </div>
                                 </div>
                                 <div class="row">
@@ -48,10 +48,10 @@ Danh sách sản phẩm
                                             aria-describedby="datatable-responsive_info" style="width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                <th class="sorting_asc" tabindex="0"
+                                                <!-- <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
-                                                        Id</th>
+                                                        Id</th> -->
                                                     <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
@@ -101,34 +101,47 @@ Danh sách sản phẩm
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
                                                     </th>
-                                                    <th class="sorting" tabindex="0"
+                                                    <!-- <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Created
-                                                    </th>
+                                                    </th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            @foreach ($listProduce as $prod)
                                                 <tr role="row" class="odd">
-                                                    <td tabindex="0" class="sorting_1">1</td>
-                                                    <td>Iphone 11</td>
-                                                    <td>$100</td>
-                                                    <td>$97</td>
-                                                    <td>cái</td>
-                                                    <td>IP11</td>
-                                                    <td>Đây là ip11</td>
-                                                    <td>IP11 nha</td>
-                                                    <td>1</td>
-                                                    <td>1</td>
-                                                    <td>1</td>
-                                                    <td>12/12/2020</td>
+                                                    <!-- <td tabindex="0" class="sorting_1">1</td> -->
+                                                    <td>{{$prod->name}}</td>
+                                                    <td>{{$prod->unit}}</td>
+                                                    <td>{{$prod->SKU}}</td>
+                                                    <td>{{$prod->desc}}</td>
+                                                    <td>{{$prod->short_desc}}</td>
+                                                    <td>{{$prod->category_id}}</td>
+                                                    <td>{{$prod->author_id}}</td>
+                                                    <td>{{$prod->price}}</td>
+                                                    <td>{{$prod->discout_price}}</td>
+                                                    <td>{{$prod->status}}</td>
+                                                    <!-- <td>{{$prod->name}}</td> -->
                                                     
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                <div class="row">
+                                
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
                                     <div class="col-sm-5">
                                         <div class="dataTables_info" id="datatable-responsive_info" role="status"
                                             aria-live="polite">Showing 1 to 10 of 57 entries</div>
@@ -166,14 +179,4 @@ Danh sách sản phẩm
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

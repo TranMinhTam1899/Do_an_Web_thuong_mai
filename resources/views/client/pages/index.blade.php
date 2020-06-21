@@ -63,7 +63,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -114,7 +115,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -163,7 +165,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -214,7 +217,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -263,7 +267,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -314,7 +319,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -424,7 +430,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -475,7 +482,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -524,7 +532,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -575,7 +584,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -624,7 +634,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -675,7 +686,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -745,7 +757,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -796,7 +809,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -845,7 +859,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -896,7 +911,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -945,7 +961,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -996,7 +1013,8 @@ Home
                                     </div>
                                     <div class="add-actions action__overplay">
                                         <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
+                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
+                                                        class="fa fa-heart"></i></a></li>
                                             <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
                                                     data-toggle="modal" data-target="#exampleModalCenter"><i
                                                         class="fa fa-eye"></i></a></li>
@@ -1101,18 +1119,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1151,18 +1173,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1201,18 +1227,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1251,18 +1281,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1301,18 +1335,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1351,18 +1389,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1401,18 +1443,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1451,18 +1497,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1501,18 +1551,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1551,18 +1605,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1601,18 +1659,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->
@@ -1651,18 +1713,22 @@ Home
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
+                                                    <ul class="add-actions-link">
+                                                        <li class="add-cart heart"><a class="links-details "
+                                                                href="wishlist.html"><i class="fa fa-heart"></i></a>
+                                                        </li>
+                                                        <li class="add-cart "><a href="#" title="quick view"
+                                                                class="quick-view-btn" data-toggle="modal"
+                                                                data-target="#exampleModalCenter"><i
+                                                                    class="fa fa-eye"></i></a></li>
 
 
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
+                                                    </ul>
+                                                    <div class="add-cart active "><a href="#"><i
+                                                                class="fa fa-cart-arrow-down fa-7x"
+                                                                aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->

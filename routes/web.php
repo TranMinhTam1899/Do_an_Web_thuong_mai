@@ -15,9 +15,7 @@ Route::get('/login', function () {
     return view('client.pages.login');
 })->name('client.login');
 // CLIENT
-Route::get('/', function () {
-    return view('client.pages.index');
-})->name('client.index');
+Route::get('/', 'PagesController@index')->name('client.index');
 
 // kenh nguoi ban
 Route::get('/seller', function () {
@@ -37,17 +35,13 @@ Route::prefix('admin')->group(function(){
             return view('admin.pages.product.add-product');
         })->name('add-product');
 
-        Route::get('/list-product', function () {
-            return view('admin.pages.product.list-product');
-        })->name('list-product');
+        Route::get('/list-product', 'ProduceController@index')->name('list-product');
         // shop
         Route::get('/add-shop', function () {
             return view('admin.pages.shop.add-shop');
         })->name('add-shop');
 
-        Route::get('/list-shop', function () {
-            return view('admin.pages.shop.list-shop');
-        })->name('list-shop');
+        Route::get('/list-shop', 'VendorController@index')->name('list-shop');
     
         // user
         Route::get('/add-user', function () {

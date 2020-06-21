@@ -7,52 +7,38 @@
                     <nav>
                         <ul>
                             <li class="dropdown-holder home"><a href="{{ route('client.index')}}">Home</a></li>
+
+
                             <li class="megamenu-holder"><a href="#">Shop</a>
                                 <ul class="megamenu hb-megamenu">
                                     <li><a href="shop-left-sidebar.html">Shop Page</a>
                                         <ul>
-                                            <li><a href="shop-3-column.html">Con heo shop</a></li>
-                                            <li><a href="shop-4-column.html">Ca xau shop</a></li>
-                                            <li><a href="shop-left-sidebar.html">Su tu shop</a></li>
-                                            
+                                            <li><a href="#">Con heo shop</a></li>
+                                            <li><a href="#">Ca xau shop</a></li>
+                                            <li><a href="#">Su tu shop</a></li>
                                         </ul>
                                     </li>
-                                   
-                                    
+
+
                                 </ul>
                             </li>
+
+
                             <li class="dropdown-holder"><a href="#">Product</a>
                                 <ul class="hb-dropdown">
-                                    <li ><a href="{{ route('client.list-product')}}">All product shop</a></li>
-                                    <li class="sub-dropdown-holder"><a href="#">Phone</a>
-                                        <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-2-column.html">Nokia</a></li>
-                                            <li><a href="blog-3-column.html">Iphone</a></li>
-                                            <li><a href="blog-left-sidebar.html">Asus</a></li>
-                                            <li><a href="blog-right-sidebar.html">Samsung</a></li>
-                                        </ul>
+                                    <li><a href="{{ route('client.list-product')}}">All product shop</a></li>
+                                    @foreach($Category as $cate)
+                                    <li class="sub-dropdown-holder"><a href="#">{{$cate->name}}</a>
+                                        <!-- <ul class="hb-dropdown hb-sub-dropdown">
+                                          
+                                            <li><a href="#">Asus</a></li>
+                                           
+                                        </ul> -->
                                     </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Laptop</a>
-                                    <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-2-column.html">Asus</a></li>
-                                            <li><a href="blog-3-column.html">Macbook</a></li>
-                                            <li><a href="blog-left-sidebar.html">Hp</a></li>
-                                            <li><a href="blog-right-sidebar.html">Lenovo</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Fashion</a>
-                                        <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-list.html">Men's wear</a></li>
-                                            <li><a href="blog-list-left-sidebar.html">Women's wear</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Clock</a>
-                                    <ul class="hb-dropdown hb-sub-dropdown">
-                                            <li><a href="blog-2-column.html">Fashion watch</a></li>
-                                            <li><a href="blog-3-column.html">Smart watch</a></li>
-                                        </ul>
-                                    </li>
-                                    
+                                    @endforeach
+
+
+
                                 </ul>
                             </li>
                             <li class="megamenu-static-holder"><a href="index.html">Pages</a>

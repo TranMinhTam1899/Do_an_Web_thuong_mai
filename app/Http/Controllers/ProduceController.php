@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\produce;
 class ProduceController extends Controller
 {
      /**
@@ -13,10 +13,8 @@ class ProduceController extends Controller
      */
     public function index()
     {
-        $listProduce = produces::all();
-        //$listLinhVuc = LinhVuc::all();
-        return view('client.pages.list-product', compact('listProduce'));
-
+        $listProduce = produce::all();
+        return view('admin.pages.product.list-product', compact('listProduce'));
     }
 
     /**
