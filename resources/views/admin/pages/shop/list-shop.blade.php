@@ -9,12 +9,16 @@ list shop
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Danh sách cửa hàng</h2>
+                <h2 class="text-center">Danh sách cửa hàng</h2>
+              
+               
                 <ul class="nav navbar-right panel_toolbox">
+                    
                     <li>
                         <div id="datatable-responsive_filter" class="dataTables_filter">
-                            <label>Search:<input type="search" class="form-control input-sm" placeholder=""
-                                    aria-controls="datatable-responsive"></label>
+                            <label><i class="fa fa-search" aria-hidden="true"></i></label>
+                            <input type="search" class="form-control input-sm" placeholder="Search ..."
+                                aria-controls="datatable-responsive">
                         </div>
                     </li>
 
@@ -50,10 +54,7 @@ list shop
                                             aria-describedby="datatable-responsive_info" style="width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <!-- <th class="sorting_asc" tabindex="0"
-                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 81px;" aria-sort="ascending">
-                                                        Id</th> -->
+
                                                     <th class="sorting_asc" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 81px;" aria-sort="ascending">
@@ -82,6 +83,9 @@ list shop
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
                                                     </th>
+                                                    <th tabindex="0" aria-controls="datatable-responsive" rowspan="1"
+                                                        colspan="1" style="width: 81px;" aria-sort="ascending">
+                                                        Function</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -95,16 +99,25 @@ list shop
                                                     <td>{{$vend->desc}}</td>
                                                     <td>{{$vend->logo}}</td>
                                                     <td>{{$vend->status}}</td>
+                                                    <td class="text-center">
+                                                        <a href="#" class="btn btn-warning">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        </a>
+                                                        <button class="btn btn-danger">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </button>
 
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-
+                               
+               
                             </div>
-
+                           
 
                         </div>
                     </div>

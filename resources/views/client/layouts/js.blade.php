@@ -1,7 +1,7 @@
     <!-- Modernizr js -->
     <script src="{{ asset('assets/client/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-   <!-- jQuery-V1.12.4 -->
-   <script src="{{asset('assets/client/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <!-- jQuery-V1.12.4 -->
+    <script src="{{asset('assets/client/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <!-- Popper js -->
     <script src="{{asset('assets/client/js/vendor/popper.min.js')}}"></script>
     <!-- Bootstrap V4.1.3 Fremwork js -->
@@ -42,3 +42,7 @@
     <script src="{{asset('assets/client/js/scrollUp.min.js')}}"></script>
     <!-- Main/Activator js -->
     <script src="{{asset('assets/client/js/main.js')}}"></script>
+    <script src=”https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js”></script>
+    <script>
+        new WOW().init();
+    </script>

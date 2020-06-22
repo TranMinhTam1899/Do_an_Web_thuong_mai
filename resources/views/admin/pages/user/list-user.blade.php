@@ -12,9 +12,11 @@ Danh sách user
                 <h2>Danh sách User</h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li>
-                        <div id="datatable-responsive_filter" class="dataTables_filter">
-                            <label>Search:<input type="search" class="form-control input-sm" placeholder=""
-                                    aria-controls="datatable-responsive"></label></div>
+                    <div id="datatable-responsive_filter" class="dataTables_filter">
+                            <label><i class="fa fa-search" aria-hidden="true"></i></label>
+                            <input type="search" class="form-control input-sm" placeholder="Search ..."
+                                    aria-controls="datatable-responsive">
+                        </div>
                     </li>
 
                 </ul>
@@ -51,11 +53,6 @@ Danh sách user
                                             aria-describedby="datatable-responsive_info" style="width: 100%;">
                                             <thead>
                                                 <tr role="row">
-                                                    <!-- <th class="sorting_asc" tabindex="0"
-                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 81px;" aria-sort="ascending"
-                                                       >
-                                                        Id</th> -->
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 80px;">Username</th>
@@ -120,6 +117,10 @@ Danh sách user
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">updated
                                                     </th>
+                                                    <th  tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 81px;" aria-sort="ascending">
+                                                        Function</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -139,7 +140,15 @@ Danh sách user
                                                     <td>{{$ur -> status}}</td>
                                                     <td>{{$ur -> created_at}}</td>
                                                     <td>{{$ur -> updated_at}}</td>
+                                                    <td class="text-center">
+                                                        <a href="#" class="btn btn-warning">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        </a>
+                                                        <button class="btn btn-danger">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </button>
 
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

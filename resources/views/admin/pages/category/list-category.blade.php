@@ -13,9 +13,12 @@ Danh sách category
             <div class="x_title">
                 <h2>Danh sách loại sản phẩm</h2>
                 <ul class="nav navbar-right panel_toolbox">
-                    <li> <div id="datatable-responsive_filter" class="dataTables_filter">
-                                            <label>Search:<input type="search" class="form-control input-sm"
-                                                    placeholder="" aria-controls="datatable-responsive"></label></div>
+                    <li>
+                    <div id="datatable-responsive_filter" class="dataTables_filter">
+                            <label><i class="fa fa-search" aria-hidden="true"></i></label>
+                            <input type="search" class="form-control input-sm" placeholder="Search ..."
+                                    aria-controls="datatable-responsive">
+                        </div>
                     </li>
 
                 </ul>
@@ -69,17 +72,29 @@ Danh sách category
                                                         style="width: 166px;"
                                                         aria-label="E-mail: activate to sort column ascending">Status
                                                     </th>
+                                                    <th  tabindex="0"
+                                                        aria-controls="datatable-responsive" rowspan="1" colspan="1"
+                                                        style="width: 81px;" aria-sort="ascending">
+                                                        Function</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                             @foreach ($listCategorys as $cate)
                                                 <tr role="row" class="odd">
-                                                    <!-- <td tabindex="0" class="sorting_1">1</td> -->
+                                                   
                                                     <td>{{$cate -> name}}</td>
                                                     <td>{{$cate -> alilas}}</td>
                                                     
                                                     <td>{{$cate -> status}}</td>
-                                                    
+                                                    <td class="text-center">
+                                                        <a href="#" class="btn btn-warning">
+                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                                        </a>
+                                                        <button class="btn btn-danger">
+                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                        </button>
+
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

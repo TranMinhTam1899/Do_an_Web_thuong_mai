@@ -489,7 +489,7 @@ Note: main.js, All Default Scripting Languages For This Theme Included In This F
  		loop: true,
  		nav: false,
  		dots: false,
- 		autoplay: false,
+ 		autoplay: true,
  		autoplayTimeout: 5000,
  		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-left"></i>'],
  		item: 4,

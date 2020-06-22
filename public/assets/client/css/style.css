@@ -328,8 +328,7 @@ a.review-links:hover {
 /*  1.6 Input
 /*----------------------------------------*/
 input {
-	background: #eceff8;
-	border: 2px solid #eceff8;
+	border: 2px solid #ffffff;
 	height: 45px;
 	box-shadow: none;
 	padding-left: 10px;
@@ -360,8 +359,8 @@ input:focus {
 }
 textarea {
 	resize: vertical;
-	background: #eceff8;
-	border: 2px solid #eceff8;
+/* 	background: #eceff8;
+	border: 2px solid #eceff8; */
 	padding: 10px;
 	width: 100%;
 	font-size: 14px;
@@ -383,7 +382,7 @@ textarea:focus {
 /*----------------------------------------*/
 /*Home One | Slider Background Image*/
 .bg-1, .bg-2, .bg-3 {
-	background-image: url(images/slider/1.jpg);
+	background-image: url(../images/slider/1.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -391,10 +390,10 @@ textarea:focus {
 	width: 100%;
 }
 .bg-2 {
-	background-image: url(images/slider/2.jpg);
+	background-image: url(../images/slider/2.jpg);
 }
 .bg-3 {
-	background-image: url(images/slider/3.jpg);
+	background-image: url(../images/slider/3.jpg);
 }
 /*Home Two | Slider Background Image*/
 .bg-4, .bg-5, .bg-6 {
@@ -472,7 +471,7 @@ textarea:focus {
 .slider-active .owl-item.active .slider-progress {
 	-webkit-animation: 5000ms ease-in-out 0s normal none 1 running timebar;
 	animation: 10000ms ease-in-out 0s normal none 1 running timebar;
-	background: rgba(0, 0, 0, .3);
+	background: #0a4b8f;
 	height: 5px;
 	left: 0;
 	opacity: 0.8;
@@ -2033,9 +2032,10 @@ ul.ht-menu a:hover {
 .li-product-menu > li > a > span {
 	position: relative;
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: bold;
 	color: #0056b3;
+	text-transform: uppercase;
 }
 .li-product-menu > li > a span::before, .li-product-menu > li > a.active span::before {
 	content: "";
@@ -2045,7 +2045,7 @@ ul.ht-menu a:hover {
 	left: 0;
 	background: #fed700;
 	right: 0;
-	height: 1px;
+	height: 4px;
 	display: block;
 }
 .li-product-menu > li > a.active span::before {
@@ -2569,15 +2569,15 @@ ul.ht-menu a:hover {
 	color: #a4a4a4;
 	font-size: 14px;
 	margin: 0 20px 0;
-	line-height: 20px;
+	line-height: 26px;
 	position: relative;
 }
-.li-sub-category-list > li > a::after, .li-section-title > h2 > span::before {
+.li-section-title > h2 > span::before, .li-sub-category-list > li > a::after {
 	content: "";
 	position: absolute;
 	bottom: -23px;
 	background: #fed700;
-	height: 1px;
+	height: 3px;
 	left: 0;
 	right: 0;
 	opacity: 0;
@@ -2586,7 +2586,7 @@ ul.ht-menu a:hover {
 	display: inline-block;
 	position: relative;
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: bold;
 	color: #0056b3;
 	text-transform: uppercase;
@@ -2607,7 +2607,7 @@ ul.ht-menu a:hover {
 /*  2.7 Li's Static Home Banner
 /*----------------------------------------*/
 .li-static-home-image {
-	background-image: url(images/bg-banner/1.jpg);
+	background-image: url(../images/bg-banner/1.jpg);
 	background-size: cover;
 	height: 400px;
 	background-repeat: no-repeat;
@@ -2675,17 +2675,18 @@ ul.ht-menu a:hover {
 	z-index: 999;
 	position: relative;
 	font-family: sans-serif;
-	font-size: 20px;
+	font-size: 28px;
 	font-weight: bold;
 	color: #0056b3;
 }
 .li-trending-product-tab > h2 > span::before {
 	content: "";
 	position: absolute;
-	background: #0a4b8f;
+	background: #fed700;
 	width: 100%;
 	bottom: -10px;
 	left: 0;
+	height: 3px;
 }
 .li-trending-product-menu {
 	text-align: right;

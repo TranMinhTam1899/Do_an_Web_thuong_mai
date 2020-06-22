@@ -6,7 +6,7 @@
                         <div class="slider-area">
                             <div class="slider-active owl-carousel">
                                 <!-- Begin Single Slide Area -->
-                                <div class="single-slide align-center-left  animation-style-01 bg-1">
+                                <div class="single-slide align-center-left animation-style-01 bg-1 wow fadeInLeft">
                                     <div class="slider-progress"></div>
                                     <div class="slider-content">
                                         <h5>Sale Offer <span>-20% Off</span> This Week</h5>
@@ -19,7 +19,7 @@
                                 </div>
                                 <!-- Single Slide Area End Here -->
                                 <!-- Begin Single Slide Area -->
-                                <div class="single-slide align-center-left animation-style-02 bg-2">
+                                <div class="single-slide align-center-left animation-style-02 bg-2 ">
                                     <div class="slider-progress"></div>
                                     <div class="slider-content">
                                         <h5>Sale Offer <span>Black Friday</span> This Week</h5>
@@ -32,7 +32,7 @@
                                 </div>
                                 <!-- Single Slide Area End Here -->
                                 <!-- Begin Single Slide Area -->
-                                <div class="single-slide align-center-left animation-style-01 bg-3">
+                                <div class="single-slide align-center-left animation-style-01 bg-3 ">
                                     <div class="slider-progress"></div>
                                     <div class="slider-content">
                                         <h5>Sale Offer <span>-10% Off</span> This Week</h5>
@@ -50,12 +50,12 @@
                     <!-- Slider Area End Here -->
                     <!-- Begin Li Banner Area -->
                     <div class="col-lg-4 col-md-4 text-center pt-xs-30">
-                        <div class="li-banner">
+                        <div class="li-banner wow bounceInRight">
                             <a href="#">
                                 <img src="{{asset('assets/client/images/banner/1_1.jpg')}}" alt="">
                             </a>
                         </div>
-                        <div class="li-banner mt-15 mt-sm-30 mt-xs-30">
+                        <div class="li-banner mt-15 mt-sm-30 mt-xs-30 wow bounceInRight">
                             <a href="#">
                                 <img src="{{asset('assets/client/images/banner/1_2.jpg')}}" alt="">
                             </a>

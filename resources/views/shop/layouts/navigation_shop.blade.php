@@ -13,7 +13,7 @@
         </li>
         <li class="has-sub"><a>Kênh quảng cáo</a>
             <ul>
-                <li><a href="{{route('shop.adver')}}">Quảng cáo của tôi</a></li>
+                <li><a href="{{route('shop.adver')}}">Chương trình khuyến mãi</a></li>
             </ul>
         </li>
         <li class="has-sub"><a>Quản lý shop</a>

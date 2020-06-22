@@ -154,11 +154,13 @@ Route::get('/client/contact', function () {
 Route::get('/client/detail', function () {
     return view('client.pages.detail');
 })->name('client.detail');
-Route::get('/client/list-product','ProduceController@index')->name('client.list-product');
+Route::get('/client/list-product','ProduceController@select')->name('client.list-product');
 
 // 404
 Route::get('/404', function () {
     return view('client.pages.404');
 })->name('client.404');
 
+
+// 
 

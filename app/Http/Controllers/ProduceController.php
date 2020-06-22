@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\produce;
+use App\img;
 class ProduceController extends Controller
 {
      /**
@@ -15,6 +16,18 @@ class ProduceController extends Controller
     {
         $listProduce = produce::all();
         return view('admin.pages.product.list-product', compact('listProduce'));
+    }
+    public function select()
+    {
+        $listProduces = produce::all();
+        // $listProduces = DB::table('produces')
+        // ->whereExists(function ($query) {
+        //     $query->select(DB::raw(1))
+        //           ->from('imgs')
+        //           ->whereRaw('produces.id = imgs.produce_id');
+        // })
+        // ->get();
+        return view('client.pages.list-product', compact('listProduces'));
     }
 
     /**

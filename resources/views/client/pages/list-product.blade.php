@@ -57,12 +57,14 @@ Trang danh sách
                         <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
                             <div class="product-area shop-product-area">
                                 <div class="row">
-                                    <!-- @foreach($listProduce as $pd) -->
+                                    <!-- one product -->
+                                    @foreach($listProduces as $lproduct)
                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
                                         <!-- single-product-wrap start -->
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
+                                               
                                                     <img src="{{ asset('assets/client/images/product/large-size/1.jpg')}}"
                                                         alt="Li's Product Image">
                                                 </a>
@@ -84,10 +86,10 @@ Trang danh sách
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4><a class="product_name" href="single-product.html">Accusantium
-                                                            dolorem1</a></h4>
+                                                    <h4><a class="product_name"
+                                                            href="single-product.html">{{$lproduct->name}}</a></h4>
                                                     <div class="price-box">
-                                                        <span class="new-price">$46.80</span>
+                                                        <span class="new-price">{{$lproduct->price}}</span>
                                                     </div>
                                                 </div>
                                                 <div class="add-actions action__overplay">
@@ -112,11 +114,12 @@ Trang danh sách
                                         <!-- single-product-wrap end -->
 
                                     </div>
-                                    <!-- @endforeach -->
+                                    @endforeach
+                                    <!-- end one product -->
                                 </div>
                             </div>
                         </div>
-                        <div id="list-view" class="tab-pane product-list-view fade" role="tabpanel">
+                        <!-- <div id="list-view" class="tab-pane product-list-view fade" role="tabpanel">
                             <div class="row">
                                 <div class="col">
                                     <div class="row product-layout-list">
@@ -776,7 +779,7 @@ Trang danh sách
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- shop-products-wrapper end -->

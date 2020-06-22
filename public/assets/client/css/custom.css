@@ -69,5 +69,29 @@
     
 }
 
+/* shop */
+.seller_content {
+    padding: 20px 0;
+}
+.seller_title{
+    border-bottom: 1px solid #eee;
+}
+.seller_title h4 {
+    position: relative;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0056b3;
+    text-transform: uppercase;
+}
 
-/*  */
+p.seller_num {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.seller_item.about-image-wrap{
+    width: 100% !important;
+    text-align: center;
+    padding-left: 0 !;
+}

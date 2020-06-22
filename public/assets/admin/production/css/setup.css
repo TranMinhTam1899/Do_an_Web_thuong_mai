@@ -10,3 +10,16 @@
 .tile-stats{
   cursor: pointer !important;
 }
+
+div#datatable-responsive_filter label i {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #0056b3;
+  color: white;
+  font-size: 17px;
+  padding: 11px;
+}
+div#datatable-responsive_filter .input-sm::placeholder{
+  color: #cccccc;
+}

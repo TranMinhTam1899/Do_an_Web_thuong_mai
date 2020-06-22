@@ -27,15 +27,53 @@
                             <li class="dropdown-holder"><a href="#">Product</a>
                                 <ul class="hb-dropdown">
                                     <li><a href="{{ route('client.list-product')}}">All product shop</a></li>
-                                    @foreach($Category as $cate)
-                                    <li class="sub-dropdown-holder"><a href="#">{{$cate->name}}</a>
-                                        <!-- <ul class="hb-dropdown hb-sub-dropdown">
-                                          
-                                            <li><a href="#">Asus</a></li>
-                                           
-                                        </ul> -->
+                          
+                                    <li class="sub-dropdown-holder"><a href="#">Phone</a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html"></a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            </li>
+                                        </ul>
                                     </li>
-                                    @endforeach
+                                    
+                                    <li class="sub-dropdown-holder"><a href="#">Laptop</a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html"></a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-dropdown-holder"><a href="#">Fastion</a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html"></a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-dropdown-holder"><a href="#">Clock</a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html"></a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-dropdown-holder"><a href="#">Foods</a>
+                                        <ul class="hb-dropdown hb-sub-dropdown">
+                                            <li><a href="blog-2-column.html"></a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Grid Left Sidebar</a></li>
+                                            <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a>
+                                            </li>
+                                        </ul>
+                                    </li>
 
 
 

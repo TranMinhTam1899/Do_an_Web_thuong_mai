@@ -39,9 +39,10 @@
     <!-- Helper CSS -->
     <link rel="stylesheet" href="{{asset('assets/client/css/helper.css') }}">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="{{asset('assets/client/style.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/client/css/style.css') }}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{asset('assets/client/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/client/css/custom.css') }}">
     <!-- Modernizr js -->
     <script src="{{asset('assets/client/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
