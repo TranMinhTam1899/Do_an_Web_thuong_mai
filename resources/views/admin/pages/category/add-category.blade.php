@@ -14,18 +14,23 @@ Thêm sản catagory
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <form class="form-horizontal form-label-left">
+            @if(isset($category))
+
+            @else
+                <form class="form-horizontal form-label-left" action="{{route('category.xu-ly-them-moi')}}" method="POST" >
+                @endif
+                @csrf
                     <div class="row">
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Name category</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="Name .....">
+                                <input type="text" class="form-control" placeholder="Name ....." name="name" @if(isset($linhVuc)) value ="{{ $category->name}}" @endif>
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Alilas category</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="password" class="form-control" placeholder="Alilas .....">
+                                <input type="text" class="form-control" placeholder="Alilas ....." name="alilas" >
                             </div>
                         </div>
                     </div>

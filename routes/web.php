@@ -35,45 +35,19 @@ Route::prefix('admin')->group(function(){
             return view('admin.pages.product.add-product');
         })->name('add-product');
 
-        Route::get('/list-product', 'ProduceController@index')->name('list-product');
+        Route::get('/list-product', 'ProduceController@index')->name('listProduct');
         // shop
         Route::get('/add-shop', function () {
             return view('admin.pages.shop.add-shop');
         })->name('add-shop');
 
         Route::get('/list-shop', 'VendorController@index')->name('list-shop');
-    
+        
         // user
         Route::get('/add-user', function () {
             return view('admin.pages.user.add-user');
         })->name('add-user');
-
         Route::get('/list-user', 'UserController@index')->name('list-user');
-
-
-        // Route::prefix('linh-vuc')->group(function(){
-        //     Route::name('linh-vuc.')->group(function(){
-        //         Route::get('/','LinhVucController@index')->name('danh-sach');
-        //         Route::get('them-moi','LinhVucController@create')->name('them-moi');
-        //         Route::post('them-moi','LinhVucController@store')->name('xu-ly-them-moi');
-        //         Route::get('cap-nhap/{id}','LinhVucController@edit')->name('cap-nhat');
-        //         Route::post('cap-nhap/{id}','LinhVucController@update')->name('xu-ly-cap-nhat');
-        //         Route::get('xoa/{id}', 'LinhVucController@destroy')->name('xoa');
-        //     });
-        // });
-
-        // category
-        Route::get('/add-category', function () {
-            return view('admin.pages.category.add-category');
-        })->name('add-category');
-
-        Route::get('/list-category', 'CategoryController@index')->name('list-category');
-
-
-
-
-        // statistical
-
         Route::get('/add-statistical', function () {
             return view('admin.pages.statistical.add-statistical');
         })->name('add-statistical');
@@ -96,6 +70,18 @@ Route::prefix('admin')->group(function(){
         Route::get('/setting', function () {
             return view('admin.pages.setting.setting');
         })->name('setting');
+
+    });
+});
+
+Route::prefix('category')->group(function(){
+    Route::name('category.')->group(function(){
+        Route::get('/','CategoryController@index')->name('listCategory');
+        Route::get('add-category','CategoryController@create')->name('them-moi');
+        Route::post('add-category/create','CategoryController@store')->name('xu-ly-them-moi');
+        Route::get('cap-nhap/{id}','CategoryController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','CategoryController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'CategoryController@destroy')->name('xoa');
     });
 });
 

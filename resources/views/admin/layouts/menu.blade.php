@@ -19,15 +19,15 @@
                 </li>
                 <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i> Quản lý sản phẩm<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="{{route('admin.list-product')}}">Danh sách sản phẩm</a></li>
+                    <li><a href="{{route('admin.listProduct')}}">Danh sách sản phẩm</a></li>
                     <li><a href="{{route('admin.add-product')}}">Thêm sản phẩm</a></li>
                    
                   </ul>
                 </li>
                 <li><a><i class="fa fa-table"></i>Quản lý loại sản phẩm<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="{{route('admin.list-category')}}">Danh sách loại sản phẩm</a></li>
-                    <li><a href="{{route('admin.add-category')}}">Thêm loại sản phẩm</a></li>
+                    <li><a href="{{route('category.listCategory')}}">Danh sách loại sản phẩm</a></li>
+                    <li><a href="{{route('category.them-moi')}}">Thêm loại sản phẩm</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-bar-chart-o"></i> Thống kê <span class="fa fa-chevron-down"></span></a>
