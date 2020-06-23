@@ -64,8 +64,8 @@ Trang danh sách
                                         <div class="single-product-wrap">
                                             <div class="product-image">
                                                 <a href="single-product.html">
-                                               
-                                                    <img src="{{ asset('assets/client/images/product/large-size/1.jpg')}}"
+                                                <!-- {{ asset('assets/client/images/product/large-size/1.jpg')}} -->
+                                                    <img src="{{ asset($lproduct->url)}}"
                                                         alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>

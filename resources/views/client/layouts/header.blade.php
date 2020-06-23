@@ -12,7 +12,7 @@
                               <ul class="phone-wrap">
                                   <li>
                                       <a href="{{route('client.seller')}}">
-                                      <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                          <i class="fa fa-shopping-bag" aria-hidden="true"></i>
 
                                           <span>Shop chennel</span>
                                       </a>
@@ -92,6 +92,10 @@
                                                                                       <div class="col-12">
                                                                                           <button
                                                                                               class="register-button mt-0">Register</button>
+
+                                                                                        <p>
+                                                                                        <a href="#">Sing in</a>
+                                                                                        </p>
                                                                                       </div>
                                                                                   </div>
                                                                               </div>
@@ -176,7 +180,7 @@
                                                                                                   class="fab fa-facebook-f"></i>
                                                                                           </button>
 
-                                                                                          
+
                                                                                       </div>
                                                                                   </div>
                                                                               </div>
@@ -196,7 +200,7 @@
                                       </a>
                                   </li>
                                   <!-- Language Area End Here -->
-                                  
+
 
                               </ul>
                           </div>
@@ -243,7 +247,8 @@
                                           <ul class="minicart-product-list">
                                               <li>
                                                   <a href="single-product.html" class="minicart-product-image">
-                                                      <img src="{{asset('assets/client/images/product/small-size/5.jpg')}}" alt="cart products">
+                                                      <img src="{{asset('assets/client/images/product/small-size/5.jpg')}}"
+                                                          alt="cart products">
                                                   </a>
                                                   <div class="minicart-product-details">
                                                       <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -255,7 +260,8 @@
                                               </li>
                                               <li>
                                                   <a href="single-product.html" class="minicart-product-image">
-                                                      <img src="{{asset('assets/client/images/product/small-size/6.jpg')}}" alt="cart products">
+                                                      <img src="{{asset('assets/client/images/product/small-size/6.jpg')}}"
+                                                          alt="cart products">
                                                   </a>
                                                   <div class="minicart-product-details">
                                                       <h6><a href="single-product.html">Aenean eu tristique</a></h6>
@@ -272,7 +278,7 @@
                                                   class="li-button li-button-fullwidth li-button-dark">
                                                   <span>View Full Cart</span>
                                               </a>
-                                              
+
                                           </div>
                                       </div>
                                   </li>

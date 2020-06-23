@@ -23,7 +23,7 @@
                                     <li>
                                         <span class="language-selector-wrapper">
                                             <div class="icon_user">
-                                                <img src="assets/client//images/team/4.png" alt="user">
+                                                <img src="{{asset('upload/logo/icon.png')}}" alt="user">
                                             </div>
                                         </span>
                                         <div class="user_name"><span>Tài khoản</span></div>
@@ -45,7 +45,7 @@
                         <div class="col-lg-3">
                             <div class="logo_shop pb-sm-30 pb-xs-30">
                                 <a href="index.html">
-                                    <img src="assets/client/images/menu/logo/1.jpg" alt="">
+                                    <img src="{{asset('upload/logo/logo_shop.png')}}" alt="" width="100%">
                                 </a>
                             </div>
                         </div>

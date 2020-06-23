@@ -5,10 +5,15 @@ Home shop
 @endsection
 
 @section('shop_main_content')
-<div class="mt-10">
-@include('client.layouts.banner')
+<div class="row mt-10">
+    <div class="col-sm-12">
+        <div class="single-banner shop-page-banner">
+            <a href="#">
+                <img src="{{ asset('upload/banner/banner7.png')}}" alt="Li's Static Banner">
+            </a>
+        </div>
+    </div>
 </div>
-
 
 <div class="seller mt-20">
     <div class="seller_title ">
@@ -51,7 +56,7 @@ Home shop
             <div class="col-md-4 col-sm-4 text-center">
             <div class="seller_item about-image-wrap btn btn-warning">
                     <p class="seller_num">0</p>
-                    <span>Chương trình khuyến mãi</span>
+                    <span class="text-white">Chương trình khuyến mãi</span>
                 </div>
             </div>
         </div>

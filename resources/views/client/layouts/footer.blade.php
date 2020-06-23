@@ -7,7 +7,7 @@
                         <div class="row">
                             <!-- Begin Li's Shipping Inner Box Area -->
                             <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                                <div class="li-shipping-inner-box wow bounceInLeft">
+                                <div class="li-shipping-inner-box wow bounceInLeft" data-wow-duration="3s">
                                     <div class="shipping-icon">
                                         <img src="{{ asset('assets/client/images/shipping-icon/1.png')}}" alt="Shipping Icon">
                                     </div>
@@ -20,7 +20,7 @@
                             <!-- Li's Shipping Inner Box Area End Here -->
                             <!-- Begin Li's Shipping Inner Box Area -->
                             <div class="col-lg-3 col-md-6 col-sm-6 pb-sm-55 pb-xs-55">
-                                <div class="li-shipping-inner-box wow  bounceInDown">
+                                <div class="li-shipping-inner-box wow  bounceInDown" data-wow-duration="3s">
                                     <div class="shipping-icon">
                                         <img src="{{ asset('assets/client/images/shipping-icon/2.png')}}" alt="Shipping Icon">
                                     </div>
@@ -33,7 +33,7 @@
                             <!-- Li's Shipping Inner Box Area End Here -->
                             <!-- Begin Li's Shipping Inner Box Area -->
                             <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                                <div class="li-shipping-inner-box wow bounceInUp">
+                                <div class="li-shipping-inner-box wow bounceInUp" data-wow-duration="3s">
                                     <div class="shipping-icon">
                                         <img src="{{ asset('assets/client/images/shipping-icon/3.png')}}" alt="Shipping Icon">
                                     </div>
@@ -46,7 +46,7 @@
                             <!-- Li's Shipping Inner Box Area End Here -->
                             <!-- Begin Li's Shipping Inner Box Area -->
                             <div class="col-lg-3 col-md-6 col-sm-6 pb-xs-30">
-                                <div class="li-shipping-inner-box wow bounceInRight">
+                                <div class="li-shipping-inner-box wow bounceInRight" data-wow-duration="3s">
                                     <div class="shipping-icon">
                                         <img src="{{ asset('assets/client/images/shipping-icon/4.png')}}" alt="Shipping Icon">
                                     </div>
