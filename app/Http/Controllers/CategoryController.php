@@ -20,7 +20,7 @@ class CategoryController extends Controller
     }
     public function create()
     {
-        //return view('linh-vuc.form');
+        
         return view('admin.pages.category.add-category');
     }
 

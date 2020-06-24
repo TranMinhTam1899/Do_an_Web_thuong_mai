@@ -13,101 +13,128 @@ Thêm sản phẩm
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <form class="form-horizontal form-label-left">
+
+                @if(isset($listProduce))
+
+                @else
+
+                <form class="form-horizontal form-label-left" action="{{route('product.xu-ly-them-moi')}}"
+                    method="POST">
+                    @endif
+                    @csrf
                     <div class="row">
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Product name</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="Name.....">
+                                <input type="text" name="name" class="form-control" placeholder="Name.....">
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Images</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="file" >
+                                <input type="file" name="img">
                             </div>
                         </div>
-                        
+
+
                     </div>
                     <div class="row">
-                    <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Prive</label>
+
+                        <div class="form-group row col-md-6 col-sm-6">
+                            <label class="control-label col-md-2 col-sm-2 ">unit</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="password" class="form-control" placeholder="USD.....">
+                                <input type="text" name="unit" class="form-control" placeholder="Unit.....">
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Discount price</label>
+                            <label class="control-label col-md-2 col-sm-2 ">SKU</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="USD.....">
+                                <input type="text" name="SKU" class="form-control" placeholder="SKU.....">
                             </div>
                         </div>
-                        
+
+
                     </div>
                     <div class="row">
-                    
+
                         <div class="form-group row col-md-6 col-sm-6 ">
                             <label class="control-label col-md-2 col-sm-2 ">Desc</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <textarea name="add_dress" id="" cols="10" rows="5" class="form-control"
+                                <textarea id="" cols="10" name="desc" rows="5" class="form-control"
                                     placeholder="..........."></textarea>
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6 ">
                             <label class="control-label col-md-2 col-sm-2 ">short desc</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <textarea name="add_dress" id="" cols="10" rows="5" class="form-control"
-                                    placeholder="..........."></textarea>
+                                <textarea id="" cols="10" name="shortdesc" rows="5"
+                                    class="form-control" placeholder="..........."></textarea>
                             </div>
                         </div>
 
 
                     </div>
 
+
                     <div class="row">
-                    <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Unit</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="Last name.....">
-                            </div>
-                        </div>
+
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Catagory</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <select class="select2_single form-control" tabindex="-1">
-                                    <option>----!-----</option>
-                                    <option value="nv1">User1</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv4">User4</option>
-                                    <option value="nv5">User5</option>
+                                <select class="select2_single form-control" name="category_id" tabindex="-1">
+                                    @foreach($listcategory as $listC)
+                                    <option value="{{$listC->id}}">{{$listC -> name}}</option>
 
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="row">
-                    <div class="form-group row col-md-6 col-sm-6">
+                        <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Author</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <select class="select2_single form-control" tabindex="-1">
-                                    <option>----!-----</option>
-                                    <option value="nv1">User1</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv4">User4</option>
-                                    <option value="nv5">User5</option>
+                                <select class="select2_single form-control" name="author_id" tabindex="-1">
+                                    @foreach($listUser as $listU)
+                                    <option value="{{$listU->id}}">{{$listU->user_name}}</option>
+
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group row col-md-6 col-sm-6">
+                            <label class="control-label col-md-2 col-sm-2 ">Price</label>
+                            <div class="col-md-10 col-sm-10 ">
+                                <input type="text" name="price" class="form-control" placeholder="USD.....">
+                            </div>
+                        </div>
+                        <div class="form-group row col-md-6 col-sm-6">
+                            <label class="control-label col-md-2 col-sm-2 ">Discount price</label>
+                            <div class="col-md-10 col-sm-10 ">
+                                <input type="text" name="discout_price" class="form-control" placeholder="USD.....">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group row col-md-6 col-sm-6">
+                            <label class="control-label col-md-2 col-sm-2 ">Status</label>
+                            <div class="col-md-10 col-sm-10 ">
+                                <select class="select2_single form-control" name="status">
+
+                                    <option value="1">Đang hoạt động</option>
+                                    <option value="0">Ngưng hoạt động</option>
 
                                 </select>
                             </div>
                         </div>
+
+                        
+
+
                     </div>
-
-
-
-
-
 
 
                     <div class="ln_solid"></div>

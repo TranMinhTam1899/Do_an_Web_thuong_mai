@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\sub_categories;
+use App\sub_category;
 class SubCategoryController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $SCategorys = sub_category::all();
+        
+        // return view('client.pages.index', compact('SCategory'));
 
     }
 }

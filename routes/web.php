@@ -30,12 +30,12 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
-        // sản phẩm
-        Route::get('/add-product', function () {
-            return view('admin.pages.product.add-product');
-        })->name('add-product');
+        // // sản phẩm
+        // Route::get('/add-product', function () {
+        //     return view('admin.pages.product.add-product');
+        // })->name('add-product');
 
-        Route::get('/list-product', 'ProduceController@index')->name('listProduct');
+        // Route::get('/list-product', 'ProduceController@index')->name('listProduct');
         // shop
         Route::get('/add-shop', function () {
             return view('admin.pages.shop.add-shop');
@@ -82,6 +82,18 @@ Route::prefix('category')->group(function(){
         Route::get('cap-nhap/{id}','CategoryController@edit')->name('cap-nhat');
         Route::post('cap-nhap/{id}','CategoryController@update')->name('xu-ly-cap-nhat');
         Route::get('xoa/{id}', 'CategoryController@destroy')->name('xoa');
+    });
+});
+
+//produce
+Route::prefix('product')->group(function(){
+    Route::name('product.')->group(function(){
+        Route::get('/','ProduceController@index')->name('listProduct');
+        Route::get('add-product','ProduceController@create')->name('them-moi');
+        Route::post('add-product/create','ProduceController@store')->name('xu-ly-them-moi');
+        Route::get('cap-nhap/{id}','ProduceController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','ProduceController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'ProduceController@destroy')->name('xoa');
     });
 });
 

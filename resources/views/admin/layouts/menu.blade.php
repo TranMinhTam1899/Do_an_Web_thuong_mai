@@ -19,8 +19,8 @@
                 </li>
                 <li><a><i class="fa fa-pie-chart" aria-hidden="true"></i> Quản lý sản phẩm<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="{{route('admin.listProduct')}}">Danh sách sản phẩm</a></li>
-                    <li><a href="{{route('admin.add-product')}}">Thêm sản phẩm</a></li>
+                    <li><a href="{{route('product.listProduct')}}">Danh sách sản phẩm</a></li>
+                    <li><a href="{{route('product.them-moi')}}">Thêm sản phẩm</a></li>
                    
                   </ul>
                 </li>

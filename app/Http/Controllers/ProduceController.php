@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\produce;
+use App\category;
 use App\img;
+use App\user;
+use App\produce;
 class ProduceController extends Controller
 {
      /**
@@ -31,8 +33,12 @@ class ProduceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //return view('linh-vuc.form');
+    { 
+        // $listProducts= produce::all();
+        $listcategory=category::all();
+        $listUser =user::all();
+        return view('admin.pages.product.add-product', compact('listcategory','listUser'));
+
     }
 
     /**
@@ -43,10 +49,25 @@ class ProduceController extends Controller
      */
     public function store(Request $request)
     {
-        // $linhVuc = new LinhVuc;
-        // $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
-        // $linhVuc->save();
-        // return redirect()->route('linh-vuc.danh-sach');
+        // $this ->validate($request,[
+        //     ''
+        // ]);
+       
+        $listProduce = new produce ;
+        $listProduce->name = $request->name;
+        $listProduce->unit = $request->unit;
+        $listProduce->SKU = $request->SKU;
+        $listProduce->desc = $request->desc;
+        $listProduce->short_desc = $request->shortdesc;
+        $listProduce->category_id = $request->category_id;
+        $listProduce->author_id = $request->author_id;
+        $listProduce->price = $request->price;
+        $listProduce->discout_price = $request->discout_price;
+        $listProduce->status = $request->status;
+        $listProduce->top ="0";
+        $listProduce->save();
+        return redirect()->route('product.listProduct');
+        
     }
 
     /**
