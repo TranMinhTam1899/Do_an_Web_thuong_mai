@@ -95,15 +95,19 @@ list shop
                                                     <!-- <td tabindex="0" class="sorting_1">1</td> -->
                                                     <td>{{$vend->user_id}}</td>
                                                     <td>{{$vend->shop_name}}</td>
-                                                    <td>{{$vend->banner}}</td>
+                                                    <td>
+                                                    <img src="upload/banner/{{$vend->banner}}" alt="" style="height: 50px; width: 100px;">
+                                                    </td>
                                                     <td>{{$vend->desc}}</td>
-                                                    <td>{{$vend->logo}}</td>
+                                                    <td>
+                                                    <img src="upload/logo/{{$vend->logo}}" alt="" style="height: 50px; width: 100px;">
+                                                    </td>
                                                     <td>{{$vend->status}}</td>
                                                     <td class="text-center">
-                                                        <a href="#" class="btn btn-warning">
+                                                        <a href="{{asset('vendor.cap-nhat-vendor')}}" class="btn btn-warning">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         </a>
-                                                        <button class="btn btn-danger">
+                                                        <a href="#" class="btn btn-danger">
                                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                         </button>
 

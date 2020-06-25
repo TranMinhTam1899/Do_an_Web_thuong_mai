@@ -23,3 +23,6 @@ div#datatable-responsive_filter label i {
 div#datatable-responsive_filter .input-sm::placeholder{
   color: #cccccc;
 }
+.nav-md .container.body .col-md-3.left_col{
+  width: 245px !important;
+}

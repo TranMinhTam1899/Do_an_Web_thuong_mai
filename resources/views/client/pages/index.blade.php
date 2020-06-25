@@ -16,8 +16,7 @@ Home
             <div class="col-lg-12">
                 <div class="li-product-tab">
                     <ul class="nav li-product-menu">
-                        <li><a class="active" data-toggle="tab" href="#"><span>Khuyến mãi cực
-                                    sốc</span></a></li>
+                        <li><a class="active" data-toggle="tab" href="#"><span>Hot Deals Products</span></a></li>
 
                         </li>
                     </ul>
@@ -378,338 +377,308 @@ Home
     </div>
 </div>
 <!-- Li's Static Banner Area End Here -->
-<!-- Begin Li's Laptop Product Area -->
-<section class="product-area li-laptop-product pt-60 pb-45">
+<!-- Begin Featured Product With Banner Area -->
+<div class="featured-pro-with-banner mt-sm-5 pb-sm-10 mt-xs-5 pb-xs-10 mb-30">
     <div class="container">
         <div class="row">
-            <!-- Begin Li's Section Area -->
-            <div class="col-lg-12">
-                <div class="li-section-title">
-                    <h2>
-                        <span>Sản phẩm nổi bật nhất</span>
-                    </h2>
-                    <ul class="li-sub-category-list">
-                        <li class="active"><a href="{{route('client.detail')}}">Điện thoại </a></li>
-                        <li><a href="{{route('client.detail')}}">Laptop</a></li>
-                        <li><a href="{{route('client.detail')}}">đồng hồ</a></li>
-                    </ul>
+            <!-- Begin Li's Featured Banner Area -->
+            <div class="col-lg-3 text-center">
+                <div class="single-banner featured-banner">
+                    <a href="#">
+                        <img src="{{asset('assets/client/images/banner/featured-banner.jpg')}}"
+                            alt="Li's Featured Banner">
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="product-active owl-carousel">
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight ">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/1.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
+            </div>
+            <!-- Li's Featured Banner Area End Here -->
+            <!-- Begin Featured Product Area -->
+            <div class="col-lg-9">
+                <div class="featured-product pt-sm-30 pt-xs-30">
+                    <div class="li-section-title">
+                        <h2>
+                            <span>Featured Products</span>
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <div class="featured-product-active owl-carousel owl-theme">
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper  mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
                                             </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
                                         </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Accusantium
-                                                dolorem1</a></h4>
-                                        <div class="price-box">
-                                            <span class="new-price">$46.80</span>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-product-wrap end -->
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/2.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Studio Design</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Mug Today is a
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
                                                 good day</a></h4>
-                                        <div class="price-box">
+                                        <div class="featured-price-box">
                                             <span class="new-price new-price-2">$71.80</span>
                                             <span class="old-price">$77.22</span>
                                             <span class="discount-percentage">-7%</span>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- single-product-wrap end -->
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/3.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper  mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
                                             </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
                                         </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Accusantium
-                                                dolorem1</a></h4>
-                                        <div class="price-box">
-                                            <span class="new-price">$46.80</span>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-product-wrap end -->
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/4.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Studio Design</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Mug Today is a
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
                                                 good day</a></h4>
-                                        <div class="price-box">
+                                        <div class="featured-price-box">
                                             <span class="new-price new-price-2">$71.80</span>
                                             <span class="old-price">$77.22</span>
                                             <span class="discount-percentage">-7%</span>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- single-product-wrap end -->
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/5.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper  mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Graphic Corner</a>
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
                                             </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
                                         </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Accusantium
-                                                dolorem1</a></h4>
-                                        <div class="price-box">
-                                            <span class="new-price">$46.80</span>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-product-wrap end -->
-                        </div>
-                        <div class="col-lg-12">
-                            <!-- single-product-wrap start -->
-                            <div class="single-product-wrap wow bounceInRight">
-                                <div class="product-image">
-                                    <a href="{{route('client.detail')}}">
-                                        <img src="{{asset('assets/client/images/product/large-size/6.jpg')}}"
-                                            alt="Li's Product Image">
-                                    </a>
-                                    <span class="sticker">New</span>
-                                </div>
-                                <div class="product_desc">
-                                    <div class="product_desc_info">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="{{route('client.detail')}}">Studio Design</a>
-                                            </h5>
-                                            <div class="rating-box">
-                                                <ul class="rating">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                    <li class="no-star"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <h4><a class="product_name" href="{{route('client.detail')}}">Mug Today is a
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
                                                 good day</a></h4>
-                                        <div class="price-box">
+                                        <div class="featured-price-box">
                                             <span class="new-price new-price-2">$71.80</span>
                                             <span class="old-price">$77.22</span>
                                             <span class="discount-percentage">-7%</span>
                                         </div>
-                                    </div>
-                                    <div class="add-actions action__overplay">
-                                        <ul class="add-actions-link">
-                                            <li class="add-cart heart"><a class="links-details " href="wishlist.html"><i
-                                                        class="fa fa-heart"></i></a></li>
-                                            <li class="add-cart "><a href="#" title="quick view" class="quick-view-btn"
-                                                    data-toggle="modal" data-target="#exampleModalCenter"><i
-                                                        class="fa fa-eye"></i></a></li>
-
-
-                                        </ul>
-                                        <div class="add-cart active "><a href="#"><i class="fa fa-cart-arrow-down fa-7x"
-                                                    aria-hidden="true"></i></a>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- single-product-wrap end -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="featured-product-active owl-carousel owl-theme">
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
+                                            </h5>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
+                                                good day</a></h4>
+                                        <div class="featured-price-box">
+                                            <span class="new-price new-price-2">$71.80</span>
+                                            <span class="old-price">$77.22</span>
+                                            <span class="discount-percentage">-7%</span>
+                                        </div>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
+                                            </h5>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
+                                                good day</a></h4>
+                                        <div class="featured-price-box">
+                                            <span class="new-price new-price-2">$71.80</span>
+                                            <span class="old-price">$77.22</span>
+                                            <span class="discount-percentage">-7%</span>
+                                        </div>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item featured-product-item">
+                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                    <div class="product-img">
+                                        <a href="product-details.html">
+                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                        </a>
+                                    </div>
+                                    <div class="featured-pro-content">
+                                        <div class="product-review">
+                                            <h5 class="manufacturer">
+                                                <a href="shop-left-sidebar.html">Studio Design</a>
+                                            </h5>
+                                        </div>
+                                        <div class="rating-box">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                                <li class="no-star"><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
+                                                good day</a></h4>
+                                        <div class="featured-price-box">
+                                            <span class="new-price new-price-2">$71.80</span>
+                                            <span class="old-price">$77.22</span>
+                                            <span class="discount-percentage">-7%</span>
+                                        </div>
+                                        <div class="featured-product-action action__overplay">
+                                            <ul class="add-actions-link">
+                                                <li class="add-cart active"><a href="#"><i
+                                                            class="fa fa-cart-arrow-down fa-7x"
+                                                            aria-hidden="true"></i></a></li>
+                                                <li><a class="links-details" href="single-product.html"><i
+                                                            class="fa fa-heart"></i></a></li>
+                                                <li><a class="quick-view" data-toggle="modal"
+                                                        data-target="#exampleModalCenter" href="#"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Li's Section Area End Here -->
+            <!-- Featured Product Area End Here -->
         </div>
     </div>
-</section>
-<!-- Li's Laptop Product Area End Here -->
+</div>
+<!-- Featured Product With Banner Area End Here -->
+
 <!-- Begin Li's TV & Audio Product Area -->
 <section class="product-area li-laptop-product li-tv-audio-product pb-45 wow">
     <div class="container">
@@ -718,7 +687,7 @@ Home
             <div class="col-lg-12">
                 <div class="li-section-title">
                     <h2>
-                        <span>Sản phẩm được tìm nhiều nhất</span>
+                        <span>Most searched products</span>
                     </h2>
                 </div>
                 <div class="row">
@@ -1072,7 +1041,7 @@ Home
             <div class="col-lg-12">
                 <div class="li-product-tab li-trending-product-tab">
                     <h2>
-                        <span>Sản phẩm dành cho bạn</span>
+                        <span>Products for you</span>
                     </h2>
                     <ul class="li-sub-category-list">
                         <li><a href="{{ route('client.list-product')}}">Xem thêm</a></li>
@@ -1085,14 +1054,13 @@ Home
                         <div id="grid-view" class="tab-pane fade active show" role="tabpanel">
                             <div class="product-area shop-product-area">
                                 <div class="row">
-                                @foreach($listProduces as $lproduct)
+                                    @foreach($listProduces as $lproduct)
                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-40">
                                         <!-- single-product-wrap start -->
                                         <div class="single-product-wrap wow bounceInLeft" data-wow-duration="3s">
                                             <div class="product-image">
                                                 <a href="{{route('client.detail')}}">
-                                                    <img src="{{asset($lproduct->url)}}"
-                                                        alt="Li's Product Image">
+                                                    <img src="{{asset($lproduct->url)}}" alt="Li's Product Image">
                                                 </a>
                                                 <span class="sticker">New</span>
                                             </div>
@@ -1193,7 +1161,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1247,7 +1215,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1301,7 +1269,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1355,7 +1323,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1409,7 +1377,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1463,7 +1431,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1517,7 +1485,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1571,7 +1539,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1625,7 +1593,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1679,7 +1647,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1733,7 +1701,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1787,7 +1755,7 @@ Home
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
                                                     <li class="wishlist"><a href="wishlist.html"><i
-                                                                class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                class="fa fa-heart"></i>Add to wishlist</a></li>
                                                     <li><a class="quick-view" data-toggle="modal"
                                                             data-target="#exampleModalCenter" href="#"><i
                                                                 class="fa fa-eye"></i>Quick view</a></li>
@@ -1926,7 +1894,7 @@ Home
                                     </form>
                                 </div>
                                 <div class="product-additional-info pt-25">
-                                    <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to
+                                    <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart"></i>Add to
                                         wishlist</a>
                                     <div class="product-social-sharing pt-25">
                                         <ul>
@@ -1952,6 +1920,10 @@ Home
 
 
 <!-- Quick View | Modal Area End Here -->
+
+
+
+
 
 
 @endsection

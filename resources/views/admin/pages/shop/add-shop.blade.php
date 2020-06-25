@@ -13,84 +13,62 @@ add shop
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
-                <form class="form-horizontal form-label-left">
+                @if(isset($vendor))
+
+                @else
+                <form class="form-horizontal form-label-left" action="{{route('vendor.xu-ly-them-moi-vendor')}}"
+                    method="POST" enctype="multipart/form-data">
+                    @endif
+                    @csrf
                     <div class="row">
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Shop name</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="Shop name.....">
+                                <input type="text" class="form-control" name="shop_name" placeholder="Shop name.....">
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Password</label>
+                            <label class="control-label col-md-2 col-sm-2">Username</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="password" class="form-control" placeholder="Password.....">
+                                <select name="id_user" id="" class="form-control">
+                                @foreach($dataUser as $data)
+                                    <option value="{{ $data->id}}">{{ $data->user_name}}</option>
+                                  @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">First name</label>
+                            <label class="control-label col-md-2 col-sm-2 ">Banner</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="First name.....">
+                                <input type="file" name="bannerFile">
+                                <img src="" alt="img_banner" style="height: 30px; width: 50px;">
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Last name</label>
+                            <label class="control-label col-md-2 col-sm-2 ">Logo</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="text" class="form-control" placeholder="Last name.....">
+                                <input type="file" name="logoFile">
+                                <img src="" alt="img_logo" style="height: 30px; width: 30px;">
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group row col-md-6 col-sm-6 ">
-                            <label class="control-label col-md-2 col-sm-2 ">Birthday</label>
+                            <label class="control-label col-md-2 col-sm-2 ">Desc</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="date" class="form-control">
+                                <textarea name="desc" class="form-control" id="" cols="10" rows="5"
+                                    placeholder="Desc....."></textarea>
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6 ">
-                            <label class="control-label col-md-2 col-sm-2 ">Images</label>
+                            <label class="control-label col-md-2 col-sm-2 ">Status</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="file" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group row col-md-6 col-sm-6 ">
-                            <label class="control-label col-md-2 col-sm-2 ">Email</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <input type="email" class="form-control" placeholder="Email.....">
-                            </div>
-                        </div>
-                        <div class="form-group row col-md-6 col-sm-6 ">
-                            <label class="control-label col-md-2 col-sm-2 ">Phone</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <input type="phone" class="form-control" placeholder="Phone.....">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group row col-md-6 col-sm-6 ">
-                            <label class="control-label col-md-2 col-sm-2 ">Address</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <textarea name="add_dress" id="" cols="10" rows="5" class="form-control"
-                                placeholder="Address....."></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group row col-md-6 col-sm-6">
-                            <label class="control-label col-md-2 col-sm-2 ">Gender</label>
-                            <div class="col-md-10 col-sm-10 ">
-                                <select class="select2_single form-control" tabindex="-1">
-                                    <option>----!-----</option>
-                                    <option value="nv1">User1</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv2">User2</option>
-                                    <option value="nv4">User4</option>
-                                    <option value="nv5">User5</option>
-
+                                <select name="status" id="" class="form-control">
+                                    <option value="1">Đang kích hoạt</option>
+                                    <option value="0">Ngưng kích hoạt</option>
                                 </select>
                             </div>
                         </div>

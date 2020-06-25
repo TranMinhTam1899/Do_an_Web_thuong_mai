@@ -30,18 +30,7 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
-        // // sản phẩm
-        // Route::get('/add-product', function () {
-        //     return view('admin.pages.product.add-product');
-        // })->name('add-product');
-
-        // Route::get('/list-product', 'ProduceController@index')->name('listProduct');
-        // shop
-        Route::get('/add-shop', function () {
-            return view('admin.pages.shop.add-shop');
-        })->name('add-shop');
-
-        Route::get('/list-shop', 'VendorController@index')->name('list-shop');
+     
         
         // user
         Route::get('/add-user', function () {
@@ -65,6 +54,8 @@ Route::prefix('admin')->group(function(){
         Route::get('/list-post', function () {
             return view('admin.pages.post.list-post');
         })->name('list-post');
+
+        // sub_category
 
         // setting
         Route::get('/setting', function () {
@@ -96,6 +87,32 @@ Route::prefix('product')->group(function(){
         Route::get('xoa/{id}', 'ProduceController@destroy')->name('xoa');
     });
 });
+
+// vendor
+Route::prefix('vendor')->group(function(){
+    Route::name('vendor.')->group(function(){
+        Route::get('/','VendorController@index')->name('listVendor');
+        Route::get('add-vendor','VendorController@create')->name('them-moi-vendor');
+        Route::post('add-vendor/create','VendorController@store')->name('xu-ly-them-moi-vendor');
+        Route::get('cap-nhap/{id}','VendorController@edit')->name('cap-nhat-vendor');
+        Route::post('cap-nhap/{id}','VendorController@update')->name('xu-ly-cap-nhat-vendor');
+        Route::get('xoa/{id}', 'VendorController@destroy')->name('xoa-vendor');
+    });
+});
+
+
+
+
+// sub_category
+Route::prefix('sub_category')->group(function(){
+    Route::name('sub_category.')->group(function(){
+        Route::get('/', function () {return view('admin.pages.sub_category.list-sub_category');})->name('listSubCategory');
+        Route::get('/add-sub_category', function () {return view('admin.pages.sub_category.add-sub_category');})->name('them-moi-sub-category');
+ 
+    });
+});
+
+
 
 // group shop
 Route::prefix('shop')->group(function(){

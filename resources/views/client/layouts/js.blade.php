@@ -46,3 +46,6 @@
     <script>
         new WOW().init();
     </script>
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-double-up"></i></a>
+
+    
