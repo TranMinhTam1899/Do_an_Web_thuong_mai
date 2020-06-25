@@ -18,8 +18,8 @@ Thêm sản phẩm
 
                 @else
 
-                <form class="form-horizontal form-label-left" action="{{route('product.xu-ly-them-moi')}}"
-                    method="POST">
+                <form  class="form-horizontal form-label-left" action="{{route('product.xu-ly-them-moi')}}" 
+                    method="POST" enctype="multipart/form-data">
                     @endif
                     @csrf
                     <div class="row">
@@ -32,10 +32,11 @@ Thêm sản phẩm
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Images</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="file" name="img">
+                                <input type="file" name="imgFile" id="imgFile" >
                             </div>
                         </div>
 
+                       
 
                     </div>
                     <div class="row">
@@ -84,7 +85,6 @@ Thêm sản phẩm
                                 <select class="select2_single form-control" name="category_id" tabindex="-1">
                                     @foreach($listcategory as $listC)
                                     <option value="{{$listC->id}}">{{$listC -> name}}</option>
-
                                     @endforeach
                                 </select>
                             </div>
