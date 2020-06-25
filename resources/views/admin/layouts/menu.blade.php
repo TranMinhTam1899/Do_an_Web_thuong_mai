@@ -14,8 +14,8 @@
                 </li>
                 <li><a><i class="fa fa-users" aria-hidden="true"></i> Quản lý user<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                  <li><a href="{{route('admin.add-user')}}">Thêm user</a></li>
-                    <li><a href="{{route('admin.list-user')}}">Danh sách user</a></li>
+                  <li><a href="{{route('user.them-moi')}}">Thêm user</a></li>
+                    <li><a href="{{route('user.listUser')}}">Danh sách user</a></li>
                     
                   </ul>
                 </li>
