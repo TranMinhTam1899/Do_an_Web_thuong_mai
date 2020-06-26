@@ -38,7 +38,7 @@ Thêm sản catagory
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12 text-center">
-                            <button type="submit" class="btn btn-success">Add Category</button>
+                            <button type="submit" class="btn btn_submit">Add Category</button>
                         </div>
                     </div>
 

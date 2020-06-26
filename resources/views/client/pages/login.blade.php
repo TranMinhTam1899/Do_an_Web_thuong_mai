@@ -44,6 +44,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/client/css/responsive.css') }}">
     <!-- Modernizr js -->
+    <link rel="stylesheet" href="{{ asset('assets/client/css/custom.css') }}">
     <script src="{{ asset('assets/client/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 
@@ -52,7 +53,7 @@
     <div class="body-wrapper">
 
         <!-- Begin Login Content Area -->
-        <div class="page-section">
+        <div class="page-section page-section-login">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
@@ -68,11 +69,11 @@
                                 <div class="row">
                                     <div class="col-md-12 col-12 mb-20">
                                         <label><i class="fa fa-user fa-2x"></i> Username</label>
-                                        <input class="mb-0" type="email" placeholder="Username">
+                                        <input class="mb-0 form-control" type="email" placeholder="Username">
                                     </div>
                                     <div class="col-12 mb-20">
                                         <label><i class="fa fa-lock fa-2x"></i> Password</label>
-                                        <input class="mb-0" type="password" placeholder="Password">
+                                        <input class="mb-0 form-control" type="password" placeholder="Password">
                                     </div>
                                     <div class="col-md-8">
 
@@ -81,7 +82,7 @@
                                         <a href="#"> Forgotten pasward?</a>
                                     </div>
                                     <div class="col-md-12">
-                                        <button class="form-control register-button mt-0 ">Login</button>
+                                        <button type="submit" class="form-control register-button mt-0 ">Login</button>
                                     </div>
 
                                 </div>

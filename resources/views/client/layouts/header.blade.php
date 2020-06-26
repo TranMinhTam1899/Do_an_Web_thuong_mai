@@ -28,7 +28,7 @@
 
                                   <!-- Begin Currency Area -->
                                   <li>
-                                      <a href="#">
+                                      <a href="#" id="frm_register">
                                           <i class="fa fa-user-plus pr-1"></i>
                                           <span class="currency-selector-wrapper" data-toggle="modal"
                                               data-target="#registerModal">Sign up</span>
@@ -57,45 +57,57 @@
                                                                                   <div class="row">
                                                                                       <div
                                                                                           class="col-md-6 col-12 mb-20">
-                                                                                          <label>First Name</label>
+                                                                                          <label>Name (*)</label>
                                                                                           <input class="mb-0"
-                                                                                              type="text"
+                                                                                              type="text" name="cus_name"
                                                                                               placeholder="First Name">
                                                                                       </div>
                                                                                       <div
                                                                                           class="col-md-6 col-12 mb-20">
-                                                                                          <label>Last Name</label>
+                                                                                          <label>Gender</label>
+                                                                                          <select name="res_gender" name="cus_gender" id="res_gender">
+                                                                                              <option value="Male">Male</option>
+                                                                                              <option value="Female">Female</option>
+                                                                                          </select>
+                                                                                      </div>
+                                                                                      <div class="col-md-6 mb-20">
+                                                                                          <label>Email</label>
                                                                                           <input class="mb-0"
-                                                                                              type="text"
-                                                                                              placeholder="Last Name">
+                                                                                              type="email" name="cus_email"
+                                                                                              placeholder="Email Address">
+                                                                                      </div>
+                                                                                      <div class="col-md-6 mb-20">
+                                                                                          <label>phone</label>
+                                                                                          <input class="mb-0"
+                                                                                              type="phone" name="cus_phone"
+                                                                                              placeholder="Email Address">
                                                                                       </div>
                                                                                       <div class="col-md-12 mb-20">
-                                                                                          <label>Email
-                                                                                              Address*</label>
+                                                                                          <label>Address</label>
                                                                                           <input class="mb-0"
-                                                                                              type="email"
-                                                                                              placeholder="Email Address">
+                                                                                              type="email" name="cus_address"
+                                                                                              placeholder="Address">
                                                                                       </div>
                                                                                       <div class="col-md-6 mb-20">
                                                                                           <label>Password</label>
                                                                                           <input class="mb-0"
-                                                                                              type="password"
+                                                                                              type="password" name="cus_pass"
                                                                                               placeholder="Password">
                                                                                       </div>
                                                                                       <div class="col-md-6 mb-20">
                                                                                           <label>Confirm
                                                                                               Password</label>
                                                                                           <input class="mb-0"
-                                                                                              type="password"
+                                                                                              type="password" name="cus_repass"
                                                                                               placeholder="Confirm Password">
                                                                                       </div>
                                                                                       <div class="col-12">
                                                                                           <button
                                                                                               class="register-button mt-0">Register</button>
 
-                                                                                        <p>
-                                                                                        <a href="#">Sing in</a>
-                                                                                        </p>
+                                                                                          <p class="text-right">
+                                                                                              <a href="#loginModal">Sing in</a>
+                                                                                          </p>
                                                                                       </div>
                                                                                   </div>
                                                                               </div>
@@ -135,19 +147,18 @@
                                                       </div>
                                                       <div class="modal-body">
                                                           <!-- Begin Login Content Area -->
-                                                          <div class="page-section mb-60">
+                                                          <div class="page-section mb-60" >
                                                               <div class="container">
                                                                   <div class="row">
                                                                       <div class="col-sm-12">
                                                                           <!-- Login Form s-->
-                                                                          <form action="#">
+                                                                          <form action="#" >
                                                                               <div class="login-form">
 
                                                                                   <div class="row">
                                                                                       <div
                                                                                           class="col-md-12 col-12 mb-20">
-                                                                                          <label>Email
-                                                                                              Address*</label>
+                                                                                          <label>Email Address*</label>
                                                                                           <input class="mb-0"
                                                                                               type="email"
                                                                                               placeholder="Email Address">
@@ -176,8 +187,8 @@
                                                                                           class="col-lg-12 text-center">
                                                                                           <button
                                                                                               class="face-button btn mx-1">
-                                                                                              <i
-                                                                                                  class="fab fa-facebook-f"></i>
+                                                                                              <i class="fa fa-facebook"
+                                                                                                  aria-hidden="true"></i>
                                                                                           </button>
 
 

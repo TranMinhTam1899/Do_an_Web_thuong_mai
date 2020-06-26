@@ -338,8 +338,8 @@ input {
 }
 select {
 	width: 100%;
-	background: #eceff8;
-	border: 2px solid #eceff8;
+	/* background: #eceff8; */
+	/* border: 2px solid #eceff8; */
 	height: 45px;
 	padding-left: 10px;
 	box-shadow: none;
@@ -3027,7 +3027,7 @@ text-align: center;
 	display: block;
 	width: 100%;
 	border: 1px solid #e7e7e7;
-	z-index: 9;
+	z-index: 1000;
 }
 .category-menu-2 .category-menu-list > ul {
 	background: #fff;

@@ -140,7 +140,7 @@ Thêm sản phẩm
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12 text-center">
-                            <button type="submit" class="btn btn-success">Add product</button>
+                            <button type="submit" class="btn btn_submit">Add product</button>
                         </div>
                     </div>
 

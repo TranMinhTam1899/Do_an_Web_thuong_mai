@@ -26,3 +26,20 @@ div#datatable-responsive_filter .input-sm::placeholder{
 .nav-md .container.body .col-md-3.left_col{
   width: 245px !important;
 }
+
+.bg_btnAdd, .btn_submit{
+  margin-top: 10px !important;
+  background: #0a4b8f !important;
+  color: #ffffff;
+}
+
+.main_container .top_nav, .nav-md .container.body .right_col, footer {
+  margin-left: 245px;
+}
+.btn:hover{
+  color: #ffc107;
+}
+
+.x_title h2{
+  font-weight: bold;
+}

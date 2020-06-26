@@ -10,10 +10,7 @@ list shop
         <div class="x_panel">
             <div class="x_title">
                 <h2 class="text-center">Danh sách cửa hàng</h2>
-              
-               
                 <ul class="nav navbar-right panel_toolbox">
-                    
                     <li>
                         <div id="datatable-responsive_filter" class="dataTables_filter">
                             <label><i class="fa fa-search" aria-hidden="true"></i></label>
@@ -33,14 +30,7 @@ list shop
                                 class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="dataTables_length" id="datatable-responsive_length"><label>Show
-                                                <select name="datatable-responsive_length"
-                                                    aria-controls="datatable-responsive" class="form-control input-sm">
-                                                    <option value="10">10</option>
-                                                    <option value="25">25</option>
-                                                    <option value="50">50</option>
-                                                    <option value="100">100</option>
-                                                </select> entries</label></div>
+                                       <a href="{{route('vendor.them-moi-vendor')}}" class="btn bg_btnAdd">Add vendor &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="col-sm-6">
 
@@ -96,20 +86,23 @@ list shop
                                                     <td>{{$vend->user_id}}</td>
                                                     <td>{{$vend->shop_name}}</td>
                                                     <td>
-                                                    <img src="upload/banner/{{$vend->banner}}" alt="" style="height: 50px; width: 100px;">
+                                                        <img src="upload/banner/{{$vend->banner}}" alt=""
+                                                            style="height: 50px; width: 100px;">
                                                     </td>
                                                     <td>{{$vend->desc}}</td>
                                                     <td>
-                                                    <img src="upload/logo/{{$vend->logo}}" alt="" style="height: 50px; width: 100px;">
+                                                        <img src="upload/logo/{{$vend->logo}}" alt=""
+                                                            style="height: 50px; width: 100px;">
                                                     </td>
                                                     <td>{{$vend->status}}</td>
                                                     <td class="text-center">
-                                                        <a href="{{asset('vendor.cap-nhat-vendor')}}" class="btn btn-warning">
+                                                        <a href="{{asset('vendor.cap-nhat-vendor')}}"
+                                                            class="btn btn-warning">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         </a>
                                                         <a href="#" class="btn btn-danger">
                                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </button>
+                                                            </button>
 
                                                     </td>
                                                 </tr>
@@ -118,10 +111,10 @@ list shop
                                         </table>
                                     </div>
                                 </div>
-                               
-               
+
+
                             </div>
-                           
+
 
                         </div>
                     </div>
@@ -131,11 +124,8 @@ list shop
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-5">
-        <div class="dataTables_info" id="datatable-responsive_info" role="status" aria-live="polite">Showing 1 to 10 of
-            57 entries</div>
-    </div>
-    <div class="col-sm-7">
+    
+    <div class="col-sm-12">
         <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
             <ul class="pagination">
                 <li class="paginate_button previous disabled" id="datatable-responsive_previous"><a href="#"

@@ -33,6 +33,29 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {   
+        $getbannerFile = '';
+	    if($request->hasFile('bannerFile')){
+		//Hàm kiểm tra dữ liệu
+		// $this->validate($request, 
+		// 	[
+		// 		Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
+		// 		'hinhthe' => 'mimes:jpg,jpeg,png,gif|max:2048',
+		// 	],			
+		// 	[
+		// 		Tùy chỉnh hiển thị thông báo không thõa điều kiện
+		// 		'hinhthe.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
+		// 		'hinhthe.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
+		// 	]
+		// );
+		
+		//Lưu hình ảnh vào thư mục public/upload/hinhthe
+		$hinhthe = $request->file('hinhthe');
+		$gethinhthe = time().'_'.$hinhthe->getClientOriginalName();
+		$destinationPath = public_path('upload/hinhthe');
+		$hinhthe->move($destinationPath, $gethinhthe);
+	}
+
+
         $vendor = new vendor;
         $vendor->shop_name = $request->shop_name;
         $vendor->user_id = $request->id_user;

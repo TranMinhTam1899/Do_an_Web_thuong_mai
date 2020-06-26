@@ -324,7 +324,7 @@ Trang chi tiet
             <div class="col-lg-12">
                 <div class="li-section-title">
                     <h2>
-                        <span>15 other products in the same category:</span>
+                        <span>Other products in the same category:</span>
                     </h2>
                 </div>
                 <div class="row">

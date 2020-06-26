@@ -76,9 +76,10 @@
     transition: all .5s;
 }
 
-.add-cart.active:hover{  
-    background: #0c3ee0 ;
+.add-cart.active:hover{
+    background: #0c3ee0;
     padding: 20px 25px;
+    left: 33%;
 }
 .add-cart.active:hover i{  
     color: white;
@@ -110,4 +111,38 @@ p.seller_num {
     width: 100% !important;
     text-align: center;
     padding-left: 0 !;
+}
+.dataTables_wrapper {
+    margin-top: 10px !important;
+}
+
+
+/* login */
+.page-section.page-section-login {
+    margin: 10% auto;
+}
+h4.login-title {
+    text-align: center;
+    font-family: auto;
+    font-size: 34px;
+    font-weight: bold;
+}
+button.form-control.register-button {
+    font-family: auto;
+    font-size: 18px;
+    font-weight: bold;
+    background: #0a4b8f;
+    color: #ffffff;
+    cursor: pointer;
+}
+button.form-control.register-button:focus, button.face-button:focus{
+    box-shadow: none;
+}
+button.face-button {
+    width: 100%;
+    background: #4267b2;
+    color: #ffffff;
+}
+.logo_bit img {
+    width: 100%;
 }

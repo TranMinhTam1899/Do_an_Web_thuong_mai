@@ -54,9 +54,9 @@
         <!-- Header Area End Here -->
         
         <!-- content -->
-        <div class="container">
+       
              @yield('content')
-        </div>
+       
       
         <!-- end content -->
         <!-- Begin Footer Area -->

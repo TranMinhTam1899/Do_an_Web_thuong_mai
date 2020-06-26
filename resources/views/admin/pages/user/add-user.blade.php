@@ -103,7 +103,7 @@ thêm mới user
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12 text-center">
-                            <button type="submit" class="btn btn-success">Add user</button>
+                            <button type="submit" class="btn btn_submit">Add user</button>
                         </div>
                     </div>
 

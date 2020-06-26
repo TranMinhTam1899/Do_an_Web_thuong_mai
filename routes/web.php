@@ -30,8 +30,7 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
-     
-        
+    
         // user
         Route::get('/add-user', function () {
             return view('admin.pages.user.add-user');
@@ -112,6 +111,13 @@ Route::prefix('sub_category')->group(function(){
     });
 });
 
+// customer
+// sub_category
+Route::prefix('customer')->group(function(){
+    Route::name('customer.')->group(function(){
+        Route::get('/', 'CustomerController@index')->name('listCustomer');
+    });
+});
 
 
 // group shop

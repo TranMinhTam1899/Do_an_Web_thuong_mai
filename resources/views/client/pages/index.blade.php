@@ -383,7 +383,7 @@ Home
         <div class="row">
             <!-- Begin Li's Featured Banner Area -->
             <div class="col-lg-3 text-center">
-                <div class="single-banner featured-banner">
+                <div class="single-banner featured-banner wow bounceInLeft" data-wow-duration="4s">
                     <a href="#">
                         <img src="{{asset('assets/client/images/banner/featured-banner.jpg')}}"
                             alt="Li's Featured Banner">
@@ -399,19 +399,20 @@ Home
                             <span>Featured Products</span>
                         </h2>
                     </div>
-                    <div class="row">
+                    <div class="row wow bounceInUp" data-wow-duration="4s">
                         <div class="featured-product-active owl-carousel owl-theme">
+                            @foreach($prouctTop as $pTop)
                             <div class="item featured-product-item">
                                 <div class="featured-pro-wrapper  mb-sm-25">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                            <img alt="" src="{{asset($pTop->url) }}">
                                         </a>
                                     </div>
                                     <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
+                                                <a href="shop-left-sidebar.html">{{$pTop->name}}</a>
                                             </h5>
                                         </div>
                                         <div class="rating-box">
@@ -426,8 +427,8 @@ Home
                                         <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
                                                 good day</a></h4>
                                         <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
+                                            <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
+                                            <span class="old-price">{{$pTop->price}}</span>
                                             <span class="discount-percentage">-7%</span>
                                         </div>
                                         <div class="featured-product-action action__overplay">
@@ -445,109 +446,23 @@ Home
                                     </div>
                                 </div>
                             </div>
-                            <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper  mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
-                                            </h5>
-                                        </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
-                                                good day</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
-                                            <span class="discount-percentage">-7%</span>
-                                        </div>
-                                        <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper  mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
-                                            </h5>
-                                        </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
-                                                good day</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
-                                            <span class="discount-percentage">-7%</span>
-                                        </div>
-                                        <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row wow bounceInRight" data-wow-duration="4s">
                         <div class="featured-product-active owl-carousel owl-theme">
+                        @foreach($prouctTop as $pTop)
                             <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
+                                <div class="featured-pro-wrapper  mb-sm-25">
                                     <div class="product-img">
                                         <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
+                                            <img alt="" src="{{asset($pTop->url) }}">
                                         </a>
                                     </div>
                                     <div class="featured-pro-content">
                                         <div class="product-review">
                                             <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
+                                                <a href="shop-left-sidebar.html">{{$pTop->name}}</a>
                                             </h5>
                                         </div>
                                         <div class="rating-box">
@@ -562,8 +477,8 @@ Home
                                         <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
                                                 good day</a></h4>
                                         <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
+                                            <span class="new-price new-price-2">{{$pTop->discout_price}}</span>
+                                            <span class="old-price">{{$pTop->price}}</span>
                                             <span class="discount-percentage">-7%</span>
                                         </div>
                                         <div class="featured-product-action action__overplay">
@@ -581,94 +496,7 @@ Home
                                     </div>
                                 </div>
                             </div>
-                            <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
-                                            </h5>
-                                        </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
-                                                good day</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
-                                            <span class="discount-percentage">-7%</span>
-                                        </div>
-                                        <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item featured-product-item">
-                                <div class="featured-pro-wrapper mb-30 mb-sm-25">
-                                    <div class="product-img">
-                                        <a href="product-details.html">
-                                            <img alt="" src="{{asset('assets/client/images/featured-product/1.jpg')}}">
-                                        </a>
-                                    </div>
-                                    <div class="featured-pro-content">
-                                        <div class="product-review">
-                                            <h5 class="manufacturer">
-                                                <a href="shop-left-sidebar.html">Studio Design</a>
-                                            </h5>
-                                        </div>
-                                        <div class="rating-box">
-                                            <ul class="rating">
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                                <li class="no-star"><i class="fa fa-star"></i></li>
-                                            </ul>
-                                        </div>
-                                        <h4><a class="featured-product-name" href="single-product.html">Mug Today is a
-                                                good day</a></h4>
-                                        <div class="featured-price-box">
-                                            <span class="new-price new-price-2">$71.80</span>
-                                            <span class="old-price">$77.22</span>
-                                            <span class="discount-percentage">-7%</span>
-                                        </div>
-                                        <div class="featured-product-action action__overplay">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#"><i
-                                                            class="fa fa-cart-arrow-down fa-7x"
-                                                            aria-hidden="true"></i></a></li>
-                                                <li><a class="links-details" href="single-product.html"><i
-                                                            class="fa fa-heart"></i></a></li>
-                                                <li><a class="quick-view" data-toggle="modal"
-                                                        data-target="#exampleModalCenter" href="#"><i
-                                                            class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -1007,7 +835,7 @@ Home
 </section>
 <!-- Li's TV & Audio Product Area End Here -->
 <!-- Begin Li's Static Home Area -->
-<div class="li-static-home wow flipInX" data-wow-duration="2s">
+<div class="li-static-home wow flipInX" data-wow-duration="3s">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -1087,6 +915,7 @@ Home
                                                         <span class="new-price">{{$lproduct->price}}</span>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="add-actions action__overplay">
                                                     <ul class="add-actions-link">
                                                         <li class="add-cart heart"><a class="links-details "
@@ -1104,6 +933,7 @@ Home
                                                                 aria-hidden="true"></i></a>
                                                     </div>
                                                 </div>
+                                            
                                             </div>
                                         </div>
                                         <!-- single-product-wrap end -->

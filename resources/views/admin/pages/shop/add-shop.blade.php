@@ -42,7 +42,7 @@ add shop
                         <div class="form-group row col-md-6 col-sm-6">
                             <label class="control-label col-md-2 col-sm-2 ">Banner</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <input type="file" name="bannerFile">
+                                <input type="file" name="bannerFile" id="bannerFile">
                                 <img src="" alt="img_banner" style="height: 30px; width: 50px;">
                             </div>
                         </div>
@@ -81,7 +81,7 @@ add shop
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12 text-center">
-                            <button type="submit" class="btn btn-success">Add shop</button>
+                            <button type="submit" class="btn btn_submit">Add shop</button>
                         </div>
                     </div>
 
