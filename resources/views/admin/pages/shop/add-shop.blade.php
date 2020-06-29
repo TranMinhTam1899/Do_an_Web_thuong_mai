@@ -43,7 +43,7 @@ add shop
                             <label class="control-label col-md-2 col-sm-2 ">Banner</label>
                             <div class="col-md-10 col-sm-10 ">
                                 <input type="file" name="bannerFile" id="bannerFile">
-                                <img src="" alt="img_banner" style="height: 30px; width: 50px;">
+                                <img src="" alt="img_banner"  style="height: 30px; width: 50px;">
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">

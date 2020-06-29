@@ -1896,7 +1896,7 @@ ul.ht-menu a:hover {
 		transition: all 0.3s ease-in-out 0s;
 		box-shadow: 0 1px 2px 2px rgba(0,0,0,0.2);
 		width: 220px;
-		z-index: 99;
+		z-index: 101;
 		border-radius: 3px;
 }
 .hb-menu nav ul > li:hover > ul.hb-dropdown {
@@ -3027,7 +3027,7 @@ text-align: center;
 	display: block;
 	width: 100%;
 	border: 1px solid #e7e7e7;
-	z-index: 1000;
+	z-index: 100;
 }
 .category-menu-2 .category-menu-list > ul {
 	background: #fff;

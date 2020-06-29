@@ -106,7 +106,8 @@
                                                                                               class="register-button mt-0">Register</button>
 
                                                                                           <p class="text-right">
-                                                                                              <a href="#loginModal">Sing in</a>
+                                                                                              <a href="#loginModal"  data-dismiss="modal"
+                                                              aria-label="Close" id="goLogin" data-toggle="modal" data-target="#loginModal">Sign in</a>
                                                                                           </p>
                                                                                       </div>
                                                                                   </div>
@@ -194,6 +195,10 @@
 
                                                                                       </div>
                                                                                   </div>
+                                                                                  <p class="text-right">
+                                                                                              <a href="#"  data-dismiss="modal"
+                                                              aria-label="Close" id="goRegister" data-toggle="modal" data-target="#registerModal">Sign up</a>
+                                                                                          </p>
                                                                               </div>
                                                                           </form>
                                                                       </div>

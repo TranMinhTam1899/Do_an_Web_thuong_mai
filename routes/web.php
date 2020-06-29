@@ -156,12 +156,7 @@ Route::prefix('shop')->group(function(){
     });
 });
 
-// group client
-// Route::prefix('shop')->group(function(){
-//     Route::name('shop.')->group(function(){
 
-//     });
-// });
 
 Route::get('/client/about', function () {
     return view('client.pages.about');

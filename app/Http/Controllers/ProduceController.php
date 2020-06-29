@@ -49,9 +49,7 @@ class ProduceController extends Controller
      */
     public function store(Request $request)
     {
-        // $this ->validate($request,[
-        //     ''
-        // ]);
+
        
         $listProduce = new produce ;
         $listProduce->name = $request->name;

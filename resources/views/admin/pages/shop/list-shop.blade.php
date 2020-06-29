@@ -30,7 +30,8 @@ list shop
                                 class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                       <a href="{{route('vendor.them-moi-vendor')}}" class="btn bg_btnAdd">Add vendor &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
+                                        <a href="{{route('vendor.them-moi-vendor')}}" class="btn bg_btnAdd">Add vendor
+                                            &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="col-sm-6">
 
@@ -100,9 +101,27 @@ list shop
                                                             class="btn btn-warning">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         </a>
-                                                        <a href="#" class="btn btn-danger">
+                                                        <a  onclick="del()" href="#" class="btn btn-danger">
                                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                            </button>
+                                                        </a>
+                                                        <script>
+                                                        function del() {
+                                                            Swal.fire({
+                                                                title: 'Bạn có chắc chấn xóa !',
+                                                                type: 'warning',
+                                                                showCancelButton: true,
+                                                                confirmButtonColor: '#3085d6',
+                                                                cancelButtonColor: '#d33',
+                                                                confirmButtonText: 'Có',
+                                                                cancelButtonText: 'không'
+                                                            }).then((result) => {
+                                                                if (result.value) {
+                                                                    open("{{route('vendor.xoa-vendor', ['id'=>$vend->id])}}",
+                                                                        "_self")
+                                                                }
+                                                            })
+                                                        };
+                                                        </script>
 
                                                     </td>
                                                 </tr>
@@ -124,7 +143,7 @@ list shop
     </div>
 </div>
 <div class="row">
-    
+
     <div class="col-sm-12">
         <div class="dataTables_paginate paging_simple_numbers" id="datatable-responsive_paginate">
             <ul class="pagination">

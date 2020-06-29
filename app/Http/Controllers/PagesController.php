@@ -15,7 +15,6 @@ class PagesController extends Controller
         $Category=category::all();
         $SCategorys=sub_category::all();
         $prouctTop=DB::table('produces')->join('imgs', 'produces.id', '=', 'imgs.produce_id')->where('top','>=','21')->get();
-        // echo  $prouctTop;
         return view('client.pages.index', compact('Category','listProduces','SCategorys','prouctTop'));       
     }
 }

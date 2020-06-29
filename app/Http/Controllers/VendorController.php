@@ -21,7 +21,6 @@ class VendorController extends Controller
     public function create()
     {
         $dataUser = user::all();
-        // echo $dataUser;
         return view('admin.pages.shop.add-shop', compact('dataUser'));
     }
 
@@ -33,36 +32,27 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {   
-        $getbannerFile = '';
-	    if($request->hasFile('bannerFile')){
-		//Hàm kiểm tra dữ liệu
-		// $this->validate($request, 
-		// 	[
-		// 		Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
-		// 		'hinhthe' => 'mimes:jpg,jpeg,png,gif|max:2048',
-		// 	],			
-		// 	[
-		// 		Tùy chỉnh hiển thị thông báo không thõa điều kiện
-		// 		'hinhthe.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
-		// 		'hinhthe.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
-		// 	]
-		// );
-		
-		//Lưu hình ảnh vào thư mục public/upload/hinhthe
-		$hinhthe = $request->file('hinhthe');
-		$gethinhthe = time().'_'.$hinhthe->getClientOriginalName();
-		$destinationPath = public_path('upload/hinhthe');
-		$hinhthe->move($destinationPath, $gethinhthe);
-	}
-
-
+       
         $vendor = new vendor;
         $vendor->shop_name = $request->shop_name;
         $vendor->user_id = $request->id_user;
-        $vendor->banner = $request->bannerFile->getClientOriginalName();
+        // $vendor->banner = $request->bannerFile->getClientOriginalName();
+        $get_images_banner=$request->file('bannerFile');
         $vendor->desc =  $request->desc;
-        $vendor->logo = $request->logoFile->getClientOriginalName();
+        // $vendor->logo = $request->logoFile->getClientOriginalName();
+        $get_images_logo=$request->file('logoFile');
         $vendor->status ="1";
+        // images banner
+        if($get_images_banner && $get_images_logo){
+            $new_images_banner=$request->bannerFile->getClientOriginalName();
+            $new_images_logo=$request->logoFile->getClientOriginalName();
+            $get_images_banner->move('upload/banner', $new_images_banner);
+            $get_images_logo->move('upload/logo', $new_images_logo);
+            $vendor->banner = $new_images_banner;
+            $vendor->logo = $new_images_logo;
+            $vendor->save();
+        }
+      
         $vendor->save();
         return redirect()->route('vendor.listVendor');
     }
@@ -113,8 +103,8 @@ class VendorController extends Controller
      */
     public function destroy($id)
     {
-        // $linhVuc = LinhVuc::find($id);
-        // $linhVuc->delete();
-        // return redirect()->route('linh-vuc.danh-sach');
+        $deleteVendor = vendor::find($id);
+        $deleteVendor->delete();
+        return redirect()->route('vendor.listVendor');
     }
 }
