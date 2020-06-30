@@ -5,7 +5,6 @@ namespace Illuminate\Redis\Connections;
 use Closure;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Redis\Events\CommandExecuted;
-<<<<<<< HEAD
 use Illuminate\Redis\Limiters\DurationLimiterBuilder;
 use Illuminate\Redis\Limiters\ConcurrencyLimiterBuilder;
 
@@ -18,17 +17,6 @@ abstract class Connection
      * The Predis client.
      *
      * @var \Predis\Client
-=======
-use Illuminate\Redis\Limiters\ConcurrencyLimiterBuilder;
-use Illuminate\Redis\Limiters\DurationLimiterBuilder;
-
-abstract class Connection
-{
-    /**
-     * The Redis client.
-     *
-     * @var \Redis
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $client;
 
@@ -116,11 +104,7 @@ abstract class Connection
      * Run a command against the Redis database.
      *
      * @param  string  $method
-<<<<<<< HEAD
      * @param  array   $parameters
-=======
-     * @param  array  $parameters
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return mixed
      */
     public function command($method, array $parameters = [])

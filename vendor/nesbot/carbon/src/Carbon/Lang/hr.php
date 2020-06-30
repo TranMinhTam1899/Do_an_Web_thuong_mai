@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - François B
@@ -51,10 +47,7 @@ return [
     'from_now' => 'za :time',
     'after' => ':time poslije',
     'before' => ':time prije',
-<<<<<<< HEAD
     'diff_now' => 'sad',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'jučer',
     'diff_tomorrow' => 'sutra',
     'diff_before_yesterday' => 'prekjučer',
@@ -100,11 +93,7 @@ return [
     'months' => ['siječnja', 'veljače', 'ožujka', 'travnja', 'svibnja', 'lipnja', 'srpnja', 'kolovoza', 'rujna', 'listopada', 'studenoga', 'prosinca'],
     'months_standalone' => ['siječanj', 'veljača', 'ožujak', 'travanj', 'svibanj', 'lipanj', 'srpanj', 'kolovoz', 'rujan', 'listopad', 'studeni', 'prosinac'],
     'months_short' => ['sij.', 'velj.', 'ožu.', 'tra.', 'svi.', 'lip.', 'srp.', 'kol.', 'ruj.', 'lis.', 'stu.', 'pro.'],
-<<<<<<< HEAD
     'months_regexp' => '/(D[oD]?(\[[^\[\]]*\]|\s)+MMMM?|L{2,4}|l{2,4})/',
-=======
-    'months_regexp' => '/D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'weekdays' => ['nedjelju', 'ponedjeljak', 'utorak', 'srijedu', 'četvrtak', 'petak', 'subotu'],
     'weekdays_standalone' => ['nedjelja', 'ponedjeljak', 'utorak', 'srijeda', 'četvrtak', 'petak', 'subota'],
     'weekdays_short' => ['ned.', 'pon.', 'uto.', 'sri.', 'čet.', 'pet.', 'sub.'],

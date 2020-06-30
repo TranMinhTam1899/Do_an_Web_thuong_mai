@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,12 +11,6 @@ namespace PHPUnit\Util;
 
 use Closure;
 
-<<<<<<< HEAD
-=======
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class GlobalState
 {
     /**
@@ -36,12 +26,6 @@ final class GlobalState
         '_REQUEST',
     ];
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws Exception
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function getIncludedFilesAsString(): string
     {
         return static::processIncludedFilesAsString(\get_included_files());
@@ -49,11 +33,6 @@ final class GlobalState
 
     /**
      * @param string[] $files
-<<<<<<< HEAD
-=======
-     *
-     * @throws Exception
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function processIncludedFilesAsString(array $files): string
     {
@@ -92,7 +71,6 @@ final class GlobalState
 
     public static function getIniSettingsAsString(): string
     {
-<<<<<<< HEAD
         $result      = '';
         $iniSettings = \ini_get_all(null, false);
 
@@ -101,15 +79,6 @@ final class GlobalState
                 '@ini_set(%s, %s);' . "\n",
                 self::exportVariable($key),
                 self::exportVariable($value)
-=======
-        $result = '';
-
-        foreach (\ini_get_all(null, false) as $key => $value) {
-            $result .= \sprintf(
-                '@ini_set(%s, %s);' . "\n",
-                self::exportVariable($key),
-                self::exportVariable((string) $value)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             );
         }
 
@@ -193,11 +162,7 @@ final class GlobalState
                 $result = false;
             }
 
-<<<<<<< HEAD
             if ($result === false) {
-=======
-            if (!$result) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 break;
             }
         }

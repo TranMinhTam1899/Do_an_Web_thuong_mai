@@ -2,7 +2,6 @@
 
 namespace Illuminate\View;
 
-<<<<<<< HEAD
 use Exception;
 use Throwable;
 use ArrayAccess;
@@ -17,23 +16,6 @@ use Illuminate\Contracts\Support\MessageProvider;
 use Illuminate\Contracts\View\View as ViewContract;
 
 class View implements ArrayAccess, ViewContract
-=======
-use ArrayAccess;
-use BadMethodCallException;
-use Exception;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Contracts\Support\MessageProvider;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Contracts\View\Engine;
-use Illuminate\Contracts\View\View as ViewContract;
-use Illuminate\Support\MessageBag;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Macroable;
-use Throwable;
-
-class View implements ArrayAccess, Htmlable, ViewContract
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use Macroable {
         __call as macroCall;
@@ -107,11 +89,7 @@ class View implements ArrayAccess, Htmlable, ViewContract
         try {
             $contents = $this->renderContents();
 
-<<<<<<< HEAD
             $response = isset($callback) ? call_user_func($callback, $this, $contents) : null;
-=======
-            $response = isset($callback) ? $callback($this, $contents) : null;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             // Once we have the contents of the view, we will flush the sections if we are
             // done rendering all views so that there is nothing left hanging over when
@@ -438,19 +416,6 @@ class View implements ArrayAccess, Htmlable, ViewContract
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Get content as a string of HTML.
-     *
-     * @return string
-     */
-    public function toHtml()
-    {
-        return $this->render();
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the string contents of the view.
      *
      * @return string

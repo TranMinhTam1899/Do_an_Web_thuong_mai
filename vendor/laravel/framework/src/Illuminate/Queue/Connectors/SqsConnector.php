@@ -3,13 +3,8 @@
 namespace Illuminate\Queue\Connectors;
 
 use Aws\Sqs\SqsClient;
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Queue\SqsQueue;
-=======
-use Illuminate\Queue\SqsQueue;
-use Illuminate\Support\Arr;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SqsConnector implements ConnectorInterface
 {

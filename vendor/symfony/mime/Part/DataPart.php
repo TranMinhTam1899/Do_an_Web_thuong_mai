@@ -17,11 +17,6 @@ use Symfony\Component\Mime\MimeTypes;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class DataPart extends TextPart
 {
@@ -62,11 +57,7 @@ class DataPart extends TextPart
         }
 
         if (false === $handle = @fopen($path, 'r', false)) {
-<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Unable to open path "%s".', $path));
-=======
-            throw new InvalidArgumentException(sprintf('Unable to open path "%s"', $path));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         $p = new self($handle, $name ?: basename($path), $contentType);
         $p->handle = $handle;
@@ -112,7 +103,6 @@ class DataPart extends TextPart
         return $headers;
     }
 
-<<<<<<< HEAD
     public function asDebugString(): string
     {
         $str = parent::asDebugString();
@@ -123,8 +113,6 @@ class DataPart extends TextPart
         return $str;
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function generateContentId(): string
     {
         return bin2hex(random_bytes(16)).'@symfony';
@@ -137,12 +125,9 @@ class DataPart extends TextPart
         }
     }
 
-<<<<<<< HEAD
     /**
      * @return array
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function __sleep()
     {
         // converts the body to a string

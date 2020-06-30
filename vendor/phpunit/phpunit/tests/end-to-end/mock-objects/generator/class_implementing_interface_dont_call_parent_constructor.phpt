@@ -1,11 +1,7 @@
 --TEST--
 \PHPUnit\Framework\MockObject\Generator::generate('Foo', [], 'MockFoo', true)
 --FILE--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 interface IFoo
 {
     public function __construct($bar);
@@ -29,7 +25,6 @@ $mock = $generator->generate(
     true
 );
 
-<<<<<<< HEAD
 print $mock['code'];
 ?>
 --EXPECT--
@@ -90,15 +85,4 @@ class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
             $this->__phpunit_invocationMocker = null;
         }
     }
-=======
-print $mock->getClassCode();
---EXPECTF--
-declare(strict_types=1);
-
-class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
-{
-    use \PHPUnit\Framework\MockObject\Api;
-    use \PHPUnit\Framework\MockObject\Method;
-    use \PHPUnit\Framework\MockObject\MockedCloneMethod;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

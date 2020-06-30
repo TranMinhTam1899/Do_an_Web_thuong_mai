@@ -2,7 +2,6 @@
 
 namespace Illuminate\Mail;
 
-<<<<<<< HEAD
 use ReflectionClass;
 use ReflectionProperty;
 use Illuminate\Support\Str;
@@ -16,21 +15,6 @@ use Illuminate\Contracts\Queue\Factory as Queue;
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Mail\Mailable as MailableContract;
 use Illuminate\Contracts\Filesystem\Factory as FilesystemFactory;
-=======
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Filesystem\Factory as FilesystemFactory;
-use Illuminate\Contracts\Mail\Mailable as MailableContract;
-use Illuminate\Contracts\Mail\Mailer as MailerContract;
-use Illuminate\Contracts\Queue\Factory as Queue;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Support\Collection;
-use Illuminate\Support\HtmlString;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\ForwardsCalls;
-use Illuminate\Support\Traits\Localizable;
-use ReflectionClass;
-use ReflectionProperty;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Mailable implements MailableContract, Renderable
 {

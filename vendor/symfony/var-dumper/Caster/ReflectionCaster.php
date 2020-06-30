@@ -17,11 +17,8 @@ use Symfony\Component\VarDumper\Cloner\Stub;
  * Casts Reflector related classes to array representation.
  *
  * @author Nicolas Grekas <p@tchwork.com>
-<<<<<<< HEAD
  *
  * @final since Symfony 4.4
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class ReflectionCaster
 {
@@ -83,13 +80,6 @@ class ReflectionCaster
 
     public static function castGenerator(\Generator $c, array $a, Stub $stub, $isNested)
     {
-<<<<<<< HEAD
-=======
-        if (!class_exists('ReflectionGenerator', false)) {
-            return $a;
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // Cannot create ReflectionGenerator based on a terminated Generator
         try {
             $reflectionGenerator = new \ReflectionGenerator($c);
@@ -142,13 +132,7 @@ class ReflectionCaster
         } else {
             $function = new FrameStub($frame, false, true);
             $function = ExceptionCaster::castFrameStub($function, [], $function, true);
-<<<<<<< HEAD
             $a[$prefix.'executing'] = $function[$prefix.'src'];
-=======
-            $a[$prefix.'executing'] = new EnumStub([
-                "\0~separator= \0".$frame['class'].$frame['type'].$frame['function'].'()' => $function[$prefix.'src'],
-            ]);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $a[Caster::PREFIX_VIRTUAL.'closed'] = false;
@@ -222,11 +206,7 @@ class ReflectionCaster
             $a[$prefix.'parameters'] = new EnumStub($a[$prefix.'parameters']);
         }
 
-<<<<<<< HEAD
         if (!($filter & Caster::EXCLUDE_VERBOSE) && $v = $c->getStaticVariables()) {
-=======
-        if ($v = $c->getStaticVariables()) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ($v as $k => &$v) {
                 if (\is_object($v)) {
                     $a[$prefix.'use']['$'.$k] = new CutStub($v);
@@ -377,11 +357,7 @@ class ReflectionCaster
         return $signature;
     }
 
-<<<<<<< HEAD
     private static function addExtra(array &$a, \Reflector $c)
-=======
-    private static function addExtra(&$a, \Reflector $c)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $x = isset($a[Caster::PREFIX_VIRTUAL.'extra']) ? $a[Caster::PREFIX_VIRTUAL.'extra']->value : [];
 
@@ -397,11 +373,7 @@ class ReflectionCaster
         }
     }
 
-<<<<<<< HEAD
     private static function addMap(array &$a, \Reflector $c, array $map, string $prefix = Caster::PREFIX_VIRTUAL)
-=======
-    private static function addMap(&$a, \Reflector $c, $map, $prefix = Caster::PREFIX_VIRTUAL)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($map as $k => $m) {
             if (method_exists($c, $m) && false !== ($m = $c->$m()) && null !== $m) {

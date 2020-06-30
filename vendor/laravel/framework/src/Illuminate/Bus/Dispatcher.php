@@ -3,21 +3,12 @@
 namespace Illuminate\Bus;
 
 use Closure;
-<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Contracts\Queue\Queue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Bus\QueueingDispatcher;
-=======
-use Illuminate\Contracts\Bus\QueueingDispatcher;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Queue\Queue;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Pipeline\Pipeline;
-use RuntimeException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Dispatcher implements QueueingDispatcher
 {

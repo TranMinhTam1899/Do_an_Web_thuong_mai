@@ -1,7 +1,6 @@
 CHANGELOG
 ---------
 
-<<<<<<< HEAD
 ### v3.5.2, 2020.05.21
 
 - Removed extra semicolon in short closures, since is not part of the closure's body.
@@ -23,8 +22,6 @@ CHANGELOG
 
 - Fixed a [bug](https://github.com/opis/closure/issues/40) that prevented serialization to work correctly.
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 ### v3.4.0, 2019.09.03
 
 - Added `createClosure` static method in `Opis\Closure\SerializableClosure`.

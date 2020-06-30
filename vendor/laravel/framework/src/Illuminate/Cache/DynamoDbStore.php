@@ -2,7 +2,6 @@
 
 namespace Illuminate\Cache;
 
-<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
@@ -13,18 +12,6 @@ use Illuminate\Contracts\Cache\LockProvider;
 use Aws\DynamoDb\Exception\DynamoDbException;
 
 class DynamoDbStore implements Store, LockProvider
-=======
-use Aws\DynamoDb\DynamoDbClient;
-use Aws\DynamoDb\Exception\DynamoDbException;
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Str;
-use RuntimeException;
-
-class DynamoDbStore implements LockProvider, Store
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use InteractsWithTime;
 
@@ -164,10 +151,6 @@ class DynamoDbStore implements LockProvider, Store
         $now = Carbon::now();
 
         return array_merge(collect(array_flip($keys))->map(function () {
-<<<<<<< HEAD
-=======
-            //
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         })->all(), collect($response['Responses'][$this->table])->mapWithKeys(function ($response) use ($now) {
             if ($this->isExpired($response, $now)) {
                 $value = null;

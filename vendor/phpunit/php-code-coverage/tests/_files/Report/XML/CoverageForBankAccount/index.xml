@@ -2,11 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <build time="%s" phpunit="%s" coverage="%s">
     <runtime name="%s" version="%s" url="%s"/>
-<<<<<<< HEAD
     <driver name="%s" version="%s"/>
-=======
-    <driver%S/>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
   </build>
   <project source="%s">
     <tests>

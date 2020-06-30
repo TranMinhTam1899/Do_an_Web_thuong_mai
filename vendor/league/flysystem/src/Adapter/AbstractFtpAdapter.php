@@ -557,13 +557,10 @@ abstract class AbstractFtpAdapter extends AbstractAdapter
      */
     protected function normalizePermissions($permissions)
     {
-<<<<<<< HEAD
         if (is_numeric($permissions)) {
             return ((int) $permissions) & 0777;
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // remove the type identifier
         $permissions = substr($permissions, 1);
 

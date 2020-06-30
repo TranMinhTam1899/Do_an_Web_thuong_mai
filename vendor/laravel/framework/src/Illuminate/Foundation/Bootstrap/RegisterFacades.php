@@ -2,17 +2,10 @@
 
 namespace Illuminate\Foundation\Bootstrap;
 
-<<<<<<< HEAD
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Foundation\PackageManifest;
 use Illuminate\Contracts\Foundation\Application;
-=======
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Foundation\PackageManifest;
-use Illuminate\Support\Facades\Facade;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RegisterFacades
 {

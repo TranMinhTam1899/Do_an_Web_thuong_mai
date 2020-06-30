@@ -3,10 +3,6 @@
 namespace Illuminate\Foundation\Console;
 
 use Illuminate\Console\Command;
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Env;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Support\ProcessUtils;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\PhpExecutableFinder;
@@ -45,11 +41,7 @@ class ServeCommand extends Command
     {
         chdir(public_path());
 
-<<<<<<< HEAD
         $this->line("<info>Laravel development server started:</info> <http://{$this->host()}:{$this->port()}>");
-=======
-        $this->line("<info>Laravel development server started:</info> http://{$this->host()}:{$this->port()}");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         passthru($this->serverCommand(), $status);
 
@@ -120,11 +112,7 @@ class ServeCommand extends Command
         return [
             ['host', null, InputOption::VALUE_OPTIONAL, 'The host address to serve the application on', '127.0.0.1'],
 
-<<<<<<< HEAD
             ['port', null, InputOption::VALUE_OPTIONAL, 'The port to serve the application on', $_ENV['SERVER_PORT'] ?? null],
-=======
-            ['port', null, InputOption::VALUE_OPTIONAL, 'The port to serve the application on', Env::get('SERVER_PORT')],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             ['tries', null, InputOption::VALUE_OPTIONAL, 'The max number of ports to attempt to serve from', 10],
         ];

@@ -17,11 +17,8 @@ use Symfony\Component\VarDumper\Cloner\Stub;
  * Casts DateTimeInterface related classes to array representation.
  *
  * @author Dany Maillard <danymaillard93b@gmail.com>
-<<<<<<< HEAD
  *
  * @final since Symfony 4.4
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class DateCaster
 {
@@ -38,15 +35,11 @@ class DateCaster
             .($location ? ($d->format('I') ? "\nDST On" : "\nDST Off") : '')
         ;
 
-<<<<<<< HEAD
         unset(
             $a[Caster::PREFIX_DYNAMIC.'date'],
             $a[Caster::PREFIX_DYNAMIC.'timezone'],
             $a[Caster::PREFIX_DYNAMIC.'timezone_type']
         );
-=======
-        $a = [];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $a[$prefix.'date'] = new ConstStub(self::formatDateTime($d, $location ? ' e (P)' : ' P'), $title);
 
         $stub->class .= $d->format(' @U');
@@ -65,11 +58,7 @@ class DateCaster
         return $filter & Caster::EXCLUDE_VERBOSE ? $i : $i + $a;
     }
 
-<<<<<<< HEAD
     private static function formatInterval(\DateInterval $i): string
-=======
-    private static function formatInterval(\DateInterval $i)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $format = '%R ';
 
@@ -127,20 +116,12 @@ class DateCaster
         return $filter & Caster::EXCLUDE_VERBOSE ? $p : $p + $a;
     }
 
-<<<<<<< HEAD
     private static function formatDateTime(\DateTimeInterface $d, string $extra = ''): string
-=======
-    private static function formatDateTime(\DateTimeInterface $d, $extra = '')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $d->format('Y-m-d H:i:'.self::formatSeconds($d->format('s'), $d->format('u')).$extra);
     }
 
-<<<<<<< HEAD
     private static function formatSeconds(string $s, string $us): string
-=======
-    private static function formatSeconds($s, $us)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return sprintf('%02d.%s', $s, 0 === ($len = \strlen($t = rtrim($us, '0'))) ? '0' : ($len <= 3 ? str_pad($t, 3, '0') : $us));
     }

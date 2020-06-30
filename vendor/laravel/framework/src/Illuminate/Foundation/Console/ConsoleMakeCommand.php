@@ -3,13 +3,8 @@
 namespace Illuminate\Foundation\Console;
 
 use Illuminate\Console\GeneratorCommand;
-<<<<<<< HEAD
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-=======
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ConsoleMakeCommand extends GeneratorCommand
 {

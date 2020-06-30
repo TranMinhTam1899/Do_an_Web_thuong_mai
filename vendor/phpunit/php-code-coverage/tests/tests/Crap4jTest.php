@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -11,10 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 namespace SebastianBergmann\CodeCoverage\Report;
 
 use SebastianBergmann\CodeCoverage\TestCase;
@@ -24,11 +17,7 @@ use SebastianBergmann\CodeCoverage\TestCase;
  */
 class Crap4jTest extends TestCase
 {
-<<<<<<< HEAD
     public function testForBankAccountTest()
-=======
-    public function testForBankAccountTest(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $crap4j = new Crap4j;
 
@@ -38,11 +27,7 @@ class Crap4jTest extends TestCase
         );
     }
 
-<<<<<<< HEAD
     public function testForFileWithIgnoredLines()
-=======
-    public function testForFileWithIgnoredLines(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $crap4j = new Crap4j;
 
@@ -52,11 +37,7 @@ class Crap4jTest extends TestCase
         );
     }
 
-<<<<<<< HEAD
     public function testForClassWithAnonymousFunction()
-=======
-    public function testForClassWithAnonymousFunction(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $crap4j = new Crap4j;
 

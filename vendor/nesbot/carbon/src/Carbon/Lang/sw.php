@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - leyluj
  * - Josh Soref
@@ -45,12 +41,9 @@ return [
     'from_now' => ':time baadaye',
     'after' => ':time baada',
     'before' => ':time kabla',
-<<<<<<< HEAD
     'diff_now' => 'sasa hivi',
     'diff_yesterday' => 'jana',
     'diff_tomorrow' => 'kesho',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

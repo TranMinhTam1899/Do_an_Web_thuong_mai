@@ -68,7 +68,6 @@ class SymfonyQuestionHelper extends QuestionHelper
 
         $output->writeln($text);
 
-<<<<<<< HEAD
         $prompt = ' > ';
 
         if ($question instanceof ChoiceQuestion) {
@@ -78,17 +77,6 @@ class SymfonyQuestionHelper extends QuestionHelper
         }
 
         $output->write($prompt);
-=======
-        if ($question instanceof ChoiceQuestion) {
-            $width = max(array_map('strlen', array_keys($question->getChoices())));
-
-            foreach ($question->getChoices() as $key => $value) {
-                $output->writeln(sprintf("  [<comment>%-${width}s</comment>] %s", $key, $value));
-            }
-        }
-
-        $output->write(' > ');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

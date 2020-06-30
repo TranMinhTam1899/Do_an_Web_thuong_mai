@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Kunal Marwaha
  * - kostas
@@ -29,10 +25,7 @@
  * - Sebastian Thierer
  * - quinterocesar
  * - Daniel Commesse Liévanos (danielcommesse)
-<<<<<<< HEAD
  * - Pete Scopes (pdscopes)
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count año|:count años',
@@ -56,12 +49,9 @@ return [
     'second' => ':count segundo|:count segundos',
     'a_second' => 'unos segundos|:count segundos',
     's' => ':counts',
-<<<<<<< HEAD
     'millisecond' => ':count milisegundo|:count milisegundos',
     'a_millisecond' => 'un milisegundo|:count milisegundos',
     'ms' => ':countms',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => 'hace :time',
     'from_now' => 'en :time',
     'after' => ':time después',

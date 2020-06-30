@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,17 +9,7 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
-<<<<<<< HEAD
 class CountTest extends ConstraintTestCase
-=======
-use PHPUnit\Framework\ExpectationFailedException;
-use PHPUnit\Framework\TestFailure;
-
-/**
- * @small
- */
-final class CountTest extends ConstraintTestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testCount(): void
     {
@@ -157,34 +143,6 @@ final class CountTest extends ConstraintTestCase
         $this->assertTrue($countConstraint->evaluate($datePeriod, '', true));
     }
 
-<<<<<<< HEAD
-=======
-    public function testCountCanBeExportedToString(): void
-    {
-        $countConstraint = new Count(1);
-
-        $this->assertEquals('count matches 1', $countConstraint->toString());
-    }
-
-    public function testCountEvaluateReturnsNullWithNonCountableAndNonTraversableOther(): void
-    {
-        $countConstraint = new Count(1);
-
-        try {
-            $this->assertNull($countConstraint->evaluate(1));
-        } catch (ExpectationFailedException  $e) {
-            $this->assertEquals(
-                <<<EOF
-Failed asserting that actual size 0 matches expected size 1.
-
-EOF
-                ,
-                TestFailure::exceptionToString($e)
-            );
-        }
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @ticket https://github.com/sebastianbergmann/phpunit/issues/3743
      */

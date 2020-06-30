@@ -15,7 +15,6 @@
  * - Timo
  * - Michael Hohl
  * - Namoshek
-<<<<<<< HEAD
  * - Bernhard Baumrock (BernhardBaumrock)
  */
 return array_replace_recursive(require __DIR__.'/de.php', [
@@ -26,7 +25,3 @@ return array_replace_recursive(require __DIR__.'/de.php', [
         0 => 'Jän',
     ],
 ]);
-=======
- */
-return require __DIR__.'/de.php';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933

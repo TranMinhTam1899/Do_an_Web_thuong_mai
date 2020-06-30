@@ -54,7 +54,6 @@ abstract class ClassLike extends Node\Stmt
     }
 
     /**
-<<<<<<< HEAD
      * Gets property with the given name defined directly in this class/interface/trait.
      *
      * @param string $name Name of the property
@@ -75,8 +74,6 @@ abstract class ClassLike extends Node\Stmt
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Gets all methods defined directly in this class/interface/trait
      *
      * @return ClassMethod[]

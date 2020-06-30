@@ -4,13 +4,8 @@ namespace Illuminate\Console;
 
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-<<<<<<< HEAD
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-=======
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Parser
 {
@@ -45,13 +40,10 @@ class Parser
      */
     protected static function name($expression)
     {
-<<<<<<< HEAD
         if (trim($expression) === '') {
             throw new InvalidArgumentException('Console command definition is empty.');
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (! preg_match('/[^\s]+/', $expression, $matches)) {
             throw new InvalidArgumentException('Unable to determine command name from signature.');
         }

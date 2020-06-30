@@ -2,13 +2,8 @@
 
 namespace Illuminate\Database;
 
-<<<<<<< HEAD
 use PDOException;
 use Illuminate\Support\Str;
-=======
-use Illuminate\Support\Str;
-use PDOException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class QueryException extends PDOException
 {

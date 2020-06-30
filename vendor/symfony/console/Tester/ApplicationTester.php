@@ -59,28 +59,12 @@ class ApplicationTester
             $this->input->setInteractive($options['interactive']);
         }
 
-<<<<<<< HEAD
         if ($this->inputs) {
             $this->input->setStream(self::createStream($this->inputs));
-=======
-        $shellInteractive = getenv('SHELL_INTERACTIVE');
-
-        if ($this->inputs) {
-            $this->input->setStream(self::createStream($this->inputs));
-            putenv('SHELL_INTERACTIVE=1');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->initOutput($options);
 
-<<<<<<< HEAD
         return $this->statusCode = $this->application->run($this->input, $this->output);
-=======
-        $this->statusCode = $this->application->run($this->input, $this->output);
-
-        putenv($shellInteractive ? "SHELL_INTERACTIVE=$shellInteractive" : 'SHELL_INTERACTIVE');
-
-        return $this->statusCode;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

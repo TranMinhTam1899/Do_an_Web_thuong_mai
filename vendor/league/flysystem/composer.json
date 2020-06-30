@@ -1,24 +1,18 @@
 {
     "name": "league/flysystem",
-<<<<<<< HEAD
     "type": "library",
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     "description": "Filesystem abstraction: Many filesystems, one API.",
     "keywords": [
         "filesystem", "filesystems", "files", "storage", "dropbox", "aws",
         "abstraction", "s3", "ftp", "sftp", "remote", "webdav",
         "file systems", "cloud", "cloud files", "rackspace", "copy.com"
     ],
-<<<<<<< HEAD
     "funding": [
         {
             "type": "other",
             "url": "https://offset.earth/frankdejonge"
         }
     ],
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     "license": "MIT",
     "authors": [
         {
@@ -32,11 +26,7 @@
     },
     "require-dev": {
         "phpspec/phpspec": "^3.4",
-<<<<<<< HEAD
         "phpunit/phpunit": "^5.7.26"
-=======
-        "phpunit/phpunit": "^5.7.10"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "autoload": {
         "psr-4": {

@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - François B
@@ -38,10 +34,7 @@ return [
     'from_now' => ':time barru',
     'after' => ':time geroago',
     'before' => ':time lehenago',
-<<<<<<< HEAD
     'diff_now' => 'orain',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'atzo',
     'diff_tomorrow' => 'bihar',
     'formats' => [

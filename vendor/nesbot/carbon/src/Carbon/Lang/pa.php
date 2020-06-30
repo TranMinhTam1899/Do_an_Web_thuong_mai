@@ -25,10 +25,7 @@ return [
     'second' => 'ਕੁਝ ਸਕਿੰਟ|:count ਸਕਿੰਟ',
     'ago' => ':time ਪਿਛਲੇ',
     'from_now' => ':time ਵਿੱਚ',
-<<<<<<< HEAD
     'diff_now' => 'ਹੁਣ',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'ਕਲ',
     'diff_tomorrow' => 'ਕਲ',
     'formats' => [

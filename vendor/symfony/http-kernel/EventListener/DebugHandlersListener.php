@@ -15,23 +15,12 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\ConsoleEvents;
 use Symfony\Component\Console\Event\ConsoleEvent;
 use Symfony\Component\Console\Output\ConsoleOutputInterface;
-<<<<<<< HEAD
 use Symfony\Component\Debug\ErrorHandler as LegacyErrorHandler;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Symfony\Component\ErrorHandler\ErrorHandler;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Debug\FileLinkFormatter;
-=======
-use Symfony\Component\Debug\ErrorHandler;
-use Symfony\Component\Debug\ExceptionHandler;
-use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Debug\FileLinkFormatter;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
@@ -39,11 +28,8 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * Configures errors and exceptions handlers.
  *
  * @author Nicolas Grekas <p@tchwork.com>
-<<<<<<< HEAD
  *
  * @final since Symfony 4.4
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class DebugHandlersListener implements EventSubscriberInterface
 {
@@ -54,31 +40,18 @@ class DebugHandlersListener implements EventSubscriberInterface
     private $scream;
     private $fileLinkFormat;
     private $scope;
-<<<<<<< HEAD
-=======
-    private $charset;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private $firstCall = true;
     private $hasTerminatedWithException;
 
     /**
-<<<<<<< HEAD
      * @param callable|null                 $exceptionHandler A handler that must support \Throwable instances that will be called on Exception
-=======
-     * @param callable|null                 $exceptionHandler A handler that will be called on Exception
-     * @param LoggerInterface|null          $logger           A PSR-3 logger
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param array|int                     $levels           An array map of E_* to LogLevel::* or an integer bit field of E_* constants
      * @param int|null                      $throwAt          Thrown errors in a bit field of E_* constants, or null to keep the current value
      * @param bool                          $scream           Enables/disables screaming mode, where even silenced errors are logged
      * @param string|FileLinkFormatter|null $fileLinkFormat   The format for links to source files
      * @param bool                          $scope            Enables/disables scoping mode
      */
-<<<<<<< HEAD
     public function __construct(callable $exceptionHandler = null, LoggerInterface $logger = null, $levels = E_ALL, ?int $throwAt = E_ALL, bool $scream = true, $fileLinkFormat = null, bool $scope = true)
-=======
-    public function __construct(callable $exceptionHandler = null, LoggerInterface $logger = null, $levels = E_ALL, ?int $throwAt = E_ALL, bool $scream = true, $fileLinkFormat = null, bool $scope = true, string $charset = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->exceptionHandler = $exceptionHandler;
         $this->logger = $logger;
@@ -87,10 +60,6 @@ class DebugHandlersListener implements EventSubscriberInterface
         $this->scream = $scream;
         $this->fileLinkFormat = $fileLinkFormat;
         $this->scope = $scope;
-<<<<<<< HEAD
-=======
-        $this->charset = $charset;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -98,12 +67,9 @@ class DebugHandlersListener implements EventSubscriberInterface
      */
     public function configure(Event $event = null)
     {
-<<<<<<< HEAD
         if ($event instanceof ConsoleEvent && !\in_array(\PHP_SAPI, ['cli', 'phpdbg'], true)) {
             return;
         }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!$event instanceof KernelEvent ? !$this->firstCall : !$event->isMasterRequest()) {
             return;
         }
@@ -114,11 +80,7 @@ class DebugHandlersListener implements EventSubscriberInterface
         restore_exception_handler();
 
         if ($this->logger || null !== $this->throwAt) {
-<<<<<<< HEAD
             if ($handler instanceof ErrorHandler || $handler instanceof LegacyErrorHandler) {
-=======
-            if ($handler instanceof ErrorHandler) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if ($this->logger) {
                     $handler->setDefaultLogger($this->logger, $this->levels);
                     if (\is_array($this->levels)) {
@@ -149,18 +111,11 @@ class DebugHandlersListener implements EventSubscriberInterface
                 if (method_exists($kernel = $event->getKernel(), 'terminateWithException')) {
                     $request = $event->getRequest();
                     $hasRun = &$this->hasTerminatedWithException;
-<<<<<<< HEAD
                     $this->exceptionHandler = static function (\Throwable $e) use ($kernel, $request, &$hasRun) {
                         if ($hasRun) {
                             throw $e;
                         }
 
-=======
-                    $this->exceptionHandler = static function (\Exception $e) use ($kernel, $request, &$hasRun) {
-                        if ($hasRun) {
-                            throw $e;
-                        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         $hasRun = true;
                         $kernel->terminateWithException($e, $request);
                     };
@@ -170,7 +125,6 @@ class DebugHandlersListener implements EventSubscriberInterface
                 if ($output instanceof ConsoleOutputInterface) {
                     $output = $output->getErrorOutput();
                 }
-<<<<<<< HEAD
                 $this->exceptionHandler = static function (\Throwable $e) use ($app, $output) {
                     if (method_exists($app, 'renderThrowable')) {
                         $app->renderThrowable($e, $output);
@@ -181,78 +135,25 @@ class DebugHandlersListener implements EventSubscriberInterface
 
                         $app->renderException($e, $output);
                     }
-=======
-                $this->exceptionHandler = function ($e) use ($app, $output) {
-                    $app->renderException($e, $output);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 };
             }
         }
         if ($this->exceptionHandler) {
-<<<<<<< HEAD
             if ($handler instanceof ErrorHandler || $handler instanceof LegacyErrorHandler) {
                 $handler->setExceptionHandler($this->exceptionHandler);
-=======
-            if ($handler instanceof ErrorHandler) {
-                $h = $handler->setExceptionHandler('var_dump');
-                if (\is_array($h) && $h[0] instanceof ExceptionHandler) {
-                    $handler->setExceptionHandler($h);
-                    $handler = $h[0];
-                } else {
-                    $handler->setExceptionHandler($this->exceptionHandler);
-                }
-            }
-            if ($handler instanceof ExceptionHandler) {
-                $handler->setHandler($this->exceptionHandler);
-                if (null !== $this->fileLinkFormat) {
-                    $handler->setFileLinkFormat($this->fileLinkFormat);
-                }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $this->exceptionHandler = null;
         }
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @internal
-     */
-    public function onKernelException(GetResponseForExceptionEvent $event)
-    {
-        if (!$this->hasTerminatedWithException || !$event->isMasterRequest()) {
-            return;
-        }
-
-        $debug = $this->scream && $this->scope;
-        $controller = function (Request $request) use ($debug) {
-            $e = $request->attributes->get('exception');
-            $handler = new ExceptionHandler($debug, $this->charset, $this->fileLinkFormat);
-
-            return new Response($handler->getHtml($e), $e->getStatusCode(), $e->getHeaders());
-        };
-
-        (new ExceptionListener($controller, $this->logger, $debug))->onKernelException($event);
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function getSubscribedEvents()
     {
         $events = [KernelEvents::REQUEST => ['configure', 2048]];
 
-<<<<<<< HEAD
         if (\defined('Symfony\Component\Console\ConsoleEvents::COMMAND')) {
             $events[ConsoleEvents::COMMAND] = ['configure', 2048];
         }
 
-=======
-        if ('cli' === \PHP_SAPI && \defined('Symfony\Component\Console\ConsoleEvents::COMMAND')) {
-            $events[ConsoleEvents::COMMAND] = ['configure', 2048];
-        }
-
-        $events[KernelEvents::EXCEPTION] = ['onKernelException', -2048];
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $events;
     }
 }

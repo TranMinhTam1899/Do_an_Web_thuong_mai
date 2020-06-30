@@ -20,10 +20,6 @@ class Internet extends \Faker\Provider\Internet
     protected static $tld = array(
         'com', 'net', 'org', 'asia', 'tv', 'biz', 'info', 'in', 'name', 'co',
         'ac.id', 'sch.id', 'go.id', 'mil.id', 'co.id', 'or.id', 'web.id',
-<<<<<<< HEAD
         'my.id', 'biz.id', 'desa.id', 'id',
-=======
-        'my.id', 'biz.id', 'desa.id',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     );
 }

@@ -1,15 +1,12 @@
 CHANGELOG
 =========
 
-<<<<<<< HEAD
 4.4.0
 -----
 
  * deprecated `FlattenException`, use the `FlattenException` of the `ErrorHandler` component
  * deprecated the whole component in favor of the `ErrorHandler` component
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 

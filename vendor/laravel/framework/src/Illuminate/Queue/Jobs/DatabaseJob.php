@@ -3,13 +3,8 @@
 namespace Illuminate\Queue\Jobs;
 
 use Illuminate\Container\Container;
-<<<<<<< HEAD
 use Illuminate\Queue\DatabaseQueue;
 use Illuminate\Contracts\Queue\Job as JobContract;
-=======
-use Illuminate\Contracts\Queue\Job as JobContract;
-use Illuminate\Queue\DatabaseQueue;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DatabaseJob extends Job implements JobContract
 {

@@ -16,12 +16,9 @@ use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Translation\TranslatorInterface as LegacyTranslatorInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(IntlFormatter::class);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  */
@@ -38,11 +35,7 @@ class MessageFormatter implements MessageFormatterInterface, IntlFormatterInterf
         if ($translator instanceof MessageSelector) {
             $translator = new IdentityTranslator($translator);
         } elseif (null !== $translator && !$translator instanceof TranslatorInterface && !$translator instanceof LegacyTranslatorInterface) {
-<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s()" must be an instance of "%s", "%s" given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
-=======
-            throw new \TypeError(sprintf('Argument 1 passed to %s() must be an instance of %s, %s given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->translator = $translator ?? new IdentityTranslator();

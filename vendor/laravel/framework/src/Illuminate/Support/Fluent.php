@@ -3,19 +3,11 @@
 namespace Illuminate\Support;
 
 use ArrayAccess;
-<<<<<<< HEAD
 use JsonSerializable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
 
 class Fluent implements ArrayAccess, Arrayable, Jsonable, JsonSerializable
-=======
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use JsonSerializable;
-
-class Fluent implements Arrayable, ArrayAccess, Jsonable, JsonSerializable
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * All of the attributes set on the fluent instance.

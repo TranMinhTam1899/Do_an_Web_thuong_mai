@@ -2,15 +2,9 @@
 
 namespace Illuminate\Foundation\Auth;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Auth\Access\AuthorizationException;
-=======
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Auth\Events\Verified;
-use Illuminate\Http\Request;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait VerifiesEmails
 {
@@ -38,15 +32,7 @@ trait VerifiesEmails
      */
     public function verify(Request $request)
     {
-<<<<<<< HEAD
         if ($request->route('id') != $request->user()->getKey()) {
-=======
-        if (! hash_equals((string) $request->route('id'), (string) $request->user()->getKey())) {
-            throw new AuthorizationException;
-        }
-
-        if (! hash_equals((string) $request->route('hash'), sha1($request->user()->getEmailForVerification()))) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             throw new AuthorizationException;
         }
 

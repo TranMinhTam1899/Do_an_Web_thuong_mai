@@ -2,13 +2,8 @@
     "name": "vlucas/phpdotenv",
     "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
     "keywords": ["env", "dotenv", "environment"],
-<<<<<<< HEAD
     "license": "BSD-3-Clause",
     "authors": [
-=======
-    "license" : "BSD-3-Clause",
-    "authors" : [
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         {
             "name": "Graham Campbell",
             "email": "graham@alt-three.com",
@@ -21,20 +16,13 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
         "php": "^5.4 || ^7.0 || ^8.0",
-=======
-        "php": "^5.4 || ^7.0",
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "phpoption/phpoption": "^1.5",
         "symfony/polyfill-ctype": "^1.9"
     },
     "require-dev": {
-<<<<<<< HEAD
         "ext-filter": "*",
         "ext-pcre": "*",
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
     },
     "autoload": {
@@ -42,7 +30,6 @@
             "Dotenv\\": "src/"
         }
     },
-<<<<<<< HEAD
     "suggest": {
         "ext-filter": "Required to use the boolean validator.",
         "ext-pcre": "Required to use most of the library."
@@ -51,8 +38,6 @@
         "preferred-install": "dist",
         "platform-check": false
     },
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     "extra": {
         "branch-alias": {
             "dev-master": "3.6-dev"

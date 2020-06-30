@@ -1,7 +1,6 @@
 CHANGELOG
 =========
 
-<<<<<<< HEAD
 4.4.0
 -----
 
@@ -9,8 +8,6 @@ CHANGELOG
  * deprecated accepting STDIN implicitly when using the `lint:xliff` command, use `lint:xliff -` (append a dash) instead to make it explicit.
  * Marked the `TranslationDataCollector` class as `@final`.
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 

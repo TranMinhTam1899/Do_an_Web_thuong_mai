@@ -3,7 +3,6 @@ Routing Component
 
 The Routing component maps an HTTP request to a set of configuration variables.
 
-<<<<<<< HEAD
 Getting Started
 ---------------
 
@@ -46,12 +45,6 @@ Resources
 ---------
 
   * [Documentation](https://symfony.com/doc/current/routing.html)
-=======
-Resources
----------
-
-  * [Documentation](https://symfony.com/doc/current/components/routing/index.html)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
   * [Contributing](https://symfony.com/doc/current/contributing/index.html)
   * [Report issues](https://github.com/symfony/symfony/issues) and
     [send Pull Requests](https://github.com/symfony/symfony/pulls)

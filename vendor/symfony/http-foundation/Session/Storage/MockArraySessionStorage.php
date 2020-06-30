@@ -148,11 +148,7 @@ class MockArraySessionStorage implements SessionStorageInterface
     public function save()
     {
         if (!$this->started || $this->closed) {
-<<<<<<< HEAD
             throw new \RuntimeException('Trying to save a session that was not started yet or was already closed.');
-=======
-            throw new \RuntimeException('Trying to save a session that was not started yet or was already closed');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         // nothing to do since we don't persist the session data
         $this->closed = false;
@@ -190,11 +186,7 @@ class MockArraySessionStorage implements SessionStorageInterface
     public function getBag($name)
     {
         if (!isset($this->bags[$name])) {
-<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('The SessionBagInterface "%s" is not registered.', $name));
-=======
-            throw new \InvalidArgumentException(sprintf('The SessionBagInterface %s is not registered.', $name));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (!$this->started) {

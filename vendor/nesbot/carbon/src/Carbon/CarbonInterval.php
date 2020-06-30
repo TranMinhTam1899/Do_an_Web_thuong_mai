@@ -10,7 +10,6 @@
  */
 namespace Carbon;
 
-<<<<<<< HEAD
 use Carbon\Exceptions\BadFluentConstructorException;
 use Carbon\Exceptions\BadFluentSetterException;
 use Carbon\Exceptions\InvalidCastException;
@@ -21,20 +20,13 @@ use Carbon\Exceptions\UnknownGetterException;
 use Carbon\Exceptions\UnknownSetterException;
 use Carbon\Exceptions\UnknownUnitException;
 use Carbon\Traits\IntervalRounding;
-=======
-use BadMethodCallException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Carbon\Traits\Mixin;
 use Carbon\Traits\Options;
 use Closure;
 use DateInterval;
-<<<<<<< HEAD
 use Exception;
 use ReflectionException;
 use Throwable;
-=======
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * A simple API extension for DateInterval.
@@ -183,17 +175,11 @@ use InvalidArgumentException;
  */
 class CarbonInterval extends DateInterval
 {
-<<<<<<< HEAD
     use IntervalRounding;
     use Mixin {
         Mixin::mixin as baseMixin;
     }
     use Options;
-=======
-    use Options, Mixin {
-        Mixin::mixin as baseMixin;
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Interval spec period designators
@@ -220,7 +206,6 @@ class CarbonInterval extends DateInterval
     protected static $cascadeFactors;
 
     /**
-<<<<<<< HEAD
      * @var array
      */
     protected static $formats = [
@@ -244,8 +229,6 @@ class CarbonInterval extends DateInterval
     ];
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var array|null
      */
     private static $flipCascadeFactors;
@@ -336,7 +319,6 @@ class CarbonInterval extends DateInterval
     /**
      * Create a new CarbonInterval instance.
      *
-<<<<<<< HEAD
      * @param int|null $years
      * @param int|null $months
      * @param int|null $weeks
@@ -358,21 +340,6 @@ class CarbonInterval extends DateInterval
             return;
         }
 
-=======
-     * @param int $years
-     * @param int $months
-     * @param int $weeks
-     * @param int $days
-     * @param int $hours
-     * @param int $minutes
-     * @param int $seconds
-     * @param int $microseconds
-     *
-     * @throws \Exception
-     */
-    public function __construct($years = 1, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null, $microseconds = null)
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $spec = $years;
 
         if (!is_string($spec) || floatval($years) || preg_match('/^[0-9.]/', $years)) {
@@ -505,11 +472,8 @@ class CarbonInterval extends DateInterval
      * @param int $seconds
      * @param int $microseconds
      *
-<<<<<<< HEAD
      * @throws Exception when the interval_spec (passed as $years) cannot be parsed as an interval.
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return static
      */
     public static function create($years = 1, $months = null, $weeks = null, $days = null, $hours = null, $minutes = null, $seconds = null, $microseconds = null)
@@ -518,7 +482,6 @@ class CarbonInterval extends DateInterval
     }
 
     /**
-<<<<<<< HEAD
      * Parse a string into a new CarbonInterval object according to the specified format.
      *
      * @example
@@ -584,8 +547,6 @@ class CarbonInterval extends DateInterval
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get a copy of the instance.
      *
      * @return static
@@ -660,11 +621,7 @@ class CarbonInterval extends DateInterval
         }
 
         if (Carbon::isStrictModeEnabled()) {
-<<<<<<< HEAD
             throw new BadFluentConstructorException($method);
-=======
-            throw new BadMethodCallException(sprintf("Unknown fluent constructor '%s'.", $method));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return null;
@@ -847,11 +804,7 @@ class CarbonInterval extends DateInterval
                     break;
 
                 default:
-<<<<<<< HEAD
                     throw new InvalidIntervalException(
-=======
-                    throw new InvalidArgumentException(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         sprintf('Invalid part %s in definition %s', $part, $intervalDefinition)
                     );
             }
@@ -878,16 +831,11 @@ class CarbonInterval extends DateInterval
         $mainClass = DateInterval::class;
 
         if (!is_a($className, $mainClass, true)) {
-<<<<<<< HEAD
             throw new InvalidCastException("$className is not a sub-class of $mainClass.");
-=======
-            throw new InvalidArgumentException("$className is not a sub-class of $mainClass.");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $microseconds = $interval->f;
         $instance = new $className(static::getDateIntervalSpec($interval));
-<<<<<<< HEAD
 
         if ($microseconds) {
             $instance->f = $microseconds;
@@ -907,19 +855,6 @@ class CarbonInterval extends DateInterval
                 $to->$unit *= -1;
             }
         }
-=======
-        if ($microseconds) {
-            $instance->f = $microseconds;
-        }
-        $instance->invert = $interval->invert;
-        foreach (['y', 'm', 'd', 'h', 'i', 's'] as $unit) {
-            if ($interval->$unit < 0) {
-                $instance->$unit *= -1;
-            }
-        }
-
-        return $instance;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -954,7 +889,6 @@ class CarbonInterval extends DateInterval
      * Always return a new instance. Parse only strings and only these likely to be intervals (skip dates
      * and recurrences). Throw an exception for invalid format, but otherwise return null.
      *
-<<<<<<< HEAD
      * @param mixed|int|DateInterval|string|null $interval interval or number of the given $unit
      * @param string|null                        $unit     if specified, $interval must be an integer
      *
@@ -991,34 +925,6 @@ class CarbonInterval extends DateInterval
 
         /** @var static $interval */
         $interval = static::createFromDateString($interval);
-=======
-     * @param mixed $var
-     *
-     * @return static|null
-     */
-    public static function make($var)
-    {
-        if ($var instanceof DateInterval) {
-            return static::instance($var);
-        }
-
-        if (!is_string($var)) {
-            return null;
-        }
-
-        $var = trim($var);
-
-        if (preg_match('/^P[T0-9]/', $var)) {
-            return new static($var);
-        }
-
-        if (preg_match('/^(?:\h*\d+(?:\.\d+)?\h*[a-z]+)+$/i', $var)) {
-            return static::fromString($var);
-        }
-
-        /** @var static $interval */
-        $interval = static::createFromDateString($var);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return !$interval || $interval->isEmpty() ? null : $interval;
     }
@@ -1064,11 +970,7 @@ class CarbonInterval extends DateInterval
      *
      * @param string $name
      *
-<<<<<<< HEAD
      * @throws UnknownGetterException
-=======
-     * @throws InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return int|float|string
      */
@@ -1113,17 +1015,10 @@ class CarbonInterval extends DateInterval
                 return $this->d % static::getDaysPerWeek();
 
             case 'locale':
-<<<<<<< HEAD
                 return $this->getTranslatorLocale();
 
             default:
                 throw new UnknownGetterException($name);
-=======
-                return $this->getLocalTranslator()->getLocale();
-
-            default:
-                throw new InvalidArgumentException(sprintf("Unknown getter '%s'", $name));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -1133,11 +1028,7 @@ class CarbonInterval extends DateInterval
      * @param string $name
      * @param int    $value
      *
-<<<<<<< HEAD
      * @throws UnknownSetterException
-=======
-     * @throws InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __set($name, $value)
     {
@@ -1191,11 +1082,7 @@ class CarbonInterval extends DateInterval
 
             default:
                 if ($this->localStrictModeEnabled ?? Carbon::isStrictModeEnabled()) {
-<<<<<<< HEAD
                     throw new UnknownSetterException($name);
-=======
-                    throw new InvalidArgumentException(sprintf("Unknown setter '%s'", $name));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
 
                 $this->$name = $value;
@@ -1284,11 +1171,7 @@ class CarbonInterval extends DateInterval
      *
      * @param object|string $mixin
      *
-<<<<<<< HEAD
      * @throws ReflectionException
-=======
-     * @throws \ReflectionException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return void
      */
@@ -1339,11 +1222,8 @@ class CarbonInterval extends DateInterval
      * @param string $method     magic method name called
      * @param array  $parameters parameters list
      *
-<<<<<<< HEAD
      * @throws BadFluentSetterException|Throwable
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return static
      */
     public function __call($method, $parameters)
@@ -1354,21 +1234,10 @@ class CarbonInterval extends DateInterval
             });
         }
 
-<<<<<<< HEAD
         $roundedValue = $this->callRoundMethod($method, $parameters);
 
         if ($roundedValue !== null) {
             return $roundedValue;
-=======
-        $action = substr($method, 0, 4);
-
-        if ($action !== 'ceil') {
-            $action = substr($method, 0, 5);
-        }
-
-        if (in_array($action, ['round', 'floor', 'ceil'])) {
-            return $this->{$action.'Unit'}(substr($method, strlen($action)), ...$parameters);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $arg = count($parameters) === 0 ? 1 : $parameters[0];
@@ -1423,18 +1292,13 @@ class CarbonInterval extends DateInterval
 
             default:
                 if ($this->localStrictModeEnabled ?? Carbon::isStrictModeEnabled()) {
-<<<<<<< HEAD
                     throw new BadFluentSetterException($method);
-=======
-                    throw new BadMethodCallException(sprintf("Unknown fluent setter '%s'", $method));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
         }
 
         return $this;
     }
 
-<<<<<<< HEAD
     protected function getForHumansInitialVariables($syntax, $short)
     {
         if (is_array($syntax)) {
@@ -1459,11 +1323,6 @@ class CarbonInterval extends DateInterval
     }
 
     /**
-=======
-    /**
-     * @SuppressWarnings(PHPMD.ElseExpression)
-     *
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param mixed $syntax
      * @param mixed $short
      * @param mixed $parts
@@ -1478,25 +1337,8 @@ class CarbonInterval extends DateInterval
         $join = $default === '' ? '' : ' ';
         $altNumbers = false;
         $aUnit = false;
-<<<<<<< HEAD
         $minimumUnit = 's';
         extract($this->getForHumansInitialVariables($syntax, $short));
-=======
-
-        if (is_array($syntax)) {
-            extract($syntax);
-        } else {
-            if (is_int($short)) {
-                $parts = $short;
-                $short = false;
-            }
-
-            if (is_bool($syntax)) {
-                $short = $syntax;
-                $syntax = CarbonInterface::DIFF_ABSOLUTE;
-            }
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (is_null($syntax)) {
             $syntax = CarbonInterface::DIFF_ABSOLUTE;
@@ -1559,7 +1401,6 @@ class CarbonInterval extends DateInterval
             ':optional-space' => $optionalSpace,
         ];
 
-<<<<<<< HEAD
         return [$syntax, $short, $parts, $options, $join, $aUnit, $altNumbers, $interpolations, $minimumUnit];
     }
 
@@ -1644,9 +1485,6 @@ class CarbonInterval extends DateInterval
         }
 
         return $values;
-=======
-        return [$syntax, $short, $parts, $options, $join, $aUnit, $altNumbers, $interpolations];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -1659,10 +1497,7 @@ class CarbonInterval extends DateInterval
      * echo CarbonInterval::fromString('4d 3h 40m')->forHumans(['parts' => 3, 'join' => true]) . "\n";
      * echo CarbonInterval::fromString('4d 3h 40m')->forHumans(['short' => true]) . "\n";
      * echo CarbonInterval::fromString('1d 24h')->forHumans(['join' => ' or ']) . "\n";
-<<<<<<< HEAD
      * echo CarbonInterval::fromString('1d 24h')->forHumans(['minimumUnit' => 'hour']) . "\n";
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * ```
      *
      * @param int|array $syntax  if array passed, parameters will be extracted from it, the array may contains:
@@ -1678,11 +1513,8 @@ class CarbonInterval extends DateInterval
      *                           `    will be used instead of the glue for the last item
      *                           `  - if $join is true, it will be guessed from the locale ('list' translation file entry)
      *                           `  - if $join is missing, a space will be used as glue
-<<<<<<< HEAD
      *                           - 'minimumUnit' entry determines the smallest unit of time to display can be long or
      *                           `  short form of the units, e.g. 'hour' or 'h' (default value: s)
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *                           if int passed, it add modifiers:
      *                           Possible values:
      *                           - CarbonInterface::DIFF_ABSOLUTE          no modifiers
@@ -1693,20 +1525,13 @@ class CarbonInterval extends DateInterval
      * @param int       $parts   maximum number of parts to display (default value: -1: no limits)
      * @param int       $options human diff options
      *
-<<<<<<< HEAD
      * @throws Exception
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function forHumans($syntax = null, $short = false, $parts = -1, $options = null)
     {
-<<<<<<< HEAD
         [$syntax, $short, $parts, $options, $join, $aUnit, $altNumbers, $interpolations, $minimumUnit] = $this->getForHumansParameters($syntax, $short, $parts, $options);
-=======
-        [$syntax, $short, $parts, $options, $join, $aUnit, $altNumbers, $interpolations] = $this->getForHumansParameters($syntax, $short, $parts, $options);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $interval = [];
 
@@ -1721,7 +1546,6 @@ class CarbonInterval extends DateInterval
         /** @var \Symfony\Component\Translation\Translator $translator */
         $translator = $this->getLocalTranslator();
 
-<<<<<<< HEAD
         $handleDeclensions = function ($unit, $count) use ($interpolations, $transId, $translator, $altNumbers, $absolute) {
             if (!$absolute) {
                 // Some languages have special pluralization for past and future tense.
@@ -1731,15 +1555,6 @@ class CarbonInterval extends DateInterval
                 if ($result !== $key) {
                     return $result;
                 }
-=======
-        $handleDeclensions = function ($unit, $count) use ($interpolations, $transId, $translator, $altNumbers) {
-            // Some languages have special pluralization for past and future tense.
-            $key = $unit.'_'.$transId;
-            $result = $this->translate($key, $interpolations, $count, $translator, $altNumbers);
-
-            if ($result !== $key) {
-                return $result;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $result = $this->translate($unit, $interpolations, $count, $translator, $altNumbers);
@@ -1751,7 +1566,6 @@ class CarbonInterval extends DateInterval
             return null;
         };
 
-<<<<<<< HEAD
         $intervalValues = $this;
         $method = static::getRoundingMethodFromOptions($options);
 
@@ -1776,19 +1590,6 @@ class CarbonInterval extends DateInterval
         ];
 
         $transChoice = function ($short, $unitData) use ($absolute, $handleDeclensions, $translator, $aUnit, $altNumbers, $interpolations) {
-=======
-        $diffIntervalArray = [
-            ['value' => $this->years,            'unit' => 'year',   'unitShort' => 'y'],
-            ['value' => $this->months,           'unit' => 'month',  'unitShort' => 'm'],
-            ['value' => $this->weeks,            'unit' => 'week',   'unitShort' => 'w'],
-            ['value' => $this->daysExcludeWeeks, 'unit' => 'day',    'unitShort' => 'd'],
-            ['value' => $this->hours,            'unit' => 'hour',   'unitShort' => 'h'],
-            ['value' => $this->minutes,          'unit' => 'minute', 'unitShort' => 'min'],
-            ['value' => $this->seconds,          'unit' => 'second', 'unitShort' => 's'],
-        ];
-
-        $transChoice = function ($short, $unitData) use ($handleDeclensions, $translator, $aUnit, $altNumbers, $interpolations) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $count = $unitData['value'];
 
             if ($short) {
@@ -1805,7 +1606,6 @@ class CarbonInterval extends DateInterval
                 }
             }
 
-<<<<<<< HEAD
             if (!$absolute) {
                 return $handleDeclensions($unitData['unit'], $count);
             }
@@ -1814,11 +1614,6 @@ class CarbonInterval extends DateInterval
         };
 
         $fallbackUnit = ['second', 's'];
-=======
-            return $this->translate($unitData['unit'], $interpolations, $count, $translator, $altNumbers);
-        };
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($diffIntervalArray as $diffIntervalData) {
             if ($diffIntervalData['value'] > 0) {
                 $unit = $short ? $diffIntervalData['unitShort'] : $diffIntervalData['unit'];
@@ -1832,7 +1627,6 @@ class CarbonInterval extends DateInterval
             if (count($interval) >= $parts) {
                 break;
             }
-<<<<<<< HEAD
 
             // break the loop after we have reached the minimum unit
             if (in_array($minimumUnit, [$diffIntervalData['unit'], $diffIntervalData['unitShort']])) {
@@ -1840,8 +1634,6 @@ class CarbonInterval extends DateInterval
 
                 break;
             }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (count($interval) === 0) {
@@ -1855,11 +1647,7 @@ class CarbonInterval extends DateInterval
             }
 
             $count = $options & CarbonInterface::NO_ZERO_DIFF ? 1 : 0;
-<<<<<<< HEAD
             $unit = $fallbackUnit[$short ? 1 : 0];
-=======
-            $unit = $short ? 's' : 'second';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $interval[] = $this->translate($unit, $interpolations, $count, $translator, $altNumbers);
         }
 
@@ -1897,15 +1685,9 @@ class CarbonInterval extends DateInterval
                 }
             }
 
-<<<<<<< HEAD
             $aTime = $aUnit ? $handleDeclensions('a_'.$unit, $count) : null;
 
             $time = $aTime ?: $handleDeclensions($unit, $count) ?: $time;
-=======
-            $aTime = $aUnit ? $handleDeclensions('a_'.$unit.'_'.$transId, $count) : null;
-
-            $time = $aTime ?: $handleDeclensions($unit.'_'.$transId, $count) ?: $time;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $time = [':time' => $time];
@@ -1916,16 +1698,12 @@ class CarbonInterval extends DateInterval
     /**
      * Format the instance as a string using the forHumans() function.
      *
-<<<<<<< HEAD
      * @throws Exception
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function __toString()
     {
-<<<<<<< HEAD
         $format = $this->localToStringFormat;
 
         if ($format) {
@@ -1936,8 +1714,6 @@ class CarbonInterval extends DateInterval
             return $this->format($format);
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $this->forHumans();
     }
 
@@ -1959,11 +1735,8 @@ class CarbonInterval extends DateInterval
     /**
      * Convert the interval to a CarbonPeriod.
      *
-<<<<<<< HEAD
      * @param array ...$params Start date, [end date or recurrences] and optional settings.
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return CarbonPeriod
      */
     public function toPeriod(...$params)
@@ -2021,20 +1794,13 @@ class CarbonInterval extends DateInterval
         $interval = static::make($unit);
 
         if (!$interval) {
-<<<<<<< HEAD
             throw new InvalidIntervalException('This type of data cannot be added/subtracted.');
-=======
-            throw new InvalidArgumentException('This type of data cannot be added/subtracted.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ($value !== 1) {
             $interval->times($value);
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $sign = ($this->invert === 1) !== ($interval->invert === 1) ? -1 : 1;
         $this->years += $interval->y * $sign;
         $this->months += $interval->m * $sign;
@@ -2301,11 +2067,7 @@ class CarbonInterval extends DateInterval
      *
      * @param string $unit
      *
-<<<<<<< HEAD
      * @throws UnknownUnitException|UnitNotConfiguredException
-=======
-     * @throws InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return float
      */
@@ -2316,18 +2078,13 @@ class CarbonInterval extends DateInterval
         if (in_array($unit, ['days', 'weeks'])) {
             $realUnit = 'dayz';
         } elseif (!in_array($unit, ['microseconds', 'milliseconds', 'seconds', 'minutes', 'hours', 'dayz', 'months', 'years'])) {
-<<<<<<< HEAD
             throw new UnknownUnitException($unit);
-=======
-            throw new InvalidArgumentException("Unknown unit '$unit'.");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $result = 0;
         $cumulativeFactor = 0;
         $unitFound = false;
         $factors = static::getFlipCascadeFactors();
-<<<<<<< HEAD
         $daysPerWeek = static::getDaysPerWeek();
 
         $values = [
@@ -2346,20 +2103,11 @@ class CarbonInterval extends DateInterval
             $values['dayz'] += $values['weeks'] * $daysPerWeek;
             $values['weeks'] = 0;
         }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($factors as $source => [$target, $factor]) {
             if ($source === $realUnit) {
                 $unitFound = true;
-<<<<<<< HEAD
                 $value = $values[$source];
-=======
-                $value = $this->$source;
-                if ($source === 'microseconds' && isset($factors['milliseconds'])) {
-                    $value %= Carbon::MICROSECONDS_PER_MILLISECOND;
-                }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $result += $value;
                 $cumulativeFactor = 1;
             }
@@ -2381,30 +2129,17 @@ class CarbonInterval extends DateInterval
 
             if ($cumulativeFactor) {
                 $cumulativeFactor *= $factor;
-<<<<<<< HEAD
                 $result += $values[$target] * $cumulativeFactor;
-=======
-                $result += $this->$target * $cumulativeFactor;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 continue;
             }
 
-<<<<<<< HEAD
             $value = $values[$source];
-=======
-            $value = $this->$source;
-
-            if ($source === 'microseconds' && isset($factors['milliseconds'])) {
-                $value %= Carbon::MICROSECONDS_PER_MILLISECOND;
-            }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             $result = ($result + $value) / $factor;
         }
 
         if (isset($target) && !$cumulativeFactor) {
-<<<<<<< HEAD
             $result += $values[$target];
         }
 
@@ -2414,17 +2149,6 @@ class CarbonInterval extends DateInterval
 
         if ($unit === 'weeks') {
             return $result / $daysPerWeek;
-=======
-            $result += $this->$target;
-        }
-
-        if (!$unitFound) {
-            throw new InvalidArgumentException("Unit $unit have no configuration to get total from other units.");
-        }
-
-        if ($unit === 'weeks') {
-            return $result / static::getDaysPerWeek();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $result;
@@ -2433,11 +2157,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see equalTo()
      *
@@ -2451,11 +2171,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2469,11 +2185,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is not equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see notEqualTo()
      *
@@ -2487,11 +2199,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is not equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2503,11 +2211,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is greater (longer) than another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see greaterThan()
      *
@@ -2521,11 +2225,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is greater (longer) than another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2539,11 +2239,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is greater (longer) than or equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see greaterThanOrEqualTo()
      *
@@ -2557,11 +2253,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is greater (longer) than or equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2573,11 +2265,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is less (shorter) than another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see lessThan()
      *
@@ -2591,11 +2279,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is less (shorter) than another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2609,11 +2293,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is less (shorter) than or equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @see lessThanOrEqualTo()
      *
@@ -2627,11 +2307,7 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is less (shorter) than or equal to another
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval
-=======
-     * @param \Carbon\CarbonInterval|DateInterval|mixed $interval
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2643,13 +2319,10 @@ class CarbonInterval extends DateInterval
     /**
      * Determines if the instance is between two others.
      *
-<<<<<<< HEAD
      * The third argument allow you to specify if bounds are included or not (true by default)
      * but for when you including/excluding bounds may produce different results in your application,
      * we recommend to use the explicit methods ->betweenIncluded() or ->betweenExcluded() instead.
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @example
      * ```
      * CarbonInterval::hours(48)->between(CarbonInterval::day(), CarbonInterval::days(3)); // true
@@ -2658,15 +2331,9 @@ class CarbonInterval extends DateInterval
      * CarbonInterval::hours(48)->between(CarbonInterval::day(), CarbonInterval::days(2), false); // false
      * ```
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval1
      * @param CarbonInterval|DateInterval|mixed $interval2
      * @param bool                              $equal     Indicates if an equal to comparison should be done
-=======
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval1
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval2
-     * @param bool                                       $equal     Indicates if an equal to comparison should be done
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2684,7 +2351,6 @@ class CarbonInterval extends DateInterval
      * ```
      * CarbonInterval::hours(48)->betweenExcluded(CarbonInterval::day(), CarbonInterval::days(3)); // true
      * CarbonInterval::hours(48)->betweenExcluded(CarbonInterval::day(), CarbonInterval::hours(36)); // false
-<<<<<<< HEAD
      * CarbonInterval::hours(48)->betweenExcluded(CarbonInterval::day(), CarbonInterval::days(2)); // true
      * ```
      *
@@ -2710,13 +2376,6 @@ class CarbonInterval extends DateInterval
      *
      * @param CarbonInterval|DateInterval|mixed $interval1
      * @param CarbonInterval|DateInterval|mixed $interval2
-=======
-     * CarbonInterval::hours(48)->betweenExcluded(CarbonInterval::day(), CarbonInterval::days(2)); // false
-     * ```
-     *
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval1
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval2
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2736,15 +2395,9 @@ class CarbonInterval extends DateInterval
      * CarbonInterval::hours(48)->isBetween(CarbonInterval::day(), CarbonInterval::days(2), false); // false
      * ```
      *
-<<<<<<< HEAD
      * @param CarbonInterval|DateInterval|mixed $interval1
      * @param CarbonInterval|DateInterval|mixed $interval2
      * @param bool                              $equal     Indicates if an equal to comparison should be done
-=======
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval1
-     * @param \Carbon\CarbonInterval|\DateInterval|mixed $interval2
-     * @param bool                                       $equal     Indicates if an equal to comparison should be done
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -2756,17 +2409,11 @@ class CarbonInterval extends DateInterval
     /**
      * Round the current instance at the given unit with given precision if specified and the given function.
      *
-<<<<<<< HEAD
      * @param string                             $unit
      * @param float|int|string|DateInterval|null $precision
      * @param string                             $function
      *
      * @throws Exception
-=======
-     * @param string                              $unit
-     * @param float|int|string|\DateInterval|null $precision
-     * @param string                              $function
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -2785,15 +2432,10 @@ class CarbonInterval extends DateInterval
     /**
      * Truncate the current instance at the given unit with given precision if specified.
      *
-<<<<<<< HEAD
      * @param string                             $unit
      * @param float|int|string|DateInterval|null $precision
      *
      * @throws Exception
-=======
-     * @param string                              $unit
-     * @param float|int|string|\DateInterval|null $precision
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -2805,15 +2447,10 @@ class CarbonInterval extends DateInterval
     /**
      * Ceil the current instance at the given unit with given precision if specified.
      *
-<<<<<<< HEAD
      * @param string                             $unit
      * @param float|int|string|DateInterval|null $precision
      *
      * @throws Exception
-=======
-     * @param string                              $unit
-     * @param float|int|string|\DateInterval|null $precision
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -2825,52 +2462,24 @@ class CarbonInterval extends DateInterval
     /**
      * Round the current instance second with given precision if specified.
      *
-<<<<<<< HEAD
      * @param float|int|string|DateInterval|null $precision
      * @param string                             $function
      *
      * @throws Exception
-=======
-     * @param float|int|string|\DateInterval|null $precision
-     * @param string                              $function
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
     public function round($precision = 1, $function = 'round')
     {
-<<<<<<< HEAD
         return $this->roundWith($precision, $function);
-=======
-        $unit = 'second';
-
-        if ($precision instanceof DateInterval) {
-            $precision = (string) self::instance($precision);
-        }
-
-        if (is_string($precision) && preg_match('/^\s*(?<precision>\d+)?\s*(?<unit>\w+)(?<other>\W.*)?$/', $precision, $match)) {
-            if (trim($match['other'] ?? '') !== '') {
-                throw new InvalidArgumentException('Rounding is only possible with single unit intervals.');
-            }
-
-            $precision = (int) ($match['precision'] ?: 1);
-            $unit = $match['unit'];
-        }
-
-        return $this->roundUnit($unit, $precision, $function);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Round the current instance second with given precision if specified.
      *
-<<<<<<< HEAD
      * @param float|int|string|DateInterval|null $precision
      *
      * @throws Exception
-=======
-     * @param float|int|string|\DateInterval|null $precision
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -2882,13 +2491,9 @@ class CarbonInterval extends DateInterval
     /**
      * Ceil the current instance second with given precision if specified.
      *
-<<<<<<< HEAD
      * @param float|int|string|DateInterval|null $precision
      *
      * @throws Exception
-=======
-     * @param float|int|string|\DateInterval|null $precision
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */

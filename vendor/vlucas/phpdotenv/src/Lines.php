@@ -22,11 +22,7 @@ class Lines
         foreach ($lines as $line) {
             list($multiline, $line, $multilineBuffer) = self::multilineProcess($multiline, $line, $multilineBuffer);
 
-<<<<<<< HEAD
             if (!$multiline && !self::isCommentOrWhitespace($line)) {
-=======
-            if (!$multiline && !self::isComment($line) && self::isSetter($line)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $output[] = $line;
             }
         }
@@ -119,44 +115,20 @@ class Lines
     }
 
     /**
-<<<<<<< HEAD
      * Determine if the line in the file is a comment or whitespace.
-=======
-     * Determine if the line in the file is a comment, e.g. begins with a #.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param string $line
      *
      * @return bool
      */
-<<<<<<< HEAD
     private static function isCommentOrWhitespace($line)
     {
         if (trim($line) === '') {
             return true;
         }
 
-=======
-    private static function isComment($line)
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $line = ltrim($line);
 
         return isset($line[0]) && $line[0] === '#';
     }
-<<<<<<< HEAD
-=======
-
-    /**
-     * Determine if the given line looks like it's setting a variable.
-     *
-     * @param string $line
-     *
-     * @return bool
-     */
-    private static function isSetter($line)
-    {
-        return strpos($line, '=') !== false;
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

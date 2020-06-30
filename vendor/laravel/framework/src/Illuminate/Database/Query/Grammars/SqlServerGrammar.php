@@ -2,13 +2,8 @@
 
 namespace Illuminate\Database\Query\Grammars;
 
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Database\Query\Builder;
-=======
-use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Arr;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SqlServerGrammar extends Grammar
 {
@@ -285,7 +280,6 @@ class SqlServerGrammar extends Grammar
     }
 
     /**
-<<<<<<< HEAD
      * Compile an exists statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -302,25 +296,10 @@ class SqlServerGrammar extends Grammar
 
     /**
      * Compile a delete statement into SQL.
-=======
-     * Wrap a union subquery in parentheses.
-     *
-     * @param  string  $sql
-     * @return string
-     */
-    protected function wrapUnion($sql)
-    {
-        return 'select * from ('.$sql.') as '.$this->wrapTable('temp_table');
-    }
-
-    /**
-     * Compile an exists statement into SQL.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @return string
      */
-<<<<<<< HEAD
     public function compileDelete(Builder $query)
     {
         $table = $this->wrapTable($query->from);
@@ -415,33 +394,6 @@ class SqlServerGrammar extends Grammar
         }
 
         return [$table, $alias];
-=======
-    public function compileExists(Builder $query)
-    {
-        $existsQuery = clone $query;
-
-        $existsQuery->columns = [];
-
-        return $this->compileSelect($existsQuery->selectRaw('1 [exists]')->limit(1));
-    }
-
-    /**
-     * Compile an update statement with joins into SQL.
-     *
-     * @param  \Illuminate\Database\Query\Builder  $query
-     * @param  string  $table
-     * @param  string  $columns
-     * @param  string  $where
-     * @return string
-     */
-    protected function compileUpdateWithJoins(Builder $query, $table, $columns, $where)
-    {
-        $alias = last(explode(' as ', $table));
-
-        $joins = $this->compileJoins($query, $query->joins);
-
-        return "update {$alias} set {$columns} from {$table} {$joins} {$where}";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

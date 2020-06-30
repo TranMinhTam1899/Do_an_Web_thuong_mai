@@ -2,13 +2,8 @@
 
 namespace Illuminate\Support\Facades;
 
-<<<<<<< HEAD
 use Illuminate\Support\Testing\Fakes\BusFake;
 use Illuminate\Contracts\Bus\Dispatcher as BusDispatcherContract;
-=======
-use Illuminate\Contracts\Bus\Dispatcher as BusDispatcherContract;
-use Illuminate\Support\Testing\Fakes\BusFake;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @method static mixed dispatch($command)
@@ -25,20 +20,11 @@ class Bus extends Facade
     /**
      * Replace the bound instance with a fake.
      *
-<<<<<<< HEAD
      * @return \Illuminate\Support\Testing\Fakes\BusFake
      */
     public static function fake()
     {
         static::swap($fake = new BusFake);
-=======
-     * @param  array|string  $jobsToFake
-     * @return \Illuminate\Support\Testing\Fakes\BusFake
-     */
-    public static function fake($jobsToFake = [])
-    {
-        static::swap($fake = new BusFake(static::getFacadeRoot(), $jobsToFake));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $fake;
     }

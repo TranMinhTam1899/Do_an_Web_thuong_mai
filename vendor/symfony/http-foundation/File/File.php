@@ -91,11 +91,7 @@ class File extends \SplFileInfo
         $renamed = rename($this->getPathname(), $target);
         restore_error_handler();
         if (!$renamed) {
-<<<<<<< HEAD
             throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s).', $this->getPathname(), $target, strip_tags($error)));
-=======
-            throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         @chmod($target, 0666 & ~umask());
@@ -103,27 +99,17 @@ class File extends \SplFileInfo
         return $target;
     }
 
-<<<<<<< HEAD
     /**
      * @return self
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function getTargetFile($directory, $name = null)
     {
         if (!is_dir($directory)) {
             if (false === @mkdir($directory, 0777, true) && !is_dir($directory)) {
-<<<<<<< HEAD
                 throw new FileException(sprintf('Unable to create the "%s" directory.', $directory));
             }
         } elseif (!is_writable($directory)) {
             throw new FileException(sprintf('Unable to write in the "%s" directory.', $directory));
-=======
-                throw new FileException(sprintf('Unable to create the "%s" directory', $directory));
-            }
-        } elseif (!is_writable($directory)) {
-            throw new FileException(sprintf('Unable to write in the "%s" directory', $directory));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $target = rtrim($directory, '/\\').\DIRECTORY_SEPARATOR.(null === $name ? $this->getBasename() : $this->getName($name));
@@ -136,11 +122,7 @@ class File extends \SplFileInfo
      *
      * @param string $name The new file name
      *
-<<<<<<< HEAD
      * @return string
-=======
-     * @return string containing
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function getName($name)
     {

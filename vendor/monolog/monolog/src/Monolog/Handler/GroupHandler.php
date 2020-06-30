@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -23,7 +19,6 @@ use Monolog\ResettableInterface;
  *
  * @author Lenar Lõhmus <lenar@city.ee>
  */
-<<<<<<< HEAD
 class GroupHandler extends AbstractHandler
 {
     protected $handlers;
@@ -33,20 +28,6 @@ class GroupHandler extends AbstractHandler
      * @param bool  $bubble   Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct(array $handlers, $bubble = true)
-=======
-class GroupHandler extends Handler implements ProcessableHandlerInterface, ResettableInterface
-{
-    use ProcessableHandlerTrait;
-
-    protected $handlers;
-    protected $bubble;
-
-    /**
-     * @param HandlerInterface[] $handlers Array of Handlers.
-     * @param bool               $bubble   Whether the messages that are handled can bubble up the stack or not
-     */
-    public function __construct(array $handlers, bool $bubble = true)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($handlers as $handler) {
             if (!$handler instanceof HandlerInterface) {
@@ -61,11 +42,7 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function isHandling(array $record)
-=======
-    public function isHandling(array $record): bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($this->handlers as $handler) {
             if ($handler->isHandling($record)) {
@@ -79,19 +56,12 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function handle(array $record)
     {
         if ($this->processors) {
             foreach ($this->processors as $processor) {
                 $record = call_user_func($processor, $record);
             }
-=======
-    public function handle(array $record): bool
-    {
-        if ($this->processors) {
-            $record = $this->processRecord($record);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         foreach ($this->handlers as $handler) {
@@ -104,7 +74,6 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function handleBatch(array $records)
     {
         if ($this->processors) {
@@ -114,14 +83,6 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
                     $record = call_user_func($processor, $record);
                 }
                 $processed[] = $record;
-=======
-    public function handleBatch(array $records): void
-    {
-        if ($this->processors) {
-            $processed = [];
-            foreach ($records as $record) {
-                $processed[] = $this->processRecord($record);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $records = $processed;
         }
@@ -133,11 +94,7 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
 
     public function reset()
     {
-<<<<<<< HEAD
         parent::reset();
-=======
-        $this->resetProcessors();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($this->handlers as $handler) {
             if ($handler instanceof ResettableInterface) {
@@ -146,26 +103,10 @@ class GroupHandler extends Handler implements ProcessableHandlerInterface, Reset
         }
     }
 
-<<<<<<< HEAD
     /**
      * {@inheritdoc}
      */
     public function setFormatter(FormatterInterface $formatter)
-=======
-    public function close(): void
-    {
-        parent::close();
-
-        foreach ($this->handlers as $handler) {
-            $handler->close();
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setFormatter(FormatterInterface $formatter): HandlerInterface
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($this->handlers as $handler) {
             $handler->setFormatter($formatter);

@@ -28,7 +28,6 @@ class ScheduleFinishCommand extends Command
     protected $hidden = true;
 
     /**
-<<<<<<< HEAD
      * The schedule instance.
      *
      * @var \Illuminate\Console\Scheduling\Schedule
@@ -56,16 +55,6 @@ class ScheduleFinishCommand extends Command
     public function handle()
     {
         collect($this->schedule->events())->filter(function ($value) {
-=======
-     * Execute the console command.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule $schedule
-     * @return void
-     */
-    public function handle(Schedule $schedule)
-    {
-        collect($schedule->events())->filter(function ($value) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return $value->mutexName() == $this->argument('id');
         })->each->callAfterCallbacks($this->laravel);
     }

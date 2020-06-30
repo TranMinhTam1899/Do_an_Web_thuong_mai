@@ -2,15 +2,9 @@
 
 namespace Illuminate\Foundation\Support\Providers;
 
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Events\DiscoverEvents;
-=======
-use Illuminate\Foundation\Events\DiscoverEvents;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\ServiceProvider;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class EventServiceProvider extends ServiceProvider
 {

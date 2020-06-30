@@ -2,11 +2,6 @@
 
 namespace Illuminate\Bus;
 
-<<<<<<< HEAD
-=======
-use Illuminate\Support\Arr;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 trait Queueable
 {
     /**
@@ -45,14 +40,6 @@ trait Queueable
     public $delay;
 
     /**
-<<<<<<< HEAD
-=======
-     * The middleware the job should be dispatched through.
-     */
-    public $middleware = [];
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * The jobs that should run if this job is successful.
      *
      * @var array
@@ -127,32 +114,6 @@ trait Queueable
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Get the middleware the job should be dispatched through.
-     *
-     * @return array
-     */
-    public function middleware()
-    {
-        return $this->middleware ?: [];
-    }
-
-    /**
-     * Specify the middleware the job should be dispatched through.
-     *
-     * @param  array|object  $middleware
-     * @return $this
-     */
-    public function through($middleware)
-    {
-        $this->middleware = Arr::wrap($middleware);
-
-        return $this;
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Set the jobs that should run if this job is successful.
      *
      * @param  array  $chain

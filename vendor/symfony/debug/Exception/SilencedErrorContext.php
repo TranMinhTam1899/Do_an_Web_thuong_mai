@@ -11,20 +11,14 @@
 
 namespace Symfony\Component\Debug\Exception;
 
-<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', SilencedErrorContext::class, \Symfony\Component\ErrorHandler\Exception\SilencedErrorContext::class), E_USER_DEPRECATED);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Data Object that represents a Silenced Error.
  *
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
-<<<<<<< HEAD
  *
  * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\Exception\SilencedErrorContext instead.
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class SilencedErrorContext implements \JsonSerializable
 {

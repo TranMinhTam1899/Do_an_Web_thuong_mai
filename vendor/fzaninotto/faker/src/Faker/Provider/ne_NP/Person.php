@@ -45,19 +45,11 @@ class Person extends \Faker\Provider\Person
         'Kabindra', 'Kailash', 'Kalyan', 'Kamal', 'Kamod', 'Kapil', 'Karan', 'Karna', 'Khagendra', 'Kishor', 'Kris', 'Krishna', 'Krisus', 'Kuber',
         'Lakshman', 'Lalit', 'Lava', 'Lochan', 'Lokesh',
         'Madhav', 'Madhukar', 'Madhur', 'Mandeep', 'Manish', 'Manjul', 'Manoj', 'Milan', 'Mohit', 'Mridul',
-<<<<<<< HEAD
         'Nabin', 'Nakul', 'Narayan', 'Narendra', 'Naresh', 'Neil', 'Nerain', 'Nirajan', 'Nirmal', 'Nirupam', 'Nischal', 'Nishad', 'Nishant', 'Nutan',
         'Om',
         'Paras', 'Parikshit', 'Parimal', 'Pawan', 'Piyush', 'Prabal', 'Prabesh', 'Prabhat', 'Prabin', 'Prajwal', 'Prakash', 'Pramesh', 'Pramod', 'Pranaya', 'Pranil', 'Prasanna', 'Prashant', 'Prasun', 'Pratap', 'Pratik', 'Prayag', 'Prianshu', 'Prithivi', 'Purna', 'Pushkar',
         'Raghab', 'Rahul', 'Rajan', 'Rajesh', 'Rakesh', 'Ramesh', 'Ranjan', 'Ranjit', 'Ricky', 'Rijan', 'Rishab', 'Rishikesh', 'Rohan', 'Rohit', 'Roshan',
         'Sabin', 'Sachit', 'Safal', 'Sahaj', 'Sahan', 'Sajal', 'Sakar', 'Samir', 'Sanchit', 'Sandesh', 'Sanjay', 'Sanjeev', 'Sankalpa', 'Santosh', 'Sarad', 'Saroj', 'Sashi', 'Saumya', 'Sevak', 'Shailesh', 'Shakti', 'Shamundra', 'Shantanu', 'Shashank', 'Shashwat', 'Shekar', 'Shyam', 'Siddhartha', 'Sitaram', 'Sohan', 'Sohil', 'Soviet', 'Spandan', 'Subal', 'Subham', 'Subodh', 'Sudan', 'Sudhir', 'Sudin', 'Sudip', 'Sujan', 'Sujit', 'Sukanta', 'Sumel', 'Sunil', 'Suraj', 'Surendra', 'Surya', 'Sushant', 'Sushil', 'Suyash', 'Suyog', 'Swagat', 'Swapnil', 'Swarup',
-=======
-        'Nabin', 'Nakul', 'Narayan', 'Narendra', 'Naresh', 'Neil', 'Nerain', 'Nirajan', 'Nirajan', 'Nirmal', 'Nirupam', 'Nischal', 'Nishad', 'Nishant', 'Nutan',
-        'Om',
-        'Paras', 'Parikshit', 'Parimal', 'Pawan', 'Piyush', 'Prabal', 'Prabesh', 'Prabhat', 'Prabin', 'Prajwal', 'Prakash', 'Pramesh', 'Pramod', 'Pranaya', 'Pranil', 'Prasanna', 'Prashant', 'Prasun', 'Pratap', 'Pratik', 'Prayag', 'Prianshu', 'Prithivi', 'Purna', 'Pushkar',
-        'Raghab', 'Rahul', 'Rajan', 'Rajesh', 'Rakesh', 'Ramesh', 'Ranjan', 'Ranjit', 'Ricky', 'Rijan', 'Rishab', 'Rishikesh', 'Rohan', 'Rohit', 'Roshan',
-        'Sabin', 'Sachit', 'Safal', 'Sahaj', 'Sahan', 'Sajal', 'Sakar', 'Samir', 'Sanchit', 'Sandesh', 'Sanjay', 'Sanjeev', 'Sankalpa', 'Santosh', 'Sarad', 'Saroj', 'Sashi', 'Saumya', 'Sevak', 'Shailesh', 'Shakti', 'Shamundra', 'Shantanu', 'Shashank', 'Shashwat', 'Shekar', 'Shyam', 'Siddhartha', 'Sitaram', 'Sohan', 'Sohil', 'Soviet', 'Spandan', 'Subal', 'Subham', 'Subodh', 'Sudan', 'Sudhir', 'Sudin', 'Sudip', 'Sujan', 'Sujit', 'Sukanta', 'Sumel', 'Sunil', 'Suraj', 'Suraj', 'Surendra', 'Surya', 'Sushant', 'Sushil', 'Suyash', 'Suyog', 'Swagat', 'Swapnil', 'Swarup',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'Tej', 'Tilak', 'Tirtha', 'Trailokya', 'Trilochan',
         'Udit', 'Ujjwal', 'Umesh', 'Uttam',
         'Yogendra', 'Yogesh', 'Yuvaraj',
@@ -88,11 +80,7 @@ class Person extends \Faker\Provider\Person
     protected static $lastName = array(
         'Acharya', 'Adhikari', 'Agarwal', 'Amatya', 'Aryal',
         'Baidya', 'Bajracharya', 'Balami', 'Banepali', 'Baniya', 'Banjade', 'Baral', 'Basnet', 'Bastakoti', 'Bastola', 'Basyal', 'Belbase', 'Bhandari', 'Bhatta', 'Bhattarai', 'Bhusal', 'Bijukchhe', 'Bisht', 'Bohara', 'Budathoki', 'Byanjankar',
-<<<<<<< HEAD
         'Chalise', 'Chamling', 'Chapagain', 'Chaudhary', 'Chhetri',
-=======
-        'Chalise', 'Chamling', 'Chapagain', 'Chaudhary', 'Chhetri', 'Chhetri',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'Dahal', 'Dangol', 'Dawadi', 'Devkota', 'Dhakal', 'Dhamla', 'Dhaubhadel', 'Dhungel',
         'Gauchan', 'Gautam', 'Ghale', 'Ghimire', 'Giri', 'Golchha', 'Gurung', 'Gyalzen', 'Gyawali',
         'Hamal', 'Himanshu', 'Humagain',

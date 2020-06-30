@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -18,11 +14,7 @@ class ClassThatImplementsSerializable implements Serializable
         return \get_object_vars($this);
     }
 
-<<<<<<< HEAD
     public function unserialize($serialized)
-=======
-    public function unserialize($serialized): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach (\unserialize($serialized) as $key => $value) {
             $this->{$key} = $value;

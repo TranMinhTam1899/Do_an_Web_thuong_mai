@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Rune Mønnike
  * - François B
@@ -49,12 +45,9 @@ return [
     'from_now' => 'om :time',
     'after' => ':time efter',
     'before' => ':time før',
-<<<<<<< HEAD
     'diff_now' => 'nu',
     'diff_yesterday' => 'i går',
     'diff_tomorrow' => 'i morgen',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

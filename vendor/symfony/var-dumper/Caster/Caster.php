@@ -41,15 +41,10 @@ class Caster
      * Casts objects to arrays and adds the dynamic property prefix.
      *
      * @param object $obj          The object to cast
-<<<<<<< HEAD
-=======
-     * @param string $class        The class of the object
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param bool   $hasDebugInfo Whether the __debugInfo method exists on $obj or not
      *
      * @return array The array-cast of the object, with prefixed dynamic properties
      */
-<<<<<<< HEAD
     public static function castObject($obj, string $class, bool $hasDebugInfo = false): array
     {
         if ($hasDebugInfo) {
@@ -61,10 +56,6 @@ class Caster
             }
         }
 
-=======
-    public static function castObject($obj, $class, $hasDebugInfo = false)
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $a = $obj instanceof \Closure ? [] : (array) $obj;
 
         if ($obj instanceof \__PHP_Incomplete_Class) {
@@ -100,11 +91,7 @@ class Caster
             }
         }
 
-<<<<<<< HEAD
         if ($hasDebugInfo && \is_array($debugInfo)) {
-=======
-        if ($hasDebugInfo && \is_array($debugInfo = $obj->__debugInfo())) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ($debugInfo as $k => $v) {
                 if (!isset($k[0]) || "\0" !== $k[0]) {
                     $k = self::PREFIX_VIRTUAL.$k;
@@ -131,11 +118,7 @@ class Caster
      *
      * @return array The filtered array
      */
-<<<<<<< HEAD
     public static function filter(array $a, int $filter, array $listedProperties = [], ?int &$count = 0): array
-=======
-    public static function filter(array $a, $filter, array $listedProperties = [], &$count = 0)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $count = 0;
 
@@ -176,11 +159,7 @@ class Caster
         return $a;
     }
 
-<<<<<<< HEAD
     public static function castPhpIncompleteClass(\__PHP_Incomplete_Class $c, array $a, Stub $stub, bool $isNested): array
-=======
-    public static function castPhpIncompleteClass(\__PHP_Incomplete_Class $c, array $a, Stub $stub, $isNested)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (isset($a['__PHP_Incomplete_Class_Name'])) {
             $stub->class .= '('.$a['__PHP_Incomplete_Class_Name'].')';

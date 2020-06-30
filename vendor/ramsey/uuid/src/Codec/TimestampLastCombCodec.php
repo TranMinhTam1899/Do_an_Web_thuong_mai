@@ -19,8 +19,4 @@ namespace Ramsey\Uuid\Codec;
  */
 class TimestampLastCombCodec extends StringCodec
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

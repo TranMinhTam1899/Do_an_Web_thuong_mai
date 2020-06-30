@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Dieter Sting
  * - François B
@@ -24,10 +20,7 @@
  * - JD Isaacks
  * - Sebastian Thierer
  * - Fastfuel
-<<<<<<< HEAD
  * - Pete Scopes (pdscopes)
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count an|:count ans',
@@ -51,12 +44,9 @@ return [
     'second' => ':count seconde|:count secondes',
     'a_second' => 'quelques secondes|:count secondes',
     's' => ':count s',
-<<<<<<< HEAD
     'millisecond' => ':count milliseconde:count millisecondes',
     'a_millisecond' => 'une milliseconde|:count millisecondes',
     'ms' => ':countms',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => 'il y a :time',
     'from_now' => 'dans :time',
     'after' => ':time après',

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,10 +11,6 @@ namespace PHPUnit\TextUI;
 
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Exception;
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestFailure;
@@ -27,21 +19,13 @@ use PHPUnit\Framework\TestResult;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\Framework\Warning;
 use PHPUnit\Runner\PhptTestCase;
-<<<<<<< HEAD
 use PHPUnit\Util\InvalidArgumentHelper;
-=======
-use PHPUnit\Util\Color;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Util\Printer;
 use SebastianBergmann\Environment\Console;
 use SebastianBergmann\Timer\Timer;
 
 /**
-<<<<<<< HEAD
  * Prints the result of a TextUI TestRunner run.
-=======
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class ResultPrinter extends Printer implements TestListener
 {
@@ -64,7 +48,6 @@ class ResultPrinter extends Printer implements TestListener
     private const AVAILABLE_COLORS = [self::COLOR_NEVER, self::COLOR_AUTO, self::COLOR_ALWAYS];
 
     /**
-<<<<<<< HEAD
      * @var array
      */
     private static $ansiCodes = [
@@ -88,8 +71,6 @@ class ResultPrinter extends Printer implements TestListener
     ];
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var int
      */
     protected $column = 0;
@@ -157,7 +138,6 @@ class ResultPrinter extends Printer implements TestListener
     /**
      * Constructor.
      *
-<<<<<<< HEAD
      * @param string     $colors
      * @param int|string $numberOfColumns
      * @param null|mixed $out
@@ -165,34 +145,18 @@ class ResultPrinter extends Printer implements TestListener
      * @throws Exception
      */
     public function __construct($out = null, bool $verbose = false, $colors = self::COLOR_DEFAULT, bool $debug = false, $numberOfColumns = 80, bool $reverse = false)
-=======
-     * @param null|resource|string $out
-     * @param int|string           $numberOfColumns
-     *
-     * @throws Exception
-     */
-    public function __construct($out = null, bool $verbose = false, string $colors = self::COLOR_DEFAULT, bool $debug = false, $numberOfColumns = 80, bool $reverse = false)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         parent::__construct($out);
 
         if (!\in_array($colors, self::AVAILABLE_COLORS, true)) {
-<<<<<<< HEAD
             throw InvalidArgumentHelper::factory(
-=======
-            throw InvalidArgumentException::create(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 3,
                 \vsprintf('value from "%s", "%s" or "%s"', self::AVAILABLE_COLORS)
             );
         }
 
         if (!\is_int($numberOfColumns) && $numberOfColumns !== 'max') {
-<<<<<<< HEAD
             throw InvalidArgumentHelper::factory(5, 'integer or "max"');
-=======
-            throw InvalidArgumentException::create(5, 'integer or "max"');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $console            = new Console;
@@ -214,12 +178,6 @@ class ResultPrinter extends Printer implements TestListener
         }
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws \SebastianBergmann\Timer\RuntimeException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function printResult(TestResult $result): void
     {
         $this->printHeader();
@@ -447,12 +405,6 @@ class ResultPrinter extends Printer implements TestListener
         $this->printDefects($result->skipped(), 'skipped test');
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws \SebastianBergmann\Timer\RuntimeException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function printHeader(): void
     {
         $this->write("\n\n" . Timer::resourceUsage() . "\n\n");
@@ -575,17 +527,12 @@ class ResultPrinter extends Printer implements TestListener
      * Formats a buffer with a specified ANSI color sequence if colors are
      * enabled.
      */
-<<<<<<< HEAD
     protected function formatWithColor(string $color, string $buffer): string
-=======
-    protected function colorizeTextBox(string $color, string $buffer): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->colors) {
             return $buffer;
         }
 
-<<<<<<< HEAD
         $codes   = \array_map('\trim', \explode(',', $color));
         $lines   = \explode("\n", $buffer);
         $padding = \max(\array_map('\strlen', $lines));
@@ -596,25 +543,14 @@ class ResultPrinter extends Printer implements TestListener
         }
 
         $style = \sprintf("\x1b[%sm", \implode(';', $styles));
-=======
-        $lines   = \preg_split('/\r\n|\r|\n/', $buffer);
-        $padding = \max(\array_map('\strlen', $lines));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $styledLines = [];
 
         foreach ($lines as $line) {
-<<<<<<< HEAD
             $styledLines[] = $style . \str_pad($line, $padding) . "\x1b[0m";
         }
 
         return \implode("\n", $styledLines);
-=======
-            $styledLines[] = Color::colorize($color, \str_pad($line, $padding));
-        }
-
-        return \implode(\PHP_EOL, $styledLines);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -622,17 +558,10 @@ class ResultPrinter extends Printer implements TestListener
      */
     protected function writeWithColor(string $color, string $buffer, bool $lf = true): void
     {
-<<<<<<< HEAD
         $this->write($this->formatWithColor($color, $buffer));
 
         if ($lf) {
             $this->write("\n");
-=======
-        $this->write($this->colorizeTextBox($color, $buffer));
-
-        if ($lf) {
-            $this->write(\PHP_EOL);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -641,11 +570,7 @@ class ResultPrinter extends Printer implements TestListener
      */
     protected function writeProgressWithColor(string $color, string $buffer): void
     {
-<<<<<<< HEAD
         $buffer = $this->formatWithColor($color, $buffer);
-=======
-        $buffer = $this->colorizeTextBox($color, $buffer);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->writeProgress($buffer);
     }
 

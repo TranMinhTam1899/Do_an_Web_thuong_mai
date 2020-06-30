@@ -34,11 +34,7 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function supports(Request $request, ArgumentMetadata $argument): bool
-=======
-    public function supports(Request $request, ArgumentMetadata $argument)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $controller = $request->attributes->get('_controller');
 
@@ -62,11 +58,7 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
-=======
-    public function resolve(Request $request, ArgumentMetadata $argument)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (\is_array($controller = $request->attributes->get('_controller'))) {
             $controller = $controller[0].'::'.$controller[1];

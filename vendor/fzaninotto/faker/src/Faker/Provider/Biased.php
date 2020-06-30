@@ -26,11 +26,7 @@ class Biased extends Base
             $y = mt_rand() / (mt_getrandmax() + 1);
         } while (call_user_func($function, $x) < $y);
 
-<<<<<<< HEAD
         return (int) floor($x * ($max - $min + 1) + $min);
-=======
-        return floor($x * ($max - $min + 1) + $min);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

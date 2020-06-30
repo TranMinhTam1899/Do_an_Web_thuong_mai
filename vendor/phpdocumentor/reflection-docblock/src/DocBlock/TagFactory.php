@@ -1,31 +1,19 @@
 <?php
-<<<<<<< HEAD
 
 declare(strict_types=1);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
-<<<<<<< HEAD
  * @link http://phpdoc.org
-=======
- * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
- * @license   http://www.opensource.org/licenses/mit-license.php MIT
- * @link      http://phpdoc.org
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 
 namespace phpDocumentor\Reflection\DocBlock;
 
-<<<<<<< HEAD
 use InvalidArgumentException;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use phpDocumentor\Reflection\Types\Context as TypeContext;
 
 interface TagFactory
@@ -48,7 +36,6 @@ interface TagFactory
      *
      * These parameters are injected at the last moment and will override any existing parameter with those names.
      *
-<<<<<<< HEAD
      * @param mixed $value
      */
     public function addParameter(string $name, $value) : void;
@@ -63,14 +50,6 @@ interface TagFactory
      * @throws InvalidArgumentException If an invalid tag line was presented.
      */
     public function create(string $tagLine, ?TypeContext $context = null) : Tag;
-=======
-     * @param string $name
-     * @param mixed  $value
-     *
-     * @return void
-     */
-    public function addParameter($name, $value);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Registers a service with the Service Locator using the FQCN of the class or the alias, if provided.
@@ -80,35 +59,12 @@ interface TagFactory
      *
      * Because interfaces are regularly used as type-hints this method provides an alias parameter; if the FQCN of the
      * interface is passed as alias then every time that interface is requested the provided service will be returned.
-<<<<<<< HEAD
      */
     public function addService(object $service) : void;
-=======
-     *
-     * @param object $service
-     * @param string $alias
-     *
-     * @return void
-     */
-    public function addService($service);
-
-    /**
-     * Factory method responsible for instantiating the correct sub type.
-     *
-     * @param string $tagLine The text for this tag, including description.
-     * @param TypeContext $context
-     *
-     * @throws \InvalidArgumentException if an invalid tag line was presented.
-     *
-     * @return Tag A new tag object.
-     */
-    public function create($tagLine, TypeContext $context = null);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Registers a handler for tags.
      *
-<<<<<<< HEAD
      * If you want to use your own tags then you can use this method to instruct the TagFactory
      * to register the name of a tag with the FQCN of a 'Tag Handler'. The Tag handler should implement
      * the {@see Tag} interface (and thus the create method).
@@ -125,24 +81,4 @@ interface TagFactory
      * @throws InvalidArgumentException If the handler does not implement the {@see Tag} interface.
      */
     public function registerTagHandler(string $tagName, string $handler) : void;
-=======
-     * If you want to use your own tags then you can use this method to instruct the TagFactory to register the name
-     * of a tag with the FQCN of a 'Tag Handler'. The Tag handler should implement the {@see Tag} interface (and thus
-     * the create method).
-     *
-     * @param string $tagName Name of tag to register a handler for. When registering a namespaced tag, the full
-     *                        name, along with a prefixing slash MUST be provided.
-     * @param string $handler FQCN of handler.
-     *
-     * @throws \InvalidArgumentException if the tag name is not a string
-     * @throws \InvalidArgumentException if the tag name is namespaced (contains backslashes) but does not start with
-     *     a backslash
-     * @throws \InvalidArgumentException if the handler is not a string
-     * @throws \InvalidArgumentException if the handler is not an existing class
-     * @throws \InvalidArgumentException if the handler does not implement the {@see Tag} interface
-     *
-     * @return void
-     */
-    public function registerTagHandler($tagName, $handler);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

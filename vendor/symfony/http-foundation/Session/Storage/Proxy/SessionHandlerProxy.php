@@ -36,11 +36,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     // \SessionHandlerInterface
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function open($savePath, $sessionName)
     {
@@ -48,11 +44,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function close()
     {
@@ -60,11 +52,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return string
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function read($sessionId)
     {
@@ -72,11 +60,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function write($sessionId, $data)
     {
@@ -84,11 +68,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function destroy($sessionId)
     {
@@ -104,11 +84,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function validateId($sessionId)
     {
@@ -116,11 +92,7 @@ class SessionHandlerProxy extends AbstractProxy implements \SessionHandlerInterf
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function updateTimestamp($sessionId, $data)
     {

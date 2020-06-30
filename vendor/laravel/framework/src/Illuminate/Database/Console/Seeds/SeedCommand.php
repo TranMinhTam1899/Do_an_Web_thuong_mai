@@ -3,17 +3,10 @@
 namespace Illuminate\Database\Console\Seeds;
 
 use Illuminate\Console\Command;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Console\ConfirmableTrait;
 use Symfony\Component\Console\Input\InputOption;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
-=======
-use Illuminate\Console\ConfirmableTrait;
-use Illuminate\Database\ConnectionResolverInterface as Resolver;
-use Illuminate\Database\Eloquent\Model;
-use Symfony\Component\Console\Input\InputOption;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SeedCommand extends Command
 {

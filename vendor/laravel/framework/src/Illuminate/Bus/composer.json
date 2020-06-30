@@ -14,17 +14,10 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
         "php": "^7.1.3",
         "illuminate/contracts": "5.8.*",
         "illuminate/pipeline": "5.8.*",
         "illuminate/support": "5.8.*"
-=======
-        "php": "^7.2",
-        "illuminate/contracts": "^6.0",
-        "illuminate/pipeline": "^6.0",
-        "illuminate/support": "^6.0"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "autoload": {
         "psr-4": {
@@ -33,11 +26,7 @@
     },
     "extra": {
         "branch-alias": {
-<<<<<<< HEAD
             "dev-master": "5.8-dev"
-=======
-            "dev-master": "6.0-dev"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     },
     "config": {

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -17,14 +13,8 @@ use PHPUnit\Runner\NullTestResultCache;
 
 /**
  * @group test-reorder
-<<<<<<< HEAD
  */
 class NullTestResultCacheTest extends TestCase
-=======
- * @small
- */
-final class NullTestResultCacheTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testHasWorkingStubs(): void
     {

@@ -2,7 +2,6 @@
 
 namespace Illuminate\Foundation\Http;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Contracts\Container\Container;
@@ -12,17 +11,6 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Validation\ValidatesWhenResolvedTrait;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-=======
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use Illuminate\Contracts\Validation\ValidatesWhenResolved;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
-use Illuminate\Validation\ValidatesWhenResolvedTrait;
-use Illuminate\Validation\ValidationException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class FormRequest extends Request implements ValidatesWhenResolved
 {
@@ -124,11 +112,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
      *
      * @return array
      */
-<<<<<<< HEAD
     protected function validationData()
-=======
-    public function validationData()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->all();
     }
@@ -191,11 +175,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     protected function failedAuthorization()
     {
-<<<<<<< HEAD
         throw new AuthorizationException('This action is unauthorized.');
-=======
-        throw new AuthorizationException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

@@ -3,15 +3,9 @@
 namespace Illuminate\View\Engines;
 
 use Exception;
-<<<<<<< HEAD
 use Throwable;
 use Illuminate\Contracts\View\Engine;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
-=======
-use Illuminate\Contracts\View\Engine;
-use Symfony\Component\Debug\Exception\FatalThrowableError;
-use Throwable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PhpEngine implements Engine
 {

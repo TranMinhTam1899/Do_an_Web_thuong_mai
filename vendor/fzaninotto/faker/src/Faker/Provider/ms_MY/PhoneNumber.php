@@ -88,21 +88,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return a Malaysian Mobile Phone Number.
-<<<<<<< HEAD
      *
      * @example '+6012-345-6789'
      *
      * @param bool $countryCodePrefix true, false
      * @param bool $formatting true, false
      *
-=======
-     * 
-     * @example '+6012-345-6789'
-     * 
-     * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function mobileNumber($countryCodePrefix = true, $formatting = true)
@@ -122,15 +113,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return prefix digits for 011 numbers
-<<<<<<< HEAD
      *
      * @example '10'
      *
-=======
-     * 
-     * @example '10'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function zeroOneOnePrefix()
@@ -140,15 +125,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return prefix digits for 014 numbers
-<<<<<<< HEAD
      *
      * @example '2'
      *
-=======
-     * 
-     * @example '2'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function zeroOneFourPrefix()
@@ -158,15 +137,9 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return prefix digits for 015 numbers
-<<<<<<< HEAD
      *
      * @example '1'
      *
-=======
-     * 
-     * @example '1'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function zeroOneFivePrefix()
@@ -176,21 +149,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return a Malaysian Fixed Line Phone Number.
-<<<<<<< HEAD
      *
      * @example '+603-4567-8912'
      *
      * @param bool $countryCodePrefix true, false
      * @param bool $formatting true, false
      *
-=======
-     * 
-     * @example '+603-4567-8912'
-     * 
-     * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function fixedLineNumber($countryCodePrefix = true, $formatting = true)
@@ -210,21 +174,12 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return a Malaysian VoIP Phone Number.
-<<<<<<< HEAD
      *
      * @example '+6015-678-9234'
      *
      * @param bool $countryCodePrefix true, false
      * @param bool $formatting true, false
      *
-=======
-     * 
-     * @example '+6015-678-9234'
-     * 
-     * @param bool $countryCodePrefix true, false
-     * @param bool $formatting true, false
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function voipNumber($countryCodePrefix = true, $formatting = true)
@@ -244,19 +199,11 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     /**
      * Return a Malaysian Country Code Prefix.
-<<<<<<< HEAD
      *
      * @example '+6'
      *
      * @param bool $formatting true, false
      *
-=======
-     * 
-     * @example '+6'
-     * 
-     * @param bool $formatting true, false
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function countryCodePrefix($formatting = true)

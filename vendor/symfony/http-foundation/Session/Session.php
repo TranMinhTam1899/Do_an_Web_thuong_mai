@@ -18,14 +18,11 @@ use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
 
-<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(AttributeBag::class);
 class_exists(FlashBag::class);
 class_exists(SessionBagProxy::class);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Drak <drak@zikula.org>
@@ -39,14 +36,6 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     private $data = [];
     private $usageIndex = 0;
 
-<<<<<<< HEAD
-=======
-    /**
-     * @param SessionStorageInterface $storage    A SessionStorageInterface instance
-     * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
-     * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function __construct(SessionStorageInterface $storage = null, AttributeBagInterface $attributes = null, FlashBagInterface $flashes = null)
     {
         $this->storage = $storage ?: new NativeSessionStorage();
@@ -145,43 +134,22 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
     /**
      * Returns the number of attributes.
      *
-<<<<<<< HEAD
      * @return int
-=======
-     * @return int The number of attributes
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function count()
     {
         return \count($this->getAttributeBag()->all());
     }
 
-<<<<<<< HEAD
     public function &getUsageIndex(): int
-=======
-    /**
-     * @return int
-     *
-     * @internal
-     */
-    public function getUsageIndex()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->usageIndex;
     }
 
     /**
-<<<<<<< HEAD
      * @internal
      */
     public function isEmpty(): bool
-=======
-     * @return bool
-     *
-     * @internal
-     */
-    public function isEmpty()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->isStarted()) {
             ++$this->usageIndex;
@@ -297,15 +265,8 @@ class Session implements SessionInterface, \IteratorAggregate, \Countable
      * Gets the attributebag interface.
      *
      * Note that this method was added to help with IDE autocompletion.
-<<<<<<< HEAD
      */
     private function getAttributeBag(): AttributeBagInterface
-=======
-     *
-     * @return AttributeBagInterface
-     */
-    private function getAttributeBag()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->getBag($this->attributeName);
     }

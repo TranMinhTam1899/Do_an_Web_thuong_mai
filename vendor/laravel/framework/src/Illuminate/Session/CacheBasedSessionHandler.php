@@ -2,13 +2,8 @@
 
 namespace Illuminate\Session;
 
-<<<<<<< HEAD
 use SessionHandlerInterface;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
-=======
-use Illuminate\Contracts\Cache\Repository as CacheContract;
-use SessionHandlerInterface;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CacheBasedSessionHandler implements SessionHandlerInterface
 {

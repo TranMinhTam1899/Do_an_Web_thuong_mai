@@ -2,15 +2,9 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-=======
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Database\Eloquent\Relations\Concerns\SupportsDefaultModels;
 
 class BelongsTo extends Relation
@@ -200,7 +194,6 @@ class BelongsTo extends Relation
     }
 
     /**
-<<<<<<< HEAD
      * Update the parent model on the relationship.
      *
      * @param  array  $attributes
@@ -212,8 +205,6 @@ class BelongsTo extends Relation
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Associate the model instance to the given parent.
      *
      * @param  \Illuminate\Database\Eloquent\Model|int|string  $model
@@ -377,7 +368,6 @@ class BelongsTo extends Relation
     {
         return $this->relationName;
     }
-<<<<<<< HEAD
 
     /**
      * Get the name of the relationship.
@@ -389,6 +379,4 @@ class BelongsTo extends Relation
     {
         return $this->relationName;
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

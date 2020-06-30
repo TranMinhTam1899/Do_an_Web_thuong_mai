@@ -24,14 +24,8 @@ interface TranslationWriterInterface
     /**
      * Writes translation from the catalogue according to the selected format.
      *
-<<<<<<< HEAD
      * @param string $format  The format to use to dump the messages
      * @param array  $options Options that are passed to the dumper
-=======
-     * @param MessageCatalogue $catalogue The message catalogue to write
-     * @param string           $format    The format to use to dump the messages
-     * @param array            $options   Options that are passed to the dumper
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws InvalidArgumentException
      */

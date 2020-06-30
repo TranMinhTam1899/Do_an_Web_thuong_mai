@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,11 +12,7 @@ namespace PHPUnit\Util;
 use PHPUnit\Framework\Exception;
 
 /**
-<<<<<<< HEAD
  * Utility class that can print to STDOUT or write to a file.
-=======
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class Printer
 {
@@ -44,17 +36,12 @@ class Printer
     /**
      * Constructor.
      *
-<<<<<<< HEAD
      * @param null|mixed $out
-=======
-     * @param null|resource|string $out
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws Exception
      */
     public function __construct($out = null)
     {
-<<<<<<< HEAD
         if ($out === null) {
             return;
         }
@@ -82,31 +69,6 @@ class Printer
         }
 
         $this->outTarget = $out;
-=======
-        if ($out !== null) {
-            if (\is_string($out)) {
-                if (\strpos($out, 'socket://') === 0) {
-                    $out = \explode(':', \str_replace('socket://', '', $out));
-
-                    if (\count($out) !== 2) {
-                        throw new Exception;
-                    }
-
-                    $this->out = \fsockopen($out[0], $out[1]);
-                } else {
-                    if (\strpos($out, 'php://') === false && !Filesystem::createDirectory(\dirname($out))) {
-                        throw new Exception(\sprintf('Directory "%s" was not created', \dirname($out)));
-                    }
-
-                    $this->out = \fopen($out, 'wt');
-                }
-
-                $this->outTarget = $out;
-            } else {
-                $this->out = $out;
-            }
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

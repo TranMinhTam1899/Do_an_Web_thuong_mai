@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Qa workflow](https://github.com/phpDocumentor/ReflectionDocBlock/workflows/Qa%20workflow/badge.svg)
 [![Coveralls Coverage](https://img.shields.io/coveralls/github/phpDocumentor/ReflectionDocBlock.svg)](https://coveralls.io/github/phpDocumentor/ReflectionDocBlock?branch=master)
@@ -9,10 +8,6 @@
 
 ReflectionDocBlock 
 ==================
-=======
-The ReflectionDocBlock Component [![Build Status](https://secure.travis-ci.org/phpDocumentor/ReflectionDocBlock.png)](https://travis-ci.org/phpDocumentor/ReflectionDocBlock)
-================================
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 Introduction
 ------------
@@ -40,13 +35,8 @@ instantiated using its `createInstance` factory method like this:
 $factory  = \phpDocumentor\Reflection\DocBlockFactory::createInstance();
 ```
 
-<<<<<<< HEAD
 Then we can use the `create` method of the factory to interpret the DocBlock.
 Please note that it is also possible to provide a class that has the
-=======
-Then we can use the `create` method of the factory to interpret the DocBlock. 
-Please note that it is also possible to provide a class that has the 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 `getDocComment()` method, such as an object of type `ReflectionClass`, the
 create method will read that if it exists.
 

@@ -21,15 +21,10 @@ namespace Faker;
  * @property string $city
  * @property string $streetName
  * @property string $streetAddress
-<<<<<<< HEAD
  * @property string $secondaryAddress
  * @property string $postcode
  * @property string $address
  * @property string $state
-=======
- * @property string $postcode
- * @property string $address
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @property string $country
  * @property float  $latitude
  * @property float  $longitude
@@ -40,10 +35,7 @@ namespace Faker;
  * @property string $isbn10
  *
  * @property string $phoneNumber
-<<<<<<< HEAD
  * @property string $e164PhoneNumber
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  *
  * @property string $company
  * @property string $companySuffix
@@ -63,10 +55,7 @@ namespace Faker;
  * @property string $word
  * @property string|array $words
  * @method string|array words($nb = 3, $asText = false)
-<<<<<<< HEAD
  * @method string word()
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @property string $sentence
  * @method string sentence($nbWords = 6, $variableNbWords = true)
  * @property string|array $sentences
@@ -128,11 +117,7 @@ namespace Faker;
  * @method string year($max = 'now')
  * @method \DateTime dateTime($max = 'now', $timezone = null)
  * @method \DateTime dateTimeAd($max = 'now', $timezone = null)
-<<<<<<< HEAD
  * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now', $timezone = null)
-=======
- * @method \DateTime dateTimeBetween($startDate = '-30 years', $endDate = 'now')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method \DateTime dateTimeInInterval($date = '-30 years', $interval = '+5 days', $timezone = null)
  * @method \DateTime dateTimeThisCentury($max = 'now', $timezone = null)
  * @method \DateTime dateTimeThisDecade($max = 'now', $timezone = null)
@@ -151,10 +136,7 @@ namespace Faker;
  * @method boolean boolean($chanceOfGettingTrue = 50)
  *
  * @property int    $randomDigit
-<<<<<<< HEAD
  * @property int    $randomDigitNot
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @property int    $randomDigitNotNull
  * @property string $randomLetter
  * @property string $randomAscii
@@ -177,10 +159,7 @@ namespace Faker;
  * @method Generator optional($weight = 0.5, $default = null)
  * @method Generator unique($reset = false, $maxRetries = 10000)
  * @method Generator valid($validator = null, $maxRetries = 10000)
-<<<<<<< HEAD
  * @method mixed passthrough($passthrough)
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  *
  * @method integer biasedNumberBetween($min = 0, $max = 100, $function = 'sqrt')
  *
@@ -305,12 +284,9 @@ class Generator
     {
         return $this->format($method, $attributes);
     }
-<<<<<<< HEAD
 
     public function __destruct()
     {
         $this->seed();
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

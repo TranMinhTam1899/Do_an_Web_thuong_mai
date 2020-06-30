@@ -3,19 +3,11 @@
 namespace Illuminate\Support;
 
 use Countable;
-<<<<<<< HEAD
 use JsonSerializable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\MessageProvider;
 use Illuminate\Contracts\Support\MessageBag as MessageBagContract;
-=======
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Contracts\Support\MessageBag as MessageBagContract;
-use Illuminate\Contracts\Support\MessageProvider;
-use JsonSerializable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class MessageBag implements Arrayable, Countable, Jsonable, JsonSerializable, MessageBagContract, MessageProvider
 {

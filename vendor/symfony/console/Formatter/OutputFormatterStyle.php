@@ -61,10 +61,6 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
      *
      * @param string|null $foreground The style foreground color name
      * @param string|null $background The style background color name
-<<<<<<< HEAD
-=======
-     * @param array       $options    The style options
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(string $foreground = null, string $background = null, array $options = [])
     {
@@ -91,11 +87,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
         }
 
         if (!isset(static::$availableForegroundColors[$color])) {
-<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid foreground color specified: "%s". Expected one of (%s).', $color, implode(', ', array_keys(static::$availableForegroundColors))));
-=======
-            throw new InvalidArgumentException(sprintf('Invalid foreground color specified: "%s". Expected one of (%s)', $color, implode(', ', array_keys(static::$availableForegroundColors))));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->foreground = static::$availableForegroundColors[$color];
@@ -113,11 +105,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
         }
 
         if (!isset(static::$availableBackgroundColors[$color])) {
-<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid background color specified: "%s". Expected one of (%s).', $color, implode(', ', array_keys(static::$availableBackgroundColors))));
-=======
-            throw new InvalidArgumentException(sprintf('Invalid background color specified: "%s". Expected one of (%s)', $color, implode(', ', array_keys(static::$availableBackgroundColors))));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->background = static::$availableBackgroundColors[$color];
@@ -134,11 +122,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     public function setOption($option)
     {
         if (!isset(static::$availableOptions[$option])) {
-<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid option specified: "%s". Expected one of (%s).', $option, implode(', ', array_keys(static::$availableOptions))));
-=======
-            throw new InvalidArgumentException(sprintf('Invalid option specified: "%s". Expected one of (%s)', $option, implode(', ', array_keys(static::$availableOptions))));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (!\in_array(static::$availableOptions[$option], $this->options)) {
@@ -152,11 +136,7 @@ class OutputFormatterStyle implements OutputFormatterStyleInterface
     public function unsetOption($option)
     {
         if (!isset(static::$availableOptions[$option])) {
-<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Invalid option specified: "%s". Expected one of (%s).', $option, implode(', ', array_keys(static::$availableOptions))));
-=======
-            throw new InvalidArgumentException(sprintf('Invalid option specified: "%s". Expected one of (%s)', $option, implode(', ', array_keys(static::$availableOptions))));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $pos = array_search(static::$availableOptions[$option], $this->options);

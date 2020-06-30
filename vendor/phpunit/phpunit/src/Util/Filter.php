@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,19 +12,8 @@ namespace PHPUnit\Util;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\SyntheticError;
 
-<<<<<<< HEAD
 final class Filter
 {
-=======
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class Filter
-{
-    /**
-     * @throws Exception
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function getFilteredStacktrace(\Throwable $t): string
     {
         $prefix = false;

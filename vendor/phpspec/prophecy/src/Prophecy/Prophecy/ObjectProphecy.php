@@ -146,11 +146,7 @@ class ObjectProphecy implements ProphecyInterface
             ), $methodProphecy);
         }
 
-<<<<<<< HEAD
         $methodName = strtolower($methodProphecy->getMethodName());
-=======
-        $methodName = $methodProphecy->getMethodName();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!isset($this->methodProphecies[$methodName])) {
             $this->methodProphecies[$methodName] = array();
@@ -172,11 +168,8 @@ class ObjectProphecy implements ProphecyInterface
             return $this->methodProphecies;
         }
 
-<<<<<<< HEAD
         $methodName = strtolower($methodName);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset($this->methodProphecies[$methodName])) {
             return array();
         }
@@ -217,21 +210,15 @@ class ObjectProphecy implements ProphecyInterface
      * Checks that registered method predictions do not fail.
      *
      * @throws \Prophecy\Exception\Prediction\AggregateException If any of registered predictions fail
-<<<<<<< HEAD
      * @throws \Prophecy\Exception\Call\UnexpectedCallException
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function checkProphecyMethodsPredictions()
     {
         $exception = new AggregateException(sprintf("%s:\n", get_class($this->reveal())));
         $exception->setObjectProphecy($this);
 
-<<<<<<< HEAD
         $this->callCenter->checkUnexpectedCalls();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($this->methodProphecies as $prophecies) {
             foreach ($prophecies as $prophecy) {
                 try {

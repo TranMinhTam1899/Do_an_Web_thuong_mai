@@ -1,12 +1,8 @@
 --TEST--
 GH-1216: PHPUnit bootstrap must take globals vars even when the file is specified in command line
 --FILE--
-<<<<<<< HEAD
 <?php
 
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '--configuration';
 $_SERVER['argv'][2] = __DIR__ . '/1216/phpunit1216.xml';
 $_SERVER['argv'][3] = '--debug';
@@ -16,10 +12,7 @@ $_SERVER['argv'][6] = __DIR__ . '/1216/Issue1216Test.php';
 
 require __DIR__ . '/../../../bootstrap.php';
 PHPUnit\TextUI\Command::main();
-<<<<<<< HEAD
 ?>
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 

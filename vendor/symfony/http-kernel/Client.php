@@ -34,14 +34,7 @@ class Client extends AbstractBrowser
     private $catchExceptions = true;
 
     /**
-<<<<<<< HEAD
      * @param array $server The server parameters (equivalent of $_SERVER)
-=======
-     * @param HttpKernelInterface $kernel    An HttpKernel instance
-     * @param array               $server    The server parameters (equivalent of $_SERVER)
-     * @param History             $history   A History instance to store the browser history
-     * @param CookieJar           $cookieJar A CookieJar instance to store the cookies
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(HttpKernelInterface $kernel, array $server = [], History $history = null, CookieJar $cookieJar = null)
     {

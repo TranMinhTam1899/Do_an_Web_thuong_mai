@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -14,19 +10,9 @@
 namespace PHPUnit\Framework\Constraint;
 
 use PHPUnit\Framework\ExpectationFailedException;
-<<<<<<< HEAD
 use PHPUnit\Util\Json;
 
 class JsonMatchesTest extends ConstraintTestCase
-=======
-use PHPUnit\Framework\TestFailure;
-use PHPUnit\Util\Json;
-
-/**
- * @small
- */
-final class JsonMatchesTest extends ConstraintTestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public static function evaluateDataprovider(): array
     {
@@ -105,45 +91,4 @@ final class JsonMatchesTest extends ConstraintTestCase
 
         $this->assertEquals('matches JSON string "' . $jsonValue . '"', $constraint->toString());
     }
-<<<<<<< HEAD
-=======
-
-    public function testFailErrorWithInvalidValueAndOther(): void
-    {
-        $constraint = new JsonMatches('{"Mascott"::}');
-
-        try {
-            $constraint->evaluate('{"Mascott"::}', '', false);
-            $this->fail(\sprintf('Expected %s to be thrown.', ExpectationFailedException::class));
-        } catch (ExpectationFailedException $e) {
-            $this->assertEquals(
-                <<<EOF
-Failed asserting that '{"Mascott"::}' matches JSON string "{"Mascott"::}".
-
-EOF
-                ,
-                TestFailure::exceptionToString($e)
-            );
-        }
-    }
-
-    public function testFailErrorWithValidValueAndInvalidOther(): void
-    {
-        $constraint = new JsonMatches('{"Mascott"::}');
-
-        try {
-            $constraint->evaluate('{"Mascott":"Tux"}', '', false);
-            $this->fail(\sprintf('Expected %s to be thrown.', ExpectationFailedException::class));
-        } catch (ExpectationFailedException $e) {
-            $this->assertEquals(
-                <<<EOF
-Failed asserting that '{"Mascott":"Tux"}' matches JSON string "{"Mascott"::}".
-
-EOF
-                ,
-                TestFailure::exceptionToString($e)
-            );
-        }
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

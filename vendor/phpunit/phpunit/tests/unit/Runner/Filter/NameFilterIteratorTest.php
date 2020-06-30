@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,14 +12,7 @@ namespace PHPUnit\Runner\Filter;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 
-<<<<<<< HEAD
 class NameFilterIteratorTest extends TestCase
-=======
-/**
- * @small
- */
-final class NameFilterIteratorTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testCaseSensitiveMatch(): void
     {

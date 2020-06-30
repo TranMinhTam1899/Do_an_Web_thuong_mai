@@ -5,18 +5,12 @@ namespace PhpParser;
 class Comment implements \JsonSerializable
 {
     protected $text;
-<<<<<<< HEAD
     protected $startLine;
     protected $startFilePos;
     protected $startTokenPos;
     protected $endLine;
     protected $endFilePos;
     protected $endTokenPos;
-=======
-    protected $line;
-    protected $filePos;
-    protected $tokenPos;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Constructs a comment node.
@@ -27,7 +21,6 @@ class Comment implements \JsonSerializable
      * @param int    $startTokenPos Token offset the comment started on
      */
     public function __construct(
-<<<<<<< HEAD
         string $text,
         int $startLine = -1, int $startFilePos = -1, int $startTokenPos = -1,
         int $endLine = -1, int $endFilePos = -1, int $endTokenPos = -1
@@ -39,14 +32,6 @@ class Comment implements \JsonSerializable
         $this->endLine = $endLine;
         $this->endFilePos = $endFilePos;
         $this->endTokenPos = $endTokenPos;
-=======
-        string $text, int $startLine = -1, int $startFilePos = -1, int $startTokenPos = -1
-    ) {
-        $this->text = $text;
-        $this->line = $startLine;
-        $this->filePos = $startFilePos;
-        $this->tokenPos = $startTokenPos;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -61,7 +46,6 @@ class Comment implements \JsonSerializable
     /**
      * Gets the line number the comment started on.
      *
-<<<<<<< HEAD
      * @return int Line number (or -1 if not available)
      */
     public function getStartLine() : int {
@@ -122,48 +106,28 @@ class Comment implements \JsonSerializable
      */
     public function getLine() : int {
         return $this->startLine;
-=======
-     * @return int Line number
-     */
-    public function getLine() : int {
-        return $this->line;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Gets the file offset the comment started on.
      *
-<<<<<<< HEAD
      * @deprecated Use getStartFilePos() instead
      *
      * @return int File offset
      */
     public function getFilePos() : int {
         return $this->startFilePos;
-=======
-     * @return int File offset
-     */
-    public function getFilePos() : int {
-        return $this->filePos;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Gets the token offset the comment started on.
      *
-<<<<<<< HEAD
      * @deprecated Use getStartTokenPos() instead
      *
      * @return int Token offset
      */
     public function getTokenPos() : int {
         return $this->startTokenPos;
-=======
-     * @return int Token offset
-     */
-    public function getTokenPos() : int {
-        return $this->tokenPos;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -263,7 +227,6 @@ class Comment implements \JsonSerializable
         return [
             'nodeType' => $type,
             'text' => $this->text,
-<<<<<<< HEAD
             // TODO: Rename these to include "start".
             'line' => $this->startLine,
             'filePos' => $this->startFilePos,
@@ -271,11 +234,6 @@ class Comment implements \JsonSerializable
             'endLine' => $this->endLine,
             'endFilePos' => $this->endFilePos,
             'endTokenPos' => $this->endTokenPos,
-=======
-            'line' => $this->line,
-            'filePos' => $this->filePos,
-            'tokenPos' => $this->tokenPos,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ];
     }
 }

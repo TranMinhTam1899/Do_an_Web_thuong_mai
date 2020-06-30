@@ -87,11 +87,7 @@ interface FilesystemInterface
      *
      * @throws FileNotFoundException
      *
-<<<<<<< HEAD
      * @return int|false The timestamp or false on failure.
-=======
-     * @return string|false The timestamp or false on failure.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getTimestamp($path);
 

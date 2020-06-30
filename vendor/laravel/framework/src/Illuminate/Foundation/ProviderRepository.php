@@ -3,13 +3,8 @@
 namespace Illuminate\Foundation;
 
 use Exception;
-<<<<<<< HEAD
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Contracts\Foundation\Application as ApplicationContract;
-=======
-use Illuminate\Contracts\Foundation\Application as ApplicationContract;
-use Illuminate\Filesystem\Filesystem;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ProviderRepository
 {

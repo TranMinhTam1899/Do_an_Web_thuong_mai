@@ -2,19 +2,11 @@
 
 namespace Illuminate\Queue;
 
-<<<<<<< HEAD
 use ReflectionFunction;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Container\Container;
-=======
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use ReflectionFunction;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CallQueuedClosure implements ShouldQueue
 {

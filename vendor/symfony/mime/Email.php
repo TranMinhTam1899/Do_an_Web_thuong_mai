@@ -21,11 +21,6 @@ use Symfony\Component\Mime\Part\TextPart;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class Email extends Message
 {
@@ -106,11 +101,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -120,11 +111,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -134,11 +121,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @return Address[]
-=======
-     * @return (Address|NamedAddress)[]
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getFrom(): array
     {
@@ -174,11 +157,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -188,11 +167,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -202,11 +177,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @return Address[]
-=======
-     * @return (Address|NamedAddress)[]
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getTo(): array
     {
@@ -214,11 +185,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -238,11 +205,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @return Address[]
-=======
-     * @return (Address|NamedAddress)[]
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getCc(): array
     {
@@ -250,11 +213,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @param Address|string ...$addresses
-=======
-     * @param Address|NamedAddress|string ...$addresses
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
@@ -274,11 +233,7 @@ class Email extends Message
     }
 
     /**
-<<<<<<< HEAD
      * @return Address[]
-=======
-     * @return (Address|NamedAddress)[]
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getBcc(): array
     {
@@ -444,7 +399,6 @@ class Email extends Message
         return $this->generateBody();
     }
 
-<<<<<<< HEAD
     public function ensureValidity()
     {
         if (null === $this->text && null === $this->html && !$this->attachments) {
@@ -454,8 +408,6 @@ class Email extends Message
         parent::ensureValidity();
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Generates an AbstractPart based on the raw body of a message.
      *
@@ -478,16 +430,9 @@ class Email extends Message
      */
     private function generateBody(): AbstractPart
     {
-<<<<<<< HEAD
         $this->ensureValidity();
 
         [$htmlPart, $attachmentParts, $inlineParts] = $this->prepareParts();
-=======
-        [$htmlPart, $attachmentParts, $inlineParts] = $this->prepareParts();
-        if (null === $this->text && null === $this->html && !$attachmentParts) {
-            throw new LogicException('A message must have a text or an HTML part or attachments.');
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $part = null === $this->text ? null : new TextPart($this->text, $this->textCharset);
         if (null !== $htmlPart) {
@@ -578,51 +523,29 @@ class Email extends Message
     /**
      * @return $this
      */
-<<<<<<< HEAD
     private function setHeaderBody(string $type, string $name, $body): object
-=======
-    private function setHeaderBody(string $type, string $name, $body)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->getHeaders()->setHeaderBody($type, $name, $body);
 
         return $this;
     }
 
-<<<<<<< HEAD
     private function addListAddressHeaderBody(string $name, array $addresses)
     {
         if (!$header = $this->getHeaders()->get($name)) {
             return $this->setListAddressHeaderBody($name, $addresses);
         }
         $header->addAddresses(Address::createArray($addresses));
-=======
-    private function addListAddressHeaderBody($name, array $addresses)
-    {
-        if (!$to = $this->getHeaders()->get($name)) {
-            return $this->setListAddressHeaderBody($name, $addresses);
-        }
-        $to->addAddresses(Address::createArray($addresses));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
 
-<<<<<<< HEAD
     private function setListAddressHeaderBody(string $name, array $addresses)
     {
         $addresses = Address::createArray($addresses);
         $headers = $this->getHeaders();
         if ($header = $headers->get($name)) {
             $header->setAddresses($addresses);
-=======
-    private function setListAddressHeaderBody($name, array $addresses)
-    {
-        $addresses = Address::createArray($addresses);
-        $headers = $this->getHeaders();
-        if ($to = $headers->get($name)) {
-            $to->setAddresses($addresses);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } else {
             $headers->addMailboxListHeader($name, $addresses);
         }

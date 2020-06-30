@@ -10,11 +10,7 @@
  */
 namespace Carbon\Traits;
 
-<<<<<<< HEAD
 use Carbon\Exceptions\UnknownUnitException;
-=======
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Trait Boundaries.
@@ -227,11 +223,7 @@ trait Boundaries
     }
 
     /**
-<<<<<<< HEAD
      * Resets the date to the first day of the millennium and the time to 00:00:00
-=======
-     * Resets the date to the first day of the century and the time to 00:00:00
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @example
      * ```
@@ -248,11 +240,7 @@ trait Boundaries
     }
 
     /**
-<<<<<<< HEAD
      * Resets the date to end of the millennium and time to 23:59:59.999999
-=======
-     * Resets the date to end of the century and time to 23:59:59.999999
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @example
      * ```
@@ -284,16 +272,7 @@ trait Boundaries
      */
     public function startOfWeek($weekStartsAt = null)
     {
-<<<<<<< HEAD
         return $this->subDays((7 + $this->dayOfWeek - ($weekStartsAt ?? $this->firstWeekDay)) % 7)->startOfDay();
-=======
-        $date = $this;
-        while ($date->dayOfWeek !== ($weekStartsAt ?? $this->firstWeekDay)) {
-            $date = $date->subDay();
-        }
-
-        return $date->startOfDay();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -312,16 +291,7 @@ trait Boundaries
      */
     public function endOfWeek($weekEndsAt = null)
     {
-<<<<<<< HEAD
         return $this->addDays((7 - $this->dayOfWeek + ($weekEndsAt ?? $this->lastWeekDay)) % 7)->endOfDay();
-=======
-        $date = $this;
-        while ($date->dayOfWeek !== ($weekEndsAt ?? $this->lastWeekDay)) {
-            $date = $date->addDay();
-        }
-
-        return $date->endOfDay();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -438,11 +408,7 @@ trait Boundaries
         $ucfUnit = ucfirst(static::singularUnit($unit));
         $method = "startOf$ucfUnit";
         if (!method_exists($this, $method)) {
-<<<<<<< HEAD
             throw new UnknownUnitException($unit);
-=======
-            throw new InvalidArgumentException("Unknown unit '$unit'");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->$method(...$params);
@@ -468,11 +434,7 @@ trait Boundaries
         $ucfUnit = ucfirst(static::singularUnit($unit));
         $method = "endOf$ucfUnit";
         if (!method_exists($this, $method)) {
-<<<<<<< HEAD
             throw new UnknownUnitException($unit);
-=======
-            throw new InvalidArgumentException("Unknown unit '$unit'");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->$method(...$params);

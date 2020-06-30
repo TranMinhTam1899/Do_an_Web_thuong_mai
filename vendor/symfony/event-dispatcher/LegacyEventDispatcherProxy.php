@@ -59,21 +59,13 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
 
         if (\is_object($event)) {
             $eventName = $eventName ?? \get_class($event);
-<<<<<<< HEAD
         } elseif (\is_string($event) && (null === $eventName || $eventName instanceof ContractsEvent || $eventName instanceof Event)) {
-=======
-        } elseif (\is_string($event) && (null === $eventName || $eventName instanceof Event)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             @trigger_error(sprintf('Calling the "%s::dispatch()" method with the event name as the first argument is deprecated since Symfony 4.3, pass it as the second argument and provide the event object as the first argument instead.', ContractsEventDispatcherInterface::class), E_USER_DEPRECATED);
             $swap = $event;
             $event = $eventName ?? new Event();
             $eventName = $swap;
         } else {
-<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an object, "%s" given.', ContractsEventDispatcherInterface::class, \is_object($event) ? \get_class($event) : \gettype($event)));
-=======
-            throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an object, %s given.', ContractsEventDispatcherInterface::class, \is_object($event) ? \get_class($event) : \gettype($event)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $listeners = $this->getListeners($eventName);
@@ -124,11 +116,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getListeners($eventName = null): array
-=======
-    public function getListeners($eventName = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->dispatcher->getListeners($eventName);
     }
@@ -136,11 +124,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getListenerPriority($eventName, $listener): ?int
-=======
-    public function getListenerPriority($eventName, $listener)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->dispatcher->getListenerPriority($eventName, $listener);
     }
@@ -148,11 +132,7 @@ final class LegacyEventDispatcherProxy implements EventDispatcherInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function hasListeners($eventName = null): bool
-=======
-    public function hasListeners($eventName = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->dispatcher->hasListeners($eventName);
     }

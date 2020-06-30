@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,14 +11,7 @@ namespace PHPUnit\Framework;
 
 use PHPUnit\Util\Xml;
 
-<<<<<<< HEAD
 class AssertTest extends TestCase
-=======
-/**
- * @small
- */
-final class AssertTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public static function validInvalidJsonDataprovider(): array
     {
@@ -43,7 +32,6 @@ final class AssertTest extends TestCase
         throw new AssertionFailedError('Fail did not throw fail exception');
     }
 
-<<<<<<< HEAD
     public function testAssertSplObjectStorageContainsObject(): void
     {
         $a = new \stdClass;
@@ -88,8 +76,6 @@ final class AssertTest extends TestCase
         $this->assertContains('foo', [true], '', false, true, true);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertContainsOnlyInstancesOf(): void
     {
         $test = [new \Book, new \Book];
@@ -104,7 +90,6 @@ final class AssertTest extends TestCase
         $this->assertContainsOnlyInstancesOf(\Book::class, $test2);
     }
 
-<<<<<<< HEAD
     public function testAssertContainsPartialStringInString(): void
     {
         $this->assertContains('bar', 'foo bar');
@@ -142,8 +127,6 @@ final class AssertTest extends TestCase
         $this->assertNotContains(null, '');
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertArrayHasKeyThrowsExceptionForInvalidFirstArgument(): void
     {
         $this->expectException(Exception::class);
@@ -167,7 +150,6 @@ final class AssertTest extends TestCase
         $this->assertArrayHasKey(1, ['foo']);
     }
 
-<<<<<<< HEAD
     public function testAssertArraySubset(): void
     {
         $array = [
@@ -266,8 +248,6 @@ final class AssertTest extends TestCase
         ];
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertArrayNotHasKeyThrowsExceptionForInvalidFirstArgument(): void
     {
         $this->expectException(Exception::class);
@@ -363,7 +343,6 @@ final class AssertTest extends TestCase
         $this->assertArrayNotHasKey('bar', $array);
     }
 
-<<<<<<< HEAD
     public function testAssertContainsThrowsException(): void
     {
         $this->expectException(Exception::class);
@@ -495,8 +474,6 @@ final class AssertTest extends TestCase
         $this->assertNotContains('ORYGINAŁ', 'oryginał', '', true);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertArrayContainsOnlyIntegers(): void
     {
         $this->assertContainsOnly('integer', [1, 2, 3]);
@@ -562,15 +539,9 @@ final class AssertTest extends TestCase
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
-<<<<<<< HEAD
     public function testAssertEqualsSucceeds($a, $b, $delta = 0.0, $canonicalize = false, $ignoreCase = false): void
     {
         $this->assertEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-=======
-    public function testAssertEqualsSucceeds($a, $b): void
-    {
-        $this->assertEquals($a, $b);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -579,19 +550,11 @@ final class AssertTest extends TestCase
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
-<<<<<<< HEAD
     public function testAssertEqualsFails($a, $b, $delta = 0.0, $canonicalize = false, $ignoreCase = false): void
     {
         $this->expectException(AssertionFailedError::class);
 
         $this->assertEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
-=======
-    public function testAssertEqualsFails($a, $b): void
-    {
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertEquals($a, $b);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -600,28 +563,17 @@ final class AssertTest extends TestCase
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
-<<<<<<< HEAD
     public function testAssertNotEqualsSucceeds($a, $b, $delta = 0.0, $canonicalize = false, $ignoreCase = false): void
     {
         $this->assertNotEquals($a, $b, '', $delta, 10, $canonicalize, $ignoreCase);
     }
 
     /**
-=======
-    public function testAssertNotEqualsSucceeds($a, $b): void
-    {
-        $this->assertNotEquals($a, $b);
-    }
-
-    /**
-     * @testdox assertNotEquals($a, $b) with delta $delta, canoicalize $canonicalize, ignoreCase $ignoreCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider equalProvider
      *
      * @throws ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
-<<<<<<< HEAD
     public function testAssertNotEqualsFails($a, $b, $delta = 0.0, $canonicalize = false, $ignoreCase = false): void
     {
         $this->expectException(AssertionFailedError::class);
@@ -630,17 +582,6 @@ final class AssertTest extends TestCase
     }
 
     /**
-=======
-    public function testAssertNotEqualsFails($a, $b): void
-    {
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotEquals($a, $b);
-    }
-
-    /**
-     * @testdox assertNotSame($a, $b) fails
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider sameProvider
      *
      * @throws ExpectationFailedException
@@ -652,10 +593,6 @@ final class AssertTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox assertNotSame($a, $b)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider notSameProvider
      *
      * @throws ExpectationFailedException
@@ -669,10 +606,6 @@ final class AssertTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox assertSame($a, $b) fails
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider notSameProvider
      *
      * @throws ExpectationFailedException
@@ -684,10 +617,6 @@ final class AssertTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox assertSame($a, $b)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider sameProvider
      *
      * @throws ExpectationFailedException
@@ -1051,7 +980,6 @@ XML;
 
     public function testAssertObjectHasAttributeMultiByteAttribute(): void
     {
-<<<<<<< HEAD
         $object         = new \stdClass;
         $object->{'東京'} = 2020;
 
@@ -1711,256 +1639,6 @@ XML;
         $this->expectException(AssertionFailedError::class);
 
         $this->assertAttributeNotEquals('baz', 'privateStaticAttribute', \ClassWithNonPublicAttributes::class);
-=======
-        $object         = new \stdClass;
-        $object->{'東京'} = 2020;
-
-        $this->assertObjectHasAttribute('東京', $object);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertObjectHasAttribute('長野', $object);
-    }
-
-    public function testAssertObjectNotHasAttribute(): void
-    {
-        $o = new \Author('Terry Pratchett');
-
-        $this->assertObjectNotHasAttribute('foo', $o);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertObjectNotHasAttribute('name', $o);
-    }
-
-    public function testAssertObjectNotHasAttributeNumericAttribute(): void
-    {
-        $object           = new \stdClass;
-        $object->{'2020'} = 'Tokyo';
-
-        $this->assertObjectNotHasAttribute('2018', $object);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertObjectNotHasAttribute('2020', $object);
-    }
-
-    public function testAssertObjectNotHasAttributeMultiByteAttribute(): void
-    {
-        $object         = new \stdClass;
-        $object->{'東京'} = 2020;
-
-        $this->assertObjectNotHasAttribute('長野', $object);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertObjectNotHasAttribute('東京', $object);
-    }
-
-    public function testAssertFinite(): void
-    {
-        $this->assertFinite(1);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertFinite(\INF);
-    }
-
-    public function testAssertInfinite(): void
-    {
-        $this->assertInfinite(\INF);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertInfinite(1);
-    }
-
-    public function testAssertNan(): void
-    {
-        $this->assertNan(\NAN);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNan(1);
-    }
-
-    public function testAssertNull(): void
-    {
-        $this->assertNull(null);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNull(new \stdClass);
-    }
-
-    public function testAssertNotNull(): void
-    {
-        $this->assertNotNull(new \stdClass);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotNull(null);
-    }
-
-    public function testAssertTrue(): void
-    {
-        $this->assertTrue(true);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertTrue(false);
-    }
-
-    public function testAssertNotTrue(): void
-    {
-        $this->assertNotTrue(false);
-        $this->assertNotTrue(1);
-        $this->assertNotTrue('true');
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotTrue(true);
-    }
-
-    public function testAssertFalse(): void
-    {
-        $this->assertFalse(false);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertFalse(true);
-    }
-
-    public function testAssertNotFalse(): void
-    {
-        $this->assertNotFalse(true);
-        $this->assertNotFalse(0);
-        $this->assertNotFalse('');
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotFalse(false);
-    }
-
-    public function testAssertRegExp(): void
-    {
-        $this->assertRegExp('/foo/', 'foobar');
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertRegExp('/foo/', 'bar');
-    }
-
-    public function testAssertNotRegExp(): void
-    {
-        $this->assertNotRegExp('/foo/', 'bar');
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotRegExp('/foo/', 'foobar');
-    }
-
-    public function testAssertSame(): void
-    {
-        $o = new \stdClass;
-
-        $this->assertSame($o, $o);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertSame(new \stdClass, new \stdClass);
-    }
-
-    public function testAssertSame2(): void
-    {
-        $this->assertSame(true, true);
-        $this->assertSame(false, false);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertSame(true, false);
-    }
-
-    public function testAssertNotSame(): void
-    {
-        $this->assertNotSame(
-            new \stdClass,
-            null
-        );
-
-        $this->assertNotSame(
-            null,
-            new \stdClass
-        );
-
-        $this->assertNotSame(
-            new \stdClass,
-            new \stdClass
-        );
-
-        $o = new \stdClass;
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotSame($o, $o);
-    }
-
-    public function testAssertNotSame2(): void
-    {
-        $this->assertNotSame(true, false);
-        $this->assertNotSame(false, true);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotSame(true, true);
-    }
-
-    public function testAssertNotSameFailsNull(): void
-    {
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertNotSame(null, null);
-    }
-
-    public function testGreaterThan(): void
-    {
-        $this->assertGreaterThan(1, 2);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertGreaterThan(2, 1);
-    }
-
-    public function testGreaterThanOrEqual(): void
-    {
-        $this->assertGreaterThanOrEqual(1, 2);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertGreaterThanOrEqual(2, 1);
-    }
-
-    public function testLessThan(): void
-    {
-        $this->assertLessThan(2, 1);
-
-        try {
-            $this->assertLessThan(1, 2);
-        } catch (AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    public function testLessThanOrEqual(): void
-    {
-        $this->assertLessThanOrEqual(2, 1);
-
-        $this->expectException(AssertionFailedError::class);
-
-        $this->assertLessThanOrEqual(1, 2);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function testAssertClassHasAttributeThrowsExceptionIfAttributeNameIsNotValid(): void
@@ -2173,7 +1851,6 @@ XML;
         $this->assertObjectNotHasAttribute('privateAttribute', $obj);
     }
 
-<<<<<<< HEAD
     public function testAssertThatAttributeEquals(): void
     {
         $this->assertThat(
@@ -2206,8 +1883,6 @@ XML;
         );
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @doesNotPerformAssertions
      */
@@ -2537,7 +2212,6 @@ XML;
         $this->assertNotEmpty([]);
     }
 
-<<<<<<< HEAD
     public function testAssertAttributeEmpty(): void
     {
         $o    = new \stdClass;
@@ -2566,8 +2240,6 @@ XML;
         $this->assertAttributeNotEmpty('a', $o);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testMarkTestIncomplete(): void
     {
         try {
@@ -2617,11 +2289,7 @@ XML;
         try {
             $this->assertCount(2, '');
         } catch (Exception $e) {
-<<<<<<< HEAD
             $this->assertEquals('Argument #2 (No Value) of PHPUnit\Framework\Assert::assertCount() must be a countable or iterable', $e->getMessage());
-=======
-            $this->assertEquals('Argument #2 of PHPUnit\Framework\Assert::assertCount() must be a countable or iterable', $e->getMessage());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             return;
         }
@@ -2629,7 +2297,6 @@ XML;
         $this->fail();
     }
 
-<<<<<<< HEAD
     public function testAssertAttributeCount(): void
     {
         $o    = new \stdClass;
@@ -2638,8 +2305,6 @@ XML;
         $this->assertAttributeCount(0, 'a', $o);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertNotCount(): void
     {
         $this->assertNotCount(2, [1, 2, 3]);
@@ -2656,7 +2321,6 @@ XML;
         $this->assertNotCount(2, '');
     }
 
-<<<<<<< HEAD
     public function testAssertAttributeNotCount(): void
     {
         $o    = new \stdClass;
@@ -2665,8 +2329,6 @@ XML;
         $this->assertAttributeNotCount(1, 'a', $o);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertSameSize(): void
     {
         $this->assertSameSize([1, 2], [3, 4]);
@@ -2681,11 +2343,7 @@ XML;
         try {
             $this->assertSameSize('a', []);
         } catch (Exception $e) {
-<<<<<<< HEAD
             $this->assertEquals('Argument #1 (No Value) of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
-=======
-            $this->assertEquals('Argument #1 of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             return;
         }
@@ -2698,11 +2356,7 @@ XML;
         try {
             $this->assertSameSize([], '');
         } catch (Exception $e) {
-<<<<<<< HEAD
             $this->assertEquals('Argument #2 (No Value) of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
-=======
-            $this->assertEquals('Argument #2 of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             return;
         }
@@ -2733,23 +2387,11 @@ XML;
         $this->assertNotSameSize([], '');
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @testdox Assert JSON
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertJson(): void
     {
         $this->assertJson('{}');
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @testdox Assert JSON string equals JSON string
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertJsonStringEqualsJsonString(): void
     {
         $expected = '{"Mascott" : "Tux"}';
@@ -2782,10 +2424,6 @@ XML;
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox Assert JSON string equals equals JSON string raised $_dataName
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider validInvalidJsonDataprovider
      *
      * @throws ExpectationFailedException
@@ -2869,7 +2507,6 @@ XML;
         $this->assertInstanceOf(\Exception::class, new \stdClass);
     }
 
-<<<<<<< HEAD
     public function testAssertAttributeInstanceOf(): void
     {
         $o    = new \stdClass;
@@ -2878,8 +2515,6 @@ XML;
         $this->assertAttributeInstanceOf(\stdClass::class, 'a', $o);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertNotInstanceOfThrowsExceptionIfTypeDoesNotExist(): void
     {
         $this->expectException(Exception::class);
@@ -2896,7 +2531,6 @@ XML;
         $this->assertNotInstanceOf(\stdClass::class, new \stdClass);
     }
 
-<<<<<<< HEAD
     public function testAssertAttributeNotInstanceOf(): void
     {
         $o    = new \stdClass;
@@ -2948,8 +2582,6 @@ XML;
         $this->assertAttributeNotInternalType('string', 'a', $o);
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testAssertStringMatchesFormatFileThrowsExceptionForInvalidArgument(): void
     {
         $this->expectException(Exception::class);
@@ -3136,11 +2768,7 @@ XML;
 
     public function testCallableTypeCanBeAsserted(): void
     {
-<<<<<<< HEAD
         $this->assertIsCallable(function () {
-=======
-        $this->assertIsCallable(function (): void {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         });
 
         try {
@@ -3287,11 +2915,7 @@ XML;
         $this->assertIsNotCallable(null);
 
         try {
-<<<<<<< HEAD
             $this->assertIsNotCallable(function () {
-=======
-            $this->assertIsNotCallable(function (): void {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             });
         } catch (AssertionFailedError $e) {
             return;
@@ -3460,47 +3084,6 @@ XML;
         $this->fail();
     }
 
-<<<<<<< HEAD
-=======
-    public function testIterableContainsEqualObjectCanBeAsserted(): void
-    {
-        $a      = new \stdClass;
-        $a->foo = 'bar';
-
-        $b      = new \stdClass;
-        $b->foo = 'baz';
-
-        $this->assertContainsEquals($a, [$a]);
-
-        try {
-            $this->assertContainsEquals($b, [$a]);
-        } catch (AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
-    public function testIterableNotContainsEqualObjectCanBeAsserted(): void
-    {
-        $a      = new \stdClass;
-        $a->foo = 'bar';
-
-        $b      = new \stdClass;
-        $b->foo = 'baz';
-
-        $this->assertNotContainsEquals($b, [$a]);
-
-        try {
-            $this->assertNotContainsEquals($a, [$a]);
-        } catch (AssertionFailedError $e) {
-            return;
-        }
-
-        $this->fail();
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function sameValues(): array
     {
         $object   = new \SampleClass(4, 8, 15);
@@ -3689,7 +3272,6 @@ XML;
         $storage2->attach($object1);
 
         return [
-<<<<<<< HEAD
             // strings
             ['a', 'A', 0, false, true], // ignore case
             // arrays
@@ -3704,11 +3286,6 @@ XML;
             [[new \Struct(2.3)], [new \Struct(2.5)], 0.5],
             // numeric with delta
             [1, 2, 1],
-=======
-            // arrays
-            [['a' => 1, 'b' => 2], ['b' => 2, 'a' => 1]],
-            [[1], ['1']],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // objects
             [$object1, $object2],
             [$book1, $book2],
@@ -3736,7 +3313,6 @@ XML;
                 new \DateTime('2013-03-29 04:13:35', new \DateTimeZone('America/New_York')),
             ],
             [
-<<<<<<< HEAD
                 new \DateTime('2013-03-29 04:13:35', new \DateTimeZone('America/New_York')),
                 new \DateTime('2013-03-29 04:13:25', new \DateTimeZone('America/New_York')),
                 10,
@@ -3747,8 +3323,6 @@ XML;
                 65,
             ],
             [
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 new \DateTime('2013-03-29', new \DateTimeZone('America/New_York')),
                 new \DateTime('2013-03-29', new \DateTimeZone('America/New_York')),
             ],
@@ -3757,26 +3331,20 @@ XML;
                 new \DateTime('2013-03-29 03:13:35', new \DateTimeZone('America/Chicago')),
             ],
             [
-<<<<<<< HEAD
                 new \DateTime('2013-03-29 04:13:35', new \DateTimeZone('America/New_York')),
                 new \DateTime('2013-03-29 03:13:49', new \DateTimeZone('America/Chicago')),
                 15,
             ],
             [
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 new \DateTime('2013-03-30', new \DateTimeZone('America/New_York')),
                 new \DateTime('2013-03-29 23:00:00', new \DateTimeZone('America/Chicago')),
             ],
             [
-<<<<<<< HEAD
                 new \DateTime('2013-03-30', new \DateTimeZone('America/New_York')),
                 new \DateTime('2013-03-29 23:01:30', new \DateTimeZone('America/Chicago')),
                 100,
             ],
             [
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 new \DateTime('@1364616000'),
                 new \DateTime('2013-03-29 23:00:00', new \DateTimeZone('America/Chicago')),
             ],

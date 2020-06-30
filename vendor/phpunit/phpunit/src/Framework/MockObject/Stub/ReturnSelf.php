@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -14,7 +10,6 @@
 namespace PHPUnit\Framework\MockObject\Stub;
 
 use PHPUnit\Framework\MockObject\Invocation;
-<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Invocation\ObjectInvocation;
 use PHPUnit\Framework\MockObject\RuntimeException;
 use PHPUnit\Framework\MockObject\Stub;
@@ -33,20 +28,6 @@ class ReturnSelf implements Stub
             );
         }
 
-=======
-use PHPUnit\Framework\MockObject\RuntimeException;
-
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class ReturnSelf implements Stub
-{
-    /**
-     * @throws RuntimeException
-     */
-    public function invoke(Invocation $invocation)
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $invocation->getObject();
     }
 

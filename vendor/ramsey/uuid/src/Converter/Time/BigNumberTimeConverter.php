@@ -43,29 +43,17 @@ class BigNumberTimeConverter implements TimeConverterInterface
         $usec = new BigNumber($microSeconds);
         $usec->multiply('10');
 
-<<<<<<< HEAD
         $uuidTime
             ->add($sec)
-=======
-        $uuidTime->add($sec)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ->add($usec)
             ->add('122192928000000000');
 
         $uuidTimeHex = sprintf('%016s', $uuidTime->convertToBase(16));
 
-<<<<<<< HEAD
         return [
             'low' => substr($uuidTimeHex, 8),
             'mid' => substr($uuidTimeHex, 4, 4),
             'hi' => substr($uuidTimeHex, 0, 4),
         ];
-=======
-        return array(
-            'low' => substr($uuidTimeHex, 8),
-            'mid' => substr($uuidTimeHex, 4, 4),
-            'hi' => substr($uuidTimeHex, 0, 4),
-        );
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

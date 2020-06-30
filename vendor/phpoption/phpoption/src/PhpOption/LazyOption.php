@@ -18,7 +18,6 @@
 
 namespace PhpOption;
 
-<<<<<<< HEAD
 /**
  * @template T
  *
@@ -43,46 +42,15 @@ final class LazyOption extends Option
      * @return LazyOption<S>
      */
     public static function create($callback, array $arguments = [])
-=======
-final class LazyOption extends Option
-{
-    /** @var callable */
-    private $callback;
-
-    /** @var array */
-    private $arguments;
-
-    /** @var Option|null */
-    private $option;
-
-    /**
-     * Helper Constructor.
-     *
-     * @param callable $callback
-     * @param array $arguments
-     *
-     * @return LazyOption
-     */
-    public static function create($callback, array $arguments = array())
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new self($callback, $arguments);
     }
 
     /**
-<<<<<<< HEAD
      * @param callable(mixed...):(Option<T>) $callback
      * @param array<int, mixed>              $arguments
      */
     public function __construct($callback, array $arguments = [])
-=======
-     * Constructor.
-     *
-     * @param callable $callback
-     * @param array $arguments
-     */
-    public function __construct($callback, array $arguments = array())
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!is_callable($callback)) {
             throw new \InvalidArgumentException('Invalid callback given');
@@ -127,12 +95,6 @@ final class LazyOption extends Option
         return $this->option()->orElse($else);
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @deprecated Use forAll() instead.
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function ifDefined($callable)
     {
         $this->option()->ifDefined($callable);
@@ -189,11 +151,7 @@ final class LazyOption extends Option
     }
 
     /**
-<<<<<<< HEAD
      * @return Option<T>
-=======
-     * @return Option
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private function option()
     {
@@ -201,12 +159,8 @@ final class LazyOption extends Option
             $this->option = call_user_func_array($this->callback, $this->arguments);
             if (!$this->option instanceof Option) {
                 $this->option = null;
-<<<<<<< HEAD
 
                 throw new \RuntimeException(sprintf('Expected instance of \%s', Option::class));
-=======
-                throw new \RuntimeException('Expected instance of \PhpOption\Option');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

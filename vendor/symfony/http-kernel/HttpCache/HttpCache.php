@@ -207,11 +207,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
 
         $this->traces[$this->getTraceKey($request)] = [];
 
-<<<<<<< HEAD
         if (!$request->isMethodSafe()) {
-=======
-        if (!$request->isMethodSafe(false)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $response = $this->invalidate($request, $catch);
         } elseif ($request->headers->has('expect') || !$request->isMethodCacheable()) {
             $response = $this->pass($request, $catch);
@@ -260,12 +256,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Forwards the Request to the backend without storing the Response in the cache.
      *
-<<<<<<< HEAD
      * @param bool $catch Whether to process exceptions
-=======
-     * @param Request $request A Request instance
-     * @param bool    $catch   Whether to process exceptions
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      */
@@ -279,12 +270,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Invalidates non-safe methods (like POST, PUT, and DELETE).
      *
-<<<<<<< HEAD
      * @param bool $catch Whether to process exceptions
-=======
-     * @param Request $request A Request instance
-     * @param bool    $catch   Whether to process exceptions
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      *
@@ -332,12 +318,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * the backend using conditional GET. When no matching cache entry is found,
      * it triggers "miss" processing.
      *
-<<<<<<< HEAD
      * @param bool $catch Whether to process exceptions
-=======
-     * @param Request $request A Request instance
-     * @param bool    $catch   Whether to process exceptions
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      *
@@ -369,13 +350,10 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             return $this->validate($request, $entry, $catch);
         }
 
-<<<<<<< HEAD
         if ($entry->headers->hasCacheControlDirective('no-cache')) {
             return $this->validate($request, $entry, $catch);
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->record($request, 'fresh');
 
         $entry->headers->set('Age', $entry->getAge());
@@ -389,13 +367,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * The original request is used as a template for a conditional
      * GET request with the backend.
      *
-<<<<<<< HEAD
      * @param bool $catch Whether to process exceptions
-=======
-     * @param Request  $request A Request instance
-     * @param Response $entry   A Response instance to validate
-     * @param bool     $catch   Whether to process exceptions
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      */
@@ -409,13 +381,9 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         }
 
         // add our cached last-modified validator
-<<<<<<< HEAD
         if ($entry->headers->has('Last-Modified')) {
             $subRequest->headers->set('if_modified_since', $entry->headers->get('Last-Modified'));
         }
-=======
-        $subRequest->headers->set('if_modified_since', $entry->headers->get('Last-Modified'));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // Add our cached etag validator to the environment.
         // We keep the etags from the client to handle the case when the client
@@ -462,12 +430,7 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
      * Unconditionally fetches a fresh response from the backend and
      * stores it in the cache if is cacheable.
      *
-<<<<<<< HEAD
      * @param bool $catch Whether to process exceptions
-=======
-     * @param Request $request A Request instance
-     * @param bool    $catch   Whether to process exceptions
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      */
@@ -513,7 +476,6 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
         // always a "master" request (as the real master request can be in cache)
         $response = SubRequestHandler::handle($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST, $catch);
 
-<<<<<<< HEAD
         /*
          * Support stale-if-error given on Responses or as a config option.
          * RFC 7234 summarizes in Section 4.2.4 (but also mentions with the individual
@@ -535,24 +497,16 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
             && !$entry->headers->hasCacheControlDirective('no-cache')
             && !$entry->mustRevalidate()
         ) {
-=======
-        // we don't implement the stale-if-error on Requests, which is nonetheless part of the RFC
-        if (null !== $entry && \in_array($response->getStatusCode(), [500, 502, 503, 504])) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (null === $age = $entry->headers->getCacheControlDirective('stale-if-error')) {
                 $age = $this->options['stale_if_error'];
             }
 
-<<<<<<< HEAD
             /*
              * stale-if-error gives the (extra) time that the Response may be used *after* it has become stale.
              * So we compare the time the $entry has been sitting in the cache already with the
              * time it was fresh plus the allowed grace period.
              */
             if ($entry->getAge() <= $entry->getMaxAge() + $age) {
-=======
-            if (abs($entry->getTtl()) < $age) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $this->record($request, 'stale-if-error');
 
                 return $entry;
@@ -711,15 +665,8 @@ class HttpCache implements HttpKernelInterface, TerminableInterface
     /**
      * Checks if the Request includes authorization or other sensitive information
      * that should cause the Response to be considered private by default.
-<<<<<<< HEAD
      */
     private function isPrivateRequest(Request $request): bool
-=======
-     *
-     * @return bool true if the Request is private, false otherwise
-     */
-    private function isPrivateRequest(Request $request)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($this->options['private_headers'] as $key) {
             $key = strtolower(str_replace('HTTP_', '', $key));

@@ -1,10 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-=======
-// data source
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 namespace Faker\Provider\en_NG;
 
 class Person extends \Faker\Provider\Person
@@ -77,11 +72,7 @@ class Person extends \Faker\Provider\Person
         'Funmilayo',
         'Gbadamosi', 'Gbogboade', 'Grace',
         'Habeeb', 'Hanifat', 'Isaac',
-<<<<<<< HEAD
         'Ismail', 'Isokun', 'Israel', 'Iyalla',
-=======
-        'Ismail', 'Isokun', 'Isreal', 'Iyalla',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'Jamiu', 'Jimoh', 'Joshua', 'Justina',
         'Katherine', 'Kayode', 'Kayode', 'Kimberly',
         'Ladega', 'Latifat', 'Lawal', 'Leonard',

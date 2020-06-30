@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Takuya Sawada
  * - Atsushi Tanaka
@@ -45,10 +41,7 @@ return [
     'from_now' => ':time後',
     'after' => ':time後',
     'before' => ':time前',
-<<<<<<< HEAD
     'diff_now' => '今',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => '昨日',
     'diff_tomorrow' => '明日',
     'formats' => [

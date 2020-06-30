@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -17,11 +13,7 @@ namespace PHPUnit\Framework\Constraint;
  * Constraint that asserts that the value it is evaluated for is greater
  * than a given value.
  */
-<<<<<<< HEAD
 class GreaterThan extends Constraint
-=======
-final class GreaterThan extends Constraint
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var float|int
@@ -33,11 +25,8 @@ final class GreaterThan extends Constraint
      */
     public function __construct($value)
     {
-<<<<<<< HEAD
         parent::__construct();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->value = $value;
     }
 
@@ -48,11 +37,7 @@ final class GreaterThan extends Constraint
      */
     public function toString(): string
     {
-<<<<<<< HEAD
         return 'is greater than ' . $this->exporter->export($this->value);
-=======
-        return 'is greater than ' . $this->exporter()->export($this->value);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

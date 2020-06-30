@@ -1,11 +1,7 @@
 --TEST--
 \PHPUnit\Framework\MockObject\Generator::generate('Foo', [], 'MockFoo', true, true)
 --FILE--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class Foo
 {
     public function bar(string $baz): Bar
@@ -26,7 +22,6 @@ $mock = $generator->generate(
     true
 );
 
-<<<<<<< HEAD
 print $mock['code'];
 ?>
 --EXPECT--
@@ -41,17 +36,6 @@ class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
     {
         $this->__phpunit_invocationMocker = clone $this->__phpunit_getInvocationMocker();
     }
-=======
-print $mock->getClassCode();
---EXPECTF--
-declare(strict_types=1);
-
-class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
-{
-    use \PHPUnit\Framework\MockObject\Api;
-    use \PHPUnit\Framework\MockObject\Method;
-    use \PHPUnit\Framework\MockObject\MockedCloneMethod;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     public function bar(string $baz): Bar
     {
@@ -66,21 +50,14 @@ class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
             }
         }
 
-<<<<<<< HEAD
         $__phpunit_result = $this->__phpunit_getInvocationMocker()->invoke(
             new \PHPUnit\Framework\MockObject\Invocation\ObjectInvocation(
                 'Foo', 'bar', $__phpunit_arguments, 'Bar', $this, true
-=======
-        $__phpunit_result = $this->__phpunit_getInvocationHandler()->invoke(
-            new \PHPUnit\Framework\MockObject\Invocation(
-                'Foo', 'bar', $__phpunit_arguments, ': Bar', $this, true
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             )
         );
 
         return $__phpunit_result;
     }
-<<<<<<< HEAD
 
     public function expects(\PHPUnit\Framework\MockObject\Matcher\Invocation $matcher)
     {
@@ -127,6 +104,4 @@ class MockFoo extends Foo implements PHPUnit\Framework\MockObject\MockObject
             $this->__phpunit_invocationMocker = null;
         }
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

@@ -512,13 +512,9 @@ final class Mbstring
             $offset = 0;
         } elseif ($offset = (int) $offset) {
             if ($offset < 0) {
-<<<<<<< HEAD
                 if (0 > $offset += self::mb_strlen($needle)) {
                     $haystack = self::mb_substr($haystack, 0, $offset, $encoding);
                 }
-=======
-                $haystack = self::mb_substr($haystack, 0, $offset, $encoding);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $offset = 0;
             } else {
                 $haystack = self::mb_substr($haystack, $offset, 2147483647, $encoding);
@@ -538,11 +534,7 @@ final class Mbstring
             return null;
         }
 
-<<<<<<< HEAD
         if (1 > $split_length = (int) $split_length) {
-=======
-        if ($split_length < 1) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             trigger_error('The length of each segment must be greater than zero', E_USER_WARNING);
 
             return false;
@@ -552,7 +544,6 @@ final class Mbstring
             $encoding = mb_internal_encoding();
         }
 
-<<<<<<< HEAD
         if ('UTF-8' === $encoding = self::getEncoding($encoding)) {
             $rx = '/(';
             while (65535 < $split_length) {
@@ -564,8 +555,6 @@ final class Mbstring
             return preg_split($rx, $string, null, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $result = array();
         $length = mb_strlen($string, $encoding);
 
@@ -839,22 +828,16 @@ final class Mbstring
             return self::$internalEncoding;
         }
 
-<<<<<<< HEAD
         if ('UTF-8' === $encoding) {
             return 'UTF-8';
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $encoding = strtoupper($encoding);
 
         if ('8BIT' === $encoding || 'BINARY' === $encoding) {
             return 'CP850';
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ('UTF8' === $encoding) {
             return 'UTF-8';
         }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -17,10 +13,6 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Runner\PhptTestCase;
 use PHPUnit\Util\Test;
 use SebastianBergmann\CodeCoverage\Driver\Driver;
-<<<<<<< HEAD
-=======
-use SebastianBergmann\CodeCoverage\Driver\PCOV;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use SebastianBergmann\CodeCoverage\Driver\PHPDBG;
 use SebastianBergmann\CodeCoverage\Driver\Xdebug;
 use SebastianBergmann\CodeCoverage\Node\Builder;
@@ -166,13 +158,9 @@ final class CodeCoverage
     public function getReport(): Directory
     {
         if ($this->report === null) {
-<<<<<<< HEAD
             $builder = new Builder;
 
             $this->report = $builder->build($this);
-=======
-            $this->report = (new Builder)->build($this);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->report;
@@ -674,12 +662,8 @@ final class CodeCoverage
 
             $firstMethod          = \array_shift($classOrTrait['methods']);
             $firstMethodStartLine = $firstMethod['startLine'];
-<<<<<<< HEAD
             $firstMethodEndLine   = $firstMethod['endLine'];
             $lastMethodEndLine    = $firstMethodEndLine;
-=======
-            $lastMethodEndLine    = $firstMethod['endLine'];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             do {
                 $lastMethod = \array_pop($classOrTrait['methods']);
@@ -712,11 +696,7 @@ final class CodeCoverage
             switch (\get_class($token)) {
                 case \PHP_Token_COMMENT::class:
                 case \PHP_Token_DOC_COMMENT::class:
-<<<<<<< HEAD
                     $_token = \trim($token);
-=======
-                    $_token = \trim((string) $token);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $_line  = \trim($lines[$token->getLine() - 1]);
 
                     if ($_token === '// @codeCoverageIgnore' ||
@@ -733,11 +713,7 @@ final class CodeCoverage
 
                     if (!$ignore) {
                         $start = $token->getLine();
-<<<<<<< HEAD
                         $end   = $start + \substr_count($token, "\n");
-=======
-                        $end   = $start + \substr_count((string) $token, "\n");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                         // Do not ignore the first line when there is a token
                         // before the comment
@@ -764,11 +740,7 @@ final class CodeCoverage
                 case \PHP_Token_FUNCTION::class:
                     /* @var \PHP_Token_Interface $token */
 
-<<<<<<< HEAD
                     $docblock = $token->getDocblock();
-=======
-                    $docblock = (string) $token->getDocblock();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                     $this->ignoredLines[$fileName][] = $token->getLine();
 
@@ -791,10 +763,6 @@ final class CodeCoverage
                 case \PHP_Token_OPEN_TAG::class:
                 case \PHP_Token_CLOSE_TAG::class:
                 case \PHP_Token_USE::class:
-<<<<<<< HEAD
-=======
-                case \PHP_Token_USE_FUNCTION::class:
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $this->ignoredLines[$fileName][] = $token->getLine();
 
                     break;
@@ -937,13 +905,6 @@ final class CodeCoverage
             return new Xdebug($filter);
         }
 
-<<<<<<< HEAD
-=======
-        if ($runtime->hasPCOV()) {
-            return new PCOV;
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         throw new RuntimeException('No code coverage driver available');
     }
 
@@ -996,16 +957,10 @@ final class CodeCoverage
                 }
             }
 
-<<<<<<< HEAD
             $data     = [];
             $coverage = $this->driver->stop();
 
             foreach ($coverage as $file => $fileCoverage) {
-=======
-            $data = [];
-
-            foreach ($this->driver->stop() as $file => $fileCoverage) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if ($this->filter->isFiltered($file)) {
                     continue;
                 }

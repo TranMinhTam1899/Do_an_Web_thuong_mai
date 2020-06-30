@@ -17,15 +17,9 @@ namespace Symfony\Component\VarDumper\Exception;
 class ThrowingCasterException extends \Exception
 {
     /**
-<<<<<<< HEAD
      * @param \Throwable $prev The exception thrown from the caster
      */
     public function __construct(\Throwable $prev)
-=======
-     * @param \Exception $prev The exception thrown from the caster
-     */
-    public function __construct(\Exception $prev)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         parent::__construct('Unexpected '.\get_class($prev).' thrown from a caster: '.$prev->getMessage(), 0, $prev);
     }

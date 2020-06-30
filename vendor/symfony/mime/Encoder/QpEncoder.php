@@ -15,11 +15,6 @@ use Symfony\Component\Mime\CharacterStream;
 
 /**
  * @author Chris Corbyn
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class QpEncoder implements EncoderInterface
 {
@@ -94,11 +89,7 @@ class QpEncoder implements EncoderInterface
 
     public function __construct()
     {
-<<<<<<< HEAD
         $id = static::class;
-=======
-        $id = \get_class($this);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset(self::$safeMapShare[$id])) {
             $this->initSafeMap();
             self::$safeMapShare[$id] = $this->safeMap;

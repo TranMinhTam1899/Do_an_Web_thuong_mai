@@ -3,13 +3,8 @@
 namespace Illuminate\Foundation\Console;
 
 use Illuminate\Console\Command;
-<<<<<<< HEAD
 use Illuminate\Encryption\Encrypter;
 use Illuminate\Console\ConfirmableTrait;
-=======
-use Illuminate\Console\ConfirmableTrait;
-use Illuminate\Encryption\Encrypter;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class KeyGenerateCommand extends Command
 {

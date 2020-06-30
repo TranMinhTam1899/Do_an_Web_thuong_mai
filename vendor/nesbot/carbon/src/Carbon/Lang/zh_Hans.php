@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - monkeycon
  * - François B
@@ -47,10 +43,7 @@ return [
     'from_now' => ':time后',
     'after' => ':time后',
     'before' => ':time前',
-<<<<<<< HEAD
     'diff_now' => '现在',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => '昨天',
     'diff_tomorrow' => '明天',
     'formats' => [

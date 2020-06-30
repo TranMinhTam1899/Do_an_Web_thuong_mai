@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -20,11 +16,7 @@ use SebastianBergmann\Comparator\ComparisonFailure;
 /**
  * Asserts whether or not two JSON objects are equal.
  */
-<<<<<<< HEAD
 class JsonMatches extends Constraint
-=======
-final class JsonMatches extends Constraint
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -33,11 +25,8 @@ final class JsonMatches extends Constraint
 
     public function __construct(string $value)
     {
-<<<<<<< HEAD
         parent::__construct();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->value = $value;
     }
 
@@ -95,22 +84,16 @@ final class JsonMatches extends Constraint
 
             if ($error) {
                 parent::fail($other, $description);
-<<<<<<< HEAD
 
                 return;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             [$error] = Json::canonicalize($this->value);
 
             if ($error) {
                 parent::fail($other, $description);
-<<<<<<< HEAD
 
                 return;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $comparisonFailure = new ComparisonFailure(

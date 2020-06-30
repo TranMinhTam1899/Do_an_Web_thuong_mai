@@ -65,11 +65,8 @@ class Logger extends AbstractLogger
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
      *
      * @return void
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function log($level, $message, array $context = [])
     {
@@ -82,11 +79,7 @@ class Logger extends AbstractLogger
         }
 
         $formatter = $this->formatter;
-<<<<<<< HEAD
         @fwrite($this->handle, $formatter($level, $message, $context));
-=======
-        fwrite($this->handle, $formatter($level, $message, $context));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     private function format(string $level, string $message, array $context): string
@@ -108,10 +101,6 @@ class Logger extends AbstractLogger
             $message = strtr($message, $replacements);
         }
 
-<<<<<<< HEAD
         return sprintf('%s [%s] %s', date(\DateTime::RFC3339), $level, $message).PHP_EOL;
-=======
-        return sprintf('%s [%s] %s', date(\DateTime::RFC3339), $level, $message).\PHP_EOL;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

@@ -32,13 +32,10 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
      */
     public function __construct(?string $locale, array $messages = [])
     {
-<<<<<<< HEAD
         if (null === $locale) {
             @trigger_error(sprintf('Passing "null" to the first argument of the "%s" method has been deprecated since Symfony 4.4 and will throw an error in 5.0.', __METHOD__), E_USER_DEPRECATED);
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->locale = $locale;
         $this->messages = $messages;
     }
@@ -161,7 +158,6 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     public function add($messages, $domain = 'messages')
     {
         if (!isset($this->messages[$domain])) {
-<<<<<<< HEAD
             $this->messages[$domain] = [];
         }
         $intlDomain = $domain;
@@ -175,11 +171,6 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
             } else {
                 $this->messages[$domain][$id] = $message;
             }
-=======
-            $this->messages[$domain] = $messages;
-        } else {
-            $this->messages[$domain] = array_replace($this->messages[$domain], $messages);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -189,11 +180,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     public function addCatalogue(MessageCatalogueInterface $catalogue)
     {
         if ($catalogue->getLocale() !== $this->locale) {
-<<<<<<< HEAD
             throw new LogicException(sprintf('Cannot add a catalogue for locale "%s" as the current locale for this catalogue is "%s".', $catalogue->getLocale(), $this->locale));
-=======
-            throw new LogicException(sprintf('Cannot add a catalogue for locale "%s" as the current locale for this catalogue is "%s"', $catalogue->getLocale(), $this->locale));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         foreach ($catalogue->all() as $domain => $messages) {

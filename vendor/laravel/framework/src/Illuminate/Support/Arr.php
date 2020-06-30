@@ -3,13 +3,8 @@
 namespace Illuminate\Support;
 
 use ArrayAccess;
-<<<<<<< HEAD
 use InvalidArgumentException;
 use Illuminate\Support\Traits\Macroable;
-=======
-use Illuminate\Support\Traits\Macroable;
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Arr
 {
@@ -177,11 +172,7 @@ class Arr
         }
 
         foreach ($array as $key => $value) {
-<<<<<<< HEAD
             if (call_user_func($callback, $value, $key)) {
-=======
-            if ($callback($value, $key)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return $value;
             }
         }

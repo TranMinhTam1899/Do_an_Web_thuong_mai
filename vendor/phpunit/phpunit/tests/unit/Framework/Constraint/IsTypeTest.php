@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -17,14 +13,7 @@ use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestFailure;
 
-<<<<<<< HEAD
 class IsTypeTest extends ConstraintTestCase
-=======
-/**
- * @small
- */
-final class IsTypeTest extends ConstraintTestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testConstraintIsType(): void
     {
@@ -85,13 +74,7 @@ EOF
 
         $this->assertTrue($constraint->evaluate($resource, '', true));
 
-<<<<<<< HEAD
         @\fclose($resource);
-=======
-        if (\is_resource($resource)) {
-            @\fclose($resource);
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function resources()
@@ -114,33 +97,6 @@ EOF
         $this->assertEquals('is of type "iterable"', $constraint->toString());
     }
 
-<<<<<<< HEAD
-=======
-    public function testTypeCanBeNull(): void
-    {
-        $constraint = Assert::isType('null');
-
-        $this->assertNull($constraint->evaluate(null));
-        $this->assertEquals('is of type "null"', $constraint->toString());
-    }
-
-    public function testTypeCanNotBeAnUndefinedOne(): void
-    {
-        try {
-            Assert::isType('diverse');
-        } catch (\PHPUnit\Framework\Exception $e) {
-            $this->assertEquals(
-                <<<EOF
-PHPUnit\Framework\Exception: Type specified for PHPUnit\Framework\Constraint\IsType <diverse> is not a valid type.
-
-EOF
-                ,
-                TestFailure::exceptionToString($e)
-            );
-        }
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Removes spaces in front of newlines
      *

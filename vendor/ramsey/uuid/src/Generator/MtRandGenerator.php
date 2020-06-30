@@ -18,13 +18,10 @@ namespace Ramsey\Uuid\Generator;
  * MtRandRandomGenerator provides functionality to generate strings of random
  * binary data using the `mt_rand()` PHP function
  *
-<<<<<<< HEAD
  * @deprecated The mt_rand() function is not a reliable source of randomness.
  *     The default RandomBytesGenerator, which uses the random_bytes() function,
  *     is recommended as the safest and most reliable source of randomness.
  *     <em>This generator will be removed in ramsey/uuid 4.0.0.</em>
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @link http://php.net/mt_rand
  */
 class MtRandGenerator implements RandomGeneratorInterface

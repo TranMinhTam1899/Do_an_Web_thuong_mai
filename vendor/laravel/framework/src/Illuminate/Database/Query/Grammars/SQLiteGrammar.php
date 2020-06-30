@@ -2,20 +2,13 @@
 
 namespace Illuminate\Database\Query\Grammars;
 
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Query\Builder;
-=======
-use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SQLiteGrammar extends Grammar
 {
     /**
-<<<<<<< HEAD
      * The components that make up a select clause.
      *
      * @var array
@@ -35,8 +28,6 @@ class SQLiteGrammar extends Grammar
     ];
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * All of the available clause operators.
      *
      * @var array
@@ -48,7 +39,6 @@ class SQLiteGrammar extends Grammar
     ];
 
     /**
-<<<<<<< HEAD
      * Compile a select query into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -80,16 +70,6 @@ class SQLiteGrammar extends Grammar
         $conjunction = $union['all'] ? ' union all ' : ' union ';
 
         return $conjunction.'select * from ('.$union['query']->toSql().')';
-=======
-     * Wrap a union subquery in parentheses.
-     *
-     * @param  string  $sql
-     * @return string
-     */
-    protected function wrapUnion($sql)
-    {
-        return 'select * from ('.$sql.')';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -183,17 +163,12 @@ class SQLiteGrammar extends Grammar
     }
 
     /**
-<<<<<<< HEAD
      * Compile an insert statement into SQL.
-=======
-     * Compile an update statement into SQL.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
-<<<<<<< HEAD
     public function compileInsert(Builder $query, array $values)
     {
         $table = $this->wrapTable($query->from);
@@ -201,15 +176,6 @@ class SQLiteGrammar extends Grammar
         return empty($values)
                 ? "insert into {$table} DEFAULT VALUES"
                 : parent::compileInsert($query, $values);
-=======
-    public function compileUpdate(Builder $query, array $values)
-    {
-        if (isset($query->joins) || isset($query->limit)) {
-            return $this->compileUpdateWithJoinsOrLimit($query, $values);
-        }
-
-        return parent::compileUpdate($query, $values);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -225,17 +191,12 @@ class SQLiteGrammar extends Grammar
     }
 
     /**
-<<<<<<< HEAD
      * Compile an update statement into SQL.
-=======
-     * Compile the columns for an update statement.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
-<<<<<<< HEAD
     public function compileUpdate(Builder $query, $values)
     {
         $table = $this->wrapTable($query->from);
@@ -249,22 +210,12 @@ class SQLiteGrammar extends Grammar
         }
 
         return trim("update {$table} set {$columns} {$this->compileWheres($query)}");
-=======
-    protected function compileUpdateColumns(Builder $query, array $values)
-    {
-        return collect($values)->map(function ($value, $key) {
-            $column = last(explode('.', $key));
-
-            return $this->wrap($column).' = '.$this->parameter($value);
-        })->implode(', ');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Compile an update statement with joins or limit into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
-<<<<<<< HEAD
      * @param  string  $columns
      * @return string
      */
@@ -277,22 +228,6 @@ class SQLiteGrammar extends Grammar
         $selectSql = parent::compileSelect($query->select($alias.'.rowid'));
 
         return "update {$this->wrapTable($query->from)} set {$columns} where {$this->wrap('rowid')} in ({$selectSql})";
-=======
-     * @param  array  $values
-     * @return string
-     */
-    protected function compileUpdateWithJoinsOrLimit(Builder $query, array $values)
-    {
-        $table = $this->wrapTable($query->from);
-
-        $columns = $this->compileUpdateColumns($query, $values);
-
-        $alias = last(preg_split('/\s+as\s+/i', $query->from));
-
-        $selectSql = $this->compileSelect($query->select($alias.'.rowid'));
-
-        return "update {$table} set {$columns} where {$this->wrap('rowid')} in ({$selectSql})";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -304,13 +239,6 @@ class SQLiteGrammar extends Grammar
      */
     public function prepareBindingsForUpdate(array $bindings, array $values)
     {
-<<<<<<< HEAD
-=======
-        $values = collect($values)->map(function ($value) {
-            return is_array($value) ? json_encode($value) : $value;
-        })->all();
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $cleanBindings = Arr::except($bindings, 'select');
 
         return array_values(
@@ -330,13 +258,9 @@ class SQLiteGrammar extends Grammar
             return $this->compileDeleteWithJoinsOrLimit($query);
         }
 
-<<<<<<< HEAD
         $wheres = is_array($query->wheres) ? $this->compileWheres($query) : '';
 
         return trim("delete from {$this->wrapTable($query->from)} $wheres");
-=======
-        return parent::compileDelete($query);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -347,7 +271,6 @@ class SQLiteGrammar extends Grammar
      */
     protected function compileDeleteWithJoinsOrLimit(Builder $query)
     {
-<<<<<<< HEAD
         $segments = preg_split('/\s+as\s+/i', $query->from);
 
         $alias = $segments[1] ?? $segments[0];
@@ -355,15 +278,6 @@ class SQLiteGrammar extends Grammar
         $selectSql = parent::compileSelect($query->select($alias.'.rowid'));
 
         return "delete from {$this->wrapTable($query->from)} where {$this->wrap('rowid')} in ({$selectSql})";
-=======
-        $table = $this->wrapTable($query->from);
-
-        $alias = last(preg_split('/\s+as\s+/i', $query->from));
-
-        $selectSql = $this->compileSelect($query->select($alias.'.rowid'));
-
-        return "delete from {$table} where {$this->wrap('rowid')} in ({$selectSql})";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

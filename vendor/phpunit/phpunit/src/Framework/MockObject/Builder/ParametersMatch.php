@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,17 +9,10 @@
  */
 namespace PHPUnit\Framework\MockObject\Builder;
 
-<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Matcher\AnyParameters;
 
 /**
  * Builder interface for parameter matchers.
-=======
-use PHPUnit\Framework\MockObject\Rule\AnyParameters;
-
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 interface ParametersMatch extends Match
 {
@@ -47,11 +36,7 @@ interface ParametersMatch extends Match
     public function with(...$arguments);
 
     /**
-<<<<<<< HEAD
      * Sets a matcher which allows any kind of parameters.
-=======
-     * Sets a rule which allows any kind of parameters.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * Some examples:
      * <code>

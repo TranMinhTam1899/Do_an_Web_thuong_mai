@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,10 +9,6 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
-<<<<<<< HEAD
-=======
-use PHPUnit\Framework\Exception;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use ReflectionClass;
 
 /**
@@ -25,11 +17,7 @@ use ReflectionClass;
  *
  * The attribute name is passed in the constructor.
  */
-<<<<<<< HEAD
 class ClassHasStaticAttribute extends ClassHasAttribute
-=======
-final class ClassHasStaticAttribute extends ClassHasAttribute
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Returns a string representation of the constraint.
@@ -50,27 +38,12 @@ final class ClassHasStaticAttribute extends ClassHasAttribute
      */
     protected function matches($other): bool
     {
-<<<<<<< HEAD
         $class = new ReflectionClass($other);
 
         if ($class->hasProperty($this->attributeName())) {
             $attribute = $class->getProperty($this->attributeName());
 
             return $attribute->isStatic();
-=======
-        try {
-            $class = new ReflectionClass($other);
-
-            if ($class->hasProperty($this->attributeName())) {
-                return $class->getProperty($this->attributeName())->isStatic();
-            }
-        } catch (\ReflectionException $e) {
-            throw new Exception(
-                $e->getMessage(),
-                (int) $e->getCode(),
-                $e
-            );
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return false;

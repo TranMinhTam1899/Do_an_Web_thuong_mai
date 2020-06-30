@@ -2,13 +2,8 @@
 
 namespace Illuminate\View\Engines;
 
-<<<<<<< HEAD
 use Exception;
 use ErrorException;
-=======
-use ErrorException;
-use Exception;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\View\Compilers\CompilerInterface;
 
 class CompilerEngine extends PhpEngine

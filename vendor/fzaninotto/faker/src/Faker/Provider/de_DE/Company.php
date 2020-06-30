@@ -11,7 +11,6 @@ class Company extends \Faker\Provider\Company
         '{{lastName}}',
     );
 
-<<<<<<< HEAD
     /**
      * @link http://www.personalseite.de/information/titel.htm
      */
@@ -21,7 +20,5 @@ class Company extends \Faker\Provider\Company
         'Vorsitzender der Geschäftsführung', 'Vorsitzender des Aufsichtsrats', 'Vorsitzender des Vorstandes', 'Vorstand Personal', 'Vorstand Technik', 'Vorstand Vertrieb', 'Vorstandsmitglied', 'Werksleiter'
     );
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected static $companySuffix = array('e.G.', 'e.V.', 'GbR', 'GbR', 'OHG mbH', 'GmbH & Co. OHG', 'AG & Co. OHG', 'GmbH', 'GmbH', 'GmbH', 'GmbH', 'AG', 'AG', 'AG', 'AG', 'KG', 'KG', 'KG', 'GmbH & Co. KG', 'GmbH & Co. KG', 'AG & Co. KG', 'Stiftung & Co. KG', 'KGaA', 'GmbH & Co. KGaA', 'AG & Co. KGaA', 'Stiftung & Co. KGaA');
 }

@@ -31,7 +31,6 @@ class RedisSessionHandler extends AbstractSessionHandler
     private $prefix;
 
     /**
-<<<<<<< HEAD
      * @var int Time to live in seconds
      */
     private $ttl;
@@ -42,13 +41,6 @@ class RedisSessionHandler extends AbstractSessionHandler
      *  * ttl: The time to live in seconds.
      *
      * @param \Redis|\RedisArray|\RedisCluster|\Predis\ClientInterface|RedisProxy|RedisClusterProxy $redis
-=======
-     * List of available options:
-     *  * prefix: The prefix to use for the keys in order to avoid collision on the Redis server.
-     *
-     * @param \Redis|\RedisArray|\RedisCluster|\Predis\ClientInterface|RedisProxy $redis
-     * @param array                                                               $options An associative array of options
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws \InvalidArgumentException When unsupported client or options are passed
      */
@@ -62,27 +54,16 @@ class RedisSessionHandler extends AbstractSessionHandler
             !$redis instanceof RedisProxy &&
             !$redis instanceof RedisClusterProxy
         ) {
-<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('"%s()" expects parameter 1 to be Redis, RedisArray, RedisCluster or Predis\ClientInterface, "%s" given.', __METHOD__, \is_object($redis) ? \get_class($redis) : \gettype($redis)));
         }
 
         if ($diff = array_diff(array_keys($options), ['prefix', 'ttl'])) {
             throw new \InvalidArgumentException(sprintf('The following options are not supported "%s".', implode(', ', $diff)));
-=======
-            throw new \InvalidArgumentException(sprintf('%s() expects parameter 1 to be Redis, RedisArray, RedisCluster or Predis\ClientInterface, %s given', __METHOD__, \is_object($redis) ? \get_class($redis) : \gettype($redis)));
-        }
-
-        if ($diff = array_diff(array_keys($options), ['prefix'])) {
-            throw new \InvalidArgumentException(sprintf('The following options are not supported "%s"', implode(', ', $diff)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->redis = $redis;
         $this->prefix = $options['prefix'] ?? 'sf_s';
-<<<<<<< HEAD
         $this->ttl = $options['ttl'] ?? null;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -98,11 +79,7 @@ class RedisSessionHandler extends AbstractSessionHandler
      */
     protected function doWrite($sessionId, $data): bool
     {
-<<<<<<< HEAD
         $result = $this->redis->setEx($this->prefix.$sessionId, (int) ($this->ttl ?? ini_get('session.gc_maxlifetime')), $data);
-=======
-        $result = $this->redis->setEx($this->prefix.$sessionId, (int) ini_get('session.gc_maxlifetime'), $data);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $result && !$result instanceof ErrorInterface;
     }
@@ -134,18 +111,10 @@ class RedisSessionHandler extends AbstractSessionHandler
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
      */
     public function updateTimestamp($sessionId, $data)
     {
         return (bool) $this->redis->expire($this->prefix.$sessionId, (int) ($this->ttl ?? ini_get('session.gc_maxlifetime')));
-=======
-     * {@inheritdoc}
-     */
-    public function updateTimestamp($sessionId, $data)
-    {
-        return (bool) $this->redis->expire($this->prefix.$sessionId, (int) ini_get('session.gc_maxlifetime'));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

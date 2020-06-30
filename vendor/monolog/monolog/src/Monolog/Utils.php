@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -15,27 +11,18 @@
 
 namespace Monolog;
 
-<<<<<<< HEAD
 class Utils
-=======
-final class Utils
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @internal
      */
-<<<<<<< HEAD
     public static function getClass($object)
-=======
-    public static function getClass($object): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $class = \get_class($object);
 
         return 'c' === $class[0] && 0 === strpos($class, "class@anonymous\0") ? get_parent_class($class).'@anonymous' : $class;
     }
 
-<<<<<<< HEAD
     /**
      * Makes sure if a relative path is passed in it is turned into an absolute path
      *
@@ -198,14 +185,5 @@ final class Utils
                 $data
             );
         }
-=======
-    public static function substr(string $string, int $start, ?int $length = null)
-    {
-        if (extension_loaded('mbstring')) {
-            return mb_strcut($string, $start, $length);
-        }
-
-        return substr($string, $start, $length);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

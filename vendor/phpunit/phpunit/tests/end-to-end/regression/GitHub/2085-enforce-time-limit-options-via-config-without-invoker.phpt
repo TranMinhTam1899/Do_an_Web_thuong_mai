@@ -1,11 +1,7 @@
 --TEST--
 Test XML config enforceTimeLimit, defaultTimeLimit without php-invoker, with pcntl
 --SKIPIF--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 require __DIR__ . '/../../../bootstrap.php';
 
 if (\class_exists(SebastianBergmann\Invoker\Invoker::class)) {
@@ -18,11 +14,7 @@ if (!\extension_loaded('pcntl') || \strpos(\ini_get('disable_functions'), 'pcntl
 --DESCRIPTION--
 https://github.com/sebastianbergmann/phpunit/issues/2085
 --FILE--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '-c';
 $_SERVER['argv'][2] = __DIR__ . '/2085/configuration_enforce_time_limit_options.xml';
 $_SERVER['argv'][3] = __DIR__ . '/2085/Issue2085Test.php';

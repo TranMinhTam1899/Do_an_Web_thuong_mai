@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -24,19 +20,12 @@ use SebastianBergmann\Exporter\Exporter;
  */
 abstract class Constraint implements Countable, SelfDescribing
 {
-<<<<<<< HEAD
     protected $exporter;
 
     public function __construct()
     {
         $this->exporter = new Exporter;
     }
-=======
-    /**
-     * @var Exporter
-     */
-    private $exporter;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Evaluates the constraint for parameter $other
@@ -48,7 +37,6 @@ abstract class Constraint implements Countable, SelfDescribing
      * a boolean value instead: true in case of success, false in case of a
      * failure.
      *
-<<<<<<< HEAD
      * @param mixed  $other        value or object to evaluate
      * @param string $description  Additional information about the test
      * @param bool   $returnResult Whether to return a result or throw an exception
@@ -57,12 +45,6 @@ abstract class Constraint implements Countable, SelfDescribing
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function evaluate($other, $description = '', $returnResult = false)
-=======
-     * @throws ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
-    public function evaluate($other, string $description = '', bool $returnResult = false)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $success = false;
 
@@ -87,18 +69,6 @@ abstract class Constraint implements Countable, SelfDescribing
         return 1;
     }
 
-<<<<<<< HEAD
-=======
-    protected function exporter(): Exporter
-    {
-        if ($this->exporter === null) {
-            $this->exporter = new Exporter;
-        }
-
-        return $this->exporter;
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Evaluates the constraint for parameter $other. Returns true if the
      * constraint is met, false otherwise.
@@ -106,10 +76,6 @@ abstract class Constraint implements Countable, SelfDescribing
      * This method can be overridden to implement the evaluation algorithm.
      *
      * @param mixed $other value or object to evaluate
-<<<<<<< HEAD
-=======
-     * @codeCoverageIgnore
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function matches($other): bool
     {
@@ -177,10 +143,6 @@ abstract class Constraint implements Countable, SelfDescribing
      */
     protected function failureDescription($other): string
     {
-<<<<<<< HEAD
         return $this->exporter->export($other) . ' ' . $this->toString();
-=======
-        return $this->exporter()->export($other) . ' ' . $this->toString();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

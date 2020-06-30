@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - François B
  * - Andre Polykanine A.K.A. Menelion Elensúlë
@@ -45,12 +41,9 @@ return [
     'from_now' => ':time tới',
     'after' => ':time sau',
     'before' => ':time trước',
-<<<<<<< HEAD
     'diff_now' => 'bây giờ',
     'diff_yesterday' => 'Hôm qua',
     'diff_tomorrow' => 'Ngày mai',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

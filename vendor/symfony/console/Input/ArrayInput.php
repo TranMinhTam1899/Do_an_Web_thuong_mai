@@ -39,13 +39,8 @@ class ArrayInput extends Input
      */
     public function getFirstArgument()
     {
-<<<<<<< HEAD
         foreach ($this->parameters as $param => $value) {
             if ($param && \is_string($param) && '-' === $param[0]) {
-=======
-        foreach ($this->parameters as $key => $value) {
-            if ($key && '-' === $key[0]) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 continue;
             }
 
@@ -112,11 +107,7 @@ class ArrayInput extends Input
     {
         $params = [];
         foreach ($this->parameters as $param => $val) {
-<<<<<<< HEAD
             if ($param && \is_string($param) && '-' === $param[0]) {
-=======
-            if ($param && '-' === $param[0]) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if (\is_array($val)) {
                     foreach ($val as $v) {
                         $params[] = $param.('' != $v ? '='.$this->escapeToken($v) : '');
@@ -154,18 +145,9 @@ class ArrayInput extends Input
     /**
      * Adds a short option value.
      *
-<<<<<<< HEAD
      * @throws InvalidOptionException When option given doesn't exist
      */
     private function addShortOption(string $shortcut, $value)
-=======
-     * @param string $shortcut The short option key
-     * @param mixed  $value    The value for the option
-     *
-     * @throws InvalidOptionException When option given doesn't exist
-     */
-    private function addShortOption($shortcut, $value)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->definition->hasShortcut($shortcut)) {
             throw new InvalidOptionException(sprintf('The "-%s" option does not exist.', $shortcut));
@@ -177,20 +159,10 @@ class ArrayInput extends Input
     /**
      * Adds a long option value.
      *
-<<<<<<< HEAD
      * @throws InvalidOptionException When option given doesn't exist
      * @throws InvalidOptionException When a required value is missing
      */
     private function addLongOption(string $name, $value)
-=======
-     * @param string $name  The long option key
-     * @param mixed  $value The value for the option
-     *
-     * @throws InvalidOptionException When option given doesn't exist
-     * @throws InvalidOptionException When a required value is missing
-     */
-    private function addLongOption($name, $value)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->definition->hasOption($name)) {
             throw new InvalidOptionException(sprintf('The "--%s" option does not exist.', $name));
@@ -214,13 +186,8 @@ class ArrayInput extends Input
     /**
      * Adds an argument value.
      *
-<<<<<<< HEAD
      * @param string|int $name  The argument name
      * @param mixed      $value The value for the argument
-=======
-     * @param string $name  The argument name
-     * @param mixed  $value The value for the argument
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws InvalidArgumentException When argument given doesn't exist
      */

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,11 +9,7 @@
  */
 class SingletonClass
 {
-<<<<<<< HEAD
     public static function getInstance()
-=======
-    public static function getInstance(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
     }
 
@@ -25,19 +17,11 @@ class SingletonClass
     {
     }
 
-<<<<<<< HEAD
     private function __sleep()
     {
     }
 
     private function __wakeup()
-=======
-    private function __sleep(): void
-    {
-    }
-
-    private function __wakeup(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
     }
 
@@ -45,11 +29,7 @@ class SingletonClass
     {
     }
 
-<<<<<<< HEAD
     public function doSomething()
-=======
-    public function doSomething(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
     }
 }

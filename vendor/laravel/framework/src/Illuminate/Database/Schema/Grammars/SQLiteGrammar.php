@@ -2,21 +2,12 @@
 
 namespace Illuminate\Database\Schema\Grammars;
 
-<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Fluent;
 use Doctrine\DBAL\Schema\Index;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Schema\Blueprint;
-=======
-use Doctrine\DBAL\Schema\Index;
-use Illuminate\Database\Connection;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Fluent;
-use RuntimeException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SQLiteGrammar extends Grammar
 {

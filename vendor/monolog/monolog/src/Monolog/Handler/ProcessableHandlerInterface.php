@@ -16,11 +16,8 @@ use Monolog\Processor\ProcessorInterface;
 /**
  * Interface to describe loggers that have processors
  *
-<<<<<<< HEAD
  * This interface is present in monolog 1.x to ease forward compatibility.
  *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
 interface ProcessableHandlerInterface
@@ -31,11 +28,7 @@ interface ProcessableHandlerInterface
      * @param  ProcessorInterface|callable $callback
      * @return HandlerInterface            self
      */
-<<<<<<< HEAD
     public function pushProcessor($callback): HandlerInterface;
-=======
-    public function pushProcessor(callable $callback): HandlerInterface;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Removes the processor on top of the stack and returns it.

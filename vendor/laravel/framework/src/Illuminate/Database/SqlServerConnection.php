@@ -3,7 +3,6 @@
 namespace Illuminate\Database;
 
 use Closure;
-<<<<<<< HEAD
 use Exception;
 use Throwable;
 use Illuminate\Database\Schema\SqlServerBuilder;
@@ -11,15 +10,6 @@ use Doctrine\DBAL\Driver\PDOSqlsrv\Driver as DoctrineDriver;
 use Illuminate\Database\Query\Processors\SqlServerProcessor;
 use Illuminate\Database\Query\Grammars\SqlServerGrammar as QueryGrammar;
 use Illuminate\Database\Schema\Grammars\SqlServerGrammar as SchemaGrammar;
-=======
-use Doctrine\DBAL\Driver\PDOSqlsrv\Driver as DoctrineDriver;
-use Exception;
-use Illuminate\Database\Query\Grammars\SqlServerGrammar as QueryGrammar;
-use Illuminate\Database\Query\Processors\SqlServerProcessor;
-use Illuminate\Database\Schema\Grammars\SqlServerGrammar as SchemaGrammar;
-use Illuminate\Database\Schema\SqlServerBuilder;
-use Throwable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SqlServerConnection extends Connection
 {

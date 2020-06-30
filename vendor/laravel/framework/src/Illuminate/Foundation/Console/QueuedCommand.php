@@ -3,15 +3,9 @@
 namespace Illuminate\Foundation\Console;
 
 use Illuminate\Bus\Queueable;
-<<<<<<< HEAD
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
-=======
-use Illuminate\Contracts\Console\Kernel as KernelContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class QueuedCommand implements ShouldQueue
 {

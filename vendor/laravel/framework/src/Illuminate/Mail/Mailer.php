@@ -2,7 +2,6 @@
 
 namespace Illuminate\Mail;
 
-<<<<<<< HEAD
 use Swift_Mailer;
 use InvalidArgumentException;
 use Illuminate\Support\HtmlString;
@@ -15,20 +14,6 @@ use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Queue\Factory as QueueContract;
 use Illuminate\Contracts\Mail\Mailable as MailableContract;
 use Illuminate\Contracts\Mail\MailQueue as MailQueueContract;
-=======
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Contracts\Mail\Mailable as MailableContract;
-use Illuminate\Contracts\Mail\Mailer as MailerContract;
-use Illuminate\Contracts\Mail\MailQueue as MailQueueContract;
-use Illuminate\Contracts\Queue\Factory as QueueContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Support\HtmlString;
-use Illuminate\Support\Traits\Macroable;
-use InvalidArgumentException;
-use Swift_Mailer;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Mailer implements MailerContract, MailQueueContract
 {
@@ -233,11 +218,7 @@ class Mailer implements MailerContract, MailQueueContract
     /**
      * Send a new message using a view.
      *
-<<<<<<< HEAD
      * @param  string|array|\Illuminate\Contracts\Mail\Mailable  $view
-=======
-     * @param  \Illuminate\Contracts\Mail\Mailable|string|array  $view
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  array  $data
      * @param  \Closure|string|null  $callback
      * @return void
@@ -258,11 +239,7 @@ class Mailer implements MailerContract, MailQueueContract
         // Once we have retrieved the view content for the e-mail we will set the body
         // of this message using the HTML type, which will provide a simple wrapper
         // to creating view based emails that are able to receive arrays of data.
-<<<<<<< HEAD
         call_user_func($callback, $message);
-=======
-        $callback($message);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $this->addContent($message, $view, $plain, $raw, $data);
 

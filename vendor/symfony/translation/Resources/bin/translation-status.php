@@ -89,12 +89,8 @@ function findTranslationFiles($originalFilePath, $localeToAnalyze)
     $originalFileName = basename($originalFilePath);
     $translationFileNamePattern = str_replace('.en.', '.*.', $originalFileName);
 
-<<<<<<< HEAD
     $translationFiles = glob($translationsDir.'/'.$translationFileNamePattern, GLOB_NOSORT);
     sort($translationFiles);
-=======
-    $translationFiles = glob($translationsDir.'/'.$translationFileNamePattern);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     foreach ($translationFiles as $filePath) {
         $locale = extractLocaleFromFilePath($filePath);
 

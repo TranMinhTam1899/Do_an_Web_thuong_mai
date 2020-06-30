@@ -24,16 +24,12 @@
             "homepage": "http://github.com/kylekatarnls"
         }
     ],
-<<<<<<< HEAD
     "prefer-stable": true,
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     "minimum-stability": "dev",
     "bin": ["bin/carbon"],
     "require": {
         "php": "^7.1.8 || ^8.0",
         "ext-json": "*",
-<<<<<<< HEAD
         "symfony/polyfill-mbstring": "^1.0",
         "symfony/translation": "^3.4 || ^4.0 || ^5.0"
     },
@@ -42,14 +38,6 @@
         "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
         "kylekatarnls/multi-tester": "^1.1",
         "phpmd/phpmd": "^2.8",
-=======
-        "symfony/translation": "^3.4 || ^4.0"
-    },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-        "kylekatarnls/multi-tester": "^1.1",
-        "phpmd/phpmd": "dev-php-7.1-compatibility",
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "phpstan/phpstan": "^0.11",
         "phpunit/phpunit": "^7.5 || ^8.0",
         "squizlabs/php_codesniffer": "^3.4"
@@ -85,13 +73,10 @@
         "phpdoc": "php phpdoc.php"
     },
     "extra": {
-<<<<<<< HEAD
         "branch-alias": {
             "dev-master": "2.x-dev",
             "dev-3.x": "3.x-dev"
         },
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "laravel": {
             "providers": [
                 "Carbon\\Laravel\\ServiceProvider"

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -17,17 +13,9 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 
 /**
-<<<<<<< HEAD
  * @group test-reorder
  */
 class TestSuiteSorterTest extends TestCase
-=======
- * @testdox Reordering test execution
- * @group test-reorder
- * @small
- */
-final class TestSuiteSorterTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Constants to improve clarity of @dataprovider
@@ -51,11 +39,7 @@ final class TestSuiteSorterTest extends TestCase
         $sorter = new TestSuiteSorter;
 
         $this->expectException(Exception::class);
-<<<<<<< HEAD
         $this->expectExceptionMessage('$order must be one of TestSuiteSorter::ORDER_DEFAULT, TestSuiteSorter::ORDER_REVERSED, or TestSuiteSorter::ORDER_RANDOMIZED, or TestSuiteSorter::ORDER_DURATION');
-=======
-        $this->expectExceptionMessage('$order must be one of TestSuiteSorter::ORDER_[DEFAULT|REVERSED|RANDOMIZED|DURATION|SIZE]');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $sorter->reorderTestsInSuite($suite, -1, false, TestSuiteSorter::ORDER_DEFAULT);
     }
 
@@ -71,10 +55,6 @@ final class TestSuiteSorterTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox Empty TestSuite not affected (order=$order, resolve=$resolveDependencies, defects=$orderDefects)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider suiteSorterOptionPermutationsProvider
      */
     public function testShouldNotAffectEmptyTestSuite(int $order, bool $resolveDependencies, int $orderDefects): void
@@ -200,11 +180,7 @@ final class TestSuiteSorterTest extends TestCase
 
         $suite->addTestSuite(\MultiDependencyTest::class);
 
-<<<<<<< HEAD
         $cache = new TestResultCache;
-=======
-        $cache = new DefaultTestResultCache;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($testTimes as $testName => $time) {
             $cache->setTime(\MultiDependencyTest::class . '::' . $testName, $time);
@@ -304,11 +280,7 @@ final class TestSuiteSorterTest extends TestCase
         $suite = new TestSuite;
         $suite->addTestSuite(\MultiDependencyTest::class);
 
-<<<<<<< HEAD
         $cache = new TestResultCache;
-=======
-        $cache = new DefaultTestResultCache;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($runState as $testName => $data) {
             $cache->setState(\MultiDependencyTest::class . '::' . $testName, $data['state']);
@@ -633,29 +605,4 @@ final class TestSuiteSorterTest extends TestCase
 
         return $data;
     }
-<<<<<<< HEAD
-=======
-
-    public function testOrderBySize(): void
-    {
-        $suite = new TestSuite;
-        $suite->addTestSuite(\TestWithDifferentSizes::class);
-        $sorter = new TestSuiteSorter;
-
-        $sorter->reorderTestsInSuite($suite, TestSuiteSorter::ORDER_SIZE, true, TestSuiteSorter::ORDER_DEFAULT);
-
-        $expectedOrder = [
-            \TestWithDifferentSizes::class . '::testWithSizeSmall',
-            \TestWithDifferentSizes::class . '::testDataProviderWithSizeSmall with data set #0',
-            \TestWithDifferentSizes::class . '::testDataProviderWithSizeSmall with data set #1',
-            \TestWithDifferentSizes::class . '::testDataProviderWithSizeMedium with data set #0',
-            \TestWithDifferentSizes::class . '::testDataProviderWithSizeMedium with data set #1',
-            \TestWithDifferentSizes::class . '::testWithSizeMedium',
-            \TestWithDifferentSizes::class . '::testWithSizeLarge',
-            \TestWithDifferentSizes::class . '::testWithSizeUnknown',
-        ];
-
-        $this->assertSame($expectedOrder, $sorter->getExecutionOrder());
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

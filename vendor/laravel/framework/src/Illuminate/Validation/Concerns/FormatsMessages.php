@@ -54,11 +54,7 @@ trait FormatsMessages
         // messages out of the translator service for this validation rule.
         $key = "validation.{$lowerRule}";
 
-<<<<<<< HEAD
         if ($key != ($value = $this->translator->trans($key))) {
-=======
-        if ($key != ($value = $this->translator->get($key))) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return $value;
         }
 
@@ -117,11 +113,7 @@ trait FormatsMessages
      */
     protected function getCustomMessageFromTranslator($key)
     {
-<<<<<<< HEAD
         if (($message = $this->translator->trans($key)) !== $key) {
-=======
-        if (($message = $this->translator->get($key)) !== $key) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return $message;
         }
 
@@ -133,11 +125,7 @@ trait FormatsMessages
         );
 
         return $this->getWildcardCustomMessages(Arr::dot(
-<<<<<<< HEAD
             (array) $this->translator->trans('validation.custom')
-=======
-            (array) $this->translator->get('validation.custom')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ), $shortKey, $key);
     }
 
@@ -178,11 +166,7 @@ trait FormatsMessages
 
         $key = "validation.{$lowerRule}.{$type}";
 
-<<<<<<< HEAD
         return $this->translator->trans($key);
-=======
-        return $this->translator->get($key);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -280,11 +264,7 @@ trait FormatsMessages
      */
     protected function getAttributeFromTranslations($name)
     {
-<<<<<<< HEAD
         return Arr::get($this->translator->trans('validation.attributes'), $name);
-=======
-        return Arr::get($this->translator->get('validation.attributes'), $name);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -336,11 +316,7 @@ trait FormatsMessages
 
         $key = "validation.values.{$attribute}.{$value}";
 
-<<<<<<< HEAD
         if (($line = $this->translator->trans($key)) !== $key) {
-=======
-        if (($line = $this->translator->get($key)) !== $key) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return $line;
         }
 

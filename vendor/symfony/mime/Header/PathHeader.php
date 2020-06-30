@@ -18,11 +18,6 @@ use Symfony\Component\Mime\Exception\RfcComplianceException;
  * A Path Header, such a Return-Path (one address).
  *
  * @author Chris Corbyn
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class PathHeader extends AbstractHeader
 {
@@ -45,14 +40,7 @@ final class PathHeader extends AbstractHeader
         $this->setAddress($body);
     }
 
-<<<<<<< HEAD
     public function getBody(): Address
-=======
-    /**
-     * @return Address
-     */
-    public function getBody()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->getAddress();
     }

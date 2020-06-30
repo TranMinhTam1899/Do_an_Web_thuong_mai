@@ -13,10 +13,7 @@
  * Authors:
  * - Ghorban M. Tavakoly Pablo Saratxaga & Ghorban M. Tavakoly pablo@walon.org & gmt314@yahoo.com
  * - SuperManPHP
-<<<<<<< HEAD
  * - Maksat Meredow (isadma)
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 $transformDiff = function ($input) {
     return strtr($input, [
@@ -33,11 +30,7 @@ return array_replace_recursive(require __DIR__.'/en.php', [
     'months_short' => ['Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek'],
     'weekdays' => ['Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe', 'Ýekşenbe'],
     'weekdays_short' => ['Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen', 'Ýek'],
-<<<<<<< HEAD
     'weekdays_min' => ['Du', 'Si', 'Ça', 'Pe', 'An', 'Şe', 'Ýe'],
-=======
-    'weekdays_min' => ['Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen', 'Ýek'],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'first_day_of_week' => 1,
     'day_of_first_week_of_year' => 1,
 
@@ -45,15 +38,9 @@ return array_replace_recursive(require __DIR__.'/en.php', [
     'y' => ':count ýyl',
     'a_year' => ':count ýyl',
 
-<<<<<<< HEAD
     'month' => ':count aý',
     'm' => ':count aý',
     'a_month' => ':count aý',
-=======
-    'month' => 'aý :count',
-    'm' => 'aý :count',
-    'a_month' => 'aý :count',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     'week' => ':count hepde',
     'w' => ':count hepde',

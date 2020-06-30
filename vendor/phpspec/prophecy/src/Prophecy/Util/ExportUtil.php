@@ -181,13 +181,7 @@ class ExportUtil
         if (is_object($value)) {
             $class = get_class($value);
 
-<<<<<<< HEAD
             if ($hash = $processed->contains($value)) {
-=======
-            if ($value instanceof ProphecyInterface) {
-                return sprintf('%s Object (*Prophecy*)', $class);
-            } elseif ($hash = $processed->contains($value)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return sprintf('%s:%s Object', $class, $hash);
             }
 

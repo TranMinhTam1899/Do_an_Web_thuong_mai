@@ -38,10 +38,6 @@ if (!function_exists('dd')) {
             VarDumper::dump($v);
         }
 
-<<<<<<< HEAD
         exit(1);
-=======
-        die(1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 2.7.1
 
 * Fix a PHP warning in some cases with anonymous classes.
@@ -15,8 +14,6 @@
 
 * Fix error messaging in a rare case.
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 # 2.5.0
 
 * Automatically configure xdebug if available.

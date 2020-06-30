@@ -24,50 +24,25 @@ use Symfony\Component\CssSelector\Parser\Token;
 class SyntaxErrorException extends ParseException
 {
     /**
-<<<<<<< HEAD
      * @return self
      */
     public static function unexpectedToken(string $expectedValue, Token $foundToken)
-=======
-     * @param string $expectedValue
-     *
-     * @return self
-     */
-    public static function unexpectedToken($expectedValue, Token $foundToken)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new self(sprintf('Expected %s, but %s found.', $expectedValue, $foundToken));
     }
 
     /**
-<<<<<<< HEAD
      * @return self
      */
     public static function pseudoElementFound(string $pseudoElement, string $unexpectedLocation)
-=======
-     * @param string $pseudoElement
-     * @param string $unexpectedLocation
-     *
-     * @return self
-     */
-    public static function pseudoElementFound($pseudoElement, $unexpectedLocation)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new self(sprintf('Unexpected pseudo-element "::%s" found %s.', $pseudoElement, $unexpectedLocation));
     }
 
     /**
-<<<<<<< HEAD
      * @return self
      */
     public static function unclosedString(int $position)
-=======
-     * @param int $position
-     *
-     * @return self
-     */
-    public static function unclosedString($position)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new self(sprintf('Unclosed/invalid string at %s.', $position));
     }

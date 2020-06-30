@@ -4,13 +4,8 @@ namespace Illuminate\Events;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\Job;
-<<<<<<< HEAD
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-=======
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CallQueuedListener implements ShouldQueue
 {

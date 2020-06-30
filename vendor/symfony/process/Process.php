@@ -135,11 +135,7 @@ class Process implements \IteratorAggregate
      * @param mixed|null     $input   The input as stream resource, scalar or \Traversable, or null for no input
      * @param int|float|null $timeout The timeout in seconds or null to disable
      *
-<<<<<<< HEAD
      * @throws LogicException When proc_open is not installed
-=======
-     * @throws RuntimeException When proc_open is not installed
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct($command, string $cwd = null, array $env = null, $input = null, ?float $timeout = 60)
     {
@@ -192,11 +188,7 @@ class Process implements \IteratorAggregate
      *
      * @return static
      *
-<<<<<<< HEAD
      * @throws LogicException When proc_open is not installed
-=======
-     * @throws RuntimeException When proc_open is not installed
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function fromShellCommandline(string $command, string $cwd = null, array $env = null, $input = null, ?float $timeout = 60)
     {
@@ -231,17 +223,11 @@ class Process implements \IteratorAggregate
      *
      * @return int The exit status code
      *
-<<<<<<< HEAD
      * @throws RuntimeException         When process can't be launched
      * @throws RuntimeException         When process is already running
      * @throws ProcessTimedOutException When process timed out
      * @throws ProcessSignaledException When process stopped after receiving signal
      * @throws LogicException           In case a callback is provided and output has been disabled
-=======
-     * @throws RuntimeException When process can't be launched
-     * @throws RuntimeException When process stopped after receiving signal
-     * @throws LogicException   In case a callback is provided and output has been disabled
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @final
      */
@@ -264,11 +250,7 @@ class Process implements \IteratorAggregate
      *
      * @final
      */
-<<<<<<< HEAD
     public function mustRun(callable $callback = null, array $env = []): self
-=======
-    public function mustRun(callable $callback = null, array $env = [])
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (0 !== $this->run($callback, $env)) {
             throw new ProcessFailedException($this);
@@ -299,11 +281,7 @@ class Process implements \IteratorAggregate
     public function start(callable $callback = null, array $env = [])
     {
         if ($this->isRunning()) {
-<<<<<<< HEAD
             throw new RuntimeException('Process is already running.');
-=======
-            throw new RuntimeException('Process is already running');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->resetProcessData();
@@ -312,15 +290,12 @@ class Process implements \IteratorAggregate
         $this->hasCallback = null !== $callback;
         $descriptors = $this->getDescriptors();
 
-<<<<<<< HEAD
         if ($this->env) {
             $env += $this->env;
         }
 
         $env += $this->getDefaultEnv();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (\is_array($commandline = $this->commandline)) {
             $commandline = implode(' ', array_map([$this, 'escapeArgument'], $commandline));
 
@@ -328,20 +303,10 @@ class Process implements \IteratorAggregate
                 // exec is mandatory to deal with sending a signal to the process
                 $commandline = 'exec '.$commandline;
             }
-<<<<<<< HEAD
         } else {
             $commandline = $this->replacePlaceholders($commandline, $env);
         }
 
-=======
-        }
-
-        if ($this->env) {
-            $env += $this->env;
-        }
-        $env += $this->getDefaultEnv();
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $options = ['suppress_errors' => true];
 
         if ('\\' === \DIRECTORY_SEPARATOR) {
@@ -371,11 +336,7 @@ class Process implements \IteratorAggregate
             throw new RuntimeException(sprintf('The provided cwd "%s" does not exist.', $this->cwd));
         }
 
-<<<<<<< HEAD
         $this->process = @proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $envPairs, $options);
-=======
-        $this->process = proc_open($commandline, $descriptors, $this->processPipes->pipes, $this->cwd, $envPairs, $options);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!\is_resource($this->process)) {
             throw new RuntimeException('Unable to launch a new process.');
@@ -411,17 +372,10 @@ class Process implements \IteratorAggregate
      *
      * @final
      */
-<<<<<<< HEAD
     public function restart(callable $callback = null, array $env = []): self
     {
         if ($this->isRunning()) {
             throw new RuntimeException('Process is already running.');
-=======
-    public function restart(callable $callback = null, array $env = [])
-    {
-        if ($this->isRunning()) {
-            throw new RuntimeException('Process is already running');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $process = clone $this;
@@ -441,15 +395,9 @@ class Process implements \IteratorAggregate
      *
      * @return int The exitcode of the process
      *
-<<<<<<< HEAD
      * @throws ProcessTimedOutException When process timed out
      * @throws ProcessSignaledException When process stopped after receiving signal
      * @throws LogicException           When process is not yet started
-=======
-     * @throws RuntimeException When process timed out
-     * @throws RuntimeException When process stopped after receiving signal
-     * @throws LogicException   When process is not yet started
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function wait(callable $callback = null)
     {
@@ -460,11 +408,7 @@ class Process implements \IteratorAggregate
         if (null !== $callback) {
             if (!$this->processPipes->haveReadSupport()) {
                 $this->stop(0);
-<<<<<<< HEAD
                 throw new LogicException('Pass the callback to the "Process::start" method or call enableOutput to use a callback with "Process::wait".');
-=======
-                throw new \LogicException('Pass the callback to the "Process::start" method or call enableOutput to use a callback with "Process::wait"');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $this->callback = $this->buildCallback($callback);
         }
@@ -494,14 +438,9 @@ class Process implements \IteratorAggregate
      * from the output in real-time while writing the standard input to the process.
      * It allows to have feedback from the independent process during execution.
      *
-<<<<<<< HEAD
      * @throws RuntimeException         When process timed out
      * @throws LogicException           When process is not yet started
      * @throws ProcessTimedOutException In case the timeout was reached
-=======
-     * @throws RuntimeException When process timed out
-     * @throws LogicException   When process is not yet started
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function waitUntil(callable $callback): bool
     {
@@ -510,11 +449,7 @@ class Process implements \IteratorAggregate
 
         if (!$this->processPipes->haveReadSupport()) {
             $this->stop(0);
-<<<<<<< HEAD
             throw new LogicException('Pass the callback to the "Process::start" method or call enableOutput to use a callback with "Process::waitUntil".');
-=======
-            throw new \LogicException('Pass the callback to the "Process::start" method or call enableOutput to use a callback with "Process::waitUntil".');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         $callback = $this->buildCallback($callback);
 
@@ -1023,7 +958,6 @@ class Process implements \IteratorAggregate
     }
 
     /**
-<<<<<<< HEAD
      * Gets the last output time in seconds.
      *
      * @return float|null The last output time in seconds or null if it isn't started
@@ -1034,8 +968,6 @@ class Process implements \IteratorAggregate
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Gets the command line to be executed.
      *
      * @return string The command to execute
@@ -1287,7 +1219,6 @@ class Process implements \IteratorAggregate
      * @param bool $inheritEnv
      *
      * @return $this
-<<<<<<< HEAD
      *
      * @deprecated since Symfony 4.4, env variables are always inherited
      */
@@ -1295,11 +1226,6 @@ class Process implements \IteratorAggregate
     {
         @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.4, env variables are always inherited.', __METHOD__), E_USER_DEPRECATED);
 
-=======
-     */
-    public function inheritEnvironmentVariables($inheritEnv = true)
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!$inheritEnv) {
             throw new InvalidArgumentException('Not inheriting environment variables is not supported.');
         }
@@ -1626,11 +1552,7 @@ class Process implements \IteratorAggregate
         return true;
     }
 
-<<<<<<< HEAD
     private function prepareWindowsCommandLine(string $cmd, array &$env): string
-=======
-    private function prepareWindowsCommandLine(string $cmd, array &$env)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $uid = uniqid('', true);
         $varCount = 0;
@@ -1684,11 +1606,7 @@ class Process implements \IteratorAggregate
     private function requireProcessIsStarted(string $functionName)
     {
         if (!$this->isStarted()) {
-<<<<<<< HEAD
             throw new LogicException(sprintf('Process must be started before calling "%s()".', $functionName));
-=======
-            throw new LogicException(sprintf('Process must be started before calling %s.', $functionName));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -1700,11 +1618,7 @@ class Process implements \IteratorAggregate
     private function requireProcessIsTerminated(string $functionName)
     {
         if (!$this->isTerminated()) {
-<<<<<<< HEAD
             throw new LogicException(sprintf('Process must be terminated before calling "%s()".', $functionName));
-=======
-            throw new LogicException(sprintf('Process must be terminated before calling %s.', $functionName));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -1730,7 +1644,6 @@ class Process implements \IteratorAggregate
         return '"'.str_replace(['"', '^', '%', '!', "\n"], ['""', '"^^"', '"^%"', '"^!"', '!LF!'], $argument).'"';
     }
 
-<<<<<<< HEAD
     private function replacePlaceholders(string $commandline, array $env)
     {
         return preg_replace_callback('/"\$\{:([_a-zA-Z]++[_a-zA-Z0-9]*+)\}"/', function ($matches) use ($commandline, $env) {
@@ -1743,9 +1656,6 @@ class Process implements \IteratorAggregate
     }
 
     private function getDefaultEnv(): array
-=======
-    private function getDefaultEnv()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $env = [];
 

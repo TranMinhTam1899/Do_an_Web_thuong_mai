@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,14 +9,7 @@
  */
 namespace PHPUnit\Framework;
 
-<<<<<<< HEAD
 class TestSuiteTest extends TestCase
-=======
-/**
- * @small
- */
-final class TestSuiteTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var TestResult
@@ -178,11 +167,7 @@ final class TestSuiteTest extends TestCase
         $lastSkippedResult = \array_pop($skipped);
         $message           = $lastSkippedResult->thrownException()->getMessage();
 
-<<<<<<< HEAD
         $this->assertContains('Test for DataProviderDependencyTest::testDependency skipped by data provider', $message);
-=======
-        $this->assertStringContainsString('Test for DataProviderDependencyTest::testDependency skipped by data provider', $message);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function testIncompleteTestDataProvider(): void
@@ -221,7 +206,6 @@ final class TestSuiteTest extends TestCase
         $this->assertCount(2, $result);
     }
 
-<<<<<<< HEAD
     public function testCreateTestForConstructorlessTestClass(): void
     {
         $reflection = $this->getMockBuilder(\ReflectionClass::class)
@@ -244,8 +228,6 @@ final class TestSuiteTest extends TestCase
         TestSuite::createTest($reflection, 'TestForConstructorlessTestClass');
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @testdox Handles exceptions in tearDownAfterClass()
      */

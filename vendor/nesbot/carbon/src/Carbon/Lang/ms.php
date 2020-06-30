@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - Azri Jamil
@@ -38,18 +34,12 @@ return [
     'second' => '{1}beberapa saat|]1,Inf[:count saat',
     's' => ':count saat',
     'ago' => ':time yang lepas',
-<<<<<<< HEAD
     'from_now' => ':time dari sekarang',
     'after' => ':time selepas',
     'before' => ':time sebelum',
     'diff_now' => 'sekarang',
     'diff_yesterday' => 'semalam',
     'diff_tomorrow' => 'esok',
-=======
-    'from_now' => 'dalam :time',
-    'after' => ':time selepas',
-    'before' => ':time sebelum',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH.mm',
         'LTS' => 'HH.mm.ss',

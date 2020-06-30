@@ -8,19 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-=======
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'si');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
  * - François B
  * - Serhan Apaydın
  * - JD Isaacks
-<<<<<<< HEAD
  * - Malinda Weerasinghe (MalindaWMD)
  */
 return [
@@ -55,19 +48,6 @@ return [
         return $time.' කින්';
     },
     'diff_now' => 'දැන්',
-=======
- */
-return [
-    'year' => 'වසර|වසර :count',
-    'month' => 'මාසය|මාස :count',
-    'week' => 'සතියක්|සති :count යි',
-    'day' => 'දිනය|දින :count',
-    'hour' => 'පැය|පැය :count',
-    'minute' => 'මිනිත්තුව|මිනිත්තු :count',
-    'second' => 'තත්පර කිහිපය|තත්පර :count',
-    'ago' => ':timeකට පෙර',
-    'from_now' => ':timeකින්',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'ඊයේ',
     'diff_tomorrow' => 'හෙට',
     'formats' => [

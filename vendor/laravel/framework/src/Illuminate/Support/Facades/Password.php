@@ -36,7 +36,6 @@ class Password extends Facade
     const INVALID_USER = PasswordBroker::INVALID_USER;
 
     /**
-<<<<<<< HEAD
      * Constant representing an invalid password.
      *
      * @var string
@@ -44,8 +43,6 @@ class Password extends Facade
     const INVALID_PASSWORD = PasswordBroker::INVALID_PASSWORD;
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Constant representing an invalid token.
      *
      * @var string

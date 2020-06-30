@@ -45,11 +45,7 @@ class InputStream implements \IteratorAggregate
             return;
         }
         if ($this->isClosed()) {
-<<<<<<< HEAD
             throw new RuntimeException(sprintf('"%s" is closed.', static::class));
-=======
-            throw new RuntimeException(sprintf('%s is closed', static::class));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         $this->input[] = ProcessUtils::validateInput(__METHOD__, $input);
     }
@@ -70,12 +66,9 @@ class InputStream implements \IteratorAggregate
         return !$this->open;
     }
 
-<<<<<<< HEAD
     /**
      * @return \Traversable
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function getIterator()
     {
         $this->open = true;

@@ -25,15 +25,9 @@ trait TranslatorTrait
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function setLocale(string $locale)
     {
         $this->locale = $locale;
-=======
-    public function setLocale($locale)
-    {
-        $this->locale = (string) $locale;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -47,15 +41,9 @@ trait TranslatorTrait
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function trans(?string $id, array $parameters = [], string $domain = null, string $locale = null): string
     {
         if (null === $id || '' === $id) {
-=======
-    public function trans($id, array $parameters = [], $domain = null, $locale = null)
-    {
-        if ('' === $id = (string) $id) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return '';
         }
 
@@ -64,11 +52,7 @@ trait TranslatorTrait
         }
 
         $number = (float) $parameters['%count%'];
-<<<<<<< HEAD
         $locale = $locale ?: $this->getLocale();
-=======
-        $locale = (string) $locale ?: $this->getLocale();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $parts = [];
         if (preg_match('/^\|++$/', $id)) {

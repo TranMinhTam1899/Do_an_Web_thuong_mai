@@ -13,20 +13,10 @@ $tmpResultFile  = __DIR__ . '/tmp_parser.php';
 $resultDir = __DIR__ . '/../lib/PhpParser/Parser';
 $tokensResultsFile = $resultDir . '/Tokens.php';
 
-<<<<<<< HEAD
 $kmyacc = getenv('KMYACC');
 if (!$kmyacc) {
     // Use phpyacc from dev dependencies by default.
     $kmyacc = PHP_BINARY . ' ' . __DIR__ . '/../vendor/bin/phpyacc';
-=======
-// check for kmyacc binary in this directory, otherwise fall back to global name
-if (file_exists(__DIR__ . '/kmyacc.exe')) {
-    $kmyacc = __DIR__ . '/kmyacc.exe';
-} else if (file_exists(__DIR__ . '/kmyacc')) {
-    $kmyacc = __DIR__ . '/kmyacc';
-} else {
-    $kmyacc = 'kmyacc';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }
 
 $options = array_flip($argv);
@@ -69,12 +59,7 @@ foreach ($grammarFileToName as $grammarFile => $name) {
     $additionalArgs = $optionDebug ? '-t -v' : '';
 
     echo "Building $name parser.\n";
-<<<<<<< HEAD
     $output = execCmd("$kmyacc $additionalArgs -m $skeletonFile -p $name $tmpGrammarFile");
-=======
-    $output = trim(shell_exec("$kmyacc $additionalArgs -l -m $skeletonFile -p $name $tmpGrammarFile 2>&1"));
-    echo "Output: \"$output\"\n";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     $resultCode = file_get_contents($tmpResultFile);
     $resultCode = removeTrailingWhitespace($resultCode);
@@ -84,12 +69,7 @@ foreach ($grammarFileToName as $grammarFile => $name) {
     unlink($tmpResultFile);
 
     echo "Building token definition.\n";
-<<<<<<< HEAD
     $output = execCmd("$kmyacc -m $tokensTemplate $tmpGrammarFile");
-=======
-    $output = trim(shell_exec("$kmyacc -l -m $tokensTemplate $tmpGrammarFile 2>&1"));
-    assert($output === '');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     rename($tmpResultFile, $tokensResultsFile);
 
     if (!$optionKeepTmpGrammar) {
@@ -198,11 +178,7 @@ function resolveMacros($code) {
 
                 return '$startAttributes = ' . $args[1] . ';'
                     . ' if (isset($startAttributes[\'comments\']))'
-<<<<<<< HEAD
                     . ' { ' . $args[0] . ' = new Stmt\Nop($this->createCommentNopAttributes($startAttributes[\'comments\'])); }'
-=======
-                    . ' { ' . $args[0] . ' = new Stmt\Nop($this->createZeroLengthAttributes($startAttributes)); }'
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     . ' else { ' . $args[0] . ' = null; }';
             }
 
@@ -253,7 +229,6 @@ function ensureDirExists($dir) {
     }
 }
 
-<<<<<<< HEAD
 function execCmd($cmd) {
     $output = trim(shell_exec("$cmd 2>&1"));
     if ($output !== "") {
@@ -263,8 +238,6 @@ function execCmd($cmd) {
     return $output;
 }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 //////////////////////////////
 /// Regex helper functions ///
 //////////////////////////////

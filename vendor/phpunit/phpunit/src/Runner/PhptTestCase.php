@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,18 +11,9 @@ namespace PHPUnit\Runner;
 
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\AssertionFailedError;
-<<<<<<< HEAD
 use PHPUnit\Framework\IncompleteTestError;
 use PHPUnit\Framework\SelfDescribing;
 use PHPUnit\Framework\SkippedTestError;
-=======
-use PHPUnit\Framework\ExpectationFailedException;
-use PHPUnit\Framework\IncompleteTestError;
-use PHPUnit\Framework\PHPTAssertionFailedError;
-use PHPUnit\Framework\SelfDescribing;
-use PHPUnit\Framework\SkippedTestError;
-use PHPUnit\Framework\SyntheticSkippedError;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestResult;
 use PHPUnit\Util\PHP\AbstractPhpProcess;
@@ -35,15 +22,9 @@ use Text_Template;
 use Throwable;
 
 /**
-<<<<<<< HEAD
  * Runner for PHPT test cases.
  */
 class PhptTestCase implements SelfDescribing, Test
-=======
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class PhptTestCase implements SelfDescribing, Test
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string[]
@@ -54,28 +35,17 @@ final class PhptTestCase implements SelfDescribing, Test
         'auto_prepend_file=',
         'disable_functions=',
         'display_errors=1',
-<<<<<<< HEAD
         'docref_ext=.html',
         'docref_root=',
-=======
-        'docref_root=',
-        'docref_ext=.html',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'error_append_string=',
         'error_prepend_string=',
         'error_reporting=-1',
         'html_errors=0',
         'log_errors=0',
         'magic_quotes_runtime=0',
-<<<<<<< HEAD
         'open_basedir=',
         'output_buffering=Off',
         'output_handler=',
-=======
-        'output_handler=',
-        'open_basedir=',
-        'output_buffering=Off',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'report_memleaks=0',
         'report_zend_debug=0',
         'safe_mode=0',
@@ -129,10 +99,7 @@ final class PhptTestCase implements SelfDescribing, Test
      * Runs a test and collects its result in a TestResult instance.
      *
      * @throws Exception
-<<<<<<< HEAD
      * @throws \ReflectionException
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @throws \SebastianBergmann\CodeCoverage\CoveredCodeNotExecutedException
      * @throws \SebastianBergmann\CodeCoverage\InvalidArgumentException
      * @throws \SebastianBergmann\CodeCoverage\MissingCoversAnnotationException
@@ -210,51 +177,19 @@ final class PhptTestCase implements SelfDescribing, Test
         }
 
         try {
-<<<<<<< HEAD
             $this->assertPhptExpectation($sections, $this->output);
-=======
-            $this->assertPhptExpectation($sections, $jobResult['stdout']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } catch (AssertionFailedError $e) {
             $failure = $e;
 
             if ($xfail !== false) {
                 $failure = new IncompleteTestError($xfail, 0, $e);
-<<<<<<< HEAD
             }
-=======
-            } elseif ($e instanceof ExpectationFailedException) {
-                $comparisonFailure = $e->getComparisonFailure();
-
-                if ($comparisonFailure) {
-                    $diff = $comparisonFailure->getDiff();
-                } else {
-                    $diff = $e->getMessage();
-                }
-
-                $hint    = $this->getLocationHintFromDiff($diff, $sections);
-                $trace   = \array_merge($hint, \debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS));
-                $failure = new PHPTAssertionFailedError(
-                    $e->getMessage(),
-                    0,
-                    $trace[0]['file'],
-                    $trace[0]['line'],
-                    $trace,
-                    $comparisonFailure ? $diff : ''
-                );
-            }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $result->addFailure($this, $failure, $time);
         } catch (Throwable $t) {
             $result->addError($this, $t, $time);
         }
 
-<<<<<<< HEAD
         if ($result->allCompletelyImplemented() && $xfail !== false) {
-=======
-        if ($xfail !== false && $result->allCompletelyImplemented()) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $result->addFailure($this, new IncompleteTestError('XFAIL section but test passes'), $time);
         }
 
@@ -353,11 +288,6 @@ final class PhptTestCase implements SelfDescribing, Test
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @throws ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @throws Exception
      */
     private function assertPhptExpectation(array $sections, string $output): void
@@ -378,10 +308,6 @@ final class PhptTestCase implements SelfDescribing, Test
                 if ($expected === null) {
                     throw new Exception('No PHPT expectation found');
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 Assert::$sectionAssertion($expected, $actual);
 
                 return;
@@ -410,17 +336,7 @@ final class PhptTestCase implements SelfDescribing, Test
                 $message = \substr($skipMatch[1], 2);
             }
 
-<<<<<<< HEAD
             $result->addFailure($this, new SkippedTestError($message), 0);
-=======
-            $hint  = $this->getLocationHint($message, $sections, 'SKIPIF');
-            $trace = \array_merge($hint, \debug_backtrace(\DEBUG_BACKTRACE_IGNORE_ARGS));
-            $result->addFailure(
-                $this,
-                new SyntheticSkippedError($message, 0, $trace[0]['file'], $trace[0]['line'], $trace),
-                0
-            );
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $result->endTest($this, 0);
 
             return true;
@@ -450,7 +366,6 @@ final class PhptTestCase implements SelfDescribing, Test
         $section  = '';
 
         $unsupportedSections = [
-<<<<<<< HEAD
             'CGI',
             'COOKIE',
             'DEFLATE_POST',
@@ -471,33 +386,6 @@ final class PhptTestCase implements SelfDescribing, Test
             if (\preg_match('/^--([_A-Z]+)--/', $line, $result)) {
                 $section            = $result[1];
                 $sections[$section] = '';
-=======
-            'REDIRECTTEST',
-            'REQUEST',
-            'POST',
-            'PUT',
-            'POST_RAW',
-            'GZIP_POST',
-            'DEFLATE_POST',
-            'GET',
-            'COOKIE',
-            'HEADERS',
-            'CGI',
-            'EXPECTHEADERS',
-            'EXTENSIONS',
-            'PHPDBG',
-        ];
-
-        $lineNr = 0;
-
-        foreach (\file($this->filename) as $line) {
-            $lineNr++;
-
-            if (\preg_match('/^--([_A-Z]+)--/', $line, $result)) {
-                $section                        = $result[1];
-                $sections[$section]             = '';
-                $sections[$section . '_offset'] = $lineNr;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 continue;
             }
@@ -560,11 +448,8 @@ final class PhptTestCase implements SelfDescribing, Test
                 }
 
                 $sections[$section] = \file_get_contents($testDirectory . $externalFilename);
-<<<<<<< HEAD
 
                 unset($sections[$section . '_EXTERNAL']);
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
     }
@@ -710,126 +595,4 @@ final class PhptTestCase implements SelfDescribing, Test
 
         return $settings;
     }
-<<<<<<< HEAD
-=======
-
-    private function getLocationHintFromDiff(string $message, array $sections): array
-    {
-        $needle       = '';
-        $previousLine = '';
-        $block        = 'message';
-
-        foreach (\preg_split('/\r\n|\r|\n/', $message) as $line) {
-            $line = \trim($line);
-
-            if ($block === 'message' && $line === '--- Expected') {
-                $block = 'expected';
-            }
-
-            if ($block === 'expected' && $line === '@@ @@') {
-                $block = 'diff';
-            }
-
-            if ($block === 'diff') {
-                if (\strpos($line, '+') === 0) {
-                    $needle = $this->getCleanDiffLine($previousLine);
-
-                    break;
-                }
-
-                if (\strpos($line, '-') === 0) {
-                    $needle = $this->getCleanDiffLine($line);
-
-                    break;
-                }
-            }
-
-            if (!empty($line)) {
-                $previousLine = $line;
-            }
-        }
-
-        return $this->getLocationHint($needle, $sections);
-    }
-
-    private function getCleanDiffLine(string $line): string
-    {
-        if (\preg_match('/^[\-+]([\'\"]?)(.*)\1$/', $line, $matches)) {
-            $line = $matches[2];
-        }
-
-        return $line;
-    }
-
-    private function getLocationHint(string $needle, array $sections, ?string $sectionName = null): array
-    {
-        $needle = \trim($needle);
-
-        if (empty($needle)) {
-            return [[
-                'file' => \realpath($this->filename),
-                'line' => 1,
-            ]];
-        }
-
-        if ($sectionName) {
-            $search = [$sectionName];
-        } else {
-            $search = [
-                // 'FILE',
-                'EXPECT',
-                'EXPECTF',
-                'EXPECTREGEX',
-            ];
-        }
-
-        foreach ($search as $section) {
-            if (!isset($sections[$section])) {
-                continue;
-            }
-
-            if (isset($sections[$section . '_EXTERNAL'])) {
-                $externalFile = \trim($sections[$section . '_EXTERNAL']);
-
-                return [
-                    [
-                        'file' => \realpath(\dirname($this->filename) . \DIRECTORY_SEPARATOR . $externalFile),
-                        'line' => 1,
-                    ],
-                    [
-                        'file' => \realpath($this->filename),
-                        'line' => ($sections[$section . '_EXTERNAL_offset'] ?? 0) + 1,
-                    ],
-                ];
-            }
-
-            $sectionOffset = $sections[$section . '_offset'] ?? 0;
-            $offset        = $sectionOffset + 1;
-
-            foreach (\preg_split('/\r\n|\r|\n/', $sections[$section]) as $line) {
-                if (\strpos($line, $needle) !== false) {
-                    return [[
-                        'file' => \realpath($this->filename),
-                        'line' => $offset,
-                    ]];
-                }
-                $offset++;
-            }
-        }
-
-        if ($sectionName) {
-            // String not found in specified section, show user the start of the named section
-            return [[
-                'file' => \realpath($this->filename),
-                'line' => $sectionOffset,
-            ]];
-        }
-
-        // No section specified, show user start of code
-        return [[
-            'file' => \realpath($this->filename),
-            'line' => 1,
-        ]];
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

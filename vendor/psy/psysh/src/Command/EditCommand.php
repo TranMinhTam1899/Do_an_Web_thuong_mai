@@ -104,11 +104,8 @@ class EditCommand extends Command implements ContextAware
         if ($execute) {
             $this->getApplication()->addInput($editedContent);
         }
-<<<<<<< HEAD
 
         return 0;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

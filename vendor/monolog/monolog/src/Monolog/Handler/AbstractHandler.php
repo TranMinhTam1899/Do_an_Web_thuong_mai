@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -15,34 +11,22 @@
 
 namespace Monolog\Handler;
 
-<<<<<<< HEAD
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Formatter\LineFormatter;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Monolog\Logger;
 use Monolog\ResettableInterface;
 
 /**
-<<<<<<< HEAD
  * Base Handler class providing the Handler structure
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
 abstract class AbstractHandler implements HandlerInterface, ResettableInterface
-=======
- * Base Handler class providing basic level/bubble support
- *
- * @author Jordi Boggiano <j.boggiano@seld.be>
- */
-abstract class AbstractHandler extends Handler implements ResettableInterface
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     protected $level = Logger::DEBUG;
     protected $bubble = true;
 
     /**
-<<<<<<< HEAD
      * @var FormatterInterface
      */
     protected $formatter;
@@ -53,12 +37,6 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
      * @param bool       $bubble Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct($level = Logger::DEBUG, $bubble = true)
-=======
-     * @param int|string $level  The minimum logging level at which this handler will be triggered
-     * @param bool       $bubble Whether the messages that are handled can bubble up the stack or not
-     */
-    public function __construct($level = Logger::DEBUG, bool $bubble = true)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->setLevel($level);
         $this->bubble = $bubble;
@@ -67,17 +45,12 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function isHandling(array $record)
-=======
-    public function isHandling(array $record): bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $record['level'] >= $this->level;
     }
 
     /**
-<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function handleBatch(array $records)
@@ -144,18 +117,12 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Sets minimum logging level at which this handler will be triggered.
      *
      * @param  int|string $level Level or level name
      * @return self
      */
-<<<<<<< HEAD
     public function setLevel($level)
-=======
-    public function setLevel($level): self
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->level = Logger::toMonologLevel($level);
 
@@ -167,11 +134,7 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
      *
      * @return int
      */
-<<<<<<< HEAD
     public function getLevel()
-=======
-    public function getLevel(): int
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->level;
     }
@@ -183,11 +146,7 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
      *                      false means that bubbling is not permitted.
      * @return self
      */
-<<<<<<< HEAD
     public function setBubble($bubble)
-=======
-    public function setBubble(bool $bubble): self
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->bubble = $bubble;
 
@@ -200,16 +159,11 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
      * @return bool true means that this handler allows bubbling.
      *              false means that bubbling is not permitted.
      */
-<<<<<<< HEAD
     public function getBubble()
-=======
-    public function getBubble(): bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->bubble;
     }
 
-<<<<<<< HEAD
     public function __destruct()
     {
         try {
@@ -238,9 +192,5 @@ abstract class AbstractHandler extends Handler implements ResettableInterface
     protected function getDefaultFormatter()
     {
         return new LineFormatter();
-=======
-    public function reset()
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

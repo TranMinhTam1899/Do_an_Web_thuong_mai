@@ -435,7 +435,6 @@ class Mockery
     /**
      * Return instance of CLOSURE matcher.
      *
-<<<<<<< HEAD
      * @param $reference
      *
      * @return \Mockery\Matcher\Closure
@@ -453,8 +452,6 @@ class Mockery
     /**
      * Return instance of CLOSURE matcher.
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param mixed $closure
      *
      * @return \Mockery\Matcher\Closure

@@ -24,17 +24,10 @@ class Luhn
         $length = strlen($number);
         $sum = 0;
         for ($i = $length - 1; $i >= 0; $i -= 2) {
-<<<<<<< HEAD
             $sum += $number[$i];
         }
         for ($i = $length - 2; $i >= 0; $i -= 2) {
             $sum += array_sum(str_split($number[$i] * 2));
-=======
-            $sum += $number{$i};
-        }
-        for ($i = $length - 2; $i >= 0; $i -= 2) {
-            $sum += array_sum(str_split($number{$i} * 2));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $sum % 10;

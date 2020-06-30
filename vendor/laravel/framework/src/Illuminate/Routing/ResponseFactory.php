@@ -2,7 +2,6 @@
 
 namespace Illuminate\Routing;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
@@ -11,16 +10,6 @@ use Illuminate\Contracts\View\Factory as ViewFactory;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Illuminate\Contracts\Routing\ResponseFactory as FactoryContract;
-=======
-use Illuminate\Contracts\Routing\ResponseFactory as FactoryContract;
-use Illuminate\Contracts\View\Factory as ViewFactory;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Response;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Macroable;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Symfony\Component\HttpFoundation\StreamedResponse;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ResponseFactory implements FactoryContract
 {

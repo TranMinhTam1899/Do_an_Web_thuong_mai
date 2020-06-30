@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,7 +9,6 @@
  */
 namespace PHPUnit\Framework\MockObject;
 
-<<<<<<< HEAD
 use PHPUnit\Framework\SelfDescribing;
 
 /**
@@ -31,18 +26,4 @@ interface Stub extends SelfDescribing
      * @param Invocation $invocation The invocation which was mocked and matched by the current method and argument matchers
      */
     public function invoke(Invocation $invocation);
-=======
-use PHPUnit\Framework\MockObject\Builder\InvocationStubber;
-
-/**
- * @method InvocationStubber method($constraint)
- */
-interface Stub
-{
-    public function __phpunit_getInvocationHandler(): InvocationHandler;
-
-    public function __phpunit_hasMatchers(): bool;
-
-    public function __phpunit_setReturnValueGeneration(bool $returnValueGeneration): void;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

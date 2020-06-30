@@ -1,12 +1,8 @@
 --TEST--
 GH-322: group commandline option should override group/exclude setting in phpunit.xml
 --FILE--
-<<<<<<< HEAD
 <?php
 
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '--configuration';
 $_SERVER['argv'][2] = __DIR__ . '/322/phpunit322.xml';
 $_SERVER['argv'][3] = '--debug';
@@ -17,10 +13,7 @@ $_SERVER['argv'][7] = __DIR__ . '/322/Issue322Test.php';
 
 require __DIR__ . '/../../../bootstrap.php';
 PHPUnit\TextUI\Command::main();
-<<<<<<< HEAD
 ?>
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 

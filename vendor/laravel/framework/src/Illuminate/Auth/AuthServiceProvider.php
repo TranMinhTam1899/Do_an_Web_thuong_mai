@@ -3,15 +3,9 @@
 namespace Illuminate\Auth;
 
 use Illuminate\Auth\Access\Gate;
-<<<<<<< HEAD
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-=======
-use Illuminate\Contracts\Auth\Access\Gate as GateContract;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Support\ServiceProvider;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -104,13 +98,6 @@ class AuthServiceProvider extends ServiceProvider
                 return;
             }
 
-<<<<<<< HEAD
-=======
-            if ($app['auth']->hasResolvedGuards() === false) {
-                return;
-            }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (method_exists($guard = $app['auth']->guard(), 'setDispatcher')) {
                 $guard->setDispatcher($dispatcher);
             }

@@ -17,20 +17,12 @@
         "ext-tokenizer": "*"
     },
     "require-dev": {
-<<<<<<< HEAD
         "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0",
         "ircmaxell/php-yacc": "0.0.5"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "4.3-dev"
-=======
-        "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "4.2-dev"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     },
     "autoload": {

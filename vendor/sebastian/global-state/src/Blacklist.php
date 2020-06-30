@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of sebastian/global-state.
  *
@@ -11,7 +7,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
 
 declare(strict_types=1);
 
@@ -23,14 +18,6 @@ use ReflectionClass;
  * A blacklist for global state elements that should not be snapshotted.
  */
 class Blacklist
-=======
-namespace SebastianBergmann\GlobalState;
-
-/**
- * A blacklist for global state elements that should not be snapshotted.
- */
-final class Blacklist
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var array
@@ -62,56 +49,32 @@ final class Blacklist
      */
     private $staticAttributes = [];
 
-<<<<<<< HEAD
     public function addGlobalVariable(string $variableName)
-=======
-    public function addGlobalVariable(string $variableName): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->globalVariables[$variableName] = true;
     }
 
-<<<<<<< HEAD
     public function addClass(string $className)
-=======
-    public function addClass(string $className): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->classes[] = $className;
     }
 
-<<<<<<< HEAD
     public function addSubclassesOf(string $className)
-=======
-    public function addSubclassesOf(string $className): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->parentClasses[] = $className;
     }
 
-<<<<<<< HEAD
     public function addImplementorsOf(string $interfaceName)
-=======
-    public function addImplementorsOf(string $interfaceName): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->interfaces[] = $interfaceName;
     }
 
-<<<<<<< HEAD
     public function addClassNamePrefix(string $classNamePrefix)
-=======
-    public function addClassNamePrefix(string $classNamePrefix): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->classNamePrefixes[] = $classNamePrefix;
     }
 
-<<<<<<< HEAD
     public function addStaticAttribute(string $className, string $attributeName)
-=======
-    public function addStaticAttribute(string $className, string $attributeName): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!isset($this->staticAttributes[$className])) {
             $this->staticAttributes[$className] = [];
@@ -137,11 +100,7 @@ final class Blacklist
             }
         }
 
-<<<<<<< HEAD
         $class = new ReflectionClass($className);
-=======
-        $class = new \ReflectionClass($className);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($this->parentClasses as $type) {
             if ($class->isSubclassOf($type)) {

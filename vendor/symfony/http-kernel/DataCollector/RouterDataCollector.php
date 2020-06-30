@@ -33,17 +33,12 @@ class RouterDataCollector extends DataCollector
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
      *
      * @param \Throwable|null $exception
      *
      * @final since Symfony 4.4
      */
     public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
-=======
-     */
-    public function collect(Request $request, Response $response, \Exception $exception = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($response instanceof RedirectResponse) {
             $this->data['redirect'] = true;

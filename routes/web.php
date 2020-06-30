@@ -30,16 +30,13 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
-<<<<<<< HEAD
-    
+
         // user
         Route::get('/add-user', function () {
             return view('admin.pages.user.add-user');
         })->name('add-user');
         Route::get('/list-user', 'UserController@index')->name('list-user');
-=======
-     
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
+
         Route::get('/add-statistical', function () {
             return view('admin.pages.statistical.add-statistical');
         })->name('add-statistical');
@@ -198,6 +195,4 @@ Route::get('/404', function () {
     return view('client.pages.404');
 })->name('client.404');
 
-
-// 
 

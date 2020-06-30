@@ -79,26 +79,15 @@ class UriSigner
         $hash = $params[$this->parameter];
         unset($params[$this->parameter]);
 
-<<<<<<< HEAD
         return hash_equals($this->computeHash($this->buildUrl($url, $params)), $hash);
     }
 
     private function computeHash(string $uri): string
-=======
-        return $this->computeHash($this->buildUrl($url, $params)) === $hash;
-    }
-
-    private function computeHash($uri)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return base64_encode(hash_hmac('sha256', $uri, $this->secret, true));
     }
 
-<<<<<<< HEAD
     private function buildUrl(array $url, array $params = []): string
-=======
-    private function buildUrl(array $url, array $params = [])
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         ksort($params, SORT_STRING);
         $url['query'] = http_build_query($params, '', '&');

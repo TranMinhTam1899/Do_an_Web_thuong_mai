@@ -3,15 +3,9 @@
 namespace Illuminate\Queue;
 
 use Closure;
-<<<<<<< HEAD
 use InvalidArgumentException;
 use Illuminate\Contracts\Queue\Factory as FactoryContract;
 use Illuminate\Contracts\Queue\Monitor as MonitorContract;
-=======
-use Illuminate\Contracts\Queue\Factory as FactoryContract;
-use Illuminate\Contracts\Queue\Monitor as MonitorContract;
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Contracts\Queue\Queue
@@ -253,7 +247,6 @@ class QueueManager implements FactoryContract, MonitorContract
     }
 
     /**
-<<<<<<< HEAD
      * Determine if the application is in maintenance mode.
      *
      * @return bool
@@ -264,8 +257,6 @@ class QueueManager implements FactoryContract, MonitorContract
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Dynamically pass calls to the default connection.
      *
      * @param  string  $method

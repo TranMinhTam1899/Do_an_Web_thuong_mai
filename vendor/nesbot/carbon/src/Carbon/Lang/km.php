@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Kruy Vanna
  * - Sereysethy Touch
@@ -39,12 +35,9 @@ return [
     'from_now' => ':timeទៀត',
     'after' => 'នៅ​ក្រោយ :time',
     'before' => 'នៅ​មុន :time',
-<<<<<<< HEAD
     'diff_now' => 'ឥឡូវ',
     'diff_yesterday' => 'ម្សិលមិញ',
     'diff_tomorrow' => 'ថ្ងៃ​ស្អែក',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

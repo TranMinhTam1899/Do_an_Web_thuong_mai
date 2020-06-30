@@ -15,15 +15,9 @@ use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Symfony\Contracts\Service\ServiceLocatorTrait;
 
-<<<<<<< HEAD
 abstract class ServiceLocatorTest extends TestCase
 {
     protected function getServiceLocator(array $factories)
-=======
-class ServiceLocatorTest extends TestCase
-{
-    public function getServiceLocator(array $factories)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new class($factories) implements ContainerInterface {
             use ServiceLocatorTrait;

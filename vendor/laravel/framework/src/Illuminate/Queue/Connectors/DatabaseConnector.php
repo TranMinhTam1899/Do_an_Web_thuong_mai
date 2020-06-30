@@ -2,13 +2,8 @@
 
 namespace Illuminate\Queue\Connectors;
 
-<<<<<<< HEAD
 use Illuminate\Queue\DatabaseQueue;
 use Illuminate\Database\ConnectionResolverInterface;
-=======
-use Illuminate\Database\ConnectionResolverInterface;
-use Illuminate\Queue\DatabaseQueue;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DatabaseConnector implements ConnectorInterface
 {

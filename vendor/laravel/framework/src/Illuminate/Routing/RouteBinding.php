@@ -3,13 +3,8 @@
 namespace Illuminate\Routing;
 
 use Closure;
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-=======
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RouteBinding
 {
@@ -46,11 +41,7 @@ class RouteBinding
 
             $callable = [$container->make($class), $method];
 
-<<<<<<< HEAD
             return call_user_func($callable, $value, $route);
-=======
-            return $callable($value, $route);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         };
     }
 
@@ -82,11 +73,7 @@ class RouteBinding
             // what we should do when the model is not found. This just gives these
             // developer a little greater flexibility to decide what will happen.
             if ($callback instanceof Closure) {
-<<<<<<< HEAD
                 return call_user_func($callback, $value);
-=======
-                return $callback($value);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             throw (new ModelNotFoundException)->setModel($class);

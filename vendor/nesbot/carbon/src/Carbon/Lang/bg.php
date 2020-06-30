@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - François B
@@ -47,12 +43,9 @@ return [
     'from_now' => 'след :time',
     'after' => 'след :time',
     'before' => 'преди :time',
-<<<<<<< HEAD
     'diff_now' => 'сега',
     'diff_yesterday' => 'вчера',
     'diff_tomorrow' => 'утре',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'H:mm',
         'LTS' => 'H:mm:ss',

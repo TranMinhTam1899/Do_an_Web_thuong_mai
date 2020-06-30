@@ -20,19 +20,9 @@ use Symfony\Component\Mime\Exception\AddressEncoderException;
  * SMTP servers.
  *
  * This encoder does not support email addresses with non-ASCII characters in
-<<<<<<< HEAD
  * local-part (the substring before @).
  *
  * @author Christian Schmidt
-=======
- * local-part (the substring before @). To send to such addresses, use
- * Utf8AddressEncoder together with SmtpUtf8Handler. Your outbound SMTP server must support
- * the SMTPUTF8 extension.
- *
- * @author Christian Schmidt
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class IdnAddressEncoder implements AddressEncoderInterface
 {

@@ -18,11 +18,6 @@ use Symfony\Component\Mime\Part\TextPart;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class Message extends RawMessage
 {
@@ -37,13 +32,7 @@ class Message extends RawMessage
 
     public function __clone()
     {
-<<<<<<< HEAD
         $this->headers = clone $this->headers;
-=======
-        if (null !== $this->headers) {
-            $this->headers = clone $this->headers;
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (null !== $this->body) {
             $this->body = clone $this->body;
@@ -85,14 +74,10 @@ class Message extends RawMessage
         $headers = clone $this->headers;
 
         if (!$headers->has('From')) {
-<<<<<<< HEAD
             if (!$headers->has('Sender')) {
                 throw new LogicException('An email must have a "From" or a "Sender" header.');
             }
             $headers->addMailboxListHeader('From', [$headers->get('Sender')->getAddress()]);
-=======
-            throw new LogicException('An email must have a "From" header.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $headers->addTextHeader('MIME-Version', '1.0');
@@ -102,25 +87,12 @@ class Message extends RawMessage
         }
 
         // determine the "real" sender
-<<<<<<< HEAD
         if (!$headers->has('Sender') && \count($froms = $headers->get('From')->getAddresses()) > 1) {
             $headers->addMailboxHeader('Sender', $froms[0]);
         }
 
         if (!$headers->has('Message-ID')) {
             $headers->addIdHeader('Message-ID', $this->generateMessageId());
-=======
-        $senders = $headers->get('From')->getAddresses();
-        $sender = $senders[0];
-        if ($headers->has('Sender')) {
-            $sender = $headers->get('Sender')->getAddress();
-        } elseif (\count($senders) > 1) {
-            $headers->addMailboxHeader('Sender', $sender);
-        }
-
-        if (!$headers->has('Message-ID')) {
-            $headers->addIdHeader('Message-ID', $this->generateMessageId($sender->getAddress()));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         // remove the Bcc field which should NOT be part of the sent message
@@ -148,7 +120,6 @@ class Message extends RawMessage
         yield from $body->toIterable();
     }
 
-<<<<<<< HEAD
     public function ensureValidity()
     {
         if (!$this->headers->has('To')) {
@@ -173,11 +144,6 @@ class Message extends RawMessage
         }
 
         return bin2hex(random_bytes(16)).strstr($sender->getAddress(), '@');
-=======
-    private function generateMessageId(string $email): string
-    {
-        return bin2hex(random_bytes(16)).strstr($email, '@');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function __serialize(): array

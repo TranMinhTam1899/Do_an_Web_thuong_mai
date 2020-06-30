@@ -66,11 +66,7 @@ trait CreatesUserProviders
      */
     protected function createDatabaseProvider($config)
     {
-<<<<<<< HEAD
         $connection = $this->app['db']->connection();
-=======
-        $connection = $this->app['db']->connection($config['connection'] ?? null);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return new DatabaseUserProvider($connection, $this->app['hash'], $config['table']);
     }

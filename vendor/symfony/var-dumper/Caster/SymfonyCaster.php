@@ -14,12 +14,9 @@ namespace Symfony\Component\VarDumper\Caster;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\VarDumper\Cloner\Stub;
 
-<<<<<<< HEAD
 /**
  * @final since Symfony 4.4
  */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class SymfonyCaster
 {
     private static $requestGetters = [
@@ -36,12 +33,8 @@ class SymfonyCaster
         $clone = null;
 
         foreach (self::$requestGetters as $prop => $getter) {
-<<<<<<< HEAD
             $key = Caster::PREFIX_PROTECTED.$prop;
             if (\array_key_exists($key, $a) && null === $a[$key]) {
-=======
-            if (null === $a[Caster::PREFIX_PROTECTED.$prop]) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if (null === $clone) {
                     $clone = clone $request;
                 }
@@ -55,7 +48,6 @@ class SymfonyCaster
     public static function castHttpClient($client, array $a, Stub $stub, $isNested)
     {
         $multiKey = sprintf("\0%s\0multi", \get_class($client));
-<<<<<<< HEAD
         if (isset($a[$multiKey])) {
             $a[$multiKey] = new CutStub($a[$multiKey]);
         }
@@ -71,9 +63,6 @@ class SymfonyCaster
         foreach ($response->getInfo() as $k => $v) {
             $a[Caster::PREFIX_VIRTUAL.$k] = $v;
         }
-=======
-        $a[$multiKey] = new CutStub($a[$multiKey]);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $a;
     }

@@ -2,13 +2,8 @@
 
 namespace Illuminate\Foundation\Console;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Console\GeneratorCommand;
-=======
-use Illuminate\Console\GeneratorCommand;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Input\InputOption;
 
 class PolicyMakeCommand extends GeneratorCommand

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -14,7 +10,6 @@
 namespace PHPUnit\Framework;
 
 /**
-<<<<<<< HEAD
  * An incomplete test case
  */
 class IncompleteTestCase extends TestCase
@@ -25,13 +20,6 @@ class IncompleteTestCase extends TestCase
     protected $message = '';
 
     /**
-=======
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class IncompleteTestCase extends TestCase
-{
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var bool
      */
     protected $backupGlobals = false;
@@ -52,15 +40,9 @@ final class IncompleteTestCase extends TestCase
     protected $useErrorHandler = false;
 
     /**
-<<<<<<< HEAD
      * @var bool
      */
     protected $useOutputBuffering = false;
-=======
-     * @var string
-     */
-    private $message;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     public function __construct(string $className, string $methodName, string $message = '')
     {

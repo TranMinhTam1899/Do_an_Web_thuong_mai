@@ -40,19 +40,9 @@ class StringInput extends ArgvInput
     /**
      * Tokenizes a string.
      *
-<<<<<<< HEAD
      * @throws InvalidArgumentException When unable to parse input (should never happen)
      */
     private function tokenize(string $input): array
-=======
-     * @param string $input The input to tokenize
-     *
-     * @return array An array of tokens
-     *
-     * @throws InvalidArgumentException When unable to parse input (should never happen)
-     */
-    private function tokenize($input)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $tokens = [];
         $length = \strlen($input);
@@ -67,11 +57,7 @@ class StringInput extends ArgvInput
                 $tokens[] = stripcslashes($match[1]);
             } else {
                 // should never happen
-<<<<<<< HEAD
                 throw new InvalidArgumentException(sprintf('Unable to parse input near "... %s ...".', substr($input, $cursor, 10)));
-=======
-                throw new InvalidArgumentException(sprintf('Unable to parse input near "... %s ..."', substr($input, $cursor, 10)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $cursor += \strlen($match[0]);

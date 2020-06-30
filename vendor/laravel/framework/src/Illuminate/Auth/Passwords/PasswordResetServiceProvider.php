@@ -2,13 +2,8 @@
 
 namespace Illuminate\Auth\Passwords;
 
-<<<<<<< HEAD
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
-=======
-use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\ServiceProvider;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PasswordResetServiceProvider extends ServiceProvider implements DeferrableProvider
 {

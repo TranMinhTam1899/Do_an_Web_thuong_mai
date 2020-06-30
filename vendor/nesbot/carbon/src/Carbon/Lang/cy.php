@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - François B
  * - JD Isaacks
@@ -38,14 +34,9 @@ return [
     'from_now' => 'mewn :time',
     'after' => ':time ar ôl',
     'before' => ':time o\'r blaen',
-<<<<<<< HEAD
     'diff_now' => 'nawr',
     'diff_yesterday' => 'ddoe',
     'diff_tomorrow' => 'yfory',
-=======
-    'diff_yesterday' => 'Ddoe',
-    'diff_tomorrow' => 'Yfory',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

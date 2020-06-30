@@ -50,15 +50,8 @@ class RouterListener implements EventSubscriberInterface
     private $debug;
 
     /**
-<<<<<<< HEAD
      * @param UrlMatcherInterface|RequestMatcherInterface $matcher    The Url or Request matcher
      * @param RequestContext|null                         $context    The RequestContext (can be null when $matcher implements RequestContextAwareInterface)
-=======
-     * @param UrlMatcherInterface|RequestMatcherInterface $matcher      The Url or Request matcher
-     * @param RequestStack                                $requestStack A RequestStack instance
-     * @param RequestContext|null                         $context      The RequestContext (can be null when $matcher implements RequestContextAwareInterface)
-     * @param LoggerInterface|null                        $logger       The logger
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param string                                      $projectDir
      *
      * @throws \InvalidArgumentException
@@ -150,11 +143,7 @@ class RouterListener implements EventSubscriberInterface
 
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
-<<<<<<< HEAD
         if (!$this->debug || !($e = $event->getThrowable()) instanceof NotFoundHttpException) {
-=======
-        if (!$this->debug || !($e = $event->getException()) instanceof NotFoundHttpException) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return;
         }
 
@@ -172,7 +161,6 @@ class RouterListener implements EventSubscriberInterface
         ];
     }
 
-<<<<<<< HEAD
     private function createWelcomeResponse(): Response
     {
         $version = Kernel::VERSION;
@@ -181,16 +169,6 @@ class RouterListener implements EventSubscriberInterface
 
         ob_start();
         include \dirname(__DIR__).'/Resources/welcome.html.php';
-=======
-    private function createWelcomeResponse()
-    {
-        $version = Kernel::VERSION;
-        $baseDir = realpath($this->projectDir).\DIRECTORY_SEPARATOR;
-        $docVersion = substr(Kernel::VERSION, 0, 3);
-
-        ob_start();
-        include __DIR__.'/../Resources/welcome.html.php';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return new Response(ob_get_clean(), Response::HTTP_NOT_FOUND);
     }

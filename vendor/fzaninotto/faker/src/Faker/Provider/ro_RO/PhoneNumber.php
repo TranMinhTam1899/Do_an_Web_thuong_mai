@@ -46,14 +46,8 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
     public function phoneNumber()
     {
         $type = static::randomElement(array_keys(static::$normalFormats));
-<<<<<<< HEAD
 
         return static::numerify(static::randomElement(static::$normalFormats[$type]));
-=======
-        $number = static::numerify(static::randomElement(static::$normalFormats[$type]));
-
-        return $number;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public static function tollFreePhoneNumber()

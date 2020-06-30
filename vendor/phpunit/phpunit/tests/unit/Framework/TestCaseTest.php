@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -14,24 +10,11 @@
 namespace PHPUnit\Framework;
 
 use PHPUnit\Framework\MockObject\MockObject;
-<<<<<<< HEAD
 use PHPUnit\Runner\BaseTestRunner;
 
 class TestCaseTest extends TestCase
 {
     protected static $testStatic      = 456;
-=======
-use PHPUnit\Framework\MockObject\Stub;
-use PHPUnit\Runner\BaseTestRunner;
-use PHPUnit\Util\Test as TestUtil;
-
-/**
- * @small
- */
-final class TestCaseTest extends TestCase
-{
-    protected static $testStatic = 456;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     protected $backupGlobalsBlacklist = ['i', 'singleton'];
 
@@ -234,55 +217,6 @@ final class TestCaseTest extends TestCase
         $this->assertTrue($result->wasSuccessful());
     }
 
-<<<<<<< HEAD
-=======
-    public function testExpectExceptionAllowsAccessingExpectedException(): void
-    {
-        $exception = \RuntimeException::class;
-
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectException($exception);
-
-        $this->assertSame($exception, $test->getExpectedException());
-    }
-
-    public function testExpectExceptionCodeWithSameCode(): void
-    {
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectExceptionCode(0);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertTrue($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionCodeWithDifferentCode(): void
-    {
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectExceptionCode(9000);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertFalse($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionCodeAllowsAccessingExpectedExceptionCode(): void
-    {
-        $code = 9000;
-
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectExceptionCode($code);
-
-        $this->assertSame($code, $test->getExpectedExceptionCode());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testExceptionWithEmptyMessage(): void
     {
         $test = new \ThrowExceptionTestCase('test');
@@ -333,20 +267,6 @@ final class TestCaseTest extends TestCase
         );
     }
 
-<<<<<<< HEAD
-=======
-    public function testExpectExceptionMessageAllowsAccessingExpectedExceptionMessage(): void
-    {
-        $message = 'A runtime error occurred';
-
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectExceptionMessage($message);
-
-        $this->assertSame($message, $test->getExpectedExceptionMessage());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testExceptionWithRegexpMessage(): void
     {
         $test = new \ThrowExceptionTestCase('test');
@@ -359,20 +279,6 @@ final class TestCaseTest extends TestCase
         $this->assertTrue($result->wasSuccessful());
     }
 
-<<<<<<< HEAD
-=======
-    public function testExpectExceptionMessageRegExpAllowsAccessingExpectedExceptionRegExp(): void
-    {
-        $messageRegExp = '/runtime .*? occurred/';
-
-        $test = new \ThrowExceptionTestCase('test');
-
-        $test->expectExceptionMessageRegExp($messageRegExp);
-
-        $this->assertSame($messageRegExp, $test->getExpectedExceptionMessageRegExp());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testExceptionWithWrongRegexpMessage(): void
     {
         $test = new \ThrowExceptionTestCase('test');
@@ -403,93 +309,6 @@ final class TestCaseTest extends TestCase
         );
     }
 
-<<<<<<< HEAD
-=======
-    public function testExpectExceptionObjectWithDifferentExceptionClass(): void
-    {
-        $exception = new \InvalidArgumentException(
-            'Cannot compute at this time.',
-            9000
-        );
-
-        $test = new \ThrowExceptionTestCase('testWithExpectExceptionObject');
-
-        $test->expectExceptionObject($exception);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertFalse($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionObjectWithDifferentExceptionMessage(): void
-    {
-        $exception = new \RuntimeException(
-            'This is fine!',
-            9000
-        );
-
-        $test = new \ThrowExceptionTestCase('testWithExpectExceptionObject');
-
-        $test->expectExceptionObject($exception);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertFalse($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionObjectWithDifferentExceptionCode(): void
-    {
-        $exception = new \RuntimeException(
-            'Cannot compute at this time.',
-            9001
-        );
-
-        $test = new \ThrowExceptionTestCase('testWithExpectExceptionObject');
-
-        $test->expectExceptionObject($exception);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertFalse($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionObjectWithEqualException(): void
-    {
-        $exception = new \RuntimeException(
-            'Cannot compute at this time',
-            9000
-        );
-
-        $test = new \ThrowExceptionTestCase('testWithExpectExceptionObject');
-
-        $test->expectExceptionObject($exception);
-
-        $result = $test->run();
-
-        $this->assertCount(1, $result);
-        $this->assertTrue($result->wasSuccessful());
-    }
-
-    public function testExpectExceptionObjectAllowsAccessingExpectedExceptionDetails(): void
-    {
-        $exception = new \RuntimeException(
-            'Cannot compute at this time',
-            9000
-        );
-
-        $test = new \ThrowExceptionTestCase('testWithExpectExceptionObject');
-
-        $test->expectExceptionObject($exception);
-
-        $this->assertSame(\get_class($exception), $test->getExpectedException());
-        $this->assertSame($exception->getCode(), $test->getExpectedExceptionCode());
-        $this->assertSame($exception->getMessage(), $test->getExpectedExceptionMessage());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testNoException(): void
     {
         $test = new \ThrowNoExceptionTestCase('test');
@@ -594,21 +413,13 @@ final class TestCaseTest extends TestCase
     /**
      * @backupGlobals enabled
      * @backupStaticAttributes enabled
-<<<<<<< HEAD
-=======
-     * @depends testGlobalsBackupPost
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @doesNotPerformAssertions
      */
     public function testStaticAttributesBackupPre(): void
     {
         $GLOBALS['singleton'] = \Singleton::getInstance();
-<<<<<<< HEAD
         $GLOBALS['i']         = 'not reset by backup';
-=======
-        $GLOBALS['i']         = 'set by testStaticAttributesBackupPre';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $GLOBALS['j']         = 'reset by backup';
         self::$testStatic     = 123;
@@ -621,11 +432,7 @@ final class TestCaseTest extends TestCase
     {
         // Snapshots made by @backupGlobals
         $this->assertSame(\Singleton::getInstance(), $GLOBALS['singleton']);
-<<<<<<< HEAD
         $this->assertSame('not reset by backup', $GLOBALS['i']);
-=======
-        $this->assertSame('set by testStaticAttributesBackupPre', $GLOBALS['i']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // Reset global
         $this->assertArrayNotHasKey('j', $GLOBALS);
@@ -868,35 +675,13 @@ final class TestCaseTest extends TestCase
 
     public function testCreateMockMocksAllMethods(): void
     {
-<<<<<<< HEAD
         /** @var \Mockable $mock */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $mock = $this->createMock(\Mockable::class);
 
         $this->assertNull($mock->mockableMethod());
         $this->assertNull($mock->anotherMockableMethod());
     }
 
-<<<<<<< HEAD
-=======
-    public function testCreateStubFromClassName(): void
-    {
-        $mock = $this->createStub(\Mockable::class);
-
-        $this->assertInstanceOf(\Mockable::class, $mock);
-        $this->assertInstanceOf(Stub::class, $mock);
-    }
-
-    public function testCreateStubStubsAllMethods(): void
-    {
-        $mock = $this->createStub(\Mockable::class);
-
-        $this->assertNull($mock->mockableMethod());
-        $this->assertNull($mock->anotherMockableMethod());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testCreatePartialMockDoesNotMockAllMethods(): void
     {
         /** @var \Mockable $mock */
@@ -915,34 +700,9 @@ final class TestCaseTest extends TestCase
         $this->assertTrue($mock->anotherMockableMethod());
     }
 
-<<<<<<< HEAD
     public function testCreateMockSkipsConstructor(): void
     {
         /** @var \Mockable $mock */
-=======
-    public function testCreatePartialMockWithFakeMethods(): void
-    {
-        $test = new \TestWithDifferentStatuses('testWithCreatePartialMockWarning');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_WARNING, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testCreatePartialMockWithRealMethods(): void
-    {
-        $test = new \TestWithDifferentStatuses('testWithCreatePartialMockPassesNoWarning');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_PASSED, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testCreateMockSkipsConstructor(): void
-    {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $mock = $this->createMock(\Mockable::class);
 
         $this->assertNull($mock->constructorArgs);
@@ -950,34 +710,13 @@ final class TestCaseTest extends TestCase
 
     public function testCreateMockDisablesOriginalClone(): void
     {
-<<<<<<< HEAD
         /** @var \Mockable $mock */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $mock = $this->createMock(\Mockable::class);
 
         $cloned = clone $mock;
         $this->assertNull($cloned->cloned);
     }
 
-<<<<<<< HEAD
-=======
-    public function testCreateStubSkipsConstructor(): void
-    {
-        $mock = $this->createStub(\Mockable::class);
-
-        $this->assertNull($mock->constructorArgs);
-    }
-
-    public function testCreateStubDisablesOriginalClone(): void
-    {
-        $mock = $this->createStub(\Mockable::class);
-
-        $cloned = clone $mock;
-        $this->assertNull($cloned->cloned);
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testConfiguredMockCanBeCreated(): void
     {
         /** @var \Mockable $mock */
@@ -1008,10 +747,6 @@ final class TestCaseTest extends TestCase
             [123],
             ['foo'],
             [$this->createMock(\Mockable::class)],
-<<<<<<< HEAD
-=======
-            [$this->createStub(\Mockable::class)],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ];
 
         $test = new \TestAutoreferenced('testJsonEncodeException', [$data]);
@@ -1027,249 +762,6 @@ final class TestCaseTest extends TestCase
         $this->assertNull($test->getTestResultObject());
     }
 
-<<<<<<< HEAD
-=======
-    public function testSizeUnknown(): void
-    {
-        $test = new \TestWithDifferentSizes('testWithSizeUnknown');
-
-        $this->assertFalse($test->hasSize());
-
-        $this->assertSame(TestUtil::UNKNOWN, $test->getSize());
-
-        $this->assertFalse($test->isLarge());
-        $this->assertFalse($test->isMedium());
-        $this->assertFalse($test->isSmall());
-    }
-
-    public function testSizeLarge(): void
-    {
-        $test = new \TestWithDifferentSizes('testWithSizeLarge');
-
-        $this->assertTrue($test->hasSize());
-
-        $this->assertSame(TestUtil::LARGE, $test->getSize());
-
-        $this->assertTrue($test->isLarge());
-        $this->assertFalse($test->isMedium());
-        $this->assertFalse($test->isSmall());
-    }
-
-    public function testSizeMedium(): void
-    {
-        $test = new \TestWithDifferentSizes('testWithSizeMedium');
-
-        $this->assertTrue($test->hasSize());
-
-        $this->assertSame(TestUtil::MEDIUM, $test->getSize());
-
-        $this->assertFalse($test->isLarge());
-        $this->assertTrue($test->isMedium());
-        $this->assertFalse($test->isSmall());
-    }
-
-    public function testSizeSmall(): void
-    {
-        $test = new \TestWithDifferentSizes('testWithSizeSmall');
-
-        $this->assertTrue($test->hasSize());
-
-        $this->assertSame(TestUtil::SMALL, $test->getSize());
-
-        $this->assertFalse($test->isLarge());
-        $this->assertFalse($test->isMedium());
-        $this->assertTrue($test->isSmall());
-    }
-
-    public function testGetNameReturnsMethodName(): void
-    {
-        $methodName = 'testWithName';
-
-        $testCase = new \TestWithDifferentNames($methodName);
-
-        $this->assertSame($methodName, $testCase->getName());
-    }
-
-    public function testGetNameReturnsEmptyStringAsDefault(): void
-    {
-        $testCase = new \TestWithDifferentNames();
-
-        $this->assertSame('', $testCase->getName());
-    }
-
-    /**
-     * @dataProvider providerInvalidName
-     */
-    public function testRunBareThrowsExceptionWhenTestHasInvalidName($name): void
-    {
-        $testCase = new \TestWithDifferentNames($name);
-
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage('PHPUnit\Framework\TestCase::$name must be a non-blank string.');
-
-        $testCase->runBare();
-    }
-
-    public function providerInvalidName(): array
-    {
-        return [
-            'null'         => [null],
-            'string-empty' => [''],
-            'string-blank' => ['  '],
-        ];
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasNotRunYet(): void
-    {
-        $test = new \TestWithDifferentStatuses();
-
-        $this->assertSame(BaseTestRunner::STATUS_UNKNOWN, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsTrueWhenTestHasFailed(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatFails');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_FAILURE, $test->getStatus());
-        $this->assertTrue($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsTrueWhenTestHasErrored(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatErrors');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_ERROR, $test->getStatus());
-        $this->assertTrue($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasPassed(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatPasses');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_PASSED, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasBeenMarkedAsIncomplete(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatIsMarkedAsIncomplete');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_INCOMPLETE, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasBeenMarkedAsRisky(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatIsMarkedAsRisky');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_RISKY, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasBeenMarkedAsSkipped(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatIsMarkedAsSkipped');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_SKIPPED, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasFailedReturnsFalseWhenTestHasEmittedWarning(): void
-    {
-        $test = new \TestWithDifferentStatuses('testThatAddsAWarning');
-
-        $test->run();
-
-        $this->assertSame(BaseTestRunner::STATUS_WARNING, $test->getStatus());
-        $this->assertFalse($test->hasFailed());
-    }
-
-    public function testHasOutputReturnsFalseWhenTestDoesNotGenerateOutput(): void
-    {
-        $test = new \TestWithDifferentOutput('testThatDoesNotGenerateOutput');
-
-        $test->run();
-
-        $this->assertFalse($test->hasOutput());
-    }
-
-    public function testHasOutputReturnsFalseWhenTestExpectsOutputRegex(): void
-    {
-        $test = new \TestWithDifferentOutput('testThatExpectsOutputRegex');
-
-        $test->run();
-
-        $this->assertFalse($test->hasOutput());
-    }
-
-    public function testHasOutputReturnsFalseWhenTestExpectsOutputString(): void
-    {
-        $test = new \TestWithDifferentOutput('testThatExpectsOutputString');
-
-        $test->run();
-
-        $this->assertFalse($test->hasOutput());
-    }
-
-    public function testHasOutputReturnsTrueWhenTestGeneratesOutput(): void
-    {
-        $test = new \TestWithDifferentOutput('testThatGeneratesOutput');
-
-        $test->run();
-
-        $this->assertTrue($test->hasOutput());
-    }
-
-    public function testDeprecationCanBeExpected(): void
-    {
-        $this->expectDeprecation();
-        $this->expectDeprecationMessage('foo');
-        $this->expectDeprecationMessageMatches('/foo/');
-
-        \trigger_error('foo', \E_USER_DEPRECATED);
-    }
-
-    public function testNoticeCanBeExpected(): void
-    {
-        $this->expectNotice();
-        $this->expectNoticeMessage('foo');
-        $this->expectNoticeMessageMatches('/foo/');
-
-        \trigger_error('foo', \E_USER_NOTICE);
-    }
-
-    public function testWarningCanBeExpected(): void
-    {
-        $this->expectWarning();
-        $this->expectWarningMessage('foo');
-        $this->expectWarningMessageMatches('/foo/');
-
-        \trigger_error('foo', \E_USER_WARNING);
-    }
-
-    public function testErrorCanBeExpected(): void
-    {
-        $this->expectError();
-        $this->expectErrorMessage('foo');
-        $this->expectErrorMessageMatches('/foo/');
-
-        \trigger_error('foo', \E_USER_ERROR);
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @return array<string, array>
      */

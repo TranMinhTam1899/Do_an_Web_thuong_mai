@@ -8,18 +8,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-=======
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'uz');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
  * - Josh Soref
  * - Rasulbek
-<<<<<<< HEAD
  * - Ilyosjon Kamoldinov (ilyosjon09)
  */
 return [
@@ -48,33 +41,6 @@ return [
     'from_now' => 'Yaqin :time ichida',
     'after' => ':timedan keyin',
     'before' => ':time oldin',
-=======
- */
-return [
-    'year' => ':count yil',
-    'a_year' => 'bir yil|:count yil',
-    'y' => ':count y',
-    'month' => ':count oy',
-    'a_month' => 'bir oy|:count oy',
-    'm' => ':count o',
-    'week' => ':count hafta',
-    'a_week' => 'bir hafta|:count hafta',
-    'w' => ':count h',
-    'day' => ':count kun',
-    'a_day' => 'bir kun|:count kun',
-    'd' => ':count k',
-    'hour' => ':count soat',
-    'a_hour' => 'bir soat|:count soat',
-    'h' => ':count soat',
-    'minute' => ':count daqiqa',
-    'a_minute' => 'bir daqiqa|:count daqiqa',
-    'min' => ':count d',
-    'second' => ':count soniya',
-    'a_second' => 'soniya|:count soniya',
-    's' => ':count son.',
-    'ago' => 'Bir necha :time oldin',
-    'from_now' => 'Yaqin :time ichida',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'Kecha',
     'diff_tomorrow' => 'Ertaga',
     'formats' => [

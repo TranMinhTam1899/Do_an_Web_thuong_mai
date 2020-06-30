@@ -80,12 +80,9 @@ return [
     'second_before' => ':count секунды',
 
     'list' => ', ',
-<<<<<<< HEAD
     'diff_now' => 'одоо',
     'diff_yesterday' => 'өчигдөр',
     'diff_tomorrow' => 'маргааш',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

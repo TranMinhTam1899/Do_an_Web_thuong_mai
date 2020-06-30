@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -16,10 +12,7 @@
 namespace Monolog\Handler;
 
 use Monolog\Logger;
-<<<<<<< HEAD
 use Monolog\Utils;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * IFTTTHandler uses cURL to trigger IFTTT Maker actions
@@ -38,21 +31,12 @@ class IFTTTHandler extends AbstractProcessingHandler
     private $secretKey;
 
     /**
-<<<<<<< HEAD
      * @param string $eventName The name of the IFTTT Maker event that should be triggered
      * @param string $secretKey A valid IFTTT secret key
      * @param int    $level     The minimum logging level at which this handler will be triggered
      * @param bool   $bubble    Whether the messages that are handled can bubble up the stack or not
      */
     public function __construct($eventName, $secretKey, $level = Logger::ERROR, $bubble = true)
-=======
-     * @param string     $eventName The name of the IFTTT Maker event that should be triggered
-     * @param string     $secretKey A valid IFTTT secret key
-     * @param string|int $level     The minimum logging level at which this handler will be triggered
-     * @param bool       $bubble    Whether the messages that are handled can bubble up the stack or not
-     */
-    public function __construct(string $eventName, string $secretKey, $level = Logger::ERROR, bool $bubble = true)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->eventName = $eventName;
         $this->secretKey = $secretKey;
@@ -63,7 +47,6 @@ class IFTTTHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function write(array $record)
     {
         $postData = array(
@@ -72,31 +55,15 @@ class IFTTTHandler extends AbstractProcessingHandler
             "value3" => $record["message"],
         );
         $postString = Utils::jsonEncode($postData);
-=======
-    public function write(array $record): void
-    {
-        $postData = [
-            "value1" => $record["channel"],
-            "value2" => $record["level_name"],
-            "value3" => $record["message"],
-        ];
-        $postString = json_encode($postData);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://maker.ifttt.com/trigger/" . $this->eventName . "/with/key/" . $this->secretKey);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
-<<<<<<< HEAD
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Content-Type: application/json",
         ));
-=======
-        curl_setopt($ch, CURLOPT_HTTPHEADER, [
-            "Content-Type: application/json",
-        ]);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         Curl\Util::execute($ch);
     }

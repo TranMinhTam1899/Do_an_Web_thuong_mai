@@ -50,10 +50,6 @@ class Validator
                 'is missing'
             );
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -136,13 +132,10 @@ class Validator
     {
         return $this->assertCallback(
             function ($value) use ($choices) {
-<<<<<<< HEAD
                 if ($value === null) {
                     return true;
                 }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return in_array($value, $choices, true);
             },
             sprintf('is not one of [%s]', implode(', ', $choices))
@@ -161,23 +154,14 @@ class Validator
     public function allowedRegexValues($regex)
     {
         return $this->assertCallback(
-<<<<<<< HEAD
             function ($value) use ($regex) {
-=======
-            function ($value) use ($regex)
-            {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if ($value === null) {
                     return true;
                 }
 
                 return Regex::match($regex, $value)->success()->getOrElse(0) === 1;
             },
-<<<<<<< HEAD
             sprintf('does not match "%s"', $regex)
-=======
-            sprintf('does not match "%s"' , $regex)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 

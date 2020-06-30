@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,11 +9,7 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
-<<<<<<< HEAD
 class ExceptionCode extends Constraint
-=======
-final class ExceptionCode extends Constraint
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var int|string
@@ -29,11 +21,8 @@ final class ExceptionCode extends Constraint
      */
     public function __construct($expected)
     {
-<<<<<<< HEAD
         parent::__construct();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->expectedCode = $expected;
     }
 
@@ -67,13 +56,8 @@ final class ExceptionCode extends Constraint
     {
         return \sprintf(
             '%s is equal to expected exception code %s',
-<<<<<<< HEAD
             $this->exporter->export($other->getCode()),
             $this->exporter->export($this->expectedCode)
-=======
-            $this->exporter()->export($other->getCode()),
-            $this->exporter()->export($this->expectedCode)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 }

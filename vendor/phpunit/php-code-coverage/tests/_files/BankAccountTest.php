@@ -1,20 +1,13 @@
 <?php
-<<<<<<< HEAD
 require_once 'BankAccount.php';
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Framework\TestCase;
 
 class BankAccountTest extends TestCase
 {
     protected $ba;
 
-<<<<<<< HEAD
     protected function setUp()
-=======
-    protected function setUp(): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->ba = new BankAccount;
     }

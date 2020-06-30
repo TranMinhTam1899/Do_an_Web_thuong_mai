@@ -2,13 +2,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-<<<<<<< HEAD
 use NamespacedDummyModel;
 use Faker\Generator as Faker;
-=======
-use Faker\Generator as Faker;
-use NamespacedDummyModel;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 $factory->define(DummyModel::class, function (Faker $faker) {
     return [

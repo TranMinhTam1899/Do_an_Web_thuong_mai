@@ -38,15 +38,12 @@ class Foo
         if ($this->logger) {
             $this->logger->info('Doing work');
         }
-<<<<<<< HEAD
            
         try {
             $this->doSomethingElse();
         } catch (Exception $exception) {
             $this->logger->error('Oh no!', array('exception' => $exception));
         }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // do something useful
     }

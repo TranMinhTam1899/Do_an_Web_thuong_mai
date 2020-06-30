@@ -14,11 +14,8 @@
 
 namespace Ramsey\Uuid\Converter;
 
-<<<<<<< HEAD
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * NumberConverterInterface converts UUIDs from hexadecimal characters into
  * representations of integers and vice versa
@@ -33,11 +30,7 @@ interface NumberConverterInterface
      *
      * @param string $hex The hexadecimal string representation to convert
      * @return mixed
-<<<<<<< HEAD
      * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
-=======
-     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function fromHex($hex);
 
@@ -49,11 +42,7 @@ interface NumberConverterInterface
      *     a true integer, a string integer, or a object representation that
      *     this converter can understand
      * @return string Hexadecimal string
-<<<<<<< HEAD
      * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
-=======
-     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function toHex($integer);
 }

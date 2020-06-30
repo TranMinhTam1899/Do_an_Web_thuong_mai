@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,15 +11,7 @@ namespace PHPUnit\Util\TestDox;
 
 use PHPUnit\Framework\TestCase;
 
-<<<<<<< HEAD
 class NamePrettifierTest extends TestCase
-=======
-/**
- * @group testdox
- * @small
- */
-final class NamePrettifierTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var NamePrettifier
@@ -45,13 +33,8 @@ final class NamePrettifierTest extends TestCase
         $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('FooTest'));
         $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('TestFoo'));
         $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('TestFooTest'));
-<<<<<<< HEAD
         $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('Test\FooTest'));
         $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('Tests\FooTest'));
-=======
-        $this->assertEquals('Foo (Test\Foo)', $this->namePrettifier->prettifyTestClass('Test\FooTest'));
-        $this->assertEquals('Foo (Tests\Foo)', $this->namePrettifier->prettifyTestClass('Tests\FooTest'));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function testTestNameIsConvertedToASentence(): void

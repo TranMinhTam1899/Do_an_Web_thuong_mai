@@ -11,10 +11,7 @@
 
 namespace Symfony\Component\Console\Helper;
 
-<<<<<<< HEAD
 use Symfony\Component\Console\Exception\MissingInputException;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
@@ -52,7 +49,6 @@ class QuestionHelper extends Helper
         }
 
         if (!$input->isInteractive()) {
-<<<<<<< HEAD
             return $this->getDefaultAnswer($question);
         }
 
@@ -79,46 +75,6 @@ class QuestionHelper extends Helper
 
             return $fallbackOutput;
         }
-=======
-            $default = $question->getDefault();
-
-            if (null === $default) {
-                return $default;
-            }
-
-            if ($validator = $question->getValidator()) {
-                return \call_user_func($question->getValidator(), $default);
-            } elseif ($question instanceof ChoiceQuestion) {
-                $choices = $question->getChoices();
-
-                if (!$question->isMultiselect()) {
-                    return isset($choices[$default]) ? $choices[$default] : $default;
-                }
-
-                $default = explode(',', $default);
-                foreach ($default as $k => $v) {
-                    $v = trim($v);
-                    $default[$k] = isset($choices[$v]) ? $choices[$v] : $v;
-                }
-            }
-
-            return $default;
-        }
-
-        if ($input instanceof StreamableInputInterface && $stream = $input->getStream()) {
-            $this->inputStream = $stream;
-        }
-
-        if (!$question->getValidator()) {
-            return $this->doAsk($output, $question);
-        }
-
-        $interviewer = function () use ($output, $question) {
-            return $this->doAsk($output, $question);
-        };
-
-        return $this->validateAttempts($interviewer, $output, $question);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -155,12 +111,8 @@ class QuestionHelper extends Helper
             $ret = false;
             if ($question->isHidden()) {
                 try {
-<<<<<<< HEAD
                     $hiddenResponse = $this->getHiddenResponse($output, $inputStream, $question->isTrimmable());
                     $ret = $question->isTrimmable() ? trim($hiddenResponse) : $hiddenResponse;
-=======
-                    $ret = trim($this->getHiddenResponse($output, $inputStream));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 } catch (RuntimeException $e) {
                     if (!$question->isHiddenFallback()) {
                         throw $e;
@@ -171,7 +123,6 @@ class QuestionHelper extends Helper
             if (false === $ret) {
                 $ret = fgets($inputStream, 4096);
                 if (false === $ret) {
-<<<<<<< HEAD
                     throw new MissingInputException('Aborted.');
                 }
                 if ($question->isTrimmable()) {
@@ -181,14 +132,6 @@ class QuestionHelper extends Helper
         } else {
             $autocomplete = $this->autocomplete($output, $question, $inputStream, $autocomplete);
             $ret = $question->isTrimmable() ? trim($autocomplete) : $autocomplete;
-=======
-                    throw new RuntimeException('Aborted.');
-                }
-                $ret = trim($ret);
-            }
-        } else {
-            $ret = trim($this->autocomplete($output, $question, $inputStream, $autocomplete));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ($output instanceof ConsoleSectionOutput) {
@@ -205,7 +148,6 @@ class QuestionHelper extends Helper
     }
 
     /**
-<<<<<<< HEAD
      * @return mixed
      */
     private function getDefaultAnswer(Question $question)
@@ -236,8 +178,6 @@ class QuestionHelper extends Helper
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Outputs the question prompt.
      */
     protected function writePrompt(OutputInterface $output, Question $question)
@@ -245,7 +185,6 @@ class QuestionHelper extends Helper
         $message = $question->getQuestion();
 
         if ($question instanceof ChoiceQuestion) {
-<<<<<<< HEAD
             $output->writeln(array_merge([
                 $question->getQuestion(),
             ], $this->formatChoiceQuestionChoices($question, 'info')));
@@ -274,22 +213,6 @@ class QuestionHelper extends Helper
         }
 
         return $messages;
-=======
-            $maxWidth = max(array_map([$this, 'strlen'], array_keys($question->getChoices())));
-
-            $messages = (array) $question->getQuestion();
-            foreach ($question->getChoices() as $key => $value) {
-                $width = $maxWidth - $this->strlen($key);
-                $messages[] = '  [<info>'.$key.str_repeat(' ', $width).'</info>] '.$value;
-            }
-
-            $output->writeln($messages);
-
-            $message = $question->getPrompt();
-        }
-
-        $output->write($message);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -336,19 +259,11 @@ class QuestionHelper extends Helper
             // as opposed to fgets(), fread() returns an empty string when the stream content is empty, not false.
             if (false === $c || ('' === $ret && '' === $c && null === $question->getDefault())) {
                 shell_exec(sprintf('stty %s', $sttyMode));
-<<<<<<< HEAD
                 throw new MissingInputException('Aborted.');
             } elseif ("\177" === $c) { // Backspace Character
                 if (0 === $numMatches && 0 !== $i) {
                     --$i;
                     $fullChoice = self::substr($fullChoice, 0, $i);
-=======
-                throw new RuntimeException('Aborted.');
-            } elseif ("\177" === $c) { // Backspace Character
-                if (0 === $numMatches && 0 !== $i) {
-                    --$i;
-                    $fullChoice = substr($fullChoice, 0, -1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     // Move cursor backwards
                     $output->write("\033[1D");
                 }
@@ -362,11 +277,7 @@ class QuestionHelper extends Helper
                 }
 
                 // Pop the last character off the end of our string
-<<<<<<< HEAD
                 $ret = self::substr($ret, 0, $i);
-=======
-                $ret = substr($ret, 0, $i);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             } elseif ("\033" === $c) {
                 // Did we read an escape sequence?
                 $c .= fread($inputStream, 2);
@@ -392,11 +303,7 @@ class QuestionHelper extends Helper
                         $remainingCharacters = substr($ret, \strlen(trim($this->mostRecentlyEnteredValue($fullChoice))));
                         $output->write($remainingCharacters);
                         $fullChoice .= $remainingCharacters;
-<<<<<<< HEAD
                         $i = self::strlen($fullChoice);
-=======
-                        $i = \strlen($fullChoice);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                         $matches = array_filter(
                             $autocomplete($ret),
@@ -412,11 +319,8 @@ class QuestionHelper extends Helper
                         $output->write($c);
                         break;
                     }
-<<<<<<< HEAD
 
                     $numMatches = 0;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
 
                 continue;
@@ -467,11 +371,7 @@ class QuestionHelper extends Helper
         return $fullChoice;
     }
 
-<<<<<<< HEAD
     private function mostRecentlyEnteredValue(string $entered): string
-=======
-    private function mostRecentlyEnteredValue($entered)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // Determine the most recent value that the user entered
         if (false === strpos($entered, ',')) {
@@ -489,21 +389,12 @@ class QuestionHelper extends Helper
     /**
      * Gets a hidden response from user.
      *
-<<<<<<< HEAD
      * @param resource $inputStream The handler resource
      * @param bool     $trimmable   Is the answer trimmable
      *
      * @throws RuntimeException In case the fallback is deactivated and the response cannot be hidden
      */
     private function getHiddenResponse(OutputInterface $output, $inputStream, bool $trimmable = true): string
-=======
-     * @param OutputInterface $output      An Output instance
-     * @param resource        $inputStream The handler resource
-     *
-     * @throws RuntimeException In case the fallback is deactivated and the response cannot be hidden
-     */
-    private function getHiddenResponse(OutputInterface $output, $inputStream): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ('\\' === \DIRECTORY_SEPARATOR) {
             $exe = __DIR__.'/../Resources/bin/hiddeninput.exe';
@@ -515,12 +406,8 @@ class QuestionHelper extends Helper
                 $exe = $tmpExe;
             }
 
-<<<<<<< HEAD
             $sExec = shell_exec($exe);
             $value = $trimmable ? rtrim($sExec) : $sExec;
-=======
-            $value = rtrim(shell_exec($exe));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $output->writeln('');
 
             if (isset($tmpExe)) {
@@ -538,18 +425,11 @@ class QuestionHelper extends Helper
             shell_exec(sprintf('stty %s', $sttyMode));
 
             if (false === $value) {
-<<<<<<< HEAD
                 throw new MissingInputException('Aborted.');
             }
             if ($trimmable) {
                 $value = trim($value);
             }
-=======
-                throw new RuntimeException('Aborted.');
-            }
-
-            $value = trim($value);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $output->writeln('');
 
             return $value;
@@ -558,12 +438,8 @@ class QuestionHelper extends Helper
         if (false !== $shell = $this->getShell()) {
             $readCmd = 'csh' === $shell ? 'set mypassword = $<' : 'read -r mypassword';
             $command = sprintf("/usr/bin/env %s -c 'stty -echo; %s; stty echo; echo \$mypassword'", $shell, $readCmd);
-<<<<<<< HEAD
             $sCommand = shell_exec($command);
             $value = $trimmable ? rtrim($sCommand) : $sCommand;
-=======
-            $value = rtrim(shell_exec($command));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $output->writeln('');
 
             return $value;
@@ -575,13 +451,7 @@ class QuestionHelper extends Helper
     /**
      * Validates an attempt.
      *
-<<<<<<< HEAD
      * @param callable $interviewer A callable that will ask for a question and return the result
-=======
-     * @param callable        $interviewer A callable that will ask for a question and return the result
-     * @param OutputInterface $output      An Output instance
-     * @param Question        $question    A Question instance
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return mixed The validated response
      *

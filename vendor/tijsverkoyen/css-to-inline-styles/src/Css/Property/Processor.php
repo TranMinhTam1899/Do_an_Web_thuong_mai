@@ -7,18 +7,11 @@ use Symfony\Component\CssSelector\Node\Specificity;
 class Processor
 {
     /**
-<<<<<<< HEAD
      * Split a string into separate properties
      *
      * @param string $propertiesString
      *
      * @return string[]
-=======
-     * Split a string into seperate properties
-     *
-     * @param string $propertiesString
-     * @return array
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function splitIntoSeparateProperties($propertiesString)
     {
@@ -48,14 +41,9 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * @param string $string
      *
      * @return string
-=======
-     * @param $string
-     * @return mixed|string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private function cleanup($string)
     {
@@ -72,16 +60,10 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * Converts a property-string into an object
      *
      * @param string $property
      *
-=======
-     * Convert a property-string into an object
-     *
-     * @param string $property
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return Property|null
      */
     public function convertToObject($property, Specificity $specificity = null)
@@ -103,16 +85,10 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * Converts an array of property-strings into objects
      *
      * @param string[] $properties
      *
-=======
-     * Convert an array of property-strings into objects
-     *
-     * @param array $properties
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return Property[]
      */
     public function convertArrayToObjects(array $properties, Specificity $specificity = null)
@@ -134,12 +110,8 @@ class Processor
     /**
      * Build the property-string for multiple properties
      *
-<<<<<<< HEAD
      * @param Property[] $properties
      *
-=======
-     * @param array $properties
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function buildPropertiesString(array $properties)

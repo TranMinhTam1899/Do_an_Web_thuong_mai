@@ -41,14 +41,11 @@ class ClosureStream
         return $this->pointer >= $this->length;
     }
 
-<<<<<<< HEAD
     public function stream_set_option($option, $arg1, $arg2)
     {
         return false;
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function stream_stat()
     {
         $stat = stat(__FILE__);

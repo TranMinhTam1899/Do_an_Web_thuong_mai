@@ -18,7 +18,6 @@ use Symfony\Component\HttpFoundation\Response;
  * AjaxDataCollector.
  *
  * @author Bart van den Burg <bart@burgov.nl>
-<<<<<<< HEAD
  *
  * @final since Symfony 4.4
  */
@@ -30,12 +29,6 @@ class AjaxDataCollector extends DataCollector
      * @param \Throwable|null $exception
      */
     public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
-=======
- */
-class AjaxDataCollector extends DataCollector
-{
-    public function collect(Request $request, Response $response, \Exception $exception = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // all collecting is done client side
     }

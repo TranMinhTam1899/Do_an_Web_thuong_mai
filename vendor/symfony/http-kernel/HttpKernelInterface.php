@@ -30,16 +30,9 @@ interface HttpKernelInterface
      * When $catch is true, the implementation must catch all exceptions
      * and do its best to convert them to a Response instance.
      *
-<<<<<<< HEAD
      * @param int  $type  The type of the request
      *                    (one of HttpKernelInterface::MASTER_REQUEST or HttpKernelInterface::SUB_REQUEST)
      * @param bool $catch Whether to catch exceptions or not
-=======
-     * @param Request $request A Request instance
-     * @param int     $type    The type of the request
-     *                         (one of HttpKernelInterface::MASTER_REQUEST or HttpKernelInterface::SUB_REQUEST)
-     * @param bool    $catch   Whether to catch exceptions or not
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return Response A Response instance
      *

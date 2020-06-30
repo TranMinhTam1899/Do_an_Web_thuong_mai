@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -20,20 +16,11 @@ use PHPUnit\Framework\TestSuite;
 
 /**
  * @group test-reorder
-<<<<<<< HEAD
  */
 class ResultCacheExtensionTest extends TestCase
 {
     /**
      * @var TestResultCache
-=======
- * @small
- */
-final class ResultCacheExtensionTest extends TestCase
-{
-    /**
-     * @var DefaultTestResultCache
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $cache;
 
@@ -49,11 +36,7 @@ final class ResultCacheExtensionTest extends TestCase
 
     protected function setUp(): void
     {
-<<<<<<< HEAD
         $this->cache     = new TestResultCache;
-=======
-        $this->cache     = new DefaultTestResultCache;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->extension = new ResultCacheExtension($this->cache);
 
         $listener = new TestListenerAdapter;
@@ -64,10 +47,6 @@ final class ResultCacheExtensionTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @testdox Clean up test name $_dataName
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider longTestNamesDataprovider
      */
     public function testStripsDataproviderParametersFromTestName(string $testName, string $expectedTestName): void

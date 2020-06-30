@@ -2,24 +2,12 @@
 
 namespace Illuminate\Redis\Connectors;
 
-<<<<<<< HEAD
 use Predis\Client;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Redis\Connector;
 use Illuminate\Redis\Connections\PredisConnection;
 use Illuminate\Redis\Connections\PredisClusterConnection;
 
-=======
-use Illuminate\Contracts\Redis\Connector;
-use Illuminate\Redis\Connections\PredisClusterConnection;
-use Illuminate\Redis\Connections\PredisConnection;
-use Illuminate\Support\Arr;
-use Predis\Client;
-
-/**
- * @deprecated Predis is no longer maintained by its original author
- */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class PredisConnector implements Connector
 {
     /**

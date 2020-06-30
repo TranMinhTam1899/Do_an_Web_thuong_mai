@@ -2,13 +2,8 @@
 
 namespace Illuminate\Support\Traits;
 
-<<<<<<< HEAD
 use Illuminate\Support\Fluent;
 use Illuminate\Contracts\Container\Container;
-=======
-use Illuminate\Contracts\Container\Container;
-use Illuminate\Support\Fluent;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait CapsuleManagerTrait
 {

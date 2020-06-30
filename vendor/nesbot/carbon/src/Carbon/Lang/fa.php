@@ -45,12 +45,9 @@ return [
     'from_now' => ':time دیگر',
     'after' => ':time پس از',
     'before' => ':time پیش از',
-<<<<<<< HEAD
     'diff_now' => 'اکنون',
     'diff_yesterday' => 'دیروز',
     'diff_tomorrow' => 'فردا',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'OH:Om',
         'LTS' => 'OH:Om:Os',

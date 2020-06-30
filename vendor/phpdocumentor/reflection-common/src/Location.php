@@ -1,8 +1,5 @@
 <?php
-<<<<<<< HEAD
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 declare(strict_types=1);
 
 /**
@@ -11,11 +8,6 @@ declare(strict_types=1);
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
-<<<<<<< HEAD
-=======
- * @copyright 2010-2018 Mike van Riel<mike@phpdoc.org>
- * @license   http://www.opensource.org/licenses/mit-license.php MIT
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @link      http://phpdoc.org
  */
 
@@ -23,11 +15,8 @@ namespace phpDocumentor\Reflection;
 
 /**
  * The location where an element occurs within a file.
-<<<<<<< HEAD
  *
  * @psalm-immutable
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Location
 {
@@ -49,11 +38,7 @@ final class Location
     /**
      * Returns the line number that is covered by this location.
      */
-<<<<<<< HEAD
     public function getLineNumber() : int
-=======
-    public function getLineNumber(): int
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->lineNumber;
     }
@@ -61,11 +46,7 @@ final class Location
     /**
      * Returns the column number (character position on a line) for this location object.
      */
-<<<<<<< HEAD
     public function getColumnNumber() : int
-=======
-    public function getColumnNumber(): int
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->columnNumber;
     }

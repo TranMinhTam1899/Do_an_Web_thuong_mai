@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - nootanghimire
  * - Josh Soref
@@ -39,10 +35,7 @@ return [
     'from_now' => ':timeमा',
     'after' => ':time पछि',
     'before' => ':time अघि',
-<<<<<<< HEAD
     'diff_now' => 'अहिले',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'हिजो',
     'diff_tomorrow' => 'भोलि',
     'formats' => [

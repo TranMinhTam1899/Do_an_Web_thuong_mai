@@ -2,13 +2,8 @@
 
 namespace Illuminate\Database\Schema\Grammars;
 
-<<<<<<< HEAD
 use Illuminate\Support\Fluent;
 use Illuminate\Database\Schema\Blueprint;
-=======
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Fluent;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SqlServerGrammar extends Grammar
 {
@@ -325,32 +320,10 @@ class SqlServerGrammar extends Grammar
     public function compileDropAllForeignKeys()
     {
         return "DECLARE @sql NVARCHAR(MAX) = N'';
-<<<<<<< HEAD
             SELECT @sql += 'ALTER TABLE ' + QUOTENAME(OBJECT_NAME(parent_object_id)) 
                 + ' DROP CONSTRAINT ' + QUOTENAME(name) + ';'
             FROM sys.foreign_keys;
             
-=======
-            SELECT @sql += 'ALTER TABLE '
-                + QUOTENAME(OBJECT_SCHEMA_NAME(parent_object_id)) + '.' + + QUOTENAME(OBJECT_NAME(parent_object_id))
-                + ' DROP CONSTRAINT ' + QUOTENAME(name) + ';'
-            FROM sys.foreign_keys;
-
-            EXEC sp_executesql @sql;";
-    }
-
-    /**
-     * Compile the command to drop all views.
-     *
-     * @return string
-     */
-    public function compileDropAllViews()
-    {
-        return "DECLARE @sql NVARCHAR(MAX) = N'';
-            SELECT @sql += 'DROP VIEW ' + QUOTENAME(OBJECT_SCHEMA_NAME(object_id)) + '.' + QUOTENAME(name) + ';'
-            FROM sys.views;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             EXEC sp_executesql @sql;";
     }
 

@@ -2,17 +2,10 @@
 
 namespace Illuminate\Foundation\Providers;
 
-<<<<<<< HEAD
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\ValidatesWhenResolved;
-=======
-use Illuminate\Contracts\Validation\ValidatesWhenResolved;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\ServiceProvider;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class FormRequestServiceProvider extends ServiceProvider
 {

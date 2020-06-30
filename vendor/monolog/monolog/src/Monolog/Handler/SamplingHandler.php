@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -15,11 +11,8 @@
 
 namespace Monolog\Handler;
 
-<<<<<<< HEAD
 use Monolog\Formatter\FormatterInterface;
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Sampling handler
  *
@@ -34,15 +27,8 @@ use Monolog\Formatter\FormatterInterface;
  * @author Bryan Davis <bd808@wikimedia.org>
  * @author Kunal Mehta <legoktm@gmail.com>
  */
-<<<<<<< HEAD
 class SamplingHandler extends AbstractHandler
 {
-=======
-class SamplingHandler extends AbstractHandler implements ProcessableHandlerInterface
-{
-    use ProcessableHandlerTrait;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @var callable|HandlerInterface $handler
      */
@@ -54,17 +40,10 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
     protected $factor;
 
     /**
-<<<<<<< HEAD
      * @param callable|HandlerInterface $handler Handler or factory callable($record|null, $samplingHandler).
      * @param int                       $factor  Sample factor
      */
     public function __construct($handler, $factor)
-=======
-     * @param callable|HandlerInterface $handler Handler or factory callable($record, $fingersCrossedHandler).
-     * @param int                       $factor  Sample factor (e.g. 10 means every ~10th record is sampled)
-     */
-    public function __construct($handler, int $factor)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         parent::__construct();
         $this->handler = $handler;
@@ -75,7 +54,6 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
         }
     }
 
-<<<<<<< HEAD
     public function isHandling(array $record)
     {
         return $this->getHandler($record)->isHandling($record);
@@ -131,31 +109,5 @@ class SamplingHandler extends AbstractHandler implements ProcessableHandlerInter
     public function getFormatter()
     {
         return $this->getHandler()->getFormatter();
-=======
-    public function isHandling(array $record): bool
-    {
-        return $this->handler->isHandling($record);
-    }
-
-    public function handle(array $record): bool
-    {
-        if ($this->isHandling($record) && mt_rand(1, $this->factor) === 1) {
-            // The same logic as in FingersCrossedHandler
-            if (!$this->handler instanceof HandlerInterface) {
-                $this->handler = call_user_func($this->handler, $record, $this);
-                if (!$this->handler instanceof HandlerInterface) {
-                    throw new \RuntimeException("The factory callable should return a HandlerInterface");
-                }
-            }
-
-            if ($this->processors) {
-                $record = $this->processRecord($record);
-            }
-
-            $this->handler->handle($record);
-        }
-
-        return false === $this->bubble;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

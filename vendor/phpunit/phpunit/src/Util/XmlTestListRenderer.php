@@ -13,19 +13,8 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\Runner\PhptTestCase;
 
-<<<<<<< HEAD
 final class XmlTestListRenderer
 {
-=======
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class XmlTestListRenderer
-{
-    /**
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function render(TestSuite $suite): string
     {
         $writer = new \XMLWriter;
@@ -76,11 +65,8 @@ final class XmlTestListRenderer
                 $writer->startElement('phptFile');
                 $writer->writeAttribute('path', $test->getName());
                 $writer->endElement();
-<<<<<<< HEAD
             } else {
                 continue;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

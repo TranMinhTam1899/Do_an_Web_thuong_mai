@@ -8,18 +8,11 @@ use \TijsVerkoyen\CssToInlineStyles\Css\Property\Processor as PropertyProcessor;
 class Processor
 {
     /**
-<<<<<<< HEAD
      * Splits a string into separate rules
      *
      * @param string $rulesString
      *
      * @return string[]
-=======
-     * Split a string into seperate rules
-     *
-     * @param string $rulesString
-     * @return array
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function splitIntoSeparateRules($rulesString)
     {
@@ -30,10 +23,7 @@ class Processor
 
     /**
      * @param string $string
-<<<<<<< HEAD
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     private function cleanup($string)
@@ -51,20 +41,12 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * Converts a rule-string into an object
      *
      * @param string $rule
      * @param int    $originalOrder
      *
      * @return Rule[]
-=======
-     * Convert a rule-string into an object
-     *
-     * @param string $rule
-     * @param int    $originalOrder
-     * @return array
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function convertToObjects($rule, $originalOrder)
     {
@@ -95,7 +77,6 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * Calculates the specificity based on a CSS Selector string,
      * Based on the patterns from premailer/css_parser by Alex Dunae
      *
@@ -103,13 +84,6 @@ class Processor
      *
      * @param string $selector
      *
-=======
-     * Calculate the specificity based on a CSS Selector string,
-     * Based on the patterns from premailer/css_parser by Alex Dunae
-     *
-     * @see https://github.com/premailer/css_parser/blob/master/lib/css_parser/regexps.rb
-     * @param string $selector
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return Specificity
      */
     public function calculateSpecificityBasedOnASelector($selector)
@@ -149,13 +123,9 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * @param string[] $rules
      * @param Rule[]   $objects
      *
-=======
-     * @param array $rules
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return Rule[]
      */
     public function convertArrayToObjects(array $rules, array $objects = array())
@@ -170,7 +140,6 @@ class Processor
     }
 
     /**
-<<<<<<< HEAD
      * Sorts an array on the specificity element in an ascending way
      * Lower specificity will be sorted to the beginning of the array
      *
@@ -178,14 +147,6 @@ class Processor
      * @param Rule $e2 The second element.
      *
      * @return int
-=======
-     * Sort an array on the specificity element in an ascending way
-     * Lower specificity will be sorted to the beginning of the array
-     *
-     * @return int
-     * @param  Rule $e1 The first element.
-     * @param  Rule $e2 The second element.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function sortOnSpecificity(Rule $e1, Rule $e2)
     {

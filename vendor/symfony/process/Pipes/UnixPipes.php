@@ -43,11 +43,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getDescriptors(): array
-=======
-    public function getDescriptors()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->haveReadSupport) {
             $nullstream = fopen('/dev/null', 'c');
@@ -85,11 +81,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getFiles(): array
-=======
-    public function getFiles()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [];
     }
@@ -97,11 +89,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function readAndWrite(bool $blocking, bool $close = false): array
-=======
-    public function readAndWrite($blocking, $close = false)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->unblock();
         $w = $this->write();
@@ -130,11 +118,7 @@ class UnixPipes extends AbstractPipes
             $read[$type = array_search($pipe, $this->pipes, true)] = '';
 
             do {
-<<<<<<< HEAD
                 $data = @fread($pipe, self::CHUNK_SIZE);
-=======
-                $data = fread($pipe, self::CHUNK_SIZE);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $read[$type] .= $data;
             } while (isset($data[0]) && ($close || isset($data[self::CHUNK_SIZE - 1])));
 
@@ -154,11 +138,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function haveReadSupport(): bool
-=======
-    public function haveReadSupport()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->haveReadSupport;
     }
@@ -166,11 +146,7 @@ class UnixPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function areOpen(): bool
-=======
-    public function areOpen()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return (bool) $this->pipes;
     }

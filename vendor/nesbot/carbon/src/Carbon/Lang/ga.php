@@ -9,7 +9,6 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
  * Thanks to André Silva : https://github.com/askpt
  */
@@ -35,45 +34,12 @@ return [
     'min' => ':countn',
     'second' => ':count soicind',
     'a_second' => '{1}cúpla soicind|:count soicind',
-=======
-/**
- * Thanks to André Silva : https://github.com/askpt
- */
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'ga');
-
-return [
-    'year' => ':count bliain',
-    'a_year' => 'bliain|:count bliain',
-    'y' => ':countb',
-    'month' => ':count mí',
-    'a_month' => 'mí|:count mí',
-    'm' => ':countm',
-    'week' => ':count sheachtain',
-    'a_week' => 'sheachtain|:count sheachtain',
-    'w' => ':countsh',
-    'day' => ':count lá',
-    'a_day' => 'lá|:count lá',
-    'd' => ':countl',
-    'hour' => ':count uair an chloig',
-    'a_hour' => 'uair an chloig|:count uair an chloig',
-    'h' => ':countu',
-    'minute' => ':count nóiméad',
-    'a_minute' => 'nóiméad|:count nóiméad',
-    'min' => ':countn',
-    'second' => ':count soicind',
-    'a_second' => 'cúpla soicind|:count soicind',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     's' => ':countso',
     'ago' => ':time ó shin',
     'from_now' => 'i :time',
     'after' => ':time tar éis',
     'before' => ':time roimh',
-<<<<<<< HEAD
     'diff_now' => 'anois',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'inné',
     'diff_tomorrow' => 'amárach',
     'formats' => [

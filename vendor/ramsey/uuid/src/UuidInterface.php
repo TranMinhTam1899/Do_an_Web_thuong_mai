@@ -14,27 +14,18 @@
 
 namespace Ramsey\Uuid;
 
-<<<<<<< HEAD
 use DateTime;
 use JsonSerializable;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Exception\UnsupportedOperationException;
 use Serializable;
-=======
-use Ramsey\Uuid\Converter\NumberConverterInterface;
-use Ramsey\Uuid\Exception\UnsupportedOperationException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * UuidInterface defines common functionality for all universally unique
  * identifiers (UUIDs)
  */
-<<<<<<< HEAD
 interface UuidInterface extends JsonSerializable, Serializable
-=======
-interface UuidInterface extends \JsonSerializable, \Serializable
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Compares this UUID to the specified UUID.
@@ -134,15 +125,9 @@ interface UuidInterface extends \JsonSerializable, \Serializable
      * has version type 1. If this UUID is not a time-based UUID then
      * this method throws `UnsupportedOperationException`.
      *
-<<<<<<< HEAD
      * @return DateTime A PHP DateTime representation of the date
      * @throws UnsupportedOperationException If this UUID is not a version 1 UUID
      * @throws UnsatisfiedDependencyException if called in a 32-bit system and
-=======
-     * @return \DateTime A PHP DateTime representation of the date
-     * @throws UnsupportedOperationException If this UUID is not a version 1 UUID
-     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called in a 32-bit system and
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *     `Moontoast\Math\BigNumber` is not present
      */
     public function getDateTime();
@@ -152,11 +137,7 @@ interface UuidInterface extends \JsonSerializable, \Serializable
      * representation.
      *
      * @return mixed Converted representation of the unsigned 128-bit integer value
-<<<<<<< HEAD
      * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
-=======
-     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getInteger();
 

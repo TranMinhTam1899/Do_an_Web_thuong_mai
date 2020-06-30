@@ -37,12 +37,7 @@ class FragmentListener implements EventSubscriberInterface
     private $fragmentPath;
 
     /**
-<<<<<<< HEAD
      * @param string $fragmentPath The path that triggers this listener
-=======
-     * @param UriSigner $signer       A UriSigner instance
-     * @param string    $fragmentPath The path that triggers this listener
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(UriSigner $signer, string $fragmentPath = '/_fragment')
     {
@@ -83,11 +78,7 @@ class FragmentListener implements EventSubscriberInterface
     protected function validateRequest(Request $request)
     {
         // is the Request safe?
-<<<<<<< HEAD
         if (!$request->isMethodSafe()) {
-=======
-        if (!$request->isMethodSafe(false)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             throw new AccessDeniedHttpException();
         }
 

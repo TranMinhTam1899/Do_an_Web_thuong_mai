@@ -31,11 +31,7 @@ trait ManagesTranslations
      */
     public function renderTranslation()
     {
-<<<<<<< HEAD
         return $this->container->make('translator')->getFromJson(
-=======
-        return $this->container->make('translator')->get(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             trim(ob_get_clean()), $this->translationReplacements
         );
     }

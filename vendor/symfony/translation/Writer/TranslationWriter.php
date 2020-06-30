@@ -28,12 +28,7 @@ class TranslationWriter implements TranslationWriterInterface
     /**
      * Adds a dumper to the writer.
      *
-<<<<<<< HEAD
      * @param string $format The format of the dumper
-=======
-     * @param string          $format The format of the dumper
-     * @param DumperInterface $dumper The dumper
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function addDumper($format, DumperInterface $dumper)
     {
@@ -69,14 +64,8 @@ class TranslationWriter implements TranslationWriterInterface
     /**
      * Writes translation from the catalogue according to the selected format.
      *
-<<<<<<< HEAD
      * @param string $format  The format to use to dump the messages
      * @param array  $options Options that are passed to the dumper
-=======
-     * @param MessageCatalogue $catalogue The message catalogue to write
-     * @param string           $format    The format to use to dump the messages
-     * @param array            $options   Options that are passed to the dumper
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws InvalidArgumentException
      */
@@ -90,11 +79,7 @@ class TranslationWriter implements TranslationWriterInterface
         $dumper = $this->dumpers[$format];
 
         if (isset($options['path']) && !is_dir($options['path']) && !@mkdir($options['path'], 0777, true) && !is_dir($options['path'])) {
-<<<<<<< HEAD
             throw new RuntimeException(sprintf('Translation Writer was not able to create directory "%s".', $options['path']));
-=======
-            throw new RuntimeException(sprintf('Translation Writer was not able to create directory "%s"', $options['path']));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         // save

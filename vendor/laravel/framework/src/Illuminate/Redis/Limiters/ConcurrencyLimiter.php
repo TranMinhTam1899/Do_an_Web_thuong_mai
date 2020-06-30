@@ -3,13 +3,8 @@
 namespace Illuminate\Redis\Limiters;
 
 use Exception;
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Redis\LimiterTimeoutException;
-=======
-use Illuminate\Contracts\Redis\LimiterTimeoutException;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ConcurrencyLimiter
 {
@@ -100,12 +95,8 @@ class ConcurrencyLimiter
     /**
      * Attempt to acquire the lock.
      *
-<<<<<<< HEAD
      * @param string $id A unique identifier for this lock
      *
-=======
-     * @param  string  $id  A unique identifier for this lock
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return mixed
      */
     protected function acquire($id)
@@ -135,11 +126,7 @@ class ConcurrencyLimiter
         return <<<'LUA'
 for index, value in pairs(redis.call('mget', unpack(KEYS))) do
     if not value then
-<<<<<<< HEAD
         redis.call('set', ARGV[1]..index, ARGV[3], "EX", ARGV[2])
-=======
-        redis.call('set', KEYS[index], ARGV[3], "EX", ARGV[2])
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return ARGV[1]..index
     end
 end
@@ -149,13 +136,8 @@ LUA;
     /**
      * Release the lock.
      *
-<<<<<<< HEAD
      * @param  string $key
      * @param  string $id
-=======
-     * @param  string  $key
-     * @param  string  $id
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     protected function release($key, $id)

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # GlobalState
-=======
-# global-state
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 Snapshotting of global state, factored out of PHPUnit into a stand-alone component.
 

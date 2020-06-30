@@ -160,20 +160,12 @@ class Person extends \Faker\Provider\Person
     
     /**
      * Note: The empty elements are for names without the title, chances increase by number of empty elements.
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Muhammad_(name)
      */
     protected static $muhammadName = array('', '', '', '', 'Mohamad ','Mohamed ','Mohammad ','Mohammed ','Muhamad ','Muhamed ','Muhammad ','Muhammed ','Muhammet ','Mohd ');
     /**
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Noor_(name)
      */
     protected static $nurName = array('', '', '', '', 'Noor ', 'Nor ', 'Nur ', 'Nur ', 'Nur ', 'Nurul ','Nuur ');
@@ -191,17 +183,10 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Chinese family name or surname
-<<<<<<< HEAD
      *
      * @link https://en.wikipedia.org/wiki/List_of_common_Chinese_surnames
      * @link https://en.wikipedia.org/wiki/Hundred_Family_Surnames
      *
-=======
-     * 
-     * @link https://en.wikipedia.org/wiki/List_of_common_Chinese_surnames
-     * @link https://en.wikipedia.org/wiki/Hundred_Family_Surnames
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected static $lastNameChinese = array(
         'An','Ang','Au','Au-Yong','Aun','Aw',
@@ -233,11 +218,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Chinese second character
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Chinese_given_name
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Chinese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
@@ -295,11 +276,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Chinese male third character
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Chinese_given_name
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Chinese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
@@ -355,11 +332,7 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Chinese female third character
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Chinese_given_name
      * @link https://en.wikipedia.org/wiki/List_of_Malaysians_of_Chinese_descent
      * @link https://en.wikipedia.org/wiki/Category:Malaysian_people_of_Cantonese_descent
@@ -569,15 +542,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay male first name
-<<<<<<< HEAD
      *
      * @example 'Ahmad'
      *
-=======
-     * 
-     * @example 'Ahmad'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameMaleMalay()
@@ -587,15 +554,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay female first name
-<<<<<<< HEAD
      *
      * @example 'Adibah'
      *
-=======
-     * 
-     * @example 'Adibah'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameFemaleMalay()
@@ -605,15 +566,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay last name
-<<<<<<< HEAD
      *
      * @example 'Abdullah'
      *
-=======
-     * 
-     * @example 'Abdullah'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function lastNameMalay()
@@ -623,15 +578,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay male 'Muhammad' name
-<<<<<<< HEAD
      *
      * @example 'Muhammad'
      *
-=======
-     * 
-     * @example 'Muhammad'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function muhammadName()
@@ -641,15 +590,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay female 'Nur' name
-<<<<<<< HEAD
      *
      * @example 'Nur'
      *
-=======
-     * 
-     * @example 'Nur'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function nurName()
@@ -659,15 +602,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay male 'Haji' title
-<<<<<<< HEAD
      *
      * @example 'Haji'
      *
-=======
-     * 
-     * @example 'Haji'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function haji()
@@ -677,15 +614,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay female 'Hajjah' title
-<<<<<<< HEAD
      *
      * @example 'Hajjah'
      *
-=======
-     * 
-     * @example 'Hajjah'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function hajjah()
@@ -695,15 +626,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malay title
-<<<<<<< HEAD
      *
      * @example 'Syed'
      *
-=======
-     * 
-     * @example 'Syed'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function titleMaleMalay()
@@ -713,15 +638,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Chinese last name
-<<<<<<< HEAD
      *
      * @example 'Lim'
      *
-=======
-     * 
-     * @example 'Lim'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function lastNameChinese()
@@ -731,15 +650,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Chinese male first name
-<<<<<<< HEAD
      *
      * @example 'Goh Tong'
      *
-=======
-     * 
-     * @example 'Goh Tong'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameMaleChinese()
@@ -749,15 +662,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Chinese female first name
-<<<<<<< HEAD
      *
      * @example 'Mew Choo'
      *
-=======
-     * 
-     * @example 'Mew Choo'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameFemaleChinese()
@@ -767,15 +674,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Christian male name
-<<<<<<< HEAD
      *
      * @example 'Aaron'
      *
-=======
-     * 
-     * @example 'Aaron'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameMaleChristian()
@@ -785,15 +686,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Christian female name
-<<<<<<< HEAD
      *
      * @example 'Alice'
      *
-=======
-     * 
-     * @example 'Alice'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameFemaleChristian()
@@ -803,15 +698,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return an Indian initial
-<<<<<<< HEAD
      *
      * @example 'S. '
      *
-=======
-     * 
-     * @example 'S. '
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function initialIndian()
@@ -821,15 +710,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return an Indian male first name
-<<<<<<< HEAD
      *
      * @example 'Arumugam'
      *
-=======
-     * 
-     * @example 'Arumugam'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameMaleIndian()
@@ -839,15 +722,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return an Indian female first name
-<<<<<<< HEAD
      *
      * @example 'Ambiga'
      *
-=======
-     * 
-     * @example 'Ambiga'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function firstNameFemaleIndian()
@@ -857,15 +734,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return an Indian last name
-<<<<<<< HEAD
      *
      * @example 'Subramaniam'
      *
-=======
-     * 
-     * @example 'Subramaniam'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function lastNameIndian()
@@ -875,15 +746,9 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a random last name
-<<<<<<< HEAD
      *
      * @example 'Lee'
      *
-=======
-     * 
-     * @example 'Lee'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function lastName()
@@ -899,7 +764,6 @@ class Person extends \Faker\Provider\Person
 
     /**
      * Return a Malaysian I.C. No.
-<<<<<<< HEAD
      *
      * @example '890123-45-6789'
      *
@@ -908,16 +772,6 @@ class Person extends \Faker\Provider\Person
      * @param string|null      $gender 'male', 'female' or null for any
      * @param bool|string|null $hyphen true, false, or any separator characters
      *
-=======
-     * 
-     * @example '890123-45-6789'
-     * 
-     * @link https://en.wikipedia.org/wiki/Malaysian_identity_card#Structure_of_the_National_Registration_Identity_Card_Number_(NRIC)
-     * 
-     * @param string|null      $gender 'male', 'female' or null for any
-     * @param bool|string|null $hyphen true, false, or any separator characters
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public static function myKadNumber($gender = null, $hyphen = false)
@@ -932,13 +786,8 @@ class Person extends \Faker\Provider\Person
         $dd = DateTime::dayOfMonth();
 
         // place of birth (1-59 except 17-20)
-<<<<<<< HEAD
         while (in_array($pb = mt_rand(1, 59), array(17, 18, 19, 20))) {
         }
-=======
-        while (in_array(($pb = mt_rand(1, 59)), array(17, 18, 19, 20))) {
-        };
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // random number
         $nnn = mt_rand(0, 999);
@@ -955,11 +804,7 @@ class Person extends \Faker\Provider\Person
         // formatting with hyphen
         if ($hyphen === true) {
             $hyphen = "-";
-<<<<<<< HEAD
         } elseif ($hyphen === false) {
-=======
-        } else if ($hyphen === false) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $hyphen = "";
         }
 

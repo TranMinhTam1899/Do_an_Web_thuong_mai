@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -29,24 +25,14 @@ final class Unit
 
     public function setLines(int $start, int $executable, int $executed): void
     {
-<<<<<<< HEAD
         $this->contextNode->setAttribute('start', $start);
         $this->contextNode->setAttribute('executable', $executable);
         $this->contextNode->setAttribute('executed', $executed);
-=======
-        $this->contextNode->setAttribute('start', (string) $start);
-        $this->contextNode->setAttribute('executable', (string) $executable);
-        $this->contextNode->setAttribute('executed', (string) $executed);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function setCrap(float $crap): void
     {
-<<<<<<< HEAD
         $this->contextNode->setAttribute('crap', $crap);
-=======
-        $this->contextNode->setAttribute('crap', (string) $crap);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function setPackage(string $full, string $package, string $sub, string $category): void

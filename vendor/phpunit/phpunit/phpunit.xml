@@ -2,19 +2,12 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="phpunit.xsd"
          bootstrap="tests/bootstrap.php"
-<<<<<<< HEAD
          cacheResult="true"
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
          colors="true"
          verbose="true">
     <testsuites>
         <testsuite name="unit">
-<<<<<<< HEAD
             <directory suffix="Test.php">tests/unit</directory>
-=======
-            <directory>tests/unit</directory>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         </testsuite>
 
         <testsuite name="end-to-end">

@@ -3,13 +3,8 @@
 namespace Illuminate\Auth;
 
 use Closure;
-<<<<<<< HEAD
 use InvalidArgumentException;
 use Illuminate\Contracts\Auth\Factory as FactoryContract;
-=======
-use Illuminate\Contracts\Auth\Factory as FactoryContract;
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class AuthManager implements FactoryContract
 {
@@ -291,19 +286,6 @@ class AuthManager implements FactoryContract
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Determines if any guards have already been resolved.
-     *
-     * @return bool
-     */
-    public function hasResolvedGuards()
-    {
-        return count($this->guards) > 0;
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Dynamically call the default driver instance.
      *
      * @param  string  $method

@@ -95,12 +95,8 @@ final class Php72
             return;
         }
 
-<<<<<<< HEAD
         // On 32-bit systems, PHP_INT_SIZE is 4,
         return self::$hashMask ^ hexdec(substr($hash, 16 - (\PHP_INT_SIZE * 2 - 1), (\PHP_INT_SIZE * 2 - 1)));
-=======
-        return self::$hashMask ^ hexdec(substr($hash, 16 - \PHP_INT_SIZE, \PHP_INT_SIZE));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public static function sapi_windows_vt100_support($stream, $enable = null)
@@ -171,11 +167,7 @@ final class Php72
             self::$hashMask = (int) substr(ob_get_clean(), 17);
         }
 
-<<<<<<< HEAD
         self::$hashMask ^= hexdec(substr(spl_object_hash($obj), 16 - (\PHP_INT_SIZE * 2 - 1), (\PHP_INT_SIZE * 2 - 1)));
-=======
-        self::$hashMask ^= hexdec(substr(spl_object_hash($obj), 16 - \PHP_INT_SIZE, \PHP_INT_SIZE));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public static function mb_chr($code, $encoding = null)

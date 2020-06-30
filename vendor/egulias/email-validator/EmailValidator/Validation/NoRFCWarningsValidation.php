@@ -9,11 +9,7 @@ use Egulias\EmailValidator\Validation\Error\RFCWarnings;
 class NoRFCWarningsValidation extends RFCValidation
 {
     /**
-<<<<<<< HEAD
      * @var InvalidEmail|null
-=======
-     * @var InvalidEmail
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $error;
 

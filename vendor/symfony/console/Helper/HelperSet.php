@@ -40,12 +40,7 @@ class HelperSet implements \IteratorAggregate
     /**
      * Sets a helper.
      *
-<<<<<<< HEAD
      * @param string $alias An alias
-=======
-     * @param HelperInterface $helper The helper instance
-     * @param string          $alias  An alias
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function set(HelperInterface $helper, $alias = null)
     {

@@ -3,10 +3,6 @@
 
 namespace Faker\Provider\en_US;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class Payment extends \Faker\Provider\Payment
 {
     public function bankAccountNumber()

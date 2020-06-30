@@ -3,15 +3,9 @@
 namespace DummyNamespace;
 
 use Illuminate\Bus\Queueable;
-<<<<<<< HEAD
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-=======
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DummyClass extends Mailable
 {

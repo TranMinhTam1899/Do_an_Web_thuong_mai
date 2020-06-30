@@ -13,19 +13,8 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\Runner\PhptTestCase;
 
-<<<<<<< HEAD
 final class TextTestListRenderer
 {
-=======
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
-final class TextTestListRenderer
-{
-    /**
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function render(TestSuite $suite): string
     {
         $buffer = 'Available test(s):' . \PHP_EOL;

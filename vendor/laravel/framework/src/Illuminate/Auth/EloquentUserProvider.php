@@ -2,19 +2,11 @@
 
 namespace Illuminate\Auth;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;
 use Illuminate\Contracts\Auth\Authenticatable as UserContract;
-=======
-use Illuminate\Contracts\Auth\Authenticatable as UserContract;
-use Illuminate\Contracts\Auth\UserProvider;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class EloquentUserProvider implements UserProvider
 {
@@ -115,11 +107,7 @@ class EloquentUserProvider implements UserProvider
     {
         if (empty($credentials) ||
            (count($credentials) === 1 &&
-<<<<<<< HEAD
             Str::contains($this->firstCredentialKey($credentials), 'password'))) {
-=======
-            array_key_exists('password', $credentials))) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return;
         }
 
@@ -144,7 +132,6 @@ class EloquentUserProvider implements UserProvider
     }
 
     /**
-<<<<<<< HEAD
      * Get the first key from the credential array.
      *
      * @param  array  $credentials
@@ -158,8 +145,6 @@ class EloquentUserProvider implements UserProvider
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Validate a user against the given credentials.
      *
      * @param  \Illuminate\Contracts\Auth\Authenticatable  $user

@@ -2,7 +2,6 @@
 
 namespace Illuminate\Routing;
 
-<<<<<<< HEAD
 use Closure;
 use ArrayObject;
 use JsonSerializable;
@@ -21,37 +20,13 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Contracts\Routing\BindingRegistrar;
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 use Illuminate\Contracts\Routing\Registrar as RegistrarContract;
-=======
-use ArrayObject;
-use Closure;
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Contracts\Routing\BindingRegistrar;
-use Illuminate\Contracts\Routing\Registrar as RegistrarContract;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Macroable;
-use JsonSerializable;
-use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
 /**
  * @mixin \Illuminate\Routing\RouteRegistrar
  */
-<<<<<<< HEAD
 class Router implements RegistrarContract, BindingRegistrar
-=======
-class Router implements BindingRegistrar, RegistrarContract
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use Macroable {
         __call as macroCall;
@@ -615,11 +590,7 @@ class Router implements BindingRegistrar, RegistrarContract
      * Return the response returned by the given route.
      *
      * @param  string  $name
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function respondWithRoute($name)
     {
@@ -632,11 +603,7 @@ class Router implements BindingRegistrar, RegistrarContract
      * Dispatch the request to the application.
      *
      * @param  \Illuminate\Http\Request  $request
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function dispatch(Request $request)
     {
@@ -649,11 +616,7 @@ class Router implements BindingRegistrar, RegistrarContract
      * Dispatch the request to a route and return the response.
      *
      * @param  \Illuminate\Http\Request  $request
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function dispatchToRoute(Request $request)
     {
@@ -680,11 +643,7 @@ class Router implements BindingRegistrar, RegistrarContract
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Routing\Route  $route
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function runRoute(Request $request, Route $route)
     {
@@ -754,11 +713,7 @@ class Router implements BindingRegistrar, RegistrarContract
      *
      * @param  \Symfony\Component\HttpFoundation\Request  $request
      * @param  mixed  $response
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function prepareResponse($request, $response)
     {
@@ -770,11 +725,7 @@ class Router implements BindingRegistrar, RegistrarContract
      *
      * @param  \Symfony\Component\HttpFoundation\Request  $request
      * @param  mixed  $response
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
-=======
-     * @return \Symfony\Component\HttpFoundation\Response
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function toResponse($request, $response)
     {
@@ -1213,14 +1164,6 @@ class Router implements BindingRegistrar, RegistrarContract
             $this->resetPassword();
         }
 
-<<<<<<< HEAD
-=======
-        // Password Confirmation Routes...
-        if ($options['confirm'] ?? true) {
-            $this->confirmPassword();
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // Email Verification Routes...
         if ($options['verify'] ?? false) {
             $this->emailVerification();
@@ -1241,20 +1184,6 @@ class Router implements BindingRegistrar, RegistrarContract
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Register the typical confirm password routes for an application.
-     *
-     * @return void
-     */
-    public function confirmPassword()
-    {
-        $this->get('password/confirm', 'Auth\ConfirmPasswordController@showConfirmForm')->name('password.confirm');
-        $this->post('password/confirm', 'Auth\ConfirmPasswordController@confirm');
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Register the typical email verification routes for an application.
      *
      * @return void
@@ -1262,13 +1191,8 @@ class Router implements BindingRegistrar, RegistrarContract
     public function emailVerification()
     {
         $this->get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-<<<<<<< HEAD
         $this->get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
         $this->get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-=======
-        $this->get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
-        $this->post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

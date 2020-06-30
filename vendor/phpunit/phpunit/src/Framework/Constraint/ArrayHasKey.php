@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -23,11 +19,7 @@ use ArrayAccess;
  *
  * The array key is passed in the constructor.
  */
-<<<<<<< HEAD
 class ArrayHasKey extends Constraint
-=======
-final class ArrayHasKey extends Constraint
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var int|string
@@ -39,10 +31,7 @@ final class ArrayHasKey extends Constraint
      */
     public function __construct($key)
     {
-<<<<<<< HEAD
         parent::__construct();
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->key = $key;
     }
 
@@ -53,11 +42,7 @@ final class ArrayHasKey extends Constraint
      */
     public function toString(): string
     {
-<<<<<<< HEAD
         return 'has the key ' . $this->exporter->export($this->key);
-=======
-        return 'has the key ' . $this->exporter()->export($this->key);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

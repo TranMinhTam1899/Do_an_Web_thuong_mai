@@ -1,7 +1,6 @@
 CHANGELOG
 =========
 
-<<<<<<< HEAD
 4.4.0
 -----
 
@@ -16,8 +15,6 @@ CHANGELOG
    use `renderThrowable()` and `doRenderThrowable()` instead.
  * added support for the `NO_COLOR` env var (https://no-color.org/)
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 
@@ -49,11 +46,7 @@ CHANGELOG
 
  * `OutputFormatter` throws an exception when unknown options are used
  * removed `QuestionHelper::setInputStream()/getInputStream()`
-<<<<<<< HEAD
  * removed `Application::getTerminalWidth()/getTerminalHeight()` and
-=======
- * removed `Application::getTerminalWidth()/getTerminalHeight()` and 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
   `Application::setTerminalDimensions()/getTerminalDimensions()`
 * removed `ConsoleExceptionEvent`
 * removed `ConsoleEvents::EXCEPTION`

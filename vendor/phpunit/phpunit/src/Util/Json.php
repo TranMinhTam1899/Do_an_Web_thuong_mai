@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,12 +11,6 @@ namespace PHPUnit\Util;
 
 use PHPUnit\Framework\Exception;
 
-<<<<<<< HEAD
-=======
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
- */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class Json
 {
     /**
@@ -70,11 +60,7 @@ final class Json
      */
     private static function recursiveSort(&$json): void
     {
-<<<<<<< HEAD
         if (\is_array($json) === false) {
-=======
-        if (!\is_array($json)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // If the object is not empty, change it to an associative array
             // so we can sort the keys (and we will still re-encode it
             // correctly, since PHP encodes associative arrays as JSON objects.)

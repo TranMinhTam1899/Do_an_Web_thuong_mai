@@ -21,14 +21,11 @@ namespace Ramsey\Uuid\Generator;
  * The use of this generator requires PHP to be compiled using the
  * `--with-openssl` option.
  *
-<<<<<<< HEAD
  * @deprecated The openssl_random_pseudo_bytes() function is not a reliable
  *     source of randomness. The default RandomBytesGenerator, which uses the
  *     random_bytes() function, is recommended as the safest and most reliable
  *     source of randomness.
  *     <em>This generator will be removed in ramsey/uuid 4.0.0.</em>
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @link http://php.net/openssl_random_pseudo_bytes
  */
 class OpenSslGenerator implements RandomGeneratorInterface

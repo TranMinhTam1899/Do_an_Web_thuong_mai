@@ -2,7 +2,6 @@
 
 namespace Illuminate\Database\Eloquent\Concerns;
 
-<<<<<<< HEAD
 use LogicException;
 use DateTimeInterface;
 use Carbon\CarbonInterface;
@@ -14,19 +13,6 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Collection as BaseCollection;
 use Illuminate\Database\Eloquent\JsonEncodingException;
-=======
-use Carbon\CarbonInterface;
-use DateTimeInterface;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Database\Eloquent\JsonEncodingException;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection as BaseCollection;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Str;
-use LogicException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait HasAttributes
 {
@@ -209,13 +195,6 @@ trait HasAttributes
             if ($attributes[$key] && $this->isCustomDateTimeCast($value)) {
                 $attributes[$key] = $attributes[$key]->format(explode(':', $value, 2)[1]);
             }
-<<<<<<< HEAD
-=======
-
-            if ($attributes[$key] instanceof Arrayable) {
-                $attributes[$key] = $attributes[$key]->toArray();
-            }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $attributes;

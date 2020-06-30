@@ -2,17 +2,10 @@
 
 namespace Illuminate\Foundation\Support\Providers;
 
-<<<<<<< HEAD
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Traits\ForwardsCalls;
 use Illuminate\Contracts\Routing\UrlGenerator;
-=======
-use Illuminate\Contracts\Routing\UrlGenerator;
-use Illuminate\Routing\Router;
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Traits\ForwardsCalls;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Routing\Router

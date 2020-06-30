@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Alessandro Maruccia
  */
@@ -34,12 +30,9 @@ return [
     's' => 'sek.|:count sek.|:count sek.|:count sek.',
     'ago' => ':time ilu',
     'from_now' => 'f’ :time',
-<<<<<<< HEAD
     'diff_now' => 'issa',
     'diff_yesterday' => 'lbieraħ',
     'diff_tomorrow' => 'għada',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

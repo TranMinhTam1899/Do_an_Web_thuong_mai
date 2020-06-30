@@ -2,19 +2,11 @@
 
 namespace Illuminate\Auth\Passwords;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-=======
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DatabaseTokenRepository implements TokenRepositoryInterface
 {

@@ -15,7 +15,6 @@ use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
-<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(AcceptHeader::class);
 class_exists(FileBag::class);
@@ -24,8 +23,6 @@ class_exists(HeaderUtils::class);
 class_exists(ParameterBag::class);
 class_exists(ServerBag::class);
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Request represents an HTTP request.
  *
@@ -203,13 +200,10 @@ class Request
 
     protected static $requestFactory;
 
-<<<<<<< HEAD
     /**
      * @var string|null
      */
     private $preferredFormat;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private $isHostValid = true;
     private $isForwardedValid = true;
 
@@ -555,11 +549,7 @@ class Request
 
         foreach ($this->headers->all() as $key => $value) {
             $key = strtoupper(str_replace('-', '_', $key));
-<<<<<<< HEAD
             if (\in_array($key, ['CONTENT_TYPE', 'CONTENT_LENGTH', 'CONTENT_MD5'], true)) {
-=======
-            if (\in_array($key, ['CONTENT_TYPE', 'CONTENT_LENGTH'])) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $_SERVER[$key] = implode(', ', $value);
             } else {
                 $_SERVER['HTTP_'.$key] = implode(', ', $value);
@@ -585,18 +575,13 @@ class Request
      *
      * You should only list the reverse proxies that you manage directly.
      *
-<<<<<<< HEAD
      * @param array $proxies          A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
-=======
-     * @param array $proxies          A list of trusted proxies
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
      *
      * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
      */
     public static function setTrustedProxies(array $proxies, int $trustedHeaderSet)
     {
-<<<<<<< HEAD
         self::$trustedProxies = array_reduce($proxies, function ($proxies, $proxy) {
             if ('REMOTE_ADDR' !== $proxy) {
                 $proxies[] = $proxy;
@@ -606,9 +591,6 @@ class Request
 
             return $proxies;
         }, []);
-=======
-        self::$trustedProxies = $proxies;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         self::$trustedHeaderSet = $trustedHeaderSet;
     }
 
@@ -670,11 +652,7 @@ class Request
      */
     public static function normalizeQueryString($qs)
     {
-<<<<<<< HEAD
         if ('' === ($qs ?? '')) {
-=======
-        if ('' == $qs) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return '';
         }
 
@@ -744,11 +722,7 @@ class Request
     /**
      * Gets the Session.
      *
-<<<<<<< HEAD
      * @return SessionInterface The session
-=======
-     * @return SessionInterface|null The session
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getSession()
     {
@@ -759,11 +733,7 @@ class Request
 
         if (null === $session) {
             @trigger_error(sprintf('Calling "%s()" when no session has been set is deprecated since Symfony 4.1 and will throw an exception in 5.0. Use "hasSession()" instead.', __METHOD__), E_USER_DEPRECATED);
-<<<<<<< HEAD
             // throw new \BadMethodCallException('Session has not been set.');
-=======
-            // throw new \BadMethodCallException('Session has not been set');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $session;
@@ -795,14 +765,6 @@ class Request
         return null !== $this->session;
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * Sets the Session.
-     *
-     * @param SessionInterface $session The Session
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function setSession(SessionInterface $session)
     {
         $this->session = $session;
@@ -1406,11 +1368,8 @@ class Request
      *  * _format request attribute
      *  * $default
      *
-<<<<<<< HEAD
      * @see getPreferredFormat
      *
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param string|null $default The default format
      *
      * @return string|null The request format
@@ -1505,24 +1464,12 @@ class Request
      *
      * @see https://tools.ietf.org/html/rfc7231#section-4.2.1
      *
-<<<<<<< HEAD
      * @return bool
      */
     public function isMethodSafe()
     {
         if (\func_num_args() > 0) {
             @trigger_error(sprintf('Passing arguments to "%s()" has been deprecated since Symfony 4.4; use "%s::isMethodCacheable()" to check if the method is cacheable instead.', __METHOD__, __CLASS__), E_USER_DEPRECATED);
-=======
-     * @param bool $andCacheable Adds the additional condition that the method should be cacheable. True by default.
-     *
-     * @return bool
-     */
-    public function isMethodSafe(/* $andCacheable = true */)
-    {
-        if (!\func_num_args() || func_get_arg(0)) {
-            // setting $andCacheable to false should be deprecated in 4.1
-            throw new \BadMethodCallException('Checking only for cacheable HTTP methods with Symfony\Component\HttpFoundation\Request::isMethodSafe() is not supported.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return \in_array($this->getMethod(), ['GET', 'HEAD', 'OPTIONS', 'TRACE']);
@@ -1640,7 +1587,6 @@ class Request
     }
 
     /**
-<<<<<<< HEAD
      * Gets the preferred format for the response by inspecting, in the following order:
      *   * the request format set using setRequestFormat
      *   * the values of the Accept HTTP header
@@ -1667,11 +1613,6 @@ class Request
      * Returns the preferred language.
      *
      * @param string[] $locales An array of ordered available locales
-=======
-     * Returns the preferred language.
-     *
-     * @param array $locales An array of ordered available locales
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return string|null The preferred locale
      */
@@ -1891,20 +1832,12 @@ class Request
             $requestUri = '/'.$requestUri;
         }
 
-<<<<<<< HEAD
         if ($baseUrl && null !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
-=======
-        if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, $baseUrl)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // full $baseUrl matches
             return $prefix;
         }
 
-<<<<<<< HEAD
         if ($baseUrl && null !== $prefix = $this->getUrlencodedPrefix($requestUri, rtrim(\dirname($baseUrl), '/'.\DIRECTORY_SEPARATOR).'/')) {
-=======
-        if ($baseUrl && false !== $prefix = $this->getUrlencodedPrefix($requestUri, rtrim(\dirname($baseUrl), '/'.\DIRECTORY_SEPARATOR).'/')) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // directory portion of $baseUrl matches
             return rtrim($prefix, '/'.\DIRECTORY_SEPARATOR);
         }
@@ -2008,11 +1941,7 @@ class Request
         ];
     }
 
-<<<<<<< HEAD
     private function setPhpDefaultLocale(string $locale): void
-=======
-    private function setPhpDefaultLocale(string $locale)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // if either the class Locale doesn't exist, or an exception is thrown when
         // setting the default locale, the intl module is not installed, and
@@ -2027,23 +1956,12 @@ class Request
 
     /**
      * Returns the prefix as encoded in the string when the string starts with
-<<<<<<< HEAD
      * the given prefix, null otherwise.
      */
     private function getUrlencodedPrefix(string $string, string $prefix): ?string
     {
         if (0 !== strpos(rawurldecode($string), $prefix)) {
             return null;
-=======
-     * the given prefix, false otherwise.
-     *
-     * @return string|false The prefix as it is encoded in $string, or false
-     */
-    private function getUrlencodedPrefix(string $string, string $prefix)
-    {
-        if (0 !== strpos(rawurldecode($string), $prefix)) {
-            return false;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $len = \strlen($prefix);
@@ -2052,17 +1970,10 @@ class Request
             return $match[0];
         }
 
-<<<<<<< HEAD
         return null;
     }
 
     private static function createRequestFromFactory(array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], $content = null): self
-=======
-        return false;
-    }
-
-    private static function createRequestFromFactory(array $query = [], array $request = [], array $attributes = [], array $cookies = [], array $files = [], array $server = [], $content = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (self::$requestFactory) {
             $request = (self::$requestFactory)($query, $request, $attributes, $cookies, $files, $server, $content);
@@ -2090,11 +2001,7 @@ class Request
         return self::$trustedProxies && IpUtils::checkIp($this->server->get('REMOTE_ADDR'), self::$trustedProxies);
     }
 
-<<<<<<< HEAD
     private function getTrustedValues(int $type, string $ip = null): array
-=======
-    private function getTrustedValues($type, $ip = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $clientValues = [];
         $forwardedValues = [];
@@ -2145,11 +2052,7 @@ class Request
         throw new ConflictingHeadersException(sprintf('The request has both a trusted "%s" header and a trusted "%s" header, conflicting with each other. You should either configure your proxy to remove one of them, or configure your project to distrust the offending one.', self::$trustedHeaders[self::HEADER_FORWARDED], self::$trustedHeaders[$type]));
     }
 
-<<<<<<< HEAD
     private function normalizeAndFilterClientIps(array $clientIps, string $ip): array
-=======
-    private function normalizeAndFilterClientIps(array $clientIps, $ip)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$clientIps) {
             return [];

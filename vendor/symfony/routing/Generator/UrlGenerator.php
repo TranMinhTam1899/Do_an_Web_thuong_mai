@@ -134,10 +134,6 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         if (null !== $locale) {
             do {
                 if (null !== ($route = $this->routes->get($name.'.'.$locale)) && $route->getDefault('_canonical_route') === $name) {
-<<<<<<< HEAD
-=======
-                    unset($parameters['_locale']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     break;
                 }
             } while (false !== $locale = strstr($locale, '_', true));
@@ -150,7 +146,6 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         // the Route has a cache of its own and is not recompiled as long as it does not get modified
         $compiledRoute = $route->compile();
 
-<<<<<<< HEAD
         $defaults = $route->getDefaults();
         $variables = $compiledRoute->getVariables();
 
@@ -163,9 +158,6 @@ class UrlGenerator implements UrlGeneratorInterface, ConfigurableRequirementsInt
         }
 
         return $this->doGenerate($variables, $defaults, $route->getRequirements(), $compiledRoute->getTokens(), $parameters, $name, $referenceType, $compiledRoute->getHostTokens(), $route->getSchemes());
-=======
-        return $this->doGenerate($compiledRoute->getVariables(), $route->getDefaults(), $route->getRequirements(), $compiledRoute->getTokens(), $parameters, $name, $referenceType, $compiledRoute->getHostTokens(), $route->getSchemes());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

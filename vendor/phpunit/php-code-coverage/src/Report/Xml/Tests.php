@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -44,11 +40,7 @@ final class Tests
 
         $node->setAttribute('name', $test);
         $node->setAttribute('size', $result['size']);
-<<<<<<< HEAD
         $node->setAttribute('result', (int) $result['status']);
-=======
-        $node->setAttribute('result', (string) $result['status']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $node->setAttribute('status', $this->codeMap[(int) $result['status']]);
     }
 }

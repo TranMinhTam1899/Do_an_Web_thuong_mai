@@ -87,7 +87,6 @@ class Person extends \Faker\Provider\fr_FR\Person
         'Waeber', 'Weber', 'Wenger', 'Widmer', 'Wyss',
         'Zbinden', 'Zimmermann',
     );
-<<<<<<< HEAD
 
     /**
      * Generates a valid random AVS13 (swiss social security) number
@@ -113,6 +112,4 @@ class Person extends \Faker\Provider\fr_FR\Person
 
         return $avs;
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

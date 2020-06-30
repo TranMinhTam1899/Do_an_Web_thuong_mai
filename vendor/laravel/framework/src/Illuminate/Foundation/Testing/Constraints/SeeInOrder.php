@@ -2,13 +2,8 @@
 
 namespace Illuminate\Foundation\Testing\Constraints;
 
-<<<<<<< HEAD
 use ReflectionClass;
 use PHPUnit\Framework\Constraint\Constraint;
-=======
-use PHPUnit\Framework\Constraint\Constraint;
-use ReflectionClass;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SeeInOrder extends Constraint
 {
@@ -43,11 +38,7 @@ class SeeInOrder extends Constraint
      * @param  array  $values
      * @return bool
      */
-<<<<<<< HEAD
     public function matches($values): bool
-=======
-    public function matches($values) : bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $position = 0;
 
@@ -76,11 +67,7 @@ class SeeInOrder extends Constraint
      * @param  array  $values
      * @return string
      */
-<<<<<<< HEAD
     public function failureDescription($values): string
-=======
-    public function failureDescription($values) : string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return sprintf(
             'Failed asserting that \'%s\' contains "%s" in specified order.',
@@ -94,11 +81,7 @@ class SeeInOrder extends Constraint
      *
      * @return string
      */
-<<<<<<< HEAD
     public function toString(): string
-=======
-    public function toString() : string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return (new ReflectionClass($this))->name;
     }

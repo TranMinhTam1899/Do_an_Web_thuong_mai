@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 use Illuminate\Foundation\Mix;
 use Illuminate\Support\HtmlString;
 use Illuminate\Container\Container;
@@ -23,30 +22,6 @@ use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
-=======
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Auth\Access\Gate;
-use Illuminate\Contracts\Auth\Factory as AuthFactory;
-use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
-use Illuminate\Contracts\Bus\Dispatcher;
-use Illuminate\Contracts\Cookie\Factory as CookieFactory;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\Routing\ResponseFactory;
-use Illuminate\Contracts\Routing\UrlGenerator;
-use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Contracts\Validation\Factory as ValidationFactory;
-use Illuminate\Contracts\View\Factory as ViewFactory;
-use Illuminate\Database\Eloquent\Factory as EloquentFactory;
-use Illuminate\Foundation\Bus\PendingDispatch;
-use Illuminate\Foundation\Mix;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Queue\CallQueuedClosure;
-use Illuminate\Queue\SerializableClosure;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\HtmlString;
-use Symfony\Component\Debug\Exception\FatalThrowableError;
-use Symfony\Component\HttpFoundation\Response;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 if (! function_exists('abort')) {
     /**
@@ -156,11 +131,7 @@ if (! function_exists('app_path')) {
      */
     function app_path($path = '')
     {
-<<<<<<< HEAD
         return app('path').($path ? DIRECTORY_SEPARATOR.$path : $path);
-=======
-        return app()->path($path);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 
@@ -219,11 +190,7 @@ if (! function_exists('base_path')) {
      */
     function base_path($path = '')
     {
-<<<<<<< HEAD
         return app()->basePath().($path ? DIRECTORY_SEPARATOR.$path : $path);
-=======
-        return app()->basePath($path);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 
@@ -326,11 +293,7 @@ if (! function_exists('config_path')) {
      */
     function config_path($path = '')
     {
-<<<<<<< HEAD
         return app()->make('path.config').($path ? DIRECTORY_SEPARATOR.$path : $path);
-=======
-        return app()->configPath($path);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 
@@ -912,11 +875,7 @@ if (! function_exists('trans')) {
             return app('translator');
         }
 
-<<<<<<< HEAD
         return app('translator')->trans($key, $replace, $locale);
-=======
-        return app('translator')->get($key, $replace, $locale);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 
@@ -925,22 +884,14 @@ if (! function_exists('trans_choice')) {
      * Translates the given message based on a count.
      *
      * @param  string  $key
-<<<<<<< HEAD
      * @param  int|array|\Countable  $number
-=======
-     * @param  \Countable|int|array  $number
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  array   $replace
      * @param  string|null  $locale
      * @return string
      */
     function trans_choice($key, $number, array $replace = [], $locale = null)
     {
-<<<<<<< HEAD
         return app('translator')->transChoice($key, $number, $replace, $locale);
-=======
-        return app('translator')->choice($key, $number, $replace, $locale);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 
@@ -948,7 +899,6 @@ if (! function_exists('__')) {
     /**
      * Translate the given message.
      *
-<<<<<<< HEAD
      * @param  string  $key
      * @param  array  $replace
      * @param  string|null  $locale
@@ -957,20 +907,6 @@ if (! function_exists('__')) {
     function __($key, $replace = [], $locale = null)
     {
         return app('translator')->getFromJson($key, $replace, $locale);
-=======
-     * @param  string|null  $key
-     * @param  array  $replace
-     * @param  string|null  $locale
-     * @return \Illuminate\Contracts\Translation\Translator|string|array|null
-     */
-    function __($key = null, $replace = [], $locale = null)
-    {
-        if (is_null($key)) {
-            return $key;
-        }
-
-        return trans($key, $replace, $locale);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }
 

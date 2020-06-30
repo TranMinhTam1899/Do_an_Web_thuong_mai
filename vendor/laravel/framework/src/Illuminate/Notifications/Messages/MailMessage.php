@@ -2,19 +2,11 @@
 
 namespace Illuminate\Notifications\Messages;
 
-<<<<<<< HEAD
 use Traversable;
 use Illuminate\Mail\Markdown;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
-=======
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Mail\Markdown;
-use Traversable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class MailMessage extends SimpleMessage implements Renderable
 {

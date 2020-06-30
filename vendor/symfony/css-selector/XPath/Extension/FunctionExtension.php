@@ -33,11 +33,7 @@ class FunctionExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getFunctionTranslators(): array
-=======
-    public function getFunctionTranslators()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             'nth-child' => [$this, 'translateNthChild'],
@@ -57,11 +53,7 @@ class FunctionExtension extends AbstractExtension
         try {
             list($a, $b) = Parser::parseSeries($function->getArguments());
         } catch (SyntaxErrorException $e) {
-<<<<<<< HEAD
             throw new ExpressionErrorException(sprintf('Invalid series: "%s".', implode('", "', $function->getArguments())), 0, $e);
-=======
-            throw new ExpressionErrorException(sprintf('Invalid series: %s', implode(', ', $function->getArguments())), 0, $e);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $xpath->addStarPrefix();
@@ -172,11 +164,7 @@ class FunctionExtension extends AbstractExtension
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getName(): string
-=======
-    public function getName()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return 'function';
     }

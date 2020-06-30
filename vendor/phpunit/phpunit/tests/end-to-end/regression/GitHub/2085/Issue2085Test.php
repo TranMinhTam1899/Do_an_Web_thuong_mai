@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -18,11 +14,7 @@ class Issue2085Test extends TestCase
     public function testShouldAbortSlowTestByEnforcingTimeLimit(): void
     {
         $this->assertTrue(true);
-<<<<<<< HEAD
         \sleep(1.2);
-=======
-        \sleep(2);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->assertTrue(true);
     }
 }

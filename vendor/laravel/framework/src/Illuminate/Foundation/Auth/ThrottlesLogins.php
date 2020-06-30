@@ -2,21 +2,12 @@
 
 namespace Illuminate\Foundation\Auth;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Lang;
-=======
-use Illuminate\Auth\Events\Lockout;
-use Illuminate\Cache\RateLimiter;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Validation\ValidationException;
 
 trait ThrottlesLogins
@@ -62,14 +53,7 @@ trait ThrottlesLogins
         );
 
         throw ValidationException::withMessages([
-<<<<<<< HEAD
             $this->username() => [Lang::get('auth.throttle', ['seconds' => $seconds])],
-=======
-            $this->username() => [Lang::get('auth.throttle', [
-                'seconds' => $seconds,
-                'minutes' => ceil($seconds / 60),
-            ])],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ])->status(Response::HTTP_TOO_MANY_REQUESTS);
     }
 

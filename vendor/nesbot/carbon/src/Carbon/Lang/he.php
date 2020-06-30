@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Daniel Cohen Gindi
  * - JD Isaacks
@@ -40,12 +36,9 @@ return [
     'from_now' => 'בעוד :time מעכשיו',
     'after' => 'אחרי :time',
     'before' => 'לפני :time',
-<<<<<<< HEAD
     'diff_now' => 'עכשיו',
     'diff_yesterday' => 'אתמול',
     'diff_tomorrow' => 'מחר',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

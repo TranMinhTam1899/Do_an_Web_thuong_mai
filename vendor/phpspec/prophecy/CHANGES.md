@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 1.10.3 / 2020/03/05
 ===================
 
@@ -22,8 +21,6 @@
 * [fixed] reduced memory usage by optimising CachedDoubler (@DonCallisto)
 * [fixed] removed fatal error nesting level when comparing large objects (@scroach)
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 1.9.0 / 2019/10/03
 ==================
 

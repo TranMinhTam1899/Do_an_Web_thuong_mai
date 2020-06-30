@@ -48,29 +48,17 @@ class XliffFileLoader implements LoaderInterface
         return $catalogue;
     }
 
-<<<<<<< HEAD
     private function extract($resource, MessageCatalogue $catalogue, string $domain)
-=======
-    private function extract($resource, MessageCatalogue $catalogue, $domain)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         try {
             $dom = XmlUtils::loadFile($resource);
         } catch (\InvalidArgumentException $e) {
-<<<<<<< HEAD
             throw new InvalidResourceException(sprintf('Unable to load "%s": '.$e->getMessage(), $resource), $e->getCode(), $e);
-=======
-            throw new InvalidResourceException(sprintf('Unable to load "%s": %s', $resource, $e->getMessage()), $e->getCode(), $e);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $xliffVersion = XliffUtils::getVersionNumber($dom);
         if ($errors = XliffUtils::validateSchema($dom)) {
-<<<<<<< HEAD
             throw new InvalidResourceException(sprintf('Invalid resource provided: "%s"; Errors: '.XliffUtils::getErrorsAsString($errors), $resource));
-=======
-            throw new InvalidResourceException(sprintf('Invalid resource provided: "%s"; Errors: %s', $resource, XliffUtils::getErrorsAsString($errors)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ('1.2' === $xliffVersion) {
@@ -84,13 +72,6 @@ class XliffFileLoader implements LoaderInterface
 
     /**
      * Extract messages and metadata from DOMDocument into a MessageCatalogue.
-<<<<<<< HEAD
-=======
-     *
-     * @param \DOMDocument     $dom       Source to extract messages and metadata
-     * @param MessageCatalogue $catalogue Catalogue where we'll collect messages and metadata
-     * @param string           $domain    The domain
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private function extractXliff1(\DOMDocument $dom, MessageCatalogue $catalogue, string $domain)
     {

@@ -57,11 +57,7 @@ class WindowsPipes extends AbstractPipes
 
                     if (!$h = fopen($file.'.lock', 'w')) {
                         restore_error_handler();
-<<<<<<< HEAD
                         throw new RuntimeException('A temporary file could not be opened to write the process output: '.$lastError);
-=======
-                        throw new RuntimeException(sprintf('A temporary file could not be opened to write the process output: %s', $lastError));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     }
                     if (!flock($h, LOCK_EX | LOCK_NB)) {
                         continue 2;
@@ -97,11 +93,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getDescriptors(): array
-=======
-    public function getDescriptors()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->haveReadSupport) {
             $nullstream = fopen('NUL', 'c');
@@ -126,11 +118,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function getFiles(): array
-=======
-    public function getFiles()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->files;
     }
@@ -138,11 +126,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function readAndWrite(bool $blocking, bool $close = false): array
-=======
-    public function readAndWrite($blocking, $close = false)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->unblock();
         $w = $this->write();
@@ -177,11 +161,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function haveReadSupport(): bool
-=======
-    public function haveReadSupport()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->haveReadSupport;
     }
@@ -189,11 +169,7 @@ class WindowsPipes extends AbstractPipes
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function areOpen(): bool
-=======
-    public function areOpen()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->pipes && $this->fileHandles;
     }

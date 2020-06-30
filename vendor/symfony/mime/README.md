@@ -3,14 +3,6 @@ MIME Component
 
 The MIME component allows manipulating MIME messages.
 
-<<<<<<< HEAD
-=======
-**This Component is experimental**.
-[Experimental features](https://symfony.com/doc/current/contributing/code/experimental.html)
-are not covered by Symfony's
-[Backward Compatibility Promise](https://symfony.com/doc/current/contributing/code/bc.html).
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 Resources
 ---------
 

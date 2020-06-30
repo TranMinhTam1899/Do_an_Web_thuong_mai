@@ -1,7 +1,6 @@
 Debug Component
 ===============
 
-<<<<<<< HEAD
 **CAUTION**: this component is deprecated since Symfony 4.4. Instead, use the
 [ErrorHandler component](https://github.com/symfony/symfony/tree/master/src/Symfony/Component/ErrorHandler).
 
@@ -25,14 +24,6 @@ Debug::enable();
 Resources
 ---------
 
-=======
-The Debug component provides tools to ease debugging PHP code.
-
-Resources
----------
-
-  * [Documentation](https://symfony.com/doc/current/components/debug/index.html)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
   * [Contributing](https://symfony.com/doc/current/contributing/index.html)
   * [Report issues](https://github.com/symfony/symfony/issues) and
     [send Pull Requests](https://github.com/symfony/symfony/pulls)

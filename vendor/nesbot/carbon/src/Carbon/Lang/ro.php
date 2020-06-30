@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - JD Isaacks
@@ -46,10 +42,7 @@ return [
     'from_now' => 'peste :time',
     'after' => 'peste :time',
     'before' => 'acum :time',
-<<<<<<< HEAD
     'diff_now' => 'acum',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'ieri',
     'diff_tomorrow' => 'mâine',
     'formats' => [

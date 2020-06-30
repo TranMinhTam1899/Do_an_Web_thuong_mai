@@ -3,7 +3,6 @@
 namespace Illuminate\Foundation\Testing;
 
 use Closure;
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
@@ -14,18 +13,6 @@ use Illuminate\Support\Traits\Macroable;
 use Illuminate\Foundation\Testing\Assert as PHPUnit;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Illuminate\Foundation\Testing\Constraints\SeeInOrder;
-=======
-use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\Assert as PHPUnit;
-use Illuminate\Foundation\Testing\Constraints\SeeInOrder;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\Macroable;
-use Illuminate\Support\Traits\Tappable;
-use Symfony\Component\HttpFoundation\StreamedResponse;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Http\Response
@@ -103,24 +90,6 @@ class TestResponse
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Assert that the response has the given status code and no content.
-     *
-     * @param  int  $status
-     * @return $this
-     */
-    public function assertNoContent($status = 204)
-    {
-        $this->assertStatus($status);
-
-        PHPUnit::assertEmpty($this->getContent(), 'Response content is not empty.');
-
-        return $this;
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Assert that the response has a not found status code.
      *
      * @return $this
@@ -496,28 +465,6 @@ class TestResponse
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Assert that the expected value exists at the given path in the response.
-     *
-     * @param  string  $path
-     * @param  mixed  $expect
-     * @param  bool  $strict
-     * @return $this
-     */
-    public function assertJsonPath($path, $expect, $strict = false)
-    {
-        if ($strict) {
-            PHPUnit::assertSame($expect, $this->json($path));
-        } else {
-            PHPUnit::assertEquals($expect, $this->json($path));
-        }
-
-        return $this;
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Assert that the response has the exact given JSON.
      *
      * @param  array  $data
@@ -705,26 +652,15 @@ class TestResponse
      * Assert that the response has the given JSON validation errors.
      *
      * @param  string|array  $errors
-<<<<<<< HEAD
      * @return $this
      */
     public function assertJsonValidationErrors($errors)
-=======
-     * @param  string  $responseKey
-     * @return $this
-     */
-    public function assertJsonValidationErrors($errors, $responseKey = 'errors')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $errors = Arr::wrap($errors);
 
         PHPUnit::assertNotEmpty($errors, 'No validation errors were provided.');
 
-<<<<<<< HEAD
         $jsonErrors = $this->json()['errors'] ?? [];
-=======
-        $jsonErrors = $this->json()[$responseKey] ?? [];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $errorMessage = $jsonErrors
                 ? 'Response has the following JSON validation errors:'.
@@ -764,16 +700,9 @@ class TestResponse
      * Assert that the response has no JSON validation errors for the given keys.
      *
      * @param  string|array|null  $keys
-<<<<<<< HEAD
      * @return $this
      */
     public function assertJsonMissingValidationErrors($keys = null)
-=======
-     * @param  string  $responseKey
-     * @return $this
-     */
-    public function assertJsonMissingValidationErrors($keys = null, $responseKey = 'errors')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->getContent() === '') {
             PHPUnit::assertTrue(true);
@@ -783,22 +712,13 @@ class TestResponse
 
         $json = $this->json();
 
-<<<<<<< HEAD
         if (! array_key_exists('errors', $json)) {
             PHPUnit::assertArrayNotHasKey('errors', $json);
-=======
-        if (! array_key_exists($responseKey, $json)) {
-            PHPUnit::assertArrayNotHasKey($responseKey, $json);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             return $this;
         }
 
-<<<<<<< HEAD
         $errors = $json['errors'];
-=======
-        $errors = $json[$responseKey];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (is_null($keys) && count($errors) > 0) {
             PHPUnit::fail(

@@ -56,11 +56,7 @@ class TokenStream
      *
      * @return $this
      */
-<<<<<<< HEAD
     public function push(Token $token): self
-=======
-    public function push(Token $token)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->tokens[] = $token;
 
@@ -72,11 +68,7 @@ class TokenStream
      *
      * @return $this
      */
-<<<<<<< HEAD
     public function freeze(): self
-=======
-    public function freeze()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this;
     }
@@ -84,17 +76,9 @@ class TokenStream
     /**
      * Returns next token.
      *
-<<<<<<< HEAD
      * @throws InternalErrorException If there is no more token
      */
     public function getNext(): Token
-=======
-     * @return Token
-     *
-     * @throws InternalErrorException If there is no more token
-     */
-    public function getNext()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->peeking) {
             $this->peeking = false;
@@ -112,15 +96,8 @@ class TokenStream
 
     /**
      * Returns peeked token.
-<<<<<<< HEAD
      */
     public function getPeek(): Token
-=======
-     *
-     * @return Token
-     */
-    public function getPeek()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->peeking) {
             $this->peeked = $this->getNext();
@@ -135,11 +112,7 @@ class TokenStream
      *
      * @return Token[]
      */
-<<<<<<< HEAD
     public function getUsed(): array
-=======
-    public function getUsed()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->used;
     }
@@ -151,11 +124,7 @@ class TokenStream
      *
      * @throws SyntaxErrorException If next token is not an identifier
      */
-<<<<<<< HEAD
     public function getNextIdentifier(): string
-=======
-    public function getNextIdentifier()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $next = $this->getNext();
 
@@ -173,11 +142,7 @@ class TokenStream
      *
      * @throws SyntaxErrorException If next token is not an identifier or a star delimiter
      */
-<<<<<<< HEAD
     public function getNextIdentifierOrStar(): ?string
-=======
-    public function getNextIdentifierOrStar()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $next = $this->getNext();
 

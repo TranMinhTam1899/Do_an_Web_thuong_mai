@@ -13,10 +13,7 @@ namespace Symfony\Component\Routing\Loader\Configurator;
 
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
-<<<<<<< HEAD
 use Symfony\Component\Routing\RouteCompiler;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>
@@ -45,11 +42,7 @@ class ImportConfigurator
      *
      * @return $this
      */
-<<<<<<< HEAD
     final public function prefix($prefix, bool $trailingSlashOnRoot = true): self
-=======
-    final public function prefix($prefix, bool $trailingSlashOnRoot = true)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!\is_array($prefix)) {
             $this->route->addPrefix($prefix);
@@ -71,10 +64,7 @@ class ImportConfigurator
                     foreach ($prefix as $locale => $localePrefix) {
                         $localizedRoute = clone $route;
                         $localizedRoute->setDefault('_locale', $locale);
-<<<<<<< HEAD
                         $localizedRoute->setRequirement('_locale', preg_quote($locale, RouteCompiler::REGEX_DELIMITER));
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         $localizedRoute->setDefault('_canonical_route', $name);
                         $localizedRoute->setPath($localePrefix.(!$trailingSlashOnRoot && '/' === $route->getPath() ? '' : $route->getPath()));
                         $this->route->add($name.'.'.$locale, $localizedRoute);
@@ -96,11 +86,7 @@ class ImportConfigurator
      *
      * @return $this
      */
-<<<<<<< HEAD
     final public function namePrefix(string $namePrefix): self
-=======
-    final public function namePrefix(string $namePrefix)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->route->addNamePrefix($namePrefix);
 

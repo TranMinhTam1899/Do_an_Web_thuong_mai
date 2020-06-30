@@ -9,24 +9,15 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - François B
  * - JD Isaacks
  * - Pierre du Plessis
  */
 return [
-<<<<<<< HEAD
     'year' => ':count jaar',
     'a_year' => '\'n jaar|:count jaar',
-=======
-    'year' => ':count jaar|:count jare',
-    'a_year' => '\'n jaar|:count jare',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'y' => ':count j.',
     'month' => ':count maand|:count maande',
     'a_month' => '\'n maand|:count maande',
@@ -37,13 +28,8 @@ return [
     'day' => ':count dag|:count dae',
     'a_day' => '\'n dag|:count dae',
     'd' => ':count d.',
-<<<<<<< HEAD
     'hour' => ':count uur',
     'a_hour' => '\'n uur|:count uur',
-=======
-    'hour' => ':count uur|:count ure',
-    'a_hour' => '\'n uur|:count ure',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'h' => ':count u.',
     'minute' => ':count minuut|:count minute',
     'a_minute' => '\'n minuut|:count minute',
@@ -55,10 +41,7 @@ return [
     'from_now' => 'oor :time',
     'after' => ':time na',
     'before' => ':time voor',
-<<<<<<< HEAD
     'diff_now' => 'Nou',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'Gister',
     'diff_tomorrow' => 'Môre',
     'formats' => [

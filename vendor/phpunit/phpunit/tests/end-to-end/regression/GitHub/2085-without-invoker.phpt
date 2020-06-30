@@ -3,11 +3,7 @@ Test CLI flags --enforce-time-limit --default-time-limit without php-invoker, wi
 --DESCRIPTION--
 https://github.com/sebastianbergmann/phpunit/issues/2085
 --SKIPIF--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 require __DIR__ . '/../../../bootstrap.php';
 
 if (\class_exists(SebastianBergmann\Invoker\Invoker::class)) {
@@ -18,11 +14,7 @@ if (!\extension_loaded('pcntl') || \strpos(\ini_get('disable_functions'), 'pcntl
     print "Skip: extension pcntl is required for enforcing time limits" . PHP_EOL;
 }
 --FILE--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '--no-configuration';
 $_SERVER['argv'][2] = '--enforce-time-limit';
 $_SERVER['argv'][3] = '--default-time-limit=10';

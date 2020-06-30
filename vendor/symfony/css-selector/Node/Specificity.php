@@ -53,15 +53,8 @@ class Specificity
     /**
      * Returns -1 if the object specificity is lower than the argument,
      * 0 if they are equal, and 1 if the argument is lower.
-<<<<<<< HEAD
      */
     public function compareTo(self $specificity): int
-=======
-     *
-     * @return int
-     */
-    public function compareTo(self $specificity)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->a !== $specificity->a) {
             return $this->a > $specificity->a ? 1 : -1;

@@ -79,15 +79,8 @@ EOF;
     /**
      * Generates PHP code representing an array of defined routes
      * together with the routes properties (e.g. requirements).
-<<<<<<< HEAD
      */
     private function generateDeclaredRoutes(): string
-=======
-     *
-     * @return string PHP code
-     */
-    private function generateDeclaredRoutes()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $routes = "[\n";
         foreach ($this->getRoutes()->all() as $name => $route) {
@@ -110,15 +103,8 @@ EOF;
 
     /**
      * Generates PHP code representing the `generate` method that implements the UrlGeneratorInterface.
-<<<<<<< HEAD
      */
     private function generateGenerateMethod(): string
-=======
-     *
-     * @return string PHP code
-     */
-    private function generateGenerateMethod()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return <<<'EOF'
     public function generate($name, $parameters = [], $referenceType = self::ABSOLUTE_PATH)
@@ -130,10 +116,6 @@ EOF;
         if (null !== $locale && null !== $name) {
             do {
                 if ((self::$declaredRoutes[$name.'.'.$locale][1]['_canonical_route'] ?? null) === $name) {
-<<<<<<< HEAD
-=======
-                    unset($parameters['_locale']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $name .= '.'.$locale;
                     break;
                 }
@@ -146,7 +128,6 @@ EOF;
 
         list($variables, $defaults, $requirements, $tokens, $hostTokens, $requiredSchemes) = self::$declaredRoutes[$name];
 
-<<<<<<< HEAD
         if (isset($defaults['_canonical_route']) && isset($defaults['_locale'])) {
             if (!\in_array('_locale', $variables, true)) {
                 unset($parameters['_locale']);
@@ -155,8 +136,6 @@ EOF;
             }
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $this->doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, $requiredSchemes);
     }
 EOF;

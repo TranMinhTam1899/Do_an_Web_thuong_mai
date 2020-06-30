@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -80,11 +76,7 @@ final class Directory extends Renderer
 
                 $up = \str_repeat('../', \count($node->getPathAsArray()) - 2);
 
-<<<<<<< HEAD
                 $data['icon'] = \sprintf('<img src="%s.icons/file-directory.svg" class="octicon" />', $up);
-=======
-                $data['icon'] = \sprintf('<img src="%s_icons/file-directory.svg" class="octicon" />', $up);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             } else {
                 $data['name'] = \sprintf(
                     '<a href="%s.html">%s</a>',
@@ -94,11 +86,7 @@ final class Directory extends Renderer
 
                 $up = \str_repeat('../', \count($node->getPathAsArray()) - 2);
 
-<<<<<<< HEAD
                 $data['icon'] = \sprintf('<img src="%s.icons/file-code.svg" class="octicon" />', $up);
-=======
-                $data['icon'] = \sprintf('<img src="%s_icons/file-code.svg" class="octicon" />', $up);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

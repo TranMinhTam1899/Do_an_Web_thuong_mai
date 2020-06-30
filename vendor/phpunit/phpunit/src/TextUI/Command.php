@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -21,10 +17,7 @@ use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestListener;
 use PHPUnit\Framework\TestSuite;
-<<<<<<< HEAD
 use PHPUnit\Runner\PhptTestCase;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Runner\StandardTestSuiteLoader;
 use PHPUnit\Runner\TestSuiteLoader;
 use PHPUnit\Runner\TestSuiteSorter;
@@ -51,11 +44,7 @@ use Throwable;
 class Command
 {
     /**
-<<<<<<< HEAD
      * @var array
-=======
-     * @var array<string,mixed>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $arguments = [
         'listGroups'              => false,
@@ -69,30 +58,18 @@ class Command
     ];
 
     /**
-<<<<<<< HEAD
      * @var array
-=======
-     * @var array<string,mixed>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $options = [];
 
     /**
-<<<<<<< HEAD
      * @var array
-=======
-     * @var array<string,mixed>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $longOptions = [
         'atleast-version='          => null,
         'prepend='                  => null,
         'bootstrap='                => null,
         'cache-result'              => null,
-<<<<<<< HEAD
-=======
-        'do-not-cache-result'       => null,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'cache-result-file='        => null,
         'check-version'             => null,
         'colors=='                  => null,
@@ -129,10 +106,6 @@ class Command
         'no-configuration'          => null,
         'no-coverage'               => null,
         'no-logging'                => null,
-<<<<<<< HEAD
-=======
-        'no-interaction'            => null,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'no-extensions'             => null,
         'order-by='                 => null,
         'printer='                  => null,
@@ -178,7 +151,6 @@ class Command
     private $versionStringPrinted = false;
 
     /**
-<<<<<<< HEAD
      * @throws \RuntimeException
      * @throws \PHPUnit\Framework\Exception
      * @throws \InvalidArgumentException
@@ -194,16 +166,6 @@ class Command
      * @throws \RuntimeException
      * @throws \ReflectionException
      * @throws \InvalidArgumentException
-=======
-     * @throws \PHPUnit\Framework\Exception
-     */
-    public static function main(bool $exit = true): int
-    {
-        return (new static)->run($_SERVER['argv'], $exit);
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @throws Exception
      */
     public function run(array $argv, bool $exit = true): int
@@ -343,14 +305,6 @@ class Command
 
                     break;
 
-<<<<<<< HEAD
-=======
-                case '--do-not-cache-result':
-                    $this->arguments['cacheResult'] = false;
-
-                    break;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 case '--cache-result-file':
                     $this->arguments['cacheResultFile'] = $option[1];
 
@@ -414,11 +368,7 @@ class Command
                         if (isset($ini[1])) {
                             \ini_set($ini[0], $ini[1]);
                         } else {
-<<<<<<< HEAD
                             \ini_set($ini[0], true);
-=======
-                            \ini_set($ini[0], '1');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         }
                     }
 
@@ -682,14 +632,6 @@ class Command
 
                     break;
 
-<<<<<<< HEAD
-=======
-                case '--no-interaction':
-                    $this->arguments['noInteraction'] = true;
-
-                    break;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 case '--globals-backup':
                     $this->arguments['backupGlobals'] = true;
 
@@ -797,11 +739,7 @@ class Command
                     break;
 
                 case '--ignore-dependencies':
-<<<<<<< HEAD
                     $this->arguments['resolveDependencies'] = false;
-=======
-                    $this->handleOrderByOption('no-depends');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                     break;
 
@@ -834,13 +772,6 @@ class Command
 
         $this->handleCustomTestSuite();
 
-<<<<<<< HEAD
-=======
-        if (!isset($this->arguments['testSuffixes'])) {
-            $this->arguments['testSuffixes'] = ['Test.php', '.phpt'];
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset($this->arguments['test'])) {
             if (isset($this->options[1][0])) {
                 $this->arguments['test'] = $this->options[1][0];
@@ -864,7 +795,6 @@ class Command
 
             if (isset($this->arguments['test']) &&
                 \is_file($this->arguments['test']) &&
-<<<<<<< HEAD
                 \substr($this->arguments['test'], -5, 5) != '.phpt') {
                 $this->arguments['testFile'] = \realpath($this->arguments['test']);
                 $this->arguments['test']     = \substr($this->arguments['test'], 0, \strrpos($this->arguments['test'], '.'));
@@ -873,20 +803,6 @@ class Command
 
         if (!isset($this->arguments['testSuffixes'])) {
             $this->arguments['testSuffixes'] = ['Test.php', '.phpt'];
-=======
-                \substr($this->arguments['test'], -5, 5) !== '.phpt') {
-                $this->arguments['testFile'] = \realpath($this->arguments['test']);
-                $this->arguments['test']     = \substr($this->arguments['test'], 0, \strrpos($this->arguments['test'], '.'));
-            }
-
-            if (isset($this->arguments['test']) &&
-                \is_string($this->arguments['test']) &&
-                \substr($this->arguments['test'], -5, 5) === '.phpt') {
-                $suite = new TestSuite;
-                $suite->addTestFile($this->arguments['test']);
-                $this->arguments['test'] = $suite;
-            }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (isset($includePath)) {
@@ -963,15 +879,11 @@ class Command
             }
 
             if (!isset($this->arguments['printer']) && isset($phpunitConfiguration['printerClass'])) {
-<<<<<<< HEAD
                 if (isset($phpunitConfiguration['printerFile'])) {
                     $file = $phpunitConfiguration['printerFile'];
                 } else {
                     $file = '';
                 }
-=======
-                $file = $phpunitConfiguration['printerFile'] ?? '';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 $this->arguments['printer'] = $this->handlePrinter(
                     $phpunitConfiguration['printerClass'],
@@ -980,15 +892,11 @@ class Command
             }
 
             if (isset($phpunitConfiguration['testSuiteLoaderClass'])) {
-<<<<<<< HEAD
                 if (isset($phpunitConfiguration['testSuiteLoaderFile'])) {
                     $file = $phpunitConfiguration['testSuiteLoaderFile'];
                 } else {
                     $file = '';
                 }
-=======
-                $file = $phpunitConfiguration['testSuiteLoaderFile'] ?? '';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 $this->arguments['loader'] = $this->handleLoader(
                     $phpunitConfiguration['testSuiteLoaderClass'],
@@ -1016,7 +924,6 @@ class Command
             $this->arguments['printer'] = $this->handlePrinter($this->arguments['printer']);
         }
 
-<<<<<<< HEAD
         if (isset($this->arguments['test']) && \is_string($this->arguments['test']) && \substr($this->arguments['test'], -5, 5) == '.phpt') {
             $test = new PhptTestCase($this->arguments['test']);
 
@@ -1024,8 +931,6 @@ class Command
             $this->arguments['test']->addTest($test);
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset($this->arguments['test'])) {
             $this->showHelp();
             exit(TestRunner::EXCEPTION_EXIT);
@@ -1052,30 +957,11 @@ class Command
         }
 
         if (\class_exists($loaderClass, false)) {
-<<<<<<< HEAD
             $class = new ReflectionClass($loaderClass);
 
             if ($class->implementsInterface(TestSuiteLoader::class) &&
                 $class->isInstantiable()) {
                 return $class->newInstance();
-=======
-            try {
-                $class = new ReflectionClass($loaderClass);
-            } catch (\ReflectionException $e) {
-                throw new Exception(
-                    $e->getMessage(),
-                    (int) $e->getCode(),
-                    $e
-                );
-            }
-
-            if ($class->implementsInterface(TestSuiteLoader::class) && $class->isInstantiable()) {
-                $object = $class->newInstance();
-
-                \assert($object instanceof TestSuiteLoader);
-
-                return $object;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 
@@ -1123,19 +1009,7 @@ class Command
             );
         }
 
-<<<<<<< HEAD
         $class = new ReflectionClass($printerClass);
-=======
-        try {
-            $class = new ReflectionClass($printerClass);
-        } catch (\ReflectionException $e) {
-            throw new Exception(
-                $e->getMessage(),
-                (int) $e->getCode(),
-                $e
-            );
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!$class->implementsInterface(TestListener::class)) {
             $this->exitWithErrorMessage(
@@ -1213,7 +1087,6 @@ class Command
     protected function showHelp(): void
     {
         $this->printVersionString();
-<<<<<<< HEAD
 
         print <<<EOT
 Usage: phpunit [options] UnitTest [UnitTest.php]
@@ -1320,9 +1193,6 @@ Miscellaneous Options:
   --check-version             Check whether PHPUnit is the latest version
 
 EOT;
-=======
-        (new Help)->writeToConsole();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -1354,13 +1224,9 @@ EOT;
 
     private function handleExtensions(string $directory): void
     {
-<<<<<<< HEAD
         $facade = new FileIteratorFacade;
 
         foreach ($facade->getFilesAsArray($directory, '.phar') as $file) {
-=======
-        foreach ((new FileIteratorFacade)->getFilesAsArray($directory, '.phar') as $file) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!\file_exists('phar://' . $file . '/manifest.xml')) {
                 $this->arguments['notLoadedExtensions'][] = $file . ' is not an extension for PHPUnit';
 
@@ -1418,12 +1284,6 @@ EOT;
         return TestRunner::SUCCESS_EXIT;
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws \PHPUnit\Framework\Exception
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function handleListSuites(bool $exit): int
     {
         $this->printVersionString();
@@ -1434,13 +1294,9 @@ EOT;
             $this->arguments['configuration']
         );
 
-<<<<<<< HEAD
         $suiteNames = $configuration->getTestSuiteNames();
 
         foreach ($suiteNames as $suiteName) {
-=======
-        foreach ($configuration->getTestSuiteNames() as $suiteName) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             \printf(
                 ' - %s' . \PHP_EOL,
                 $suiteName
@@ -1454,12 +1310,6 @@ EOT;
         return TestRunner::SUCCESS_EXIT;
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function handleListTests(TestSuite $suite, bool $exit): int
     {
         $this->printVersionString();
@@ -1475,12 +1325,6 @@ EOT;
         return TestRunner::SUCCESS_EXIT;
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function handleListTestsXml(TestSuite $suite, string $target, bool $exit): int
     {
         $this->printVersionString();
@@ -1508,36 +1352,12 @@ EOT;
                 case 'default':
                     $this->arguments['executionOrder']        = TestSuiteSorter::ORDER_DEFAULT;
                     $this->arguments['executionOrderDefects'] = TestSuiteSorter::ORDER_DEFAULT;
-<<<<<<< HEAD
                     $this->arguments['resolveDependencies']   = false;
 
                     break;
 
                 case 'reverse':
                     $this->arguments['executionOrder'] = TestSuiteSorter::ORDER_REVERSED;
-=======
-                    $this->arguments['resolveDependencies']   = true;
-
-                    break;
-
-                case 'defects':
-                    $this->arguments['executionOrderDefects'] = TestSuiteSorter::ORDER_DEFECTS_FIRST;
-
-                    break;
-
-                case 'depends':
-                    $this->arguments['resolveDependencies'] = true;
-
-                    break;
-
-                case 'duration':
-                    $this->arguments['executionOrder'] = TestSuiteSorter::ORDER_DURATION;
-
-                    break;
-
-                case 'no-depends':
-                    $this->arguments['resolveDependencies'] = false;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                     break;
 
@@ -1546,7 +1366,6 @@ EOT;
 
                     break;
 
-<<<<<<< HEAD
                 case 'defects':
                     $this->arguments['executionOrderDefects'] = TestSuiteSorter::ORDER_DEFECTS_FIRST;
 
@@ -1554,15 +1373,6 @@ EOT;
 
                 case 'depends':
                     $this->arguments['resolveDependencies'] = true;
-=======
-                case 'reverse':
-                    $this->arguments['executionOrder'] = TestSuiteSorter::ORDER_REVERSED;
-
-                    break;
-
-                case 'size':
-                    $this->arguments['executionOrder'] = TestSuiteSorter::ORDER_SIZE;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                     break;
 

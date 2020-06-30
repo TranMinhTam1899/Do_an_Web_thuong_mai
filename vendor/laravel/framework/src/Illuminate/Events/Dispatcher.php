@@ -3,7 +3,6 @@
 namespace Illuminate\Events;
 
 use Exception;
-<<<<<<< HEAD
 use ReflectionClass;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -13,17 +12,6 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
 use Illuminate\Contracts\Container\Container as ContainerContract;
-=======
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Illuminate\Contracts\Container\Container as ContainerContract;
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use ReflectionClass;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Dispatcher implements DispatcherContract
 {

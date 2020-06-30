@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -72,11 +68,7 @@ final class Facade
     {
         $buildNode = $this->project->getBuildInformation();
         $buildNode->setRuntimeInformation(new Runtime());
-<<<<<<< HEAD
         $buildNode->setBuildTime(\DateTime::createFromFormat('U', $_SERVER['REQUEST_TIME']));
-=======
-        $buildNode->setBuildTime(\DateTime::createFromFormat('U', (string) $_SERVER['REQUEST_TIME']));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $buildNode->setGeneratorVersions($this->phpUnitVersion, Version::id());
     }
 
@@ -159,11 +151,7 @@ final class Facade
                 continue;
             }
 
-<<<<<<< HEAD
             $coverage = $fileReport->getLineCoverage($line);
-=======
-            $coverage = $fileReport->getLineCoverage((string) $line);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             foreach ($tests as $test) {
                 $coverage->addTest($test);
@@ -193,11 +181,7 @@ final class Facade
             $unit['executedLines']
         );
 
-<<<<<<< HEAD
         $unitObject->setCrap($unit['crap']);
-=======
-        $unitObject->setCrap((float) $unit['crap']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $unitObject->setPackage(
             $unit['package']['fullPackage'],
@@ -211,21 +195,12 @@ final class Facade
         foreach ($unit['methods'] as $method) {
             $methodObject = $unitObject->addMethod($method['methodName']);
             $methodObject->setSignature($method['signature']);
-<<<<<<< HEAD
             $methodObject->setLines($method['startLine'], $method['endLine']);
             $methodObject->setCrap($method['crap']);
             $methodObject->setTotals(
                 $method['executableLines'],
                 $method['executedLines'],
                 $method['coverage']
-=======
-            $methodObject->setLines((string) $method['startLine'], (string) $method['endLine']);
-            $methodObject->setCrap($method['crap']);
-            $methodObject->setTotals(
-                (string) $method['executableLines'],
-                (string) $method['executedLines'],
-                (string) $method['coverage']
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             );
         }
     }
@@ -235,15 +210,9 @@ final class Facade
         $functionObject = $report->getFunctionObject($function['functionName']);
 
         $functionObject->setSignature($function['signature']);
-<<<<<<< HEAD
         $functionObject->setLines($function['startLine']);
         $functionObject->setCrap($function['crap']);
         $functionObject->setTotals($function['executableLines'], $function['executedLines'], $function['coverage']);
-=======
-        $functionObject->setLines((string) $function['startLine']);
-        $functionObject->setCrap($function['crap']);
-        $functionObject->setTotals((string) $function['executableLines'], (string) $function['executedLines'], (string) $function['coverage']);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     private function processTests(array $tests): void

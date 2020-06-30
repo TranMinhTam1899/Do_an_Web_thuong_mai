@@ -9,21 +9,14 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - IBM AP Linux Technology Center, Yamato Software Laboratory    bug-glibc@gnu.org
  */
 return [
-<<<<<<< HEAD
     'diff_now' => 'ବର୍ତ୍ତମାନ',
     'diff_yesterday' => 'ଗତକାଲି',
     'diff_tomorrow' => 'ଆସନ୍ତାକାଲି',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'Oh:Om A',
         'LTS' => 'Oh:Om:Os A',

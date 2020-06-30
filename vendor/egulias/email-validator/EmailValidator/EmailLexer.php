@@ -73,7 +73,6 @@ class EmailLexer extends AbstractLexer
         '\0'   => self::C_NUL,
     );
 
-<<<<<<< HEAD
     /**
      * @var bool
      */
@@ -105,12 +104,6 @@ class EmailLexer extends AbstractLexer
     /**
      * @psalm-var array{value:'', type:null, position:0}
      */
-=======
-    protected $hasInvalidTokens = false;
-
-    protected $previous;
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private static $nullToken = [
         'value' => '',
         'type' => null,
@@ -120,10 +113,7 @@ class EmailLexer extends AbstractLexer
     public function __construct()
     {
         $this->previous = $this->token = self::$nullToken;
-<<<<<<< HEAD
         $this->lookahead = null;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -136,29 +126,20 @@ class EmailLexer extends AbstractLexer
         $this->previous = $this->token = self::$nullToken;
     }
 
-<<<<<<< HEAD
     /**
      * @return bool
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function hasInvalidTokens()
     {
         return $this->hasInvalidTokens;
     }
 
     /**
-<<<<<<< HEAD
      * @param int $type
      * @throws \UnexpectedValueException
      * @return boolean
      *
      * @psalm-suppress InvalidScalarArgument
-=======
-     * @param string $type
-     * @throws \UnexpectedValueException
-     * @return boolean
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function find($type)
     {
@@ -174,11 +155,7 @@ class EmailLexer extends AbstractLexer
     /**
      * getPrevious
      *
-<<<<<<< HEAD
      * @return array
-=======
-     * @return array token
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getPrevious()
     {
@@ -252,14 +229,11 @@ class EmailLexer extends AbstractLexer
         return  self::GENERIC;
     }
 
-<<<<<<< HEAD
     /**
      * @param string $value
      *
      * @return bool
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function isValid($value)
     {
         if (isset($this->charValue[$value])) {

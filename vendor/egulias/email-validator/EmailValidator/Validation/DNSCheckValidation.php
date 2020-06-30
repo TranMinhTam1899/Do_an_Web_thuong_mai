@@ -15,7 +15,6 @@ class DNSCheckValidation implements EmailValidation
     private $warnings = [];
 
     /**
-<<<<<<< HEAD
      * @var InvalidEmail|null
      */
     private $error;
@@ -23,15 +22,6 @@ class DNSCheckValidation implements EmailValidation
     public function __construct()
     {
         if (!function_exists('idn_to_ascii')) {
-=======
-     * @var InvalidEmail
-     */
-    private $error;
-    
-    public function __construct()
-    {
-        if (!extension_loaded('intl')) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             throw new \LogicException(sprintf('The %s class requires the Intl extension.', __CLASS__));
         }
     }
@@ -59,14 +49,11 @@ class DNSCheckValidation implements EmailValidation
         return $this->warnings;
     }
 
-<<<<<<< HEAD
     /**
      * @param string $host
      *
      * @return bool
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function checkDNS($host)
     {
         $variant = INTL_IDNA_VARIANT_2003;

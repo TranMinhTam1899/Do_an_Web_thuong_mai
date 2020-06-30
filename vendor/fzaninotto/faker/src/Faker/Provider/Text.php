@@ -21,11 +21,7 @@ abstract class Text extends Base
      * @example 'Alice, swallowing down her flamingo, and began by taking the little golden key'
      * @param integer $maxNbChars Maximum number of characters the text should contain (minimum: 10)
      * @param integer $indexSize  Determines how many words are considered for the generation of the next word.
-<<<<<<< HEAD
      *                             The minimum is 1, and it produces a higher level of randomness, although the
-=======
-     *                             The minimum is 1, and it produces the higher level of randomness, although the
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *                             generated text usually doesn't make sense. Higher index sizes (up to 5)
      *                             produce more correct text, at the price of less randomness.
      * @return string

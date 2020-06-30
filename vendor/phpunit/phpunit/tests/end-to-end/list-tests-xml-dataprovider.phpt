@@ -1,11 +1,7 @@
 --TEST--
 phpunit --list-tests-xml DataProviderTest ../../_files/DataProviderTest.php
 --FILE--
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $target = tempnam(sys_get_temp_dir(), __FILE__);
 
 $_SERVER['argv'][1] = '--no-configuration';

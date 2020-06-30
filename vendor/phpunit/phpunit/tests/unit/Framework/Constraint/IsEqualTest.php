@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,14 +12,7 @@ namespace PHPUnit\Framework\Constraint;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestFailure;
 
-<<<<<<< HEAD
 class IsEqualTest extends ConstraintTestCase
-=======
-/**
- * @small
- */
-final class IsEqualTest extends ConstraintTestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testConstraintIsEqual(): void
     {
@@ -73,16 +62,6 @@ EOF
         $this->fail();
     }
 
-<<<<<<< HEAD
-=======
-    public function testConstraintDeltaIsNotZero(): void
-    {
-        $constraint = new IsEqual(15, 1);
-
-        $this->assertSame('is equal to 15 with delta <1.000000>', $constraint->toString());
-    }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function isEqualProvider(): array
     {
         $a      = new \stdClass;

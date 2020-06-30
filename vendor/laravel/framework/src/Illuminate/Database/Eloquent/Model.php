@@ -2,7 +2,6 @@
 
 namespace Illuminate\Database\Eloquent;
 
-<<<<<<< HEAD
 use Exception;
 use ArrayAccess;
 use JsonSerializable;
@@ -19,24 +18,6 @@ use Illuminate\Support\Collection as BaseCollection;
 use Illuminate\Database\ConnectionResolverInterface as Resolver;
 
 abstract class Model implements ArrayAccess, Arrayable, Jsonable, JsonSerializable, QueueableEntity, UrlRoutable
-=======
-use ArrayAccess;
-use Exception;
-use Illuminate\Contracts\Queue\QueueableCollection;
-use Illuminate\Contracts\Queue\QueueableEntity;
-use Illuminate\Contracts\Routing\UrlRoutable;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Database\ConnectionResolverInterface as Resolver;
-use Illuminate\Database\Eloquent\Relations\Pivot;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection as BaseCollection;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\ForwardsCalls;
-use JsonSerializable;
-
-abstract class Model implements Arrayable, ArrayAccess, Jsonable, JsonSerializable, QueueableEntity, UrlRoutable
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use Concerns\HasAttributes,
         Concerns\HasEvents,
@@ -297,11 +278,7 @@ abstract class Model implements Arrayable, ArrayAccess, Jsonable, JsonSerializab
         static::$ignoreOnTouch = array_values(array_merge(static::$ignoreOnTouch, $models));
 
         try {
-<<<<<<< HEAD
             call_user_func($callback);
-=======
-            $callback();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } finally {
             static::$ignoreOnTouch = array_values(array_diff(static::$ignoreOnTouch, $models));
         }
@@ -490,11 +467,7 @@ abstract class Model implements Arrayable, ArrayAccess, Jsonable, JsonSerializab
      * Begin querying a model with eager loading.
      *
      * @param  array|string  $relations
-<<<<<<< HEAD
      * @return \Illuminate\Database\Eloquent\Builder|static
-=======
-     * @return \Illuminate\Database\Eloquent\Builder
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function with($relations)
     {

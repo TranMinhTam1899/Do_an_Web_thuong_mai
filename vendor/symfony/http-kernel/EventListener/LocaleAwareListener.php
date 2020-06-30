@@ -12,10 +12,6 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-<<<<<<< HEAD
-=======
-use Symfony\Component\HttpFoundation\Request;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -49,13 +45,9 @@ class LocaleAwareListener implements EventSubscriberInterface
     public function onKernelFinishRequest(FinishRequestEvent $event): void
     {
         if (null === $parentRequest = $this->requestStack->getParentRequest()) {
-<<<<<<< HEAD
             foreach ($this->localeAwareServices as $service) {
                 $service->setLocale($event->getRequest()->getDefaultLocale());
             }
-=======
-            $this->setLocale($event->getRequest()->getDefaultLocale());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             return;
         }
@@ -72,11 +64,7 @@ class LocaleAwareListener implements EventSubscriberInterface
         ];
     }
 
-<<<<<<< HEAD
     private function setLocale(string $locale, string $defaultLocale): void
-=======
-    private function setLocale(string $locale, string $defaultLocale = null): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         foreach ($this->localeAwareServices as $service) {
             try {

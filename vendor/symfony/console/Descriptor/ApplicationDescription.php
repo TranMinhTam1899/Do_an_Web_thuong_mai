@@ -50,14 +50,7 @@ class ApplicationDescription
         $this->showHidden = $showHidden;
     }
 
-<<<<<<< HEAD
     public function getNamespaces(): array
-=======
-    /**
-     * @return array
-     */
-    public function getNamespaces()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $this->namespaces) {
             $this->inspectApplication();
@@ -69,11 +62,7 @@ class ApplicationDescription
     /**
      * @return Command[]
      */
-<<<<<<< HEAD
     public function getCommands(): array
-=======
-    public function getCommands()
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $this->commands) {
             $this->inspectApplication();
@@ -83,25 +72,12 @@ class ApplicationDescription
     }
 
     /**
-<<<<<<< HEAD
      * @throws CommandNotFoundException
      */
     public function getCommand(string $name): Command
     {
         if (!isset($this->commands[$name]) && !isset($this->aliases[$name])) {
             throw new CommandNotFoundException(sprintf('Command "%s" does not exist.', $name));
-=======
-     * @param string $name
-     *
-     * @return Command
-     *
-     * @throws CommandNotFoundException
-     */
-    public function getCommand($name)
-    {
-        if (!isset($this->commands[$name]) && !isset($this->aliases[$name])) {
-            throw new CommandNotFoundException(sprintf('Command %s does not exist.', $name));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return isset($this->commands[$name]) ? $this->commands[$name] : $this->aliases[$name];
@@ -139,23 +115,15 @@ class ApplicationDescription
     {
         $namespacedCommands = [];
         $globalCommands = [];
-<<<<<<< HEAD
         $sortedCommands = [];
         foreach ($commands as $name => $command) {
             $key = $this->application->extractNamespace($name, 1);
             if (\in_array($key, ['', self::GLOBAL_NAMESPACE], true)) {
                 $globalCommands[$name] = $command;
-=======
-        foreach ($commands as $name => $command) {
-            $key = $this->application->extractNamespace($name, 1);
-            if (!$key) {
-                $globalCommands['_global'][$name] = $command;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             } else {
                 $namespacedCommands[$key][$name] = $command;
             }
         }
-<<<<<<< HEAD
 
         if ($globalCommands) {
             ksort($globalCommands);
@@ -171,17 +139,5 @@ class ApplicationDescription
         }
 
         return $sortedCommands;
-=======
-        ksort($namespacedCommands);
-        $namespacedCommands = array_merge($globalCommands, $namespacedCommands);
-
-        foreach ($namespacedCommands as &$commandsSet) {
-            ksort($commandsSet);
-        }
-        // unset reference to keep scope clear
-        unset($commandsSet);
-
-        return $namespacedCommands;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

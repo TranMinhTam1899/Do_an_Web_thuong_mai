@@ -18,10 +18,6 @@ use Psy\Exception\RuntimeException;
 use Psy\Formatter\CodeFormatter;
 use Psy\Formatter\SignatureFormatter;
 use Psy\Input\CodeArgument;
-<<<<<<< HEAD
-=======
-use Psy\Output\ShellOutput;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -102,7 +98,6 @@ HELP
                 throw new \InvalidArgumentException('Too many arguments (supply either "target" or "--ex")');
             }
 
-<<<<<<< HEAD
             $this->writeExceptionContext($input, $output);
 
             return 0;
@@ -112,13 +107,6 @@ HELP
             $this->writeCodeContext($input, $output);
 
             return 0;
-=======
-            return $this->writeExceptionContext($input, $output);
-        }
-
-        if ($input->getArgument('target')) {
-            return $this->writeCodeContext($input, $output);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         throw new RuntimeException('Not enough arguments (missing: "target")');
@@ -132,11 +120,7 @@ HELP
         $this->setCommandScopeVariables($reflector);
 
         try {
-<<<<<<< HEAD
             $output->page(CodeFormatter::format($reflector, $this->colorMode), OutputInterface::OUTPUT_RAW);
-=======
-            $output->page(CodeFormatter::format($reflector, $this->colorMode), ShellOutput::OUTPUT_RAW);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } catch (RuntimeException $e) {
             $output->writeln(SignatureFormatter::format($reflector));
             throw $e;
@@ -235,11 +219,7 @@ HELP
             return;
         }
 
-<<<<<<< HEAD
         $output->write($this->getHighlighter()->getCodeSnippet($code, $line, 5, 5), false, OutputInterface::OUTPUT_RAW);
-=======
-        $output->write($this->getHighlighter()->getCodeSnippet($code, $line, 5, 5), ShellOutput::OUTPUT_RAW);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     private function getHighlighter()

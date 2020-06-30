@@ -2,15 +2,9 @@
 
 namespace Illuminate\Database\Eloquent\Concerns;
 
-<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
 use Illuminate\Contracts\Events\Dispatcher;
-=======
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\Arr;
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait HasEvents
 {

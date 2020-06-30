@@ -31,11 +31,7 @@ interface ArgumentValueResolverInterface
     /**
      * Returns the possible value(s).
      *
-<<<<<<< HEAD
      * @return iterable
-=======
-     * @return \Generator
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function resolve(Request $request, ArgumentMetadata $argument);
 }

@@ -2,13 +2,8 @@
 
 namespace Illuminate\Support\Traits;
 
-<<<<<<< HEAD
 use Error;
 use BadMethodCallException;
-=======
-use BadMethodCallException;
-use Error;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait ForwardsCalls
 {

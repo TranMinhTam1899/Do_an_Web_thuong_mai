@@ -3,13 +3,8 @@
 namespace Illuminate\Foundation\Providers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\AggregateServiceProvider;
-=======
-use Illuminate\Support\AggregateServiceProvider;
-use Illuminate\Support\Facades\URL;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class FoundationServiceProvider extends AggregateServiceProvider
 {

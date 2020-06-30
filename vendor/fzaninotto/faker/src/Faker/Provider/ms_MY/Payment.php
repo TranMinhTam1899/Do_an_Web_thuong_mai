@@ -144,15 +144,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank
-<<<<<<< HEAD
      *
      * @example 'Maybank'
      *
-=======
-     * 
-     * @example 'Maybank'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function bank()
@@ -164,15 +158,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank account number
-<<<<<<< HEAD
      *
      * @example '1234567890123456'
      *
-=======
-     * 
-     * @example '1234567890123456'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function bankAccountNumber()
@@ -184,15 +172,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Local Bank
-<<<<<<< HEAD
      *
      * @example 'Public Bank'
      *
-=======
-     * 
-     * @example 'Public Bank'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function localBank()
@@ -202,15 +184,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Foreign Bank
-<<<<<<< HEAD
      *
      * @example 'Citibank Berhad'
      *
-=======
-     * 
-     * @example 'Citibank Berhad'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function foreignBank()
@@ -220,15 +196,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Government Bank
-<<<<<<< HEAD
      *
      * @example 'Bank Simpanan Nasional'
      *
-=======
-     * 
-     * @example 'Bank Simpanan Nasional'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function governmentBank()
@@ -238,15 +208,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian insurance company
-<<<<<<< HEAD
      *
      * @example 'AIA Malaysia'
      *
-=======
-     * 
-     * @example 'AIA Malaysia'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function insurance()
@@ -256,15 +220,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return a Malaysian Bank SWIFT Code
-<<<<<<< HEAD
      *
      * @example 'MBBEMYKLXXX'
      *
-=======
-     * 
-     * @example 'MBBEMYKLXXX'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function swiftCode()
@@ -274,15 +232,9 @@ class Payment extends \Faker\Provider\Payment
 
     /**
      * Return the Malaysian currency symbol
-<<<<<<< HEAD
      *
      * @example 'RM'
      *
-=======
-     * 
-     * @example 'RM'
-     * 
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function currencySymbol()

@@ -2,13 +2,8 @@
 
 namespace Illuminate\Database\Console\Migrations;
 
-<<<<<<< HEAD
 use Illuminate\Support\Collection;
 use Illuminate\Database\Migrations\Migrator;
-=======
-use Illuminate\Database\Migrations\Migrator;
-use Illuminate\Support\Collection;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Input\InputOption;
 
 class StatusCommand extends BaseCommand

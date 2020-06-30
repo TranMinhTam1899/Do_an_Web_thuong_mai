@@ -2,17 +2,10 @@
 
 namespace Illuminate\Redis\Connections;
 
-<<<<<<< HEAD
 use Redis;
 use Closure;
 use RedisCluster;
 use Illuminate\Contracts\Redis\Connection as ConnectionContract;
-=======
-use Closure;
-use Illuminate\Contracts\Redis\Connection as ConnectionContract;
-use Redis;
-use RedisCluster;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Redis
@@ -59,11 +52,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
     /**
      * Determine if the given keys exist.
      *
-<<<<<<< HEAD
      * @param  dynamic  $keys
-=======
-     * @param  mixed  $keys
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return int
      */
     public function exists(...$keys)
@@ -110,11 +99,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
      * Get the value of the given hash fields.
      *
      * @param  string  $key
-<<<<<<< HEAD
      * @param  dynamic  $dictionary
-=======
-     * @param  mixed  $dictionary
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array
      */
     public function hmget($key, ...$dictionary)
@@ -130,11 +115,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
      * Set the given hash fields to their respective values.
      *
      * @param  string  $key
-<<<<<<< HEAD
      * @param  dynamic  $dictionary
-=======
-     * @param  mixed  $dictionary
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return int
      */
     public function hmset($key, ...$dictionary)
@@ -179,11 +160,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
     /**
      * Removes and returns the first element of the list stored at key.
      *
-<<<<<<< HEAD
      * @param  dynamic  $arguments
-=======
-     * @param  mixed  $arguments
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array|null
      */
     public function blpop(...$arguments)
@@ -196,11 +173,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
     /**
      * Removes and returns the last element of the list stored at key.
      *
-<<<<<<< HEAD
      * @param  dynamic  $arguments
-=======
-     * @param  mixed  $arguments
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array|null
      */
     public function brpop(...$arguments)
@@ -226,11 +199,7 @@ class PhpRedisConnection extends Connection implements ConnectionContract
      * Add one or more members to a sorted set or update its score if it already exists.
      *
      * @param  string  $key
-<<<<<<< HEAD
      * @param  dynamic  $dictionary
-=======
-     * @param  mixed  $dictionary
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return int
      */
     public function zadd($key, ...$dictionary)

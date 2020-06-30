@@ -9,11 +9,7 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Nate Whittaker
  * - John MacAslan
@@ -44,12 +40,9 @@ return [
     'from_now' => 'อีก :time',
     'after' => ':timeหลังจากนี้',
     'before' => ':timeก่อน',
-<<<<<<< HEAD
     'diff_now' => 'ขณะนี้',
     'diff_yesterday' => 'เมื่อวาน',
     'diff_tomorrow' => 'พรุ่งนี้',
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'H:mm',
         'LTS' => 'H:mm:ss',

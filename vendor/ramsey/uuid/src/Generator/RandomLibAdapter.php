@@ -19,15 +19,9 @@ use RandomLib\Factory;
 
 /**
  * RandomLibAdapter provides functionality to generate strings of random
-<<<<<<< HEAD
  * binary data using the paragonie/random-lib library
  *
  * @link https://packagist.org/packages/paragonie/random-lib
-=======
- * binary data using the ircmaxell/random-lib library
- *
- * @link https://packagist.org/packages/ircmaxell/random-lib
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class RandomLibAdapter implements RandomGeneratorInterface
 {
@@ -39,17 +33,10 @@ class RandomLibAdapter implements RandomGeneratorInterface
     /**
      * Constructs a `RandomLibAdapter` using a `RandomLib\Generator`
      *
-<<<<<<< HEAD
      * By default, if no `Generator` is passed in, this creates a high-strength
      * generator to use when generating random binary data.
      *
      * @param Generator $generator An paragonie/random-lib `Generator`
-=======
-     * By default, if no `Generator` is passed in, this creates a medium-strength
-     * generator to use when generating random binary data.
-     *
-     * @param Generator $generator An ircmaxell/random-lib `Generator`
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(Generator $generator = null)
     {
@@ -58,11 +45,7 @@ class RandomLibAdapter implements RandomGeneratorInterface
         if ($this->generator === null) {
             $factory = new Factory();
 
-<<<<<<< HEAD
             $this->generator = $factory->getHighStrengthGenerator();
-=======
-            $this->generator = $factory->getMediumStrengthGenerator();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 

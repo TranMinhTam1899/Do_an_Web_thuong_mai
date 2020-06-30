@@ -2,13 +2,8 @@
 
 namespace Illuminate\Foundation\Bootstrap;
 
-<<<<<<< HEAD
 use Exception;
 use ErrorException;
-=======
-use ErrorException;
-use Exception;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Symfony\Component\Console\Output\ConsoleOutput;

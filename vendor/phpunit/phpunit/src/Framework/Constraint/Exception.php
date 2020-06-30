@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,11 +12,7 @@ namespace PHPUnit\Framework\Constraint;
 use PHPUnit\Util\Filter;
 use Throwable;
 
-<<<<<<< HEAD
 class Exception extends Constraint
-=======
-final class Exception extends Constraint
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -29,11 +21,8 @@ final class Exception extends Constraint
 
     public function __construct(string $className)
     {
-<<<<<<< HEAD
         parent::__construct();
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->className = $className;
     }
 

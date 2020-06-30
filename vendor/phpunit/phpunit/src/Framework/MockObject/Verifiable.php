@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,11 +12,7 @@ namespace PHPUnit\Framework\MockObject;
 use PHPUnit\Framework\ExpectationFailedException;
 
 /**
-<<<<<<< HEAD
  * Interface for classes which must verify a given expectation.
-=======
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 interface Verifiable
 {
@@ -30,9 +22,5 @@ interface Verifiable
      *
      * @throws ExpectationFailedException
      */
-<<<<<<< HEAD
     public function verify();
-=======
-    public function verify(): void;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

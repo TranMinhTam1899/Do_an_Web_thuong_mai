@@ -33,11 +33,6 @@ use Symfony\Component\Mime\Exception\LogicException;
  *     $guesser->registerGuesser(new FileinfoMimeTypeGuesser('/path/to/magic/file'));
  *
  * @author Fabien Potencier <fabien@symfony.com>
-<<<<<<< HEAD
-=======
- *
- * @experimental in 4.3
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class MimeTypes implements MimeTypesInterface
 {
@@ -1256,10 +1251,7 @@ final class MimeTypes implements MimeTypesInterface
         'image/psd' => ['psd'],
         'image/rle' => ['rle'],
         'image/sgi' => ['sgi'],
-<<<<<<< HEAD
         'image/svg' => ['svg'],
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'image/svg+xml' => ['svg', 'svgz'],
         'image/svg+xml-compressed' => ['svgz'],
         'image/tiff' => ['tiff', 'tif'],
@@ -2817,11 +2809,7 @@ final class MimeTypes implements MimeTypesInterface
         'sv4crc' => ['application/x-sv4crc'],
         'svc' => ['application/vnd.dvb.service'],
         'svd' => ['application/vnd.svd'],
-<<<<<<< HEAD
         'svg' => ['image/svg+xml', 'image/svg'],
-=======
-        'svg' => ['image/svg+xml'],
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'svgz' => ['image/svg+xml', 'image/svg+xml-compressed'],
         'svh' => ['text/x-svhdr'],
         'swa' => ['application/x-director'],

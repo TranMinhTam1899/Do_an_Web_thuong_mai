@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -34,29 +30,17 @@ class WebProcessor implements ProcessorInterface
      *
      * @var array
      */
-<<<<<<< HEAD
     protected $extraFields = array(
-=======
-    protected $extraFields = [
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'url'         => 'REQUEST_URI',
         'ip'          => 'REMOTE_ADDR',
         'http_method' => 'REQUEST_METHOD',
         'server'      => 'SERVER_NAME',
         'referrer'    => 'HTTP_REFERER',
-<<<<<<< HEAD
     );
 
     /**
      * @param array|\ArrayAccess $serverData  Array or object w/ ArrayAccess that provides access to the $_SERVER data
      * @param array|null         $extraFields Field names and the related key inside $serverData to be added. If not provided it defaults to: url, ip, http_method, server, referrer
-=======
-    ];
-
-    /**
-     * @param array|\ArrayAccess|null $serverData  Array or object w/ ArrayAccess that provides access to the $_SERVER data
-     * @param array|null              $extraFields Field names and the related key inside $serverData to be added. If not provided it defaults to: url, ip, http_method, server, referrer
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct($serverData = null, array $extraFields = null)
     {
@@ -81,15 +65,11 @@ class WebProcessor implements ProcessorInterface
         }
     }
 
-<<<<<<< HEAD
     /**
      * @param  array $record
      * @return array
      */
     public function __invoke(array $record)
-=======
-    public function __invoke(array $record): array
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // skip processing if for some reason request data
         // is not present (CLI or wonky SAPIs)
@@ -102,23 +82,18 @@ class WebProcessor implements ProcessorInterface
         return $record;
     }
 
-<<<<<<< HEAD
     /**
      * @param  string $extraName
      * @param  string $serverName
      * @return $this
      */
     public function addExtraField($extraName, $serverName)
-=======
-    public function addExtraField(string $extraName, string $serverName): self
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->extraFields[$extraName] = $serverName;
 
         return $this;
     }
 
-<<<<<<< HEAD
     /**
      * @param  array $extra
      * @return array
@@ -127,12 +102,6 @@ class WebProcessor implements ProcessorInterface
     {
         foreach ($this->extraFields as $extraName => $serverName) {
             $extra[$extraName] = isset($this->serverData[$serverName]) ? $this->serverData[$serverName] : null;
-=======
-    private function appendExtraFields(array $extra): array
-    {
-        foreach ($this->extraFields as $extraName => $serverName) {
-            $extra[$extraName] = $this->serverData[$serverName] ?? null;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (isset($this->serverData['UNIQUE_ID'])) {

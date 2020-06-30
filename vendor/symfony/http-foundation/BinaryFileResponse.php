@@ -204,11 +204,7 @@ class BinaryFileResponse extends Response
 
         if (!$this->headers->has('Accept-Ranges')) {
             // Only accept ranges on safe HTTP methods
-<<<<<<< HEAD
             $this->headers->set('Accept-Ranges', $request->isMethodSafe() ? 'bytes' : 'none');
-=======
-            $this->headers->set('Accept-Ranges', $request->isMethodSafe(false) ? 'bytes' : 'none');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (self::$trustXSendfileTypeHeader && $request->headers->has('X-Sendfile-Type')) {
@@ -221,11 +217,7 @@ class BinaryFileResponse extends Response
             }
             if ('x-accel-redirect' === strtolower($type)) {
                 // Do X-Accel-Mapping substitutions.
-<<<<<<< HEAD
                 // @link https://www.nginx.com/resources/wiki/start/topics/examples/x-accel/#x-accel-redirect
-=======
-                // @link http://wiki.nginx.org/X-accel#X-Accel-Redirect
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $parts = HeaderUtils::split($request->headers->get('X-Accel-Mapping', ''), ',=');
                 foreach ($parts as $part) {
                     list($pathPrefix, $location) = $part;
@@ -277,11 +269,7 @@ class BinaryFileResponse extends Response
         return $this;
     }
 
-<<<<<<< HEAD
     private function hasValidIfRangeHeader(?string $header): bool
-=======
-    private function hasValidIfRangeHeader($header)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->getEtag() === $header) {
             return true;
@@ -355,11 +343,7 @@ class BinaryFileResponse extends Response
     }
 
     /**
-<<<<<<< HEAD
      * If this is set to true, the file will be unlinked after the request is sent
-=======
-     * If this is set to true, the file will be unlinked after the request is send
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Note: If the X-Sendfile header is used, the deleteFileAfterSend setting will not be used.
      *
      * @param bool $shouldDelete

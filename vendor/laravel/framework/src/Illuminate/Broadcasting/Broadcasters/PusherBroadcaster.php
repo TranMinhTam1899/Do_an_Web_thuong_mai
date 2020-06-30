@@ -2,17 +2,10 @@
 
 namespace Illuminate\Broadcasting\Broadcasters;
 
-<<<<<<< HEAD
 use Pusher\Pusher;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Broadcasting\BroadcastException;
-=======
-use Illuminate\Broadcasting\BroadcastException;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
-use Pusher\Pusher;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class PusherBroadcaster extends Broadcaster

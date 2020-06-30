@@ -2,13 +2,8 @@
 
 namespace Illuminate\Foundation\Auth\Access;
 
-<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Auth\Access\Gate;
-=======
-use Illuminate\Contracts\Auth\Access\Gate;
-use Illuminate\Support\Str;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait AuthorizesRequests
 {
@@ -110,10 +105,6 @@ trait AuthorizesRequests
     protected function resourceAbilityMap()
     {
         return [
-<<<<<<< HEAD
-=======
-            'index' => 'viewAny',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'show' => 'view',
             'create' => 'create',
             'store' => 'create',

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $header = <<<'EOF'
 This file is part of PHPUnit.
 
@@ -55,10 +51,6 @@ return PhpCsFixer\Config::create()
             'compact_nullable_typehint' => true,
             'concat_space' => ['spacing' => 'one'],
             'declare_equal_normalize' => ['space' => 'none'],
-<<<<<<< HEAD
-=======
-            'declare_strict_types' => true,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'dir_constant' => true,
             'elseif' => true,
             'encoding' => true,
@@ -196,11 +188,7 @@ return PhpCsFixer\Config::create()
                     'property',
                 ],
             ],
-<<<<<<< HEAD
             //'void_return' => true,
-=======
-            'void_return' => true,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'whitespace_after_comma_in_array' => true,
         ]
     )
@@ -208,16 +196,6 @@ return PhpCsFixer\Config::create()
         PhpCsFixer\Finder::create()
         ->files()
         ->in(__DIR__ . '/src')
-<<<<<<< HEAD
         ->in(__DIR__ . '/tests')
         ->notName('*.phpt')
-=======
-        ->in(__DIR__ . '/tests/_files')
-        ->in(__DIR__ . '/tests/basic')
-        ->in(__DIR__ . '/tests/end-to-end')
-        ->in(__DIR__ . '/tests/fail')
-        ->in(__DIR__ . '/tests/unit')
-        ->notName('*.phpt')
-        ->notName('ClassWithAllPossibleReturnTypes.php')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     );

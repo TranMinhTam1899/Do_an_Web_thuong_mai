@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -25,7 +21,6 @@ use Monolog\Logger;
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  */
-<<<<<<< HEAD
 class NullHandler extends AbstractHandler
 {
     /**
@@ -34,27 +29,11 @@ class NullHandler extends AbstractHandler
     public function __construct($level = Logger::DEBUG)
     {
         parent::__construct($level, false);
-=======
-class NullHandler extends Handler
-{
-    /**
-     * @var int
-     */
-    private $level;
-
-    /**
-     * @param string|int $level The minimum logging level at which this handler will be triggered
-     */
-    public function __construct($level = Logger::DEBUG)
-    {
-        $this->level = Logger::toMonologLevel($level);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function handle(array $record)
     {
         if ($record['level'] < $this->level) {
@@ -62,18 +41,5 @@ class NullHandler extends Handler
         }
 
         return true;
-=======
-    public function isHandling(array $record): bool
-    {
-        return $record['level'] >= $this->level;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function handle(array $record): bool
-    {
-        return $record['level'] >= $this->level;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

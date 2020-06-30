@@ -3,18 +3,11 @@
 namespace Illuminate\Validation;
 
 use Closure;
-<<<<<<< HEAD
-=======
-use Illuminate\Contracts\Validation\Rule as RuleContract;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules\Exists;
 use Illuminate\Validation\Rules\Unique;
-<<<<<<< HEAD
 use Illuminate\Contracts\Validation\Rule as RuleContract;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ValidationRuleParser
 {

@@ -2,17 +2,10 @@
 
 namespace Illuminate\Queue\Jobs;
 
-<<<<<<< HEAD
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Support\InteractsWithTime;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Queue\ManuallyFailedException;
-=======
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Queue\Events\JobFailed;
-use Illuminate\Queue\ManuallyFailedException;
-use Illuminate\Support\InteractsWithTime;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 abstract class Job
 {
@@ -223,19 +216,6 @@ abstract class Job
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Get the resolved job handler instance.
-     *
-     * @return mixed
-     */
-    public function getResolvedJob()
-    {
-        return $this->instance;
-    }
-
-    /**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the decoded body of the job.
      *
      * @return array

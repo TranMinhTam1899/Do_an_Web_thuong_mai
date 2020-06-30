@@ -35,7 +35,6 @@ final class OperatingSystemTest extends TestCase
     }
 
     /**
-<<<<<<< HEAD
      * @requires OS Darwin
      */
     public function testFamilyReturnsDarwinWhenRunningOnDarwin(): void
@@ -44,8 +43,6 @@ final class OperatingSystemTest extends TestCase
     }
 
     /**
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @requires OS Windows
      */
     public function testGetFamilyReturnsWindowsWhenRunningOnWindows(): void

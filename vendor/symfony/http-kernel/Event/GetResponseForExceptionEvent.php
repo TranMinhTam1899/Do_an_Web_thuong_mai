@@ -11,10 +11,7 @@
 
 namespace Symfony\Component\HttpKernel\Event;
 
-<<<<<<< HEAD
 use Symfony\Component\Debug\Exception\FatalThrowableError;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
@@ -23,7 +20,6 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  */
 class GetResponseForExceptionEvent extends RequestEvent
 {
-<<<<<<< HEAD
     private $throwable;
     private $exception;
     private $allowCustomResponseCode = false;
@@ -53,35 +49,11 @@ class GetResponseForExceptionEvent extends RequestEvent
 
     /**
      * @deprecated since Symfony 4.4, use getThrowable instead
-=======
-    /**
-     * The exception object.
-     *
-     * @var \Exception
-     */
-    private $exception;
-
-    /**
-     * @var bool
-     */
-    private $allowCustomResponseCode = false;
-
-    public function __construct(HttpKernelInterface $kernel, Request $request, int $requestType, \Exception $e)
-    {
-        parent::__construct($kernel, $request, $requestType);
-
-        $this->setException($e);
-    }
-
-    /**
-     * Returns the thrown exception.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return \Exception The thrown exception
      */
     public function getException()
     {
-<<<<<<< HEAD
         @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.4, use "getThrowable()" instead.', __METHOD__), E_USER_DEPRECATED);
 
         return $this->exception ?? $this->exception = $this->throwable instanceof \Exception ? $this->throwable : new FatalThrowableError($this->throwable);
@@ -89,27 +61,14 @@ class GetResponseForExceptionEvent extends RequestEvent
 
     /**
      * @deprecated since Symfony 4.4, use setThrowable instead
-=======
-        return $this->exception;
-    }
-
-    /**
-     * Replaces the thrown exception.
-     *
-     * This exception will be thrown if no response is set in the event.
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param \Exception $exception The thrown exception
      */
     public function setException(\Exception $exception)
     {
-<<<<<<< HEAD
         @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.4, use "setThrowable()" instead.', __METHOD__), E_USER_DEPRECATED);
 
         $this->throwable = $this->exception = $exception;
-=======
-        $this->exception = $exception;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

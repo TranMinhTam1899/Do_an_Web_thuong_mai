@@ -61,11 +61,7 @@ class Image extends Base
      *
      * @example '/path/to/dir/13b73edae8443990be1aa8f1a483bc27.jpg'
      */
-<<<<<<< HEAD
     public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
-=======
-    public static function image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $dir = is_null($dir) ? sys_get_temp_dir() : $dir; // GNU/Linux / OS X / Windows compatible
         // Validate directory path
@@ -79,11 +75,7 @@ class Image extends Base
         $filename = $name .'.jpg';
         $filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
-<<<<<<< HEAD
         $url = static::imageUrl($width, $height, $category, $randomize, $word, $gray);
-=======
-        $url = static::imageUrl($width, $height, $category, $randomize, $word);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // save file
         if (function_exists('curl_exec')) {

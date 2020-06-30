@@ -26,11 +26,7 @@ class Person extends \Faker\Provider\Person
         'mr.', 'dr.', 'ir.', 'drs', 'bacc.', 'kand.', 'dr.h.c.', 'prof.', 'ds.', 'ing.', 'bc.'
     );
 
-<<<<<<< HEAD
     protected static $suffix = array(
-=======
-    private static $suffix = array(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'BA', 'Bsc', 'LLB', 'LLM', 'MA', 'Msc', 'MPhil', 'D', 'PhD', 'AD', 'B', 'M'
     );
 
@@ -120,11 +116,7 @@ class Person extends \Faker\Provider\Person
         'Huijzing', 'Huisman', 'Huls', 'Hulshouts', 'Hulskes', 'Hulst', 'van Hulten', 'Huurdeman', 'van het Heerenveen',
         'Jaceps', 'Jacobi', 'Jacobs', 'Jacquot', 'de Jager', 'Jans', 'Jansdr', 'Janse', 'Jansen', 'Jansen', 'Jansse',
         'Janssen', 'Janssens', 'Jasper dr', 'Jdotte', 'Jeggij', 'Jekel', 'Jerusalem', 'Jochems',
-<<<<<<< HEAD
         'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorissen', 'van Jumiège', 'Jurrijens', 'Köster',
-=======
-        'Jones', 'de Jong', 'Jonkman', 'Joosten', 'Jorlink', 'Jorrisen', 'van Jumiège', 'Jurrijens', 'Köster',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'van der Kaay', 'de Kale', 'Kallen', 'Kalman', 'Kamp', 'Kamper', 'Karels', 'Kas', 'van Kasteelen', 'Kathagen',
         'Keijser', 'de Keijser', 'Keijzer', 'de Keijzer', 'Keltenie', 'van Kempen', 'Kerkhof', 'Ketel', 'Ketting',
         'der Kijnder', 'van der Kint', 'Kirpenstein', 'Kisman', 'van Klaarwater', 'van de Klashorst', 'Kleibrink',
@@ -296,11 +288,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleMale()
     {
-<<<<<<< HEAD
         return static::randomElement(static::$title);
-=======
-        return static::title();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -308,11 +296,7 @@ class Person extends \Faker\Provider\Person
      */
     public static function titleFemale()
     {
-<<<<<<< HEAD
         return static::randomElement(static::$title);
-=======
-        return static::title();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -358,10 +342,6 @@ class Person extends \Faker\Provider\Person
             } else {
                 $nr[0] = 1;
                 $nr[1]++;
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
         return implode('', array_reverse($nr));

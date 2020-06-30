@@ -87,11 +87,7 @@ class AuthenticateSession
      */
     protected function logout($request)
     {
-<<<<<<< HEAD
         $this->auth->logout();
-=======
-        $this->auth->logoutCurrentDevice();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $request->session()->flush();
 

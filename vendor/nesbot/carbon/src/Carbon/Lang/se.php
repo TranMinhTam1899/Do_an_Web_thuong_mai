@@ -8,12 +8,6 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-<<<<<<< HEAD
-=======
-\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
-    return $number === 1 ? 0 : 1;
-}, 'se');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
@@ -21,7 +15,6 @@
  * - Karamell
  */
 return [
-<<<<<<< HEAD
     'year' => '{1}:count jahki|:count jagit',
     'a_year' => '{1}okta jahki|:count jagit',
     'y' => ':count j.',
@@ -42,28 +35,6 @@ return [
     'min' => ':count min.',
     'second' => '{1}:count sekunddat|:count sekunddat',
     'a_second' => '{1}moadde sekunddat|:count sekunddat',
-=======
-    'year' => ':count jahki|:count jagit',
-    'a_year' => 'okta jahki|:count jagit',
-    'y' => ':count j.',
-    'month' => ':count mánnu|:count mánut',
-    'a_month' => 'okta mánnu|:count mánut',
-    'm' => ':count mán.',
-    'week' => ':count vahkku|:count vahkku',
-    'a_week' => 'okta vahkku|:count vahkku',
-    'w' => ':count v.',
-    'day' => ':count beaivi|:count beaivvit',
-    'a_day' => 'okta beaivi|:count beaivvit',
-    'd' => ':count b.',
-    'hour' => ':count diimmu|:count diimmut',
-    'a_hour' => 'okta diimmu|:count diimmut',
-    'h' => ':count d.',
-    'minute' => ':count minuhta|:count minuhtat',
-    'a_minute' => 'okta minuhta|:count minuhtat',
-    'min' => ':count min.',
-    'second' => ':count sekunddat|:count sekunddat',
-    'a_second' => 'moadde sekunddat|:count sekunddat',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     's' => ':count s.',
     'ago' => 'maŋit :time',
     'from_now' => ':time geažes',

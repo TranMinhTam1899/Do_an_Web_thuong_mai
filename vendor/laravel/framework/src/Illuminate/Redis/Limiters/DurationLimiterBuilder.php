@@ -2,13 +2,8 @@
 
 namespace Illuminate\Redis\Limiters;
 
-<<<<<<< HEAD
 use Illuminate\Support\InteractsWithTime;
 use Illuminate\Contracts\Redis\LimiterTimeoutException;
-=======
-use Illuminate\Contracts\Redis\LimiterTimeoutException;
-use Illuminate\Support\InteractsWithTime;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DurationLimiterBuilder
 {

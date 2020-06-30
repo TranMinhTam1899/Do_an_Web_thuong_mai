@@ -12,10 +12,6 @@
 namespace Symfony\Component\Console\Output;
 
 use Symfony\Component\Console\Exception\InvalidArgumentException;
-<<<<<<< HEAD
-=======
-use Symfony\Component\Console\Exception\RuntimeException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Formatter\OutputFormatterInterface;
 
 /**
@@ -77,14 +73,7 @@ class StreamOutput extends Output
             $message .= PHP_EOL;
         }
 
-<<<<<<< HEAD
         @fwrite($this->stream, $message);
-=======
-        if (false === @fwrite($this->stream, $message)) {
-            // should never happen
-            throw new RuntimeException('Unable to write output.');
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         fflush($this->stream);
     }
@@ -104,14 +93,11 @@ class StreamOutput extends Output
      */
     protected function hasColorSupport()
     {
-<<<<<<< HEAD
         // Follow https://no-color.org/
         if (isset($_SERVER['NO_COLOR']) || false !== getenv('NO_COLOR')) {
             return false;
         }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ('Hyper' === getenv('TERM_PROGRAM')) {
             return true;
         }

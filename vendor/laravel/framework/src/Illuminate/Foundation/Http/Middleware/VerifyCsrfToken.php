@@ -3,22 +3,12 @@
 namespace Illuminate\Foundation\Http\Middleware;
 
 use Closure;
-<<<<<<< HEAD
 use Illuminate\Support\InteractsWithTime;
 use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-=======
-use Illuminate\Contracts\Encryption\Encrypter;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Session\TokenMismatchException;
-use Illuminate\Support\InteractsWithTime;
-use Symfony\Component\HttpFoundation\Cookie;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class VerifyCsrfToken
 {
@@ -187,13 +177,6 @@ class VerifyCsrfToken
     {
         $config = config('session');
 
-<<<<<<< HEAD
-=======
-        if ($response instanceof Responsable) {
-            $response = $response->toResponse($request);
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $response->headers->setCookie(
             new Cookie(
                 'XSRF-TOKEN', $request->session()->token(), $this->availableAt(60 * $config['lifetime']),

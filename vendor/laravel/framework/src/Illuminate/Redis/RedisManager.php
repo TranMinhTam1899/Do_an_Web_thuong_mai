@@ -2,18 +2,10 @@
 
 namespace Illuminate\Redis;
 
-<<<<<<< HEAD
 use InvalidArgumentException;
 use Illuminate\Contracts\Redis\Factory;
 use Illuminate\Redis\Connections\Connection;
 use Illuminate\Support\ConfigurationUrlParser;
-=======
-use Closure;
-use Illuminate\Contracts\Redis\Factory;
-use Illuminate\Redis\Connections\Connection;
-use Illuminate\Support\ConfigurationUrlParser;
-use InvalidArgumentException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Redis\Connections\Connection
@@ -169,11 +161,7 @@ class RedisManager implements Factory
         $customCreator = $this->customCreators[$this->driver] ?? null;
 
         if ($customCreator) {
-<<<<<<< HEAD
             return call_user_func($customCreator);
-=======
-            return $customCreator();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         switch ($this->driver) {
@@ -247,11 +235,7 @@ class RedisManager implements Factory
      * @param  \Closure  $callback
      * @return $this
      */
-<<<<<<< HEAD
     public function extend($driver, \Closure $callback)
-=======
-    public function extend($driver, Closure $callback)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->customCreators[$driver] = $callback->bindTo($this, $this);
 

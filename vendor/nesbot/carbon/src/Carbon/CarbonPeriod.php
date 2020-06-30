@@ -10,7 +10,6 @@
  */
 namespace Carbon;
 
-<<<<<<< HEAD
 use Carbon\Exceptions\InvalidCastException;
 use Carbon\Exceptions\InvalidIntervalException;
 use Carbon\Exceptions\InvalidPeriodDateException;
@@ -20,10 +19,6 @@ use Carbon\Exceptions\NotAPeriodException;
 use Carbon\Exceptions\UnknownMethodException;
 use Carbon\Exceptions\UnreachableException;
 use Carbon\Traits\IntervalRounding;
-=======
-use BadMethodCallException;
-use Carbon\Exceptions\NotAPeriodException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Carbon\Traits\Mixin;
 use Carbon\Traits\Options;
 use Closure;
@@ -35,10 +30,7 @@ use DateTimeInterface;
 use InvalidArgumentException;
 use Iterator;
 use JsonSerializable;
-<<<<<<< HEAD
 use ReflectionException;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use RuntimeException;
 
 /**
@@ -194,17 +186,11 @@ use RuntimeException;
  */
 class CarbonPeriod implements Iterator, Countable, JsonSerializable
 {
-<<<<<<< HEAD
     use IntervalRounding;
     use Mixin {
         Mixin::mixin as baseMixin;
     }
     use Options;
-=======
-    use Options, Mixin {
-        Mixin::mixin as baseMixin;
-    }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Built-in filters.
@@ -522,11 +508,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             } elseif ($end === null && $parsed = Carbon::make(static::addMissingParts($start, $part))) {
                 $end = $part;
             } else {
-<<<<<<< HEAD
                 throw new InvalidPeriodParameterException("Invalid ISO 8601 specification: $iso.");
-=======
-                throw new InvalidArgumentException("Invalid ISO 8601 specification: $iso.");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $result[] = $parsed;
@@ -603,11 +585,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      *
      * @param object|string $mixin
      *
-<<<<<<< HEAD
      * @throws ReflectionException
-=======
-     * @throws \ReflectionException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return void
      */
@@ -653,7 +631,6 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
         // Parse and assign arguments one by one. First argument may be an ISO 8601 spec,
         // which will be first parsed into parts and then processed the same way.
 
-<<<<<<< HEAD
         $agumentsCount = count($arguments);
 
         if ($agumentsCount && static::isIso8601($iso = $arguments[0])) {
@@ -678,12 +655,6 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             }
         }
 
-=======
-        if (count($arguments) && static::isIso8601($iso = $arguments[0])) {
-            array_splice($arguments, 0, 1, static::parseIso8601($iso));
-        }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($arguments as $argument) {
             if ($this->dateInterval === null &&
                 (
@@ -702,11 +673,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             } elseif ($this->options === null && (is_int($argument) || $argument === null)) {
                 $this->setOptions($argument);
             } else {
-<<<<<<< HEAD
                 throw new InvalidPeriodParameterException('Invalid constructor parameters.');
-=======
-                throw new InvalidArgumentException('Invalid constructor parameters.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 
@@ -748,15 +715,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
     public function setDateClass(string $dateClass)
     {
         if (!is_a($dateClass, CarbonInterface::class, true)) {
-<<<<<<< HEAD
             throw new NotACarbonClassException($dateClass);
-=======
-            throw new InvalidArgumentException(sprintf(
-                'Given class does not implement %s: %s',
-                CarbonInterface::class,
-                $dateClass
-            ));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->dateClass = $dateClass;
@@ -785,30 +744,18 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      *
      * @param DateInterval|string $interval
      *
-<<<<<<< HEAD
      * @throws InvalidIntervalException
-=======
-     * @throws \InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
     public function setDateInterval($interval)
     {
         if (!$interval = CarbonInterval::make($interval)) {
-<<<<<<< HEAD
             throw new InvalidIntervalException('Invalid interval.');
         }
 
         if ($interval->spec() === 'PT0S' && !$interval->f) {
             throw new InvalidIntervalException('Empty interval is not accepted.');
-=======
-            throw new InvalidArgumentException('Invalid interval.');
-        }
-
-        if ($interval->spec() === 'PT0S' && !$interval->f) {
-            throw new InvalidArgumentException('Empty interval is not accepted.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->dateInterval = $interval;
@@ -853,22 +800,14 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      *
      * @param int|null $options
      *
-<<<<<<< HEAD
      * @throws InvalidArgumentException
-=======
-     * @throws \InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
     public function setOptions($options)
     {
         if (!is_int($options) && !is_null($options)) {
-<<<<<<< HEAD
             throw new InvalidPeriodParameterException('Invalid options.');
-=======
-            throw new InvalidArgumentException('Invalid options.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->options = $options ?: 0;
@@ -1251,11 +1190,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
     public function setRecurrences($recurrences)
     {
         if (!is_numeric($recurrences) && !is_null($recurrences) || $recurrences < 0) {
-<<<<<<< HEAD
             throw new InvalidPeriodParameterException('Invalid number of recurrences.');
-=======
-            throw new InvalidArgumentException('Invalid number of recurrences.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ($recurrences === null) {
@@ -1298,22 +1233,14 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      * @param DateTime|DateTimeInterface|string $date
      * @param bool|null                         $inclusive
      *
-<<<<<<< HEAD
      * @throws InvalidPeriodDateException
-=======
-     * @throws \InvalidArgumentException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this
      */
     public function setStartDate($date, $inclusive = null)
     {
         if (!$date = call_user_func([$this->dateClass, 'make'], $date)) {
-<<<<<<< HEAD
             throw new InvalidPeriodDateException('Invalid start date.');
-=======
-            throw new InvalidArgumentException('Invalid start date.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->startDate = $date;
@@ -1338,11 +1265,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
     public function setEndDate($date, $inclusive = null)
     {
         if (!is_null($date) && !$date = call_user_func([$this->dateClass, 'make'], $date)) {
-<<<<<<< HEAD
             throw new InvalidPeriodDateException('Invalid end date.');
-=======
-            throw new InvalidArgumentException('Invalid end date.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (!$date) {
@@ -1514,11 +1437,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
     /**
      * Move forward to the next date.
      *
-<<<<<<< HEAD
      * @throws RuntimeException
-=======
-     * @throws \RuntimeException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return void
      */
@@ -1544,11 +1463,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      * @see https://bugs.php.net/bug.php?id=74274
      * @see https://wiki.php.net/rfc/datetime_and_daylight_saving_time
      *
-<<<<<<< HEAD
      * @throws RuntimeException
-=======
-     * @throws \RuntimeException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return void
      */
@@ -1557,18 +1472,11 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
         $this->key = 0;
         $this->current = call_user_func([$this->dateClass, 'make'], $this->startDate);
         $settings = $this->getSettings();
-<<<<<<< HEAD
 
         if ($this->hasLocalTranslator()) {
             $settings['locale'] = $this->getTranslatorLocale();
         }
 
-=======
-        $locale = $this->getLocalTranslator()->getLocale();
-        if ($locale) {
-            $settings['locale'] = $locale;
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->current->settings($settings);
         $this->timezone = static::intervalHasTime($this->dateInterval) ? $this->current->getTimezone() : null;
 
@@ -1602,11 +1510,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
     /**
      * Keep incrementing the current date until a valid date is found or the iteration is ended.
      *
-<<<<<<< HEAD
      * @throws RuntimeException
-=======
-     * @throws \RuntimeException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return void
      */
@@ -1620,11 +1524,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             $this->validationResult = null;
 
             if (++$attempts > static::NEXT_MAX_ATTEMPTS) {
-<<<<<<< HEAD
                 throw new UnreachableException('Could not find next valid date.');
-=======
-                throw new RuntimeException('Could not find next valid date.');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         } while ($this->validateCurrentDate() === false);
     }
@@ -1716,11 +1616,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
                 );
             }
 
-<<<<<<< HEAD
             throw new InvalidCastException("$className has not the instance() method needed to cast the date.");
-=======
-            throw new InvalidArgumentException("$className has not the instance() method needed to cast the date.");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $className::instance($this);
@@ -1853,21 +1749,10 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
             });
         }
 
-<<<<<<< HEAD
         $roundedValue = $this->callRoundMethod($method, $parameters);
 
         if ($roundedValue !== null) {
             return $roundedValue;
-=======
-        $action = substr($method, 0, 4);
-
-        if ($action !== 'ceil') {
-            $action = substr($method, 0, 5);
-        }
-
-        if (in_array($action, ['round', 'floor', 'ceil'])) {
-            return $this->{$action.'Unit'}(substr($method, strlen($action)), ...$parameters);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $first = count($parameters) >= 1 ? $parameters[0] : null;
@@ -1945,11 +1830,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
         }
 
         if ($this->localStrictModeEnabled ?? Carbon::isStrictModeEnabled()) {
-<<<<<<< HEAD
             throw new UnknownMethodException($method);
-=======
-            throw new BadMethodCallException("Method $method does not exist.");
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this;
@@ -2342,26 +2223,7 @@ class CarbonPeriod implements Iterator, Countable, JsonSerializable
      */
     public function round($precision = null, $function = 'round')
     {
-<<<<<<< HEAD
         return $this->roundWith($precision ?? (string) $this->getDateInterval(), $function);
-=======
-        $unit = 'second';
-
-        if ($precision === null || $precision instanceof DateInterval) {
-            $precision = (string) ($precision === null ? $this->getDateInterval() : CarbonInterval::instance($precision));
-        }
-
-        if (is_string($precision) && preg_match('/^\s*(?<precision>\d+)?\s*(?<unit>\w+)(?<other>\W.*)?$/', $precision, $match)) {
-            if (trim($match['other'] ?? '') !== '') {
-                throw new InvalidArgumentException('Rounding is only possible with single unit intervals.');
-            }
-
-            $precision = (int) ($match['precision'] ?: 1);
-            $unit = $match['unit'];
-        }
-
-        return $this->roundUnit($unit, $precision, $function);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

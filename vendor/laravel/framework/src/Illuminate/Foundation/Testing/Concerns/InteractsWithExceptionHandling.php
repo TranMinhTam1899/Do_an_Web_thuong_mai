@@ -3,13 +3,8 @@
 namespace Illuminate\Foundation\Testing\Concerns;
 
 use Exception;
-<<<<<<< HEAD
 use Illuminate\Validation\ValidationException;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-=======
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Validation\ValidationException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Application as ConsoleApplication;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -119,30 +114,18 @@ trait InteractsWithExceptionHandling
              */
             public function render($request, Exception $e)
             {
-<<<<<<< HEAD
                 if ($e instanceof NotFoundHttpException) {
                     throw new NotFoundHttpException(
                         "{$request->method()} {$request->url()}", null, $e->getCode()
                     );
                 }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 foreach ($this->except as $class) {
                     if ($e instanceof $class) {
                         return $this->originalHandler->render($request, $e);
                     }
                 }
 
-<<<<<<< HEAD
-=======
-                if ($e instanceof NotFoundHttpException) {
-                    throw new NotFoundHttpException(
-                        "{$request->method()} {$request->url()}", null, $e->getCode()
-                    );
-                }
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 throw $e;
             }
 

@@ -3,7 +3,6 @@
 namespace Illuminate\Foundation\Http;
 
 use Exception;
-<<<<<<< HEAD
 use Throwable;
 use Illuminate\Routing\Router;
 use Illuminate\Routing\Pipeline;
@@ -12,16 +11,6 @@ use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Http\Kernel as KernelContract;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
-=======
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\Http\Kernel as KernelContract;
-use Illuminate\Routing\Pipeline;
-use Illuminate\Routing\Router;
-use Illuminate\Support\Facades\Facade;
-use Symfony\Component\Debug\Exception\FatalThrowableError;
-use Throwable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Kernel implements KernelContract
 {

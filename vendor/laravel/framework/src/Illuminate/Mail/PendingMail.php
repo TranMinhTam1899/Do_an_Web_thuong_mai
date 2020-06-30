@@ -2,17 +2,10 @@
 
 namespace Illuminate\Mail;
 
-<<<<<<< HEAD
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Contracts\Mail\Mailable as MailableContract;
-=======
-use Illuminate\Contracts\Mail\Mailable as MailableContract;
-use Illuminate\Contracts\Mail\Mailer as MailerContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Contracts\Translation\HasLocalePreference;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PendingMail
 {
@@ -182,19 +175,9 @@ class PendingMail
      */
     protected function fill(MailableContract $mailable)
     {
-<<<<<<< HEAD
         return $mailable->to($this->to)
                         ->cc($this->cc)
                         ->bcc($this->bcc)
                         ->locale($this->locale);
-=======
-        return tap($mailable->to($this->to)
-            ->cc($this->cc)
-            ->bcc($this->bcc), function ($mailable) {
-                if ($this->locale) {
-                    $mailable->locale($this->locale);
-                }
-            });
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

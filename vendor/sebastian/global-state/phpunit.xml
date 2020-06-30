@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-<<<<<<< HEAD
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/6.1/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-=======
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.0/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         executionOrder="depends,defects"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
          forceCoversAnnotation="true"
          beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
          verbose="true">
-<<<<<<< HEAD
     <testsuite>
         <directory suffix="Test.php">tests</directory>
     </testsuite>
-=======
-    <testsuites>
-        <testsuite name="default">
-            <directory suffix="Test.php">tests</directory>
-        </testsuite>
-    </testsuites>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     <php>
         <const name="GLOBALSTATE_TESTSUITE" value="true"/>

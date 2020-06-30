@@ -19,20 +19,13 @@ use Psy\Readline\GNUReadline;
 use Psy\Readline\HoaConsole;
 use Psy\Readline\Libedit;
 use Psy\Readline\Readline;
-<<<<<<< HEAD
-=======
-use Psy\Readline\Transient;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Psy\TabCompletion\AutoCompleter;
 use Psy\VarDumper\Presenter;
 use Psy\VersionUpdater\Checker;
 use Psy\VersionUpdater\GitHubChecker;
 use Psy\VersionUpdater\IntervalChecker;
 use Psy\VersionUpdater\NoopChecker;
-<<<<<<< HEAD
 use Symfony\Component\Console\Output\OutputInterface;
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * The Psy Shell configuration.
@@ -830,11 +823,7 @@ class Configuration
     {
         if (!isset($this->output)) {
             $this->output = new ShellOutput(
-<<<<<<< HEAD
                 OutputInterface::VERBOSITY_NORMAL,
-=======
-                ShellOutput::VERBOSITY_NORMAL,
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $this->getOutputDecorated(),
                 null,
                 $this->getPager()

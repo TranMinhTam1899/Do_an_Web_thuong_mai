@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -15,10 +11,6 @@
 
 namespace Monolog\Handler;
 
-<<<<<<< HEAD
-=======
-use Monolog\Formatter\FormatterInterface;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 
@@ -32,15 +24,9 @@ use Monolog\Logger;
  */
 class FleepHookHandler extends SocketHandler
 {
-<<<<<<< HEAD
     const FLEEP_HOST = 'fleep.io';
 
     const FLEEP_HOOK_URI = '/hook/';
-=======
-    protected const FLEEP_HOST = 'fleep.io';
-
-    protected const FLEEP_HOOK_URI = '/hook/';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var string Webhook token (specifies the conversation where logs are sent)
@@ -54,19 +40,11 @@ class FleepHookHandler extends SocketHandler
      * see https://fleep.io/integrations/webhooks/
      *
      * @param  string                    $token  Webhook token
-<<<<<<< HEAD
      * @param  bool|int                  $level  The minimum logging level at which this handler will be triggered
      * @param  bool                      $bubble Whether the messages that are handled can bubble up the stack or not
      * @throws MissingExtensionException
      */
     public function __construct($token, $level = Logger::DEBUG, $bubble = true)
-=======
-     * @param  string|int                $level  The minimum logging level at which this handler will be triggered
-     * @param  bool                      $bubble Whether the messages that are handled can bubble up the stack or not
-     * @throws MissingExtensionException
-     */
-    public function __construct(string $token, $level = Logger::DEBUG, bool $bubble = true)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!extension_loaded('openssl')) {
             throw new MissingExtensionException('The OpenSSL PHP extension is required to use the FleepHookHandler');
@@ -74,11 +52,7 @@ class FleepHookHandler extends SocketHandler
 
         $this->token = $token;
 
-<<<<<<< HEAD
         $connectionString = 'ssl://' . self::FLEEP_HOST . ':443';
-=======
-        $connectionString = 'ssl://' . static::FLEEP_HOST . ':443';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         parent::__construct($connectionString, $level, $bubble);
     }
 
@@ -89,26 +63,17 @@ class FleepHookHandler extends SocketHandler
      *
      * @return LineFormatter
      */
-<<<<<<< HEAD
     protected function getDefaultFormatter()
-=======
-    protected function getDefaultFormatter(): FormatterInterface
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new LineFormatter(null, null, true, true);
     }
 
     /**
      * Handles a log record
-<<<<<<< HEAD
      *
      * @param array $record
      */
     public function write(array $record)
-=======
-     */
-    public function write(array $record): void
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         parent::write($record);
         $this->closeSocket();
@@ -116,16 +81,11 @@ class FleepHookHandler extends SocketHandler
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
      *
      * @param  array  $record
      * @return string
      */
     protected function generateDataStream($record)
-=======
-     */
-    protected function generateDataStream(array $record): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $content = $this->buildContent($record);
 
@@ -134,7 +94,6 @@ class FleepHookHandler extends SocketHandler
 
     /**
      * Builds the header of the API Call
-<<<<<<< HEAD
      *
      * @param  string $content
      * @return string
@@ -143,13 +102,6 @@ class FleepHookHandler extends SocketHandler
     {
         $header = "POST " . self::FLEEP_HOOK_URI . $this->token . " HTTP/1.1\r\n";
         $header .= "Host: " . self::FLEEP_HOST . "\r\n";
-=======
-     */
-    private function buildHeader(string $content): string
-    {
-        $header = "POST " . static::FLEEP_HOOK_URI . $this->token . " HTTP/1.1\r\n";
-        $header .= "Host: " . static::FLEEP_HOST . "\r\n";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
         $header .= "Content-Length: " . strlen($content) . "\r\n";
         $header .= "\r\n";
@@ -159,7 +111,6 @@ class FleepHookHandler extends SocketHandler
 
     /**
      * Builds the body of API call
-<<<<<<< HEAD
      *
      * @param  array  $record
      * @return string
@@ -169,14 +120,6 @@ class FleepHookHandler extends SocketHandler
         $dataArray = array(
             'message' => $record['formatted'],
         );
-=======
-     */
-    private function buildContent(array $record): string
-    {
-        $dataArray = [
-            'message' => $record['formatted'],
-        ];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return http_build_query($dataArray);
     }

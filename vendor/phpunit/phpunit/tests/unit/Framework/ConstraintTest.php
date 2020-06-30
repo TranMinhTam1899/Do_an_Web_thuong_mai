@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -18,14 +14,7 @@ use PHPUnit\Framework\Constraint\SameSize;
 use PHPUnit\Framework\Constraint\TraversableContains;
 use PHPUnit\Util\Filter;
 
-<<<<<<< HEAD
 class ConstraintTest extends TestCase
-=======
-/**
- * @small
- */
-final class ConstraintTest extends TestCase
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testConstraintArrayNotHasKey(): void
     {
@@ -1006,12 +995,6 @@ EOF
         $this->fail();
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @testdox Constraint PCRE not match
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testConstraintPCRENotMatch(): void
     {
         $constraint = Assert::logicalNot(
@@ -1041,12 +1024,6 @@ EOF
         $this->fail();
     }
 
-<<<<<<< HEAD
-=======
-    /**
-     * @testdox Constraint PCRE not match with custom message
-     */
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testConstraintPCRENotMatch2(): void
     {
         $constraint = Assert::logicalNot(
@@ -1322,7 +1299,6 @@ EOF
         $this->fail();
     }
 
-<<<<<<< HEAD
     public function testAttributeNotEqualTo(): void
     {
         $object     = new \ClassWithNonPublicAttributes;
@@ -1383,8 +1359,6 @@ EOF
         $this->fail();
     }
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testConstraintCountWithAnArray(): void
     {
         $constraint = new Count(5);

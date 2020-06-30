@@ -2,15 +2,9 @@
 
 namespace Illuminate\Foundation\Auth;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
-=======
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait RegistersUsers
 {

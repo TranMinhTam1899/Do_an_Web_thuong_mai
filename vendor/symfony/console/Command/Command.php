@@ -55,11 +55,7 @@ class Command
      */
     public static function getDefaultName()
     {
-<<<<<<< HEAD
         $class = static::class;
-=======
-        $class = \get_called_class();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $r = new \ReflectionProperty($class, 'defaultName');
 
         return $class === $r->class ? static::$defaultName : null;
@@ -154,11 +150,7 @@ class Command
      * execute() method, you set the code to execute by passing
      * a Closure to the setCode() method.
      *
-<<<<<<< HEAD
      * @return int 0 if everything went fine, or an exit code
-=======
-     * @return int|null null or 0 if everything went fine, or an error code
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws LogicException When this abstract method is not implemented
      *
@@ -261,13 +253,10 @@ class Command
             $statusCode = ($this->code)($input, $output);
         } else {
             $statusCode = $this->execute($input, $output);
-<<<<<<< HEAD
 
             if (!\is_int($statusCode)) {
                 @trigger_error(sprintf('Return value of "%s::execute()" should always be of the type int since Symfony 4.4, %s returned.', static::class, \gettype($statusCode)), E_USER_DEPRECATED);
             }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return is_numeric($statusCode) ? (int) $statusCode : 0;
@@ -355,11 +344,7 @@ class Command
     public function getDefinition()
     {
         if (null === $this->definition) {
-<<<<<<< HEAD
             throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', static::class));
-=======
-            throw new LogicException(sprintf('Command class "%s" is not correctly initialized. You probably forgot to call the parent constructor.', \get_class($this)));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->definition;
@@ -574,11 +559,7 @@ class Command
     public function setAliases($aliases)
     {
         if (!\is_array($aliases) && !$aliases instanceof \Traversable) {
-<<<<<<< HEAD
             throw new InvalidArgumentException('$aliases must be an array or an instance of \Traversable.');
-=======
-            throw new InvalidArgumentException('$aliases must be an array or an instance of \Traversable');
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         foreach ($aliases as $alias) {

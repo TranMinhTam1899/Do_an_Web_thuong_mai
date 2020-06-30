@@ -50,11 +50,7 @@ class OrderedTimeCodec extends StringCodec
      *
      * @param string $bytes
      * @return UuidInterface
-<<<<<<< HEAD
      * @throws InvalidArgumentException if string has not 16 characters
-=======
-     * @throws \InvalidArgumentException if string has not 16 characters
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decodeBytes($bytes)
     {

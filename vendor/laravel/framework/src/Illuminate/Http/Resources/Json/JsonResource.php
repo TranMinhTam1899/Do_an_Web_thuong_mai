@@ -3,7 +3,6 @@
 namespace Illuminate\Http\Resources\Json;
 
 use ArrayAccess;
-<<<<<<< HEAD
 use JsonSerializable;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Support\Arrayable;
@@ -11,15 +10,6 @@ use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\Resources\DelegatesToResource;
 use Illuminate\Http\Resources\ConditionallyLoadsAttributes;
-=======
-use Illuminate\Container\Container;
-use Illuminate\Contracts\Routing\UrlRoutable;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Responsable;
-use Illuminate\Http\Resources\ConditionallyLoadsAttributes;
-use Illuminate\Http\Resources\DelegatesToResource;
-use JsonSerializable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class JsonResource implements ArrayAccess, JsonSerializable, Responsable, UrlRoutable
 {

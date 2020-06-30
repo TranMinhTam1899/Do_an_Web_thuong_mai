@@ -173,11 +173,7 @@ function generateUpToDateMimeArray()
     ksort($valid_mime_types);
 
     // combine mime types and extensions array
-<<<<<<< HEAD
     $output = "$preamble\$swift_mime_types = array(\n    ".implode(",\n    ", $valid_mime_types)."\n);";
-=======
-    $output = "$preamble\$swift_mime_types = array(\n    ".implode($valid_mime_types, ",\n    ")."\n);";
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     // write mime_types.php config file
     @file_put_contents('./mime_types.php', $output);

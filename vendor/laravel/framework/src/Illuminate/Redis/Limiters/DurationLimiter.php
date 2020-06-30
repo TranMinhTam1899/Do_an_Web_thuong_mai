@@ -51,17 +51,10 @@ class DurationLimiter
     /**
      * Create a new duration limiter instance.
      *
-<<<<<<< HEAD
      * @param  \Illuminate\Redis\Connections\Connection $redis
      * @param  string $name
      * @param  int $maxLocks
      * @param  int $decay
-=======
-     * @param  \Illuminate\Redis\Connections\Connection  $redis
-     * @param  string  $name
-     * @param  int  $maxLocks
-     * @param  int  $decay
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function __construct($redis, $name, $maxLocks, $decay)
@@ -75,15 +68,9 @@ class DurationLimiter
     /**
      * Attempt to acquire the lock for the given number of seconds.
      *
-<<<<<<< HEAD
      * @param  int $timeout
      * @param  callable|null $callback
      * @return bool
-=======
-     * @param  int  $timeout
-     * @param  callable|null  $callback
-     * @return mixed
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws \Illuminate\Contracts\Redis\LimiterTimeoutException
      */
@@ -100,11 +87,7 @@ class DurationLimiter
         }
 
         if (is_callable($callback)) {
-<<<<<<< HEAD
             $callback();
-=======
-            return $callback();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return true;

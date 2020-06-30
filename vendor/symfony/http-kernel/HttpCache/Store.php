@@ -259,15 +259,8 @@ class Store implements StoreInterface
      * @param string $vary A Response vary header
      * @param array  $env1 A Request HTTP header array
      * @param array  $env2 A Request HTTP header array
-<<<<<<< HEAD
      */
     private function requestsMatch(?string $vary, array $env1, array $env2): bool
-=======
-     *
-     * @return bool true if the two environments match, false otherwise
-     */
-    private function requestsMatch($vary, $env1, $env2)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (empty($vary)) {
             return true;
@@ -289,17 +282,8 @@ class Store implements StoreInterface
      * Gets all data associated with the given key.
      *
      * Use this method only if you know what you are doing.
-<<<<<<< HEAD
      */
     private function getMetadata(string $key): array
-=======
-     *
-     * @param string $key The store key
-     *
-     * @return array An array of data associated with the key
-     */
-    private function getMetadata($key)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$entries = $this->load($key)) {
             return [];
@@ -330,17 +314,8 @@ class Store implements StoreInterface
 
     /**
      * Purges data for the given URL.
-<<<<<<< HEAD
      */
     private function doPurge(string $url): bool
-=======
-     *
-     * @param string $url A URL
-     *
-     * @return bool true if the URL exists and has been purged, false otherwise
-     */
-    private function doPurge($url)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $key = $this->getCacheKey(Request::create($url));
         if (isset($this->locks[$key])) {
@@ -360,17 +335,8 @@ class Store implements StoreInterface
 
     /**
      * Loads data for the given key.
-<<<<<<< HEAD
      */
     private function load(string $key): ?string
-=======
-     *
-     * @param string $key The store key
-     *
-     * @return string|null The data associated with the key
-     */
-    private function load($key)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $path = $this->getPath($key);
 
@@ -379,18 +345,8 @@ class Store implements StoreInterface
 
     /**
      * Save data for the given key.
-<<<<<<< HEAD
      */
     private function save(string $key, string $data): bool
-=======
-     *
-     * @param string $key  The store key
-     * @param string $data The data to store
-     *
-     * @return bool
-     */
-    private function save($key, $data)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $path = $this->getPath($key);
 
@@ -460,15 +416,8 @@ class Store implements StoreInterface
 
     /**
      * Returns a cache key for the given Request.
-<<<<<<< HEAD
      */
     private function getCacheKey(Request $request): string
-=======
-     *
-     * @return string A key for the given Request
-     */
-    private function getCacheKey(Request $request)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (isset($this->keyCache[$request])) {
             return $this->keyCache[$request];
@@ -479,30 +428,16 @@ class Store implements StoreInterface
 
     /**
      * Persists the Request HTTP headers.
-<<<<<<< HEAD
      */
     private function persistRequest(Request $request): array
-=======
-     *
-     * @return array An array of HTTP headers
-     */
-    private function persistRequest(Request $request)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $request->headers->all();
     }
 
     /**
      * Persists the Response HTTP headers.
-<<<<<<< HEAD
      */
     private function persistResponse(Response $response): array
-=======
-     *
-     * @return array An array of HTTP headers
-     */
-    private function persistResponse(Response $response)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $headers = $response->headers->all();
         $headers['X-Status'] = [$response->getStatusCode()];
@@ -512,18 +447,8 @@ class Store implements StoreInterface
 
     /**
      * Restores a Response from the HTTP headers and body.
-<<<<<<< HEAD
      */
     private function restoreResponse(array $headers, string $body = null): Response
-=======
-     *
-     * @param array  $headers An array of HTTP headers for the Response
-     * @param string $body    The Response body
-     *
-     * @return Response
-     */
-    private function restoreResponse($headers, $body = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $status = $headers['X-Status'][0];
         unset($headers['X-Status']);

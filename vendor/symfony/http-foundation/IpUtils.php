@@ -153,7 +153,6 @@ class IpUtils
 
         return self::$checkedIps[$cacheKey] = true;
     }
-<<<<<<< HEAD
 
     /**
      * Anonymizes an IP/IPv6.
@@ -186,6 +185,4 @@ class IpUtils
 
         return $ip;
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

@@ -36,11 +36,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
      *
      * @param string $cmd The command to run to get the mime type of a file
      */
-<<<<<<< HEAD
     public function __construct(string $cmd = 'file -b --mime -- %s 2>/dev/null')
-=======
-    public function __construct(string $cmd = 'file -b --mime %s 2>/dev/null')
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->cmd = $cmd;
     }
@@ -89,11 +85,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
         ob_start();
 
         // need to use --mime instead of -i. see #6641
-<<<<<<< HEAD
         passthru(sprintf($this->cmd, escapeshellarg((0 === strpos($path, '-') ? './' : '').$path)), $return);
-=======
-        passthru(sprintf($this->cmd, escapeshellarg($path)), $return);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($return > 0) {
             ob_end_clean();
 
@@ -102,11 +94,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
 
         $type = trim(ob_get_clean());
 
-<<<<<<< HEAD
         if (!preg_match('#^([a-z0-9\-]+/[a-z0-9\-\+\.]+)#i', $type, $match)) {
-=======
-        if (!preg_match('#^([a-z0-9\-]+/[a-z0-9\-\.]+)#i', $type, $match)) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // it's not a type, but an error message
             return null;
         }

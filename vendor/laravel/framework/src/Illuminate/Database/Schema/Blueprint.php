@@ -2,7 +2,6 @@
 
 namespace Illuminate\Database\Schema;
 
-<<<<<<< HEAD
 use Closure;
 use BadMethodCallException;
 use Illuminate\Support\Fluent;
@@ -10,15 +9,6 @@ use Illuminate\Database\Connection;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Database\SQLiteConnection;
 use Illuminate\Database\Schema\Grammars\Grammar;
-=======
-use BadMethodCallException;
-use Closure;
-use Illuminate\Database\Connection;
-use Illuminate\Database\Schema\Grammars\Grammar;
-use Illuminate\Database\SQLiteConnection;
-use Illuminate\Support\Fluent;
-use Illuminate\Support\Traits\Macroable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Blueprint
 {

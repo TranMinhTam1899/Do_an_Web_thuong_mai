@@ -9,22 +9,15 @@
  * file that was distributed with this source code.
  */
 
-<<<<<<< HEAD
 /*
-=======
-/**
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - du
  * - JD Isaacks
  * - Nafies Luthfi
  * - Raymundus Jati Primanda (mundusjp)
-<<<<<<< HEAD
  * - diankur313
  * - a-wip0
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count tahun',
@@ -49,18 +42,12 @@ return [
     'a_second' => '{1}beberapa detik|]1,Inf[:count detik',
     's' => ':countdt',
     'ago' => ':time yang lalu',
-<<<<<<< HEAD
     'from_now' => ':time dari sekarang',
     'after' => ':time setelahnya',
     'before' => ':time sebelumnya',
     'diff_now' => 'sekarang',
     'diff_yesterday' => 'kemarin',
     'diff_tomorrow' => 'besok',
-=======
-    'from_now' => 'dalam :time',
-    'after' => ':time setelahnya',
-    'before' => ':time sebelumnya',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH.mm',
         'LTS' => 'HH.mm.ss',

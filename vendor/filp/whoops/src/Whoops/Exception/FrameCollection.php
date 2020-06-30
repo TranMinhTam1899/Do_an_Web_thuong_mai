@@ -61,11 +61,7 @@ class FrameCollection implements ArrayAccess, IteratorAggregate, Serializable, C
 
             if (!$frame instanceof Frame) {
                 throw new UnexpectedValueException(
-<<<<<<< HEAD
                     "Callable to " . __CLASS__ . "::map must return a Frame object"
-=======
-                    "Callable to " . __METHOD__ . " must return a Frame object"
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 );
             }
 

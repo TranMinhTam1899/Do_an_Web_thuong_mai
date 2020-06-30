@@ -83,22 +83,14 @@ class HtmlLorem extends Base
                 $this->addRandomAttribute($sibling);
                 $this->addRandomSubTree($sibling, mt_rand(0, $maxDepth), $maxWidth);
             }
-<<<<<<< HEAD
         }
-=======
-        };
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $root;
     }
 
     private function addRandomLeaf(\DOMElement $node)
     {
         $rand = mt_rand(1, 10);
-<<<<<<< HEAD
         switch ($rand) {
-=======
-        switch($rand){
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             case 1:
                 $this->addRandomP($node);
                 break;
@@ -180,10 +172,6 @@ class HtmlLorem extends Base
         $node = $element->ownerDocument->createElement($h);
         $node->appendChild($text);
         $element->appendChild($node);
-<<<<<<< HEAD
-=======
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     private function addRandomB(\DOMElement $element, $maxLength = 10)

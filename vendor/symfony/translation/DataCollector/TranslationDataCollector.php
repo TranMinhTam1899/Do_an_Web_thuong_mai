@@ -16,18 +16,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
 use Symfony\Component\Translation\DataCollectorTranslator;
-<<<<<<< HEAD
 use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
  * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
  *
  * @final since Symfony 4.4
-=======
-
-/**
- * @author Abdellatif Ait boudad <a.aitboudad@gmail.com>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class TranslationDataCollector extends DataCollector implements LateDataCollectorInterface
 {
@@ -53,15 +47,10 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
 
     /**
      * {@inheritdoc}
-<<<<<<< HEAD
      *
      * @param \Throwable|null $exception
      */
     public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
-=======
-     */
-    public function collect(Request $request, Response $response, \Exception $exception = null)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->data['locale'] = $this->translator->getLocale();
         $this->data['fallback_locales'] = $this->translator->getFallbackLocales();
@@ -128,11 +117,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return 'translation';
     }
 
-<<<<<<< HEAD
     private function sanitizeCollectedMessages(array $messages)
-=======
-    private function sanitizeCollectedMessages($messages)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $result = [];
         foreach ($messages as $key => $message) {
@@ -157,11 +142,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $result;
     }
 
-<<<<<<< HEAD
     private function computeCount(array $messages)
-=======
-    private function computeCount($messages)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $count = [
             DataCollectorTranslator::MESSAGE_DEFINED => 0,
@@ -176,11 +157,7 @@ class TranslationDataCollector extends DataCollector implements LateDataCollecto
         return $count;
     }
 
-<<<<<<< HEAD
     private function sanitizeString(string $string, int $length = 80)
-=======
-    private function sanitizeString($string, $length = 80)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $string = trim(preg_replace('/\s+/', ' ', $string));
 

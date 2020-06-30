@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -15,11 +11,8 @@
 
 namespace Monolog\Formatter;
 
-<<<<<<< HEAD
 use Monolog\Utils;
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Class FluentdFormatter
  *
@@ -48,72 +41,42 @@ class FluentdFormatter implements FormatterInterface
      */
     protected $levelTag = false;
 
-<<<<<<< HEAD
     public function __construct($levelTag = false)
-=======
-    public function __construct(bool $levelTag = false)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!function_exists('json_encode')) {
             throw new \RuntimeException('PHP\'s json extension is required to use Monolog\'s FluentdUnixFormatter');
         }
 
-<<<<<<< HEAD
         $this->levelTag = (bool) $levelTag;
     }
 
     public function isUsingLevelsInTag()
-=======
-        $this->levelTag = $levelTag;
-    }
-
-    public function isUsingLevelsInTag(): bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->levelTag;
     }
 
-<<<<<<< HEAD
     public function format(array $record)
-=======
-    public function format(array $record): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $tag = $record['channel'];
         if ($this->levelTag) {
             $tag .= '.' . strtolower($record['level_name']);
         }
 
-<<<<<<< HEAD
         $message = array(
             'message' => $record['message'],
             'context' => $record['context'],
             'extra' => $record['extra'],
         );
-=======
-        $message = [
-            'message' => $record['message'],
-            'context' => $record['context'],
-            'extra' => $record['extra'],
-        ];
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!$this->levelTag) {
             $message['level'] = $record['level'];
             $message['level_name'] = $record['level_name'];
         }
 
-<<<<<<< HEAD
         return Utils::jsonEncode(array($tag, $record['datetime']->getTimestamp(), $message));
     }
 
     public function formatBatch(array $records)
-=======
-        return json_encode([$tag, $record['datetime']->getTimestamp(), $message]);
-    }
-
-    public function formatBatch(array $records): string
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $message = '';
         foreach ($records as $record) {

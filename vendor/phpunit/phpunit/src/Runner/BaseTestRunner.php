@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,19 +12,12 @@ namespace PHPUnit\Runner;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\Test;
 use PHPUnit\Framework\TestSuite;
-<<<<<<< HEAD
 use ReflectionClass;
 use ReflectionException;
 use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
 
 /**
  * Base class for all test runners.
-=======
-use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
-
-/**
- * @internal This class is not covered by the backward compatibility promise for PHPUnit
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 abstract class BaseTestRunner
 {
@@ -96,16 +85,10 @@ abstract class BaseTestRunner
      */
     public function getTest(string $suiteClassName, string $suiteClassFile = '', $suffixes = ''): ?Test
     {
-<<<<<<< HEAD
         if (\is_dir($suiteClassName) &&
             !\is_file($suiteClassName . '.php') && empty($suiteClassFile)) {
             $facade = new FileIteratorFacade;
             $files  = $facade->getFilesAsArray(
-=======
-        if (empty($suiteClassFile) && \is_dir($suiteClassName) && !\is_file($suiteClassName . '.php')) {
-            /** @var string[] $files */
-            $files = (new FileIteratorFacade)->getFilesAsArray(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $suiteClassName,
                 $suffixes
             );
@@ -138,7 +121,6 @@ abstract class BaseTestRunner
                 return null;
             }
 
-<<<<<<< HEAD
             try {
                 $test = $suiteMethod->invoke(null, $testClass->getName());
             } catch (ReflectionException $e) {
@@ -152,10 +134,6 @@ abstract class BaseTestRunner
                 return null;
             }
         } catch (ReflectionException $e) {
-=======
-            $test = $suiteMethod->invoke(null, $testClass->getName());
-        } catch (\ReflectionException $e) {
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             try {
                 $test = new TestSuite($testClass);
             } catch (Exception $e) {
@@ -172,17 +150,11 @@ abstract class BaseTestRunner
     /**
      * Returns the loaded ReflectionClass for a suite name.
      */
-<<<<<<< HEAD
     protected function loadSuiteClass(string $suiteClassName, string $suiteClassFile = ''): ReflectionClass
     {
         $loader = $this->getLoader();
 
         return $loader->load($suiteClassName, $suiteClassFile);
-=======
-    protected function loadSuiteClass(string $suiteClassName, string $suiteClassFile = ''): \ReflectionClass
-    {
-        return $this->getLoader()->load($suiteClassName, $suiteClassFile);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -196,9 +168,5 @@ abstract class BaseTestRunner
      * Override to define how to handle a failed loading of
      * a test suite.
      */
-<<<<<<< HEAD
     abstract protected function runFailed(string $message);
-=======
-    abstract protected function runFailed(string $message): void;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

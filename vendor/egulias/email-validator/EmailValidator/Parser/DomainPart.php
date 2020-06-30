@@ -35,13 +35,10 @@ use Egulias\EmailValidator\Warning\TLD;
 class DomainPart extends Parser
 {
     const DOMAIN_MAX_LENGTH = 254;
-<<<<<<< HEAD
 
     /**
      * @var string
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected $domainPart = '';
 
     public function parse($domainPart)
@@ -102,24 +99,18 @@ class DomainPart extends Parser
         }
     }
 
-<<<<<<< HEAD
     /**
      * @return string
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function getDomainPart()
     {
         return $this->domainPart;
     }
 
-<<<<<<< HEAD
     /**
      * @param string $addressLiteral
      * @param int $maxGroups
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function checkIPV6Tag($addressLiteral, $maxGroups = 8)
     {
         $prev = $this->lexer->getPrevious();
@@ -163,12 +154,9 @@ class DomainPart extends Parser
         }
     }
 
-<<<<<<< HEAD
     /**
      * @return string
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function doParseDomainPart()
     {
         $domain = '';
@@ -215,11 +203,7 @@ class DomainPart extends Parser
         return $domain;
     }
 
-<<<<<<< HEAD
     private function checkNotAllowedChars(array $token)
-=======
-    private function checkNotAllowedChars($token)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $notAllowed = [EmailLexer::S_BACKSLASH => true, EmailLexer::S_SLASH=> true];
         if (isset($notAllowed[$token['type']])) {
@@ -227,12 +211,9 @@ class DomainPart extends Parser
         }
     }
 
-<<<<<<< HEAD
     /**
      * @return string|false
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function parseDomainLiteral()
     {
         if ($this->lexer->isNextToken(EmailLexer::S_COLON)) {
@@ -249,12 +230,9 @@ class DomainPart extends Parser
         return $this->doParseDomainLiteral();
     }
 
-<<<<<<< HEAD
     /**
      * @return string|false
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function doParseDomainLiteral()
     {
         $IPv6TAG = false;
@@ -322,14 +300,11 @@ class DomainPart extends Parser
         return $addressLiteral;
     }
 
-<<<<<<< HEAD
     /**
      * @param string $addressLiteral
      *
      * @return string|false
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function checkIPV4Tag($addressLiteral)
     {
         $matchesIP  = array();
@@ -347,21 +322,13 @@ class DomainPart extends Parser
                 return false;
             }
             // Convert IPv4 part to IPv6 format for further testing
-<<<<<<< HEAD
             $addressLiteral = substr($addressLiteral, 0, (int) $index) . '0:0';
-=======
-            $addressLiteral = substr($addressLiteral, 0, $index) . '0:0';
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $addressLiteral;
     }
 
-<<<<<<< HEAD
     protected function checkDomainPartExceptions(array $prev)
-=======
-    protected function checkDomainPartExceptions($prev)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $invalidDomainTokens = array(
             EmailLexer::S_DQUOTE => true,
@@ -396,12 +363,9 @@ class DomainPart extends Parser
         }
     }
 
-<<<<<<< HEAD
     /**
      * @return bool
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function hasBrackets()
     {
         if ($this->lexer->token['type'] !== EmailLexer::S_OPENBRACKET) {
@@ -417,11 +381,7 @@ class DomainPart extends Parser
         return true;
     }
 
-<<<<<<< HEAD
     protected function checkLabelLength(array $prev)
-=======
-    protected function checkLabelLength($prev)
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($this->lexer->token['type'] === EmailLexer::S_DOT &&
             $prev['type'] === EmailLexer::GENERIC &&

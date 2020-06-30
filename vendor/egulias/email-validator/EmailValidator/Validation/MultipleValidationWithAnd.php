@@ -30,20 +30,12 @@ class MultipleValidationWithAnd implements EmailValidation
     private $warnings = [];
 
     /**
-<<<<<<< HEAD
      * @var MultipleErrors|null
-=======
-     * @var MultipleErrors
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $error;
 
     /**
-<<<<<<< HEAD
      * @var int
-=======
-     * @var bool
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $mode;
 
@@ -87,15 +79,12 @@ class MultipleValidationWithAnd implements EmailValidation
         return $result;
     }
 
-<<<<<<< HEAD
     /**
      * @param \Egulias\EmailValidator\Exception\InvalidEmail|null $possibleError
      * @param \Egulias\EmailValidator\Exception\InvalidEmail[] $errors
      *
      * @return \Egulias\EmailValidator\Exception\InvalidEmail[]
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function addNewError($possibleError, array $errors)
     {
         if (null !== $possibleError) {
@@ -105,27 +94,20 @@ class MultipleValidationWithAnd implements EmailValidation
         return $errors;
     }
 
-<<<<<<< HEAD
     /**
      * @param bool $result
      *
      * @return bool
      */
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function shouldStop($result)
     {
         return !$result && $this->mode === self::STOP_ON_ERROR;
     }
 
     /**
-<<<<<<< HEAD
      * Returns the validation errors.
      *
      * @return MultipleErrors|null
-=======
-     * {@inheritdoc}
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getError()
     {

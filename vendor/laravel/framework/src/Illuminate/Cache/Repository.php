@@ -2,7 +2,6 @@
 
 namespace Illuminate\Cache;
 
-<<<<<<< HEAD
 use Closure;
 use ArrayAccess;
 use DateTimeInterface;
@@ -17,31 +16,11 @@ use Illuminate\Cache\Events\KeyForgotten;
 use Illuminate\Support\InteractsWithTime;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
-=======
-use ArrayAccess;
-use BadMethodCallException;
-use Closure;
-use DateTimeInterface;
-use Illuminate\Cache\Events\CacheHit;
-use Illuminate\Cache\Events\CacheMissed;
-use Illuminate\Cache\Events\KeyForgotten;
-use Illuminate\Cache\Events\KeyWritten;
-use Illuminate\Contracts\Cache\Repository as CacheContract;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Traits\Macroable;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Contracts\Cache\Store
  */
-<<<<<<< HEAD
 class Repository implements CacheContract, ArrayAccess
-=======
-class Repository implements ArrayAccess, CacheContract
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use InteractsWithTime;
     use Macroable {

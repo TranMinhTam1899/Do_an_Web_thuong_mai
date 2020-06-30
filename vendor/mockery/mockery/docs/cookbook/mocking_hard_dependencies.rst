@@ -16,11 +16,7 @@ Let's take the following code for an example:
     {
         function callExternalService($param)
         {
-<<<<<<< HEAD
             $externalService = new Service\External($version = 5);
-=======
-            $externalService = new Service\External();
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $externalService->sendSomething($param);
             return $externalService->getSomething();
         }
@@ -96,7 +92,6 @@ Our test example from above now becomes:
         }
     }
 
-<<<<<<< HEAD
 
 
 Testing the constructor arguments of hard Dependencies
@@ -135,8 +130,6 @@ constructor.
     For more straightforward and single-process tests oriented way check
     :ref:`mocking-class-within-class`.
 
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 .. note::
 
     This cookbook entry is an adaption of the blog post titled

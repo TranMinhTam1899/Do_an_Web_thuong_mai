@@ -2,14 +2,8 @@
 
 namespace Illuminate\Cache;
 
-<<<<<<< HEAD
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
-=======
-use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\ServiceProvider;
-use Symfony\Component\Cache\Adapter\Psr16Adapter;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CacheServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -28,13 +22,6 @@ class CacheServiceProvider extends ServiceProvider implements DeferrableProvider
             return $app['cache']->driver();
         });
 
-<<<<<<< HEAD
-=======
-        $this->app->singleton('cache.psr6', function ($app) {
-            return new Psr16Adapter($app['cache.store']);
-        });
-
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->app->singleton('memcached.connector', function () {
             return new MemcachedConnector;
         });
@@ -48,11 +35,7 @@ class CacheServiceProvider extends ServiceProvider implements DeferrableProvider
     public function provides()
     {
         return [
-<<<<<<< HEAD
             'cache', 'cache.store', 'memcached.connector',
-=======
-            'cache', 'cache.store', 'cache.psr6', 'memcached.connector',
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ];
     }
 }

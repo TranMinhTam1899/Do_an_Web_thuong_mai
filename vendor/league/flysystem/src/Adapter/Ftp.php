@@ -6,17 +6,11 @@ use ErrorException;
 use League\Flysystem\Adapter\Polyfill\StreamedCopyTrait;
 use League\Flysystem\AdapterInterface;
 use League\Flysystem\Config;
-<<<<<<< HEAD
 use League\Flysystem\ConnectionErrorException;
 use League\Flysystem\ConnectionRuntimeException;
 use League\Flysystem\InvalidRootException;
 use League\Flysystem\Util;
 use League\Flysystem\Util\MimeType;
-=======
-use League\Flysystem\Util;
-use League\Flysystem\Util\MimeType;
-use RuntimeException;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Ftp extends AbstractFtpAdapter
 {
@@ -137,7 +131,6 @@ class Ftp extends AbstractFtpAdapter
     public function connect()
     {
         if ($this->ssl) {
-<<<<<<< HEAD
             $this->connection = @ftp_ssl_connect($this->getHost(), $this->getPort(), $this->getTimeout());
         } else {
             $this->connection = @ftp_connect($this->getHost(), $this->getPort(), $this->getTimeout());
@@ -145,15 +138,6 @@ class Ftp extends AbstractFtpAdapter
 
         if ( ! $this->connection) {
             throw new ConnectionRuntimeException('Could not connect to host: ' . $this->getHost() . ', port:' . $this->getPort());
-=======
-            $this->connection = ftp_ssl_connect($this->getHost(), $this->getPort(), $this->getTimeout());
-        } else {
-            $this->connection = ftp_connect($this->getHost(), $this->getPort(), $this->getTimeout());
-        }
-
-        if ( ! $this->connection) {
-            throw new RuntimeException('Could not connect to host: ' . $this->getHost() . ', port:' . $this->getPort());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->login();
@@ -171,11 +155,7 @@ class Ftp extends AbstractFtpAdapter
         if ($this->utf8) {
             $response = ftp_raw($this->connection, "OPTS UTF8 ON");
             if (substr($response[0], 0, 3) !== '200') {
-<<<<<<< HEAD
                 throw new ConnectionRuntimeException(
-=======
-                throw new RuntimeException(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     'Could not set UTF-8 mode for connection: ' . $this->getHost() . '::' . $this->getPort()
                 );
             }
@@ -185,11 +165,7 @@ class Ftp extends AbstractFtpAdapter
     /**
      * Set the connections to passive mode.
      *
-<<<<<<< HEAD
      * @throws ConnectionRuntimeException
-=======
-     * @throws RuntimeException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function setConnectionPassiveMode()
     {
@@ -198,11 +174,7 @@ class Ftp extends AbstractFtpAdapter
         }
 
         if ( ! ftp_pasv($this->connection, $this->passive)) {
-<<<<<<< HEAD
             throw new ConnectionRuntimeException(
-=======
-            throw new RuntimeException(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 'Could not set passive mode for connection: ' . $this->getHost() . '::' . $this->getPort()
             );
         }
@@ -217,11 +189,7 @@ class Ftp extends AbstractFtpAdapter
         $connection = $this->connection;
 
         if ($root && ! ftp_chdir($connection, $root)) {
-<<<<<<< HEAD
             throw new InvalidRootException('Root is invalid or does not exist: ' . $this->getRoot());
-=======
-            throw new RuntimeException('Root is invalid or does not exist: ' . $this->getRoot());
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         // Store absolute path for further reference.
@@ -234,11 +202,7 @@ class Ftp extends AbstractFtpAdapter
     /**
      * Login.
      *
-<<<<<<< HEAD
      * @throws ConnectionRuntimeException
-=======
-     * @throws RuntimeException
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function login()
     {
@@ -253,11 +217,7 @@ class Ftp extends AbstractFtpAdapter
 
         if ( ! $isLoggedIn) {
             $this->disconnect();
-<<<<<<< HEAD
             throw new ConnectionRuntimeException(
-=======
-            throw new RuntimeException(
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 'Could not login with connection: ' . $this->getHost() . '::' . $this->getPort(
                 ) . ', username: ' . $this->getUsername()
             );
@@ -270,11 +230,7 @@ class Ftp extends AbstractFtpAdapter
     public function disconnect()
     {
         if (is_resource($this->connection)) {
-<<<<<<< HEAD
             @ftp_close($this->connection);
-=======
-            ftp_close($this->connection);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->connection = null;
@@ -572,28 +528,12 @@ class Ftp extends AbstractFtpAdapter
      *
      * @return bool
      *
-<<<<<<< HEAD
      * @throws ConnectionErrorException
      */
     public function isConnected()
     {
         return is_resource($this->connection)
             && $this->getRawExecResponseCode('NOOP') === 200;
-=======
-     * @throws ErrorException
-     */
-    public function isConnected()
-    {
-        try {
-            return is_resource($this->connection) && ftp_rawlist($this->connection, $this->getRoot()) !== false;
-        } catch (ErrorException $e) {
-            if (strpos($e->getMessage(), 'ftp_rawlist') === false) {
-                throw $e;
-            }
-
-            return false;
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -624,7 +564,6 @@ class Ftp extends AbstractFtpAdapter
 
         return ftp_rawlist($connection, $options . ' ' . $path);
     }
-<<<<<<< HEAD
 
     private function getRawExecResponseCode($command)
     {
@@ -632,6 +571,4 @@ class Ftp extends AbstractFtpAdapter
 
         return (int) preg_replace('/\D/', '', implode(' ', $response));
     }
-=======
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

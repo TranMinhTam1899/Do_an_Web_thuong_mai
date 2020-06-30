@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -23,7 +19,6 @@ namespace Monolog\Processor;
  */
 class MemoryUsageProcessor extends MemoryProcessor
 {
-<<<<<<< HEAD
     /**
      * @param  array $record
      * @return array
@@ -34,17 +29,6 @@ class MemoryUsageProcessor extends MemoryProcessor
         $formatted = $this->formatBytes($bytes);
 
         $record['extra']['memory_usage'] = $formatted;
-=======
-    public function __invoke(array $record): array
-    {
-        $usage = memory_get_usage($this->realUsage);
-
-        if ($this->useFormatting) {
-            $usage = $this->formatBytes($usage);
-        }
-
-        $record['extra']['memory_usage'] = $usage;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $record;
     }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php declare(strict_types=1);
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -17,28 +13,16 @@ namespace Monolog\Formatter;
 
 use Monolog\Logger;
 use Gelf\Message;
-<<<<<<< HEAD
 
 /**
  * Serializes a log message to GELF
  * @see http://www.graylog2.org/about/gelf
-=======
-use Monolog\Utils;
-
-/**
- * Serializes a log message to GELF
- * @see http://docs.graylog.org/en/latest/pages/gelf.html
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  *
  * @author Matt Lehner <mlehner@gmail.com>
  */
 class GelfMessageFormatter extends NormalizerFormatter
 {
-<<<<<<< HEAD
     const DEFAULT_MAX_LENGTH = 32766;
-=======
-    protected const DEFAULT_MAX_LENGTH = 32766;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var string the name of the system for the Gelf log message
@@ -63,11 +47,7 @@ class GelfMessageFormatter extends NormalizerFormatter
     /**
      * Translates Monolog log levels to Graylog2 log priorities.
      */
-<<<<<<< HEAD
     private $logLevels = array(
-=======
-    private $logLevels = [
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         Logger::DEBUG     => 7,
         Logger::INFO      => 6,
         Logger::NOTICE    => 5,
@@ -76,7 +56,6 @@ class GelfMessageFormatter extends NormalizerFormatter
         Logger::CRITICAL  => 2,
         Logger::ALERT     => 1,
         Logger::EMERGENCY => 0,
-<<<<<<< HEAD
     );
 
     public function __construct($systemName = null, $extraPrefix = null, $contextPrefix = 'ctxt_', $maxLength = null)
@@ -86,17 +65,6 @@ class GelfMessageFormatter extends NormalizerFormatter
         $this->systemName = $systemName ?: gethostname();
 
         $this->extraPrefix = $extraPrefix;
-=======
-    ];
-
-    public function __construct(?string $systemName = null, ?string $extraPrefix = null, string $contextPrefix = 'ctxt_', ?int $maxLength = null)
-    {
-        parent::__construct('U.u');
-
-        $this->systemName = (is_null($systemName) || $systemName === '') ? gethostname() : $systemName;
-
-        $this->extraPrefix = is_null($extraPrefix) ? '' : $extraPrefix;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->contextPrefix = $contextPrefix;
         $this->maxLength = is_null($maxLength) ? self::DEFAULT_MAX_LENGTH : $maxLength;
     }
@@ -104,20 +72,9 @@ class GelfMessageFormatter extends NormalizerFormatter
     /**
      * {@inheritdoc}
      */
-<<<<<<< HEAD
     public function format(array $record)
     {
         $record = parent::format($record);
-=======
-    public function format(array $record): Message
-    {
-        if (isset($record['context'])) {
-            $record['context'] = parent::format($record['context']);
-        }
-        if (isset($record['extra'])) {
-            $record['extra'] = parent::format($record['extra']);
-        }
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!isset($record['datetime'], $record['message'], $record['level'])) {
             throw new \InvalidArgumentException('The record should at least contain datetime, message and level keys, '.var_export($record, true).' given');
@@ -130,19 +87,11 @@ class GelfMessageFormatter extends NormalizerFormatter
             ->setHost($this->systemName)
             ->setLevel($this->logLevels[$record['level']]);
 
-<<<<<<< HEAD
         // message length + system name length + 200 for padding / metadata 
         $len = 200 + strlen((string) $record['message']) + strlen($this->systemName);
 
         if ($len > $this->maxLength) {
             $message->setShortMessage(substr($record['message'], 0, $this->maxLength));
-=======
-        // message length + system name length + 200 for padding / metadata
-        $len = 200 + strlen((string) $record['message']) + strlen($this->systemName);
-
-        if ($len > $this->maxLength) {
-            $message->setShortMessage(Utils::substr($record['message'], 0, $this->maxLength));
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (isset($record['channel'])) {
@@ -161,14 +110,8 @@ class GelfMessageFormatter extends NormalizerFormatter
             $val = is_scalar($val) || null === $val ? $val : $this->toJson($val);
             $len = strlen($this->extraPrefix . $key . $val);
             if ($len > $this->maxLength) {
-<<<<<<< HEAD
                 $message->setAdditional($this->extraPrefix . $key, substr($val, 0, $this->maxLength));
                 break;
-=======
-                $message->setAdditional($this->extraPrefix . $key, Utils::substr($val, 0, $this->maxLength));
-
-                continue;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $message->setAdditional($this->extraPrefix . $key, $val);
         }
@@ -177,14 +120,8 @@ class GelfMessageFormatter extends NormalizerFormatter
             $val = is_scalar($val) || null === $val ? $val : $this->toJson($val);
             $len = strlen($this->contextPrefix . $key . $val);
             if ($len > $this->maxLength) {
-<<<<<<< HEAD
                 $message->setAdditional($this->contextPrefix . $key, substr($val, 0, $this->maxLength));
                 break;
-=======
-                $message->setAdditional($this->contextPrefix . $key, Utils::substr($val, 0, $this->maxLength));
-
-                continue;
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $message->setAdditional($this->contextPrefix . $key, $val);
         }
