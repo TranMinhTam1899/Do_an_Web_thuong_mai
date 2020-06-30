@@ -1,7 +1,11 @@
 --TEST--
 https://github.com/sebastianbergmann/phpunit/issues/3396
 --FILE--
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $tmpResultCache = tempnam(sys_get_temp_dir(), __FILE__);
 file_put_contents($tmpResultCache, file_get_contents(__DIR__ . '/../../../../_files/DataproviderExecutionOrderTest_result_cache.txt'));
 

@@ -21,6 +21,7 @@ use Egulias\EmailValidator\Warning\QuotedString;
 
 abstract class Parser
 {
+<<<<<<< HEAD
     /**
      * @var \Egulias\EmailValidator\Warning\Warning[]
      */
@@ -34,6 +35,10 @@ abstract class Parser
     /**
      * @var int
      */
+=======
+    protected $warnings = [];
+    protected $lexer;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected $openedParenthesis = 0;
 
     public function __construct(EmailLexer $lexer)
@@ -41,17 +46,23 @@ abstract class Parser
         $this->lexer = $lexer;
     }
 
+<<<<<<< HEAD
     /**
      * @return \Egulias\EmailValidator\Warning\Warning[]
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function getWarnings()
     {
         return $this->warnings;
     }
 
+<<<<<<< HEAD
     /**
      * @param string $str
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     abstract public function parse($str);
 
     /** @return int */
@@ -97,9 +108,12 @@ abstract class Parser
         }
     }
 
+<<<<<<< HEAD
     /**
      * @return bool
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function isUnclosedComment()
     {
         try {
@@ -142,9 +156,12 @@ abstract class Parser
         }
     }
 
+<<<<<<< HEAD
     /**
      * @return bool
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function isFWS()
     {
         if ($this->escaped()) {
@@ -163,14 +180,21 @@ abstract class Parser
         return false;
     }
 
+<<<<<<< HEAD
     /**
      * @return bool
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function escaped()
     {
         $previous = $this->lexer->getPrevious();
 
+<<<<<<< HEAD
         if ($previous && $previous['type'] === EmailLexer::S_BACKSLASH
+=======
+        if ($previous['type'] === EmailLexer::S_BACKSLASH
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             &&
             $this->lexer->token['type'] !== EmailLexer::GENERIC
         ) {
@@ -180,9 +204,12 @@ abstract class Parser
         return false;
     }
 
+<<<<<<< HEAD
     /**
      * @return bool
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function warnEscaping()
     {
         if ($this->lexer->token['type'] !== EmailLexer::S_BACKSLASH) {
@@ -203,11 +230,14 @@ abstract class Parser
 
     }
 
+<<<<<<< HEAD
     /**
      * @param bool $hasClosingQuote
      *
      * @return bool
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected function checkDQUOTE($hasClosingQuote)
     {
         if ($this->lexer->token['type'] !== EmailLexer::S_DQUOTE) {

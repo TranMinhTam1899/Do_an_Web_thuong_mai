@@ -2,10 +2,17 @@
 
 namespace Illuminate\Foundation\Testing\Concerns;
 
+<<<<<<< HEAD
 use Mockery;
 use Illuminate\Contracts\Bus\Dispatcher as BusDispatcherContract;
 use Illuminate\Contracts\Events\Dispatcher as EventsDispatcherContract;
 use Illuminate\Contracts\Notifications\Dispatcher as NotificationDispatcher;
+=======
+use Illuminate\Contracts\Bus\Dispatcher as BusDispatcherContract;
+use Illuminate\Contracts\Events\Dispatcher as EventsDispatcherContract;
+use Illuminate\Contracts\Notifications\Dispatcher as NotificationDispatcher;
+use Mockery;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait MocksApplicationServices
 {

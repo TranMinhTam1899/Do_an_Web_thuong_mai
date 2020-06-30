@@ -61,8 +61,11 @@ class ConsoleLogger extends AbstractLogger
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @return void
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function log($level, $message, array $context = [])
     {

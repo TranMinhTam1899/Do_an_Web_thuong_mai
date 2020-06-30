@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,6 +16,12 @@ namespace PHPUnit\Framework\Constraint;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestFailure;
 
+<<<<<<< HEAD
+=======
+/**
+ * @small
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class LogicalOrTest extends ConstraintTestCase
 {
     public function testSetConstraintsDecoratesNonConstraintWithIsEqual(): void
@@ -90,9 +100,13 @@ final class LogicalOrTest extends ConstraintTestCase
      */
     public function testEvaluateReturnsTrueIfAnyOfTheComposedConstraintsEvaluateToTrue(array $constraints): void
     {
+<<<<<<< HEAD
         $constraint = new LogicalOr;
 
         $constraint->setConstraints($constraints);
+=======
+        $constraint = LogicalOr::fromConstraints(...$constraints);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $this->assertTrue($constraint->evaluate('whatever', '', true));
     }

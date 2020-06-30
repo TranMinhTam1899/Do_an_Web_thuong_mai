@@ -20,6 +20,7 @@ class Address extends \Faker\Provider\Address
         'ซอย', 'ถนน', 'สะพาน', 'วงเวียน', 'แยก',
     );
 
+<<<<<<< HEAD
     protected static $streetSuffix  = array(
         'กรุงเกษม', 'กรุงเทพกรีฑา', 'กรุงเทพ-นนทบุรี', 'กรุงธนบุรี', 'กรุงแมน', 'กล้วยน้ำไทตัดใหม่', 'กลันตัน', 'กะออม', 'กระออม', 'กัลปพฤกษ์', 'กัลยาณไมตรี', 'กาญจนาภิเษก', 'กำนันแม้น', 'กำแพงเพชร', 'กำแพงเพชร 1', 'กำแพงเพชร 2', 'กำแพงเพชร 3', 'กำแพงเพชร 4', 'กำแพงเพชร 5', 'กำแพงเพชร 6', 'กำแพงเพชร 7', 'กิ่งแก้ว', 'กิจพานิช', 'เกษมราษฎร์', 'แก้ว', 'แก้วเงินทอง', 'โกสุมรวมใจ', 'ไกรสีห์',
         'ขวัญ', 'ขาว', 'ข้าวสาร', 'ข้าวหลาม', 'ขุมทอง-ลำต้อยติ่ง', 'เขียวไข่กา',
@@ -51,6 +52,8 @@ class Address extends \Faker\Provider\Address
         '60 พรรษามหาราชินี'
     );
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected static $postcode = array('#####');
 
     /**
@@ -102,7 +105,12 @@ class Address extends \Faker\Provider\Address
     );
 
     protected static $streetNameFormats = array(
+<<<<<<< HEAD
         '{{streetPrefix}} {{streetSuffix}}'
+=======
+        '{{firstName}} {{streetSuffix}}',
+        '{{lastName}} {{streetSuffix}}'
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     );
 
     protected static $streetAddressFormats = array(
@@ -121,6 +129,7 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$cityPrefix);
     }
 
+<<<<<<< HEAD
      /**
      * @example 'ถนน'
      */
@@ -129,6 +138,8 @@ class Address extends \Faker\Provider\Address
         return static::randomElement(static::$streetPrefix);
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @example 'กรุงเทพมหานคร'
      */

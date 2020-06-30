@@ -19,6 +19,10 @@
       }
     },
     "require-dev": {
+<<<<<<< HEAD
+=======
+        "phpunit/phpunit": "~6"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "extra": {
         "branch-alias": {

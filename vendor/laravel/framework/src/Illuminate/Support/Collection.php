@@ -2,6 +2,7 @@
 
 namespace Illuminate\Support;
 
+<<<<<<< HEAD
 use stdClass;
 use Countable;
 use Exception;
@@ -40,6 +41,17 @@ use Illuminate\Contracts\Support\Arrayable;
 class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate, Jsonable, JsonSerializable
 {
     use Macroable;
+=======
+use ArrayAccess;
+use ArrayIterator;
+use Illuminate\Support\Traits\EnumeratesValues;
+use Illuminate\Support\Traits\Macroable;
+use stdClass;
+
+class Collection implements ArrayAccess, Enumerable
+{
+    use EnumeratesValues, Macroable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * The items contained in the collection.
@@ -49,6 +61,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     protected $items = [];
 
     /**
+<<<<<<< HEAD
      * The methods that can be proxied.
      *
      * @var array
@@ -60,6 +73,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     ];
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create a new collection.
      *
      * @param  mixed  $items
@@ -71,6 +86,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Create a new collection instance if the value isn't one already.
      *
      * @param  mixed  $items
@@ -106,6 +122,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create a new collection by invoking the callback a given amount of times.
      *
      * @param  int  $number
@@ -136,6 +154,19 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get a lazy collection for the items in this collection.
+     *
+     * @return \Illuminate\Support\LazyCollection
+     */
+    public function lazy()
+    {
+        return new LazyCollection($this->items);
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the average value of a given key.
      *
      * @param  callable|string|null  $callback
@@ -157,6 +188,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Alias for the "avg" method.
      *
      * @param  callable|string|null  $callback
@@ -168,6 +200,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the median of a given key.
      *
      * @param  string|array|null $key
@@ -237,6 +271,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Alias for the "contains" method.
      *
      * @param  mixed  $key
@@ -250,6 +285,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Determine if an item exists in the collection.
      *
      * @param  mixed  $key
@@ -273,6 +310,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Determine if an item exists in the collection using strict comparison.
      *
      * @param  mixed  $key
@@ -295,6 +333,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Cross join with the given lists, returning all possible permutations.
      *
      * @param  mixed  ...$lists
@@ -308,6 +348,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Dump the collection and end the script.
      *
      * @param  mixed  ...$args
@@ -337,6 +378,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the items in the collection that are not present in the given items.
      *
      * @param  mixed  $items
@@ -348,7 +391,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the items in the collection that are not present in the given items.
+=======
+     * Get the items in the collection that are not present in the given items, using the callback.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  mixed  $items
      * @param  callable  $callback
@@ -371,7 +418,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the items in the collection whose keys and values are not present in the given items.
+=======
+     * Get the items in the collection whose keys and values are not present in the given items, using the callback.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  mixed  $items
      * @param  callable  $callback
@@ -394,9 +445,15 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the items in the collection whose keys are not present in the given items.
      *
      * @param  mixed   $items
+=======
+     * Get the items in the collection whose keys are not present in the given items, using the callback.
+     *
+     * @param  mixed  $items
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  callable  $callback
      * @return static
      */
@@ -464,6 +521,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Execute a callback over each item.
      *
      * @param  callable  $callback
@@ -521,6 +579,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get all items except for those with the specified keys.
      *
      * @param  \Illuminate\Support\Collection|mixed  $keys
@@ -528,7 +588,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
      */
     public function except($keys)
     {
+<<<<<<< HEAD
         if ($keys instanceof self) {
+=======
+        if ($keys instanceof Enumerable) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $keys = $keys->all();
         } elseif (! is_array($keys)) {
             $keys = func_get_args();
@@ -553,6 +617,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Apply the callback if the value is truthy.
      *
      * @param  bool  $value
@@ -826,6 +891,17 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     public function firstWhere($key, $operator = null, $value = null)
     {
         return $this->first($this->operatorForWhere(...func_get_args()));
+=======
+     * Get the first item from the collection passing the given truth test.
+     *
+     * @param  callable|null  $callback
+     * @param  mixed  $default
+     * @return mixed
+     */
+    public function first(callable $callback = null, $default = null)
+    {
+        return Arr::first($this->items, $callback, $default);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -1023,6 +1099,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Determine if the collection is not empty.
      *
      * @return bool
@@ -1044,6 +1121,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Join all items from the collection using a string. The final items can use a separate glue string.
      *
      * @param  string  $glue
@@ -1123,6 +1202,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Run a map over each nested chunk of items.
      *
      * @param  callable  $callback
@@ -1138,6 +1218,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Run a dictionary map over the items.
      *
      * The callback should return an associative array with a single key/value pair.
@@ -1167,6 +1249,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Run a grouping map over the items.
      *
      * The callback should return an associative array with a single key/value pair.
@@ -1182,6 +1265,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Run an associative map over each of the items.
      *
      * The callback should return an associative array with a single key/value pair.
@@ -1205,6 +1290,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Map a collection and flatten the result by a single level.
      *
      * @param  callable  $callback
@@ -1248,6 +1334,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Merge the collection with the given items.
      *
      * @param  mixed  $items
@@ -1292,6 +1380,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the min value of a given key.
      *
      * @param  callable|string|null  $callback
@@ -1311,6 +1400,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create a new collection consisting of every n-th element.
      *
      * @param  int  $step
@@ -1346,7 +1437,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
             return new static($this->items);
         }
 
+<<<<<<< HEAD
         if ($keys instanceof self) {
+=======
+        if ($keys instanceof Enumerable) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $keys = $keys->all();
         }
 
@@ -1356,6 +1451,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * "Paginate" the collection by slicing it into a smaller collection.
      *
      * @param  int  $page
@@ -1404,6 +1500,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get and remove the last item from the collection.
      *
      * @return mixed
@@ -1435,7 +1533,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
      */
     public function push($value)
     {
+<<<<<<< HEAD
         $this->offsetSet(null, $value);
+=======
+        $this->items[] = $value;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -1513,6 +1615,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Create a collection of all elements that do not pass a given truth test.
      *
      * @param  callable|mixed  $callback
@@ -1530,6 +1633,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Replace the collection items with the given items.
      *
      * @param  mixed  $items
@@ -1575,7 +1680,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
         }
 
         foreach ($this->items as $key => $item) {
+<<<<<<< HEAD
             if (call_user_func($value, $item, $key)) {
+=======
+            if ($value($item, $key)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return $key;
             }
         }
@@ -1605,6 +1714,20 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Skip the first {$count} items.
+     *
+     * @param  int  $count
+     * @return static
+     */
+    public function skip($count)
+    {
+        return $this->slice($count);
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Slice the underlying collection array.
      *
      * @param  int  $offset
@@ -1654,7 +1777,11 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Chunk the underlying collection array.
+=======
+     * Chunk the collection into chunks of the given size.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  int  $size
      * @return static
@@ -1782,6 +1909,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the sum of the given values.
      *
      * @param  callable|string|null  $callback
@@ -1801,6 +1929,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Take the first or last {$limit} items.
      *
      * @param  int  $limit
@@ -1816,6 +1946,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Pass the collection to the given callback and then return it.
      *
      * @param  callable  $callback
@@ -1829,6 +1960,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Transform each item in the collection using a callback.
      *
      * @param  callable  $callback
@@ -1842,6 +1975,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Return only unique items from the collection array.
      *
      * @param  string|callable|null  $key
@@ -1875,6 +2009,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Reset the keys on the underlying array.
      *
      * @return static
@@ -1885,6 +2021,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get a value retrieving callback.
      *
      * @param  callable|string|null  $value
@@ -1902,6 +2039,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Zip the collection together with one or more arrays.
      *
      * e.g. new Collection([1, 2, 3])->zip([4, 5, 6]);
@@ -1936,6 +2075,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get the collection of items as a plain array.
      *
      * @return array
@@ -1979,6 +2119,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get an iterator for the items.
      *
      * @return \ArrayIterator
@@ -1989,6 +2131,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Get a CachingIterator instance.
      *
      * @param  int  $flags
@@ -2000,6 +2143,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Count the number of items in the collection.
      *
      * @return int
@@ -2010,6 +2155,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Count the number of items in the collection using a given truth test.
      *
      * @param  callable|null  $callback
@@ -2029,6 +2175,8 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Add an item to the collection.
      *
      * @param  mixed  $item
@@ -2099,6 +2247,7 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     {
         unset($this->items[$key]);
     }
+<<<<<<< HEAD
 
     /**
      * Convert the collection to its string representation.
@@ -2162,4 +2311,6 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
 
         return new HigherOrderCollectionProxy($this, $key);
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

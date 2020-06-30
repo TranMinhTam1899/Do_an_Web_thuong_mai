@@ -1,7 +1,11 @@
 <phpunit>
     <testsuites>
         <testsuite name="One File Suite">
+<<<<<<< HEAD
             <file>../../tests/end-to-end/debug.phpt</file>
+=======
+            <file>../../tests/end-to-end/loggers/debug.phpt</file>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         </testsuite>
     </testsuites>
 </phpunit>

@@ -15,7 +15,10 @@ use Symfony\Component\Routing\Loader\Configurator\CollectionConfigurator;
 use Symfony\Component\Routing\Loader\Configurator\RouteConfigurator;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
+<<<<<<< HEAD
 use Symfony\Component\Routing\RouteCompiler;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait AddTrait
 {
@@ -68,7 +71,10 @@ trait AddTrait
             $routes->add($name.'.'.$locale, $route = $this->createRoute($path));
             $this->collection->add($this->name.$name.'.'.$locale, $route);
             $route->setDefault('_locale', $locale);
+<<<<<<< HEAD
             $route->setRequirement('_locale', preg_quote($locale, RouteCompiler::REGEX_DELIMITER));
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $route->setDefault('_canonical_route', $this->name.$name);
         }
 
@@ -85,7 +91,11 @@ trait AddTrait
         return $this->add($name, $path);
     }
 
+<<<<<<< HEAD
     private function createRoute(string $path): Route
+=======
+    private function createRoute($path): Route
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return new Route($path);
     }

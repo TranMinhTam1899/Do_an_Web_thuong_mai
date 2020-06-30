@@ -35,6 +35,10 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
 
     /**
      * @param EngineInterface|Environment $templating            An EngineInterface or a Twig instance
+<<<<<<< HEAD
+=======
+     * @param UriSigner                   $signer                A UriSigner instance
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param string                      $globalDefaultTemplate The global default content (it can be a template name or the content)
      */
     public function __construct($templating = null, UriSigner $signer = null, string $globalDefaultTemplate = null, string $charset = 'utf-8')
@@ -51,13 +55,20 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
      * @param EngineInterface|Environment|null $templating An EngineInterface or an Environment instance
      *
      * @throws \InvalidArgumentException
+<<<<<<< HEAD
      *
      * @internal
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setTemplating($templating)
     {
         if (null !== $templating && !$templating instanceof EngineInterface && !$templating instanceof Environment) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('The hinclude rendering strategy needs an instance of Twig\Environment or Symfony\Component\Templating\EngineInterface.');
+=======
+            throw new \InvalidArgumentException('The hinclude rendering strategy needs an instance of Twig\Environment or Symfony\Component\Templating\EngineInterface');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ($templating instanceof EngineInterface) {

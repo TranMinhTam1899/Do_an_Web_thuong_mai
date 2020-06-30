@@ -3,9 +3,15 @@
 namespace Illuminate\Container;
 
 use Closure;
+<<<<<<< HEAD
 use ReflectionMethod;
 use ReflectionFunction;
 use InvalidArgumentException;
+=======
+use InvalidArgumentException;
+use ReflectionFunction;
+use ReflectionMethod;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class BoundMethod
 {
@@ -75,7 +81,11 @@ class BoundMethod
     protected static function callBoundMethod($container, $callback, $default)
     {
         if (! is_array($callback)) {
+<<<<<<< HEAD
             return $default instanceof Closure ? $default() : $default;
+=======
+            return value($default);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         // Here we need to turn the array callable into a Class@method string we can use to
@@ -87,7 +97,11 @@ class BoundMethod
             return $container->callMethodBinding($method, $callback[0]);
         }
 
+<<<<<<< HEAD
         return $default instanceof Closure ? $default() : $default;
+=======
+        return value($default);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -136,6 +150,11 @@ class BoundMethod
     {
         if (is_string($callback) && strpos($callback, '::') !== false) {
             $callback = explode('::', $callback);
+<<<<<<< HEAD
+=======
+        } elseif (is_object($callback) && ! $callback instanceof Closure) {
+            $callback = [$callback, '__invoke'];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return is_array($callback)

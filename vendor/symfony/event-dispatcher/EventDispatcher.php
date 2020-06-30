@@ -38,7 +38,11 @@ class EventDispatcher implements EventDispatcherInterface
 
     public function __construct()
     {
+<<<<<<< HEAD
         if (__CLASS__ === static::class) {
+=======
+        if (__CLASS__ === \get_class($this)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->optimized = [];
         }
     }
@@ -54,13 +58,21 @@ class EventDispatcher implements EventDispatcherInterface
 
         if (\is_object($event)) {
             $eventName = $eventName ?? \get_class($event);
+<<<<<<< HEAD
         } elseif (\is_string($event) && (null === $eventName || $eventName instanceof ContractsEvent || $eventName instanceof Event)) {
+=======
+        } elseif (\is_string($event) && (null === $eventName || $eventName instanceof Event)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             @trigger_error(sprintf('Calling the "%s::dispatch()" method with the event name as the first argument is deprecated since Symfony 4.3, pass it as the second argument and provide the event object as the first argument instead.', EventDispatcherInterface::class), E_USER_DEPRECATED);
             $swap = $event;
             $event = $eventName ?? new Event();
             $eventName = $swap;
         } else {
+<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an object, "%s" given.', EventDispatcherInterface::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+=======
+            throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an object, %s given.', EventDispatcherInterface::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (null !== $this->optimized && null !== $eventName) {
@@ -111,16 +123,26 @@ class EventDispatcher implements EventDispatcherInterface
             return null;
         }
 
+<<<<<<< HEAD
         if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure && 2 >= \count($listener)) {
             $listener[0] = $listener[0]();
             $listener[1] = $listener[1] ?? '__invoke';
+=======
+        if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure) {
+            $listener[0] = $listener[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         foreach ($this->listeners[$eventName] as $priority => &$listeners) {
             foreach ($listeners as &$v) {
+<<<<<<< HEAD
                 if ($v !== $listener && \is_array($v) && isset($v[0]) && $v[0] instanceof \Closure && 2 >= \count($v)) {
                     $v[0] = $v[0]();
                     $v[1] = $v[1] ?? '__invoke';
+=======
+                if ($v !== $listener && \is_array($v) && isset($v[0]) && $v[0] instanceof \Closure) {
+                    $v[0] = $v[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
                 if ($v === $listener) {
                     return $priority;
@@ -167,16 +189,26 @@ class EventDispatcher implements EventDispatcherInterface
             return;
         }
 
+<<<<<<< HEAD
         if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure && 2 >= \count($listener)) {
             $listener[0] = $listener[0]();
             $listener[1] = $listener[1] ?? '__invoke';
+=======
+        if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure) {
+            $listener[0] = $listener[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         foreach ($this->listeners[$eventName] as $priority => &$listeners) {
             foreach ($listeners as $k => &$v) {
+<<<<<<< HEAD
                 if ($v !== $listener && \is_array($v) && isset($v[0]) && $v[0] instanceof \Closure && 2 >= \count($v)) {
                     $v[0] = $v[0]();
                     $v[1] = $v[1] ?? '__invoke';
+=======
+                if ($v !== $listener && \is_array($v) && isset($v[0]) && $v[0] instanceof \Closure) {
+                    $v[0] = $v[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
                 if ($v === $listener) {
                     unset($listeners[$k], $this->sorted[$eventName], $this->optimized[$eventName]);
@@ -274,10 +306,16 @@ class EventDispatcher implements EventDispatcherInterface
         $this->sorted[$eventName] = [];
 
         foreach ($this->listeners[$eventName] as &$listeners) {
+<<<<<<< HEAD
             foreach ($listeners as $k => &$listener) {
                 if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure && 2 >= \count($listener)) {
                     $listener[0] = $listener[0]();
                     $listener[1] = $listener[1] ?? '__invoke';
+=======
+            foreach ($listeners as $k => $listener) {
+                if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure) {
+                    $listener[0] = $listener[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
                 $this->sorted[$eventName][] = $listener;
             }
@@ -295,11 +333,18 @@ class EventDispatcher implements EventDispatcherInterface
         foreach ($this->listeners[$eventName] as &$listeners) {
             foreach ($listeners as &$listener) {
                 $closure = &$this->optimized[$eventName][];
+<<<<<<< HEAD
                 if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure && 2 >= \count($listener)) {
                     $closure = static function (...$args) use (&$listener, &$closure) {
                         if ($listener[0] instanceof \Closure) {
                             $listener[0] = $listener[0]();
                             $listener[1] = $listener[1] ?? '__invoke';
+=======
+                if (\is_array($listener) && isset($listener[0]) && $listener[0] instanceof \Closure) {
+                    $closure = static function (...$args) use (&$listener, &$closure) {
+                        if ($listener[0] instanceof \Closure) {
+                            $listener[0] = $listener[0]();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         }
                         ($closure = \Closure::fromCallable($listener))(...$args);
                     };

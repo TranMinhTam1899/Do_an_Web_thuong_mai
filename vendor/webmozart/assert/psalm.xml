@@ -4,7 +4,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
     xsi:schemaLocation="https://getpsalm.org/schema/config ci/vendor/vimeo/psalm/config.xsd"
+<<<<<<< HEAD
     phpVersion="7.3"
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 >
     <projectFiles>
         <directory name="tests/static-analysis" />

@@ -28,6 +28,7 @@ interface PasswordBroker
     const INVALID_USER = 'passwords.user';
 
     /**
+<<<<<<< HEAD
      * Constant representing an invalid password.
      *
      * @var string
@@ -35,6 +36,8 @@ interface PasswordBroker
     const INVALID_PASSWORD = 'passwords.password';
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Constant representing an invalid token.
      *
      * @var string
@@ -57,6 +60,7 @@ interface PasswordBroker
      * @return mixed
      */
     public function reset(array $credentials, Closure $callback);
+<<<<<<< HEAD
 
     /**
      * Set a custom password validator.
@@ -73,4 +77,6 @@ interface PasswordBroker
      * @return bool
      */
     public function validateNewPassword(array $credentials);
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

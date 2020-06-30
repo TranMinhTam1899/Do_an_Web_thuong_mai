@@ -14,10 +14,14 @@
 
 namespace Ramsey\Uuid\Generator;
 
+<<<<<<< HEAD
 use Exception;
 use InvalidArgumentException;
 use Ramsey\Uuid\Converter\NumberConverterInterface;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+=======
+use Ramsey\Uuid\Converter\NumberConverterInterface;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * CombGenerator provides functionality to generate COMB (combined GUID/timestamp)
@@ -56,14 +60,24 @@ class CombGenerator implements RandomGeneratorInterface
      *
      * @param integer $length The number of bytes of random binary data to generate
      * @return string A binary string
+<<<<<<< HEAD
      * @throws UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
      * @throws InvalidArgumentException if length is not a positive integer
      * @throws Exception
+=======
+     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if `Moontoast\Math\BigNumber` is not present
+     * @throws \InvalidArgumentException if length is not a positive integer
+     * @throws \Exception
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function generate($length)
     {
         if ($length < self::TIMESTAMP_BYTES || $length < 0) {
+<<<<<<< HEAD
             throw new InvalidArgumentException('Length must be a positive integer.');
+=======
+            throw new \InvalidArgumentException('Length must be a positive integer.');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $hash = '';

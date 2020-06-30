@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,14 @@ namespace PHPUnit\Util;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class XmlTest extends TestCase
+=======
+/**
+ * @small
+ */
+final class XmlTest extends TestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @dataProvider charProvider
@@ -74,6 +85,12 @@ class XmlTest extends TestCase
         Xml::load(false);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @testdox Nested xmlToVariable()
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testNestedXmlToVariable(): void
     {
         $xml = '<array><element key="a"><array><element key="b"><string>foo</string></element></array></element><element key="c"><string>bar</string></element></array>';
@@ -92,6 +109,12 @@ class XmlTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @testdox xmlToVariable() can handle multiple of the same argument type
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testXmlToVariableCanHandleMultipleOfTheSameArgumentType(): void
     {
         $xml = '<object class="SampleClass"><arguments><string>a</string><string>b</string><string>c</string></arguments></object>';
@@ -105,6 +128,12 @@ class XmlTest extends TestCase
         $this->assertSame($expected, (array) $actual);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @testdox xmlToVariable() can construct objects with constructor arguments recursively
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testXmlToVariableCanConstructObjectsWithConstructorArgumentsRecursively(): void
     {
         $xml = '<object class="Exception"><arguments><string>one</string><integer>0</integer><object class="Exception"><arguments><string>two</string></arguments></object></arguments></object>';

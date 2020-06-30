@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -21,7 +25,14 @@ use PHPUnit\Framework\Warning;
 use PHPUnit\Util\Printer;
 use ReflectionClass;
 
+<<<<<<< HEAD
 class XmlResultPrinter extends Printer implements TestListener
+=======
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class XmlResultPrinter extends Printer implements TestListener
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var DOMDocument
@@ -148,15 +159,22 @@ class XmlResultPrinter extends Printer implements TestListener
             return;
         }
 
+<<<<<<< HEAD
         /* @var TestCase $test */
 
         $groups = \array_filter(
             $test->getGroups(),
             function ($group) {
+=======
+        $groups = \array_filter(
+            $test->getGroups(),
+            static function ($group) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return !($group === 'small' || $group === 'medium' || $group === 'large');
             }
         );
 
+<<<<<<< HEAD
         $node = $this->document->createElement('test');
 
         $node->setAttribute('className', \get_class($test));
@@ -177,6 +195,62 @@ class XmlResultPrinter extends Printer implements TestListener
             $node->setAttribute('whenStartLine', (string) $inlineAnnotations['when']['line']);
             $node->setAttribute('then', $inlineAnnotations['then']['value']);
             $node->setAttribute('thenStartLine', (string) $inlineAnnotations['then']['line']);
+=======
+        $testNode = $this->document->createElement('test');
+
+        $testNode->setAttribute('className', \get_class($test));
+        $testNode->setAttribute('methodName', $test->getName());
+        $testNode->setAttribute('prettifiedClassName', $this->prettifier->prettifyTestClass(\get_class($test)));
+        $testNode->setAttribute('prettifiedMethodName', $this->prettifier->prettifyTestCase($test));
+        $testNode->setAttribute('status', (string) $test->getStatus());
+        $testNode->setAttribute('time', (string) $time);
+        $testNode->setAttribute('size', (string) $test->getSize());
+        $testNode->setAttribute('groups', \implode(',', $groups));
+
+        foreach ($groups as $group) {
+            $groupNode = $this->document->createElement('group');
+
+            $groupNode->setAttribute('name', $group);
+
+            $testNode->appendChild($groupNode);
+        }
+
+        $annotations = $test->getAnnotations();
+
+        foreach (['class', 'method'] as $type) {
+            foreach ($annotations[$type] as $annotation => $values) {
+                if ($annotation !== 'covers' && $annotation !== 'uses') {
+                    continue;
+                }
+
+                foreach ($values as $value) {
+                    $coversNode = $this->document->createElement($annotation);
+
+                    $coversNode->setAttribute('target', $value);
+
+                    $testNode->appendChild($coversNode);
+                }
+            }
+        }
+
+        foreach ($test->doubledTypes() as $doubledType) {
+            $testDoubleNode = $this->document->createElement('testDouble');
+
+            $testDoubleNode->setAttribute('type', $doubledType);
+
+            $testNode->appendChild($testDoubleNode);
+        }
+
+        $inlineAnnotations = \PHPUnit\Util\Test::getInlineAnnotations(\get_class($test), $test->getName(false));
+
+        if (isset($inlineAnnotations['given'], $inlineAnnotations['when'], $inlineAnnotations['then'])) {
+            $testNode->setAttribute('given', $inlineAnnotations['given']['value']);
+            $testNode->setAttribute('givenStartLine', (string) $inlineAnnotations['given']['line']);
+            $testNode->setAttribute('when', $inlineAnnotations['when']['value']);
+            $testNode->setAttribute('whenStartLine', (string) $inlineAnnotations['when']['line']);
+            $testNode->setAttribute('then', $inlineAnnotations['then']['value']);
+            $testNode->setAttribute('thenStartLine', (string) $inlineAnnotations['then']['line']);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if ($this->exception !== null) {
@@ -186,20 +260,43 @@ class XmlResultPrinter extends Printer implements TestListener
                 $steps = $this->exception->getTrace();
             }
 
+<<<<<<< HEAD
             $class = new ReflectionClass($test);
             $file  = $class->getFileName();
 
             foreach ($steps as $step) {
                 if (isset($step['file']) && $step['file'] === $file) {
                     $node->setAttribute('exceptionLine', $step['line']);
+=======
+            try {
+                $file = (new ReflectionClass($test))->getFileName();
+            } catch (\ReflectionException $e) {
+                throw new Exception(
+                    $e->getMessage(),
+                    (int) $e->getCode(),
+                    $e
+                );
+            }
+
+            foreach ($steps as $step) {
+                if (isset($step['file']) && $step['file'] === $file) {
+                    $testNode->setAttribute('exceptionLine', (string) $step['line']);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                     break;
                 }
             }
 
+<<<<<<< HEAD
             $node->setAttribute('exceptionMessage', $this->exception->getMessage());
         }
 
         $this->root->appendChild($node);
+=======
+            $testNode->setAttribute('exceptionMessage', $this->exception->getMessage());
+        }
+
+        $this->root->appendChild($testNode);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

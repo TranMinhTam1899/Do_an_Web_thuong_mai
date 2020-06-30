@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of sebastian/global-state.
  *
@@ -7,15 +11,22 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 namespace SebastianBergmann\GlobalState;
 
 /**
  * Exports parts of a Snapshot as PHP code.
  */
+<<<<<<< HEAD
 class CodeExporter
+=======
+final class CodeExporter
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function constants(Snapshot $snapshot): string
     {
@@ -35,11 +46,19 @@ class CodeExporter
 
     public function globalVariables(Snapshot $snapshot): string
     {
+<<<<<<< HEAD
         $result = '$GLOBALS = [];' . PHP_EOL;
 
         foreach ($snapshot->globalVariables() as $name => $value) {
             $result .= \sprintf(
                 '$GLOBALS[%s] = %s;' . PHP_EOL,
+=======
+        $result = '$GLOBALS = [];' . \PHP_EOL;
+
+        foreach ($snapshot->globalVariables() as $name => $value) {
+            $result .= \sprintf(
+                '$GLOBALS[%s] = %s;' . \PHP_EOL,
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $this->exportVariable($name),
                 $this->exportVariable($value)
             );
@@ -65,7 +84,11 @@ class CodeExporter
 
     private function exportVariable($variable): string
     {
+<<<<<<< HEAD
         if (\is_scalar($variable) || \is_null($variable) ||
+=======
+        if (\is_scalar($variable) || null === $variable ||
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             (\is_array($variable) && $this->arrayOnlyContainsScalars($variable))) {
             return \var_export($variable, true);
         }
@@ -79,8 +102,13 @@ class CodeExporter
 
         foreach ($array as $element) {
             if (\is_array($element)) {
+<<<<<<< HEAD
                 $result = self::arrayOnlyContainsScalars($element);
             } elseif (!\is_scalar($element) && !\is_null($element)) {
+=======
+                $result = $this->arrayOnlyContainsScalars($element);
+            } elseif (!\is_scalar($element) && null !== $element) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $result = false;
             }
 

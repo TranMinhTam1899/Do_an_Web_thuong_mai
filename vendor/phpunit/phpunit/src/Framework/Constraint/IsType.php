@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,6 +19,7 @@ namespace PHPUnit\Framework\Constraint;
  *
  * The expected value is passed in the constructor.
  */
+<<<<<<< HEAD
 class IsType extends Constraint
 {
     public const TYPE_ARRAY    = 'array';
@@ -43,6 +48,72 @@ class IsType extends Constraint
 
     /**
      * @var array
+=======
+final class IsType extends Constraint
+{
+    /**
+     * @var string
+     */
+    public const TYPE_ARRAY = 'array';
+
+    /**
+     * @var string
+     */
+    public const TYPE_BOOL = 'bool';
+
+    /**
+     * @var string
+     */
+    public const TYPE_FLOAT = 'float';
+
+    /**
+     * @var string
+     */
+    public const TYPE_INT = 'int';
+
+    /**
+     * @var string
+     */
+    public const TYPE_NULL = 'null';
+
+    /**
+     * @var string
+     */
+    public const TYPE_NUMERIC = 'numeric';
+
+    /**
+     * @var string
+     */
+    public const TYPE_OBJECT = 'object';
+
+    /**
+     * @var string
+     */
+    public const TYPE_RESOURCE = 'resource';
+
+    /**
+     * @var string
+     */
+    public const TYPE_STRING = 'string';
+
+    /**
+     * @var string
+     */
+    public const TYPE_SCALAR = 'scalar';
+
+    /**
+     * @var string
+     */
+    public const TYPE_CALLABLE = 'callable';
+
+    /**
+     * @var string
+     */
+    public const TYPE_ITERABLE = 'iterable';
+
+    /**
+     * @var array<string,bool>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private const KNOWN_TYPES = [
         'array'    => true,
@@ -73,8 +144,11 @@ class IsType extends Constraint
      */
     public function __construct(string $type)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset(self::KNOWN_TYPES[$type])) {
             throw new \PHPUnit\Framework\Exception(
                 \sprintf(
@@ -137,7 +211,24 @@ class IsType extends Constraint
                 return \is_object($other);
 
             case 'resource':
+<<<<<<< HEAD
                 return \is_resource($other) || \is_string(@\get_resource_type($other));
+=======
+                if (\is_resource($other)) {
+                    return true;
+                }
+
+                try {
+                    $resource = @\get_resource_type($other);
+
+                    if (\is_string($resource)) {
+                        return true;
+                    }
+                } catch (\TypeError $e) {
+                }
+
+                return false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             case 'scalar':
                 return \is_scalar($other);

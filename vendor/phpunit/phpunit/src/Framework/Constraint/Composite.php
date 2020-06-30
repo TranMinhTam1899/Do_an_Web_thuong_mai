@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,6 +15,13 @@ namespace PHPUnit\Framework\Constraint;
 
 use PHPUnit\Framework\ExpectationFailedException;
 
+<<<<<<< HEAD
+=======
+/**
+ * @deprecated https://github.com/sebastianbergmann/phpunit/issues/3338
+ * @codeCoverageIgnore
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 abstract class Composite extends Constraint
 {
     /**
@@ -20,8 +31,11 @@ abstract class Composite extends Constraint
 
     public function __construct(Constraint $innerConstraint)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->innerConstraint = $innerConstraint;
     }
 
@@ -35,6 +49,7 @@ abstract class Composite extends Constraint
      * a boolean value instead: true in case of success, false in case of a
      * failure.
      *
+<<<<<<< HEAD
      * @param mixed  $other        value or object to evaluate
      * @param string $description  Additional information about the test
      * @param bool   $returnResult Whether to return a result or throw an exception
@@ -43,6 +58,12 @@ abstract class Composite extends Constraint
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function evaluate($other, $description = '', $returnResult = false)
+=======
+     * @throws ExpectationFailedException
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     */
+    public function evaluate($other, string $description = '', bool $returnResult = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         try {
             return $this->innerConstraint->evaluate(

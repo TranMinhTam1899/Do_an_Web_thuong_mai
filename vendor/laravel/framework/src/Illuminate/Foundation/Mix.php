@@ -3,8 +3,13 @@
 namespace Illuminate\Foundation;
 
 use Exception;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Support\HtmlString;
+=======
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Mix
 {

@@ -18,6 +18,10 @@ class BinaryUtils
     {
         // Set the variant to RFC 4122
         $clockSeqHi = $clockSeqHi & 0x3f;
+<<<<<<< HEAD
+=======
+        $clockSeqHi &= ~(0xc0);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $clockSeqHi |= 0x80;
 
         return $clockSeqHi;
@@ -34,6 +38,10 @@ class BinaryUtils
     public static function applyVersion($timeHi, $version)
     {
         $timeHi = hexdec($timeHi) & 0x0fff;
+<<<<<<< HEAD
+=======
+        $timeHi &= ~(0xf000);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $timeHi |= $version << 12;
 
         return $timeHi;

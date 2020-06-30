@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -24,8 +28,11 @@ class Count extends Constraint
 
     public function __construct(int $expected)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->expectedCount = $expected;
     }
 
@@ -51,14 +58,24 @@ class Count extends Constraint
      */
     protected function getCountOf($other): ?int
     {
+<<<<<<< HEAD
         if ($other instanceof Countable || \is_array($other)) {
             return \count($other);
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($other instanceof \EmptyIterator) {
             return 0;
         }
 
+<<<<<<< HEAD
+=======
+        if ($other instanceof Countable || \is_array($other)) {
+            return \count($other);
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($other instanceof Traversable) {
             while ($other instanceof IteratorAggregate) {
                 $other = $other->getIterator();
@@ -89,6 +106,11 @@ class Count extends Constraint
 
             return $count;
         }
+<<<<<<< HEAD
+=======
+
+        return null;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

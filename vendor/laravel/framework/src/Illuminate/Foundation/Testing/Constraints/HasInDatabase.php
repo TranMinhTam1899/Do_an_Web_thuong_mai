@@ -75,16 +75,29 @@ class HasInDatabase extends Constraint
      */
     protected function getAdditionalInfo($table)
     {
+<<<<<<< HEAD
         $results = $this->database->table($table)->get();
+=======
+        $query = $this->database->table($table);
+
+        $results = $query->limit($this->show)->get();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if ($results->isEmpty()) {
             return 'The table is empty';
         }
 
+<<<<<<< HEAD
         $description = 'Found: '.json_encode($results->take($this->show), JSON_PRETTY_PRINT);
 
         if ($results->count() > $this->show) {
             $description .= sprintf(' and %s others', $results->count() - $this->show);
+=======
+        $description = 'Found: '.json_encode($results, JSON_PRETTY_PRINT);
+
+        if ($query->count() > $this->show) {
+            $description .= sprintf(' and %s others', $query->count() - $this->show);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $description;

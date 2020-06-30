@@ -11,6 +11,12 @@
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
+=======
+/**
+ * @small
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class ProxyObjectTest extends TestCase
 {
     public function testProxyingWorksForMethodThatReturnsUndeclaredScalarValue(): void

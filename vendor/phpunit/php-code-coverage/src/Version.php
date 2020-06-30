@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -21,7 +25,11 @@ final class Version
     public static function id(): string
     {
         if (self::$version === null) {
+<<<<<<< HEAD
             $version       = new VersionId('6.1.4', \dirname(__DIR__));
+=======
+            $version       = new VersionId('7.0.8', \dirname(__DIR__));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             self::$version = $version->getVersion();
         }
 

@@ -15,7 +15,10 @@
 namespace Ramsey\Uuid;
 
 use Ramsey\Uuid\Converter\NumberConverterInterface;
+<<<<<<< HEAD
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Ramsey\Uuid\Provider\NodeProviderInterface;
 use Ramsey\Uuid\Generator\RandomGeneratorInterface;
 use Ramsey\Uuid\Generator\TimeGeneratorInterface;
@@ -275,7 +278,11 @@ class UuidFactory implements UuidFactoryInterface
      * @param string $hashFunction The hash function to use when hashing together
      *     the namespace and name
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function uuidFromNsAndName($ns, $name, $version, $hashFunction)
     {
@@ -301,14 +308,22 @@ class UuidFactory implements UuidFactoryInterface
         $timeHi = BinaryUtils::applyVersion(substr($hash, 12, 4), $version);
         $clockSeqHi = BinaryUtils::applyVariant(hexdec(substr($hash, 16, 2)));
 
+<<<<<<< HEAD
         $fields = [
+=======
+        $fields = array(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'time_low' => substr($hash, 0, 8),
             'time_mid' => substr($hash, 8, 4),
             'time_hi_and_version' => str_pad(dechex($timeHi), 4, '0', STR_PAD_LEFT),
             'clock_seq_hi_and_reserved' => str_pad(dechex($clockSeqHi), 2, '0', STR_PAD_LEFT),
             'clock_seq_low' => substr($hash, 18, 2),
             'node' => substr($hash, 20, 12),
+<<<<<<< HEAD
         ];
+=======
+        );
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this->uuid($fields);
     }

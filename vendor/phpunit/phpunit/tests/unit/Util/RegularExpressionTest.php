@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,14 @@ namespace PHPUnit\Util;
 
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class RegularExpressionTest extends TestCase
+=======
+/**
+ * @small
+ */
+final class RegularExpressionTest extends TestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function validRegexpProvider(): array
     {
@@ -33,6 +44,10 @@ class RegularExpressionTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @testdox Valid regex $pattern on $subject returns $return
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider validRegexpProvider
      *
      * @throws \Exception
@@ -44,6 +59,10 @@ class RegularExpressionTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @testdox Invalid regex $pattern on $subject
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider invalidRegexpProvider
      *
      * @throws \Exception

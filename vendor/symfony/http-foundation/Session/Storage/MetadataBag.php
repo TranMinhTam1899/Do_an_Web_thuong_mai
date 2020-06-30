@@ -159,7 +159,11 @@ class MetadataBag implements SessionBagInterface
         $this->name = $name;
     }
 
+<<<<<<< HEAD
     private function stampCreated(int $lifetime = null): void
+=======
+    private function stampCreated($lifetime = null)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $timeStamp = time();
         $this->meta[self::CREATED] = $this->meta[self::UPDATED] = $this->lastUsed = $timeStamp;

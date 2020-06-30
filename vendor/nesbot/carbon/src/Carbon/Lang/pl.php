@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Wacław Jacek
  * - François B
@@ -101,7 +105,11 @@ return [
     'months' => ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia'],
     'months_standalone' => ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień'],
     'months_short' => ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru'],
+<<<<<<< HEAD
     'months_regexp' => '/(DD?o?\.?(\[[^\[\]]*\]|\s)+MMMM?|L{2,4}|l{2,4})/',
+=======
+    'months_regexp' => '/DD?o?\.?(\[[^\[\]]*\]|\s)+MMMM?/',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'weekdays' => ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota'],
     'weekdays_short' => ['ndz', 'pon', 'wt', 'śr', 'czw', 'pt', 'sob'],
     'weekdays_min' => ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'So'],

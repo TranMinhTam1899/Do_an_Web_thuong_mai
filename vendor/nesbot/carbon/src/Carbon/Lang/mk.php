@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Sashko Todorov
  * - Josh Soref
@@ -45,9 +49,12 @@ return [
     'from_now' => 'после :time',
     'after' => 'по :time',
     'before' => 'пред :time',
+<<<<<<< HEAD
     'diff_now' => 'сега',
     'diff_yesterday' => 'вчера',
     'diff_tomorrow' => 'утре',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'H:mm',
         'LTS' => 'H:mm:ss',

@@ -30,7 +30,11 @@ class JsonFileLoader extends FileLoader
             $messages = json_decode($data, true);
 
             if (0 < $errorCode = json_last_error()) {
+<<<<<<< HEAD
                 throw new InvalidResourceException('Error parsing JSON: '.$this->getJSONErrorMessage($errorCode));
+=======
+                throw new InvalidResourceException(sprintf('Error parsing JSON - %s', $this->getJSONErrorMessage($errorCode)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 
@@ -39,8 +43,17 @@ class JsonFileLoader extends FileLoader
 
     /**
      * Translates JSON_ERROR_* constant into meaningful message.
+<<<<<<< HEAD
      */
     private function getJSONErrorMessage(int $errorCode): string
+=======
+     *
+     * @param int $errorCode Error code returned by json_last_error() call
+     *
+     * @return string Message string
+     */
+    private function getJSONErrorMessage($errorCode)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         switch ($errorCode) {
             case JSON_ERROR_DEPTH:

@@ -11,6 +11,7 @@ namespace PHPUnit\Runner;
 
 use SebastianBergmann\Version as VersionId;
 
+<<<<<<< HEAD
 /**
  * This class defines the current version of PHPUnit.
  */
@@ -19,12 +20,26 @@ class Version
     private static $pharVersion;
 
     private static $version;
+=======
+final class Version
+{
+    /**
+     * @var string
+     */
+    private static $pharVersion = '';
+
+    /**
+     * @var string
+     */
+    private static $version = '';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Returns the current version of PHPUnit.
      */
     public static function id(): string
     {
+<<<<<<< HEAD
         if (self::$pharVersion !== null) {
             return self::$pharVersion;
         }
@@ -32,6 +47,14 @@ class Version
         if (self::$version === null) {
             $version       = new VersionId('7.5.20', \dirname(__DIR__, 2));
             self::$version = $version->getVersion();
+=======
+        if (self::$pharVersion !== '') {
+            return self::$pharVersion;
+        }
+
+        if (self::$version === '') {
+            self::$version = (new VersionId('8.4.1', \dirname(__DIR__, 2)))->getVersion();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return self::$version;

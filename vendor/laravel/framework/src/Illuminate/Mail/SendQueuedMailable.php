@@ -2,8 +2,13 @@
 
 namespace Illuminate\Mail;
 
+<<<<<<< HEAD
 use Illuminate\Contracts\Mail\Mailer as MailerContract;
 use Illuminate\Contracts\Mail\Mailable as MailableContract;
+=======
+use Illuminate\Contracts\Mail\Mailable as MailableContract;
+use Illuminate\Contracts\Mail\Mailer as MailerContract;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SendQueuedMailable
 {

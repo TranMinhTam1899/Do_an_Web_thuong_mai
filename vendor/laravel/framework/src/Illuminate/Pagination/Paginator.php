@@ -2,6 +2,7 @@
 
 namespace Illuminate\Pagination;
 
+<<<<<<< HEAD
 use Countable;
 use ArrayAccess;
 use JsonSerializable;
@@ -13,6 +14,18 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
 
 class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Countable, IteratorAggregate, JsonSerializable, Jsonable, PaginatorContract
+=======
+use ArrayAccess;
+use Countable;
+use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Collection;
+use IteratorAggregate;
+use JsonSerializable;
+
+class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Countable, IteratorAggregate, Jsonable, JsonSerializable, PaginatorContract
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Determine if there are more items in the data source.
@@ -102,6 +115,7 @@ class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Cou
      *
      * @param  string|null  $view
      * @param  array  $data
+<<<<<<< HEAD
      * @return string
      */
     public function render($view = null, $data = [])
@@ -111,6 +125,15 @@ class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Cou
                 'paginator' => $this,
             ]))->render()
         );
+=======
+     * @return \Illuminate\Contracts\Support\Htmlable
+     */
+    public function render($view = null, $data = [])
+    {
+        return static::viewFactory()->make($view ?: static::$defaultSimpleView, array_merge($data, [
+            'paginator' => $this,
+        ]));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -149,7 +172,11 @@ class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Cou
             'first_page_url' => $this->url(1),
             'from' => $this->firstItem(),
             'next_page_url' => $this->nextPageUrl(),
+<<<<<<< HEAD
             'path' => $this->path,
+=======
+            'path' => $this->path(),
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'per_page' => $this->perPage(),
             'prev_page_url' => $this->previousPageUrl(),
             'to' => $this->lastItem(),

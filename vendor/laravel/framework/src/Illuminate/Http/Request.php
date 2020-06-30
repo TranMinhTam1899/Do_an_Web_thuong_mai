@@ -2,6 +2,7 @@
 
 namespace Illuminate\Http;
 
+<<<<<<< HEAD
 use Closure;
 use ArrayAccess;
 use RuntimeException;
@@ -9,6 +10,15 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
+=======
+use ArrayAccess;
+use Closure;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 

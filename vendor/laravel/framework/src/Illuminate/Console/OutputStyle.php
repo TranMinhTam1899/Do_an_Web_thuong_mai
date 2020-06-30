@@ -2,9 +2,15 @@
 
 namespace Illuminate\Console;
 
+<<<<<<< HEAD
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+=======
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class OutputStyle extends SymfonyStyle
 {

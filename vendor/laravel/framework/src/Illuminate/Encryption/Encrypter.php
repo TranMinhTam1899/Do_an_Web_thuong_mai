@@ -2,10 +2,17 @@
 
 namespace Illuminate\Encryption;
 
+<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Contracts\Encryption\EncryptException;
 use Illuminate\Contracts\Encryption\Encrypter as EncrypterContract;
+=======
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Contracts\Encryption\Encrypter as EncrypterContract;
+use Illuminate\Contracts\Encryption\EncryptException;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Encrypter implements EncrypterContract
 {

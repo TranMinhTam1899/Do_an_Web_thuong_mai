@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,14 @@ namespace PHPUnit\Framework\Constraint;
 
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class ExceptionMessageRegExpTest extends TestCase
+=======
+/**
+ * @small
+ */
+final class ExceptionMessageRegExpTest extends TestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testRegexMessage(): void
     {
@@ -43,11 +54,19 @@ class ExceptionMessageRegExpTest extends TestCase
         throw new \Exception('Screaming preg_match');
     }
 
+<<<<<<< HEAD
     public function testSimultaneousLiteralAndRegExpExceptionMessage(): void
     {
         $this->expectException(\Exception::class);
         $this->expectExceptionMessageRegExp('/^A variadic \w+ message/');
 
         throw new \Exception('A variadic exception message');
+=======
+    public function testRegExMessageCanBeExportedAsString(): void
+    {
+        $exceptionMessageReExp = new ExceptionMessageRegularExpression('/^a poly[a-z]+ [a-zA-Z0-9_]+ me(s){2}age$/i');
+
+        $this->assertSame('exception message matches ', $exceptionMessageReExp->toString());
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

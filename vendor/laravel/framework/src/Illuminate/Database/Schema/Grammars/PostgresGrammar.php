@@ -2,8 +2,13 @@
 
 namespace Illuminate\Database\Schema\Grammars;
 
+<<<<<<< HEAD
 use Illuminate\Support\Fluent;
 use Illuminate\Database\Schema\Blueprint;
+=======
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Fluent;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PostgresGrammar extends Grammar
 {
@@ -685,7 +690,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeTime(Fluent $column)
     {
+<<<<<<< HEAD
         return "time($column->precision) without time zone";
+=======
+        return 'time'.(is_null($column->precision) ? '' : "($column->precision)").' without time zone';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -696,7 +705,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeTimeTz(Fluent $column)
     {
+<<<<<<< HEAD
         return "time($column->precision) with time zone";
+=======
+        return 'time'.(is_null($column->precision) ? '' : "($column->precision)").' with time zone';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -707,7 +720,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeTimestamp(Fluent $column)
     {
+<<<<<<< HEAD
         $columnType = "timestamp($column->precision) without time zone";
+=======
+        $columnType = 'timestamp'.(is_null($column->precision) ? '' : "($column->precision)").' without time zone';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $column->useCurrent ? "$columnType default CURRENT_TIMESTAMP" : $columnType;
     }
@@ -720,7 +737,11 @@ class PostgresGrammar extends Grammar
      */
     protected function typeTimestampTz(Fluent $column)
     {
+<<<<<<< HEAD
         $columnType = "timestamp($column->precision) with time zone";
+=======
+        $columnType = 'timestamp'.(is_null($column->precision) ? '' : "($column->precision)").' with time zone';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $column->useCurrent ? "$columnType default CURRENT_TIMESTAMP" : $columnType;
     }

@@ -102,7 +102,11 @@ class PostgresBuilder extends Builder
      *
      * @return array
      */
+<<<<<<< HEAD
     protected function getAllTables()
+=======
+    public function getAllTables()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->connection->select(
             $this->grammar->compileGetAllTables($this->connection->getConfig('schema'))

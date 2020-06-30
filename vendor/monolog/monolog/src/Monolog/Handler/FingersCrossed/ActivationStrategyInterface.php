@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -20,9 +24,14 @@ interface ActivationStrategyInterface
 {
     /**
      * Returns whether the given record activates the handler.
+<<<<<<< HEAD
      *
      * @param  array   $record
      * @return bool
      */
     public function isHandlerActivated(array $record);
+=======
+     */
+    public function isHandlerActivated(array $record): bool;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

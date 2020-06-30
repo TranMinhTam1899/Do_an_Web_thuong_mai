@@ -194,6 +194,7 @@ class Person extends \Faker\Provider\Person
     protected static $titleFemale = array('dr.', 'drg.', 'Dr.', 'Hj.');
 
     /**
+<<<<<<< HEAD
      * @link http://informasipedia.com/wilayah-indonesia/daftar-kabupaten-kota-di-indonesia/
      */
     protected static $birthPlaceCode = array(
@@ -232,6 +233,8 @@ class Person extends \Faker\Provider\Person
     );
 
      /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * For academic title
      * @link http://id.wikipedia.org/wiki/Gelar_akademik
      */
@@ -304,8 +307,12 @@ class Person extends \Faker\Provider\Person
     public function nik($gender = null, $birthDate = null)
     {
         # generate first numbers (region data)
+<<<<<<< HEAD
         $nik = $this->birthPlaceCode();
         $nik .= $this->generator->numerify('##');
+=======
+        $nik = $this->generator->numerify('######');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!$birthDate) {
             $birthDate = $this->generator->dateTimeBetween();
@@ -325,6 +332,7 @@ class Person extends \Faker\Provider\Person
         $nik .= $birthDate->format('my');
 
         # add last random digits
+<<<<<<< HEAD
         $nik .= $this->generator->numerify('####');
 
         return $nik;
@@ -340,4 +348,10 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$birthPlaceCode);
     }
+=======
+        $nik.= $this->generator->numerify('####');
+
+        return $nik;
+    }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

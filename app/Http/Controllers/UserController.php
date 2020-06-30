@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\user;
+
 class UserController extends Controller
 {
     /**
@@ -26,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //return view('linh-vuc.form');
+        return view('admin.pages.user.add-user');
     }
 
     /**
@@ -37,10 +38,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // $linhVuc = new LinhVuc;
-        // $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
-        // $linhVuc->save();
-        // return redirect()->route('linh-vuc.danh-sach');
+         $addUser = new user;
+         $addUser->user_name = $request->user_name;
+         $addUser->password = $request->password;
+         $addUser->role = $request->role;
+         $addUser->first_name = $request->first_name;
+         $addUser->last_name = $request->last_name;
+         $addUser->email = $request->email;
+         $addUser->phone = $request->phone;
+         $addUser->address = $request->address;
+         $addUser->num_order = "null";
+         $addUser->gender = $request->gender;
+         $addUser->birthday = $request->birthday;
+         $addUser->status = $request->status;
+       
+         $addUser->save();
+         return redirect()->route('user.listUser')->with(['flash_message' => 'Thêm User thành công ']);
     }
 
     /**
@@ -62,8 +75,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        // $linhVuc = LinhVuc::find($id);
-        // return view('linh-vuc.form', compact('linhVuc'));
+         $addUser = user::find($id);
+         return view('admin.pages.user.add-user', compact('addUser'));
     }
 
     /**
@@ -75,10 +88,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $linhVuc = LinhVuc::find($id);
-        // $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
-        // $linhVuc->save();
-        // return redirect()->route('linh-vuc.danh-sach');
+         $addUser = user::find($id);
+         $addUser->user_name = $request->user_name;
+         $addUser->password = $request->password;
+         $addUser->role = $request->role;
+         $addUser->first_name = $request->first_name;
+         $addUser->last_name = $request->last_name;
+         $addUser->email = $request->email;
+         $addUser->phone = $request->phone;
+         $addUser->address = $request->address;
+         $addUser->num_order = "null";
+         $addUser->gender = $request->gender;
+         $addUser->birthday = $request->birthday;
+         $addUser->status = $request->status;
+         $addUser->save();
+         return redirect()->route('user.listUser')->with(['flash_message' => 'Cập nhật User thành công ']);
     }
 
     /**
@@ -89,8 +113,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        // $linhVuc = LinhVuc::find($id);
-        // $linhVuc->delete();
-        // return redirect()->route('linh-vuc.danh-sach');
+         $addUser = user::find($id);
+         $addUser->delete();
+         return redirect()->route('user.listUser');
     }
 }

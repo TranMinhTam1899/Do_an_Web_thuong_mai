@@ -96,7 +96,11 @@ abstract class AbstractSurrogate implements SurrogateInterface
             $response = $cache->handle($subRequest, HttpKernelInterface::SUB_REQUEST, true);
 
             if (!$response->isSuccessful()) {
+<<<<<<< HEAD
                 throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %d).', $subRequest->getUri(), $response->getStatusCode()));
+=======
+                throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %s).', $subRequest->getUri(), $response->getStatusCode()));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return $response->getContent();

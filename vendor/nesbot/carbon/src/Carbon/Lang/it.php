@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Ash
  * - François B
@@ -20,7 +24,10 @@
  * - Francesco Marasco
  * - Tizianoz93
  * - Davide Casiraghi (davide-casiraghi)
+<<<<<<< HEAD
  * - Pete Scopes (pdscopes)
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count anno|:count anni',
@@ -44,9 +51,12 @@ return [
     'second' => ':count secondo|:count secondi',
     'a_second' => 'alcuni secondi|:count secondi',
     's' => ':count sec.',
+<<<<<<< HEAD
     'millisecond' => ':count millisecondo|:count millisecondi',
     'a_millisecond' => 'un millisecondo|:count millisecondi',
     'ms' => ':countms',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => ':time fa',
     'from_now' => function ($time) {
         return (preg_match('/^[0-9].+$/', $time) ? 'tra' : 'in')." $time";

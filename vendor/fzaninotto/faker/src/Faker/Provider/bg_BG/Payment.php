@@ -31,7 +31,11 @@ class Payment extends \Faker\Provider\Payment
      */
     public static function vat($spacedNationalPrefix = true)
     {
+<<<<<<< HEAD
         $prefix = $spacedNationalPrefix ? "BG " : "BG";
+=======
+        $prefix = ($spacedNationalPrefix) ? "BG " : "BG";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return sprintf(
             "%s%d%d",

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -339,14 +343,22 @@ final class File extends Renderer
 
             if (!empty($popoverTitle)) {
                 $popover = \sprintf(
+<<<<<<< HEAD
                     ' data-title="%s" data-content="%s" data-placement="bottom" data-html="true"',
+=======
+                    ' data-title="%s" data-content="%s" data-placement="top" data-html="true"',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $popoverTitle,
                     \htmlspecialchars($popoverContent, $this->htmlSpecialCharsFlags)
                 );
             }
 
             $lines .= \sprintf(
+<<<<<<< HEAD
                 '     <tr%s%s><td><div align="right"><a name="%d"></a><a href="#%d">%d</a></div></td><td class="codeLine">%s</td></tr>' . "\n",
+=======
+                '     <tr%s><td%s><div align="right"><a name="%d"></a><a href="#%d">%d</a></div></td><td class="codeLine">%s</td></tr>' . "\n",
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $trClass,
                 $popover,
                 $i,

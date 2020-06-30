@@ -64,6 +64,23 @@ class Authenticate
             }
         }
 
+<<<<<<< HEAD
+=======
+        $this->unauthenticated($request, $guards);
+    }
+
+    /**
+     * Handle an unauthenticated user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  array  $guards
+     * @return void
+     *
+     * @throws \Illuminate\Auth\AuthenticationException
+     */
+    protected function unauthenticated($request, array $guards)
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         throw new AuthenticationException(
             'Unauthenticated.', $guards, $this->redirectTo($request)
         );
@@ -73,7 +90,11 @@ class Authenticate
      * Get the path the user should be redirected to when they are not authenticated.
      *
      * @param  \Illuminate\Http\Request  $request
+<<<<<<< HEAD
      * @return string
+=======
+     * @return string|null
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function redirectTo($request)
     {

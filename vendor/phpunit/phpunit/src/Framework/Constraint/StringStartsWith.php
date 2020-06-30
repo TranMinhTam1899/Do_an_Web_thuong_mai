@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -9,13 +13,21 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
+<<<<<<< HEAD
 use PHPUnit\Util\InvalidArgumentHelper;
+=======
+use PHPUnit\Framework\InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Constraint that asserts that the string it is evaluated for begins with a
  * given prefix.
  */
+<<<<<<< HEAD
 class StringStartsWith extends Constraint
+=======
+final class StringStartsWith extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -24,10 +36,15 @@ class StringStartsWith extends Constraint
 
     public function __construct(string $prefix)
     {
+<<<<<<< HEAD
         parent::__construct();
 
         if (\strlen($prefix) === 0) {
             throw InvalidArgumentHelper::factory(1, 'non-empty string');
+=======
+        if (\strlen($prefix) === 0) {
+            throw InvalidArgumentException::create(1, 'non-empty string');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->prefix = $prefix;
@@ -49,6 +66,10 @@ class StringStartsWith extends Constraint
      */
     protected function matches($other): bool
     {
+<<<<<<< HEAD
         return \strpos($other, $this->prefix) === 0;
+=======
+        return \strpos((string) $other, $this->prefix) === 0;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

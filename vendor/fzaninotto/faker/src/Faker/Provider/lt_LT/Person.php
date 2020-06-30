@@ -13,11 +13,14 @@ class Person extends \Faker\Provider\Person
         '{{firstNameFemale}} {{lastNameFemale}}',
     );
 
+<<<<<<< HEAD
     protected static $lastNameFormat = array(
         '{{firstNameMale}}',
         '{{firstNameFemale}}',
     );
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected static $titleMale = array('p.', 'ponas');
 
     protected static $titleFemale = array('p.', 'ponia', 'panelė');
@@ -253,6 +256,7 @@ class Person extends \Faker\Provider\Person
     );
 
     /**
+<<<<<<< HEAD
      * @param string|null $gender 'male', 'female' or null for any
      * @example 'Doe'
      * @return string
@@ -269,6 +273,8 @@ class Person extends \Faker\Provider\Person
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Return male last name
      * @return string
      * @example 'Vasiliauskas'
@@ -323,11 +329,19 @@ class Person extends \Faker\Provider\Person
             $birthdate = \Faker\Provider\DateTime::dateTimeThisCentury();
         }
 
+<<<<<<< HEAD
         $genderNumber = ($gender == 'male') ? 1 : 0;
         $firstNumber = (int) floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
 
         $datePart = $birthdate->format('ymd');
         $randomDigits = (string) ( ! $randomNumber || strlen($randomNumber) < 3) ?  static::numerify('###') : substr($randomNumber, 0, 3);
+=======
+        $genderNumber = ($gender == 'male') ? (int) 1 : (int) 0;
+        $firstNumber = (int) floor($birthdate->format('Y') / 100) * 2 - 34 - $genderNumber;
+
+        $datePart = $birthdate->format('ymd');
+        $randomDigits = (string) ( ! $randomNumber || strlen($randomNumber < 3)) ?  static::numerify('###') : substr($randomNumber, 0, 3);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $partOfPerosnalCode = $firstNumber . $datePart . $randomDigits;
 
         $sum = self::calculateSum($partOfPerosnalCode, 1);
@@ -339,7 +353,11 @@ class Person extends \Faker\Provider\Person
         }
 
         $sum = self::calculateSum($partOfPerosnalCode, 2);
+<<<<<<< HEAD
         $liekana = $sum % 11;
+=======
+        $liekana = (int) $sum % 11;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $lastNumber = ($liekana !== 10) ? $liekana : 0;
         return $firstNumber . $datePart . $randomDigits . $lastNumber;

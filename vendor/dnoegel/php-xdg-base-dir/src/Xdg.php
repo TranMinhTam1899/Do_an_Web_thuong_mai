@@ -6,6 +6,12 @@ namespace XdgBaseDir;
  * Simple implementation of the XDG standard http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
  *
  * Based on the python implementation https://github.com/takluyver/pyxdg/blob/master/xdg/BaseDirectory.py
+<<<<<<< HEAD
+=======
+ *
+ * Class Xdg
+ * @package ShopwareCli\Application
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class Xdg
 {
@@ -27,6 +33,7 @@ class Xdg
      */
     public function getHomeConfigDir()
     {
+<<<<<<< HEAD
         if ($path = getenv('XDG_CONFIG_HOME')) {
             return $path;
         }
@@ -34,6 +41,9 @@ class Xdg
         $homeDir = $this->getHomeDir();
 
         $path = DIRECTORY_SEPARATOR === $homeDir ? $homeDir.'.config' : $homeDir . DIRECTORY_SEPARATOR . '.config';
+=======
+        $path = getenv('XDG_CONFIG_HOME') ?: $this->getHomeDir() . DIRECTORY_SEPARATOR . '.config';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $path;
     }
@@ -107,7 +117,11 @@ class Xdg
         if (!$st['mode'] & self::S_IFDIR) {
             rmdir($fallback);
             $create = true;
+<<<<<<< HEAD
         } elseif ($st['uid'] != $this->getUid() ||
+=======
+        } elseif ($st['uid'] != getmyuid() ||
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $st['mode'] & (self::S_IRWXG | self::S_IRWXO)
         ) {
             rmdir($fallback);
@@ -121,6 +135,7 @@ class Xdg
         return $fallback;
     }
 
+<<<<<<< HEAD
     private function getUid()
     {
         if (function_exists('posix_getuid')) {
@@ -129,4 +144,6 @@ class Xdg
 
         return getmyuid();
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

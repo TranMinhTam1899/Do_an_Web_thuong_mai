@@ -113,6 +113,7 @@ class Color extends Base
     {
         return static::randomElement(static::$allColorNames);
     }
+<<<<<<< HEAD
 
     /**
      * @example '340,50,20'
@@ -140,4 +141,6 @@ class Color extends Base
             static::numberBetween(0, 100)
         );
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

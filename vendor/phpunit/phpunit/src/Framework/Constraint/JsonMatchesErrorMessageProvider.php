@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,11 @@ namespace PHPUnit\Framework\Constraint;
 /**
  * Provides human readable messages for each JSON error.
  */
+<<<<<<< HEAD
 class JsonMatchesErrorMessageProvider
+=======
+final class JsonMatchesErrorMessageProvider
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Translates JSON error to a human readable string.

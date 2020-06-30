@@ -3,6 +3,7 @@
 namespace Illuminate\Mail;
 
 use Aws\Ses\SesClient;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Psr\Log\LoggerInterface;
 use Illuminate\Log\LogManager;
@@ -17,6 +18,20 @@ use Illuminate\Mail\Transport\MailgunTransport;
 use Illuminate\Mail\Transport\MandrillTransport;
 use Illuminate\Mail\Transport\SparkPostTransport;
 use Swift_SendmailTransport as SendmailTransport;
+=======
+use GuzzleHttp\Client as HttpClient;
+use Illuminate\Log\LogManager;
+use Illuminate\Mail\Transport\ArrayTransport;
+use Illuminate\Mail\Transport\LogTransport;
+use Illuminate\Mail\Transport\MailgunTransport;
+use Illuminate\Mail\Transport\SesTransport;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Manager;
+use Postmark\Transport as PostmarkTransport;
+use Psr\Log\LoggerInterface;
+use Swift_SendmailTransport as SendmailTransport;
+use Swift_SmtpTransport as SmtpTransport;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class TransportManager extends Manager
 {
@@ -27,14 +42,22 @@ class TransportManager extends Manager
      */
     protected function createSmtpDriver()
     {
+<<<<<<< HEAD
         $config = $this->app->make('config')->get('mail');
+=======
+        $config = $this->config->get('mail');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // The Swift SMTP transport instance will allow us to use any SMTP backend
         // for delivering mail such as Sendgrid, Amazon SES, or a custom server
         // a developer has available. We will just pass this configured host.
         $transport = new SmtpTransport($config['host'], $config['port']);
 
+<<<<<<< HEAD
         if (isset($config['encryption'])) {
+=======
+        if (! empty($config['encryption'])) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $transport->setEncryption($config['encryption']);
         }
 
@@ -81,7 +104,11 @@ class TransportManager extends Manager
      */
     protected function createSendmailDriver()
     {
+<<<<<<< HEAD
         return new SendmailTransport($this->app['config']['mail']['sendmail']);
+=======
+        return new SendmailTransport($this->config->get('mail.sendmail'));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -91,7 +118,11 @@ class TransportManager extends Manager
      */
     protected function createSesDriver()
     {
+<<<<<<< HEAD
         $config = array_merge($this->app['config']->get('services.ses', []), [
+=======
+        $config = array_merge($this->config->get('services.ses', []), [
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'version' => 'latest', 'service' => 'email',
         ]);
 
@@ -133,7 +164,11 @@ class TransportManager extends Manager
      */
     protected function createMailgunDriver()
     {
+<<<<<<< HEAD
         $config = $this->app['config']->get('services.mailgun', []);
+=======
+        $config = $this->config->get('services.mailgun', []);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return new MailgunTransport(
             $this->guzzle($config),
@@ -144,6 +179,7 @@ class TransportManager extends Manager
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of the Mandrill Swift Transport driver.
      *
      * @return \Illuminate\Mail\Transport\MandrillTransport
@@ -172,6 +208,8 @@ class TransportManager extends Manager
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create an instance of the Postmark Swift Transport driver.
      *
      * @return \Swift_Transport
@@ -179,7 +217,11 @@ class TransportManager extends Manager
     protected function createPostmarkDriver()
     {
         return new PostmarkTransport(
+<<<<<<< HEAD
             $this->app['config']->get('services.postmark.token')
+=======
+            $this->config->get('services.postmark.token')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
@@ -190,10 +232,17 @@ class TransportManager extends Manager
      */
     protected function createLogDriver()
     {
+<<<<<<< HEAD
         $logger = $this->app->make(LoggerInterface::class);
 
         if ($logger instanceof LogManager) {
             $logger = $logger->channel($this->app['config']['mail.log_channel']);
+=======
+        $logger = $this->container->make(LoggerInterface::class);
+
+        if ($logger instanceof LogManager) {
+            $logger = $logger->channel($this->config->get('mail.log_channel'));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return new LogTransport($logger);
@@ -229,7 +278,11 @@ class TransportManager extends Manager
      */
     public function getDefaultDriver()
     {
+<<<<<<< HEAD
         return $this->app['config']['mail.driver'];
+=======
+        return $this->config->get('mail.driver');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -240,6 +293,10 @@ class TransportManager extends Manager
      */
     public function setDefaultDriver($name)
     {
+<<<<<<< HEAD
         $this->app['config']['mail.driver'] = $name;
+=======
+        $this->config->set('mail.driver', $name);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

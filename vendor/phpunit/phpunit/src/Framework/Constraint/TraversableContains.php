@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,7 +19,11 @@ use SplObjectStorage;
  * Constraint that asserts that the Traversable it is applied to contains
  * a given value.
  */
+<<<<<<< HEAD
 class TraversableContains extends Constraint
+=======
+final class TraversableContains extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var bool
@@ -37,8 +45,11 @@ class TraversableContains extends Constraint
      */
     public function __construct($value, bool $checkForObjectIdentity = true, bool $checkForNonObjectIdentity = false)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->checkForObjectIdentity    = $checkForObjectIdentity;
         $this->checkForNonObjectIdentity = $checkForNonObjectIdentity;
         $this->value                     = $value;
@@ -55,7 +66,11 @@ class TraversableContains extends Constraint
             return 'contains "' . $this->value . '"';
         }
 
+<<<<<<< HEAD
         return 'contains ' . $this->exporter->export($this->value);
+=======
+        return 'contains ' . $this->exporter()->export($this->value);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -76,7 +91,10 @@ class TraversableContains extends Constraint
                     return true;
                 }
 
+<<<<<<< HEAD
                 /* @noinspection TypeUnsafeComparisonInspection */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if (!$this->checkForObjectIdentity && $element == $this->value) {
                     return true;
                 }
@@ -87,7 +105,10 @@ class TraversableContains extends Constraint
                     return true;
                 }
 
+<<<<<<< HEAD
                 /* @noinspection TypeUnsafeComparisonInspection */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if (!$this->checkForNonObjectIdentity && $element == $this->value) {
                     return true;
                 }

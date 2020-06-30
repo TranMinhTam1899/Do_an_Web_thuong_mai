@@ -35,9 +35,12 @@ return [
     'meridiem' => ['am Vormittag', 'am Namittag'],
     'ordinal' => ':number.',
     'list' => [', ', ' und '],
+<<<<<<< HEAD
     'diff_now' => 'now',
     'diff_yesterday' => 'geschter',
     'diff_tomorrow' => 'moorn',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

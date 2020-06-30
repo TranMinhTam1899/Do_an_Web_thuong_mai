@@ -29,7 +29,11 @@ abstract class AbstractSessionHandler implements \SessionHandlerInterface, \Sess
     private $igbinaryEmptyData;
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function open($savePath, $sessionName)
     {
@@ -64,13 +68,18 @@ abstract class AbstractSessionHandler implements \SessionHandlerInterface, \Sess
     abstract protected function doDestroy($sessionId);
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function validateId($sessionId)
     {
         $this->prefetchData = $this->read($sessionId);
         $this->prefetchId = $sessionId;
 
+<<<<<<< HEAD
         if (\PHP_VERSION_ID < 70317 || (70400 <= \PHP_VERSION_ID && \PHP_VERSION_ID < 70405)) {
             // work around https://bugs.php.net/79413
             foreach (debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS) as $frame) {
@@ -80,11 +89,17 @@ abstract class AbstractSessionHandler implements \SessionHandlerInterface, \Sess
             }
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return '' !== $this->prefetchData;
     }
 
     /**
+<<<<<<< HEAD
      * @return string
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function read($sessionId)
     {
@@ -107,7 +122,11 @@ abstract class AbstractSessionHandler implements \SessionHandlerInterface, \Sess
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function write($sessionId, $data)
     {
@@ -124,13 +143,21 @@ abstract class AbstractSessionHandler implements \SessionHandlerInterface, \Sess
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function destroy($sessionId)
     {
         if (!headers_sent() && filter_var(ini_get('session.use_cookies'), FILTER_VALIDATE_BOOLEAN)) {
             if (!$this->sessionName) {
+<<<<<<< HEAD
                 throw new \LogicException(sprintf('Session name cannot be empty, did you forget to call "parent::open()" in "%s"?.', static::class));
+=======
+                throw new \LogicException(sprintf('Session name cannot be empty, did you forget to call "parent::open()" in "%s"?.', \get_class($this)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $cookie = SessionUtils::popSessionCookie($this->sessionName, $sessionId);
 

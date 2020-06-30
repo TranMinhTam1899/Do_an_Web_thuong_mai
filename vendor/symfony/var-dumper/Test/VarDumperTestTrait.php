@@ -19,6 +19,7 @@ use Symfony\Component\VarDumper\Dumper\CliDumper;
  */
 trait VarDumperTestTrait
 {
+<<<<<<< HEAD
     /**
      * @internal
      */
@@ -42,6 +43,8 @@ trait VarDumperTestTrait
         $this->varDumperConfig['flags'] = null;
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function assertDumpEquals($expected, $data, $filter = 0, $message = '')
     {
         $this->assertSame($this->prepareExpectation($expected, $filter), $this->getDump($data, null, $filter), $message);
@@ -57,6 +60,7 @@ trait VarDumperTestTrait
      */
     protected function getDump($data, $key = null, $filter = 0)
     {
+<<<<<<< HEAD
         if (null === $flags = $this->varDumperConfig['flags']) {
             $flags = getenv('DUMP_LIGHT_ARRAY') ? CliDumper::DUMP_LIGHT_ARRAY : 0;
             $flags |= getenv('DUMP_STRING_LENGTH') ? CliDumper::DUMP_STRING_LENGTH : 0;
@@ -65,6 +69,13 @@ trait VarDumperTestTrait
 
         $cloner = new VarCloner();
         $cloner->addCasters($this->varDumperConfig['casters']);
+=======
+        $flags = getenv('DUMP_LIGHT_ARRAY') ? CliDumper::DUMP_LIGHT_ARRAY : 0;
+        $flags |= getenv('DUMP_STRING_LENGTH') ? CliDumper::DUMP_STRING_LENGTH : 0;
+        $flags |= getenv('DUMP_COMMA_SEPARATOR') ? CliDumper::DUMP_COMMA_SEPARATOR : 0;
+
+        $cloner = new VarCloner();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $cloner->setMaxItems(-1);
         $dumper = new CliDumper(null, null, $flags);
         $dumper->setColors(false);
@@ -76,7 +87,11 @@ trait VarDumperTestTrait
         return rtrim($dumper->dump($data, true));
     }
 
+<<<<<<< HEAD
     private function prepareExpectation($expected, int $filter): string
+=======
+    private function prepareExpectation($expected, $filter)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!\is_string($expected)) {
             $expected = $this->getDump($expected, null, $filter);

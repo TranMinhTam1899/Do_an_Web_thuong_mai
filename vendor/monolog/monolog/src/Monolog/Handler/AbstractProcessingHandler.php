@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -11,28 +15,51 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
 use Monolog\ResettableInterface;
 
 /**
  * Base Handler class providing the Handler structure
+=======
+/**
+ * Base Handler class providing the Handler structure, including processors and formatters
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  *
  * Classes extending it should (in most cases) only implement write($record)
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
  * @author Christophe Coevoet <stof@notk.org>
  */
+<<<<<<< HEAD
 abstract class AbstractProcessingHandler extends AbstractHandler
 {
     /**
      * {@inheritdoc}
      */
     public function handle(array $record)
+=======
+abstract class AbstractProcessingHandler extends AbstractHandler implements ProcessableHandlerInterface, FormattableHandlerInterface
+{
+    use ProcessableHandlerTrait;
+    use FormattableHandlerTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handle(array $record): bool
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->isHandling($record)) {
             return false;
         }
 
+<<<<<<< HEAD
         $record = $this->processRecord($record);
+=======
+        if ($this->processors) {
+            $record = $this->processRecord($record);
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $record['formatted'] = $this->getFormatter()->format($record);
 
@@ -43,6 +70,7 @@ abstract class AbstractProcessingHandler extends AbstractHandler
 
     /**
      * Writes the record down to the log of the implementing handler
+<<<<<<< HEAD
      *
      * @param  array $record
      * @return void
@@ -64,5 +92,15 @@ abstract class AbstractProcessingHandler extends AbstractHandler
         }
 
         return $record;
+=======
+     */
+    abstract protected function write(array $record): void;
+
+    public function reset()
+    {
+        parent::reset();
+
+        $this->resetProcessors();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

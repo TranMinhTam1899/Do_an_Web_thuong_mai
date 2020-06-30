@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,11 @@ namespace PHPUnit\Framework\Constraint;
 /**
  * Constraint that asserts that a string is valid JSON.
  */
+<<<<<<< HEAD
 class IsJson extends Constraint
+=======
+final class IsJson extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Returns a string representation of the constraint.
@@ -61,12 +69,20 @@ class IsJson extends Constraint
 
         \json_decode($other);
         $error = JsonMatchesErrorMessageProvider::determineJsonError(
+<<<<<<< HEAD
             \json_last_error()
+=======
+            (string) \json_last_error()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
 
         return \sprintf(
             '%s is valid JSON (%s)',
+<<<<<<< HEAD
             $this->exporter->shortenedExport($other),
+=======
+            $this->exporter()->shortenedExport($other),
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $error
         );
     }

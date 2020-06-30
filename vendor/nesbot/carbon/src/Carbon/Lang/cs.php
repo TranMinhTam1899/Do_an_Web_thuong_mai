@@ -74,6 +74,7 @@ return [
     'second' => ':count sekunda|:count sekundy|:count sekund',
     's' => ':count sek.',
     'a_second' => 'pár sekund|:count sekundy|:count sekund',
+<<<<<<< HEAD
 
     'month_ago' => ':count měsícem|:count měsíci|:count měsíci',
     'a_month_ago' => 'měsícem|:count měsíci|:count měsíci',
@@ -95,6 +96,8 @@ return [
     'y_before' => ':count rok.|:count rok.|:count let.',
     'a_year_before' => 'rokem|:count roky|:count lety',
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => $pred,
     'from_now' => $za,
     'before' => $pred,
@@ -107,9 +110,12 @@ return [
     'weekdays_short' => ['ned', 'pon', 'úte', 'stř', 'čtv', 'pát', 'sob'],
     'weekdays_min' => ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
     'list' => [', ', ' a '],
+<<<<<<< HEAD
     'diff_now' => 'nyní',
     'diff_yesterday' => 'včera',
     'diff_tomorrow' => 'zítra',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

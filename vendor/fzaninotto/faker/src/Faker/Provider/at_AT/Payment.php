@@ -24,7 +24,11 @@ class Payment extends \Faker\Provider\Payment
      */
     public static function vat($spacedNationalPrefix = true)
     {
+<<<<<<< HEAD
         $prefix = $spacedNationalPrefix ? "AT U" : "ATU";
+=======
+        $prefix = ($spacedNationalPrefix) ? "AT U" : "ATU";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return sprintf("%s%d", $prefix, self::randomNumber(8, true));
     }

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -52,4 +56,15 @@ class DependencyFailureTest extends TestCase
     {
         $this->assertTrue(true);
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @depends
+     */
+    public function testHandlesDependsAnnotationWithNoMethodSpecified(): void
+    {
+        $this->assertTrue(true);
+    }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

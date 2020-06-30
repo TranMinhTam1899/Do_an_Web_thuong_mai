@@ -24,15 +24,26 @@ interface PipesInterface
 
     /**
      * Returns an array of descriptors for the use of proc_open.
+<<<<<<< HEAD
      */
     public function getDescriptors(): array;
+=======
+     *
+     * @return array
+     */
+    public function getDescriptors();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Returns an array of filenames indexed by their related stream in case these pipes use temporary files.
      *
      * @return string[]
      */
+<<<<<<< HEAD
     public function getFiles(): array;
+=======
+    public function getFiles();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Reads data in file handles and pipes.
@@ -42,6 +53,7 @@ interface PipesInterface
      *
      * @return string[] An array of read data indexed by their fd
      */
+<<<<<<< HEAD
     public function readAndWrite(bool $blocking, bool $close = false): array;
 
     /**
@@ -53,6 +65,23 @@ interface PipesInterface
      * Returns if pipes are able to read output.
      */
     public function haveReadSupport(): bool;
+=======
+    public function readAndWrite($blocking, $close = false);
+
+    /**
+     * Returns if the current state has open file handles or pipes.
+     *
+     * @return bool
+     */
+    public function areOpen();
+
+    /**
+     * Returns if pipes are able to read output.
+     *
+     * @return bool
+     */
+    public function haveReadSupport();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Closes file handles and pipes.

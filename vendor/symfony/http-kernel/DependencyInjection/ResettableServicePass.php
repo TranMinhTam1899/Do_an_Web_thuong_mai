@@ -43,6 +43,7 @@ class ResettableServicePass implements CompilerPassInterface
 
         foreach ($container->findTaggedServiceIds($this->tagName, true) as $id => $tags) {
             $services[$id] = new Reference($id, ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE);
+<<<<<<< HEAD
 
             foreach ($tags as $attributes) {
                 if (!isset($attributes['method'])) {
@@ -58,6 +59,18 @@ class ResettableServicePass implements CompilerPassInterface
         }
 
         if (!$services) {
+=======
+            $attributes = $tags[0];
+
+            if (!isset($attributes['method'])) {
+                throw new RuntimeException(sprintf('Tag %s requires the "method" attribute to be set.', $this->tagName));
+            }
+
+            $methods[$id] = $attributes['method'];
+        }
+
+        if (empty($services)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $container->removeAlias('services_resetter');
             $container->removeDefinition('services_resetter');
 

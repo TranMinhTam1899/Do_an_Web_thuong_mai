@@ -64,7 +64,11 @@ class ControllerResolver implements ControllerResolverInterface
             }
 
             if (!\is_callable($controller)) {
+<<<<<<< HEAD
                 throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable: '.$this->getControllerError($controller), $request->getPathInfo()));
+=======
+                throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable. %s', $request->getPathInfo(), $this->getControllerError($controller)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return $controller;
@@ -72,7 +76,11 @@ class ControllerResolver implements ControllerResolverInterface
 
         if (\is_object($controller)) {
             if (!\is_callable($controller)) {
+<<<<<<< HEAD
                 throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable: '.$this->getControllerError($controller), $request->getPathInfo()));
+=======
+                throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable. %s', $request->getPathInfo(), $this->getControllerError($controller)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return $controller;
@@ -85,11 +93,19 @@ class ControllerResolver implements ControllerResolverInterface
         try {
             $callable = $this->createController($controller);
         } catch (\InvalidArgumentException $e) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable: '.$e->getMessage(), $request->getPathInfo()), 0, $e);
         }
 
         if (!\is_callable($callable)) {
             throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable: '.$this->getControllerError($callable), $request->getPathInfo()));
+=======
+            throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable. %s', $request->getPathInfo(), $e->getMessage()));
+        }
+
+        if (!\is_callable($callable)) {
+            throw new \InvalidArgumentException(sprintf('The controller for URI "%s" is not callable. %s', $request->getPathInfo(), $this->getControllerError($callable)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $callable;
@@ -151,7 +167,11 @@ class ControllerResolver implements ControllerResolverInterface
         return new $class();
     }
 
+<<<<<<< HEAD
     private function getControllerError($callable): string
+=======
+    private function getControllerError($callable)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (\is_string($callable)) {
             if (false !== strpos($callable, '::')) {
@@ -213,7 +233,11 @@ class ControllerResolver implements ControllerResolverInterface
         return $message;
     }
 
+<<<<<<< HEAD
     private function getClassMethodsWithoutMagicMethods($classOrObject): array
+=======
+    private function getClassMethodsWithoutMagicMethods($classOrObject)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $methods = get_class_methods($classOrObject);
 

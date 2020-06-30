@@ -326,7 +326,11 @@ class BladeCompiler extends Compiler implements CompilerInterface
     protected function compileExtensions($value)
     {
         foreach ($this->extensions as $compiler) {
+<<<<<<< HEAD
             $value = call_user_func($compiler, $value, $this);
+=======
+            $value = $compiler($value, $this);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $value;

@@ -944,7 +944,11 @@ class Php5 extends \PhpParser\ParserAbstract
                  $this->semValue = array();
             },
             4 => function ($stackPos) {
+<<<<<<< HEAD
                  $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createCommentNopAttributes($startAttributes['comments'])); } else { $nop = null; };
+=======
+                 $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createZeroLengthAttributes($startAttributes)); } else { $nop = null; };
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if ($nop !== null) { $this->semStack[$stackPos-(1-1)][] = $nop; } $this->semValue = $this->semStack[$stackPos-(1-1)];
             },
             5 => function ($stackPos) {
@@ -1317,7 +1321,11 @@ class Php5 extends \PhpParser\ParserAbstract
                  $this->semValue = array();
             },
             126 => function ($stackPos) {
+<<<<<<< HEAD
                  $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createCommentNopAttributes($startAttributes['comments'])); } else { $nop = null; };
+=======
+                 $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createZeroLengthAttributes($startAttributes)); } else { $nop = null; };
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if ($nop !== null) { $this->semStack[$stackPos-(1-1)][] = $nop; } $this->semValue = $this->semStack[$stackPos-(1-1)];
             },
             127 => function ($stackPos) {
@@ -1715,7 +1723,11 @@ class Php5 extends \PhpParser\ParserAbstract
                  $this->semValue = array();
             },
             255 => function ($stackPos) {
+<<<<<<< HEAD
                  $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createCommentNopAttributes($startAttributes['comments'])); } else { $nop = null; };
+=======
+                 $startAttributes = $this->lookaheadStartAttributes; if (isset($startAttributes['comments'])) { $nop = new Stmt\Nop($this->createZeroLengthAttributes($startAttributes)); } else { $nop = null; };
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if ($nop !== null) { $this->semStack[$stackPos-(1-1)][] = $nop; } $this->semValue = $this->semStack[$stackPos-(1-1)];
             },
             256 => function ($stackPos) {

@@ -19,7 +19,11 @@ namespace Symfony\Component\HttpFoundation\Session\Storage\Handler;
 class NullSessionHandler extends AbstractSessionHandler
 {
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function close()
     {
@@ -27,7 +31,11 @@ class NullSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function validateId($sessionId)
     {
@@ -43,7 +51,11 @@ class NullSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function updateTimestamp($sessionId, $data)
     {

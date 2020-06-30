@@ -14,8 +14,11 @@
 
 namespace Ramsey\Uuid\Codec;
 
+<<<<<<< HEAD
 use InvalidArgumentException;
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Ramsey\Uuid\UuidInterface;
 
 /**
@@ -44,7 +47,11 @@ interface CodecInterface
      *
      * @param string $encodedUuid
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decode($encodedUuid);
 
@@ -53,8 +60,13 @@ interface CodecInterface
      *
      * @param string $bytes
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
      * @throws InvalidArgumentException if string has not 16 characters
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+     * @throws \InvalidArgumentException if string has not 16 characters
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decodeBytes($bytes);
 }

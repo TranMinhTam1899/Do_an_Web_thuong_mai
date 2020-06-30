@@ -42,6 +42,10 @@ trait WithFaker
      */
     protected function makeFaker($locale = null)
     {
+<<<<<<< HEAD
         return Factory::create($locale ?? Factory::DEFAULT_LOCALE);
+=======
+        return Factory::create($locale ?? config('app.faker_locale', Factory::DEFAULT_LOCALE));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

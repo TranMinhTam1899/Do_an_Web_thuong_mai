@@ -1,5 +1,6 @@
 # Change Log
 
+<<<<<<< HEAD
 ## 1.3.1 (2019-12-26)
 * Revert improved exception debugging due to BC breaks (#1032)
 
@@ -9,6 +10,9 @@
 * Added `andReturnArg` to echo back an argument passed to a an expectation (#992)
 * Improved exception debugging (#1000)
 * Fixed `andSet` to not reuse properties between mock objects (#1012)
+=======
+## 1.2.5 (XXXX-XX-XX)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 ## 1.2.4 (2019-09-30)
 

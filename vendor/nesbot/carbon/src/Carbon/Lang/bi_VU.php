@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Samsung Electronics Co., Ltd.    akhilesh.k@samsung.com & maninder1.s@samsung.com
  */

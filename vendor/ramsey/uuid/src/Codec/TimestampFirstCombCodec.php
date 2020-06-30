@@ -13,11 +13,18 @@
  */
 namespace Ramsey\Uuid\Codec;
 
+<<<<<<< HEAD
 use Ramsey\Uuid\Exception\InvalidUuidStringException;
 use Ramsey\Uuid\UuidInterface;
 
 /**
  * TimestampFirstCombCodec encodes and decodes COMB UUIDs which have the timestamp as the first 48 bits.
+=======
+use Ramsey\Uuid\UuidInterface;
+
+/**
+ * TimestampLastCombCodec encodes and decodes COMB UUIDs which have the timestamp as the first 48 bits.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * To be used with MySQL, PostgreSQL, Oracle.
  */
 class TimestampFirstCombCodec extends StringCodec
@@ -61,7 +68,11 @@ class TimestampFirstCombCodec extends StringCodec
      * @param string $encodedUuid
      *
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decode($encodedUuid)
     {
@@ -78,7 +89,11 @@ class TimestampFirstCombCodec extends StringCodec
      * @param string $bytes
      *
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decodeBytes($bytes)
     {

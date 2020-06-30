@@ -22,7 +22,11 @@ class Person extends \Faker\Provider\Person
         'M' => 21,
         'N' => 22,
         'O' => 35,
+<<<<<<< HEAD
         'P' => 23,
+=======
+        'p' => 23,
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'Q' => 24,
         'T' => 27,
         'U' => 28,

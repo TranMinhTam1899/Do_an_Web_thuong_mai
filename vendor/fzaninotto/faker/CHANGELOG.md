@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CHANGELOG
 
 ## 2019-12-03, v1.9.1
@@ -115,6 +116,13 @@ This will the last minor release in the `1.x` cycle.
 - Added missing grayscale option/flag to Image provider [\#928](https://github.com/fzaninotto/Faker/pull/928) ([sebastianvilla](https://github.com/sebastianvilla))
 
 ## 2018-07-12, v1.8.0
+=======
+CHANGELOG
+=========
+
+2018-07-12, v1.8.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 - Typo in readme [\#1521](https://github.com/fzaninotto/Faker/pull/1521) ([jmhobbs](https://github.com/jmhobbs))
 - Replaced Hilll with Hill [\#1516](https://github.com/fzaninotto/Faker/pull/1516) ([MarkVaughn](https://github.com/MarkVaughn))
@@ -193,7 +201,12 @@ This will the last minor release in the `1.x` cycle.
 - Added idNumber for nl\_NL [\#1283](https://github.com/fzaninotto/Faker/pull/1283) ([artorozenga](https://github.com/artorozenga))
 - Feature/en us company ein [\#1273](https://github.com/fzaninotto/Faker/pull/1273) ([zachflower](https://github.com/zachflower))
 
+<<<<<<< HEAD
 ## 2017-08-15, v1.7.0
+=======
+2017-08-15, v1.7.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 - Added more Ukrainian banks [\#1271](https://github.com/fzaninotto/Faker/pull/1271) ([iamraccoon](https://github.com/iamraccoon))
 - Hotfix/failing unit tests [\#1269](https://github.com/fzaninotto/Faker/pull/1269) ([zachflower](https://github.com/zachflower))
@@ -326,7 +339,12 @@ This will the last minor release in the `1.x` cycle.
 - Fix Doctrine ODM Support [\#489](https://github.com/fzaninotto/Faker/pull/489) ([cbourgois](https://github.com/cbourgois))
 
 
+<<<<<<< HEAD
 ## 2016-04-29, v1.6.0
+=======
+2016-04-29, v1.6.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 - Remove parts of the Hungarian (hu\_HU) address formatters [\#902](https://github.com/fzaninotto/Faker/pull/902) ([fzaninotto](https://github.com/fzaninotto))
 - Renamed norwegian (nb\_NO) locale [\#901](https://github.com/fzaninotto/Faker/pull/901) ([fzaninotto](https://github.com/fzaninotto))
@@ -457,7 +475,12 @@ This will the last minor release in the `1.x` cycle.
 - Updated `optional` and `boolean` apis to be more consistent [\#513](https://github.com/fzaninotto/Faker/pull/513) ([EmanueleMinotto](https://github.com/EmanueleMinotto))
 - Added Greek (el\_GR) `Address` provider [\#504](https://github.com/fzaninotto/Faker/pull/504) ([drakakisgeo](https://github.com/drakakisgeo))
 
+<<<<<<< HEAD
 ## 2015-05-29, v1.5.0
+=======
+2015-05-29, v1.5.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Added ability to print custom text on the images fetched by the Image provider [\#583](https://github.com/fzaninotto/Faker/pull/583) ([fzaninotto](https://github.com/fzaninotto))
 * Fixed typos in Peruvian (es\_PE) Person provider [\#581](https://github.com/fzaninotto/Faker/pull/581) [\#580](https://github.com/fzaninotto/Faker/pull/580) ([ysramirez](https://github.com/ysramirez))
@@ -567,7 +590,12 @@ This will the last minor release in the `1.x` cycle.
 * Added English for New Zealand (en\_NZ) locale [\#283](https://github.com/fzaninotto/Faker/pull/283) ([JasonMortonNZ](https://github.com/JasonMortonNZ))
 * Added mention of external Provider for cron expressions to readme[\#498](https://github.com/fzaninotto/Faker/pull/498) ([swekaj](https://github.com/swekaj))
 
+<<<<<<< HEAD
 ## 2014-06-04, v1.4.0
+=======
+2014-06-04, v1.4.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Fixed typo in Slovak person names (cinan)
 * Added tests for uk_UA providers (serge-kuharev)
@@ -630,7 +658,12 @@ This will the last minor release in the `1.x` cycle.
 * Added 'kana' (ja_JP) name formatters (kzykhys)
 * Added allow_failure for hhvm to travis-ci and test against php 5.5 (toin0u)
 
+<<<<<<< HEAD
 ## 2013-12-16, v1.3.0
+=======
+2013-12-16, v1.3.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Fixed state generator in Australian (en_AU) provider (sebklaus)
 * Fixed IDE insights for locale specific providers (ulrikjohansson)
@@ -677,7 +710,13 @@ This will the last minor release in the `1.x` cycle.
 * Added Color provider with hexColor, rgbColor, rgbColorAsArray, rgbCssColor, safeColorName, and colorName formatters (lsv)
 * Added support for associative arrays in `randomElement` (aRn0D)
 
+<<<<<<< HEAD
 ## 2013-06-09, v1.2.0
+=======
+
+2013-06-09, v1.2.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Added new provider for fr_BE locale (jflefebvre)
 * Updated locale provider to use a static locale list (spawn-guy)
@@ -722,7 +761,12 @@ This will the last minor release in the `1.x` cycle.
 * Fixed bug in Doctrine EntityPopulator (beberlei)
 * Added Finnish (fi_FI) provider (drodil)
 
+<<<<<<< HEAD
 ## 2012-10-29, v1.1.0
+=======
+2012-10-29, v1.1.0
+------------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Updated text provider to return paragraphs as a string instead of array. Great for populating markdown textarea fields (Seldaek)
 * Updated dateTimeBetween to accept DateTime instances (Seldaek)
@@ -739,6 +783,11 @@ This will the last minor release in the `1.x` cycle.
 * Added latitude and longitude formatters to Address provider (fixe)
 * Added Serbian provider (umpirsky)
 
+<<<<<<< HEAD
 ## 2012-07-10, v1.0.0
+=======
+2012-07-10, v1.0.0
+-----------------
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 * Initial Version

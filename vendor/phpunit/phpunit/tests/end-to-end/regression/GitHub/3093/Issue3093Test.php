@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -23,7 +27,11 @@ class Issue3093Test extends \PHPUnit\Framework\TestCase
      * @depends testFirstWithoutDependencies
      * @dataProvider someDataProvider
      */
+<<<<<<< HEAD
     public function testSecondThatDependsOnFirstAndDataprovider($value)
+=======
+    public function testSecondThatDependsOnFirstAndDataprovider($value): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         self::assertTrue(true);
     }

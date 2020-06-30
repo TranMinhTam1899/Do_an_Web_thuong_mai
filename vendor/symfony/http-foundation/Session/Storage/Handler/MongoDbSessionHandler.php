@@ -61,12 +61,22 @@ class MongoDbSessionHandler extends AbstractSessionHandler
      * If you use such an index, you can drop `gc_probability` to 0 since
      * no garbage-collection is required.
      *
+<<<<<<< HEAD
+=======
+     * @param \MongoDB\Client $mongo   A MongoDB\Client instance
+     * @param array           $options An associative array of field options
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @throws \InvalidArgumentException When "database" or "collection" not provided
      */
     public function __construct(\MongoDB\Client $mongo, array $options)
     {
         if (!isset($options['database']) || !isset($options['collection'])) {
+<<<<<<< HEAD
             throw new \InvalidArgumentException('You must provide the "database" and "collection" option for MongoDBSessionHandler.');
+=======
+            throw new \InvalidArgumentException('You must provide the "database" and "collection" option for MongoDBSessionHandler');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->mongo = $mongo;
@@ -80,7 +90,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function close()
     {
@@ -100,7 +114,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function gc($maxlifetime)
     {
@@ -134,7 +152,11 @@ class MongoDbSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function updateTimestamp($sessionId, $data)
     {
@@ -168,7 +190,14 @@ class MongoDbSessionHandler extends AbstractSessionHandler
         return $dbData[$this->options['data_field']]->getData();
     }
 
+<<<<<<< HEAD
     private function getCollection(): \MongoDB\Collection
+=======
+    /**
+     * @return \MongoDB\Collection
+     */
+    private function getCollection()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $this->collection) {
             $this->collection = $this->mongo->selectCollection($this->options['database'], $this->options['collection']);

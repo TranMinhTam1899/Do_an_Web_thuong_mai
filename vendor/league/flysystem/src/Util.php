@@ -267,16 +267,23 @@ class Util
      *
      * @param resource $resource
      *
+<<<<<<< HEAD
      * @return int|null stream size
+=======
+     * @return int stream size
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function getStreamSize($resource)
     {
         $stat = fstat($resource);
 
+<<<<<<< HEAD
         if ( ! is_array($stat) || ! isset($stat['size'])) {
             return null;
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $stat['size'];
     }
 
@@ -295,13 +302,21 @@ class Util
             $listedDirectories[] = $object['path'];
         }
 
+<<<<<<< HEAD
         if ( ! isset($object['dirname']) || trim($object['dirname']) === '') {
+=======
+        if (empty($object['dirname'])) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return [$directories, $listedDirectories];
         }
 
         $parent = $object['dirname'];
 
+<<<<<<< HEAD
         while (isset($parent) && trim($parent) !== '' && ! in_array($parent, $directories)) {
+=======
+        while ( ! empty($parent) && ! in_array($parent, $directories)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $directories[] = $parent;
             $parent = static::dirname($parent);
         }

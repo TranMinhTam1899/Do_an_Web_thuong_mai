@@ -51,8 +51,17 @@ class CommandBuilder
 
         $finished = Application::formatCommandString('schedule:finish').' "'.$event->mutexName().'"';
 
+<<<<<<< HEAD
         return $this->ensureCorrectUser($event,
             '('.$event->command.$redirect.$output.' 2>&1 '.(windows_os() ? '&' : ';').' '.$finished.') > '
+=======
+        if (windows_os()) {
+            return 'start /b cmd /c "('.$event->command.' & '.$finished.')'.$redirect.$output.' 2>&1"';
+        }
+
+        return $this->ensureCorrectUser($event,
+            '('.$event->command.$redirect.$output.' 2>&1 ; '.$finished.') > '
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             .ProcessUtils::escapeArgument($event->getDefaultOutput()).' 2>&1 &'
         );
     }

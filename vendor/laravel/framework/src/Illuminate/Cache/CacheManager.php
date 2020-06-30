@@ -2,6 +2,7 @@
 
 namespace Illuminate\Cache;
 
+<<<<<<< HEAD
 use Closure;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
@@ -9,6 +10,15 @@ use Aws\DynamoDb\DynamoDbClient;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Contracts\Cache\Factory as FactoryContract;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+=======
+use Aws\DynamoDb\DynamoDbClient;
+use Closure;
+use Illuminate\Contracts\Cache\Factory as FactoryContract;
+use Illuminate\Contracts\Cache\Store;
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+use Illuminate\Support\Arr;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Contracts\Cache\Repository

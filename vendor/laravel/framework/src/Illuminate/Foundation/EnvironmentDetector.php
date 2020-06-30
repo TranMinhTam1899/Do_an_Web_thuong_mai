@@ -31,7 +31,11 @@ class EnvironmentDetector
      */
     protected function detectWebEnvironment(Closure $callback)
     {
+<<<<<<< HEAD
         return call_user_func($callback);
+=======
+        return $callback();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

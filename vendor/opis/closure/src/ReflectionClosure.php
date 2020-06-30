@@ -19,7 +19,10 @@ class ReflectionClosure extends ReflectionFunction
     protected $isStaticClosure;
     protected $isScopeRequired;
     protected $isBindingRequired;
+<<<<<<< HEAD
     protected $isShortClosure;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     protected static $files = array();
     protected static $classes = array();
@@ -52,6 +55,7 @@ class ReflectionClosure extends ReflectionFunction
         return $this->isStaticClosure;
     }
 
+<<<<<<< HEAD
     public function isShortClosure()
     {
         if ($this->isShortClosure === null) {
@@ -65,6 +69,8 @@ class ReflectionClosure extends ReflectionFunction
         return $this->isShortClosure;
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * @return string
      */
@@ -84,7 +90,10 @@ class ReflectionClosure extends ReflectionFunction
         }
 
         $className = null;
+<<<<<<< HEAD
         $fn = false;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 
         if (null !== $className = $this->getClosureScopeClass()) {
@@ -104,7 +113,10 @@ class ReflectionClosure extends ReflectionFunction
                 default:
                     $php7_types = array('string', 'int', 'bool', 'float', 'void', 'object');
             }
+<<<<<<< HEAD
             $fn = PHP_MINOR_VERSION === 4;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $ns = $this->getNamespaceName();
@@ -123,7 +135,10 @@ class ReflectionClosure extends ReflectionFunction
         $tokens = $this->getTokens();
         $state = $lastState = 'start';
         $inside_anonymous = false;
+<<<<<<< HEAD
         $isShortClosure = false;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $anonymous_mark = 0;
         $open = 0;
         $code = '';
@@ -141,10 +156,13 @@ class ReflectionClosure extends ReflectionFunction
                     if ($token[0] === T_FUNCTION || $token[0] === T_STATIC) {
                         $code .= $token[1];
                         $state = $token[0] === T_FUNCTION ? 'function' : 'static';
+<<<<<<< HEAD
                     } elseif ($fn && $token[0] === T_FN) {
                         $isShortClosure = true;
                         $code .= $token[1];
                         $state = 'closure_args';
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     }
                     break;
                 case 'static':
@@ -153,10 +171,13 @@ class ReflectionClosure extends ReflectionFunction
                         if ($token[0] === T_FUNCTION) {
                             $state = 'function';
                         }
+<<<<<<< HEAD
                     } elseif ($fn && $token[0] === T_FN) {
                         $isShortClosure = true;
                         $code .= $token[1];
                         $state = 'closure_args';
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     } else {
                         $code = '';
                         $state = 'start';
@@ -180,10 +201,13 @@ class ReflectionClosure extends ReflectionFunction
                     if($token[0] === T_FUNCTION || $token[0] === T_STATIC){
                         $code = $token[1];
                         $state = $token[0] === T_FUNCTION ? 'function' : 'static';
+<<<<<<< HEAD
                     } elseif ($fn && $token[0] === T_FN) {
                         $isShortClosure = true;
                         $code .= $token[1];
                         $state = 'closure_args';
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     }
                     break;
                 case 'closure_args':
@@ -201,12 +225,15 @@ class ReflectionClosure extends ReflectionFunction
                             $code .= $token[1];
                             $state = 'use';
                             break;
+<<<<<<< HEAD
                         case T_DOUBLE_ARROW:
                             $code .= $token[1];
                             if ($isShortClosure) {
                                 $state = 'closure';
                             }
                             break;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         case '=':
                             $code .= $token;
                             $lastState = 'closure_args';
@@ -261,12 +288,15 @@ class ReflectionClosure extends ReflectionFunction
                             $state = 'id_name';
                             $lastState = 'return';
                             break 2;
+<<<<<<< HEAD
                         case T_DOUBLE_ARROW:
                             $code .= $token[1];
                             if ($isShortClosure) {
                                 $state = 'closure';
                             }
                             break;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         case '{':
                             $code .= '{';
                             $state = 'closure';
@@ -288,12 +318,17 @@ class ReflectionClosure extends ReflectionFunction
                             break;
                         case '}':
                             $code .= '}';
+<<<<<<< HEAD
                             if(--$open === 0 && !$isShortClosure){
+=======
+                            if(--$open === 0){
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                                 break 3;
                             } elseif ($inside_anonymous) {
                                 $inside_anonymous = !($open === $anonymous_mark);
                             }
                             break;
+<<<<<<< HEAD
                         case '(':
                         case '[':
                             $code .= $token[0];
@@ -318,6 +353,8 @@ class ReflectionClosure extends ReflectionFunction
                             }
                             $code .= $token[0];
                             break;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         case T_LINE:
                             $code .= $token[2] - $line + $lineAdd;
                             break;
@@ -497,9 +534,12 @@ class ReflectionClosure extends ReflectionFunction
                             $id_name .= $token[1];
                             break;
                         case '(':
+<<<<<<< HEAD
                             if ($isShortClosure) {
                                 $open++;
                             }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                             if($context === 'new' || false !== strpos($id_name, '\\')){
                                 if($id_start !== '\\'){
                                     if ($classes === null) {
@@ -606,6 +646,7 @@ class ReflectionClosure extends ReflectionFunction
             }
         }
 
+<<<<<<< HEAD
         if ($isShortClosure) {
             $this->useVariables = $this->getStaticVariables();
         } else {
@@ -616,6 +657,12 @@ class ReflectionClosure extends ReflectionFunction
         $this->isBindingRequired = $isUsingThisObject;
         $this->isScopeRequired = $isUsingScope;
         $this->code = $code;
+=======
+        $this->isBindingRequired = $isUsingThisObject;
+        $this->isScopeRequired = $isUsingScope;
+        $this->code = $code;
+        $this->useVariables = empty($use) ? $use : array_intersect_key($this->getStaticVariables(), array_flip($use));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this->code;
     }

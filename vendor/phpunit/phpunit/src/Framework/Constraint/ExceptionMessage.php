@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -9,7 +13,11 @@
  */
 namespace PHPUnit\Framework\Constraint;
 
+<<<<<<< HEAD
 class ExceptionMessage extends Constraint
+=======
+final class ExceptionMessage extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -18,8 +26,11 @@ class ExceptionMessage extends Constraint
 
     public function __construct(string $expected)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->expectedMessage = $expected;
     }
 
@@ -44,7 +55,11 @@ class ExceptionMessage extends Constraint
             return $other->getMessage() === '';
         }
 
+<<<<<<< HEAD
         return \strpos($other->getMessage(), $this->expectedMessage) !== false;
+=======
+        return \strpos((string) $other->getMessage(), $this->expectedMessage) !== false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

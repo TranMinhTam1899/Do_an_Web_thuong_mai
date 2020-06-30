@@ -40,6 +40,10 @@ class CompiledUrlGenerator extends UrlGenerator
         if (null !== $locale) {
             do {
                 if (($this->compiledRoutes[$name.'.'.$locale][1]['_canonical_route'] ?? null) === $name) {
+<<<<<<< HEAD
+=======
+                    unset($parameters['_locale']);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $name .= '.'.$locale;
                     break;
                 }
@@ -52,6 +56,7 @@ class CompiledUrlGenerator extends UrlGenerator
 
         list($variables, $defaults, $requirements, $tokens, $hostTokens, $requiredSchemes) = $this->compiledRoutes[$name];
 
+<<<<<<< HEAD
         if (isset($defaults['_canonical_route']) && isset($defaults['_locale'])) {
             if (!\in_array('_locale', $variables, true)) {
                 unset($parameters['_locale']);
@@ -60,6 +65,8 @@ class CompiledUrlGenerator extends UrlGenerator
             }
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $this->doGenerate($variables, $defaults, $requirements, $tokens, $parameters, $name, $referenceType, $hostTokens, $requiredSchemes);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Illuminate\Validation;
 
+<<<<<<< HEAD
 use RuntimeException;
 use BadMethodCallException;
 use Illuminate\Support\Arr;
@@ -14,6 +15,20 @@ use Illuminate\Contracts\Validation\ImplicitRule;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Illuminate\Contracts\Validation\Rule as RuleContract;
 use Illuminate\Contracts\Validation\Validator as ValidatorContract;
+=======
+use BadMethodCallException;
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Translation\Translator;
+use Illuminate\Contracts\Validation\ImplicitRule;
+use Illuminate\Contracts\Validation\Rule as RuleContract;
+use Illuminate\Contracts\Validation\Validator as ValidatorContract;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Fluent;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Str;
+use RuntimeException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Validator implements ValidatorContract
 {
@@ -286,7 +301,11 @@ class Validator implements ValidatorContract
         // fire them off. This gives the callbacks a chance to perform all kinds
         // of other validation that needs to get wrapped up in this operation.
         foreach ($this->after as $after) {
+<<<<<<< HEAD
             call_user_func($after);
+=======
+            $after();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->messages->isEmpty();
@@ -655,9 +674,25 @@ class Validator implements ValidatorContract
             $this->passes();
         }
 
+<<<<<<< HEAD
         return array_intersect_key(
             $this->data, $this->attributesThatHaveMessages()
         );
+=======
+        $invalid = array_intersect_key(
+            $this->data, $this->attributesThatHaveMessages()
+        );
+
+        $result = [];
+
+        $failed = Arr::only(Arr::dot($invalid), array_keys($this->failed()));
+
+        foreach ($failed as $key => $failure) {
+            Arr::set($result, $key, $failure);
+        }
+
+        return $result;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -860,7 +895,11 @@ class Validator implements ValidatorContract
     {
         $payload = new Fluent($this->getData());
 
+<<<<<<< HEAD
         if (call_user_func($callback, $payload)) {
+=======
+        if ($callback($payload)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ((array) $attribute as $key) {
                 $this->addRules([$key => $rules]);
             }

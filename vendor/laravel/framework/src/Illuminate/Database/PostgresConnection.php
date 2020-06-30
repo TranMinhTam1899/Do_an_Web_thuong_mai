@@ -2,11 +2,19 @@
 
 namespace Illuminate\Database;
 
+<<<<<<< HEAD
 use Illuminate\Database\Schema\PostgresBuilder;
 use Doctrine\DBAL\Driver\PDOPgSql\Driver as DoctrineDriver;
 use Illuminate\Database\Query\Processors\PostgresProcessor;
 use Illuminate\Database\Query\Grammars\PostgresGrammar as QueryGrammar;
 use Illuminate\Database\Schema\Grammars\PostgresGrammar as SchemaGrammar;
+=======
+use Doctrine\DBAL\Driver\PDOPgSql\Driver as DoctrineDriver;
+use Illuminate\Database\Query\Grammars\PostgresGrammar as QueryGrammar;
+use Illuminate\Database\Query\Processors\PostgresProcessor;
+use Illuminate\Database\Schema\Grammars\PostgresGrammar as SchemaGrammar;
+use Illuminate\Database\Schema\PostgresBuilder;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PostgresConnection extends Connection
 {

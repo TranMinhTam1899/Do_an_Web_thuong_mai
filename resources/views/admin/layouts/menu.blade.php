@@ -14,6 +14,7 @@
                 </li>
                 <li><a><i class="fa fa-users" aria-hidden="true"></i> Quản lý người dùng<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
+<<<<<<< HEAD
                   <li><a href="{{route('admin.add-user')}}" style="display: none;">Thêm người dùng</a></li>
                     <li><a href="{{route('admin.list-user')}}">Danh sách dùng</a></li>
                     
@@ -23,6 +24,10 @@
                   <ul class="nav child_menu">
                   
                     <li><a href="{{route('customer.listCustomer')}}">Danh sách khách hàng</a></li>
+=======
+                  <li><a href="{{route('user.them-moi')}}">Thêm user</a></li>
+                    <li><a href="{{route('user.listUser')}}">Danh sách user</a></li>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     
                   </ul>
                 </li>

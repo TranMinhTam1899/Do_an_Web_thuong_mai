@@ -3,12 +3,22 @@
 namespace Illuminate\Notifications;
 
 use Illuminate\Bus\Queueable;
+<<<<<<< HEAD
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendQueuedNotifications implements ShouldQueue
 {
     use Queueable, SerializesModels;
+=======
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+
+class SendQueuedNotifications implements ShouldQueue
+{
+    use InteractsWithQueue, Queueable, SerializesModels;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * The notifiable entities that should receive the notification.
@@ -111,6 +121,23 @@ class SendQueuedNotifications implements ShouldQueue
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the expiration for the notification.
+     *
+     * @return mixed
+     */
+    public function retryUntil()
+    {
+        if (! method_exists($this->notification, 'retryUntil') && ! isset($this->notification->timeoutAt)) {
+            return;
+        }
+
+        return $this->notification->timeoutAt ?? $this->notification->retryUntil();
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Prepare the instance for cloning.
      *
      * @return void

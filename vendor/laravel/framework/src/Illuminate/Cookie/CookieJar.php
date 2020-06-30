@@ -2,11 +2,19 @@
 
 namespace Illuminate\Cookie;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Support\InteractsWithTime;
 use Symfony\Component\HttpFoundation\Cookie;
 use Illuminate\Contracts\Cookie\QueueingFactory as JarContract;
+=======
+use Illuminate\Contracts\Cookie\QueueingFactory as JarContract;
+use Illuminate\Support\Arr;
+use Illuminate\Support\InteractsWithTime;
+use Illuminate\Support\Traits\Macroable;
+use Symfony\Component\HttpFoundation\Cookie;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CookieJar implements JarContract
 {
@@ -105,11 +113,20 @@ class CookieJar implements JarContract
      * Determine if a cookie has been queued.
      *
      * @param  string  $key
+<<<<<<< HEAD
      * @return bool
      */
     public function hasQueued($key)
     {
         return ! is_null($this->queued($key));
+=======
+     * @param  string|null  $path
+     * @return bool
+     */
+    public function hasQueued($key, $path = null)
+    {
+        return ! is_null($this->queued($key, null, $path));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -117,11 +134,26 @@ class CookieJar implements JarContract
      *
      * @param  string  $key
      * @param  mixed   $default
+<<<<<<< HEAD
      * @return \Symfony\Component\HttpFoundation\Cookie
      */
     public function queued($key, $default = null)
     {
         return Arr::get($this->queued, $key, $default);
+=======
+     * @param  string  $path
+     * @return \Symfony\Component\HttpFoundation\Cookie
+     */
+    public function queued($key, $default = null, $path = null)
+    {
+        $queued = Arr::get($this->queued, $key, $default);
+
+        if ($path === null) {
+            return Arr::last($queued, null, $default);
+        }
+
+        return Arr::get($queued, $path, $default);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -138,18 +170,45 @@ class CookieJar implements JarContract
             $cookie = call_user_func_array([$this, 'make'], $parameters);
         }
 
+<<<<<<< HEAD
         $this->queued[$cookie->getName()] = $cookie;
+=======
+        if (! isset($this->queued[$cookie->getName()])) {
+            $this->queued[$cookie->getName()] = [];
+        }
+
+        $this->queued[$cookie->getName()][$cookie->getPath()] = $cookie;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Remove a cookie from the queue.
      *
      * @param  string  $name
+<<<<<<< HEAD
      * @return void
      */
     public function unqueue($name)
     {
         unset($this->queued[$name]);
+=======
+     * @param  string|null $path
+     * @return void
+     */
+    public function unqueue($name, $path = null)
+    {
+        if ($path === null) {
+            unset($this->queued[$name]);
+
+            return;
+        }
+
+        unset($this->queued[$name][$path]);
+
+        if (empty($this->queued[$name])) {
+            unset($this->queued[$name]);
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -189,6 +248,10 @@ class CookieJar implements JarContract
      */
     public function getQueuedCookies()
     {
+<<<<<<< HEAD
         return $this->queued;
+=======
+        return Arr::flatten($this->queued);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

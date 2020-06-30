@@ -46,11 +46,19 @@ class RedisLock extends Lock
     /**
      * Release the lock.
      *
+<<<<<<< HEAD
      * @return void
      */
     public function release()
     {
         $this->redis->eval(LuaScripts::releaseLock(), 1, $this->name, $this->owner);
+=======
+     * @return bool
+     */
+    public function release()
+    {
+        return (bool) $this->redis->eval(LuaScripts::releaseLock(), 1, $this->name, $this->owner);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

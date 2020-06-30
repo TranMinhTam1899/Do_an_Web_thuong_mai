@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -9,7 +13,12 @@
  */
 namespace PHPUnit\Framework\Error;
 
+<<<<<<< HEAD
 class Notice extends Error
 {
     public static $enabled = true;
+=======
+final class Notice extends Error
+{
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

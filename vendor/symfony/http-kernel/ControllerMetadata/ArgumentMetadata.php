@@ -99,7 +99,11 @@ class ArgumentMetadata
     public function getDefaultValue()
     {
         if (!$this->hasDefaultValue) {
+<<<<<<< HEAD
             throw new \LogicException(sprintf('Argument $%s does not have a default value. Use "%s::hasDefaultValue()" to avoid this exception.', $this->name, __CLASS__));
+=======
+            throw new \LogicException(sprintf('Argument $%s does not have a default value. Use %s::hasDefaultValue() to avoid this exception.', $this->name, __CLASS__));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->defaultValue;

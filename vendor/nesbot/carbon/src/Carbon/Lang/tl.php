@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 
 return [
     'year' => ':count taon',
@@ -31,6 +32,31 @@ return [
     'diff_now' => 'ngayon',
     'diff_yesterday' => 'kahapon',
     'diff_tomorrow' => 'bukas',
+=======
+\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
+    return $number === 1 ? 0 : 1;
+}, 'tl');
+
+return [
+    'year' => ':count taon',
+    'a_year' => 'isang taon|:count taon',
+    'month' => ':count buwan',
+    'a_month' => 'isang buwan|:count buwan',
+    'week' => ':count linggo',
+    'a_week' => 'isang linggo|:count linggo',
+    'day' => ':count araw',
+    'a_day' => 'isang araw|:count araw',
+    'hour' => ':count oras',
+    'a_hour' => 'isang oras|:count oras',
+    'minute' => ':count minuto',
+    'a_minute' => 'isang minuto|:count minuto',
+    'min' => ':count min.',
+    'second' => ':count segundo',
+    'a_second' => 'ilang segundo|:count segundo',
+    's' => ':count seg.',
+    'ago' => ':time ang nakalipas',
+    'from_now' => 'sa loob ng :time',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

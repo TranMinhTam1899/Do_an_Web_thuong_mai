@@ -3,11 +3,19 @@
 namespace Illuminate\Foundation\Bootstrap;
 
 use Exception;
+<<<<<<< HEAD
 use SplFileInfo;
 use Illuminate\Config\Repository;
 use Symfony\Component\Finder\Finder;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Config\Repository as RepositoryContract;
+=======
+use Illuminate\Config\Repository;
+use Illuminate\Contracts\Config\Repository as RepositoryContract;
+use Illuminate\Contracts\Foundation\Application;
+use SplFileInfo;
+use Symfony\Component\Finder\Finder;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class LoadConfiguration
 {

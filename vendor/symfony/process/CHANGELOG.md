@@ -1,12 +1,15 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 4.4.0
 -----
 
  * deprecated `Process::inheritEnvironmentVariables()`: env variables are always inherited.
  * added `Process::getLastOutputTime()` method
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.2.0
 -----
 

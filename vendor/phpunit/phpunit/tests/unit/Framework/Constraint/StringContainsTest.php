@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,14 @@ namespace PHPUnit\Framework\Constraint;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestFailure;
 
+<<<<<<< HEAD
 class StringContainsTest extends ConstraintTestCase
+=======
+/**
+ * @small
+ */
+final class StringContainsTest extends ConstraintTestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testConstraintStringContains(): void
     {
@@ -93,4 +104,16 @@ EOF
 
         $this->fail();
     }
+<<<<<<< HEAD
+=======
+
+    public function testEvaluateEmptyStringInFoo(): void
+    {
+        $stringContains = new StringContains('');
+
+        $stringContains->evaluate('foo');
+
+        $this->assertSame('contains ""', $stringContains->toString());
+    }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

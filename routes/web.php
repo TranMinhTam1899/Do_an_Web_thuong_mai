@@ -30,12 +30,16 @@ Route::get('/admin', function () {
 // group admin
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
+<<<<<<< HEAD
     
         // user
         Route::get('/add-user', function () {
             return view('admin.pages.user.add-user');
         })->name('add-user');
         Route::get('/list-user', 'UserController@index')->name('list-user');
+=======
+     
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         Route::get('/add-statistical', function () {
             return view('admin.pages.statistical.add-statistical');
         })->name('add-statistical');
@@ -43,6 +47,9 @@ Route::prefix('admin')->group(function(){
         Route::get('/list-statistical', function () {
             return view('admin.pages.statistical.list-statistical');
         })->name('list-statistical');
+
+
+
 
         // post
 
@@ -64,6 +71,20 @@ Route::prefix('admin')->group(function(){
     });
 });
 
+// user
+Route::prefix('user')->group(function(){
+    Route::name('user.')->group(function(){
+        Route::get('/','UserController@index')->name('listUser');
+        Route::get('add-User','UserController@create')->name('them-moi');
+        Route::post('add-User/create','UserController@store')->name('xu-ly-them-moi');
+        Route::get('cap-nhap/{id}','UserController@edit')->name('cap-nhat');
+        Route::post('cap-nhap/{id}','UserController@update')->name('xu-ly-cap-nhat');
+        Route::get('xoa/{id}', 'UserController@destroy')->name('xoa');
+    });
+});
+
+
+// category
 Route::prefix('category')->group(function(){
     Route::name('category.')->group(function(){
         Route::get('/','CategoryController@index')->name('listCategory');

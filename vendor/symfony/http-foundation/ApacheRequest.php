@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\HttpFoundation;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', ApacheRequest::class, Request::class), E_USER_DEPRECATED);
 
 /**
@@ -18,6 +19,11 @@ namespace Symfony\Component\HttpFoundation;
  *
  * @deprecated since Symfony 4.4. Use the Request class instead.
  *
+=======
+/**
+ * Request represents an HTTP request from an Apache server.
+ *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @author Fabien Potencier <fabien@symfony.com>
  */
 class ApacheRequest extends Request

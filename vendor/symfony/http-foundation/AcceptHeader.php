@@ -11,9 +11,12 @@
 
 namespace Symfony\Component\HttpFoundation;
 
+<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(AcceptHeaderItem::class);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Represents an Accept-* header.
  *
@@ -156,7 +159,11 @@ class AcceptHeader
     /**
      * Sorts items by descending quality.
      */
+<<<<<<< HEAD
     private function sort(): void
+=======
+    private function sort()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->sorted) {
             uasort($this->items, function (AcceptHeaderItem $a, AcceptHeaderItem $b) {

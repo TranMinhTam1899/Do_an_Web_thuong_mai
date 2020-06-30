@@ -6,11 +6,33 @@
     <file>tests/unit</file>
     <exclude-pattern>*/tests/unit/Types/ContextFactoryTest.php</exclude-pattern>
     <arg value="p"/>
+<<<<<<< HEAD
 
     <rule ref="phpDocumentor">
+=======
+    <rule ref="PSR2">
+        <include-pattern>*\.php</include-pattern>
+    </rule>
+
+    <rule ref="Doctrine">
+        <exclude name="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint.UselessDocComment" />
+    </rule>
+
+    <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+        <exclude-pattern>*/src/*_.php</exclude-pattern>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     </rule>
 
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix">
         <exclude-pattern>*/src/*/Abstract*.php</exclude-pattern>
     </rule>
+<<<<<<< HEAD
+=======
+
+    <rule ref="Generic.Formatting.SpaceAfterNot">
+        <properties>
+            <property name="spacing" value="0" />
+        </properties>
+    </rule>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 </ruleset>

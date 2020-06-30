@@ -2,9 +2,15 @@
 
 namespace DummyNamespace;
 
+<<<<<<< HEAD
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+=======
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DummyClass extends TestCase
 {

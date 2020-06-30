@@ -3,9 +3,15 @@
 namespace Illuminate\Database\Migrations;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Illuminate\Filesystem\Filesystem;
+=======
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class MigrationCreator
 {
@@ -47,7 +53,11 @@ class MigrationCreator
      */
     public function create($name, $path, $table = null, $create = false)
     {
+<<<<<<< HEAD
         $this->ensureMigrationDoesntAlreadyExist($name);
+=======
+        $this->ensureMigrationDoesntAlreadyExist($name, $path);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // First we will get the stub file for the migration, which serves as a type
         // of template for the migration. Once we have those we will populate the
@@ -71,12 +81,29 @@ class MigrationCreator
      * Ensure that a migration with the given name doesn't already exist.
      *
      * @param  string  $name
+<<<<<<< HEAD
+=======
+     * @param  string  $migrationPath
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      *
      * @throws \InvalidArgumentException
      */
+<<<<<<< HEAD
     protected function ensureMigrationDoesntAlreadyExist($name)
     {
+=======
+    protected function ensureMigrationDoesntAlreadyExist($name, $migrationPath = null)
+    {
+        if (! empty($migrationPath)) {
+            $migrationFiles = $this->files->glob($migrationPath.'/*.php');
+
+            foreach ($migrationFiles as $migrationFile) {
+                $this->files->requireOnce($migrationFile);
+            }
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (class_exists($className = $this->getClassName($name))) {
             throw new InvalidArgumentException("A {$className} class already exists.");
         }
@@ -157,7 +184,11 @@ class MigrationCreator
     protected function firePostCreateHooks($table)
     {
         foreach ($this->postCreate as $callback) {
+<<<<<<< HEAD
             call_user_func($callback, $table);
+=======
+            $callback($table);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 

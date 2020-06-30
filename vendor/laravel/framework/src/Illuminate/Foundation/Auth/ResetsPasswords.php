@@ -2,12 +2,20 @@
 
 namespace Illuminate\Foundation\Auth;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
+=======
+use Illuminate\Auth\Events\PasswordReset;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
+<<<<<<< HEAD
 use Illuminate\Auth\Events\PasswordReset;
+=======
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait ResetsPasswords
 {
@@ -102,7 +110,11 @@ trait ResetsPasswords
      */
     protected function resetPassword($user, $password)
     {
+<<<<<<< HEAD
         $user->password = Hash::make($password);
+=======
+        $this->setUserPassword($user, $password);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $user->setRememberToken(Str::random(60));
 
@@ -114,6 +126,21 @@ trait ResetsPasswords
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Set the user's password.
+     *
+     * @param  \Illuminate\Contracts\Auth\CanResetPassword  $user
+     * @param  string  $password
+     * @return void
+     */
+    protected function setUserPassword($user, $password)
+    {
+        $user->password = Hash::make($password);
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the response for a successful password reset.
      *
      * @param  \Illuminate\Http\Request  $request

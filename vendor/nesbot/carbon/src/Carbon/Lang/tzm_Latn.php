@@ -8,6 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
+=======
+\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
+    return $number === 1 ? 0 : 1;
+}, 'tzm');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
@@ -15,6 +21,7 @@
  * - JD Isaacks
  */
 return [
+<<<<<<< HEAD
     'year' => '{1}:count asgas|:count isgasn',
     'a_year' => 'asgas|:count isgasn',
     'month' => '{1}:count ayowr|:count iyyirn',
@@ -29,6 +36,22 @@ return [
     'a_minute' => '{1}minuḍ|:count minuḍ',
     'second' => ':count imik',
     'a_second' => '{1}imik|:count imik',
+=======
+    'year' => ':count asgas|:count isgasn',
+    'a_year' => 'asgas|:count isgasn',
+    'month' => ':count ayowr|:count iyyirn',
+    'a_month' => 'ayowr|:count iyyirn',
+    'week' => ':count imalass',
+    'a_week' => ':imalass',
+    'day' => ':count ass|:count ossan',
+    'a_day' => 'ass|:count ossan',
+    'hour' => ':count saɛa|:count tassaɛin',
+    'a_hour' => 'saɛa|:count tassaɛin',
+    'minute' => ':count minuḍ',
+    'a_minute' => 'minuḍ|:count minuḍ',
+    'second' => ':count imik',
+    'a_second' => 'imik|:count imik',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => 'yan :time',
     'from_now' => 'dadkh s yan :time',
     'diff_yesterday' => 'assant',

@@ -9,10 +9,18 @@ interface ConnectionInterface
     /**
      * Begin a fluent query against a database table.
      *
+<<<<<<< HEAD
      * @param  string  $table
      * @return \Illuminate\Database\Query\Builder
      */
     public function table($table);
+=======
+     * @param  \Closure|\Illuminate\Database\Query\Builder|string  $table
+     * @param  string|null  $as
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public function table($table, $as = null);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Get a new raw query expression.

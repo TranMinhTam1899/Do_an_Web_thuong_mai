@@ -18,8 +18,11 @@ namespace Symfony\Component\HttpKernel\Event;
  * will always return the value of `HttpKernelInterface::MASTER_REQUEST`.
  *
  * @author Jordi Boggiano <j.boggiano@seld.be>
+<<<<<<< HEAD
  *
  * @final since Symfony 4.4
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class TerminateEvent extends PostResponseEvent
 {

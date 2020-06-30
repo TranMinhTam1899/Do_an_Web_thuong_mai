@@ -16,7 +16,10 @@
  * - dennisoderwald
  * - Timo
  * - Karag2006
+<<<<<<< HEAD
  * - Pete Scopes (pdscopes)
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count Jahr|:count Jahre',
@@ -40,9 +43,12 @@ return [
     'second' => ':count Sekunde|:count Sekunden',
     'a_second' => 'ein paar Sekunden|:count Sekunden',
     's' => ':count Sek.',
+<<<<<<< HEAD
     'millisecond' => ':count Millisekunde|:count Millisekunde',
     'a_millisecond' => 'eine Millisekunde|:count Millisekunde',
     'ms' => ':countms',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => 'vor :time',
     'from_now' => 'in :time',
     'after' => ':time später',
@@ -56,6 +62,7 @@ return [
     'month_ago' => ':count Monat|:count Monaten',
     'week_ago' => ':count Woche|:count Wochen',
     'day_ago' => ':count Tag|:count Tagen',
+<<<<<<< HEAD
     'a_year_from_now' => 'ein Jahr|:count Jahren',
     'a_month_from_now' => 'ein Monat|:count Monaten',
     'a_week_from_now' => 'eine Woche|:count Wochen',
@@ -68,6 +75,12 @@ return [
     'diff_now' => 'Gerade eben',
     'diff_yesterday' => 'Gestern',
     'diff_tomorrow' => 'Morgen',
+=======
+
+    'diff_now' => 'Gerade eben',
+    'diff_yesterday' => 'Gestern',
+    'diff_tomorrow' => 'Heute',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_before_yesterday' => 'Vorgestern',
     'diff_after_tomorrow' => 'Übermorgen',
 

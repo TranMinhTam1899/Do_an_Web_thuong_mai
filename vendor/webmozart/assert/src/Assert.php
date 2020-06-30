@@ -15,12 +15,17 @@ use ArrayAccess;
 use BadMethodCallException;
 use Closure;
 use Countable;
+<<<<<<< HEAD
 use DateTime;
 use DateTimeImmutable;
 use Exception;
 use InvalidArgumentException;
 use ResourceBundle;
 use SimpleXMLElement;
+=======
+use Exception;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Throwable;
 use Traversable;
 
@@ -47,14 +52,20 @@ use Traversable;
  * @method static void nullOrIsInstanceOf($value, $class, $message = '')
  * @method static void nullOrNotInstanceOf($value, $class, $message = '')
  * @method static void nullOrIsInstanceOfAny($value, $classes, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrIsAOf($value, $classes, $message = '')
  * @method static void nullOrIsAnyOf($value, $classes, $message = '')
  * @method static void nullOrIsNotA($value, $classes, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrIsEmpty($value, $message = '')
  * @method static void nullOrNotEmpty($value, $message = '')
  * @method static void nullOrTrue($value, $message = '')
  * @method static void nullOrFalse($value, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrNotFalse($value, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrIp($value, $message = '')
  * @method static void nullOrIpv4($value, $message = '')
  * @method static void nullOrIpv6($value, $message = '')
@@ -70,15 +81,23 @@ use Traversable;
  * @method static void nullOrLessThanEq($value, $limit, $message = '')
  * @method static void nullOrRange($value, $min, $max, $message = '')
  * @method static void nullOrOneOf($value, $values, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrInArray($value, $values, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrContains($value, $subString, $message = '')
  * @method static void nullOrNotContains($value, $subString, $message = '')
  * @method static void nullOrNotWhitespaceOnly($value, $message = '')
  * @method static void nullOrStartsWith($value, $prefix, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrNotStartsWith($value, $prefix, $message = '')
  * @method static void nullOrStartsWithLetter($value, $message = '')
  * @method static void nullOrEndsWith($value, $suffix, $message = '')
  * @method static void nullOrNotEndsWith($value, $suffix, $message = '')
+=======
+ * @method static void nullOrStartsWithLetter($value, $message = '')
+ * @method static void nullOrEndsWith($value, $suffix, $message = '')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrRegex($value, $pattern, $message = '')
  * @method static void nullOrNotRegex($value, $pattern, $message = '')
  * @method static void nullOrUnicodeLetters($value, $message = '')
@@ -106,14 +125,21 @@ use Traversable;
  * @method static void nullOrMethodNotExists($value, $method, $message = '')
  * @method static void nullOrKeyExists($value, $key, $message = '')
  * @method static void nullOrKeyNotExists($value, $key, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrValidArrayKey($value, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrCount($value, $key, $message = '')
  * @method static void nullOrMinCount($value, $min, $message = '')
  * @method static void nullOrMaxCount($value, $max, $message = '')
  * @method static void nullOrIsList($value, $message = '')
+<<<<<<< HEAD
  * @method static void nullOrIsNonEmptyList($value, $message = '')
  * @method static void nullOrIsMap($value, $message = '')
  * @method static void nullOrIsNonEmptyMap($value, $message = '')
+=======
+ * @method static void nullOrIsMap($value, $message = '')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void nullOrCountBetween($value, $min, $max, $message = '')
  * @method static void nullOrUuid($values, $message = '')
  * @method static void nullOrThrows($expression, $class = 'Exception', $message = '')
@@ -137,16 +163,22 @@ use Traversable;
  * @method static void allIsInstanceOf($values, $class, $message = '')
  * @method static void allNotInstanceOf($values, $class, $message = '')
  * @method static void allIsInstanceOfAny($values, $classes, $message = '')
+<<<<<<< HEAD
  * @method static void allIsAOf($values, $class, $message = '')
  * @method static void allIsAnyOf($values, $class, $message = '')
  * @method static void allIsNotA($values, $class, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allNull($values, $message = '')
  * @method static void allNotNull($values, $message = '')
  * @method static void allIsEmpty($values, $message = '')
  * @method static void allNotEmpty($values, $message = '')
  * @method static void allTrue($values, $message = '')
  * @method static void allFalse($values, $message = '')
+<<<<<<< HEAD
  * @method static void allNotFalse($values, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allIp($values, $message = '')
  * @method static void allIpv4($values, $message = '')
  * @method static void allIpv6($values, $message = '')
@@ -162,15 +194,23 @@ use Traversable;
  * @method static void allLessThanEq($values, $limit, $message = '')
  * @method static void allRange($values, $min, $max, $message = '')
  * @method static void allOneOf($values, $values, $message = '')
+<<<<<<< HEAD
  * @method static void allInArray($values, $values, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allContains($values, $subString, $message = '')
  * @method static void allNotContains($values, $subString, $message = '')
  * @method static void allNotWhitespaceOnly($values, $message = '')
  * @method static void allStartsWith($values, $prefix, $message = '')
+<<<<<<< HEAD
  * @method static void allNotStartsWith($values, $prefix, $message = '')
  * @method static void allStartsWithLetter($values, $message = '')
  * @method static void allEndsWith($values, $suffix, $message = '')
  * @method static void allNotEndsWith($values, $suffix, $message = '')
+=======
+ * @method static void allStartsWithLetter($values, $message = '')
+ * @method static void allEndsWith($values, $suffix, $message = '')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allRegex($values, $pattern, $message = '')
  * @method static void allNotRegex($values, $pattern, $message = '')
  * @method static void allUnicodeLetters($values, $message = '')
@@ -198,15 +238,22 @@ use Traversable;
  * @method static void allMethodNotExists($values, $method, $message = '')
  * @method static void allKeyExists($values, $key, $message = '')
  * @method static void allKeyNotExists($values, $key, $message = '')
+<<<<<<< HEAD
  * @method static void allValidArrayKey($values, $message = '')
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allCount($values, $key, $message = '')
  * @method static void allMinCount($values, $min, $message = '')
  * @method static void allMaxCount($values, $max, $message = '')
  * @method static void allCountBetween($values, $min, $max, $message = '')
  * @method static void allIsList($values, $message = '')
+<<<<<<< HEAD
  * @method static void allIsNonEmptyList($values, $message = '')
  * @method static void allIsMap($values, $message = '')
  * @method static void allIsNonEmptyMap($values, $message = '')
+=======
+ * @method static void allIsMap($values, $message = '')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method static void allUuid($values, $message = '')
  * @method static void allThrows($expressions, $class = 'Exception', $message = '')
  *
@@ -217,13 +264,19 @@ use Traversable;
 class Assert
 {
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert string $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function string($value, $message = '')
     {
@@ -236,6 +289,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert string $value
      * @psalm-assert !empty $value
@@ -244,6 +298,12 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @psalm-assert string $value
+     *
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function stringNotEmpty($value, $message = '')
     {
@@ -252,13 +312,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert int $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function integer($value, $message = '')
     {
@@ -271,13 +337,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert numeric $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function integerish($value, $message = '')
     {
@@ -290,13 +362,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert float $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function float($value, $message = '')
     {
@@ -309,13 +387,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert numeric $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function numeric($value, $message = '')
     {
@@ -328,13 +412,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert int $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function natural($value, $message = '')
     {
@@ -347,13 +437,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert bool $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function boolean($value, $message = '')
     {
@@ -366,13 +462,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert scalar $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function scalar($value, $message = '')
     {
@@ -385,13 +487,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert object $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function object($value, $message = '')
     {
@@ -404,14 +512,20 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert resource $value
      *
      * @param mixed       $value
      * @param string|null $type    type of resource this should be. @see https://www.php.net/manual/en/function.get-resource-type.php
      * @param string      $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function resource($value, $type = null, $message = '')
     {
@@ -432,13 +546,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert callable $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isCallable($value, $message = '')
     {
@@ -451,13 +571,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert array $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isArray($value, $message = '')
     {
@@ -470,15 +596,21 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert iterable $value
      *
      * @deprecated use "isIterable" or "isInstanceOf" instead
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isTraversable($value, $message = '')
     {
@@ -499,6 +631,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert array|ArrayAccess $value
      *
@@ -506,6 +639,10 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isArrayAccessible($value, $message = '')
     {
@@ -518,11 +655,15 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert countable $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
      */
@@ -534,6 +675,12 @@ class Assert
             && !($value instanceof ResourceBundle)
             && !($value instanceof SimpleXMLElement)
         ) {
+=======
+     */
+    public static function isCountable($value, $message = '')
+    {
+        if (!\is_array($value) && !($value instanceof Countable)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             static::reportInvalidArgument(\sprintf(
                 $message ?: 'Expected a countable. Got: %s',
                 static::typeToString($value)
@@ -542,13 +689,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert iterable $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isIterable($value, $message = '')
     {
@@ -561,7 +714,10 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $class
      * @psalm-assert ExpectedType $value
@@ -569,8 +725,11 @@ class Assert
      * @param mixed         $value
      * @param string|object $class
      * @param string        $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isInstanceOf($value, $class, $message = '')
     {
@@ -584,7 +743,10 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $class
      * @psalm-assert !ExpectedType $value
@@ -592,8 +754,11 @@ class Assert
      * @param mixed         $value
      * @param string|object $class
      * @param string        $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notInstanceOf($value, $class, $message = '')
     {
@@ -607,6 +772,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-param array<class-string> $classes
      *
@@ -615,6 +781,11 @@ class Assert
      * @param string               $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed                $value
+     * @param array<object|string> $classes
+     * @param string               $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isInstanceOfAny($value, array $classes, $message = '')
     {
@@ -632,6 +803,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $class
@@ -711,12 +883,17 @@ class Assert
 
     /**
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert empty $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isEmpty($value, $message = '')
     {
@@ -729,13 +906,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert !empty $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notEmpty($value, $message = '')
     {
@@ -748,13 +931,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert null $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function null($value, $message = '')
     {
@@ -767,13 +956,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert !null $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notNull($value, $message = '')
     {
@@ -785,13 +980,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert true $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function true($value, $message = '')
     {
@@ -804,13 +1005,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @psalm-assert false $value
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function false($value, $message = '')
     {
@@ -823,6 +1030,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-assert !false $value
      *
      * @param mixed  $value
@@ -844,6 +1052,10 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function ip($value, $message = '')
     {
@@ -858,8 +1070,11 @@ class Assert
     /**
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function ipv4($value, $message = '')
     {
@@ -874,8 +1089,11 @@ class Assert
     /**
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function ipv6($value, $message = '')
     {
@@ -890,8 +1108,11 @@ class Assert
     /**
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function email($value, $message = '')
     {
@@ -908,8 +1129,11 @@ class Assert
      *
      * @param array  $values
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function uniqueValues(array $values, $message = '')
     {
@@ -931,8 +1155,11 @@ class Assert
      * @param mixed  $value
      * @param mixed  $expect
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function eq($value, $expect, $message = '')
     {
@@ -949,8 +1176,11 @@ class Assert
      * @param mixed  $value
      * @param mixed  $expect
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notEq($value, $expect, $message = '')
     {
@@ -963,13 +1193,22 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
+=======
+     * @psalm-template ExpectedType
+     * @psalm-param ExpectedType $expect
+     * @psalm-assert =ExpectedType $value
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param mixed  $value
      * @param mixed  $expect
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function same($value, $expect, $message = '')
     {
@@ -983,6 +1222,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -990,6 +1230,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $expect
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notSame($value, $expect, $message = '')
     {
@@ -1002,6 +1247,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1009,6 +1255,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $limit
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function greaterThan($value, $limit, $message = '')
     {
@@ -1022,6 +1273,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1029,6 +1281,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $limit
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function greaterThanEq($value, $limit, $message = '')
     {
@@ -1042,6 +1299,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1049,6 +1307,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $limit
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function lessThan($value, $limit, $message = '')
     {
@@ -1062,6 +1325,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1069,6 +1333,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $limit
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function lessThanEq($value, $limit, $message = '')
     {
@@ -1084,6 +1353,7 @@ class Assert
     /**
      * Inclusive range, so Assert::(3, 3, 5) passes.
      *
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1092,6 +1362,12 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed $value
+     * @param mixed min
+     * @param mixed max
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function range($value, $min, $max, $message = '')
     {
@@ -1106,13 +1382,22 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * A more human-readable alias of Assert::inArray().
      *
      * @psalm-pure
+=======
+     * Does strict comparison, so Assert::oneOf(3, ['3']) does not pass the assertion.
+     *
+     * @psalm-template ExpectedType
+     * @psalm-param array<ExpectedType> $values
+     * @psalm-assert ExpectedType $value
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param mixed  $value
      * @param array  $values
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
      */
@@ -1134,6 +1419,11 @@ class Assert
      */
     public static function inArray($value, array $values, $message = '')
     {
+=======
+     */
+    public static function oneOf($value, array $values, $message = '')
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!\in_array($value, $values, true)) {
             static::reportInvalidArgument(\sprintf(
                 $message ?: 'Expected one of: %2$s. Got: %s',
@@ -1144,6 +1434,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1151,6 +1442,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $subString
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function contains($value, $subString, $message = '')
     {
@@ -1164,6 +1460,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1171,6 +1468,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $subString
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notContains($value, $subString, $message = '')
     {
@@ -1184,12 +1486,17 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notWhitespaceOnly($value, $message = '')
     {
@@ -1202,6 +1509,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1209,6 +1517,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $prefix
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function startsWith($value, $prefix, $message = '')
     {
@@ -1222,6 +1535,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1253,6 +1567,13 @@ class Assert
     {
         static::string($value);
 
+=======
+     * @param mixed  $value
+     * @param string $message
+     */
+    public static function startsWithLetter($value, $message = '')
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $valid = isset($value[0]);
 
         if ($valid) {
@@ -1271,6 +1592,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1278,6 +1600,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $suffix
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function endsWith($value, $suffix, $message = '')
     {
@@ -1291,6 +1618,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1318,6 +1646,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $pattern
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function regex($value, $pattern, $message = '')
     {
@@ -1330,6 +1663,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1337,6 +1671,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $pattern
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function notRegex($value, $pattern, $message = '')
     {
@@ -1351,12 +1690,19 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @psalm-assert !numeric $value
+     *
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function unicodeLetters($value, $message = '')
     {
@@ -1371,6 +1717,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param mixed  $value
@@ -1382,6 +1729,13 @@ class Assert
     {
         static::string($value);
 
+=======
+     * @param mixed  $value
+     * @param string $message
+     */
+    public static function alpha($value, $message = '')
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $locale = \setlocale(LC_CTYPE, 0);
         \setlocale(LC_CTYPE, 'C');
         $valid = !\ctype_alpha($value);
@@ -1396,12 +1750,17 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function digits($value, $message = '')
     {
@@ -1419,12 +1778,17 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function alnum($value, $message = '')
     {
@@ -1442,6 +1806,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert lowercase-string $value
      *
@@ -1449,6 +1814,10 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function lower($value, $message = '')
     {
@@ -1466,6 +1835,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert !lowercase-string $value
      *
@@ -1473,6 +1843,10 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function upper($value, $message = '')
     {
@@ -1490,6 +1864,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string $value
@@ -1497,6 +1872,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $length
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function length($value, $length, $message = '')
     {
@@ -1512,6 +1892,7 @@ class Assert
     /**
      * Inclusive min.
      *
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string    $value
@@ -1519,6 +1900,11 @@ class Assert
      * @param string    $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $min
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function minLength($value, $min, $message = '')
     {
@@ -1534,6 +1920,7 @@ class Assert
     /**
      * Inclusive max.
      *
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string    $value
@@ -1541,6 +1928,11 @@ class Assert
      * @param string    $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $max
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function maxLength($value, $max, $message = '')
     {
@@ -1556,6 +1948,7 @@ class Assert
     /**
      * Inclusive , so Assert::lengthBetween('asd', 3, 5); passes the assertion.
      *
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param string    $value
@@ -1564,6 +1957,12 @@ class Assert
      * @param string    $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $min
+     * @param mixed  $max
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function lengthBetween($value, $min, $max, $message = '')
     {
@@ -1584,8 +1983,11 @@ class Assert
      *
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function fileExists($value, $message = '')
     {
@@ -1602,8 +2004,11 @@ class Assert
     /**
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function file($value, $message = '')
     {
@@ -1620,8 +2025,11 @@ class Assert
     /**
      * @param mixed  $value
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function directory($value, $message = '')
     {
@@ -1636,10 +2044,15 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @param string $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function readable($value, $message = '')
     {
@@ -1652,10 +2065,15 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @param string $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function writable($value, $message = '')
     {
@@ -1668,10 +2086,17 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @param mixed  $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @psalm-assert class-string $value
+     *
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function classExists($value, $message = '')
     {
@@ -1684,6 +2109,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $class
@@ -1694,6 +2120,11 @@ class Assert
      * @param string        $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed         $value
+     * @param string|object $class
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function subclassOf($value, $class, $message = '')
     {
@@ -1707,10 +2138,17 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @param mixed  $value
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @psalm-assert class-string $value
+     *
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function interfaceExists($value, $message = '')
     {
@@ -1723,6 +2161,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-template ExpectedType of object
      * @psalm-param class-string<ExpectedType> $interface
@@ -1733,6 +2172,11 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param mixed  $interface
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function implementsInterface($value, $interface, $message = '')
     {
@@ -1746,6 +2190,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-param class-string|object $classOrObject
      *
@@ -1754,6 +2199,11 @@ class Assert
      * @param string        $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param string|object $classOrObject
+     * @param mixed         $property
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function propertyExists($classOrObject, $property, $message = '')
     {
@@ -1766,6 +2216,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-param class-string|object $classOrObject
      *
@@ -1774,6 +2225,11 @@ class Assert
      * @param string        $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param string|object $classOrObject
+     * @param mixed         $property
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function propertyNotExists($classOrObject, $property, $message = '')
     {
@@ -1786,6 +2242,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-param class-string|object $classOrObject
      *
@@ -1794,6 +2251,11 @@ class Assert
      * @param string        $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param string|object $classOrObject
+     * @param mixed         $method
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function methodExists($classOrObject, $method, $message = '')
     {
@@ -1806,6 +2268,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-param class-string|object $classOrObject
      *
@@ -1814,6 +2277,11 @@ class Assert
      * @param string        $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param string|object $classOrObject
+     * @param mixed         $method
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function methodNotExists($classOrObject, $method, $message = '')
     {
@@ -1826,6 +2294,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param array      $array
@@ -1833,6 +2302,11 @@ class Assert
      * @param string     $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param array      $array
+     * @param string|int $key
+     * @param string     $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function keyExists($array, $key, $message = '')
     {
@@ -1845,6 +2319,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      *
      * @param array      $array
@@ -1852,6 +2327,11 @@ class Assert
      * @param string     $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param array      $array
+     * @param string|int $key
+     * @param string     $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function keyNotExists($array, $key, $message = '')
     {
@@ -1864,6 +2344,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * Checks if a value is a valid array key (int or string).
      *
      * @psalm-pure
@@ -1892,28 +2373,45 @@ class Assert
      * @param string          $message
      *
      * @throws InvalidArgumentException
+=======
+     * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
+     *
+     * @param mixed  $array
+     * @param mixed  $number
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function count($array, $number, $message = '')
     {
         static::eq(
             \count($array),
             $number,
+<<<<<<< HEAD
             \sprintf(
                 $message ?: 'Expected an array to contain %d elements. Got: %d.',
                 $number,
                 \count($array)
             )
+=======
+            $message ?: \sprintf('Expected an array to contain %d elements. Got: %d.', $number, \count($array))
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
     /**
      * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
      *
+<<<<<<< HEAD
      * @param Countable|array $array
      * @param int|float       $min
      * @param string          $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $array
+     * @param mixed  $min
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function minCount($array, $min, $message = '')
     {
@@ -1929,11 +2427,17 @@ class Assert
     /**
      * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
      *
+<<<<<<< HEAD
      * @param Countable|array $array
      * @param int|float       $max
      * @param string          $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $array
+     * @param mixed  $max
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function maxCount($array, $max, $message = '')
     {
@@ -1949,12 +2453,19 @@ class Assert
     /**
      * Does not check if $array is countable, this can generate a warning on php versions after 7.2.
      *
+<<<<<<< HEAD
      * @param Countable|array $array
      * @param int|float       $min
      * @param int|float       $max
      * @param string          $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $array
+     * @param mixed  $min
+     * @param mixed  $max
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function countBetween($array, $min, $max, $message = '')
     {
@@ -1971,6 +2482,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert list $array
      *
@@ -1982,6 +2494,14 @@ class Assert
     public static function isList($array, $message = '')
     {
         if (!\is_array($array) || $array !== \array_values($array)) {
+=======
+     * @param mixed  $array
+     * @param string $message
+     */
+    public static function isList($array, $message = '')
+    {
+        if (!\is_array($array) || !$array || \array_keys($array) !== \range(0, \count($array) - 1)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             static::reportInvalidArgument(
                 $message ?: 'Expected list - non-associative array.'
             );
@@ -1989,6 +2509,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-assert list $array
      * @psalm-assert !empty $array
@@ -2014,12 +2535,23 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $array
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function isMap($array, $message = '')
     {
         if (
             !\is_array($array) ||
+<<<<<<< HEAD
             \array_keys($array) !== \array_filter(\array_keys($array), '\is_string')
+=======
+            !$array ||
+            \array_keys($array) !== \array_filter(\array_keys($array), function ($key) {
+                return \is_string($key);
+            })
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ) {
             static::reportInvalidArgument(
                 $message ?: 'Expected map - associative array with string keys.'
@@ -2028,6 +2560,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-pure
      * @psalm-template T
      * @psalm-param mixed|array<T> $array
@@ -2052,6 +2585,10 @@ class Assert
      * @param string $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param mixed  $value
+     * @param string $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function uuid($value, $message = '')
     {
@@ -2072,6 +2609,7 @@ class Assert
     }
 
     /**
+<<<<<<< HEAD
      * @psalm-param class-string<Throwable>
      *
      * @param Closure $expression
@@ -2079,6 +2617,11 @@ class Assert
      * @param string  $message
      *
      * @throws InvalidArgumentException
+=======
+     * @param Closure       $expression
+     * @param string|object $class
+     * @param string        $message
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function throws(Closure $expression, $class = 'Exception', $message = '')
     {
@@ -2107,9 +2650,12 @@ class Assert
         ));
     }
 
+<<<<<<< HEAD
     /**
      * @throws BadMethodCallException
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function __callStatic($name, $arguments)
     {
         if ('nullOr' === \substr($name, 0, 6)) {
@@ -2167,10 +2713,13 @@ class Assert
                 return \get_class($value).': '.self::valueToString($value->__toString());
             }
 
+<<<<<<< HEAD
             if ($value instanceof DateTime || $value instanceof DateTimeImmutable) {
                 return \get_class($value).': '.self::valueToString($value->format('c'));
             }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return \get_class($value);
         }
 
@@ -2210,10 +2759,13 @@ class Assert
 
     /**
      * @param string $message
+<<<<<<< HEAD
      *
      * @throws InvalidArgumentException
      *
      * @psalm-pure this method is not supposed to perform side-effects
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected static function reportInvalidArgument($message)
     {

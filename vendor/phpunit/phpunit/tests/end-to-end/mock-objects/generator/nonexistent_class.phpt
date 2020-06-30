@@ -1,7 +1,11 @@
 --TEST--
 \PHPUnit\Framework\MockObject\Generator::generate('NonExistentClass', [], 'MockFoo', true, true)
 --FILE--
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 require __DIR__ . '/../../../../vendor/autoload.php';
 
 $generator = new \PHPUnit\Framework\MockObject\Generator;
@@ -14,15 +18,23 @@ $mock = $generator->generate(
     true
 );
 
+<<<<<<< HEAD
 print $mock['code'];
 ?>
 --EXPECT--
+=======
+print $mock->getClassCode();
+--EXPECTF--
+declare(strict_types=1);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class NonExistentClass
 {
 }
 
 class MockFoo extends NonExistentClass implements PHPUnit\Framework\MockObject\MockObject
 {
+<<<<<<< HEAD
     private $__phpunit_invocationMocker;
     private $__phpunit_originalObject;
     private $__phpunit_configurable = [];
@@ -78,4 +90,9 @@ class MockFoo extends NonExistentClass implements PHPUnit\Framework\MockObject\M
             $this->__phpunit_invocationMocker = null;
         }
     }
+=======
+    use \PHPUnit\Framework\MockObject\Api;
+    use \PHPUnit\Framework\MockObject\Method;
+    use \PHPUnit\Framework\MockObject\MockedCloneMethod;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

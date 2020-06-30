@@ -32,7 +32,12 @@
          timeoutForMediumTests="10"
          timeoutForLargeTests="60"
          verbose="false"
+<<<<<<< HEAD
          executionOrder="default">
+=======
+         executionOrder="default"
+         noInteraction="true">
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     <testsuites>
         <testsuite name="My Test Suite">
             <directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">/path/to/files</directory>

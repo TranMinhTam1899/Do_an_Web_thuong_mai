@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,19 +17,33 @@ use PHPUnit\Framework\Error\Error;
 use Throwable;
 
 /**
+<<<<<<< HEAD
  * A TestFailure collects a failed test together with the caught exception.
  */
 class TestFailure
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class TestFailure
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var null|Test
      */
+<<<<<<< HEAD
     protected $failedTest;
+=======
+    private $failedTest;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var Throwable
      */
+<<<<<<< HEAD
     protected $thrownException;
+=======
+    private $thrownException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var string
@@ -34,8 +52,11 @@ class TestFailure
 
     /**
      * Returns a description for an exception.
+<<<<<<< HEAD
      *
      * @throws \InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function exceptionToString(Throwable $e): string
     {
@@ -46,6 +67,13 @@ class TestFailure
                 $buffer .= $e->getComparisonFailure()->getDiff();
             }
 
+<<<<<<< HEAD
+=======
+            if ($e instanceof PHPTAssertionFailedError) {
+                $buffer .= $e->getDiff();
+            }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!empty($buffer)) {
                 $buffer = \trim($buffer) . "\n";
             }
@@ -98,8 +126,11 @@ class TestFailure
 
     /**
      * Returns a description for the thrown exception.
+<<<<<<< HEAD
      *
      * @throws \InvalidArgumentException
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getExceptionAsString(): string
     {

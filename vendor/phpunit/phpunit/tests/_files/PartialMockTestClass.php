@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -16,11 +20,19 @@ class PartialMockTestClass
         $this->constructorCalled = true;
     }
 
+<<<<<<< HEAD
     public function doSomething()
     {
     }
 
     public function doAnotherThing()
+=======
+    public function doSomething(): void
+    {
+    }
+
+    public function doAnotherThing(): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
     }
 }

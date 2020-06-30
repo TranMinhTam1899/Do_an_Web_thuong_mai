@@ -1,24 +1,37 @@
 # https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 
 on:
+<<<<<<< HEAD
   - pull_request
   - push
+=======
+  - push
+  - pull_request
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 name: CI
 
 jobs:
   coding-guidelines:
     name: Coding Guidelines
+<<<<<<< HEAD
 
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+=======
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
       - name: Run friendsofphp/php-cs-fixer
         run: php7.3 ./tools/php-cs-fixer fix --diff-format=udiff --dry-run --show-progress=dots --using-cache=no --verbose
 
+<<<<<<< HEAD
   lint-xml-configuration:
     name: Lint XML Configuration
 
@@ -82,3 +95,30 @@ jobs:
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         run: bash <(curl -s https://codecov.io/bash) || true
+=======
+  type-checker:
+    name: Type Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Update dependencies with composer
+        run: php7.3 ./tools/composer update --no-interaction --no-ansi --no-progress --no-suggest
+
+      - name: Run vimeo/psalm on public API
+        run: php7.3 ./tools/psalm --config=.psalm/static-analysis.xml --no-progress --show-info=false
+
+      - name: Run vimeo/psalm on internal code
+        run: php7.3 ./tools/psalm --config=.psalm/config.xml --no-progress --shepherd --show-info=false --stats
+
+  backward-compatibility:
+    name: Backward Compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Run roave/backward-compatibility-check
+        run: php7.3 ./tools/roave-backward-compatibility-check --from=dfad4702af08b4d706dbc57a8badfa1dfe0cd046
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933

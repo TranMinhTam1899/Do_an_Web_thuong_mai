@@ -28,11 +28,14 @@ class CutStub extends Stub
             case 'object':
                 $this->type = self::TYPE_OBJECT;
                 $this->class = \get_class($value);
+<<<<<<< HEAD
 
                 if ($value instanceof \Closure) {
                     ReflectionCaster::castClosure($value, [], $this, true, Caster::EXCLUDE_VERBOSE);
                 }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $this->cut = -1;
                 break;
 

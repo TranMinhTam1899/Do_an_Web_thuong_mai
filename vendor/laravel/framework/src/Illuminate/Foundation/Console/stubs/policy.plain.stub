@@ -2,8 +2,13 @@
 
 namespace DummyNamespace;
 
+<<<<<<< HEAD
 use NamespacedDummyUserModel;
 use Illuminate\Auth\Access\HandlesAuthorization;
+=======
+use Illuminate\Auth\Access\HandlesAuthorization;
+use NamespacedDummyUserModel;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DummyClass
 {

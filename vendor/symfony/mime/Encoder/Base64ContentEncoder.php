@@ -15,6 +15,11 @@ use Symfony\Component\Mime\Exception\RuntimeException;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @experimental in 4.3
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Base64ContentEncoder extends Base64Encoder implements ContentEncoderInterface
 {
@@ -24,7 +29,11 @@ final class Base64ContentEncoder extends Base64Encoder implements ContentEncoder
             throw new \TypeError(sprintf('Method "%s" takes a stream as a first argument.', __METHOD__));
         }
 
+<<<<<<< HEAD
         $filter = stream_filter_append($stream, 'convert.base64-encode', STREAM_FILTER_READ, [
+=======
+        $filter = stream_filter_append($stream, 'convert.base64-encode', \STREAM_FILTER_READ, [
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'line-length' => 0 >= $maxLineLength || 76 < $maxLineLength ? 76 : $maxLineLength,
             'line-break-chars' => "\r\n",
         ]);

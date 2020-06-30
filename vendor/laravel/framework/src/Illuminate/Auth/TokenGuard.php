@@ -2,9 +2,15 @@
 
 namespace Illuminate\Auth;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
+=======
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Http\Request;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class TokenGuard implements Guard
 {

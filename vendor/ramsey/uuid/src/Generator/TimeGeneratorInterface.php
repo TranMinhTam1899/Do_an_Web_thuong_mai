@@ -14,10 +14,13 @@
 
 namespace Ramsey\Uuid\Generator;
 
+<<<<<<< HEAD
 use Exception;
 use InvalidArgumentException;
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * TimeGeneratorInterface provides functionality to generate strings of binary
  * data for version 1 UUIDs based on a host ID, sequence number, and the current
@@ -34,10 +37,17 @@ interface TimeGeneratorInterface
      *     could arise when the clock is set backwards in time or if the node ID
      *     changes.
      * @return string A binary string
+<<<<<<< HEAD
      * @throws UnsatisfiedDependencyException if called on a 32-bit system and
      *     `Moontoast\Math\BigNumber` is not present
      * @throws InvalidArgumentException
      * @throws Exception if it was not possible to gather sufficient entropy
+=======
+     * @throws \Ramsey\Uuid\Exception\UnsatisfiedDependencyException if called on a 32-bit system and
+     *     `Moontoast\Math\BigNumber` is not present
+     * @throws \InvalidArgumentException
+     * @throws \Exception if it was not possible to gather sufficient entropy
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function generate($node = null, $clockSeq = null);
 }

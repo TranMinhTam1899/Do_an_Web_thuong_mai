@@ -2,8 +2,13 @@
 
 namespace Illuminate\Hashing;
 
+<<<<<<< HEAD
 use Illuminate\Support\Manager;
 use Illuminate\Contracts\Hashing\Hasher;
+=======
+use Illuminate\Contracts\Hashing\Hasher;
+use Illuminate\Support\Manager;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class HashManager extends Manager implements Hasher
 {
@@ -14,7 +19,11 @@ class HashManager extends Manager implements Hasher
      */
     public function createBcryptDriver()
     {
+<<<<<<< HEAD
         return new BcryptHasher($this->app['config']['hashing.bcrypt'] ?? []);
+=======
+        return new BcryptHasher($this->config->get('hashing.bcrypt') ?? []);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -24,7 +33,11 @@ class HashManager extends Manager implements Hasher
      */
     public function createArgonDriver()
     {
+<<<<<<< HEAD
         return new ArgonHasher($this->app['config']['hashing.argon'] ?? []);
+=======
+        return new ArgonHasher($this->config->get('hashing.argon') ?? []);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -34,7 +47,11 @@ class HashManager extends Manager implements Hasher
      */
     public function createArgon2idDriver()
     {
+<<<<<<< HEAD
         return new Argon2IdHasher($this->app['config']['hashing.argon'] ?? []);
+=======
+        return new Argon2IdHasher($this->config->get('hashing.argon') ?? []);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -92,6 +109,10 @@ class HashManager extends Manager implements Hasher
      */
     public function getDefaultDriver()
     {
+<<<<<<< HEAD
         return $this->app['config']['hashing.driver'] ?? 'bcrypt';
+=======
+        return $this->config->get('hashing.driver', 'bcrypt');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

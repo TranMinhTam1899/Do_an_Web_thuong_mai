@@ -3,8 +3,13 @@
 namespace Illuminate\Foundation\Console;
 
 use Closure;
+<<<<<<< HEAD
 use ReflectionFunction;
 use Illuminate\Console\Command;
+=======
+use Illuminate\Console\Command;
+use ReflectionFunction;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 

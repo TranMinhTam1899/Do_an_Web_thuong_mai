@@ -31,7 +31,11 @@ class StrictSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function open($savePath, $sessionName)
     {
@@ -49,7 +53,11 @@ class StrictSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function updateTimestamp($sessionId, $data)
     {
@@ -65,7 +73,11 @@ class StrictSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function destroy($sessionId)
     {
@@ -86,7 +98,11 @@ class StrictSessionHandler extends AbstractSessionHandler
     }
 
     /**
+<<<<<<< HEAD
      * @return bool
+=======
+     * {@inheritdoc}
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function close()
     {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -11,8 +15,11 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
 use Monolog\Formatter\FormatterInterface;
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Interface that all Monolog Handlers must implement
  *
@@ -33,7 +40,11 @@ interface HandlerInterface
      *
      * @return bool
      */
+<<<<<<< HEAD
     public function isHandling(array $record);
+=======
+    public function isHandling(array $record): bool;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Handles a record.
@@ -45,17 +56,26 @@ interface HandlerInterface
      * Unless the bubbling is interrupted (by returning true), the Logger class will keep on
      * calling further handlers in the stack with a given log record.
      *
+<<<<<<< HEAD
      * @param  array   $record The record to handle
      * @return bool true means that this handler handled the record, and that bubbling is not permitted.
      *                        false means the record was either not processed or that this handler allows bubbling.
      */
     public function handle(array $record);
+=======
+     * @param  array $record The record to handle
+     * @return bool  true means that this handler handled the record, and that bubbling is not permitted.
+     *                      false means the record was either not processed or that this handler allows bubbling.
+     */
+    public function handle(array $record): bool;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Handles a set of records at once.
      *
      * @param array $records The records to handle (an array of record arrays)
      */
+<<<<<<< HEAD
     public function handleBatch(array $records);
 
     /**
@@ -87,4 +107,25 @@ interface HandlerInterface
      * @return FormatterInterface
      */
     public function getFormatter();
+=======
+    public function handleBatch(array $records): void;
+
+    /**
+     * Closes the handler.
+     *
+     * Ends a log cycle and frees all resources used by the handler.
+     *
+     * Closing a Handler means flushing all buffers and freeing any open resources/handles.
+     *
+     * Implementations have to be idempotent (i.e. it should be possible to call close several times without breakage)
+     * and ideally handlers should be able to reopen themselves on handle() after they have been closed.
+     *
+     * This is useful at the end of a request and will be called automatically when the object
+     * is destroyed if you extend Monolog\Handler\Handler.
+     *
+     * If you are thinking of calling this method yourself, most likely you should be
+     * calling ResettableInterface::reset instead. Have a look.
+     */
+    public function close(): void;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

@@ -333,11 +333,22 @@ class InputDefinition
     /**
      * Returns the InputOption name given a shortcut.
      *
+<<<<<<< HEAD
+=======
+     * @param string $shortcut The shortcut
+     *
+     * @return string The InputOption name
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @throws InvalidArgumentException When option given does not exist
      *
      * @internal
      */
+<<<<<<< HEAD
     public function shortcutToName(string $shortcut): string
+=======
+    public function shortcutToName($shortcut)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!isset($this->shortcuts[$shortcut])) {
             throw new InvalidArgumentException(sprintf('The "-%s" option does not exist.', $shortcut));

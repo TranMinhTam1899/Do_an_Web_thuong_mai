@@ -36,7 +36,11 @@ class SystemNodeProvider implements NodeProviderInterface
         }
 
         $pattern = '/[^:]([0-9A-Fa-f]{2}([:-])[0-9A-Fa-f]{2}(\2[0-9A-Fa-f]{2}){4})[^:]/';
+<<<<<<< HEAD
         $matches = [];
+=======
+        $matches = array();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // first try a  linux specific way
         $node = $this->getSysfs();
@@ -67,7 +71,11 @@ class SystemNodeProvider implements NodeProviderInterface
         }
 
         ob_start();
+<<<<<<< HEAD
         switch (strtoupper(substr(constant('PHP_OS'), 0, 3))) {
+=======
+        switch (strtoupper(substr(php_uname('a'), 0, 3))) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             case 'WIN':
                 passthru('ipconfig /all 2>&1');
                 break;
@@ -95,18 +103,27 @@ class SystemNodeProvider implements NodeProviderInterface
     {
         $mac = false;
 
+<<<<<<< HEAD
         if (strtoupper(constant('PHP_OS')) === 'LINUX') {
+=======
+        if (strtoupper(php_uname('s')) === 'LINUX') {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $addressPaths = glob('/sys/class/net/*/address', GLOB_NOSORT);
 
             if (empty($addressPaths)) {
                 return false;
             }
 
+<<<<<<< HEAD
             $macs = [];
             array_walk($addressPaths, function ($addressPath) use (&$macs) {
                 if (is_readable($addressPath)) {
                     $macs[] = file_get_contents($addressPath);
                 }
+=======
+            array_walk($addressPaths, function ($addressPath) use (&$macs) {
+                $macs[] = file_get_contents($addressPath);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             });
 
             $macs = array_map('trim', $macs);

@@ -3,9 +3,15 @@
 namespace Illuminate\Foundation\Console;
 
 use Illuminate\Console\Command;
+<<<<<<< HEAD
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Routing\RouteCollection;
 use Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
+=======
+use Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Routing\RouteCollection;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RouteCacheCommand extends Command
 {

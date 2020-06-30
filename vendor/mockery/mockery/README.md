@@ -258,6 +258,24 @@ $double->allows()->doFoo()->andReturns(123);
 $double->foo(); // int(123)
 ```
 
+<<<<<<< HEAD
+=======
+### Testing the constructor arguments of hard Dependencies
+
+See [Mocking hard dependencies](http://docs.mockery.io/en/latest/cookbook/mocking_hard_dependencies.html)
+
+``` php
+$implementationMock = Mockery::mock('overload:\Some\Implementation');
+
+$implementationMock->shouldReceive('__construct')
+    ->once()
+    ->with(['host' => 'localhost']);
+// add other expectations as usual
+
+$implementation = new \Some\Implementation(['host' => 'localhost']);
+```
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 ## Versioning
 
 The Mockery team attempts to adhere to [Semantic Versioning](http://semver.org),

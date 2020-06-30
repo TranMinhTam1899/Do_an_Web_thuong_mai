@@ -3,8 +3,13 @@
 namespace Illuminate\Http;
 
 use Exception;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\HeaderBag;
 use Illuminate\Http\Exceptions\HttpResponseException;
+=======
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpFoundation\HeaderBag;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait ResponseTrait
 {

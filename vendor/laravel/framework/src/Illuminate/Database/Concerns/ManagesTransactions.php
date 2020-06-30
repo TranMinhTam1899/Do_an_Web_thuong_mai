@@ -26,9 +26,13 @@ trait ManagesTransactions
             // catch any exception we can rollback this transaction so that none of this
             // gets actually persisted to a database or stored in a permanent fashion.
             try {
+<<<<<<< HEAD
                 return tap($callback($this), function () {
                     $this->commit();
                 });
+=======
+                $callbackResult = $callback($this);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             // If we catch an exception we'll rollback this transaction and try again if we
@@ -38,11 +42,31 @@ trait ManagesTransactions
                 $this->handleTransactionException(
                     $e, $currentAttempt, $attempts
                 );
+<<<<<<< HEAD
+=======
+
+                continue;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             } catch (Throwable $e) {
                 $this->rollBack();
 
                 throw $e;
             }
+<<<<<<< HEAD
+=======
+
+            try {
+                $this->commit();
+            } catch (Exception $e) {
+                $this->handleCommitTransactionException(
+                    $e, $currentAttempt, $attempts
+                );
+
+                continue;
+            }
+
+            return $callbackResult;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -61,7 +85,11 @@ trait ManagesTransactions
         // On a deadlock, MySQL rolls back the entire transaction so we can't just
         // retry the query. We have to throw this exception all the way out and
         // let the developer handle it in another way. We will decrement too.
+<<<<<<< HEAD
         if ($this->causedByDeadlock($e) &&
+=======
+        if ($this->causedByConcurrencyError($e) &&
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->transactions > 1) {
             $this->transactions--;
 
@@ -73,7 +101,11 @@ trait ManagesTransactions
         // if we haven't we will return and try this query again in our loop.
         $this->rollBack();
 
+<<<<<<< HEAD
         if ($this->causedByDeadlock($e) &&
+=======
+        if ($this->causedByConcurrencyError($e) &&
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $currentAttempt < $maxAttempts) {
             return;
         }
@@ -163,6 +195,33 @@ trait ManagesTransactions
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Handle an exception encountered when committing a transaction.
+     *
+     * @param  \Exception  $e
+     * @param  int  $currentAttempt
+     * @param  int  $maxAttempts
+     * @return void
+     */
+    protected function handleCommitTransactionException($e, $currentAttempt, $maxAttempts)
+    {
+        $this->transactions--;
+
+        if ($this->causedByConcurrencyError($e) &&
+            $currentAttempt < $maxAttempts) {
+            return;
+        }
+
+        if ($this->causedByLostConnection($e)) {
+            $this->transactions = 0;
+        }
+
+        throw $e;
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Rollback the active database transaction.
      *
      * @param  int|null  $toLevel

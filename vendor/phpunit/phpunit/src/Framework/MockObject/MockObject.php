@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -7,6 +11,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\MockObject\Builder\InvocationMocker;
@@ -54,4 +59,21 @@ interface PHPUnit_Framework_MockObject_MockObject /*extends Verifiable*/
      * @return InvocationMocker
      */
     public function expects(Invocation $matcher);
+=======
+namespace PHPUnit\Framework\MockObject;
+
+use PHPUnit\Framework\MockObject\Builder\InvocationMocker as BuilderInvocationMocker;
+use PHPUnit\Framework\MockObject\Rule\InvocationOrder;
+
+/**
+ * @method BuilderInvocationMocker method($constraint)
+ */
+interface MockObject extends Stub
+{
+    public function __phpunit_setOriginalObject($originalObject): void;
+
+    public function __phpunit_verify(bool $unsetInvocationMocker = true): void;
+
+    public function expects(InvocationOrder $invocationRule): BuilderInvocationMocker;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

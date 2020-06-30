@@ -14,8 +14,11 @@
 
 namespace Ramsey\Uuid;
 
+<<<<<<< HEAD
 use DateTime;
 use Moontoast\Math\BigNumber;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 use Ramsey\Uuid\Exception\UnsupportedOperationException;
 
@@ -37,6 +40,7 @@ class DegradedUuid extends Uuid
 
         $time = $this->converter->fromHex($this->getTimestampHex());
 
+<<<<<<< HEAD
         $ts = new BigNumber($time, 20);
         $ts->subtract('122192928000000000');
         $ts->divide('10000000.0');
@@ -44,6 +48,15 @@ class DegradedUuid extends Uuid
         $unixTime = $ts->getValue();
 
         return new DateTime("@{$unixTime}");
+=======
+        $ts = new \Moontoast\Math\BigNumber($time, 20);
+        $ts->subtract('122192928000000000');
+        $ts->divide('10000000.0');
+        $ts->round();
+        $unixTime = $ts->getValue();
+
+        return new \DateTime("@{$unixTime}");
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

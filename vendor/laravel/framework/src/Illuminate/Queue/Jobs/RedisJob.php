@@ -2,9 +2,15 @@
 
 namespace Illuminate\Queue\Jobs;
 
+<<<<<<< HEAD
 use Illuminate\Queue\RedisQueue;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Queue\Job as JobContract;
+=======
+use Illuminate\Container\Container;
+use Illuminate\Contracts\Queue\Job as JobContract;
+use Illuminate\Queue\RedisQueue;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RedisJob extends Job implements JobContract
 {

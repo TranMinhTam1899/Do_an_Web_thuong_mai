@@ -2,8 +2,13 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class MorphPivot extends Pivot
 {
@@ -45,11 +50,24 @@ class MorphPivot extends Pivot
      */
     public function delete()
     {
+<<<<<<< HEAD
+=======
+        if ($this->fireModelEvent('deleting') === false) {
+            return 0;
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $query = $this->getDeleteQuery();
 
         $query->where($this->morphType, $this->morphClass);
 
+<<<<<<< HEAD
         return $query->delete();
+=======
+        return tap($query->delete(), function () {
+            $this->fireModelEvent('deleted', false);
+        });
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

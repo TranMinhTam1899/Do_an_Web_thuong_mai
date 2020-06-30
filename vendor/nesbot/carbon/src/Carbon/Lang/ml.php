@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - JD Isaacks
  */
@@ -30,7 +34,10 @@ return [
     'a_second' => 'അൽപ നിമിഷങ്ങൾ|:count സെക്കൻഡ്',
     'ago' => ':time മുൻപ്',
     'from_now' => ':time കഴിഞ്ഞ്',
+<<<<<<< HEAD
     'diff_now' => 'ഇപ്പോൾ',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'ഇന്നലെ',
     'diff_tomorrow' => 'നാളെ',
     'formats' => [

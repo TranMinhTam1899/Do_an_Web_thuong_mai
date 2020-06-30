@@ -2,13 +2,20 @@
 
 namespace Illuminate\Database\Query\Grammars;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Query\Builder;
+=======
+use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PostgresGrammar extends Grammar
 {
     /**
+<<<<<<< HEAD
      * The components that make up a select clause.
      *
      * @var array
@@ -28,6 +35,8 @@ class PostgresGrammar extends Grammar
     ];
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * All of the available clause operators.
      *
      * @var array
@@ -105,6 +114,7 @@ class PostgresGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a select query into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -136,6 +146,32 @@ class PostgresGrammar extends Grammar
         $conjunction = $union['all'] ? ' union all ' : ' union ';
 
         return $conjunction.'('.$union['query']->toSql().')';
+=======
+     * Compile the "select *" portion of the query.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $columns
+     * @return string|null
+     */
+    protected function compileColumns(Builder $query, $columns)
+    {
+        // If the query is actually performing an aggregating select, we will let that
+        // compiler handle the building of the select clauses, as it will need some
+        // more syntax that is best handled by that function to keep things neat.
+        if (! is_null($query->aggregate)) {
+            return;
+        }
+
+        if (is_array($query->distinct)) {
+            $select = 'select distinct on ('.$this->columnize($query->distinct).') ';
+        } elseif ($query->distinct) {
+            $select = 'select distinct ';
+        } else {
+            $select = 'select ';
+        }
+
+        return $select.$this->columnize($columns);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -184,6 +220,7 @@ class PostgresGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public function compileInsert(Builder $query, array $values)
@@ -196,6 +233,8 @@ class PostgresGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Compile an insert ignore statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -227,6 +266,7 @@ class PostgresGrammar extends Grammar
      * @param  array  $values
      * @return string
      */
+<<<<<<< HEAD
     public function compileUpdate(Builder $query, $values)
     {
         $table = $this->wrapTable($query->from);
@@ -255,6 +295,26 @@ class PostgresGrammar extends Grammar
         // When gathering the columns for an update statement, we'll wrap each of the
         // columns and convert it to a parameter value. Then we will concatenate a
         // list of the columns that can be added into this update query clauses.
+=======
+    public function compileUpdate(Builder $query, array $values)
+    {
+        if (isset($query->joins) || isset($query->limit)) {
+            return $this->compileUpdateWithJoinsOrLimit($query, $values);
+        }
+
+        return parent::compileUpdate($query, $values);
+    }
+
+    /**
+     * Compile the columns for an update statement.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $values
+     * @return string
+     */
+    protected function compileUpdateColumns(Builder $query, array $values)
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return collect($values)->map(function ($value, $key) {
             $column = last(explode('.', $key));
 
@@ -275,16 +335,25 @@ class PostgresGrammar extends Grammar
      */
     protected function compileJsonUpdateColumn($key, $value)
     {
+<<<<<<< HEAD
         $parts = explode('->', $key);
 
         $field = $this->wrap(array_shift($parts));
 
         $path = '\'{"'.implode('","', $parts).'"}\'';
+=======
+        $segments = explode('->', $key);
+
+        $field = $this->wrap(array_shift($segments));
+
+        $path = '\'{"'.implode('","', $segments).'"}\'';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return "{$field} = jsonb_set({$field}::jsonb, {$path}, {$this->parameter($value)})";
     }
 
     /**
+<<<<<<< HEAD
      * Compile the "from" clause for an update with a join.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -356,6 +425,25 @@ class PostgresGrammar extends Grammar
         }
 
         return implode(' ', $joinWheres);
+=======
+     * Compile an update statement with joins or limit into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $values
+     * @return string
+     */
+    protected function compileUpdateWithJoinsOrLimit(Builder $query, array $values)
+    {
+        $table = $this->wrapTable($query->from);
+
+        $columns = $this->compileUpdateColumns($query, $values);
+
+        $alias = last(preg_split('/\s+as\s+/i', $query->from));
+
+        $selectSql = $this->compileSelect($query->select($alias.'.ctid'));
+
+        return "update {$table} set {$columns} where {$this->wrap('ctid')} in ({$selectSql})";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -368,15 +456,26 @@ class PostgresGrammar extends Grammar
     public function prepareBindingsForUpdate(array $bindings, array $values)
     {
         $values = collect($values)->map(function ($value, $column) {
+<<<<<<< HEAD
             return $this->isJsonSelector($column) && ! $this->isExpression($value)
+=======
+            return is_array($value) || ($this->isJsonSelector($column) && ! $this->isExpression($value))
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 ? json_encode($value)
                 : $value;
         })->all();
 
+<<<<<<< HEAD
         $bindingsWithoutWhere = Arr::except($bindings, ['select', 'where']);
 
         return array_values(
             array_merge($values, $bindings['where'], Arr::flatten($bindingsWithoutWhere))
+=======
+        $cleanBindings = Arr::except($bindings, 'select');
+
+        return array_values(
+            array_merge($values, Arr::flatten($cleanBindings))
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
@@ -388,6 +487,7 @@ class PostgresGrammar extends Grammar
      */
     public function compileDelete(Builder $query)
     {
+<<<<<<< HEAD
         $table = $this->wrapTable($query->from);
 
         return isset($query->joins)
@@ -426,6 +526,30 @@ class PostgresGrammar extends Grammar
         return array_values(
             array_merge($bindings['where'], Arr::flatten($bindingsWithoutWhere))
         );
+=======
+        if (isset($query->joins) || isset($query->limit)) {
+            return $this->compileDeleteWithJoinsOrLimit($query);
+        }
+
+        return parent::compileDelete($query);
+    }
+
+    /**
+     * Compile a delete statement with joins or limit into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @return string
+     */
+    protected function compileDeleteWithJoinsOrLimit(Builder $query)
+    {
+        $table = $this->wrapTable($query->from);
+
+        $alias = last(preg_split('/\s+as\s+/i', $query->from));
+
+        $selectSql = $this->compileSelect($query->select($alias.'.ctid'));
+
+        return "delete from {$table} where {$this->wrap('ctid')} in ({$selectSql})";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

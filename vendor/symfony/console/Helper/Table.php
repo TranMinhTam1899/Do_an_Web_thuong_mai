@@ -48,7 +48,10 @@ class Table
      * Table rows.
      */
     private $rows = [];
+<<<<<<< HEAD
     private $horizontal = false;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Column widths cache.
@@ -103,7 +106,12 @@ class Table
     /**
      * Sets a style definition.
      *
+<<<<<<< HEAD
      * @param string $name The style name
+=======
+     * @param string     $name  The style name
+     * @param TableStyle $style A TableStyle instance
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function setStyleDefinition($name, TableStyle $style)
     {
@@ -323,6 +331,7 @@ class Table
         return $this;
     }
 
+<<<<<<< HEAD
     public function setHorizontal(bool $horizontal = true): self
     {
         $this->horizontal = $horizontal;
@@ -330,6 +339,8 @@ class Table
         return $this;
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Renders table to output.
      *
@@ -345,6 +356,7 @@ class Table
      */
     public function render()
     {
+<<<<<<< HEAD
         $divider = new TableSeparator();
         if ($this->horizontal) {
             $rows = [];
@@ -367,13 +379,21 @@ class Table
             $rows = array_merge($this->headers, [$divider], $this->rows);
         }
 
+=======
+        $rows = array_merge($this->headers, [$divider = new TableSeparator()], $this->rows);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->calculateNumberOfColumns($rows);
 
         $rows = $this->buildTableRows($rows);
         $this->calculateColumnsWidth($rows);
 
+<<<<<<< HEAD
         $isHeader = !$this->horizontal;
         $isFirstRow = $this->horizontal;
+=======
+        $isHeader = true;
+        $isFirstRow = false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($rows as $row) {
             if ($divider === $row) {
                 $isHeader = false;
@@ -398,11 +418,16 @@ class Table
                     $this->renderRowSeparator(self::SEPARATOR_TOP, $this->headerTitle, $this->style->getHeaderTitleFormat());
                 }
             }
+<<<<<<< HEAD
             if ($this->horizontal) {
                 $this->renderRow($row, $this->style->getCellRowFormat(), $this->style->getCellHeaderFormat());
             } else {
                 $this->renderRow($row, $isHeader ? $this->style->getCellHeaderFormat() : $this->style->getCellRowFormat());
             }
+=======
+
+            $this->renderRow($row, $isHeader ? $this->style->getCellHeaderFormat() : $this->style->getCellRowFormat());
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         $this->renderRowSeparator(self::SEPARATOR_BOTTOM, $this->footerTitle, $this->style->getFooterTitleFormat());
 
@@ -468,7 +493,11 @@ class Table
     /**
      * Renders vertical column separator.
      */
+<<<<<<< HEAD
     private function renderColumnSeparator(int $type = self::BORDER_OUTSIDE): string
+=======
+    private function renderColumnSeparator($type = self::BORDER_OUTSIDE)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $borders = $this->style->getBorderChars();
 
@@ -482,17 +511,25 @@ class Table
      *
      *     | 9971-5-0210-0 | A Tale of Two Cities  | Charles Dickens  |
      */
+<<<<<<< HEAD
     private function renderRow(array $row, string $cellFormat, string $firstCellFormat = null)
+=======
+    private function renderRow(array $row, string $cellFormat)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $rowContent = $this->renderColumnSeparator(self::BORDER_OUTSIDE);
         $columns = $this->getRowColumns($row);
         $last = \count($columns) - 1;
         foreach ($columns as $i => $column) {
+<<<<<<< HEAD
             if ($firstCellFormat && 0 === $i) {
                 $rowContent .= $this->renderCell($row, $column, $firstCellFormat);
             } else {
                 $rowContent .= $this->renderCell($row, $column, $cellFormat);
             }
+=======
+            $rowContent .= $this->renderCell($row, $column, $cellFormat);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $rowContent .= $this->renderColumnSeparator($last === $i ? self::BORDER_OUTSIDE : self::BORDER_INSIDE);
         }
         $this->output->writeln($rowContent);
@@ -501,7 +538,11 @@ class Table
     /**
      * Renders table cell with padding.
      */
+<<<<<<< HEAD
     private function renderCell(array $row, int $column, string $cellFormat): string
+=======
+    private function renderCell(array $row, int $column, string $cellFormat)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $cell = isset($row[$column]) ? $row[$column] : '';
         $width = $this->effectiveColumnWidths[$column];
@@ -532,7 +573,11 @@ class Table
     /**
      * Calculate number of columns for this table.
      */
+<<<<<<< HEAD
     private function calculateNumberOfColumns(array $rows)
+=======
+    private function calculateNumberOfColumns($rows)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $columns = [0];
         foreach ($rows as $row) {
@@ -546,7 +591,11 @@ class Table
         $this->numberOfColumns = max($columns);
     }
 
+<<<<<<< HEAD
     private function buildTableRows(array $rows): TableRows
+=======
+    private function buildTableRows($rows)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         /** @var WrappableOutputFormatterInterface $formatter */
         $formatter = $this->output->getFormatter();
@@ -580,7 +629,11 @@ class Table
             }
         }
 
+<<<<<<< HEAD
         return new TableRows(function () use ($rows, $unmergedRows): \Traversable {
+=======
+        return new TableRows(function () use ($rows, $unmergedRows) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ($rows as $rowKey => $row) {
                 yield $this->fillCells($row);
 
@@ -601,9 +654,13 @@ class Table
             ++$numberOfRows; // Add row for header separator
         }
 
+<<<<<<< HEAD
         if (\count($this->rows) > 0) {
             ++$numberOfRows; // Add row for footer separator
         }
+=======
+        ++$numberOfRows; // Add row for footer separator
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $numberOfRows;
     }
@@ -618,7 +675,11 @@ class Table
         $unmergedRows = [];
         foreach ($rows[$line] as $column => $cell) {
             if (null !== $cell && !$cell instanceof TableCell && !is_scalar($cell) && !(\is_object($cell) && method_exists($cell, '__toString'))) {
+<<<<<<< HEAD
                 throw new InvalidArgumentException(sprintf('A cell must be a TableCell, a scalar or an object implementing "__toString()", "%s" given.', \gettype($cell)));
+=======
+                throw new InvalidArgumentException(sprintf('A cell must be a TableCell, a scalar or an object implementing __toString, %s given.', \gettype($cell)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             if ($cell instanceof TableCell && $cell->getRowspan() > 1) {
                 $nbLines = $cell->getRowspan() - 1;
@@ -786,7 +847,11 @@ class Table
         $this->numberOfColumns = null;
     }
 
+<<<<<<< HEAD
     private static function initStyles(): array
+=======
+    private static function initStyles()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $borderless = new TableStyle();
         $borderless
@@ -833,7 +898,11 @@ class Table
         ];
     }
 
+<<<<<<< HEAD
     private function resolveStyle($name): TableStyle
+=======
+    private function resolveStyle($name)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($name instanceof TableStyle) {
             return $name;

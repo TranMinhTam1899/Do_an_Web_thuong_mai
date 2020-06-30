@@ -20,8 +20,11 @@ use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
  * Basically, this class removes all objects from the trace.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\Exception\FlattenException instead.
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class FlattenException
 {
@@ -36,18 +39,25 @@ class FlattenException
     private $file;
     private $line;
 
+<<<<<<< HEAD
     /**
      * @return static
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function create(\Exception $exception, $statusCode = null, array $headers = [])
     {
         return static::createFromThrowable($exception, $statusCode, $headers);
     }
 
+<<<<<<< HEAD
     /**
      * @return static
      */
     public static function createFromThrowable(\Throwable $exception, int $statusCode = null, array $headers = [])
+=======
+    public static function createFromThrowable(\Throwable $exception, ?int $statusCode = null, array $headers = []): self
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $e = new static();
         $e->setMessage($exception->getMessage());
@@ -180,7 +190,11 @@ class FlattenException
     public function setMessage($message)
     {
         if (false !== strpos($message, "class@anonymous\0")) {
+<<<<<<< HEAD
             $message = preg_replace_callback('/class@anonymous\x00.*?\.php(?:0x?|:[0-9]++\$)[0-9a-fA-F]++/', function ($m) {
+=======
+            $message = preg_replace_callback('/class@anonymous\x00.*?\.php0x?[0-9a-fA-F]++/', function ($m) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return class_exists($m[0], false) ? get_parent_class($m[0]).'@anonymous' : $m[0];
             }, $message);
         }
@@ -293,7 +307,11 @@ class FlattenException
         return $this;
     }
 
+<<<<<<< HEAD
     private function flattenArgs(array $args, int $level = 0, int &$count = 0): array
+=======
+    private function flattenArgs($args, $level = 0, &$count = 0)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $result = [];
         foreach ($args as $key => $value) {
@@ -329,7 +347,11 @@ class FlattenException
         return $result;
     }
 
+<<<<<<< HEAD
     private function getClassNameFromIncomplete(\__PHP_Incomplete_Class $value): string
+=======
+    private function getClassNameFromIncomplete(\__PHP_Incomplete_Class $value)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $array = new \ArrayObject($value);
 

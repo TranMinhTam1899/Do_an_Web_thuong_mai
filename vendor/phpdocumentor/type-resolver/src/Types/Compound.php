@@ -14,6 +14,10 @@ declare(strict_types=1);
 namespace phpDocumentor\Reflection\Types;
 
 use ArrayIterator;
+<<<<<<< HEAD
+=======
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use IteratorAggregate;
 use phpDocumentor\Reflection\Type;
 use function implode;
@@ -28,18 +32,37 @@ use function implode;
 final class Compound implements Type, IteratorAggregate
 {
     /** @var Type[] */
+<<<<<<< HEAD
     private $types = [];
+=======
+    private $types;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * Initializes a compound type (i.e. `string|int`) and tests if the provided types all implement the Type interface.
      *
      * @param Type[] $types
+<<<<<<< HEAD
+=======
+     *
+     * @throws InvalidArgumentException When types are not all instance of Type.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(array $types)
     {
         foreach ($types as $type) {
+<<<<<<< HEAD
             $this->add($type);
         }
+=======
+            /** @psalm-suppress RedundantConditionGivenDocblockType */
+            if (!$type instanceof Type) {
+                throw new InvalidArgumentException('A compound type can only have other types as elements');
+            }
+        }
+
+        $this->types = $types;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -63,6 +86,7 @@ final class Compound implements Type, IteratorAggregate
     }
 
     /**
+<<<<<<< HEAD
      * Tests if this compound type contains the given type.
      */
     public function contains(Type $type) : bool
@@ -78,6 +102,8 @@ final class Compound implements Type, IteratorAggregate
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Returns a rendered output of the Type as it would be used in a DocBlock.
      */
     public function __toString() : string
@@ -92,6 +118,7 @@ final class Compound implements Type, IteratorAggregate
     {
         return new ArrayIterator($this->types);
     }
+<<<<<<< HEAD
 
     private function add(Type $type) : void
     {
@@ -102,4 +129,6 @@ final class Compound implements Type, IteratorAggregate
 
         $this->types[] = $type;
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

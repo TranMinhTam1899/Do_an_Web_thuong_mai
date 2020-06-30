@@ -15,6 +15,11 @@ use Symfony\Component\Mime\Encoder\Rfc2231Encoder;
 
 /**
  * @author Chris Corbyn
+<<<<<<< HEAD
+=======
+ *
+ * @experimental in 4.3
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class ParameterizedHeader extends UnstructuredHeader
 {

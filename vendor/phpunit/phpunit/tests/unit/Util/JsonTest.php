@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,9 +16,19 @@ namespace PHPUnit\Util;
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class JsonTest extends TestCase
 {
     /**
+=======
+/**
+ * @small
+ */
+final class JsonTest extends TestCase
+{
+    /**
+     * @testdox Canonicalize $actual
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider canonicalizeProvider
      *
      * @throws \PHPUnit\Framework\ExpectationFailedException
@@ -40,6 +54,10 @@ class JsonTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @testdox Prettify $actual to $expected
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider prettifyProvider
      *
      * @throws \PHPUnit\Framework\Exception

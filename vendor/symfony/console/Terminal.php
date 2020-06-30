@@ -79,9 +79,13 @@ class Terminal
                 // or [w, h] from "wxh"
                 self::$width = (int) $matches[1];
                 self::$height = isset($matches[4]) ? (int) $matches[4] : (int) $matches[2];
+<<<<<<< HEAD
             } elseif (!self::hasVt100Support() && self::hasSttyAvailable()) {
                 // only use stty on Windows if the terminal does not support vt100 (e.g. Windows 7 + git-bash)
                 // testing for stty in a Windows 10 vt100-enabled console will implicitly disable vt100 support on STDOUT
+=======
+            } elseif (self::hasSttyAvailable()) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 self::initDimensionsUsingStty();
             } elseif (null !== $dimensions = self::getConsoleMode()) {
                 // extract [w, h] from "wxh"
@@ -93,6 +97,7 @@ class Terminal
         }
     }
 
+<<<<<<< HEAD
     /**
      * Returns whether STDOUT has vt100 support (some Windows 10+ configurations).
      */
@@ -104,6 +109,8 @@ class Terminal
     /**
      * Initializes dimensions using the output of an stty columns line.
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private static function initDimensionsUsingStty()
     {
         if ($sttyString = self::getSttyColumns()) {
@@ -124,7 +131,11 @@ class Terminal
      *
      * @return int[]|null An array composed of the width and the height or null if it could not be parsed
      */
+<<<<<<< HEAD
     private static function getConsoleMode(): ?array
+=======
+    private static function getConsoleMode()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $info = self::readFromProcess('mode CON');
 
@@ -137,13 +148,29 @@ class Terminal
 
     /**
      * Runs and parses stty -a if it's available, suppressing any error output.
+<<<<<<< HEAD
      */
     private static function getSttyColumns(): ?string
+=======
+     *
+     * @return string|null
+     */
+    private static function getSttyColumns()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return self::readFromProcess('stty -a | grep columns');
     }
 
+<<<<<<< HEAD
     private static function readFromProcess(string $command): ?string
+=======
+    /**
+     * @param string $command
+     *
+     * @return string|null
+     */
+    private static function readFromProcess($command)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!\function_exists('proc_open')) {
             return null;

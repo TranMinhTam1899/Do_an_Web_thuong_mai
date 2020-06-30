@@ -50,8 +50,15 @@ class Tokenizer
 
     /**
      * Tokenize selector source code.
+<<<<<<< HEAD
      */
     public function tokenize(Reader $reader): TokenStream
+=======
+     *
+     * @return TokenStream
+     */
+    public function tokenize(Reader $reader)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $stream = new TokenStream();
 

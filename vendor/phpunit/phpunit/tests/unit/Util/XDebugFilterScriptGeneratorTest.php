@@ -11,11 +11,20 @@ namespace PHPUnit\Util;
 
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class XDebugFilterScriptGeneratorTest extends TestCase
 {
     /**
      * @covers \PHPUnit\Util\XdebugFilterScriptGenerator::generate
      */
+=======
+/**
+ * @small
+ * @covers \PHPUnit\Util\XdebugFilterScriptGenerator
+ */
+final class XDebugFilterScriptGeneratorTest extends TestCase
+{
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function testReturnsExpectedScript(): void
     {
         $expectedDirectory = \sprintf('%s/', __DIR__);

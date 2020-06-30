@@ -56,13 +56,21 @@ class ClassStub extends ConstStub
             }
 
             if (false !== strpos($identifier, "class@anonymous\0")) {
+<<<<<<< HEAD
                 $this->value = $identifier = preg_replace_callback('/class@anonymous\x00.*?\.php(?:0x?|:[0-9]++\$)[0-9a-fA-F]++/', function ($m) {
+=======
+                $this->value = $identifier = preg_replace_callback('/class@anonymous\x00.*?\.php0x?[0-9a-fA-F]++/', function ($m) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     return class_exists($m[0], false) ? get_parent_class($m[0]).'@anonymous' : $m[0];
                 }, $identifier);
             }
 
             if (null !== $callable && $r instanceof \ReflectionFunctionAbstract) {
+<<<<<<< HEAD
                 $s = ReflectionCaster::castFunctionAbstract($r, [], new Stub(), true, Caster::EXCLUDE_VERBOSE);
+=======
+                $s = ReflectionCaster::castFunctionAbstract($r, [], new Stub(), true);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $s = ReflectionCaster::getSignature($s);
 
                 if ('()' === substr($identifier, -2)) {

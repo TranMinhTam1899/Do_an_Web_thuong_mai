@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,10 @@ namespace PHPUnit\Util\PHP;
 
 use __PHP_Incomplete_Class;
 use ErrorException;
+<<<<<<< HEAD
 use PHPUnit\Framework\AssertionFailedError;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\SyntheticError;
 use PHPUnit\Framework\Test;
@@ -21,7 +28,11 @@ use PHPUnit\Framework\TestResult;
 use SebastianBergmann\Environment\Runtime;
 
 /**
+<<<<<<< HEAD
  * Utility methods for PHP sub-processes.
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 abstract class AbstractPhpProcess
 {
@@ -178,6 +189,26 @@ abstract class AbstractPhpProcess
     public function getCommand(array $settings, string $file = null): string
     {
         $command = $this->runtime->getBinary();
+<<<<<<< HEAD
+=======
+
+        if ($this->runtime->hasPCOV()) {
+            $settings = \array_merge(
+                $settings,
+                $this->runtime->getCurrentSettings(
+                    \array_keys(\ini_get_all('pcov'))
+                )
+            );
+        } elseif ($this->runtime->hasXdebug()) {
+            $settings = \array_merge(
+                $settings,
+                $this->runtime->getCurrentSettings(
+                    \array_keys(\ini_get_all('xdebug'))
+                )
+            );
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $command .= $this->settingsToParameters($settings);
 
         if (\PHP_SAPI === 'phpdbg') {
@@ -199,7 +230,11 @@ abstract class AbstractPhpProcess
             $command .= ' ' . $this->args;
         }
 
+<<<<<<< HEAD
         if ($this->stderrRedirection === true) {
+=======
+        if ($this->stderrRedirection) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $command .= ' 2>&1';
         }
 
@@ -238,9 +273,20 @@ abstract class AbstractPhpProcess
                 $time
             );
         } else {
+<<<<<<< HEAD
             \set_error_handler(function ($errno, $errstr, $errfile, $errline): void {
                 throw new ErrorException($errstr, $errno, $errno, $errfile, $errline);
             });
+=======
+            \set_error_handler(
+                /**
+                 * @throws ErrorException
+                 */
+                static function ($errno, $errstr, $errfile, $errline): void {
+                    throw new ErrorException($errstr, $errno, $errno, $errfile, $errline);
+                }
+            );
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             try {
                 if (\strpos($stdout, "#!/usr/bin/env php\n") === 0) {
@@ -249,6 +295,7 @@ abstract class AbstractPhpProcess
 
                 $childResult = \unserialize(\str_replace("#!/usr/bin/env php\n", '', $stdout));
                 \restore_error_handler();
+<<<<<<< HEAD
 
                 if ($childResult === false) {
                     $result->addFailure(
@@ -257,6 +304,8 @@ abstract class AbstractPhpProcess
                         $time
                     );
                 }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             } catch (ErrorException $e) {
                 \restore_error_handler();
                 $childResult = false;
@@ -278,8 +327,13 @@ abstract class AbstractPhpProcess
                 $test->setResult($childResult['testResult']);
                 $test->addToAssertionCount($childResult['numAssertions']);
 
+<<<<<<< HEAD
                 /** @var TestResult $childResult */
                 $childResult = $childResult['result'];
+=======
+                $childResult = $childResult['result'];
+                \assert($childResult instanceof  TestResult);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 if ($result->getCollectCodeCoverageInformation()) {
                     $result->getCodeCoverage()->merge(

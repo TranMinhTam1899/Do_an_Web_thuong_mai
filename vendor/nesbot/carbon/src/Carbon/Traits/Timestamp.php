@@ -10,8 +10,11 @@
  */
 namespace Carbon\Traits;
 
+<<<<<<< HEAD
 use DateTime;
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Trait Timestamp.
  */
@@ -27,6 +30,7 @@ trait Timestamp
      */
     public static function createFromTimestamp($timestamp, $tz = null)
     {
+<<<<<<< HEAD
         $date = new DateTime('@'.((int) $timestamp));
         $tz = static::safeCreateDateTimeZone($tz);
 
@@ -35,12 +39,19 @@ trait Timestamp
         }
 
         return (new static($date->format(DateTime::ATOM)))->tz($tz);
+=======
+        return static::today($tz)->setTimestamp((int) $timestamp);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Create a Carbon instance from a timestamp in milliseconds.
      *
+<<<<<<< HEAD
      * @param float                     $timestamp
+=======
+     * @param int                       $timestamp
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param \DateTimeZone|string|null $tz
      *
      * @return static

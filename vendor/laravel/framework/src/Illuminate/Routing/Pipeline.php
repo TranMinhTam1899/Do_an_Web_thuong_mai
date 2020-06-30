@@ -2,6 +2,7 @@
 
 namespace Illuminate\Routing;
 
+<<<<<<< HEAD
 use Closure;
 use Exception;
 use Throwable;
@@ -9,6 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Pipeline\Pipeline as BasePipeline;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
+=======
+use Exception;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline as BasePipeline;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * This extended pipeline catches any exceptions that occur during each slice.
@@ -18,6 +26,7 @@ use Symfony\Component\Debug\Exception\FatalThrowableError;
 class Pipeline extends BasePipeline
 {
     /**
+<<<<<<< HEAD
      * Get the final piece of the Closure onion.
      *
      * @param  \Closure  $destination
@@ -58,6 +67,18 @@ class Pipeline extends BasePipeline
                 }
             };
         };
+=======
+     * Handles the value returned from each pipe before passing it to the next.
+     *
+     * @param  mixed $carry
+     * @return mixed
+     */
+    protected function handleCarry($carry)
+    {
+        return $carry instanceof Responsable
+            ? $carry->toResponse($this->getContainer()->make(Request::class))
+            : $carry;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

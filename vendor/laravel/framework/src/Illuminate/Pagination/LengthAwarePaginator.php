@@ -2,6 +2,7 @@
 
 namespace Illuminate\Pagination;
 
+<<<<<<< HEAD
 use Countable;
 use ArrayAccess;
 use JsonSerializable;
@@ -13,6 +14,18 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator as LengthAwarePaginatorContract;
 
 class LengthAwarePaginator extends AbstractPaginator implements Arrayable, ArrayAccess, Countable, IteratorAggregate, JsonSerializable, Jsonable, LengthAwarePaginatorContract
+=======
+use ArrayAccess;
+use Countable;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator as LengthAwarePaginatorContract;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Support\Collection;
+use IteratorAggregate;
+use JsonSerializable;
+
+class LengthAwarePaginator extends AbstractPaginator implements Arrayable, ArrayAccess, Countable, IteratorAggregate, Jsonable, JsonSerializable, LengthAwarePaginatorContract
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * The total number of items before slicing.
@@ -73,7 +86,11 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
      *
      * @param  string|null  $view
      * @param  array  $data
+<<<<<<< HEAD
      * @return \Illuminate\Support\HtmlString
+=======
+     * @return \Illuminate\Contracts\Support\Htmlable
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function links($view = null, $data = [])
     {
@@ -85,6 +102,7 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
      *
      * @param  string|null  $view
      * @param  array  $data
+<<<<<<< HEAD
      * @return \Illuminate\Support\HtmlString
      */
     public function render($view = null, $data = [])
@@ -93,6 +111,16 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
             'paginator' => $this,
             'elements' => $this->elements(),
         ]))->render());
+=======
+     * @return \Illuminate\Contracts\Support\Htmlable
+     */
+    public function render($view = null, $data = [])
+    {
+        return static::viewFactory()->make($view ?: static::$defaultView, array_merge($data, [
+            'paginator' => $this,
+            'elements' => $this->elements(),
+        ]));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -170,7 +198,11 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
             'last_page' => $this->lastPage(),
             'last_page_url' => $this->url($this->lastPage()),
             'next_page_url' => $this->nextPageUrl(),
+<<<<<<< HEAD
             'path' => $this->path,
+=======
+            'path' => $this->path(),
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'per_page' => $this->perPage(),
             'prev_page_url' => $this->previousPageUrl(),
             'to' => $this->lastItem(),

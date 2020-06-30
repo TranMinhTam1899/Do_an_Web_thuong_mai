@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Eloquent;
 
+<<<<<<< HEAD
 use Closure;
 use Exception;
 use BadMethodCallException;
@@ -13,6 +14,19 @@ use Illuminate\Support\Traits\ForwardsCalls;
 use Illuminate\Database\Concerns\BuildsQueries;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder as QueryBuilder;
+=======
+use BadMethodCallException;
+use Closure;
+use Exception;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Database\Concerns\BuildsQueries;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Query\Builder as QueryBuilder;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\ForwardsCalls;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @property-read HigherOrderBuilderProxy $orWhere
@@ -214,7 +228,11 @@ class Builder
     /**
      * Add a basic where clause to the query.
      *
+<<<<<<< HEAD
      * @param  string|array|\Closure  $column
+=======
+     * @param  \Closure|string|array  $column
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  mixed   $operator
      * @param  mixed   $value
      * @param  string  $boolean
@@ -223,7 +241,11 @@ class Builder
     public function where($column, $operator = null, $value = null, $boolean = 'and')
     {
         if ($column instanceof Closure) {
+<<<<<<< HEAD
             $column($query = $this->model->newModelQuery());
+=======
+            $column($query = $this->model->newQueryWithoutRelationships());
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             $this->query->addNestedWhereQuery($query->getQuery(), $boolean);
         } else {
@@ -473,7 +495,11 @@ class Builder
             return $model;
         }
 
+<<<<<<< HEAD
         return call_user_func($callback);
+=======
+        return $callback();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -636,6 +662,7 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
      * Get a generator for the given query.
      *
      * @return \Generator
@@ -691,6 +718,17 @@ class Builder
         } while ($countResults == $count);
 
         return true;
+=======
+     * Get a lazy collection for the given query.
+     *
+     * @return \Illuminate\Support\LazyCollection
+     */
+    public function cursor()
+    {
+        return $this->applyScopes()->query->cursor()->map(function ($record) {
+            return $this->newModelInstance()->newFromBuilder($record);
+        });
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -921,6 +959,7 @@ class Builder
     /**
      * Call the given local model scopes.
      *
+<<<<<<< HEAD
      * @param  array  $scopes
      * @return static|mixed
      */
@@ -929,6 +968,16 @@ class Builder
         $builder = $this;
 
         foreach ($scopes as $scope => $parameters) {
+=======
+     * @param  array|string  $scopes
+     * @return static|mixed
+     */
+    public function scopes($scopes)
+    {
+        $builder = $this;
+
+        foreach (Arr::wrap($scopes) as $scope => $parameters) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // If the scope key is an integer, then the scope was passed as the value and
             // the parameter list is empty, so we will format the scope name and these
             // parameters here. Then, we'll be ready to call the scope on the model.
@@ -1140,7 +1189,11 @@ class Builder
 
                 [$name, $constraints] = Str::contains($name, ':')
                             ? $this->createSelectWithConstraint($name)
+<<<<<<< HEAD
                             : [$name, function () {
+=======
+                            : [$name, static function () {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                                 //
                             }];
             }
@@ -1164,7 +1217,11 @@ class Builder
      */
     protected function createSelectWithConstraint($name)
     {
+<<<<<<< HEAD
         return [explode(':', $name)[0], function ($query) use ($name) {
+=======
+        return [explode(':', $name)[0], static function ($query) use ($name) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $query->select(explode(',', explode(':', $name)[1]));
         }];
     }
@@ -1187,7 +1244,11 @@ class Builder
             $progress[] = $segment;
 
             if (! isset($results[$last = implode('.', $progress)])) {
+<<<<<<< HEAD
                 $results[$last] = function () {
+=======
+                $results[$last] = static function () {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     //
                 };
             }
@@ -1253,6 +1314,19 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the default key name of the table.
+     *
+     * @return string
+     */
+    protected function defaultKeyName()
+    {
+        return $this->getModel()->getKeyName();
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the model instance being queried.
      *
      * @return \Illuminate\Database\Eloquent\Model|static
@@ -1300,6 +1374,42 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Checks if a macro is registered.
+     *
+     * @param  string  $name
+     * @return bool
+     */
+    public function hasMacro($name)
+    {
+        return isset($this->localMacros[$name]);
+    }
+
+    /**
+     * Get the given global macro by name.
+     *
+     * @param  string  $name
+     * @return \Closure
+     */
+    public static function getGlobalMacro($name)
+    {
+        return Arr::get(static::$macros, $name);
+    }
+
+    /**
+     * Checks if a global macro is registered.
+     *
+     * @param  string  $name
+     * @return bool
+     */
+    public static function hasGlobalMacro($name)
+    {
+        return isset(static::$macros[$name]);
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Dynamically access builder proxies.
      *
      * @param  string  $key
@@ -1331,13 +1441,21 @@ class Builder
             return;
         }
 
+<<<<<<< HEAD
         if (isset($this->localMacros[$method])) {
+=======
+        if ($this->hasMacro($method)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             array_unshift($parameters, $this);
 
             return $this->localMacros[$method](...$parameters);
         }
 
+<<<<<<< HEAD
         if (isset(static::$macros[$method])) {
+=======
+        if (static::hasGlobalMacro($method)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (static::$macros[$method] instanceof Closure) {
                 return call_user_func_array(static::$macros[$method]->bindTo($this, static::class), $parameters);
             }
@@ -1375,7 +1493,11 @@ class Builder
             return;
         }
 
+<<<<<<< HEAD
         if (! isset(static::$macros[$method])) {
+=======
+        if (! static::hasGlobalMacro($method)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             static::throwBadMethodCallException($method);
         }
 

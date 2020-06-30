@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Eloquent;
 
+<<<<<<< HEAD
 use LogicException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -9,6 +10,15 @@ use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Queue\QueueableEntity;
 use Illuminate\Contracts\Queue\QueueableCollection;
 use Illuminate\Support\Collection as BaseCollection;
+=======
+use Illuminate\Contracts\Queue\QueueableCollection;
+use Illuminate\Contracts\Queue\QueueableEntity;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection as BaseCollection;
+use Illuminate\Support\Str;
+use LogicException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Collection extends BaseCollection implements QueueableCollection
 {

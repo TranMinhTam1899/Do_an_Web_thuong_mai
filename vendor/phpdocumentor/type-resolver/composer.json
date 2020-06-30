@@ -10,12 +10,21 @@
         }
     ],
     "require": {
+<<<<<<< HEAD
         "php": "^7.2",
+=======
+        "php": "^7.1",
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "phpdocumentor/reflection-common": "^2.0"
     },
     "require-dev": {
         "mockery/mockery": "~1",
+<<<<<<< HEAD
         "ext-tokenizer": "^7.2"
+=======
+        "ext-tokenizer": "^7.1",
+        "phpunit/phpunit": "^7.0"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "autoload": {
         "psr-4": {

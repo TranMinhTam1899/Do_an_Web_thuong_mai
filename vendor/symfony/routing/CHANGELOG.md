@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 4.4.0
 -----
 
@@ -8,6 +9,8 @@ CHANGELOG
  * Deprecated `ObjectRouteLoader` in favor of `ObjectLoader`.
  * Added a way to exclude patterns of resources from being imported by the `import()` method
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 

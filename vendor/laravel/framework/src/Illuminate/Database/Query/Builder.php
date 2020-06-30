@@ -3,6 +3,7 @@
 namespace Illuminate\Database\Query;
 
 use Closure;
+<<<<<<< HEAD
 use RuntimeException;
 use DateTimeInterface;
 use Illuminate\Support\Arr;
@@ -18,6 +19,24 @@ use Illuminate\Database\Concerns\BuildsQueries;
 use Illuminate\Database\Query\Grammars\Grammar;
 use Illuminate\Database\Query\Processors\Processor;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+=======
+use DateTimeInterface;
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Database\Concerns\BuildsQueries;
+use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
+use Illuminate\Database\Query\Grammars\Grammar;
+use Illuminate\Database\Query\Processors\Processor;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\LazyCollection;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\ForwardsCalls;
+use Illuminate\Support\Traits\Macroable;
+use InvalidArgumentException;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Builder
 {
@@ -59,6 +78,10 @@ class Builder
         'having' => [],
         'order'  => [],
         'union'  => [],
+<<<<<<< HEAD
+=======
+        'unionOrder' => [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     ];
 
     /**
@@ -78,7 +101,13 @@ class Builder
     /**
      * Indicates if the query returns distinct results.
      *
+<<<<<<< HEAD
      * @var bool
+=======
+     * Occasionally contains the columns that should be distinct.
+     *
+     * @var bool|array
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public $distinct = false;
 
@@ -219,7 +248,25 @@ class Builder
      */
     public function select($columns = ['*'])
     {
+<<<<<<< HEAD
         $this->columns = is_array($columns) ? $columns : func_get_args();
+=======
+        $this->columns = [];
+
+        $columns = is_array($columns) ? $columns : func_get_args();
+
+        foreach ($columns as $as => $column) {
+            if (is_string($as) && (
+                $column instanceof self ||
+                $column instanceof EloquentBuilder ||
+                $column instanceof Closure
+            )) {
+                $this->selectSub($column, $as);
+            } else {
+                $this->columns[] = $column;
+            }
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -337,9 +384,29 @@ class Builder
      */
     public function addSelect($column)
     {
+<<<<<<< HEAD
         $column = is_array($column) ? $column : func_get_args();
 
         $this->columns = array_merge((array) $this->columns, $column);
+=======
+        $columns = is_array($column) ? $column : func_get_args();
+
+        foreach ($columns as $as => $column) {
+            if (is_string($as) && (
+                $column instanceof self ||
+                $column instanceof EloquentBuilder ||
+                $column instanceof Closure
+            )) {
+                if (is_null($this->columns)) {
+                    $this->select($this->from.'.*');
+                }
+
+                $this->selectSub($column, $as);
+            } else {
+                $this->columns[] = $column;
+            }
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -351,7 +418,17 @@ class Builder
      */
     public function distinct()
     {
+<<<<<<< HEAD
         $this->distinct = true;
+=======
+        $columns = func_get_args();
+
+        if (count($columns) > 0) {
+            $this->distinct = is_array($columns[0]) || is_bool($columns[0]) ? $columns[0] : $columns;
+        } else {
+            $this->distinct = true;
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -359,12 +436,28 @@ class Builder
     /**
      * Set the table which the query is targeting.
      *
+<<<<<<< HEAD
      * @param  string  $table
      * @return $this
      */
     public function from($table)
     {
         $this->from = $table;
+=======
+     * @param  \Closure|\Illuminate\Database\Query\Builder|string  $table
+     * @param  string|null  $as
+     * @return $this
+     */
+    public function from($table, $as = null)
+    {
+        if ($table instanceof self ||
+            $table instanceof EloquentBuilder ||
+            $table instanceof Closure) {
+            return $this->fromSub($table, $as);
+        }
+
+        $this->from = $as ? "{$table} as {$as}" : $table;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -388,7 +481,11 @@ class Builder
         // is trying to build a join with a complex "on" clause containing more than
         // one condition, so we'll add the join and call a Closure with the query.
         if ($first instanceof Closure) {
+<<<<<<< HEAD
             call_user_func($first, $join);
+=======
+            $first($join);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             $this->joins[] = $join;
 
@@ -587,7 +684,11 @@ class Builder
     /**
      * Add a basic where clause to the query.
      *
+<<<<<<< HEAD
      * @param  string|array|\Closure  $column
+=======
+     * @param  \Closure|string|array  $column
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  mixed   $operator
      * @param  mixed   $value
      * @param  string  $boolean
@@ -736,7 +837,11 @@ class Builder
     /**
      * Add an "or where" clause to the query.
      *
+<<<<<<< HEAD
      * @param  string|array|\Closure  $column
+=======
+     * @param  \Closure|string|array  $column
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  mixed  $operator
      * @param  mixed  $value
      * @return \Illuminate\Database\Query\Builder|static
@@ -910,6 +1015,7 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
      * Add a where in with a sub-select to the query.
      *
      * @param  string   $column
@@ -955,6 +1061,8 @@ class Builder
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Add a "where in raw" clause for integer values to the query.
      *
      * @param  string  $column
@@ -1026,6 +1134,7 @@ class Builder
     /**
      * Add a "where not null" clause to the query.
      *
+<<<<<<< HEAD
      * @param  string  $column
      * @param  string  $boolean
      * @return \Illuminate\Database\Query\Builder|static
@@ -1033,6 +1142,15 @@ class Builder
     public function whereNotNull($column, $boolean = 'and')
     {
         return $this->whereNull($column, $boolean, true);
+=======
+     * @param  string|array  $columns
+     * @param  string  $boolean
+     * @return \Illuminate\Database\Query\Builder|static
+     */
+    public function whereNotNull($columns, $boolean = 'and')
+    {
+        return $this->whereNull($columns, $boolean, true);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -1798,7 +1916,11 @@ class Builder
     /**
      * Add an "order by" clause to the query.
      *
+<<<<<<< HEAD
      * @param  string  $column
+=======
+     * @param  \Closure|\Illuminate\Database\Query\Builder|string  $column
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  string  $direction
      * @return $this
      *
@@ -1806,6 +1928,19 @@ class Builder
      */
     public function orderBy($column, $direction = 'asc')
     {
+<<<<<<< HEAD
+=======
+        if ($column instanceof self ||
+            $column instanceof EloquentBuilder ||
+            $column instanceof Closure) {
+            [$query, $bindings] = $this->createSub($column);
+
+            $column = new Expression('('.$query.')');
+
+            $this->addBinding($bindings, $this->unions ? 'unionOrder' : 'order');
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $direction = strtolower($direction);
 
         if (! in_array($direction, ['asc', 'desc'], true)) {
@@ -1877,7 +2012,11 @@ class Builder
 
         $this->{$this->unions ? 'unionOrders' : 'orders'}[] = compact('type', 'sql');
 
+<<<<<<< HEAD
         $this->addBinding($bindings, 'order');
+=======
+        $this->addBinding($bindings, $this->unions ? 'unionOrder' : 'order');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this;
     }
@@ -2232,9 +2371,15 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
      * Get a generator for the given query.
      *
      * @return \Generator
+=======
+     * Get a lazy collection for the given query.
+     *
+     * @return \Illuminate\Support\LazyCollection
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function cursor()
     {
@@ -2242,6 +2387,7 @@ class Builder
             $this->columns = ['*'];
         }
 
+<<<<<<< HEAD
         return $this->connection->cursor(
             $this->toSql(), $this->getBindings(), ! $this->useWritePdo
         );
@@ -2289,6 +2435,13 @@ class Builder
         } while ($countResults == $count);
 
         return true;
+=======
+        return new LazyCollection(function () {
+            yield from $this->connection->cursor(
+                $this->toSql(), $this->getBindings(), ! $this->useWritePdo
+            );
+        });
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -2695,13 +2848,21 @@ class Builder
      *
      * @param  array  $columns
      * @param  \Closure|\Illuminate\Database\Query\Builder|string  $query
+<<<<<<< HEAD
      * @return bool
+=======
+     * @return int
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function insertUsing(array $columns, $query)
     {
         [$sql, $bindings] = $this->createSub($query);
 
+<<<<<<< HEAD
         return $this->connection->insert(
+=======
+        return $this->connection->affectingStatement(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->grammar->compileInsertUsing($this, $columns, $sql),
             $this->cleanBindings($bindings)
         );
@@ -2940,6 +3101,19 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the default key name of the table.
+     *
+     * @return string
+     */
+    protected function defaultKeyName()
+    {
+        return 'id';
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the database connection instance.
      *
      * @return \Illuminate\Database\ConnectionInterface

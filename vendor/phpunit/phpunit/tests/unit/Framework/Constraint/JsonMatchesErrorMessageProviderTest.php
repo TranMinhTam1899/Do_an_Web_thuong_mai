@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,14 @@ namespace PHPUnit\Framework\Constraint;
 
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class JsonMatchesErrorMessageProviderTest extends TestCase
+=======
+/**
+ * @small
+ */
+final class JsonMatchesErrorMessageProviderTest extends TestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public static function determineJsonErrorDataprovider(): array
     {
@@ -69,6 +80,10 @@ class JsonMatchesErrorMessageProviderTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @testdox Determine JSON error $_dataName
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @dataProvider determineJsonErrorDataprovider
      *
      * @throws \PHPUnit\Framework\ExpectationFailedException
@@ -79,7 +94,11 @@ class JsonMatchesErrorMessageProviderTest extends TestCase
         $this->assertEquals(
             $expected,
             JsonMatchesErrorMessageProvider::determineJsonError(
+<<<<<<< HEAD
                 $error,
+=======
+                (string) $error,
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $prefix
             )
         );

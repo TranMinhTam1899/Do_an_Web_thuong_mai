@@ -99,7 +99,11 @@ trait Macro
     }
 
     /**
+<<<<<<< HEAD
      * Checks if macro is registered globally.
+=======
+     * Checks if macro is registered.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param string $name
      *
@@ -109,6 +113,7 @@ trait Macro
     {
         return isset(static::$globalMacros[$name]);
     }
+<<<<<<< HEAD
 
     /**
      * Get the raw callable macro registered globally for a given name.
@@ -145,4 +150,6 @@ trait Macro
     {
         return ($this->localMacros ?? [])[$name] ?? static::getMacro($name);
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

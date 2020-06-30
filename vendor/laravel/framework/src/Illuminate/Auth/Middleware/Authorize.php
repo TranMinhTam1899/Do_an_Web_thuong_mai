@@ -3,8 +3,13 @@
 namespace Illuminate\Auth\Middleware;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Access\Gate;
+=======
+use Illuminate\Contracts\Auth\Access\Gate;
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Authorize
 {
@@ -50,7 +55,11 @@ class Authorize
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  array|null  $models
+<<<<<<< HEAD
      * @return array|string|\Illuminate\Database\Eloquent\Model
+=======
+     * @return \Illuminate\Database\Eloquent\Model|array|string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function getGateArguments($request, $models)
     {

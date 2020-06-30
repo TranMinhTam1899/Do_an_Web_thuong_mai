@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Kunal Marwaha
  * - FourwingsY
@@ -21,6 +25,7 @@
  * - Juwon Kim
  */
 return [
+<<<<<<< HEAD
     'year' => ':count년',
     'a_year' => '{1}일년|]1,Inf[:count년',
     'y' => ':count년',
@@ -49,6 +54,26 @@ return [
     'diff_now' => '지금',
     'diff_yesterday' => '어제',
     'diff_tomorrow' => '내일',
+=======
+    'year' => '{1}일 년|]1,Inf[:count년',
+    'y' => ':count 년',
+    'month' => '{1}한 달|]1,Inf[:count달',
+    'm' => ':count 개월',
+    'week' => ':count 주일',
+    'w' => ':count 주일',
+    'day' => '{1}하루|]1,Inf[:count일',
+    'd' => ':count 일',
+    'hour' => '{1}한 시간|]1,Inf[:count시간',
+    'h' => ':count 시간',
+    'minute' => '{1}1분|]1,Inf[:count분',
+    'min' => ':count 분',
+    'second' => '{1}몇 초|]1,Inf[:count초',
+    's' => ':count 초',
+    'ago' => ':time 전',
+    'from_now' => ':time 후',
+    'after' => ':time 이후',
+    'before' => ':time 이전',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'A h:mm',
         'LTS' => 'A h:mm:ss',

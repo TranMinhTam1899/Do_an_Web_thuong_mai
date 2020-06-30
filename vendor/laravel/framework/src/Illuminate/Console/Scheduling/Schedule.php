@@ -5,8 +5,13 @@ namespace Illuminate\Console\Scheduling;
 use DateTimeInterface;
 use Illuminate\Console\Application;
 use Illuminate\Container\Container;
+<<<<<<< HEAD
 use Illuminate\Support\ProcessUtils;
 use Illuminate\Contracts\Queue\ShouldQueue;
+=======
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\ProcessUtils;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Schedule
 {

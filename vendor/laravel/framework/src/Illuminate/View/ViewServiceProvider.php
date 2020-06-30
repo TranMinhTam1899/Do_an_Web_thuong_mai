@@ -2,12 +2,21 @@
 
 namespace Illuminate\View;
 
+<<<<<<< HEAD
 use Illuminate\View\Engines\PhpEngine;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Engines\FileEngine;
 use Illuminate\View\Engines\CompilerEngine;
 use Illuminate\View\Engines\EngineResolver;
 use Illuminate\View\Compilers\BladeCompiler;
+=======
+use Illuminate\Support\ServiceProvider;
+use Illuminate\View\Compilers\BladeCompiler;
+use Illuminate\View\Engines\CompilerEngine;
+use Illuminate\View\Engines\EngineResolver;
+use Illuminate\View\Engines\FileEngine;
+use Illuminate\View\Engines\PhpEngine;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ViewServiceProvider extends ServiceProvider
 {

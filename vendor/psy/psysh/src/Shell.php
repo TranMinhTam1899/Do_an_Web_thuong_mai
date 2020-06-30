@@ -21,6 +21,10 @@ use Psy\ExecutionLoop\ProcessForker;
 use Psy\ExecutionLoop\RunkitReloader;
 use Psy\Input\ShellInput;
 use Psy\Input\SilentInput;
+<<<<<<< HEAD
+=======
+use Psy\Output\ShellOutput;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Psy\TabCompletion\Matcher;
 use Psy\VarDumper\PresenterAware;
 use Symfony\Component\Console\Application;
@@ -46,7 +50,11 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Shell extends Application
 {
+<<<<<<< HEAD
     const VERSION = 'v0.9.12';
+=======
+    const VERSION = 'v0.9.9';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     const PROMPT      = '>>> ';
     const BUFF_PROMPT = '... ';
@@ -371,7 +379,11 @@ class Shell extends Application
 
         do {
             // reset output verbosity (in case it was altered by a subcommand)
+<<<<<<< HEAD
             $this->output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE);
+=======
+            $this->output->setVerbosity(ShellOutput::VERBOSITY_VERBOSE);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
             $input = $this->readline();
 
@@ -930,7 +942,11 @@ class Shell extends Application
 
         // Incremental flush
         if ($out !== '' && !$isCleaning) {
+<<<<<<< HEAD
             $this->output->write($out, false, OutputInterface::OUTPUT_RAW);
+=======
+            $this->output->write($out, false, ShellOutput::OUTPUT_RAW);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->outputWantsNewline = (\substr($out, -1) !== "\n");
             $this->stdoutBuffer .= $out;
         }

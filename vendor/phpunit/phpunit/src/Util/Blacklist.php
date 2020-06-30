@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -20,7 +24,10 @@ use phpDocumentor\Reflection\Project;
 use phpDocumentor\Reflection\Type;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophet;
+<<<<<<< HEAD
 use ReflectionClass;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeUnitReverseLookup\Wizard;
 use SebastianBergmann\Comparator\Comparator;
@@ -34,18 +41,30 @@ use SebastianBergmann\ObjectEnumerator\Enumerator;
 use SebastianBergmann\RecursionContext\Context;
 use SebastianBergmann\ResourceOperations\ResourceOperations;
 use SebastianBergmann\Timer\Timer;
+<<<<<<< HEAD
+=======
+use SebastianBergmann\Type\TypeName;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use SebastianBergmann\Version;
 use Text_Template;
 use TheSeer\Tokenizer\Tokenizer;
 use Webmozart\Assert\Assert;
 
 /**
+<<<<<<< HEAD
  * Utility class for blacklisting PHPUnit's own source code files.
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Blacklist
 {
     /**
+<<<<<<< HEAD
      * @var array
+=======
+     * @var array<string,int>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static $blacklistedClassNames = [
         // composer
@@ -123,6 +142,12 @@ final class Blacklist
         // sebastian/resource-operations
         ResourceOperations::class => 1,
 
+<<<<<<< HEAD
+=======
+        // sebastian/type
+        TypeName::class => 1,
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // sebastian/version
         Version::class => 1,
 
@@ -139,6 +164,11 @@ final class Blacklist
     private static $directories;
 
     /**
+<<<<<<< HEAD
+=======
+     * @throws Exception
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string[]
      */
     public function getBlacklistedDirectories(): array
@@ -148,6 +178,12 @@ final class Blacklist
         return self::$directories;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @throws Exception
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function isBlacklisted(string $file): bool
     {
         if (\defined('PHPUNIT_TESTSUITE')) {
@@ -165,6 +201,12 @@ final class Blacklist
         return false;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @throws Exception
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private function initialize(): void
     {
         if (self::$directories === null) {
@@ -175,8 +217,20 @@ final class Blacklist
                     continue;
                 }
 
+<<<<<<< HEAD
                 $reflector = new ReflectionClass($className);
                 $directory = $reflector->getFileName();
+=======
+                try {
+                    $directory = (new \ReflectionClass($className))->getFileName();
+                } catch (\ReflectionException $e) {
+                    throw new Exception(
+                        $e->getMessage(),
+                        (int) $e->getCode(),
+                        $e
+                    );
+                }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 for ($i = 0; $i < $parent; $i++) {
                     $directory = \dirname($directory);

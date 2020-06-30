@@ -2,9 +2,15 @@
 
 namespace Illuminate\Http\Resources\Json;
 
+<<<<<<< HEAD
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Support\Responsable;
+=======
+use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ResourceResponse implements Responsable
 {

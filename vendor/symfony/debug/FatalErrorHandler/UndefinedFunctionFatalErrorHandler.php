@@ -14,14 +14,20 @@ namespace Symfony\Component\Debug\FatalErrorHandler;
 use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\Exception\UndefinedFunctionException;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', UndefinedFunctionFatalErrorHandler::class, \Symfony\Component\ErrorHandler\ErrorEnhancer\UndefinedFunctionErrorEnhancer::class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * ErrorHandler for undefined functions.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  *
  * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\ErrorEnhancer\UndefinedFunctionErrorEnhancer instead.
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class UndefinedFunctionFatalErrorHandler implements FatalErrorHandlerInterface
 {

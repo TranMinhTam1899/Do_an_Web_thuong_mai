@@ -8,6 +8,12 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
+=======
+\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
+    return $number === 1 ? 0 : 1;
+}, 'tzm');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
@@ -15,6 +21,7 @@
  * - JD Isaacks
  */
 return [
+<<<<<<< HEAD
     'year' => '{1}ⴰⵙⴳⴰⵙ|:count ⵉⵙⴳⴰⵙⵏ',
     'month' => '{1}ⴰⵢoⵓⵔ|:count ⵉⵢⵢⵉⵔⵏ',
     'week' => ':count ⵉⵎⴰⵍⴰⵙⵙ',
@@ -22,6 +29,15 @@ return [
     'hour' => '{1}ⵙⴰⵄⴰ|:count ⵜⴰⵙⵙⴰⵄⵉⵏ',
     'minute' => '{1}ⵎⵉⵏⵓⴺ|:count ⵎⵉⵏⵓⴺ',
     'second' => '{1}ⵉⵎⵉⴽ|:count ⵉⵎⵉⴽ',
+=======
+    'year' => 'ⴰⵙⴳⴰⵙ|:count ⵉⵙⴳⴰⵙⵏ',
+    'month' => 'ⴰⵢoⵓⵔ|:count ⵉⵢⵢⵉⵔⵏ',
+    'week' => ':count ⵉⵎⴰⵍⴰⵙⵙ',
+    'day' => 'ⴰⵙⵙ|:count oⵙⵙⴰⵏ',
+    'hour' => 'ⵙⴰⵄⴰ|:count ⵜⴰⵙⵙⴰⵄⵉⵏ',
+    'minute' => 'ⵎⵉⵏⵓⴺ|:count ⵎⵉⵏⵓⴺ',
+    'second' => 'ⵉⵎⵉⴽ|:count ⵉⵎⵉⴽ',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => 'ⵢⴰⵏ :time',
     'from_now' => 'ⴷⴰⴷⵅ ⵙ ⵢⴰⵏ :time',
     'formats' => [

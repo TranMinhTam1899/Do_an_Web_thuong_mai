@@ -5,7 +5,11 @@ namespace League\Flysystem;
 use RuntimeException;
 use SplFileInfo;
 
+<<<<<<< HEAD
 class NotSupportedException extends RuntimeException implements FilesystemException
+=======
+class NotSupportedException extends RuntimeException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * Create a new exception for a link.

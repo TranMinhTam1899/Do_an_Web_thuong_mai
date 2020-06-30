@@ -99,7 +99,11 @@ class Interval
 EOF;
     }
 
+<<<<<<< HEAD
     private static function convertNumber(string $number): float
+=======
+    private static function convertNumber($number)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ('-Inf' === $number) {
             return log(0);

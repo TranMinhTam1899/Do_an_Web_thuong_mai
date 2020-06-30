@@ -13,8 +13,11 @@ namespace Symfony\Component\Debug;
 
 use PHPUnit\Framework\MockObject\Matcher\StatelessInvocation;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', DebugClassLoader::class, \Symfony\Component\ErrorHandler\DebugClassLoader::class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Autoloader checking if the class is really defined in the file found.
  *
@@ -26,8 +29,11 @@ use PHPUnit\Framework\MockObject\Matcher\StatelessInvocation;
  * @author Christophe Coevoet <stof@notk.org>
  * @author Nicolas Grekas <p@tchwork.com>
  * @author Guilhem Niot <guilhem.niot@gmail.com>
+<<<<<<< HEAD
  *
  * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\DebugClassLoader instead.
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class DebugClassLoader
 {
@@ -174,7 +180,11 @@ class DebugClassLoader
         $this->checkClass($class, $file);
     }
 
+<<<<<<< HEAD
     private function checkClass(string $class, string $file = null)
+=======
+    private function checkClass($class, $file = null)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $exists = null === $file || class_exists($class, false) || interface_exists($class, false) || trait_exists($class, false);
 
@@ -262,7 +272,11 @@ class DebugClassLoader
         }
 
         $parent = get_parent_class($class);
+<<<<<<< HEAD
         $parentAndOwnInterfaces = $this->getOwnInterfaces($class, $parent ?: null);
+=======
+        $parentAndOwnInterfaces = $this->getOwnInterfaces($class, $parent);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($parent) {
             $parentAndOwnInterfaces[$parent] = $parent;
 
@@ -391,7 +405,11 @@ class DebugClassLoader
             foreach ($matches as list(, $parameterType, $parameterName)) {
                 if (!isset($definedParameters[$parameterName])) {
                     $parameterType = trim($parameterType);
+<<<<<<< HEAD
                     self::$annotatedParameters[$class][$method->name][$parameterName] = sprintf('The "%%s::%s()" method will require a new "%s$%s" argument in the next major version of its %s "%s", not defining it is deprecated.', $method->name, $parameterType ? $parameterType.' ' : '', $parameterName, interface_exists($class) ? 'interface' : 'parent class', $method->class);
+=======
+                    self::$annotatedParameters[$class][$method->name][$parameterName] = sprintf('The "%%s::%s()" method will require a new "%s$%s" argument in the next major version of its parent class "%s", not defining it is deprecated.', $method->name, $parameterType ? $parameterType.' ' : '', $parameterName, $method->class);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
             }
         }
@@ -444,7 +462,11 @@ class DebugClassLoader
     /**
      * `realpath` on MacOSX doesn't normalize the case of characters.
      */
+<<<<<<< HEAD
     private function darwinRealpath(string $real): string
+=======
+    private function darwinRealpath($real)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $i = 1 + strrpos($real, '/');
         $file = substr($real, $i);
@@ -459,11 +481,15 @@ class DebugClassLoader
                 $real = self::$darwinCache[$kDir][0];
             } else {
                 $dir = getcwd();
+<<<<<<< HEAD
 
                 if (!@chdir($real)) {
                     return $real.$file;
                 }
 
+=======
+                chdir($real);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $real = getcwd().'/';
                 chdir($dir);
 
@@ -490,7 +516,11 @@ class DebugClassLoader
         }
 
         if (isset($dirFiles[$file])) {
+<<<<<<< HEAD
             return $real.$dirFiles[$file];
+=======
+            return $real .= $dirFiles[$file];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $kFile = strtolower($file);
@@ -509,15 +539,28 @@ class DebugClassLoader
             self::$darwinCache[$kDir][1] = $dirFiles;
         }
 
+<<<<<<< HEAD
         return $real.$dirFiles[$kFile];
+=======
+        return $real .= $dirFiles[$kFile];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * `class_implements` includes interfaces from the parents so we have to manually exclude them.
      *
+<<<<<<< HEAD
      * @return string[]
      */
     private function getOwnInterfaces(string $class, ?string $parent): array
+=======
+     * @param string       $class
+     * @param string|false $parent
+     *
+     * @return string[]
+     */
+    private function getOwnInterfaces($class, $parent)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $ownInterfaces = class_implements($class, false);
 

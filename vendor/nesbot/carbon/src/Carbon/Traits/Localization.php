@@ -11,6 +11,7 @@
 namespace Carbon\Traits;
 
 use Carbon\CarbonInterface;
+<<<<<<< HEAD
 use Carbon\Exceptions\InvalidTypeException;
 use Carbon\Exceptions\NotLocaleAwareException;
 use Carbon\Language;
@@ -27,6 +28,14 @@ if (!interface_exists('Symfony\\Component\\Translation\\TranslatorInterface')) {
         'Symfony\\Component\\Translation\\TranslatorInterface'
     );
 }
+=======
+use Carbon\Language;
+use Carbon\Translator;
+use Closure;
+use InvalidArgumentException;
+use Symfony\Component\Translation\TranslatorBagInterface;
+use Symfony\Component\Translation\TranslatorInterface;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Trait Localization.
@@ -139,6 +148,7 @@ trait Localization
     }
 
     /**
+<<<<<<< HEAD
      * Return true if the current instance has its own translator.
      *
      * @return bool
@@ -149,6 +159,8 @@ trait Localization
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Get the translator of the current instance or the default if none set.
      *
      * @return \Symfony\Component\Translation\TranslatorInterface
@@ -185,6 +197,7 @@ trait Localization
     public static function getTranslationMessageWith($translator, string $key, string $locale = null, string $default = null)
     {
         if (!($translator instanceof TranslatorBagInterface && $translator instanceof TranslatorInterface)) {
+<<<<<<< HEAD
             throw new InvalidTypeException(
                 'Translator does not implement '.TranslatorInterface::class.' and '.TranslatorBagInterface::class.'. '.
                 (is_object($translator) ? get_class($translator) : gettype($translator)).' has been given.'
@@ -196,6 +209,14 @@ trait Localization
         }
 
         $result = $translator->getCatalogue($locale)->get($key);
+=======
+            throw new InvalidArgumentException(
+                'Translator does not implement '.TranslatorInterface::class.' and '.TranslatorBagInterface::class.'.'
+            );
+        }
+
+        $result = $translator->getCatalogue($locale ?? $translator->getLocale())->get($key);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $result === $key ? $default : $result;
     }
@@ -239,6 +260,7 @@ trait Localization
             $parameters[':count'] = $parameters['%count%'];
         }
 
+<<<<<<< HEAD
         // @codeCoverageIgnoreStart
         $choice = $translator instanceof ContractsTranslatorInterface
             ? $translator->trans($key, $parameters)
@@ -246,6 +268,9 @@ trait Localization
         // @codeCoverageIgnoreEnd
 
         return (string) $choice;
+=======
+        return (string) $translator->transChoice($key, $number, $parameters);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -382,10 +407,17 @@ trait Localization
             }
 
             $$translationKey = array_merge(
+<<<<<<< HEAD
                 $mode & CarbonInterface::TRANSLATE_MONTHS ? static::getTranslationArray($months, 12, $timeString) : [],
                 $mode & CarbonInterface::TRANSLATE_MONTHS ? static::getTranslationArray($messages['months_short'], 12, $timeString) : [],
                 $mode & CarbonInterface::TRANSLATE_DAYS ? static::getTranslationArray($weekdays, 7, $timeString) : [],
                 $mode & CarbonInterface::TRANSLATE_DAYS ? static::getTranslationArray($messages['weekdays_short'], 7, $timeString) : [],
+=======
+                $mode & CarbonInterface::TRANSLATE_MONTHS ? array_pad($months, 12, '>>DO NOT REPLACE<<') : [],
+                $mode & CarbonInterface::TRANSLATE_MONTHS ? array_pad($messages['months_short'], 12, '>>DO NOT REPLACE<<') : [],
+                $mode & CarbonInterface::TRANSLATE_DAYS ? array_pad($weekdays, 7, '>>DO NOT REPLACE<<') : [],
+                $mode & CarbonInterface::TRANSLATE_DAYS ? array_pad($messages['weekdays_short'], 7, '>>DO NOT REPLACE<<') : [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $mode & CarbonInterface::TRANSLATE_UNITS ? array_map(function ($unit) use ($messages, $key, $cleanWord) {
                     $parts = explode('|', $messages[$unit]);
 
@@ -424,6 +456,7 @@ trait Localization
         }, " $timeString "), 1, -1);
     }
 
+<<<<<<< HEAD
     private static function getTranslationArray($translation, $length, $timeString)
     {
         $filler = '>>DO NOT REPLACE<<';
@@ -442,6 +475,8 @@ trait Localization
         return $list;
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Translate a time string from the current locale (`$date->locale()`) to an other.
      *
@@ -452,7 +487,11 @@ trait Localization
      */
     public function translateTimeStringTo($timeString, $to = null)
     {
+<<<<<<< HEAD
         return static::translateTimeString($timeString, $this->getTranslatorLocale(), $to);
+=======
+        return static::translateTimeString($timeString, $this->getLocalTranslator()->getLocale(), $to);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -466,10 +505,17 @@ trait Localization
     public function locale(string $locale = null, ...$fallbackLocales)
     {
         if ($locale === null) {
+<<<<<<< HEAD
             return $this->getTranslatorLocale();
         }
 
         if (!$this->localTranslator || $this->getTranslatorLocale($this->localTranslator) !== $locale) {
+=======
+            return $this->getLocalTranslator()->getLocale();
+        }
+
+        if (!$this->localTranslator || $this->localTranslator->getLocale() !== $locale) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $translator = Translator::get($locale);
 
             if (!empty($fallbackLocales)) {
@@ -497,7 +543,11 @@ trait Localization
      */
     public static function getLocale()
     {
+<<<<<<< HEAD
         return static::getLocaleAwareTranslator()->getLocale();
+=======
+        return static::translator()->getLocale();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -510,7 +560,11 @@ trait Localization
      */
     public static function setLocale($locale)
     {
+<<<<<<< HEAD
         return static::getLocaleAwareTranslator()->setLocale($locale) !== false;
+=======
+        return static::translator()->setLocale($locale) !== false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -690,7 +744,11 @@ trait Localization
      */
     public static function getAvailableLocales()
     {
+<<<<<<< HEAD
         $translator = static::getLocaleAwareTranslator();
+=======
+        $translator = static::translator();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $translator instanceof Translator
             ? $translator->getAvailableLocales()
@@ -712,6 +770,7 @@ trait Localization
 
         return $languages;
     }
+<<<<<<< HEAD
 
     protected function getTranslatorLocale($translator = null): ?string
     {
@@ -743,4 +802,6 @@ trait Localization
 
         return $translator;
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

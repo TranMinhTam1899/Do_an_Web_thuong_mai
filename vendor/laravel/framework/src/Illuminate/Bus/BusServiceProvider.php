@@ -2,11 +2,19 @@
 
 namespace Illuminate\Bus;
 
+<<<<<<< HEAD
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Contracts\Bus\Dispatcher as DispatcherContract;
 use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
 use Illuminate\Contracts\Bus\QueueingDispatcher as QueueingDispatcherContract;
+=======
+use Illuminate\Contracts\Bus\Dispatcher as DispatcherContract;
+use Illuminate\Contracts\Bus\QueueingDispatcher as QueueingDispatcherContract;
+use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
+use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\ServiceProvider;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class BusServiceProvider extends ServiceProvider implements DeferrableProvider
 {

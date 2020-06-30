@@ -287,8 +287,11 @@ class Local extends AbstractAdapter
             $result[] = $this->normalizeFileInfo($file);
         }
 
+<<<<<<< HEAD
         unset($iterator);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return array_filter($result);
     }
 
@@ -414,8 +417,11 @@ class Local extends AbstractAdapter
             $this->deleteFileInfoObject($file);
         }
 
+<<<<<<< HEAD
         unset($contents);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return rmdir($location);
     }
 

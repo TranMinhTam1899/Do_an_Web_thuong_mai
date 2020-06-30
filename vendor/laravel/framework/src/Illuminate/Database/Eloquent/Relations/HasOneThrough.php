@@ -2,8 +2,13 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
+=======
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Database\Eloquent\Relations\Concerns\SupportsDefaultModels;
 
 class HasOneThrough extends HasManyThrough

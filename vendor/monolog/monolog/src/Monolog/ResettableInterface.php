@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -27,5 +31,11 @@ namespace Monolog;
  */
 interface ResettableInterface
 {
+<<<<<<< HEAD
+=======
+    /**
+     * @return void
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function reset();
 }

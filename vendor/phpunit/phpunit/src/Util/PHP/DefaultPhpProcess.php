@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,11 @@ namespace PHPUnit\Util\PHP;
 use PHPUnit\Framework\Exception;
 
 /**
+<<<<<<< HEAD
  * Default utility for PHP sub-processes.
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class DefaultPhpProcess extends AbstractPhpProcess
 {
@@ -28,7 +36,11 @@ class DefaultPhpProcess extends AbstractPhpProcess
      */
     public function runJob(string $job, array $settings = []): array
     {
+<<<<<<< HEAD
         if ($this->useTemporaryFile() || $this->stdin) {
+=======
+        if ($this->stdin || $this->useTemporaryFile()) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!($this->tempFile = \tempnam(\sys_get_temp_dir(), 'PHPUnit')) ||
                 \file_put_contents($this->tempFile, $job) === false) {
                 throw new Exception(
@@ -148,12 +160,19 @@ class DefaultPhpProcess extends AbstractPhpProcess
                             \fclose($pipes[$pipeOffset]);
 
                             unset($pipes[$pipeOffset]);
+<<<<<<< HEAD
                         } else {
                             if ($pipeOffset === 1) {
                                 $stdout .= $line;
                             } else {
                                 $stderr .= $line;
                             }
+=======
+                        } elseif ($pipeOffset === 1) {
+                            $stdout .= $line;
+                        } else {
+                            $stderr .= $line;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         }
                     }
 

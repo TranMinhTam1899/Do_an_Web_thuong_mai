@@ -10,9 +10,14 @@
  */
 namespace Carbon\Traits;
 
+<<<<<<< HEAD
 use BadMethodCallException;
 use Carbon\CarbonInterface;
 use Carbon\Exceptions\BadComparisonUnitException;
+=======
+use Carbon\CarbonInterface;
+use Carbon\Exceptions\BadUnitException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use InvalidArgumentException;
 
 /**
@@ -116,8 +121,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->gt('2018-07-25 12:45:15'); // true
      * Carbon::parse('2018-07-25 12:45:16')->gt('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->gt('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->gt('2018-07-25 12:45:18'); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->gt('2018-07-25 12:45:17'); // false
      * ```
      *
@@ -137,8 +147,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->greaterThan('2018-07-25 12:45:15'); // true
      * Carbon::parse('2018-07-25 12:45:16')->greaterThan('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->greaterThan('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->greaterThan('2018-07-25 12:45:18'); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->greaterThan('2018-07-25 12:45:17'); // false
      * ```
      *
@@ -156,8 +171,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->isAfter('2018-07-25 12:45:15'); // true
      * Carbon::parse('2018-07-25 12:45:16')->isAfter('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->isAfter('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->isAfter('2018-07-25 12:45:18'); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->isAfter('2018-07-25 12:45:17'); // false
      * ```
      *
@@ -177,8 +197,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->gte('2018-07-25 12:45:15'); // true
      * Carbon::parse('2018-07-25 12:45:16')->gte('2018-07-25 12:45:16'); // true
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->gte('2018-07-25 12:45:16'); // true
+     * Carbon::parse('2018-07-25 12:45:16')->gte('2018-07-25 12:45:18'); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->gte('2018-07-25 12:45:17'); // false
      * ```
      *
@@ -198,8 +223,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->greaterThanOrEqualTo('2018-07-25 12:45:15'); // true
      * Carbon::parse('2018-07-25 12:45:16')->greaterThanOrEqualTo('2018-07-25 12:45:16'); // true
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->greaterThanOrEqualTo('2018-07-25 12:45:16'); // true
+     * Carbon::parse('2018-07-25 12:45:16')->greaterThanOrEqualTo('2018-07-25 12:45:18'); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->greaterThanOrEqualTo('2018-07-25 12:45:17'); // false
      * ```
      *
@@ -217,8 +247,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->lt('2018-07-25 12:45:15'); // false
      * Carbon::parse('2018-07-25 12:45:16')->lt('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->lt('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->lt('2018-07-25 12:45:18'); // false
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->lt('2018-07-25 12:45:17'); // true
      * ```
      *
@@ -238,8 +273,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->lessThan('2018-07-25 12:45:15'); // false
      * Carbon::parse('2018-07-25 12:45:16')->lessThan('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->lessThan('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->lessThan('2018-07-25 12:45:18'); // false
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->lessThan('2018-07-25 12:45:17'); // true
      * ```
      *
@@ -257,8 +297,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->isBefore('2018-07-25 12:45:15'); // false
      * Carbon::parse('2018-07-25 12:45:16')->isBefore('2018-07-25 12:45:16'); // false
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->isBefore('2018-07-25 12:45:16'); // false
+     * Carbon::parse('2018-07-25 12:45:16')->isBefore('2018-07-25 12:45:18'); // false
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->isBefore('2018-07-25 12:45:17'); // true
      * ```
      *
@@ -278,8 +323,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->lte('2018-07-25 12:45:15'); // false
      * Carbon::parse('2018-07-25 12:45:16')->lte('2018-07-25 12:45:16'); // true
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->lte('2018-07-25 12:45:16'); // true
+     * Carbon::parse('2018-07-25 12:45:16')->lte('2018-07-25 12:45:18'); // false
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->lte('2018-07-25 12:45:17'); // true
      * ```
      *
@@ -299,8 +349,13 @@ trait Comparison
      *
      * @example
      * ```
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25 12:45:16')->lessThanOrEqualTo('2018-07-25 12:45:15'); // false
      * Carbon::parse('2018-07-25 12:45:16')->lessThanOrEqualTo('2018-07-25 12:45:16'); // true
+=======
+     * Carbon::parse('2018-07-25 12:45:16')->lessThanOrEqualTo('2018-07-25 12:45:16'); // true
+     * Carbon::parse('2018-07-25 12:45:16')->lessThanOrEqualTo('2018-07-25 12:45:18'); // false
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Carbon::parse('2018-07-25 12:45:16')->lessThanOrEqualTo('2018-07-25 12:45:17'); // true
      * ```
      *
@@ -316,16 +371,24 @@ trait Comparison
     /**
      * Determines if the instance is between two others.
      *
+<<<<<<< HEAD
      * The third argument allow you to specify if bounds are included or not (true by default)
      * but for when you including/excluding bounds may produce different results in your application,
      * we recommend to use the explicit methods ->betweenIncluded() or ->betweenExcluded() instead.
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @example
      * ```
      * Carbon::parse('2018-07-25')->between('2018-07-14', '2018-08-01'); // true
      * Carbon::parse('2018-07-25')->between('2018-08-01', '2018-08-20'); // false
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25')->between('2018-07-25', '2018-08-01'); // true
      * Carbon::parse('2018-07-25')->between('2018-07-25', '2018-08-01', false); // false
+=======
+     * Carbon::parse('2018-07-25')->between('2018-07-25', '2018-08-01'); // false
+     * Carbon::parse('2018-07-25')->between('2018-07-25', '2018-08-01', true); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * ```
      *
      * @param \Carbon\Carbon|\DateTimeInterface|mixed $date1
@@ -351,6 +414,7 @@ trait Comparison
     }
 
     /**
+<<<<<<< HEAD
      * Determines if the instance is between two others, bounds included.
      *
      * @example
@@ -371,6 +435,8 @@ trait Comparison
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Determines if the instance is between two others, bounds excluded.
      *
      * @example
@@ -397,8 +463,13 @@ trait Comparison
      * ```
      * Carbon::parse('2018-07-25')->isBetween('2018-07-14', '2018-08-01'); // true
      * Carbon::parse('2018-07-25')->isBetween('2018-08-01', '2018-08-20'); // false
+<<<<<<< HEAD
      * Carbon::parse('2018-07-25')->isBetween('2018-07-25', '2018-08-01'); // true
      * Carbon::parse('2018-07-25')->isBetween('2018-07-25', '2018-08-01', false); // false
+=======
+     * Carbon::parse('2018-07-25')->isBetween('2018-07-25', '2018-08-01'); // false
+     * Carbon::parse('2018-07-25')->isBetween('2018-07-25', '2018-08-01', true); // true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * ```
      *
      * @param \Carbon\Carbon|\DateTimeInterface|mixed $date1
@@ -570,6 +641,11 @@ trait Comparison
      * @param string                                        $format date formats to compare.
      * @param \Carbon\Carbon|\DateTimeInterface|string|null $date   instance to compare with or null to use current day.
      *
+<<<<<<< HEAD
+=======
+     * @throws \InvalidArgumentException
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return bool
      */
     public function isSameAs($format, $date = null)
@@ -589,7 +665,11 @@ trait Comparison
      * @param string                                 $unit singular unit string
      * @param \Carbon\Carbon|\DateTimeInterface|null $date instance to compare with or null to use current day.
      *
+<<<<<<< HEAD
      * @throws BadComparisonUnitException
+=======
+     * @throws \InvalidArgumentException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */
@@ -620,7 +700,11 @@ trait Comparison
             }
 
             if ($this->localStrictModeEnabled ?? static::isStrictModeEnabled()) {
+<<<<<<< HEAD
                 throw new BadComparisonUnitException($unit);
+=======
+                throw new BadUnitException($unit);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return false;
@@ -640,7 +724,11 @@ trait Comparison
      *
      * @param string $unit The unit to test.
      *
+<<<<<<< HEAD
      * @throws BadMethodCallException
+=======
+     * @throws \BadMethodCallException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return bool
      */

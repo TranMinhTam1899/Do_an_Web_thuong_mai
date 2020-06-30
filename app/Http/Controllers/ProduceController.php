@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\category;
 use App\img;
 use App\user;
@@ -37,6 +38,7 @@ class ProduceController extends Controller
         // $listProducts= produce::all();
         $listcategory=category::all();
         $listUser =user::all();
+        //$listImg = img::all();
         return view('admin.pages.product.add-product', compact('listcategory','listUser'));
 
     }
@@ -52,6 +54,41 @@ class ProduceController extends Controller
 
        
         $listProduce = new produce ;
+        $listImg = new img ; 
+        $this->validate($request, 
+			[
+				//Kiểm tra đúng file đuôi .jpg,.jpeg,.png.gif và dung lượng không quá 2M
+				'imgFile' => 'mimes:jpg,jpeg,png,gif|max:2048',
+			],			
+			[
+				//Tùy chỉnh hiển thị thông báo không thõa điều kiện
+				'imgFile.mimes' => 'Chỉ chấp nhận hình thẻ với đuôi .jpg .jpeg .png .gif',
+				'imgFile.max' => 'Hình thẻ giới hạn dung lượng không quá 2M',
+			]
+		);
+        if ($request->file('imgFile')->isValid()) {
+
+           
+        
+        $imageName = time().'.'.$request->file('imgFile')->getClientOriginalExtension();
+
+        $request->imgFile->move(public_path('upload'), $imageName);
+
+        $file = $request->file('imgFile')->move(public_path('upload'),'firtupload.jpg' );
+
+       //if($request->hasFile('imgFile'))
+        //{
+            //lưu file
+            //$file
+        $listImg ->url = 'public/upload/' . $imageName;
+       // }
+        //else
+        //{
+        //    echo "Chưa có file";
+        //}
+
+
+             
         $listProduce->name = $request->name;
         $listProduce->unit = $request->unit;
         $listProduce->SKU = $request->SKU;
@@ -65,7 +102,11 @@ class ProduceController extends Controller
         $listProduce->top ="0";
         $listProduce->save();
         return redirect()->route('product.listProduct');
-        
+        }
+        else 
+        {
+            return redirect()->route('product.listProduct');
+        }
     }
 
     /**

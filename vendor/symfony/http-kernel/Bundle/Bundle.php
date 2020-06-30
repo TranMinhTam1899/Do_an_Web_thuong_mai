@@ -69,7 +69,11 @@ abstract class Bundle implements BundleInterface
 
             if (null !== $extension) {
                 if (!$extension instanceof ExtensionInterface) {
+<<<<<<< HEAD
                     throw new \LogicException(sprintf('Extension "%s" must implement Symfony\Component\DependencyInjection\Extension\ExtensionInterface.', \get_class($extension)));
+=======
+                    throw new \LogicException(sprintf('Extension %s must implement Symfony\Component\DependencyInjection\Extension\ExtensionInterface.', \get_class($extension)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
 
                 // check naming convention
@@ -116,8 +120,15 @@ abstract class Bundle implements BundleInterface
 
     /**
      * Returns the bundle name (the class short name).
+<<<<<<< HEAD
      */
     final public function getName(): string
+=======
+     *
+     * @return string The Bundle name
+     */
+    final public function getName()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $this->name) {
             $this->parseClassName();

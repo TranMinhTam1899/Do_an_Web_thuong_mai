@@ -2,8 +2,13 @@
 
 namespace Illuminate\Foundation\Bootstrap;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Foundation\Application;
+=======
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\Request;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SetRequestForConsole
 {

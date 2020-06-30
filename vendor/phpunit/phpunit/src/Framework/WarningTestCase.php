@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -10,6 +14,7 @@
 namespace PHPUnit\Framework;
 
 /**
+<<<<<<< HEAD
  * A warning.
  */
 class WarningTestCase extends TestCase
@@ -20,6 +25,13 @@ class WarningTestCase extends TestCase
     protected $message = '';
 
     /**
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class WarningTestCase extends TestCase
+{
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var bool
      */
     protected $backupGlobals = false;
@@ -40,6 +52,14 @@ class WarningTestCase extends TestCase
     protected $useErrorHandler = false;
 
     /**
+<<<<<<< HEAD
+=======
+     * @var string
+     */
+    private $message;
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param string $message
      */
     public function __construct($message = '')

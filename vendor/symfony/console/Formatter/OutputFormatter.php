@@ -42,9 +42,19 @@ class OutputFormatter implements WrappableOutputFormatterInterface
     /**
      * Escapes trailing "\" in given text.
      *
+<<<<<<< HEAD
      * @internal
      */
     public static function escapeTrailingBackslash(string $text): string
+=======
+     * @param string $text Text to escape
+     *
+     * @return string Escaped text
+     *
+     * @internal
+     */
+    public static function escapeTrailingBackslash($text)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ('\\' === substr($text, -1)) {
             $len = \strlen($text);
@@ -59,7 +69,12 @@ class OutputFormatter implements WrappableOutputFormatterInterface
     /**
      * Initializes console output formatter.
      *
+<<<<<<< HEAD
      * @param OutputFormatterStyleInterface[] $styles Array of "name => FormatterStyle" instances
+=======
+     * @param bool                            $decorated Whether this formatter should actually decorate strings
+     * @param OutputFormatterStyleInterface[] $styles    Array of "name => FormatterStyle" instances
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(bool $decorated = false, array $styles = [])
     {
@@ -115,7 +130,11 @@ class OutputFormatter implements WrappableOutputFormatterInterface
     public function getStyle($name)
     {
         if (!$this->hasStyle($name)) {
+<<<<<<< HEAD
             throw new InvalidArgumentException(sprintf('Undefined style: "%s".', $name));
+=======
+            throw new InvalidArgumentException(sprintf('Undefined style: %s', $name));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->styles[strtolower($name)];
@@ -161,7 +180,11 @@ class OutputFormatter implements WrappableOutputFormatterInterface
             if (!$open && !$tag) {
                 // </>
                 $this->styleStack->pop();
+<<<<<<< HEAD
             } elseif (null === $style = $this->createStyleFromString($tag)) {
+=======
+            } elseif (false === $style = $this->createStyleFromString($tag)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $output .= $this->applyCurrentStyle($text, $output, $width, $currentLineLength);
             } elseif ($open) {
                 $this->styleStack->push($style);
@@ -189,15 +212,26 @@ class OutputFormatter implements WrappableOutputFormatterInterface
 
     /**
      * Tries to create new style instance from string.
+<<<<<<< HEAD
      */
     private function createStyleFromString(string $string): ?OutputFormatterStyleInterface
+=======
+     *
+     * @return OutputFormatterStyle|false False if string is not format string
+     */
+    private function createStyleFromString(string $string)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (isset($this->styles[$string])) {
             return $this->styles[$string];
         }
 
         if (!preg_match_all('/([^=]+)=([^;]+)(;|$)/', $string, $matches, PREG_SET_ORDER)) {
+<<<<<<< HEAD
             return null;
+=======
+            return false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $style = new OutputFormatterStyle();
@@ -218,7 +252,11 @@ class OutputFormatter implements WrappableOutputFormatterInterface
                     $style->setOption($option);
                 }
             } else {
+<<<<<<< HEAD
                 return null;
+=======
+                return false;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

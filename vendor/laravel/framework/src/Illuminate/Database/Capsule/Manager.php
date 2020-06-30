@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Capsule;
 
+<<<<<<< HEAD
 use PDO;
 use Illuminate\Container\Container;
 use Illuminate\Database\DatabaseManager;
@@ -9,6 +10,15 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\Traits\CapsuleManagerTrait;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Connectors\ConnectionFactory;
+=======
+use Illuminate\Container\Container;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Database\Connectors\ConnectionFactory;
+use Illuminate\Database\DatabaseManager;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Support\Traits\CapsuleManagerTrait;
+use PDO;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Manager
 {
@@ -77,6 +87,7 @@ class Manager
     /**
      * Get a fluent query builder instance.
      *
+<<<<<<< HEAD
      * @param  string  $table
      * @param  string|null  $connection
      * @return \Illuminate\Database\Query\Builder
@@ -84,6 +95,16 @@ class Manager
     public static function table($table, $connection = null)
     {
         return static::$instance->connection($connection)->table($table);
+=======
+     * @param  \Closure|\Illuminate\Database\Query\Builder|string  $table
+     * @param  string|null  $as
+     * @param  string|null  $connection
+     * @return \Illuminate\Database\Query\Builder
+     */
+    public static function table($table, $as = null, $connection = null)
+    {
+        return static::$instance->connection($connection)->table($table, $as);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

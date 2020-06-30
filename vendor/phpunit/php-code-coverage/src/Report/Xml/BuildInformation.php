@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -42,6 +46,14 @@ final class BuildInformation
             $driverNode->setAttribute('name', 'xdebug');
             $driverNode->setAttribute('version', \phpversion('xdebug'));
         }
+<<<<<<< HEAD
+=======
+
+        if ($runtime->hasPCOV()) {
+            $driverNode->setAttribute('name', 'pcov');
+            $driverNode->setAttribute('version', \phpversion('pcov'));
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function setBuildTime(\DateTime $date): void

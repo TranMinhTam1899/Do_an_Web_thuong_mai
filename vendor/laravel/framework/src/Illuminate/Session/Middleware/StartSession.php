@@ -3,11 +3,19 @@
 namespace Illuminate\Session\Middleware;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Session\SessionManager;
 use Illuminate\Contracts\Session\Session;
+=======
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Request;
+use Illuminate\Session\SessionManager;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Date;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response;
 

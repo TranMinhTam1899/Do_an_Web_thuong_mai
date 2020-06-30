@@ -208,7 +208,11 @@ class UploadedFile extends File
             $moved = move_uploaded_file($this->getPathname(), $target);
             restore_error_handler();
             if (!$moved) {
+<<<<<<< HEAD
                 throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s).', $this->getPathname(), $target, strip_tags($error)));
+=======
+                throw new FileException(sprintf('Could not move the file "%s" to "%s" (%s)', $this->getPathname(), $target, strip_tags($error)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             @chmod($target, 0666 & ~umask());
@@ -251,8 +255,15 @@ class UploadedFile extends File
 
     /**
      * Returns the given size from an ini value in bytes.
+<<<<<<< HEAD
      */
     private static function parseFilesize($size): int
+=======
+     *
+     * @return int The given size in bytes
+     */
+    private static function parseFilesize($size)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ('' === $size) {
             return 0;

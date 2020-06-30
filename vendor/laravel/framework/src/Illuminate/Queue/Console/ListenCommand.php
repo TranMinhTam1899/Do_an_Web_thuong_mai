@@ -2,8 +2,13 @@
 
 namespace Illuminate\Queue\Console;
 
+<<<<<<< HEAD
 use Illuminate\Queue\Listener;
 use Illuminate\Console\Command;
+=======
+use Illuminate\Console\Command;
+use Illuminate\Queue\Listener;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Queue\ListenerOptions;
 
 class ListenCommand extends Command
@@ -21,7 +26,11 @@ class ListenCommand extends Command
                             {--queue= : The queue to listen on}
                             {--sleep=3 : Number of seconds to sleep when no job is available}
                             {--timeout=60 : The number of seconds a child process can run}
+<<<<<<< HEAD
                             {--tries=0 : Number of times to attempt a job before logging it failed}';
+=======
+                            {--tries=1 : Number of times to attempt a job before logging it failed}';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * The console command description.

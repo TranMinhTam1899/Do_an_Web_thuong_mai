@@ -3,4 +3,7 @@
 /composer.lock
 /composer.phar
 /.php_cs.cache
+<<<<<<< HEAD
 /.phpunit.result.cache
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933

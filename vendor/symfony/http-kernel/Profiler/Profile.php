@@ -291,9 +291,12 @@ class Profile
         return isset($this->collectors[$name]);
     }
 
+<<<<<<< HEAD
     /**
      * @return array
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function __sleep()
     {
         return ['token', 'parent', 'children', 'collectors', 'ip', 'method', 'url', 'time', 'statusCode'];

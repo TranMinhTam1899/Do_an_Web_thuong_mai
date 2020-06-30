@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,6 +19,7 @@ use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\Runner\TestSuiteSorter;
 use PHPUnit\TextUI\ResultPrinter;
+<<<<<<< HEAD
 use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
 
 /**
@@ -155,6 +160,13 @@ use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
  *   </php>
  * </phpunit>
  * </code>
+=======
+use PHPUnit\Util\TestDox\CliTestDoxPrinter;
+use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
+
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Configuration
 {
@@ -201,7 +213,10 @@ final class Configuration
             );
         }
 
+<<<<<<< HEAD
         /** @var string $realPath */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!isset(self::$instances[$realPath])) {
             self::$instances[$realPath] = new self($realPath);
         }
@@ -262,6 +277,7 @@ final class Configuration
         $result = [];
 
         foreach ($this->xpath->query('extensions/extension') as $extension) {
+<<<<<<< HEAD
             /** @var DOMElement $extension */
             $class     = (string) $extension->getAttribute('class');
             $file      = '';
@@ -278,6 +294,9 @@ final class Configuration
                 'file'      => $file,
                 'arguments' => $arguments,
             ];
+=======
+            $result[] = $this->getElementConfigurationParameters($extension);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $result;
@@ -373,6 +392,7 @@ final class Configuration
         $result = [];
 
         foreach ($this->xpath->query('listeners/listener') as $listener) {
+<<<<<<< HEAD
             /** @var DOMElement $listener */
             $class     = (string) $listener->getAttribute('class');
             $file      = '';
@@ -390,6 +410,9 @@ final class Configuration
                 'file'      => $file,
                 'arguments' => $arguments,
             ];
+=======
+            $result[] = $this->getElementConfigurationParameters($listener);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $result;
@@ -403,7 +426,12 @@ final class Configuration
         $result = [];
 
         foreach ($this->xpath->query('logging/log') as $log) {
+<<<<<<< HEAD
             /** @var DOMElement $log */
+=======
+            \assert($log instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $type   = (string) $log->getAttribute('type');
             $target = (string) $log->getAttribute('target');
 
@@ -484,7 +512,12 @@ final class Configuration
         }
 
         foreach ($this->xpath->query('php/ini') as $ini) {
+<<<<<<< HEAD
             /** @var DOMElement $ini */
+=======
+            \assert($ini instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $name  = (string) $ini->getAttribute('name');
             $value = (string) $ini->getAttribute('value');
 
@@ -492,7 +525,12 @@ final class Configuration
         }
 
         foreach ($this->xpath->query('php/const') as $const) {
+<<<<<<< HEAD
             /** @var DOMElement $const */
+=======
+            \assert($const instanceof  DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $name  = (string) $const->getAttribute('name');
             $value = (string) $const->getAttribute('value');
 
@@ -501,7 +539,12 @@ final class Configuration
 
         foreach (['var', 'env', 'post', 'get', 'cookie', 'server', 'files', 'request'] as $array) {
             foreach ($this->xpath->query('php/' . $array) as $var) {
+<<<<<<< HEAD
                 /** @var DOMElement $var */
+=======
+                \assert($var instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $name     = (string) $var->getAttribute('name');
                 $value    = (string) $var->getAttribute('value');
                 $verbatim = false;
@@ -601,7 +644,11 @@ final class Configuration
                 $_ENV[$name] = $value;
             }
 
+<<<<<<< HEAD
             if ($force === true) {
+=======
+            if ($force) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $_ENV[$name] = $value;
             }
         }
@@ -912,6 +959,24 @@ final class Configuration
             );
         }
 
+<<<<<<< HEAD
+=======
+        if ($root->hasAttribute('testdox')) {
+            $testdox = $this->getBoolean(
+                (string) $root->getAttribute('testdox'),
+                false
+            );
+
+            if ($testdox) {
+                if (isset($result['printerClass'])) {
+                    $result['conflictBetweenPrinterClassAndTestdox'] = true;
+                } else {
+                    $result['printerClass'] = CliTestDoxPrinter::class;
+                }
+            }
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($root->hasAttribute('registerMockObjectsFromTestArgumentsRecursively')) {
             $result['registerMockObjectsFromTestArgumentsRecursively'] = $this->getBoolean(
                 (string) $root->getAttribute('registerMockObjectsFromTestArgumentsRecursively'),
@@ -930,7 +995,11 @@ final class Configuration
         if ($root->hasAttribute('cacheResult')) {
             $result['cacheResult'] = $this->getBoolean(
                 (string) $root->getAttribute('cacheResult'),
+<<<<<<< HEAD
                 false
+=======
+                true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             );
         }
 
@@ -949,20 +1018,55 @@ final class Configuration
                         $result['resolveDependencies']   = false;
 
                         break;
+<<<<<<< HEAD
                     case 'reverse':
                         $result['executionOrder'] = TestSuiteSorter::ORDER_REVERSED;
 
                         break;
+=======
+
+                    case 'defects':
+                        $result['executionOrderDefects'] = TestSuiteSorter::ORDER_DEFECTS_FIRST;
+
+                        break;
+
+                    case 'depends':
+                        $result['resolveDependencies'] = true;
+
+                        break;
+
+                    case 'duration':
+                        $result['executionOrder'] = TestSuiteSorter::ORDER_DURATION;
+
+                        break;
+
+                    case 'no-depends':
+                        $result['resolveDependencies'] = false;
+
+                        break;
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     case 'random':
                         $result['executionOrder'] = TestSuiteSorter::ORDER_RANDOMIZED;
 
                         break;
+<<<<<<< HEAD
                     case 'defects':
                         $result['executionOrderDefects'] = TestSuiteSorter::ORDER_DEFECTS_FIRST;
 
                         break;
                     case 'depends':
                         $result['resolveDependencies'] = true;
+=======
+
+                    case 'reverse':
+                        $result['executionOrder'] = TestSuiteSorter::ORDER_REVERSED;
+
+                        break;
+
+                    case 'size':
+                        $result['executionOrder'] = TestSuiteSorter::ORDER_SIZE;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                         break;
                 }
@@ -976,6 +1080,16 @@ final class Configuration
             );
         }
 
+<<<<<<< HEAD
+=======
+        if ($root->hasAttribute('noInteraction')) {
+            $result['noInteraction'] = $this->getBoolean(
+                (string) $root->getAttribute('noInteraction'),
+                false
+            );
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $result;
     }
 
@@ -1101,7 +1215,12 @@ final class Configuration
         $testSuiteFilter    = $testSuiteFilter ? \explode(',', $testSuiteFilter) : [];
 
         foreach ($testSuiteNode->getElementsByTagName('directory') as $directoryNode) {
+<<<<<<< HEAD
             /** @var DOMElement $directoryNode */
+=======
+            \assert($directoryNode instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!empty($testSuiteFilter) && !\in_array($directoryNode->parentNode->getAttribute('name'), $testSuiteFilter)) {
                 continue;
             }
@@ -1112,13 +1231,17 @@ final class Configuration
                 continue;
             }
 
+<<<<<<< HEAD
             $prefix = '';
             $suffix = 'Test.php';
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!$this->satisfiesPhpVersion($directoryNode)) {
                 continue;
             }
 
+<<<<<<< HEAD
             if ($directoryNode->hasAttribute('prefix')) {
                 $prefix = (string) $directoryNode->getAttribute('prefix');
             }
@@ -1131,6 +1254,12 @@ final class Configuration
                 $this->toAbsolutePath($directory),
                 $suffix,
                 $prefix,
+=======
+            $files = $fileIteratorFacade->getFilesAsArray(
+                $this->toAbsolutePath($directory),
+                $directoryNode->hasAttribute('suffix') ? (string) $directoryNode->getAttribute('suffix') : 'Test.php',
+                $directoryNode->hasAttribute('prefix') ? (string) $directoryNode->getAttribute('prefix') : '',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $exclude
             );
 
@@ -1138,7 +1267,12 @@ final class Configuration
         }
 
         foreach ($testSuiteNode->getElementsByTagName('file') as $fileNode) {
+<<<<<<< HEAD
             /** @var DOMElement $fileNode */
+=======
+            \assert($fileNode instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if (!empty($testSuiteFilter) && !\in_array($fileNode->parentNode->getAttribute('name'), $testSuiteFilter)) {
                 continue;
             }
@@ -1221,13 +1355,19 @@ final class Configuration
         $directories = [];
 
         foreach ($this->xpath->query($query) as $directoryNode) {
+<<<<<<< HEAD
             /** @var DOMElement $directoryNode */
+=======
+            \assert($directoryNode instanceof DOMElement);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $directoryPath = (string) $directoryNode->textContent;
 
             if (!$directoryPath) {
                 continue;
             }
 
+<<<<<<< HEAD
             $prefix = '';
             $suffix = '.php';
             $group  = 'DEFAULT';
@@ -1249,6 +1389,13 @@ final class Configuration
                 'prefix' => $prefix,
                 'suffix' => $suffix,
                 'group'  => $group,
+=======
+            $directories[] = [
+                'path'   => $this->toAbsolutePath($directoryPath),
+                'prefix' => $directoryNode->hasAttribute('prefix') ? (string) $directoryNode->getAttribute('prefix') : '',
+                'suffix' => $directoryNode->hasAttribute('suffix') ? (string) $directoryNode->getAttribute('suffix') : '.php',
+                'group'  => $directoryNode->hasAttribute('group') ? (string) $directoryNode->getAttribute('group') : 'DEFAULT',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ];
         }
 
@@ -1277,7 +1424,11 @@ final class Configuration
     {
         $path = \trim($path);
 
+<<<<<<< HEAD
         if ($path[0] === '/') {
+=======
+        if (\strpos($path, '/') === 0) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return $path;
         }
 
@@ -1328,4 +1479,27 @@ final class Configuration
 
         return $groups;
     }
+<<<<<<< HEAD
+=======
+
+    private function getElementConfigurationParameters(DOMElement $element): array
+    {
+        $class     = (string) $element->getAttribute('class');
+        $file      = '';
+        $arguments = $this->getConfigurationArguments($element->childNodes);
+
+        if ($element->getAttribute('file')) {
+            $file = $this->toAbsolutePath(
+                (string) $element->getAttribute('file'),
+                true
+            );
+        }
+
+        return [
+            'class'     => $class,
+            'file'      => $file,
+            'arguments' => $arguments,
+        ];
+    }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

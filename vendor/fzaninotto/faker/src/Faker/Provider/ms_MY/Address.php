@@ -67,7 +67,11 @@ class Address extends \Faker\Provider\Address
 
     /**
      * 'Jalan' & 'Jln' are more frequently used than 'Lorong'
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/List_of_roads_in_Kuala_Lumpur#Standard_translations
      */
     protected static $streetPrefix = array(
@@ -117,7 +121,11 @@ class Address extends \Faker\Provider\Address
 
     /**
      * 'Bandar' and 'Taman' are the most common township prefix
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @link https://en.wikipedia.org/wiki/Template:Greater_Kuala_Lumpur > Townships
      * @link https://en.wikipedia.org/wiki/Template:Johor > Townships
      * @link https://en.wikipedia.org/wiki/Template:Kedah > Townships
@@ -497,9 +505,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a building prefix
+<<<<<<< HEAD
      *
      * @example 'No.'
      *
+=======
+     * 
+     * @example 'No.'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function buildingPrefix()
@@ -509,9 +523,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a building number
+<<<<<<< HEAD
      *
      * @example '123'
      *
+=======
+     * 
+     * @example '123'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function buildingNumber()
@@ -521,7 +541,11 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a street prefix
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @example 'Jalan'
      */
     public function streetPrefix()
@@ -533,9 +557,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a complete streename
+<<<<<<< HEAD
      *
      * @example 'Jalan Utama 7'
      *
+=======
+     * 
+     * @example 'Jalan Utama 7'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function streetName()
@@ -547,9 +577,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a randown township
+<<<<<<< HEAD
      *
      * @example Taman Bahagia
      *
+=======
+     * 
+     * @example Taman Bahagia
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function township()
@@ -561,9 +597,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township prefix abbreviation
+<<<<<<< HEAD
      *
      * @example 'USJ'
      *
+=======
+     * 
+     * @example 'USJ'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function townshipPrefixAbbr()
@@ -573,9 +615,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township prefix
+<<<<<<< HEAD
      *
      * @example 'Taman'
      *
+=======
+     * 
+     * @example 'Taman'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function townshipPrefix()
@@ -585,7 +633,11 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a township suffix
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @example 'Bahagia'
      */
     public function townshipSuffix()
@@ -595,12 +647,21 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return a postcode based on state
+<<<<<<< HEAD
      *
      * @example '55100'
      * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
      *
      * @param null|string $state 'state' or null
      *
+=======
+     * 
+     * @example '55100'
+     * @link https://en.wikipedia.org/wiki/Postal_codes_in_Malaysia#States
+     * 
+     * @param null|string $state 'state' or null
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public static function postcode($state = null)
@@ -665,9 +726,15 @@ class Address extends \Faker\Provider\Address
 
     /**
      * Return the complete town address with matching postcode and state
+<<<<<<< HEAD
      *
      * @example 55100 Bukit Bintang, Kuala Lumpur
      *
+=======
+     * 
+     * @example 55100 Bukit Bintang, Kuala Lumpur
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
      */
     public function townState()
@@ -682,9 +749,15 @@ class Address extends \Faker\Provider\Address
     
     /**
      * Return a random city (town)
+<<<<<<< HEAD
      *
      * @example 'Ampang'
      *
+=======
+     * 
+     * @example 'Ampang'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
     */
     public function city()
@@ -695,9 +768,15 @@ class Address extends \Faker\Provider\Address
     
     /**
      * Return a random state
+<<<<<<< HEAD
      *
      * @example 'Johor'
      *
+=======
+     * 
+     * @example 'Johor'
+     * 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return @string
     */
     public function state()

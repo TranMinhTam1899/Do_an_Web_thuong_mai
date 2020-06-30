@@ -2,11 +2,19 @@
 
 namespace Illuminate\Database\Connectors;
 
+<<<<<<< HEAD
 use PDO;
 use Exception;
 use Throwable;
 use Doctrine\DBAL\Driver\PDOConnection;
 use Illuminate\Database\DetectsLostConnections;
+=======
+use Doctrine\DBAL\Driver\PDOConnection;
+use Exception;
+use Illuminate\Database\DetectsLostConnections;
+use PDO;
+use Throwable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Connector
 {

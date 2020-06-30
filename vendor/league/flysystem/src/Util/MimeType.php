@@ -34,6 +34,7 @@ class MimeType
         'smil' => 'application/smil',
         'mif' => 'application/vnd.mif',
         'xls' => 'application/vnd.ms-excel',
+<<<<<<< HEAD
         'xlt' => 'application/vnd.ms-excel',
         'xla' => 'application/vnd.ms-excel',
         'ppt' => 'application/powerpoint',
@@ -47,6 +48,10 @@ class MimeType
         'pptm' => 'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
         'potm' => 'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
         'ppsm' => 'application/vnd.ms-powerpoint.slideshow.macroEnabled.12',
+=======
+        'ppt' => 'application/powerpoint',
+        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'wbxml' => 'application/wbxml',
         'wmlc' => 'application/wmlc',
         'dcr' => 'application/x-director',
@@ -102,8 +107,11 @@ class MimeType
         'txt' => 'text/plain',
         'text' => 'text/plain',
         'log' => 'text/plain',
+<<<<<<< HEAD
         'markdown' => 'text/markdown',
         'md' => 'text/markdown',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'rtx' => 'text/richtext',
         'rtf' => 'text/rtf',
         'xml' => 'application/xml',
@@ -120,6 +128,7 @@ class MimeType
         'doc' => 'application/msword',
         'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'docm' => 'application/vnd.ms-word.template.macroEnabled.12',
+<<<<<<< HEAD
         'dotm' => 'application/vnd.ms-word.template.macroEnabled.12',
         'dot' => 'application/msword',
         'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
@@ -129,6 +138,11 @@ class MimeType
         'xltm' => 'application/vnd.ms-excel.template.macroEnabled.12',
         'xlam' => 'application/vnd.ms-excel.addin.macroEnabled.12',
         'xlsb' => 'application/vnd.ms-excel.sheet.binary.macroEnabled.12',
+=======
+        'dot' => 'application/msword',
+        'dotx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'word' => 'application/msword',
         'xl' => 'application/excel',
         'eml' => 'message/rfc822',
@@ -187,8 +201,11 @@ class MimeType
         'odm' => 'application/vnd.oasis.opendocument.text-master',
         'odb' => 'application/vnd.oasis.opendocument.database',
         'ott' => 'application/vnd.oasis.opendocument.text-template',
+<<<<<<< HEAD
         'webp' => 'image/webp',
         'ico' => 'image/x-icon',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     ];
 
     /**

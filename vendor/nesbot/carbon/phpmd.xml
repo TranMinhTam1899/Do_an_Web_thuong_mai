@@ -23,17 +23,27 @@
         <exclude name="BooleanArgumentFlag" />
         <exclude name="StaticAccess" />
         <exclude name="IfStatementAssignment" />
+<<<<<<< HEAD
         <exclude name="UndefinedVariable" />
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     </rule>
     <rule ref="rulesets/controversial.xml" />
     <rule ref="rulesets/design.xml">
         <exclude name="EvalExpression" />
         <exclude name="CouplingBetweenObjects" />
+<<<<<<< HEAD
         <exclude name="CountInLoopExpression" />
     </rule>
     <rule ref="rulesets/design.xml/CouplingBetweenObjects">
         <properties>
             <property name="maximum" value="25" />
+=======
+    </rule>
+    <rule ref="rulesets/design.xml/CouplingBetweenObjects">
+        <properties>
+            <property name="maximum" value="20" />
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         </properties>
     </rule>
     <rule ref="rulesets/naming.xml/ShortVariable">

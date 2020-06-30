@@ -27,8 +27,14 @@ class MockFileSessionStorage extends MockArraySessionStorage
     private $savePath;
 
     /**
+<<<<<<< HEAD
      * @param string $savePath Path of directory to save session files
      * @param string $name     Session name
+=======
+     * @param string      $savePath Path of directory to save session files
+     * @param string      $name     Session name
+     * @param MetadataBag $metaBag  MetadataBag instance
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(string $savePath = null, string $name = 'MOCKSESSID', MetadataBag $metaBag = null)
     {
@@ -37,7 +43,11 @@ class MockFileSessionStorage extends MockArraySessionStorage
         }
 
         if (!is_dir($savePath) && !@mkdir($savePath, 0777, true) && !is_dir($savePath)) {
+<<<<<<< HEAD
             throw new \RuntimeException(sprintf('Session Storage was not able to create directory "%s".', $savePath));
+=======
+            throw new \RuntimeException(sprintf('Session Storage was not able to create directory "%s"', $savePath));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $this->savePath = $savePath;
@@ -87,7 +97,11 @@ class MockFileSessionStorage extends MockArraySessionStorage
     public function save()
     {
         if (!$this->started) {
+<<<<<<< HEAD
             throw new \RuntimeException('Trying to save a session that was not started yet or was already closed.');
+=======
+            throw new \RuntimeException('Trying to save a session that was not started yet or was already closed');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $data = $this->data;
@@ -121,7 +135,11 @@ class MockFileSessionStorage extends MockArraySessionStorage
      * Deletes a session from persistent storage.
      * Deliberately leaves session data in memory intact.
      */
+<<<<<<< HEAD
     private function destroy(): void
+=======
+    private function destroy()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (is_file($this->getFilePath())) {
             unlink($this->getFilePath());
@@ -130,8 +148,15 @@ class MockFileSessionStorage extends MockArraySessionStorage
 
     /**
      * Calculate path to file.
+<<<<<<< HEAD
      */
     private function getFilePath(): string
+=======
+     *
+     * @return string File path
+     */
+    private function getFilePath()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->savePath.'/'.$this->id.'.mocksess';
     }
@@ -139,7 +164,11 @@ class MockFileSessionStorage extends MockArraySessionStorage
     /**
      * Reads session from storage and loads session.
      */
+<<<<<<< HEAD
     private function read(): void
+=======
+    private function read()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $filePath = $this->getFilePath();
         $this->data = is_readable($filePath) && is_file($filePath) ? unserialize(file_get_contents($filePath)) : [];

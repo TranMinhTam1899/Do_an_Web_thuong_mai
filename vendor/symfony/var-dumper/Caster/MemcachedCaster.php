@@ -15,8 +15,11 @@ use Symfony\Component\VarDumper\Cloner\Stub;
 
 /**
  * @author Jan Schädlich <jan.schaedlich@sensiolabs.de>
+<<<<<<< HEAD
  *
  * @final since Symfony 4.4
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class MemcachedCaster
 {
@@ -35,7 +38,11 @@ class MemcachedCaster
         return $a;
     }
 
+<<<<<<< HEAD
     private static function getNonDefaultOptions(\Memcached $c): array
+=======
+    private static function getNonDefaultOptions(\Memcached $c)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         self::$defaultOptions = self::$defaultOptions ?? self::discoverDefaultOptions();
         self::$optionConstants = self::$optionConstants ?? self::getOptionConstants();
@@ -50,7 +57,11 @@ class MemcachedCaster
         return $nonDefaultOptions;
     }
 
+<<<<<<< HEAD
     private static function discoverDefaultOptions(): array
+=======
+    private static function discoverDefaultOptions()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $defaultMemcached = new \Memcached();
         $defaultMemcached->addServer('127.0.0.1', 11211);
@@ -65,7 +76,11 @@ class MemcachedCaster
         return $defaultOptions;
     }
 
+<<<<<<< HEAD
     private static function getOptionConstants(): array
+=======
+    private static function getOptionConstants()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $reflectedMemcached = new \ReflectionClass(\Memcached::class);
 

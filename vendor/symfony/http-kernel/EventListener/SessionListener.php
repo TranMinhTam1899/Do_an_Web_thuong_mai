@@ -12,7 +12,10 @@
 namespace Symfony\Component\HttpKernel\EventListener;
 
 use Psr\Container\ContainerInterface;
+<<<<<<< HEAD
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\Session\Storage\NativeSessionStorage;
 
 /**
@@ -33,7 +36,11 @@ class SessionListener extends AbstractSessionListener
         $this->container = $container;
     }
 
+<<<<<<< HEAD
     protected function getSession(): ?SessionInterface
+=======
+    protected function getSession()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->container->has('session')) {
             return null;

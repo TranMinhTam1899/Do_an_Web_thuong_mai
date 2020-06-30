@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -18,7 +22,11 @@ namespace PHPUnit\Framework\Constraint;
  *
  * The sub-string is passed in the constructor.
  */
+<<<<<<< HEAD
 class StringContains extends Constraint
+=======
+final class StringContains extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -32,8 +40,11 @@ class StringContains extends Constraint
 
     public function __construct(string $string, bool $ignoreCase = false)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->string     = $string;
         $this->ignoreCase = $ignoreCase;
     }

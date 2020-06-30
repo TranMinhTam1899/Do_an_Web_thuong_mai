@@ -4,7 +4,11 @@ namespace Faker\Provider\pt_PT;
 
 class Address extends \Faker\Provider\Address
 {
+<<<<<<< HEAD
     protected static $streetPrefix = array('Av.', 'Avenida', 'R.', 'Rua', 'Tv.', 'Travessa', 'Lg.', 'Largo');
+=======
+    protected static $streetPrefix = array('Av.', 'Avenida', 'R.', 'Rua', 'Travessa', 'Largo');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     protected static $streetNameFormats = array(
         '{{streetPrefix}} {{lastName}}',

@@ -2,10 +2,17 @@
 
 namespace Illuminate\Support\Traits;
 
+<<<<<<< HEAD
 use Closure;
 use ReflectionClass;
 use ReflectionMethod;
 use BadMethodCallException;
+=======
+use BadMethodCallException;
+use Closure;
+use ReflectionClass;
+use ReflectionMethod;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait Macroable
 {

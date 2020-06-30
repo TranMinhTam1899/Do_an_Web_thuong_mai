@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -12,7 +16,11 @@ namespace PHPUnit\Util;
 use PHPUnit\Framework\Exception;
 
 /**
+<<<<<<< HEAD
  * Command-line options parsing class.
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Getopt
 {
@@ -137,8 +145,12 @@ final class Getopt
 
         $opt_len = \strlen($opt);
 
+<<<<<<< HEAD
         for ($i = 0; $i < $count; $i++) {
             $long_opt  = $long_options[$i];
+=======
+        foreach ($long_options as $i => $long_opt) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $opt_start = \substr($long_opt, 0, $opt_len);
 
             if ($opt_start !== $opt) {
@@ -147,8 +159,12 @@ final class Getopt
 
             $opt_rest = \substr($long_opt, $opt_len);
 
+<<<<<<< HEAD
             if ($opt_rest !== '' && $i + 1 < $count && $opt[0] !== '=' &&
                 \strpos($long_options[$i + 1], $opt) === 0) {
+=======
+            if ($opt_rest !== '' && $i + 1 < $count && $opt[0] !== '=' && \strpos($long_options[$i + 1], $opt) === 0) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 throw new Exception(
                     "option --$opt is ambiguous"
                 );
@@ -156,7 +172,11 @@ final class Getopt
 
             if (\substr($long_opt, -1) === '=') {
                 /* @noinspection StrlenInEmptyStringCheckContextInspection */
+<<<<<<< HEAD
                 if (\substr($long_opt, -2) !== '==' && !\strlen($opt_arg)) {
+=======
+                if (\substr($long_opt, -2) !== '==' && !\strlen((string) $opt_arg)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     /* @noinspection ComparisonOperandsOrderInspection */
                     if (false === $opt_arg = \current($args)) {
                         throw new Exception(

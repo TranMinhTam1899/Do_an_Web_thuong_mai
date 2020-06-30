@@ -3,8 +3,13 @@
 namespace Illuminate\Auth\Middleware;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+=======
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Support\Facades\Redirect;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class EnsureEmailIsVerified
 {

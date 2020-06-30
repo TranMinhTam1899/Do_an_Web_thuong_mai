@@ -3,7 +3,10 @@
 namespace Dotenv;
 
 use Dotenv\Exception\InvalidFileException;
+<<<<<<< HEAD
 use Dotenv\Regex\Regex;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Parser
 {
@@ -88,7 +91,11 @@ class Parser
      */
     private static function isValidName($name)
     {
+<<<<<<< HEAD
         return Regex::match('~\A[a-zA-Z0-9_.]+\z~', $name)->success()->getOrElse(0) === 1;
+=======
+        return preg_match('~\A[a-zA-Z0-9_.]+\z~', $name) === 1;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -136,7 +143,11 @@ class Parser
                     if ($char === $value[0] || $char === '\\') {
                         return [$data[0].$char, self::QUOTED_STATE];
                     } elseif (in_array($char, ['f', 'n', 'r', 't', 'v'], true)) {
+<<<<<<< HEAD
                         return [$data[0].stripcslashes('\\'.$char), self::QUOTED_STATE];
+=======
+                        return [$data[0].stripcslashes('\\' . $char), self::QUOTED_STATE];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     } else {
                         throw new InvalidFileException(
                             self::getErrorMessage('an unexpected escape sequence', $value)

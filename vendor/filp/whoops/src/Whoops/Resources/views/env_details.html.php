@@ -32,9 +32,15 @@
   <?php /* List registered handlers, in order of first to last registered */ ?>
   <div class="data-table-container" id="handlers">
     <label>Registered Handlers</label>
+<<<<<<< HEAD
     <?php foreach ($handlers as $i => $h): ?>
       <div class="handler <?php echo ($h === $handler) ? 'active' : ''?>">
         <?php echo $i ?>. <?php echo $tpl->escape(get_class($h)) ?>
+=======
+    <?php foreach ($handlers as $i => $handler): ?>
+      <div class="handler <?php echo ($handler === $handler) ? 'active' : ''?>">
+        <?php echo $i ?>. <?php echo $tpl->escape(get_class($handler)) ?>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
       </div>
     <?php endforeach ?>
   </div>

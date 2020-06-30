@@ -47,9 +47,12 @@ return [
 
         return "en $time";
     },
+<<<<<<< HEAD
     'diff_now' => 'agora',
     'diff_yesterday' => 'onte',
     'diff_tomorrow' => 'mañá',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'after' => ':time despois',
     'before' => ':time antes',
     'formats' => [

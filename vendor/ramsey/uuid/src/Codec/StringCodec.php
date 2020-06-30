@@ -74,7 +74,11 @@ class StringCodec implements CodecInterface
      *
      * @param string $encodedUuid
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decode($encodedUuid)
     {
@@ -89,7 +93,11 @@ class StringCodec implements CodecInterface
      *
      * @param string $bytes
      * @return UuidInterface
+<<<<<<< HEAD
      * @throws InvalidArgumentException if string has not 16 characters
+=======
+     * @throws \InvalidArgumentException if string has not 16 characters
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function decodeBytes($bytes)
     {
@@ -117,28 +125,48 @@ class StringCodec implements CodecInterface
      *
      * @param string $encodedUuid
      * @return array
+<<<<<<< HEAD
      * @throws InvalidUuidStringException
      */
     protected function extractComponents($encodedUuid)
     {
         $nameParsed = str_replace([
+=======
+     * @throws \Ramsey\Uuid\Exception\InvalidUuidStringException
+     */
+    protected function extractComponents($encodedUuid)
+    {
+        $nameParsed = str_replace(array(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'urn:',
             'uuid:',
             '{',
             '}',
             '-'
+<<<<<<< HEAD
         ], '', $encodedUuid);
+=======
+        ), '', $encodedUuid);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // We have stripped out the dashes and are breaking up the string using
         // substr(). In this way, we can accept a full hex value that doesn't
         // contain dashes.
+<<<<<<< HEAD
         $components = [
+=======
+        $components = array(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             substr($nameParsed, 0, 8),
             substr($nameParsed, 8, 4),
             substr($nameParsed, 12, 4),
             substr($nameParsed, 16, 4),
             substr($nameParsed, 20)
+<<<<<<< HEAD
         ];
+=======
+        );
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $nameParsed = implode('-', $components);
 
@@ -158,13 +186,21 @@ class StringCodec implements CodecInterface
      */
     protected function getFields(array $components)
     {
+<<<<<<< HEAD
         return [
+=======
+        return array(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'time_low' => str_pad($components[0], 8, '0', STR_PAD_LEFT),
             'time_mid' => str_pad($components[1], 4, '0', STR_PAD_LEFT),
             'time_hi_and_version' => str_pad($components[2], 4, '0', STR_PAD_LEFT),
             'clock_seq_hi_and_reserved' => str_pad(substr($components[3], 0, 2), 2, '0', STR_PAD_LEFT),
             'clock_seq_low' => str_pad(substr($components[3], 2), 2, '0', STR_PAD_LEFT),
             'node' => str_pad($components[4], 12, '0', STR_PAD_LEFT)
+<<<<<<< HEAD
         ];
+=======
+        );
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

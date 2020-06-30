@@ -2,8 +2,13 @@
 
 namespace Illuminate\Database;
 
+<<<<<<< HEAD
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Database\Query\Expression;
+=======
+use Illuminate\Database\Query\Expression;
+use Illuminate\Support\Traits\Macroable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 abstract class Grammar
 {
@@ -83,9 +88,13 @@ abstract class Grammar
             $segments[1] = $this->tablePrefix.$segments[1];
         }
 
+<<<<<<< HEAD
         return $this->wrap(
             $segments[0]).' as '.$this->wrapValue($segments[1]
         );
+=======
+        return $this->wrap($segments[0]).' as '.$this->wrapValue($segments[1]);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

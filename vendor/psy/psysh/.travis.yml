@@ -5,12 +5,18 @@ sudo: false
 matrix:
   include:
     - php: 5.4
+<<<<<<< HEAD
       dist: trusty
     - php: 5.4
       env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
       dist: trusty
     - php: 5.5
       dist: trusty
+=======
+    - php: 5.4
+      env: 'COMPOSER_FLAGS="--prefer-lowest --prefer-stable"'
+    - php: 5.5
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     - php: 5.6
     - php: 7.0
     - php: 7.1

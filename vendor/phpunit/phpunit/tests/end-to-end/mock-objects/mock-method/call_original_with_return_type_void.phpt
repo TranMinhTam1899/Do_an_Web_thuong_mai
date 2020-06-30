@@ -1,7 +1,11 @@
 --TEST--
 Mock method and call original method that has a return type of void
 --FILE--
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 class Foo
 {
     public function bar():void{}
@@ -19,8 +23,12 @@ $mockMethod = \PHPUnit\Framework\MockObject\MockMethod::fromReflection(
 $code = $mockMethod->generateCode();
 
 print $code;
+<<<<<<< HEAD
 ?>
 --EXPECT--
+=======
+--EXPECTF--
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     public function bar(): void
     {
@@ -35,6 +43,7 @@ print $code;
             }
         }
 
+<<<<<<< HEAD
         $__phpunit_invocation = new \PHPUnit\Framework\MockObject\Invocation\ObjectInvocation(
             'Foo', 'bar', $__phpunit_arguments, 'void', $this, false
         );
@@ -45,5 +54,13 @@ print $code;
 
         unset($__phpunit_invocation);
 
+=======
+        $this->__phpunit_getInvocationHandler()->invoke(
+            new \PHPUnit\Framework\MockObject\Invocation(
+                'Foo', 'bar', $__phpunit_arguments, ': void', $this, false, true
+            )
+        );
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         call_user_func_array(array($this->__phpunit_originalObject, "bar"), $__phpunit_arguments);
     }

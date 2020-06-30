@@ -3,10 +3,17 @@
 namespace DummyNamespace;
 
 use Illuminate\Bus\Queueable;
+<<<<<<< HEAD
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+=======
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DummyClass implements ShouldQueue
 {

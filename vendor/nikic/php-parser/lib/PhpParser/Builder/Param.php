@@ -12,7 +12,11 @@ class Param implements PhpParser\Builder
 
     protected $default = null;
 
+<<<<<<< HEAD
     /** @var Node\Identifier|Node\Name|Node\NullableType|null */
+=======
+    /** @var string|Node\Name|Node\NullableType|null */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     protected $type = null;
 
     protected $byRef = false;
@@ -44,7 +48,11 @@ class Param implements PhpParser\Builder
     /**
      * Sets type for the parameter.
      *
+<<<<<<< HEAD
      * @param string|Node\Name|Node\NullableType|Node\UnionType $type Parameter type
+=======
+     * @param string|Node\Name|Node\NullableType $type Parameter type
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this The builder instance (for fluid interface)
      */
@@ -60,7 +68,11 @@ class Param implements PhpParser\Builder
     /**
      * Sets type for the parameter.
      *
+<<<<<<< HEAD
      * @param string|Node\Name|Node\NullableType|Node\UnionType $type Parameter type
+=======
+     * @param string|Node\Name|Node\NullableType $type Parameter type
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return $this The builder instance (for fluid interface)
      *

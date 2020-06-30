@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <title>Code Coverage for {{full_path}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <link href="{{path_to_root}}.css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="{{path_to_root}}.css/octicons.css" rel="stylesheet" type="text/css">
   <link href="{{path_to_root}}.css/style.css" rel="stylesheet" type="text/css">
   <link href="{{path_to_root}}.css/custom.css" rel="stylesheet" type="text/css">
+=======
+  <link href="{{path_to_root}}_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="{{path_to_root}}_css/octicons.css" rel="stylesheet" type="text/css">
+  <link href="{{path_to_root}}_css/style.css" rel="stylesheet" type="text/css">
+  <link href="{{path_to_root}}_css/custom.css" rel="stylesheet" type="text/css">
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  </head>
  <body>
   <header>

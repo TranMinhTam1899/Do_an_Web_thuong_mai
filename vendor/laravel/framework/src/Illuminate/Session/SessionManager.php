@@ -35,7 +35,11 @@ class SessionManager extends Manager
     protected function createCookieDriver()
     {
         return $this->buildSession(new CookieSessionHandler(
+<<<<<<< HEAD
             $this->app['cookie'], $this->app['config']['session.lifetime']
+=======
+            $this->container->make('cookie'), $this->config->get('session.lifetime')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ));
     }
 
@@ -56,10 +60,17 @@ class SessionManager extends Manager
      */
     protected function createNativeDriver()
     {
+<<<<<<< HEAD
         $lifetime = $this->app['config']['session.lifetime'];
 
         return $this->buildSession(new FileSessionHandler(
             $this->app['files'], $this->app['config']['session.files'], $lifetime
+=======
+        $lifetime = $this->config->get('session.lifetime');
+
+        return $this->buildSession(new FileSessionHandler(
+            $this->container->make('files'), $this->config->get('session.files'), $lifetime
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ));
     }
 
@@ -70,12 +81,21 @@ class SessionManager extends Manager
      */
     protected function createDatabaseDriver()
     {
+<<<<<<< HEAD
         $table = $this->app['config']['session.table'];
 
         $lifetime = $this->app['config']['session.lifetime'];
 
         return $this->buildSession(new DatabaseSessionHandler(
             $this->getDatabaseConnection(), $table, $lifetime, $this->app
+=======
+        $table = $this->config->get('session.table');
+
+        $lifetime = $this->config->get('session.lifetime');
+
+        return $this->buildSession(new DatabaseSessionHandler(
+            $this->getDatabaseConnection(), $table, $lifetime, $this->container
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ));
     }
 
@@ -86,9 +106,15 @@ class SessionManager extends Manager
      */
     protected function getDatabaseConnection()
     {
+<<<<<<< HEAD
         $connection = $this->app['config']['session.connection'];
 
         return $this->app['db']->connection($connection);
+=======
+        $connection = $this->config->get('session.connection');
+
+        return $this->container->make('db')->connection($connection);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -121,7 +147,11 @@ class SessionManager extends Manager
         $handler = $this->createCacheHandler('redis');
 
         $handler->getCache()->getStore()->setConnection(
+<<<<<<< HEAD
             $this->app['config']['session.connection']
+=======
+            $this->config->get('session.connection')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
 
         return $this->buildSession($handler);
@@ -156,11 +186,19 @@ class SessionManager extends Manager
      */
     protected function createCacheHandler($driver)
     {
+<<<<<<< HEAD
         $store = $this->app['config']->get('session.store') ?: $driver;
 
         return new CacheBasedSessionHandler(
             clone $this->app['cache']->store($store),
             $this->app['config']['session.lifetime']
+=======
+        $store = $this->config->get('session.store') ?: $driver;
+
+        return new CacheBasedSessionHandler(
+            clone $this->container->make('cache')->store($store),
+            $this->config->get('session.lifetime')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
@@ -172,9 +210,15 @@ class SessionManager extends Manager
      */
     protected function buildSession($handler)
     {
+<<<<<<< HEAD
         return $this->app['config']['session.encrypt']
                 ? $this->buildEncryptedSession($handler)
                 : new Store($this->app['config']['session.cookie'], $handler);
+=======
+        return $this->config->get('session.encrypt')
+                ? $this->buildEncryptedSession($handler)
+                : new Store($this->config->get('session.cookie'), $handler);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -186,7 +230,11 @@ class SessionManager extends Manager
     protected function buildEncryptedSession($handler)
     {
         return new EncryptedStore(
+<<<<<<< HEAD
             $this->app['config']['session.cookie'], $handler, $this->app['encrypter']
+=======
+            $this->config->get('session.cookie'), $handler, $this->container['encrypter']
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
@@ -197,7 +245,11 @@ class SessionManager extends Manager
      */
     public function getSessionConfig()
     {
+<<<<<<< HEAD
         return $this->app['config']['session'];
+=======
+        return $this->config->get('session');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -207,7 +259,11 @@ class SessionManager extends Manager
      */
     public function getDefaultDriver()
     {
+<<<<<<< HEAD
         return $this->app['config']['session.driver'];
+=======
+        return $this->config->get('session.driver');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -218,6 +274,10 @@ class SessionManager extends Manager
      */
     public function setDefaultDriver($name)
     {
+<<<<<<< HEAD
         $this->app['config']['session.driver'] = $name;
+=======
+        $this->config->set('session.driver', $name);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

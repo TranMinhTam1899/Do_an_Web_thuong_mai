@@ -100,7 +100,14 @@ class JsonDescriptor extends Descriptor
         $this->write(json_encode($data, $flags));
     }
 
+<<<<<<< HEAD
     private function getInputArgumentData(InputArgument $argument): array
+=======
+    /**
+     * @return array
+     */
+    private function getInputArgumentData(InputArgument $argument)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             'name' => $argument->getName(),
@@ -111,7 +118,14 @@ class JsonDescriptor extends Descriptor
         ];
     }
 
+<<<<<<< HEAD
     private function getInputOptionData(InputOption $option): array
+=======
+    /**
+     * @return array
+     */
+    private function getInputOptionData(InputOption $option)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             'name' => '--'.$option->getName(),
@@ -124,7 +138,14 @@ class JsonDescriptor extends Descriptor
         ];
     }
 
+<<<<<<< HEAD
     private function getInputDefinitionData(InputDefinition $definition): array
+=======
+    /**
+     * @return array
+     */
+    private function getInputDefinitionData(InputDefinition $definition)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $inputArguments = [];
         foreach ($definition->getArguments() as $name => $argument) {
@@ -139,7 +160,14 @@ class JsonDescriptor extends Descriptor
         return ['arguments' => $inputArguments, 'options' => $inputOptions];
     }
 
+<<<<<<< HEAD
     private function getCommandData(Command $command): array
+=======
+    /**
+     * @return array
+     */
+    private function getCommandData(Command $command)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $command->getSynopsis();
         $command->mergeApplicationDefinition(false);

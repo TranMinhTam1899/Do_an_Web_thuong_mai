@@ -54,8 +54,15 @@ abstract class AbstractPipes implements PipesInterface
 
     /**
      * Returns true if a system call has been interrupted.
+<<<<<<< HEAD
      */
     protected function hasSystemCallBeenInterrupted(): bool
+=======
+     *
+     * @return bool
+     */
+    protected function hasSystemCallBeenInterrupted()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $lastError = $this->lastError;
         $this->lastError = null;
@@ -86,9 +93,17 @@ abstract class AbstractPipes implements PipesInterface
     /**
      * Writes input to stdin.
      *
+<<<<<<< HEAD
      * @throws InvalidArgumentException When an input iterator yields a non supported value
      */
     protected function write(): ?array
+=======
+     * @return array|null
+     *
+     * @throws InvalidArgumentException When an input iterator yields a non supported value
+     */
+    protected function write()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!isset($this->pipes[0])) {
             return null;
@@ -103,7 +118,11 @@ abstract class AbstractPipes implements PipesInterface
             } elseif (!isset($this->inputBuffer[0])) {
                 if (!\is_string($input)) {
                     if (!is_scalar($input)) {
+<<<<<<< HEAD
                         throw new InvalidArgumentException(sprintf('"%s" yielded a value of type "%s", but only scalars and stream resources are supported.', \get_class($this->input), \gettype($input)));
+=======
+                        throw new InvalidArgumentException(sprintf('%s yielded a value of type "%s", but only scalars and stream resources are supported', \get_class($this->input), \gettype($input)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     }
                     $input = (string) $input;
                 }

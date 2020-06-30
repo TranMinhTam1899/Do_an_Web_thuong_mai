@@ -3,6 +3,7 @@
 namespace Illuminate\Database\Eloquent\Relations;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Traits\Macroable;
@@ -10,6 +11,15 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Traits\ForwardsCalls;
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Expression;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Traits\ForwardsCalls;
+use Illuminate\Support\Traits\Macroable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -87,7 +97,11 @@ abstract class Relation
         // off of the bindings, leaving only the constraints that the developers put
         // as "extra" on the relationships, and not original relation constraints.
         try {
+<<<<<<< HEAD
             return call_user_func($callback);
+=======
+            return $callback();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } finally {
             static::$constraints = $previous;
         }
@@ -317,7 +331,10 @@ abstract class Relation
     protected function whereInMethod(Model $model, $key)
     {
         return $model->getKeyName() === last(explode('.', $key))
+<<<<<<< HEAD
                     && $model->getIncrementing()
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     && in_array($model->getKeyType(), ['int', 'integer'])
                         ? 'whereIntegerInRaw'
                         : 'whereIn';

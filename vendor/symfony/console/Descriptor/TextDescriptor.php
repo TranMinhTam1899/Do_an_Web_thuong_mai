@@ -250,7 +250,11 @@ class TextDescriptor extends Descriptor
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     private function writeText(string $content, array $options = [])
+=======
+    private function writeText($content, array $options = [])
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->write(
             isset($options['raw_text']) && $options['raw_text'] ? strip_tags($content) : $content,

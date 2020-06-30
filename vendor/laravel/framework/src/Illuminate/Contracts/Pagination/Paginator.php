@@ -93,6 +93,16 @@ interface Paginator
     public function hasMorePages();
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the base path for paginator generated URLs.
+     *
+     * @return string|null
+     */
+    public function path();
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Determine if the list of items is empty or not.
      *
      * @return bool

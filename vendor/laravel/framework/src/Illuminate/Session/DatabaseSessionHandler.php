@@ -2,6 +2,7 @@
 
 namespace Illuminate\Session;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use SessionHandlerInterface;
 use Illuminate\Support\Carbon;
@@ -12,6 +13,18 @@ use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Container\Container;
 
 class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareInterface
+=======
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\InteractsWithTime;
+use SessionHandlerInterface;
+
+class DatabaseSessionHandler implements ExistenceAwareInterface, SessionHandlerInterface
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use InteractsWithTime;
 

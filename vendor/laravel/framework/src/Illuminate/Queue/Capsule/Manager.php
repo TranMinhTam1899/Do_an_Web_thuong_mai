@@ -2,8 +2,13 @@
 
 namespace Illuminate\Queue\Capsule;
 
+<<<<<<< HEAD
 use Illuminate\Queue\QueueManager;
 use Illuminate\Container\Container;
+=======
+use Illuminate\Container\Container;
+use Illuminate\Queue\QueueManager;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Queue\QueueServiceProvider;
 use Illuminate\Support\Traits\CapsuleManagerTrait;
 

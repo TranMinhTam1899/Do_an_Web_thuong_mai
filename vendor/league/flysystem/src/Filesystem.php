@@ -301,7 +301,11 @@ class Filesystem implements FilesystemInterface
             return false;
         }
 
+<<<<<<< HEAD
         return (int) $object['timestamp'];
+=======
+        return $object['timestamp'];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -365,7 +369,11 @@ class Filesystem implements FilesystemInterface
 
         if ( ! $handler) {
             $metadata = $this->getMetadata($path);
+<<<<<<< HEAD
             $handler = ($metadata && $metadata['type'] === 'file') ? new File($this, $path) : new Directory($this, $path);
+=======
+            $handler = $metadata['type'] === 'file' ? new File($this, $path) : new Directory($this, $path);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $handler->setPath($path);

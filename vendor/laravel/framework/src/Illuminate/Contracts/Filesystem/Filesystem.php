@@ -42,7 +42,11 @@ interface Filesystem
      * @param  string  $path
      * @return resource|null The path resource or null on failure.
      *
+<<<<<<< HEAD
      * @throws FileNotFoundException
+=======
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function readStream($path);
 
@@ -65,7 +69,11 @@ interface Filesystem
      * @return bool
      *
      * @throws \InvalidArgumentException If $resource is not a file handle.
+<<<<<<< HEAD
      * @throws FileExistsException
+=======
+     * @throws \Illuminate\Contracts\Filesystem\FileExistsException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function writeStream($path, $resource, array $options = []);
 

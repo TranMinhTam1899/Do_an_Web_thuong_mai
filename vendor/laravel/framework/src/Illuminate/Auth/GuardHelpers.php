@@ -2,8 +2,13 @@
 
 namespace Illuminate\Auth;
 
+<<<<<<< HEAD
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+=======
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\UserProvider;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * These methods are typically the same across all guards.

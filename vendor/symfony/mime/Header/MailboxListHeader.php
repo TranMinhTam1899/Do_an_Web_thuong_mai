@@ -13,18 +13,31 @@ namespace Symfony\Component\Mime\Header;
 
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Exception\RfcComplianceException;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Mime\NamedAddress;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * A Mailbox list MIME Header for something like From, To, Cc, and Bcc (one or more named addresses).
  *
  * @author Chris Corbyn
+<<<<<<< HEAD
+=======
+ *
+ * @experimental in 4.3
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class MailboxListHeader extends AbstractHeader
 {
     private $addresses = [];
 
     /**
+<<<<<<< HEAD
      * @param Address[] $addresses
+=======
+     * @param (NamedAddress|Address)[] $addresses
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(string $name, array $addresses)
     {
@@ -34,7 +47,11 @@ final class MailboxListHeader extends AbstractHeader
     }
 
     /**
+<<<<<<< HEAD
      * @param Address[] $body
+=======
+     * @param (NamedAddress|Address)[] $body
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws RfcComplianceException
      */
@@ -46,9 +63,15 @@ final class MailboxListHeader extends AbstractHeader
     /**
      * @throws RfcComplianceException
      *
+<<<<<<< HEAD
      * @return Address[]
      */
     public function getBody(): array
+=======
+     * @return (NamedAddress|Address)[]
+     */
+    public function getBody()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->getAddresses();
     }
@@ -56,7 +79,11 @@ final class MailboxListHeader extends AbstractHeader
     /**
      * Sets a list of addresses to be shown in this Header.
      *
+<<<<<<< HEAD
      * @param Address[] $addresses
+=======
+     * @param (NamedAddress|Address)[] $addresses
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws RfcComplianceException
      */
@@ -69,7 +96,11 @@ final class MailboxListHeader extends AbstractHeader
     /**
      * Sets a list of addresses to be shown in this Header.
      *
+<<<<<<< HEAD
      * @param Address[] $addresses
+=======
+     * @param (NamedAddress|Address)[] $addresses
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @throws RfcComplianceException
      */
@@ -89,7 +120,11 @@ final class MailboxListHeader extends AbstractHeader
     }
 
     /**
+<<<<<<< HEAD
      * @return Address[]
+=======
+     * @return (NamedAddress|Address)[]
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function getAddresses(): array
     {
@@ -108,8 +143,13 @@ final class MailboxListHeader extends AbstractHeader
         $strings = [];
         foreach ($this->addresses as $address) {
             $str = $address->getEncodedAddress();
+<<<<<<< HEAD
             if ($name = $address->getName()) {
                 $str = $this->createPhrase($this, $name, $this->getCharset(), !$strings).' <'.$str.'>';
+=======
+            if ($address instanceof NamedAddress && $name = $address->getName()) {
+                $str = $this->createPhrase($this, $name, $this->getCharset(), empty($strings)).' <'.$str.'>';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $strings[] = $str;
         }

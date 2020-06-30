@@ -22,4 +22,11 @@
     <directory>./EmailValidator/</directory>
   </whitelist>
 </filter>
+<<<<<<< HEAD
+=======
+
+<listeners>
+  <listener class="Symfony\Bridge\PhpUnit\SymfonyTestsListener" />
+</listeners>
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 </phpunit>

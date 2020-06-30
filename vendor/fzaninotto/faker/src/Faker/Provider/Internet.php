@@ -175,7 +175,11 @@ class Internet extends Base
         }
         $words = $this->generator->words($nbWords);
 
+<<<<<<< HEAD
         return join('-', $words);
+=======
+        return join($words, '-');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -233,7 +237,11 @@ class Internet extends Base
         }
 
         $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC;';
+<<<<<<< HEAD
         if (class_exists('Transliterator', false) && $transliterator = \Transliterator::create($transId)) {
+=======
+        if (class_exists('Transliterator') && $transliterator = \Transliterator::create($transId)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $transString = $transliterator->transliterate($string);
         } else {
             $transString = static::toAscii($string);

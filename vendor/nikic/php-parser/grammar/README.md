@@ -21,6 +21,7 @@ applied to it:
 Building the parser
 ===================
 
+<<<<<<< HEAD
 Run `php grammar/rebuildParsers.php` to rebuild the parsers. Additional options:
 
  * The `KMYACC` environment variable can be used to specify an alternative `kmyacc` binary.
@@ -28,3 +29,10 @@ Run `php grammar/rebuildParsers.php` to rebuild the parsers. Additional options:
    need to compile [moriyoshi's fork](https://github.com/moriyoshi/kmyacc-forked).
  * The `--debug` option enables emission of debug symbols and creates the `y.output` file.
  * The `--keep-tmp-grammar` option preserves the preprocessed grammar file.
+=======
+In order to rebuild the parser, you need [moriyoshi's fork of kmyacc](https://github.com/moriyoshi/kmyacc-forked).
+After you compiled/installed it, run the `rebuildParsers.php` script.
+
+By default only the `Parser.php` is built. If you want to additionally emit debug symbols and create `y.output`, run the
+script with `--debug`. If you want to retain the preprocessed grammar pass `--keep-tmp-grammar`.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933

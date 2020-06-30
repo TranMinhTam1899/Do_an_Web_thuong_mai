@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -18,7 +22,11 @@ use ReflectionException;
  *
  * The expected class name is passed in the constructor.
  */
+<<<<<<< HEAD
 class IsInstanceOf extends Constraint
+=======
+final class IsInstanceOf extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -27,8 +35,11 @@ class IsInstanceOf extends Constraint
 
     public function __construct(string $className)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->className = $className;
     }
 
@@ -69,7 +80,11 @@ class IsInstanceOf extends Constraint
     {
         return \sprintf(
             '%s is an instance of %s "%s"',
+<<<<<<< HEAD
             $this->exporter->shortenedExport($other),
+=======
+            $this->exporter()->shortenedExport($other),
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->getType(),
             $this->className
         );

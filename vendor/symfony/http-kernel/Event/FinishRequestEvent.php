@@ -15,8 +15,11 @@ namespace Symfony\Component\HttpKernel\Event;
  * Triggered whenever a request is fully processed.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
+<<<<<<< HEAD
  *
  * @final since Symfony 4.4
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class FinishRequestEvent extends KernelEvent
 {

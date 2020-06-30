@@ -2,6 +2,7 @@
 
 namespace Illuminate\Database\Connectors;
 
+<<<<<<< HEAD
 use PDOException;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
@@ -11,6 +12,17 @@ use Illuminate\Database\SQLiteConnection;
 use Illuminate\Database\PostgresConnection;
 use Illuminate\Database\SqlServerConnection;
 use Illuminate\Contracts\Container\Container;
+=======
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Database\Connection;
+use Illuminate\Database\MySqlConnection;
+use Illuminate\Database\PostgresConnection;
+use Illuminate\Database\SQLiteConnection;
+use Illuminate\Database\SqlServerConnection;
+use Illuminate\Support\Arr;
+use InvalidArgumentException;
+use PDOException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ConnectionFactory
 {

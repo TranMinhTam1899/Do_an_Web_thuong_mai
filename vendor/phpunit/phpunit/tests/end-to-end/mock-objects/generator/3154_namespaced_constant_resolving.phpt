@@ -2,7 +2,11 @@
 https://github.com/sebastianbergmann/phpunit-mock-objects/issues/420
 https://github.com/sebastianbergmann/phpunit/issues/3154
 --FILE--
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 namespace Is\Namespaced;
 /*
  * This file is part of PHPUnit.
@@ -35,6 +39,7 @@ $mock = $generator->generate(
     true
 );
 
+<<<<<<< HEAD
 print $mock['code'];
 --EXPECTF--
 class Issue3154Mock extends Is\Namespaced\Issue3154 implements PHPUnit\Framework\MockObject\MockObject
@@ -48,6 +53,17 @@ class Issue3154Mock extends Is\Namespaced\Issue3154 implements PHPUnit\Framework
     {
         $this->__phpunit_invocationMocker = clone $this->__phpunit_getInvocationMocker();
     }
+=======
+print $mock->getClassCode();
+--EXPECTF--
+declare(strict_types=1);
+
+class Issue3154Mock extends Is\Namespaced\Issue3154 implements PHPUnit\Framework\MockObject\MockObject
+{
+    use \PHPUnit\Framework\MockObject\Api;
+    use \PHPUnit\Framework\MockObject\Method;
+    use \PHPUnit\Framework\MockObject\MockedCloneMethod;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     public function a(int $i = %d, int $j = 17, string $v = '%s', string $z = '#'): string
     {
@@ -62,14 +78,21 @@ class Issue3154Mock extends Is\Namespaced\Issue3154 implements PHPUnit\Framework
             }
         }
 
+<<<<<<< HEAD
         $__phpunit_result = $this->__phpunit_getInvocationMocker()->invoke(
             new \PHPUnit\Framework\MockObject\Invocation\ObjectInvocation(
                 'Is\Namespaced\Issue3154', 'a', $__phpunit_arguments, 'string', $this, true
+=======
+        $__phpunit_result = $this->__phpunit_getInvocationHandler()->invoke(
+            new \PHPUnit\Framework\MockObject\Invocation(
+                'Is\Namespaced\Issue3154', 'a', $__phpunit_arguments, ': string', $this, true
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             )
         );
 
         return $__phpunit_result;
     }
+<<<<<<< HEAD
 
     public function expects(\PHPUnit\Framework\MockObject\Matcher\Invocation $matcher)
     {
@@ -116,4 +139,6 @@ class Issue3154Mock extends Is\Namespaced\Issue3154 implements PHPUnit\Framework
             $this->__phpunit_invocationMocker = null;
         }
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

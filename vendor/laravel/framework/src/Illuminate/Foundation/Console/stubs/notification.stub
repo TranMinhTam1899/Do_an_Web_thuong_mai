@@ -3,9 +3,15 @@
 namespace DummyNamespace;
 
 use Illuminate\Bus\Queueable;
+<<<<<<< HEAD
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+=======
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class DummyClass extends Notification
 {

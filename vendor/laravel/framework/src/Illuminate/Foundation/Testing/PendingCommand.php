@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Testing;
 
+<<<<<<< HEAD
 use Mockery;
 use Illuminate\Console\OutputStyle;
 use Illuminate\Contracts\Console\Kernel;
@@ -9,6 +10,15 @@ use Symfony\Component\Console\Input\ArrayInput;
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Mockery\Exception\NoMatchingExpectationException;
+=======
+use Illuminate\Console\OutputStyle;
+use Illuminate\Contracts\Console\Kernel;
+use Mockery;
+use Mockery\Exception\NoMatchingExpectationException;
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\BufferedOutput;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class PendingCommand
 {

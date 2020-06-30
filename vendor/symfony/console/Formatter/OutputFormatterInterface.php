@@ -35,7 +35,12 @@ interface OutputFormatterInterface
     /**
      * Sets a new style.
      *
+<<<<<<< HEAD
      * @param string $name The style name
+=======
+     * @param string                        $name  The style name
+     * @param OutputFormatterStyleInterface $style The style instance
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setStyle($name, OutputFormatterStyleInterface $style);
 

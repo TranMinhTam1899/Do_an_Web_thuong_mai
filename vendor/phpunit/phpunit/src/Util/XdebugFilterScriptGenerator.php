@@ -9,6 +9,12 @@
  */
 namespace PHPUnit\Util;
 
+<<<<<<< HEAD
+=======
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class XdebugFilterScriptGenerator
 {
     public function generate(array $filterData): string
@@ -16,7 +22,11 @@ final class XdebugFilterScriptGenerator
         $items = $this->getWhitelistItems($filterData);
 
         $files = \array_map(
+<<<<<<< HEAD
             function ($item) {
+=======
+            static function ($item) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 return \sprintf(
                     "        '%s'",
                     $item

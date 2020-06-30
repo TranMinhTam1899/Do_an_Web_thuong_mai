@@ -73,6 +73,18 @@ interface Container extends ContainerInterface
     public function singleton($abstract, $concrete = null);
 
     /**
+<<<<<<< HEAD
+=======
+     * Register a shared binding if it hasn't already been registered.
+     *
+     * @param  string  $abstract
+     * @param  \Closure|string|null  $concrete
+     * @return void
+     */
+    public function singletonIf($abstract, $concrete = null);
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * "Extend" an abstract type in the container.
      *
      * @param  string    $abstract

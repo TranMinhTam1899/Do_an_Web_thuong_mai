@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,7 +19,11 @@ use PHPUnit\Framework\ExpectationFailedException;
  * Constraint that asserts that the Traversable it is applied to contains
  * only values of a given type.
  */
+<<<<<<< HEAD
 class TraversableContainsOnly extends Constraint
+=======
+final class TraversableContainsOnly extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var Constraint
@@ -32,8 +40,11 @@ class TraversableContainsOnly extends Constraint
      */
     public function __construct(string $type, bool $isNativeType = true)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($isNativeType) {
             $this->constraint = new IsType($type);
         } else {
@@ -55,6 +66,7 @@ class TraversableContainsOnly extends Constraint
      * a boolean value instead: true in case of success, false in case of a
      * failure.
      *
+<<<<<<< HEAD
      * @param mixed  $other        value or object to evaluate
      * @param string $description  Additional information about the test
      * @param bool   $returnResult Whether to return a result or throw an exception
@@ -63,6 +75,12 @@ class TraversableContainsOnly extends Constraint
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function evaluate($other, $description = '', $returnResult = false)
+=======
+     * @throws ExpectationFailedException
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     */
+    public function evaluate($other, string $description = '', bool $returnResult = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $success = true;
 

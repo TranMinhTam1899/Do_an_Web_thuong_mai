@@ -115,7 +115,11 @@ class CacheWarmerAggregate implements CacheWarmerInterface
      *
      * @return bool always false
      */
+<<<<<<< HEAD
     public function isOptional(): bool
+=======
+    public function isOptional()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return false;
     }

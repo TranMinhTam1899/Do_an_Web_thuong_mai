@@ -24,7 +24,12 @@ interface DumperInterface
     /**
      * Dumps the message catalogue.
      *
+<<<<<<< HEAD
      * @param array $options Options that are used by the dumper
+=======
+     * @param MessageCatalogue $messages The message catalogue
+     * @param array            $options  Options that are used by the dumper
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function dump(MessageCatalogue $messages, $options = []);
 }

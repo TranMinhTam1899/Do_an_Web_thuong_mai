@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the Monolog package.
  *
@@ -11,7 +16,10 @@
 namespace Monolog\Formatter;
 
 use Monolog\Logger;
+<<<<<<< HEAD
 use Monolog\Utils;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Formats incoming records into an HTML table
@@ -25,7 +33,11 @@ class HtmlFormatter extends NormalizerFormatter
     /**
      * Translates Monolog log levels to html color priorities.
      */
+<<<<<<< HEAD
     protected $logLevels = array(
+=======
+    protected $logLevels = [
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         Logger::DEBUG     => '#cccccc',
         Logger::INFO      => '#468847',
         Logger::NOTICE    => '#3a87ad',
@@ -34,12 +46,21 @@ class HtmlFormatter extends NormalizerFormatter
         Logger::CRITICAL  => '#FF7708',
         Logger::ALERT     => '#C12A19',
         Logger::EMERGENCY => '#000000',
+<<<<<<< HEAD
     );
 
     /**
      * @param string $dateFormat The format of the timestamp: one supported by DateTime::format
      */
     public function __construct($dateFormat = null)
+=======
+    ];
+
+    /**
+     * @param string|null $dateFormat The format of the timestamp: one supported by DateTime::format
+     */
+    public function __construct(?string $dateFormat = null)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         parent::__construct($dateFormat);
     }
@@ -47,12 +68,20 @@ class HtmlFormatter extends NormalizerFormatter
     /**
      * Creates an HTML table row
      *
+<<<<<<< HEAD
      * @param  string $th       Row header content
      * @param  string $td       Row standard cell content
      * @param  bool   $escapeTd false if td content must not be html escaped
      * @return string
      */
     protected function addRow($th, $td = ' ', $escapeTd = true)
+=======
+     * @param string $th       Row header content
+     * @param string $td       Row standard cell content
+     * @param bool   $escapeTd false if td content must not be html escaped
+     */
+    protected function addRow(string $th, string $td = ' ', bool $escapeTd = true): string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $th = htmlspecialchars($th, ENT_NOQUOTES, 'UTF-8');
         if ($escapeTd) {
@@ -69,7 +98,11 @@ class HtmlFormatter extends NormalizerFormatter
      * @param  int    $level Error level
      * @return string
      */
+<<<<<<< HEAD
     protected function addTitle($title, $level)
+=======
+    protected function addTitle(string $title, int $level): string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $title = htmlspecialchars($title, ENT_NOQUOTES, 'UTF-8');
 
@@ -79,16 +112,27 @@ class HtmlFormatter extends NormalizerFormatter
     /**
      * Formats a log record.
      *
+<<<<<<< HEAD
      * @param  array $record A record to format
      * @return mixed The formatted record
      */
     public function format(array $record)
+=======
+     * @param  array  $record A record to format
+     * @return string The formatted record
+     */
+    public function format(array $record): string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $output = $this->addTitle($record['level_name'], $record['level']);
         $output .= '<table cellspacing="1" width="100%" class="monolog-output">';
 
         $output .= $this->addRow('Message', (string) $record['message']);
+<<<<<<< HEAD
         $output .= $this->addRow('Time', $record['datetime']->format($this->dateFormat));
+=======
+        $output .= $this->addRow('Time', $this->formatDate($record['datetime']));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $output .= $this->addRow('Channel', $record['channel']);
         if ($record['context']) {
             $embeddedTable = '<table cellspacing="1" width="100%">';
@@ -113,10 +157,17 @@ class HtmlFormatter extends NormalizerFormatter
     /**
      * Formats a set of log records.
      *
+<<<<<<< HEAD
      * @param  array $records A set of records to format
      * @return mixed The formatted set of records
      */
     public function formatBatch(array $records)
+=======
+     * @param  array  $records A set of records to format
+     * @return string The formatted set of records
+     */
+    public function formatBatch(array $records): string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $message = '';
         foreach ($records as $record) {
@@ -126,17 +177,26 @@ class HtmlFormatter extends NormalizerFormatter
         return $message;
     }
 
+<<<<<<< HEAD
     protected function convertToString($data)
+=======
+    protected function convertToString($data): string
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $data || is_scalar($data)) {
             return (string) $data;
         }
 
         $data = $this->normalize($data);
+<<<<<<< HEAD
         if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
             return Utils::jsonEncode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE, true);
         }
 
         return str_replace('\\/', '/', Utils::jsonEncode($data, null, true));
+=======
+
+        return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

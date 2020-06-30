@@ -2,6 +2,7 @@
 
 namespace Illuminate\Filesystem;
 
+<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Http\File;
 use Illuminate\Support\Arr;
@@ -24,11 +25,38 @@ use Illuminate\Contracts\Filesystem\Cloud as CloudFilesystemContract;
 use Illuminate\Contracts\Filesystem\Filesystem as FilesystemContract;
 use Illuminate\Contracts\Filesystem\FileExistsException as ContractFileExistsException;
 use Illuminate\Contracts\Filesystem\FileNotFoundException as ContractFileNotFoundException;
+=======
+use Illuminate\Contracts\Filesystem\Cloud as CloudFilesystemContract;
+use Illuminate\Contracts\Filesystem\FileExistsException as ContractFileExistsException;
+use Illuminate\Contracts\Filesystem\FileNotFoundException as ContractFileNotFoundException;
+use Illuminate\Contracts\Filesystem\Filesystem as FilesystemContract;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+use League\Flysystem\Adapter\Local as LocalAdapter;
+use League\Flysystem\AdapterInterface;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\Cached\CachedAdapter;
+use League\Flysystem\FileExistsException;
+use League\Flysystem\FileNotFoundException;
+use League\Flysystem\FilesystemInterface;
+use PHPUnit\Framework\Assert as PHPUnit;
+use Psr\Http\Message\StreamInterface;
+use RuntimeException;
+use Symfony\Component\HttpFoundation\StreamedResponse;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \League\Flysystem\FilesystemInterface
  */
+<<<<<<< HEAD
 class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
+=======
+class FilesystemAdapter implements CloudFilesystemContract
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * The Flysystem filesystem implementation.
@@ -205,6 +233,13 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
             return $this->putFile($path, $contents, $options);
         }
 
+<<<<<<< HEAD
+=======
+        if ($contents instanceof StreamInterface) {
+            return $this->driver->putStream($path, $contents->detach(), $options);
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return is_resource($contents)
                 ? $this->driver->putStream($path, $contents, $options)
                 : $this->driver->put($path, $contents, $options);
@@ -415,8 +450,11 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
             return $this->driver->getUrl($path);
         } elseif ($adapter instanceof AwsS3Adapter) {
             return $this->getAwsUrl($adapter, $path);
+<<<<<<< HEAD
         } elseif ($adapter instanceof RackspaceAdapter) {
             return $this->getRackspaceUrl($adapter, $path);
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } elseif ($adapter instanceof LocalAdapter) {
             return $this->getLocalUrl($path);
         } else {
@@ -472,6 +510,7 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
     /**
      * Get the URL for the file at the given path.
      *
+<<<<<<< HEAD
      * @param  \League\Flysystem\Rackspace\RackspaceAdapter $adapter
      * @param  string $path
      * @return string
@@ -484,6 +523,8 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
     /**
      * Get the URL for the file at the given path.
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  string  $path
      * @return string
      */
@@ -532,8 +573,11 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
             return $adapter->getTemporaryUrl($path, $expiration, $options);
         } elseif ($adapter instanceof AwsS3Adapter) {
             return $this->getAwsTemporaryUrl($adapter, $path, $expiration, $options);
+<<<<<<< HEAD
         } elseif ($adapter instanceof RackspaceAdapter) {
             return $this->getRackspaceTemporaryUrl($adapter, $path, $expiration, $options);
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } else {
             throw new RuntimeException('This driver does not support creating temporary URLs.');
         }
@@ -563,6 +607,7 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
     }
 
     /**
+<<<<<<< HEAD
      * Get a temporary URL for the file at the given path.
      *
      * @param  \League\Flysystem\Rackspace\RackspaceAdapter  $adapter
@@ -581,6 +626,8 @@ class FilesystemAdapter implements FilesystemContract, CloudFilesystemContract
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Concatenate a path to a URL.
      *
      * @param  string $url

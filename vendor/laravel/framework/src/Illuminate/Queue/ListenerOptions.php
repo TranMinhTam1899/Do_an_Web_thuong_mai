@@ -23,7 +23,11 @@ class ListenerOptions extends WorkerOptions
      * @param  bool  $force
      * @return void
      */
+<<<<<<< HEAD
     public function __construct($environment = null, $delay = 0, $memory = 128, $timeout = 60, $sleep = 3, $maxTries = 0, $force = false)
+=======
+    public function __construct($environment = null, $delay = 0, $memory = 128, $timeout = 60, $sleep = 3, $maxTries = 1, $force = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->environment = $environment;
 

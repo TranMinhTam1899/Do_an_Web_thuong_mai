@@ -2,6 +2,7 @@
 
 namespace Illuminate\Notifications;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
@@ -9,6 +10,15 @@ use Illuminate\Support\Traits\Localizable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Database\Eloquent\Collection as ModelCollection;
+=======
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Contracts\Translation\HasLocalePreference;
+use Illuminate\Database\Eloquent\Collection as ModelCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Localizable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class NotificationSender
 {
@@ -193,6 +203,15 @@ class NotificationSender
                             ->onConnection($notification->connection)
                             ->onQueue($notification->queue)
                             ->delay($notification->delay)
+<<<<<<< HEAD
+=======
+                            ->through(
+                                array_merge(
+                                    method_exists($notification, 'middleware') ? $notification->middleware() : [],
+                                    $notification->middleware ?? []
+                                )
+                            )
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 );
             }
         }

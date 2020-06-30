@@ -11,10 +11,17 @@
     ],
     "require": {
         "php": ">=5.4.0",
+<<<<<<< HEAD
         "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0"
     },
     "require-dev": {
         "illuminate/http": "^5.0|^6.0|^7.0|^8.0",
+=======
+        "illuminate/contracts": "^5.0|^6.0|^7.0"
+    },
+    "require-dev": {
+        "illuminate/http": "^5.0|^6.0|^7.0",
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "mockery/mockery": "^1.0",
         "phpunit/phpunit": "^6.0"
     },

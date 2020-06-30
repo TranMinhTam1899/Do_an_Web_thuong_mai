@@ -12,8 +12,13 @@ namespace Carbon\Traits;
 
 use Carbon\CarbonInterface;
 use Carbon\CarbonInterval;
+<<<<<<< HEAD
 use Carbon\Exceptions\UnitException;
 use DateInterval;
+=======
+use DateInterval;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Trait Units.
@@ -124,7 +129,11 @@ trait Units
 
             default:
                 if ($this->localStrictModeEnabled ?? static::isStrictModeEnabled()) {
+<<<<<<< HEAD
                     throw new UnitException("Invalid unit for real timestamp add/sub: '$unit'");
+=======
+                    throw new InvalidArgumentException("Invalid unit for real timestamp add/sub: '$unit'");
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
 
                 return $this;
@@ -219,7 +228,10 @@ trait Units
             'decade' => [static::YEARS_PER_DECADE, 'year'],
             'quarter' => [static::MONTHS_PER_QUARTER, 'month'],
         ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (isset($metaUnits[$unit])) {
             [$factor, $unit] = $metaUnits[$unit];
             $value *= $factor;
@@ -227,17 +239,26 @@ trait Units
 
         if ($unit === 'weekday') {
             $weekendDays = static::getWeekendDays();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if ($weekendDays !== [static::SATURDAY, static::SUNDAY]) {
                 $absoluteValue = abs($value);
                 $sign = $value / max(1, $absoluteValue);
                 $weekDaysCount = 7 - min(6, count(array_unique($weekendDays)));
                 $weeks = floor($absoluteValue / $weekDaysCount);
+<<<<<<< HEAD
 
                 for ($diff = $absoluteValue % $weekDaysCount; $diff; $diff--) {
                     /** @var static $date */
                     $date = $date->addDays($sign);
 
+=======
+                for ($diff = $absoluteValue % $weekDaysCount; $diff; $diff--) {
+                    /** @var static $date */
+                    $date = $date->addDays($sign);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     while (in_array($date->dayOfWeek, $weekendDays)) {
                         $date = $date->addDays($sign);
                     }

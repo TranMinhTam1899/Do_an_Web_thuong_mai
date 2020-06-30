@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,14 @@ namespace PHPUnit\Framework\Constraint;
 
 use PHPUnit\Framework\ExpectationFailedException;
 
+<<<<<<< HEAD
 class ArraySubsetTest extends ConstraintTestCase
+=======
+/**
+ * @small
+ */
+final class ArraySubsetTest extends ConstraintTestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public static function evaluateDataProvider(): array
     {
@@ -79,8 +90,13 @@ class ArraySubsetTest extends ConstraintTestCase
         } catch (ExpectationFailedException $expectedException) {
             $comparisonFailure = $expectedException->getComparisonFailure();
             $this->assertNotNull($comparisonFailure);
+<<<<<<< HEAD
             $this->assertContains("'foo' => 'bar'", $comparisonFailure->getExpectedAsString());
             $this->assertContains("'baz' => 'bar'", $comparisonFailure->getActualAsString());
+=======
+            $this->assertStringContainsString("'foo' => 'bar'", $comparisonFailure->getExpectedAsString());
+            $this->assertStringContainsString("'baz' => 'bar'", $comparisonFailure->getActualAsString());
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 }

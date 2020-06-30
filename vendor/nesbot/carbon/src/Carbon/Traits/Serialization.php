@@ -10,7 +10,11 @@
  */
 namespace Carbon\Traits;
 
+<<<<<<< HEAD
 use Carbon\Exceptions\InvalidFormatException;
+=======
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Trait Serialization.
@@ -31,8 +35,11 @@ use Carbon\Exceptions\InvalidFormatException;
  */
 trait Serialization
 {
+<<<<<<< HEAD
     use ObjectInitialisation;
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * The custom Carbon JSON serializer.
      *
@@ -41,6 +48,7 @@ trait Serialization
     protected static $serializer;
 
     /**
+<<<<<<< HEAD
      * List of key to use for dump/serialization.
      *
      * @var string[]
@@ -48,6 +56,8 @@ trait Serialization
     protected $dumpProperties = ['date', 'timezone_type', 'timezone'];
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Locale to dump comes here before serialization.
      *
      * @var string|null
@@ -69,7 +79,11 @@ trait Serialization
      *
      * @param string $value
      *
+<<<<<<< HEAD
      * @throws InvalidFormatException
+=======
+     * @throws \InvalidArgumentException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return static
      */
@@ -78,7 +92,11 @@ trait Serialization
         $instance = @unserialize("$value");
 
         if (!$instance instanceof static) {
+<<<<<<< HEAD
             throw new InvalidFormatException("Invalid serialized value: $value");
+=======
+            throw new InvalidArgumentException('Invalid serialized value.');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $instance;
@@ -112,8 +130,12 @@ trait Serialization
      */
     public function __sleep()
     {
+<<<<<<< HEAD
         $properties = $this->dumpProperties;
 
+=======
+        $properties = ['date', 'timezone_type', 'timezone'];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if ($this->localTranslator ?? null) {
             $properties[] = 'dumpLocale';
             $this->dumpLocale = $this->locale ?? null;
@@ -130,15 +152,21 @@ trait Serialization
         if (get_parent_class() && method_exists(parent::class, '__wakeup')) {
             parent::__wakeup();
         }
+<<<<<<< HEAD
 
         $this->constructedObjectId = spl_object_hash($this);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (isset($this->dumpLocale)) {
             $this->locale($this->dumpLocale);
             $this->dumpLocale = null;
         }
+<<<<<<< HEAD
 
         $this->cleanupDumpProperties();
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -172,6 +200,7 @@ trait Serialization
     {
         static::$serializer = $callback;
     }
+<<<<<<< HEAD
 
     /**
      * Cleanup properties attached to the public scope of DateTime when a dump of the date is requested.
@@ -190,4 +219,6 @@ trait Serialization
 
         return $this;
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

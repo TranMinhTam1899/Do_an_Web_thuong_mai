@@ -29,9 +29,14 @@ class PrettyPageHandler extends Handler
     const EDITOR_XDEBUG = "xdebug";
 
     /**
+<<<<<<< HEAD
      * Search paths to be scanned for resources.
      *
      * Stored in the reverse order they're declared.
+=======
+     * Search paths to be scanned for resources, in the reverse
+     * order they're declared.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @var array
      */
@@ -52,6 +57,7 @@ class PrettyPageHandler extends Handler
     private $customCss = null;
 
     /**
+<<<<<<< HEAD
      * The name of the custom js file.
      *
      * @var string
@@ -59,6 +65,8 @@ class PrettyPageHandler extends Handler
     private $customJs = null;
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var array[]
      */
     private $extraTables = [];
@@ -92,6 +100,7 @@ class PrettyPageHandler extends Handler
     ];
 
     /**
+<<<<<<< HEAD
      * An identifier for a known IDE/text editor.
      *
      * Either a string, or a calalble that resolves a string, that can be used
@@ -102,12 +111,26 @@ class PrettyPageHandler extends Handler
      *   "txmt://open?url=%file&line=%line"
      *
      * @var callable|string $editor
+=======
+     * A string identifier for a known IDE/text editor, or a closure
+     * that resolves a string that can be used to open a given file
+     * in an editor. If the string contains the special substrings
+     * %file or %line, they will be replaced with the correct data.
+     *
+     * @example
+     *  "txmt://open?url=%file&line=%line"
+     * @var mixed $editor
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $editor;
 
     /**
+<<<<<<< HEAD
      * A list of known editor strings.
      *
+=======
+     * A list of known editor strings
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var array
      */
     protected $editors = [
@@ -125,12 +148,19 @@ class PrettyPageHandler extends Handler
     /**
      * @var TemplateHelper
      */
+<<<<<<< HEAD
     protected $templateHelper;
 
     /**
      * Constructor.
      *
      * @return void
+=======
+    private $templateHelper;
+
+    /**
+     * Constructor.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct()
     {
@@ -154,11 +184,18 @@ class PrettyPageHandler extends Handler
 
         if (class_exists('Symfony\Component\VarDumper\Cloner\VarCloner')) {
             $cloner = new VarCloner();
+<<<<<<< HEAD
             // Only dump object internals if a custom caster exists for performance reasons
             // https://github.com/filp/whoops/pull/404
             $cloner->addCasters(['*' => function ($obj, $a, $stub, $isNested, $filter = 0) {
                 $class = $stub->class;
                 $classes = [$class => $class] + class_parents($obj) + class_implements($obj);
+=======
+            // Only dump object internals if a custom caster exists.
+            $cloner->addCasters(['*' => function ($obj, $a, $stub, $isNested, $filter = 0) {
+                $class = $stub->class;
+                $classes = [$class => $class] + class_parents($class) + class_implements($class);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
                 foreach ($classes as $class) {
                     if (isset(AbstractCloner::$defaultCasters[$class])) {
@@ -206,10 +243,13 @@ class PrettyPageHandler extends Handler
             $customCssFile = $this->getResource($this->customCss);
         }
 
+<<<<<<< HEAD
         if ($this->customJs) {
             $customJsFile = $this->getResource($this->customJs);
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $inspector = $this->getInspector();
         $frames = $this->getExceptionFrames();
         $code = $this->getExceptionCode();
@@ -269,10 +309,13 @@ class PrettyPageHandler extends Handler
             $vars["stylesheet"] .= file_get_contents($customCssFile);
         }
 
+<<<<<<< HEAD
         if (isset($customJsFile)) {
             $vars["javascript"] .= file_get_contents($customJsFile);
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // Add extra entries list of data tables:
         // @todo: Consolidate addDataTable and addDataTableCallback
         $extraTables = array_map(function ($table) use ($inspector) {
@@ -292,9 +335,15 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Get the stack trace frames of the exception currently being handled.
      *
      * @return \Whoops\Exception\FrameCollection
+=======
+     * Get the stack trace frames of the exception that is currently being handled.
+     *
+     * @return \Whoops\Exception\FrameCollection;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected function getExceptionFrames()
     {
@@ -315,7 +364,11 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Get the code of the exception currently being handled.
+=======
+     * Get the code of the exception that is currently being handled.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return string
      */
@@ -342,6 +395,7 @@ class PrettyPageHandler extends Handler
 
     /**
      * Adds an entry to the list of tables displayed in the template.
+<<<<<<< HEAD
      *
      * The expected data is a simple associative array. Any nested arrays
      * will be flattened with `print_r`.
@@ -350,6 +404,12 @@ class PrettyPageHandler extends Handler
      * @param array  $data
      *
      * @return void
+=======
+     * The expected data is a simple associative array. Any nested arrays
+     * will be flattened with print_r
+     * @param string $label
+     * @param array  $data
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function addDataTable($label, array $data)
     {
@@ -358,6 +418,7 @@ class PrettyPageHandler extends Handler
 
     /**
      * Lazily adds an entry to the list of tables displayed in the table.
+<<<<<<< HEAD
      *
      * The supplied callback argument will be called when the error is
      * rendered, it should produce a simple associative array. Any nested
@@ -369,6 +430,15 @@ class PrettyPageHandler extends Handler
      * @throws InvalidArgumentException If $callback is not callable
      *
      * @return void
+=======
+     * The supplied callback argument will be called when the error is rendered,
+     * it should produce a simple associative array. Any nested arrays will
+     * be flattened with print_r.
+     *
+     * @throws InvalidArgumentException If $callback is not callable
+     * @param  string                   $label
+     * @param  callable                 $callback Callable returning an associative array
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function addDataTableCallback($label, /* callable */ $callback)
     {
@@ -391,12 +461,18 @@ class PrettyPageHandler extends Handler
 
     /**
      * Returns all the extra data tables registered with this handler.
+<<<<<<< HEAD
      *
      * Optionally accepts a 'label' parameter, to only return the data table
      * under that label.
      *
      * @param string|null $label
      *
+=======
+     * Optionally accepts a 'label' parameter, to only return the data
+     * table under that label.
+     * @param  string|null      $label
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array[]|callable
      */
     public function getDataTables($label = null)
@@ -410,6 +486,7 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Set whether to handle unconditionally.
      *
      * Allows to disable all attempts to dynamically decide whether to handle
@@ -418,6 +495,12 @@ class PrettyPageHandler extends Handler
      *
      * @param bool|null $value
      *
+=======
+     * Allows to disable all attempts to dynamically decide whether to
+     * handle or return prematurely.
+     * Set this to ensure that the handler will perform no matter what.
+     * @param  bool|null $value
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return bool|null
      */
     public function handleUnconditionally($value = null)
@@ -430,11 +513,18 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Adds an editor resolver.
      *
      * Either a string, or a closure that resolves a string, that can be used
      * to open a given file in an editor. If the string contains the special
      * substrings %file or %line, they will be replaced with the correct data.
+=======
+     * Adds an editor resolver, identified by a string
+     * name, and that may be a string path, or a callable
+     * resolver. If the callable returns a string, it will
+     * be set as the file reference's href attribute.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @example
      *  $run->addEditor('macvim', "mvim://open?url=file://%file&line=%line")
@@ -443,11 +533,16 @@ class PrettyPageHandler extends Handler
      *       unlink($file);
      *       return "http://stackoverflow.com";
      *   });
+<<<<<<< HEAD
      *
      * @param string          $identifier
      * @param string|callable $resolver
      *
      * @return void
+=======
+     * @param string $identifier
+     * @param string|callable $resolver
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function addEditor($identifier, $resolver)
     {
@@ -455,21 +550,33 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Set the editor to use to open referenced files.
      *
      * Pass either the name of a configured editor, or a closure that directly
      * resolves an editor string.
+=======
+     * Set the editor to use to open referenced files, by a string
+     * identifier, or a callable that will be executed for every
+     * file reference, with a $file and $line argument, and should
+     * return a string.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @example
      *   $run->setEditor(function($file, $line) { return "file:///{$file}"; });
      * @example
      *   $run->setEditor('sublime');
      *
+<<<<<<< HEAD
      * @param string|callable $editor
      *
      * @throws InvalidArgumentException If invalid argument identifier provided
      *
      * @return void
+=======
+     * @throws InvalidArgumentException If invalid argument identifier provided
+     * @param  string|callable          $editor
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setEditor($editor)
     {
@@ -484,6 +591,7 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Get the editor href for a given file and line, if available.
      *
      * @param string $filePath
@@ -491,6 +599,16 @@ class PrettyPageHandler extends Handler
      *
      * @throws InvalidArgumentException If editor resolver does not return a string
      *
+=======
+     * Given a string file path, and an integer file line,
+     * executes the editor resolver and returns, if available,
+     * a string that may be used as the href property for that
+     * file reference.
+     *
+     * @throws InvalidArgumentException If editor resolver does not return a string
+     * @param  string                   $filePath
+     * @param  int                      $line
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string|bool
      */
     public function getEditorHref($filePath, $line)
@@ -516,6 +634,7 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Determine if the editor link should act as an Ajax request.
      *
      * @param string  $filePath
@@ -523,6 +642,15 @@ class PrettyPageHandler extends Handler
      *
      * @throws UnexpectedValueException If editor resolver does not return a boolean
      *
+=======
+     * Given a boolean if the editor link should
+     * act as an Ajax request. The editor must be a
+     * valid callable function/closure
+     *
+     * @throws UnexpectedValueException  If editor resolver does not return a boolean
+     * @param  string                   $filePath
+     * @param  int                      $line
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return bool
      */
     public function getEditorAjax($filePath, $line)
@@ -539,11 +667,20 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Determines both the editor and if ajax should be used.
      *
      * @param string $filePath
      * @param int    $line
      *
+=======
+     * Given a boolean if the editor link should
+     * act as an Ajax request. The editor must be a
+     * valid callable function/closure
+     *
+     * @param  string $filePath
+     * @param  int    $line
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array
      */
     protected function getEditor($filePath, $line)
@@ -587,10 +724,14 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Set the page title.
      *
      * @param string $title
      *
+=======
+     * @param  string $title
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function setPageTitle($title)
@@ -599,8 +740,11 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Get the page title.
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function getPageTitle()
@@ -609,12 +753,21 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Adds a path to the list of paths to be searched for resources.
      *
      * @param  string $path
      *
      * @throws InvalidArgumentException If $path is not a valid directory
      *
+=======
+     * Adds a path to the list of paths to be searched for
+     * resources.
+     *
+     * @throws InvalidArgumentException If $path is not a valid directory
+     *
+     * @param  string $path
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function addResourcePath($path)
@@ -631,8 +784,12 @@ class PrettyPageHandler extends Handler
     /**
      * Adds a custom css file to be loaded.
      *
+<<<<<<< HEAD
      * @param string $name
      *
+=======
+     * @param  string $name
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function addCustomCss($name)
@@ -641,6 +798,7 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+<<<<<<< HEAD
      * Adds a custom js file to be loaded.
      *
      * @param  string $name
@@ -652,6 +810,8 @@ class PrettyPageHandler extends Handler
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array
      */
     public function getResourcePaths()
@@ -661,6 +821,7 @@ class PrettyPageHandler extends Handler
 
     /**
      * Finds a resource, by its relative path, in all available search paths.
+<<<<<<< HEAD
      *
      * The search is performed starting at the last search path, and all the
      * way back to the first, enabling a cascading-type system of overrides for
@@ -670,6 +831,15 @@ class PrettyPageHandler extends Handler
      *
      * @throws RuntimeException If resource cannot be found in any of the available paths
      *
+=======
+     * The search is performed starting at the last search path, and all the
+     * way back to the first, enabling a cascading-type system of overrides
+     * for all resources.
+     *
+     * @throws RuntimeException If resource cannot be found in any of the available paths
+     *
+     * @param  string $resource
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     protected function getResource($resource)
@@ -715,8 +885,12 @@ class PrettyPageHandler extends Handler
     /**
      * @deprecated
      *
+<<<<<<< HEAD
      * @param string $resourcesPath
      *
+=======
+     * @param  string $resourcesPath
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function setResourcesPath($resourcesPath)
@@ -738,8 +912,11 @@ class PrettyPageHandler extends Handler
      * Set the application paths.
      *
      * @param array $applicationPaths
+<<<<<<< HEAD
      *
      * @return void
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setApplicationPaths($applicationPaths)
     {
@@ -750,8 +927,11 @@ class PrettyPageHandler extends Handler
      * Set the application root path.
      *
      * @param string $applicationRootPath
+<<<<<<< HEAD
      *
      * @return void
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setApplicationRootPath($applicationRootPath)
     {
@@ -761,10 +941,15 @@ class PrettyPageHandler extends Handler
     /**
      * blacklist a sensitive value within one of the superglobal arrays.
      *
+<<<<<<< HEAD
      * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
      * @param string $key             The key within the superglobal
      *
      * @return void
+=======
+     * @param $superGlobalName string the name of the superglobal array, e.g. '_GET'
+     * @param $key string the key within the superglobal
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function blacklist($superGlobalName, $key)
     {
@@ -773,6 +958,7 @@ class PrettyPageHandler extends Handler
 
     /**
      * Checks all values within the given superGlobal array.
+<<<<<<< HEAD
      *
      * Blacklisted values will be replaced by a equal length string cointaining
      * only '*' characters. We intentionally dont rely on $GLOBALS as it
@@ -781,6 +967,14 @@ class PrettyPageHandler extends Handler
      * @param array $superGlobal      One of the superglobal arrays
      * @param string $superGlobalName The name of the superglobal array, e.g. '_GET'
      *
+=======
+     * Blacklisted values will be replaced by a equal length string cointaining only '*' characters.
+     *
+     * We intentionally dont rely on $GLOBALS as it depends on 'auto_globals_jit' php.ini setting.
+     *
+     * @param $superGlobal array One of the superglobal arrays
+     * @param $superGlobalName string the name of the superglobal array, e.g. '_GET'
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return array $values without sensitive data
      */
     private function masked(array $superGlobal, $superGlobalName)
@@ -788,13 +982,19 @@ class PrettyPageHandler extends Handler
         $blacklisted = $this->blacklist[$superGlobalName];
 
         $values = $superGlobal;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($blacklisted as $key) {
             if (isset($superGlobal[$key]) && is_string($superGlobal[$key])) {
                 $values[$key] = str_repeat('*', strlen($superGlobal[$key]));
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return $values;
     }
 }

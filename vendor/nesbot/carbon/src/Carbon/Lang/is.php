@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Kristján Ingi Geirsson
  */
@@ -36,9 +40,12 @@ return [
     'day_of_first_week_of_year' => 4,
     'list' => [', ', ' og '],
     'meridiem' => ['fh', 'eh'],
+<<<<<<< HEAD
     'diff_now' => 'núna',
     'diff_yesterday' => 'í gær',
     'diff_tomorrow' => 'á morgun',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

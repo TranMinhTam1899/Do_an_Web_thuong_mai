@@ -656,8 +656,11 @@ abstract class ParserAbstract implements Parser
             'iterable' => true,
             'void'     => true,
             'object'   => true,
+<<<<<<< HEAD
             'null'     => true,
             'false'    => true,
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ];
 
         if (!$name->isUnqualified()) {
@@ -842,6 +845,7 @@ abstract class ParserAbstract implements Parser
     }
 
     /**
+<<<<<<< HEAD
      * Create attributes for a zero-length common-capturing nop.
      *
      * @param Comment[] $comments
@@ -865,6 +869,23 @@ abstract class ParserAbstract implements Parser
         if (-1 !== $commentEndTokenPos) {
             $attributes['startTokenPos'] = $commentEndTokenPos + 1;
             $attributes['endTokenPos'] = $commentEndTokenPos;
+=======
+     * Create attributes for a zero-length node with the given start attributes.
+     *
+     * @param array $startAttributes
+     * @return array
+     */
+    protected function createZeroLengthAttributes(array $startAttributes) {
+        $attributes = $startAttributes;
+        if (isset($startAttributes['startLine'])) {
+            $attributes['endLine'] = $startAttributes['startLine'];
+        }
+        if (isset($startAttributes['startTokenPos'])) {
+            $attributes['endTokenPos'] = $startAttributes['startTokenPos'] - 1;
+        }
+        if (isset($startAttributes['startFilePos'])) {
+            $attributes['endFilePos'] = $startAttributes['startFilePos'] - 1;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         return $attributes;
     }

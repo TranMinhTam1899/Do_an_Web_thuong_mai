@@ -61,6 +61,7 @@ class RouteCompiler implements RouteCompilerInterface
             $hostRegex = $result['regex'];
         }
 
+<<<<<<< HEAD
         $locale = $route->getDefault('_locale');
         if (null !== $locale && null !== $route->getDefault('_canonical_route') && preg_quote($locale, self::REGEX_DELIMITER) === $route->getRequirement('_locale')) {
             $requirements = $route->getRequirements();
@@ -69,6 +70,8 @@ class RouteCompiler implements RouteCompilerInterface
             $route->setPath(str_replace('{_locale}', $locale, $route->getPath()));
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $path = $route->getPath();
 
         $result = self::compilePattern($route, $path, false);
@@ -100,7 +103,11 @@ class RouteCompiler implements RouteCompilerInterface
         );
     }
 
+<<<<<<< HEAD
     private static function compilePattern(Route $route, string $pattern, bool $isHost): array
+=======
+    private static function compilePattern(Route $route, $pattern, $isHost)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $tokens = [];
         $variables = [];
@@ -147,7 +154,11 @@ class RouteCompiler implements RouteCompilerInterface
             }
 
             if (\strlen($varName) > self::VARIABLE_MAXIMUM_LENGTH) {
+<<<<<<< HEAD
                 throw new \DomainException(sprintf('Variable name "%s" cannot be longer than %d characters in route pattern "%s". Please use a shorter name.', $varName, self::VARIABLE_MAXIMUM_LENGTH, $pattern));
+=======
+                throw new \DomainException(sprintf('Variable name "%s" cannot be longer than %s characters in route pattern "%s". Please use a shorter name.', $varName, self::VARIABLE_MAXIMUM_LENGTH, $pattern));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             if ($isSeparator && $precedingText !== $precedingChar) {

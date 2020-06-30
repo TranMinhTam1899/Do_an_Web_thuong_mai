@@ -9,7 +9,11 @@ use Egulias\EmailValidator\Exception\InvalidEmail;
 class RFCValidation implements EmailValidation
 {
     /**
+<<<<<<< HEAD
      * @var EmailParser|null
+=======
+     * @var EmailParser
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $parser;
 
@@ -19,7 +23,11 @@ class RFCValidation implements EmailValidation
     private $warnings = [];
 
     /**
+<<<<<<< HEAD
      * @var InvalidEmail|null
+=======
+     * @var InvalidEmail
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $error;
 

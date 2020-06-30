@@ -224,14 +224,22 @@ class Expectation implements ExpectationInterface
     {
         $mockClass = get_class($this->_mock);
         $container = $this->_mock->mockery_getContainer();
+<<<<<<< HEAD
         /** @var Mock[] $mocks */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $mocks = $container->getMocks();
         foreach ($this->_setQueue as $name => &$values) {
             if (count($values) > 0) {
                 $value = array_shift($values);
+<<<<<<< HEAD
                 $this->_mock->{$name} = $value;
                 foreach ($mocks as $mock) {
                     if (is_a($mock, $mockClass) && $mock->mockery_isInstance()) {
+=======
+                foreach ($mocks as $mock) {
+                    if (is_a($mock, $mockClass)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         $mock->{$name} = $value;
                     }
                 }
@@ -561,6 +569,7 @@ class Expectation implements ExpectationInterface
     }
 
     /**
+<<<<<<< HEAD
      * Sets up a closure to return the nth argument from the expected method call
      *
      * @param int $index
@@ -583,6 +592,8 @@ class Expectation implements ExpectationInterface
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Return a self-returning black hole object.
      *
      * @return self

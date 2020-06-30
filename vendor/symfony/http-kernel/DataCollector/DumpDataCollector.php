@@ -98,12 +98,16 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         }
     }
 
+<<<<<<< HEAD
     /**
      * {@inheritdoc}
      *
      * @param \Throwable|null $exception
      */
     public function collect(Request $request, Response $response/*, \Throwable $exception = null*/)
+=======
+    public function collect(Request $request, Response $response, \Exception $exception = null)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->dataCount) {
             $this->data = [];
@@ -153,7 +157,11 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
     /**
      * @internal
      */
+<<<<<<< HEAD
     public function __sleep(): array
+=======
+    public function __sleep()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->dataCount) {
             $this->data = [];
@@ -198,7 +206,11 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
             $dumper = new HtmlDumper($data, $this->charset);
             $dumper->setDisplayOptions(['fileLinkFormat' => $this->fileLinkFormat]);
         } else {
+<<<<<<< HEAD
             throw new \InvalidArgumentException(sprintf('Invalid dump format: "%s".', $format));
+=======
+            throw new \InvalidArgumentException(sprintf('Invalid dump format: %s', $format));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         $dumps = [];
 
@@ -261,7 +273,11 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
         }
     }
 
+<<<<<<< HEAD
     private function doDump(DataDumperInterface $dumper, $data, string $name, string $file, int $line)
+=======
+    private function doDump(DataDumperInterface $dumper, $data, $name, $file, $line)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($dumper instanceof CliDumper) {
             $contextDumper = function ($name, $file, $line, $fmt) {

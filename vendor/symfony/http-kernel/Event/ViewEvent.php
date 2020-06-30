@@ -19,8 +19,11 @@ namespace Symfony\Component\HttpKernel\Event;
  * response is set.
  *
  * @author Bernhard Schussek <bschussek@gmail.com>
+<<<<<<< HEAD
  *
  * @final since Symfony 4.4
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class ViewEvent extends GetResponseForControllerResultEvent
 {

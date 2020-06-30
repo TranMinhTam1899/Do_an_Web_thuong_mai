@@ -3,6 +3,7 @@
 namespace Illuminate\Broadcasting;
 
 use Closure;
+<<<<<<< HEAD
 use Pusher\Pusher;
 use Psr\Log\LoggerInterface;
 use InvalidArgumentException;
@@ -12,6 +13,17 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Broadcasting\Broadcasters\RedisBroadcaster;
 use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
 use Illuminate\Contracts\Broadcasting\Factory as FactoryContract;
+=======
+use Illuminate\Broadcasting\Broadcasters\LogBroadcaster;
+use Illuminate\Broadcasting\Broadcasters\NullBroadcaster;
+use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
+use Illuminate\Broadcasting\Broadcasters\RedisBroadcaster;
+use Illuminate\Contracts\Broadcasting\Factory as FactoryContract;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
+use InvalidArgumentException;
+use Psr\Log\LoggerInterface;
+use Pusher\Pusher;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Contracts\Broadcasting\Broadcaster

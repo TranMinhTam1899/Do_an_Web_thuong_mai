@@ -1,19 +1,28 @@
 <?php
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+<<<<<<< HEAD
+=======
+ * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @link      http://phpdoc.org
  */
 
 namespace phpDocumentor\Reflection\DocBlock;
 
 use phpDocumentor\Reflection\Types\Context as TypeContext;
+<<<<<<< HEAD
 use Webmozart\Assert\Assert;
 use function count;
 use function explode;
@@ -27,6 +36,8 @@ use function strpos;
 use function substr;
 use function trim;
 use const PREG_SPLIT_DELIM_CAPTURE;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Creates a new Description object given a body of text.
@@ -52,6 +63,11 @@ class DescriptionFactory
 
     /**
      * Initializes this factory with the means to construct (inline) tags.
+<<<<<<< HEAD
+=======
+     *
+     * @param TagFactory $tagFactory
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(TagFactory $tagFactory)
     {
@@ -60,6 +76,7 @@ class DescriptionFactory
 
     /**
      * Returns the parsed text of this description.
+<<<<<<< HEAD
      */
     public function create(string $contents, ?TypeContext $context = null) : Description
     {
@@ -82,14 +99,35 @@ class DescriptionFactory
         }
 
         return new Description(implode('', $tokens), $tags);
+=======
+     *
+     * @param string $contents
+     * @param TypeContext $context
+     *
+     * @return Description
+     */
+    public function create($contents, TypeContext $context = null)
+    {
+        list($text, $tags) = $this->parse($this->lex($contents), $context);
+
+        return new Description($text, $tags);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Strips the contents from superfluous whitespace and splits the description into a series of tokens.
      *
+<<<<<<< HEAD
      * @return string[] A series of tokens of which the description text is composed.
      */
     private function lex(string $contents) : array
+=======
+     * @param string $contents
+     *
+     * @return string[] A series of tokens of which the description text is composed.
+     */
+    private function lex($contents)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $contents = $this->removeSuperfluousStartingWhitespace($contents);
 
@@ -98,7 +136,11 @@ class DescriptionFactory
             return [$contents];
         }
 
+<<<<<<< HEAD
         $parts =  preg_split(
+=======
+        return preg_split(
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             '/\{
                 # "{@}" is not a valid inline tag. This ensures that we do not treat it as one, but treat it literally.
                 (?!@\})
@@ -124,12 +166,48 @@ class DescriptionFactory
                 )
             \}/Sux',
             $contents,
+<<<<<<< HEAD
             0,
             PREG_SPLIT_DELIM_CAPTURE
         );
         Assert::isArray($parts);
 
         return $parts;
+=======
+            null,
+            PREG_SPLIT_DELIM_CAPTURE
+        );
+    }
+
+    /**
+     * Parses the stream of tokens in to a new set of tokens containing Tags.
+     *
+     * @param string[] $tokens
+     * @param TypeContext $context
+     *
+     * @return string[]|Tag[]
+     */
+    private function parse($tokens, TypeContext $context)
+    {
+        $count = count($tokens);
+        $tagCount = 0;
+        $tags  = [];
+
+        for ($i = 1; $i < $count; $i += 2) {
+            $tags[] = $this->tagFactory->create($tokens[$i], $context);
+            $tokens[$i] = '%' . ++$tagCount . '$s';
+        }
+
+        //In order to allow "literal" inline tags, the otherwise invalid
+        //sequence "{@}" is changed to "@", and "{}" is changed to "}".
+        //"%" is escaped to "%%" because of vsprintf.
+        //See unit tests for examples.
+        for ($i = 0; $i < $count; $i += 2) {
+            $tokens[$i] = str_replace(['{@}', '{}', '%'], ['@', '}', '%%'], $tokens[$i]);
+        }
+
+        return [implode('', $tokens), $tags];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -145,8 +223,17 @@ class DescriptionFactory
      *
      * If we do not normalize the indentation then we have superfluous whitespace on the second and subsequent
      * lines and this may cause rendering issues when, for example, using a Markdown converter.
+<<<<<<< HEAD
      */
     private function removeSuperfluousStartingWhitespace(string $contents) : string
+=======
+     *
+     * @param string $contents
+     *
+     * @return string
+     */
+    private function removeSuperfluousStartingWhitespace($contents)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $lines = explode("\n", $contents);
 
@@ -158,9 +245,15 @@ class DescriptionFactory
 
         // determine how many whitespace characters need to be stripped
         $startingSpaceCount = 9999999;
+<<<<<<< HEAD
         for ($i = 1, $iMax = count($lines); $i < $iMax; ++$i) {
             // lines with a no length do not count as they are not indented at all
             if (trim($lines[$i]) === '') {
+=======
+        for ($i = 1; $i < count($lines); $i++) {
+            // lines with a no length do not count as they are not indented at all
+            if (strlen(trim($lines[$i])) === 0) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 continue;
             }
 
@@ -171,7 +264,11 @@ class DescriptionFactory
 
         // strip the number of spaces from each line
         if ($startingSpaceCount > 0) {
+<<<<<<< HEAD
             for ($i = 1, $iMax = count($lines); $i < $iMax; ++$i) {
+=======
+            for ($i = 1; $i < count($lines); $i++) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $lines[$i] = substr($lines[$i], $startingSpaceCount);
             }
         }

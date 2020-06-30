@@ -106,7 +106,11 @@ class PhpStringTokenParser
         );
     }
 
+<<<<<<< HEAD
     private static function parseCallback(array $matches): string
+=======
+    private static function parseCallback($matches)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $str = $matches[1];
 

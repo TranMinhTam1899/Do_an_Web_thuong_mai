@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -14,7 +18,11 @@ use SebastianBergmann\Diff\Differ;
 /**
  * ...
  */
+<<<<<<< HEAD
 class StringMatchesFormatDescription extends RegularExpression
+=======
+final class StringMatchesFormatDescription extends RegularExpression
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -68,9 +76,13 @@ class StringMatchesFormatDescription extends RegularExpression
         $this->string = \implode("\n", $from);
         $other        = \implode("\n", $to);
 
+<<<<<<< HEAD
         $differ = new Differ("--- Expected\n+++ Actual\n");
 
         return $differ->diff($this->string, $other);
+=======
+        return (new Differ("--- Expected\n+++ Actual\n"))->diff($this->string, $other);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     private function createPatternFromFormat(string $string): string

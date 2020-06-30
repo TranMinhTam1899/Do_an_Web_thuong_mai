@@ -1,6 +1,7 @@
 --TEST--
 phpunit --colors=never --coverage-text=php://stdout IgnoreCodeCoverageClassTest ../../_files/IgnoreCodeCoverageClassTest.php --whitelist ../../../tests/_files/IgnoreCodeCoverageClass.php
 --SKIPIF--
+<<<<<<< HEAD
 <?php
 if (!extension_loaded('xdebug')) {
     print 'skip: Extension xdebug is required.';
@@ -8,6 +9,14 @@ if (!extension_loaded('xdebug')) {
 ?>
 --FILE--
 <?php
+=======
+<?php declare(strict_types=1);
+if (!extension_loaded('xdebug')) {
+    print 'skip: Extension xdebug is required.';
+}
+--FILE--
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '--no-configuration';
 $_SERVER['argv'][2] = '--colors=never';
 $_SERVER['argv'][3] = '--coverage-text=php://stdout';
@@ -33,4 +42,8 @@ Code Coverage Report:%w
  Summary:%w
   Classes:%w(0/0)%w
   Methods:%w(0/0)%w
+<<<<<<< HEAD
   Lines:%w(0/0)%w
+=======
+  Lines:%w(0/0)%w
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933

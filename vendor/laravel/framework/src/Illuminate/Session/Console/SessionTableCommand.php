@@ -3,8 +3,13 @@
 namespace Illuminate\Session\Console;
 
 use Illuminate\Console\Command;
+<<<<<<< HEAD
 use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
+=======
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Composer;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SessionTableCommand extends Command
 {

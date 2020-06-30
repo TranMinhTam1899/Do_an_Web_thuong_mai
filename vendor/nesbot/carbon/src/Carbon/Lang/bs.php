@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - bokideckonja
  * - Josh Soref
@@ -23,8 +27,13 @@ return [
     'y' => ':count godina|:count godine|:count godina',
     'month' => ':count mjesec|:count mjeseca|:count mjeseci',
     'm' => ':count mjesec|:count mjeseca|:count mjeseci',
+<<<<<<< HEAD
     'week' => ':count sedmice|:count sedmicu|:count sedmica',
     'w' => ':count sedmice|:count sedmicu|:count sedmica',
+=======
+    'week' => ':count nedjelja|:count nedjelje|:count nedjelja',
+    'w' => ':count nedjelja|:count nedjelje|:count nedjelja',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'day' => ':count dan|:count dana|:count dana',
     'd' => ':count dan|:count dana|:count dana',
     'hour' => ':count sat|:count sata|:count sati',
@@ -37,7 +46,10 @@ return [
     'from_now' => 'za :time',
     'after' => 'nakon :time',
     'before' => ':time ranije',
+<<<<<<< HEAD
     'diff_now' => 'sada',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'jučer',
     'diff_tomorrow' => 'sutra',
     'formats' => [

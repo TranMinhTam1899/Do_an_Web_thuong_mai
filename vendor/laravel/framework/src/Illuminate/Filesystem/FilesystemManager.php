@@ -2,6 +2,7 @@
 
 namespace Illuminate\Filesystem;
 
+<<<<<<< HEAD
 use Closure;
 use Aws\S3\S3Client;
 use OpenCloud\Rackspace;
@@ -18,6 +19,22 @@ use League\Flysystem\Adapter\Local as LocalAdapter;
 use League\Flysystem\AwsS3v3\AwsS3Adapter as S3Adapter;
 use League\Flysystem\Cached\Storage\Memory as MemoryStore;
 use Illuminate\Contracts\Filesystem\Factory as FactoryContract;
+=======
+use Aws\S3\S3Client;
+use Closure;
+use Illuminate\Contracts\Filesystem\Factory as FactoryContract;
+use Illuminate\Support\Arr;
+use InvalidArgumentException;
+use League\Flysystem\Adapter\Ftp as FtpAdapter;
+use League\Flysystem\Adapter\Local as LocalAdapter;
+use League\Flysystem\AdapterInterface;
+use League\Flysystem\AwsS3v3\AwsS3Adapter as S3Adapter;
+use League\Flysystem\Cached\CachedAdapter;
+use League\Flysystem\Cached\Storage\Memory as MemoryStore;
+use League\Flysystem\Filesystem as Flysystem;
+use League\Flysystem\FilesystemInterface;
+use League\Flysystem\Sftp\SftpAdapter;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Illuminate\Contracts\Filesystem\Filesystem
@@ -227,6 +244,7 @@ class FilesystemManager implements FactoryContract
     }
 
     /**
+<<<<<<< HEAD
      * Create an instance of the Rackspace driver.
      *
      * @param  array  $config
@@ -262,6 +280,8 @@ class FilesystemManager implements FactoryContract
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create a Flysystem instance with the given adapter.
      *
      * @param  \League\Flysystem\AdapterInterface  $adapter

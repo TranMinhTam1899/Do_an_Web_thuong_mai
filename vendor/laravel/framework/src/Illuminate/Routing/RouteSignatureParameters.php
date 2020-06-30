@@ -2,9 +2,15 @@
 
 namespace Illuminate\Routing;
 
+<<<<<<< HEAD
 use ReflectionMethod;
 use ReflectionFunction;
 use Illuminate\Support\Str;
+=======
+use Illuminate\Support\Str;
+use ReflectionFunction;
+use ReflectionMethod;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RouteSignatureParameters
 {

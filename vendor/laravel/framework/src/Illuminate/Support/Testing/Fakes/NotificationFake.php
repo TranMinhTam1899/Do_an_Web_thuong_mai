@@ -2,6 +2,7 @@
 
 namespace Illuminate\Support\Testing\Fakes;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Traits\Macroable;
@@ -11,6 +12,17 @@ use Illuminate\Contracts\Notifications\Factory as NotificationFactory;
 use Illuminate\Contracts\Notifications\Dispatcher as NotificationDispatcher;
 
 class NotificationFake implements NotificationFactory, NotificationDispatcher
+=======
+use Illuminate\Contracts\Notifications\Dispatcher as NotificationDispatcher;
+use Illuminate\Contracts\Notifications\Factory as NotificationFactory;
+use Illuminate\Contracts\Translation\HasLocalePreference;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use PHPUnit\Framework\Assert as PHPUnit;
+
+class NotificationFake implements NotificationDispatcher, NotificationFactory
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     use Macroable;
 

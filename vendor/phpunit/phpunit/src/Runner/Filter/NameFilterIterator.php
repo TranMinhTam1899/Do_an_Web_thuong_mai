@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,22 +19,41 @@ use PHPUnit\Util\RegularExpression;
 use RecursiveFilterIterator;
 use RecursiveIterator;
 
+<<<<<<< HEAD
 class NameFilterIterator extends RecursiveFilterIterator
+=======
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class NameFilterIterator extends RecursiveFilterIterator
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
      */
+<<<<<<< HEAD
     protected $filter;
+=======
+    private $filter;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var int
      */
+<<<<<<< HEAD
     protected $filterMin;
+=======
+    private $filterMin;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @var int
      */
+<<<<<<< HEAD
     protected $filterMax;
+=======
+    private $filterMax;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     /**
      * @throws \Exception
@@ -42,6 +65,12 @@ class NameFilterIterator extends RecursiveFilterIterator
         $this->setFilter($filter);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function accept(): bool
     {
         $test = $this->getInnerIterator()->current();
@@ -54,12 +83,19 @@ class NameFilterIterator extends RecursiveFilterIterator
 
         if ($test instanceof WarningTestCase) {
             $name = $test->getMessage();
+<<<<<<< HEAD
         } else {
             if ($tmp[0] !== '') {
                 $name = \implode('::', $tmp);
             } else {
                 $name = $tmp[1];
             }
+=======
+        } elseif ($tmp[0] !== '') {
+            $name = \implode('::', $tmp);
+        } else {
+            $name = $tmp[1];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $accepted = @\preg_match($this->filter, $name, $matches);
@@ -75,7 +111,11 @@ class NameFilterIterator extends RecursiveFilterIterator
     /**
      * @throws \Exception
      */
+<<<<<<< HEAD
     protected function setFilter(string $filter): void
+=======
+    private function setFilter(string $filter): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (RegularExpression::safeMatch($filter, '') === false) {
             // Handles:

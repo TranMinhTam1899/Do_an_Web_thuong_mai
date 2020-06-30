@@ -22,21 +22,39 @@ final class SessionBagProxy implements SessionBagInterface
     private $data;
     private $usageIndex;
 
+<<<<<<< HEAD
     public function __construct(SessionBagInterface $bag, array &$data, ?int &$usageIndex)
+=======
+    public function __construct(SessionBagInterface $bag, array &$data, &$usageIndex)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->bag = $bag;
         $this->data = &$data;
         $this->usageIndex = &$usageIndex;
     }
 
+<<<<<<< HEAD
     public function getBag(): SessionBagInterface
+=======
+    /**
+     * @return SessionBagInterface
+     */
+    public function getBag()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         ++$this->usageIndex;
 
         return $this->bag;
     }
 
+<<<<<<< HEAD
     public function isEmpty(): bool
+=======
+    /**
+     * @return bool
+     */
+    public function isEmpty()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!isset($this->data[$this->bag->getStorageKey()])) {
             return true;
@@ -49,7 +67,11 @@ final class SessionBagProxy implements SessionBagInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getName(): string
+=======
+    public function getName()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->bag->getName();
     }
@@ -57,7 +79,11 @@ final class SessionBagProxy implements SessionBagInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function initialize(array &$array): void
+=======
+    public function initialize(array &$array)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         ++$this->usageIndex;
         $this->data[$this->bag->getStorageKey()] = &$array;
@@ -68,7 +94,11 @@ final class SessionBagProxy implements SessionBagInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function getStorageKey(): string
+=======
+    public function getStorageKey()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->bag->getStorageKey();
     }

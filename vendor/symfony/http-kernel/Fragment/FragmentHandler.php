@@ -33,8 +33,14 @@ class FragmentHandler
     private $requestStack;
 
     /**
+<<<<<<< HEAD
      * @param FragmentRendererInterface[] $renderers An array of FragmentRendererInterface instances
      * @param bool                        $debug     Whether the debug mode is enabled or not
+=======
+     * @param RequestStack                $requestStack The Request stack that controls the lifecycle of requests
+     * @param FragmentRendererInterface[] $renderers    An array of FragmentRendererInterface instances
+     * @param bool                        $debug        Whether the debug mode is enabled or not
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(RequestStack $requestStack, array $renderers = [], bool $debug = false)
     {
@@ -62,6 +68,10 @@ class FragmentHandler
      *
      * @param string|ControllerReference $uri      A URI as a string or a ControllerReference instance
      * @param string                     $renderer The renderer name
+<<<<<<< HEAD
+=======
+     * @param array                      $options  An array of options
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @return string|null The Response content or null when the Response is streamed
      *
@@ -98,7 +108,11 @@ class FragmentHandler
     protected function deliver(Response $response)
     {
         if (!$response->isSuccessful()) {
+<<<<<<< HEAD
             throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %d).', $this->requestStack->getCurrentRequest()->getUri(), $response->getStatusCode()));
+=======
+            throw new \RuntimeException(sprintf('Error when rendering "%s" (Status code is %s).', $this->requestStack->getCurrentRequest()->getUri(), $response->getStatusCode()));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         if (!$response instanceof StreamedResponse) {

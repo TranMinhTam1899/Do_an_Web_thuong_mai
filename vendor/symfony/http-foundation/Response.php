@@ -11,9 +11,12 @@
 
 namespace Symfony\Component\HttpFoundation;
 
+<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(ResponseHeaderBag::class);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Response represents an HTTP response.
  *
@@ -270,12 +273,19 @@ class Response
             $this->setContent(null);
             $headers->remove('Content-Type');
             $headers->remove('Content-Length');
+<<<<<<< HEAD
             // prevent PHP from sending the Content-Type header based on default_mimetype
             ini_set('default_mimetype', '');
         } else {
             // Content-type based on the Request
             if (!$headers->has('Content-Type')) {
                 $format = $request->getRequestFormat(null);
+=======
+        } else {
+            // Content-type based on the Request
+            if (!$headers->has('Content-Type')) {
+                $format = $request->getRequestFormat();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 if (null !== $format && $mimeType = $request->getMimeType($format)) {
                     $headers->set('Content-Type', $mimeType);
                 }
@@ -633,7 +643,11 @@ class Response
     }
 
     /**
+<<<<<<< HEAD
      * Returns true if the response must be revalidated by shared caches once it has become stale.
+=======
+     * Returns true if the response must be revalidated by caches.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * This method indicates that the response must not be served stale by a
      * cache in any circumstance without first revalidating with the origin.
@@ -1029,7 +1043,11 @@ class Response
      */
     public function getVary(): array
     {
+<<<<<<< HEAD
         if (!$vary = $this->headers->all('Vary')) {
+=======
+        if (!$vary = $this->headers->get('Vary', null, false)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return [];
         }
 
@@ -1213,7 +1231,11 @@ class Response
      *
      * @final
      */
+<<<<<<< HEAD
     public static function closeOutputBuffers(int $targetLevel, bool $flush): void
+=======
+    public static function closeOutputBuffers(int $targetLevel, bool $flush)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $status = ob_get_status(true);
         $level = \count($status);
@@ -1235,7 +1257,11 @@ class Response
      *
      * @final
      */
+<<<<<<< HEAD
     protected function ensureIEOverSSLCompatibility(Request $request): void
+=======
+    protected function ensureIEOverSSLCompatibility(Request $request)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (false !== stripos($this->headers->get('Content-Disposition'), 'attachment') && 1 == preg_match('/MSIE (.*?);/i', $request->server->get('HTTP_USER_AGENT'), $match) && true === $request->isSecure()) {
             if ((int) preg_replace('/(MSIE )(.*?);/', '$2', $match[0]) < 9) {

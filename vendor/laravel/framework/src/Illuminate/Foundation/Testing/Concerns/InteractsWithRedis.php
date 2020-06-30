@@ -3,8 +3,13 @@
 namespace Illuminate\Foundation\Testing\Concerns;
 
 use Exception;
+<<<<<<< HEAD
 use Illuminate\Redis\RedisManager;
 use Illuminate\Foundation\Application;
+=======
+use Illuminate\Foundation\Application;
+use Illuminate\Redis\RedisManager;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait InteractsWithRedis
 {
@@ -33,6 +38,15 @@ trait InteractsWithRedis
         $host = getenv('REDIS_HOST') ?: '127.0.0.1';
         $port = getenv('REDIS_PORT') ?: 6379;
 
+<<<<<<< HEAD
+=======
+        if (! extension_loaded('redis')) {
+            $this->markTestSkipped('The redis extension is not installed. Please install the extension to enable '.__CLASS__);
+
+            return;
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (static::$connectionFailedOnceWithDefaultsSkip) {
             $this->markTestSkipped('Trying default host/port failed, please set environment variable REDIS_HOST & REDIS_PORT to enable '.__CLASS__);
 
@@ -42,6 +56,12 @@ trait InteractsWithRedis
         foreach ($this->redisDriverProvider() as $driver) {
             $this->redis[$driver[0]] = new RedisManager($app, $driver[0], [
                 'cluster' => false,
+<<<<<<< HEAD
+=======
+                'options' => [
+                    'prefix' => 'test_',
+                ],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 'default' => [
                     'host' => $host,
                     'port' => $port,
@@ -52,7 +72,11 @@ trait InteractsWithRedis
         }
 
         try {
+<<<<<<< HEAD
             $this->redis['predis']->connection()->flushdb();
+=======
+            $this->redis['phpredis']->connection()->flushdb();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         } catch (Exception $e) {
             if ($host === '127.0.0.1' && $port === 6379 && getenv('REDIS_HOST') === false) {
                 static::$connectionFailedOnceWithDefaultsSkip = true;
@@ -68,7 +92,11 @@ trait InteractsWithRedis
      */
     public function tearDownRedis()
     {
+<<<<<<< HEAD
         $this->redis['predis']->connection()->flushdb();
+=======
+        $this->redis['phpredis']->connection()->flushdb();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         foreach ($this->redisDriverProvider() as $driver) {
             $this->redis[$driver[0]]->connection()->disconnect();
@@ -82,6 +110,7 @@ trait InteractsWithRedis
      */
     public function redisDriverProvider()
     {
+<<<<<<< HEAD
         $providers = [
             ['predis'],
         ];
@@ -91,6 +120,12 @@ trait InteractsWithRedis
         }
 
         return $providers;
+=======
+        return [
+            ['predis'],
+            ['phpredis'],
+        ];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

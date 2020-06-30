@@ -3,6 +3,7 @@
 namespace Illuminate\Queue;
 
 use Exception;
+<<<<<<< HEAD
 use Throwable;
 use Illuminate\Support\Carbon;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -10,6 +11,16 @@ use Illuminate\Database\DetectsLostConnections;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Illuminate\Contracts\Cache\Repository as CacheContract;
+=======
+use Illuminate\Contracts\Cache\Repository as CacheContract;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Queue\Factory as QueueManager;
+use Illuminate\Database\DetectsLostConnections;
+use Illuminate\Support\Carbon;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Throwable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Worker
 {
@@ -18,7 +29,11 @@ class Worker
     /**
      * The queue manager instance.
      *
+<<<<<<< HEAD
      * @var \Illuminate\Queue\QueueManager
+=======
+     * @var \Illuminate\Contracts\Queue\Factory
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $manager;
 
@@ -44,6 +59,16 @@ class Worker
     protected $exceptions;
 
     /**
+<<<<<<< HEAD
+=======
+     * The callback used to determine if the application is in maintenance mode.
+     *
+     * @var \callable
+     */
+    protected $isDownForMaintenance;
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Indicates if the worker should exit.
      *
      * @var bool
@@ -60,18 +85,34 @@ class Worker
     /**
      * Create a new queue worker.
      *
+<<<<<<< HEAD
      * @param  \Illuminate\Queue\QueueManager  $manager
      * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      * @param  \Illuminate\Contracts\Debug\ExceptionHandler  $exceptions
+=======
+     * @param  \Illuminate\Contracts\Queue\Factory $manager
+     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \Illuminate\Contracts\Debug\ExceptionHandler  $exceptions
+     * @param  \callable $isDownForMaintenance
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function __construct(QueueManager $manager,
                                 Dispatcher $events,
+<<<<<<< HEAD
                                 ExceptionHandler $exceptions)
+=======
+                                ExceptionHandler $exceptions,
+                                callable $isDownForMaintenance)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->events = $events;
         $this->manager = $manager;
         $this->exceptions = $exceptions;
+<<<<<<< HEAD
+=======
+        $this->isDownForMaintenance = $isDownForMaintenance;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -176,7 +217,11 @@ class Worker
      */
     protected function daemonShouldRun(WorkerOptions $options, $connectionName, $queue)
     {
+<<<<<<< HEAD
         return ! (($this->manager->isDownForMaintenance() && ! $options->force) ||
+=======
+        return ! ((($this->isDownForMaintenance)() && ! $options->force) ||
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->paused ||
             $this->events->until(new Events\Looping($connectionName, $queue)) === false);
     }
@@ -642,7 +687,11 @@ class Worker
     /**
      * Set the queue manager instance.
      *
+<<<<<<< HEAD
      * @param  \Illuminate\Queue\QueueManager  $manager
+=======
+     * @param  \Illuminate\Contracts\Queue\Factory $manager
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return void
      */
     public function setManager(QueueManager $manager)

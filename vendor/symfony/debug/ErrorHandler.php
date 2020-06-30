@@ -23,8 +23,11 @@ use Symfony\Component\Debug\FatalErrorHandler\FatalErrorHandlerInterface;
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedFunctionFatalErrorHandler;
 use Symfony\Component\Debug\FatalErrorHandler\UndefinedMethodFatalErrorHandler;
 
+<<<<<<< HEAD
 @trigger_error(sprintf('The "%s" class is deprecated since Symfony 4.4, use "%s" instead.', ErrorHandler::class, \Symfony\Component\ErrorHandler\ErrorHandler::class), E_USER_DEPRECATED);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * A generic ErrorHandler for the PHP engine.
  *
@@ -49,8 +52,11 @@ use Symfony\Component\Debug\FatalErrorHandler\UndefinedMethodFatalErrorHandler;
  * @author Grégoire Pineau <lyrixx@lyrixx.info>
  *
  * @final since Symfony 4.3
+<<<<<<< HEAD
  *
  * @deprecated since Symfony 4.4, use Symfony\Component\ErrorHandler\ErrorHandler instead.
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class ErrorHandler
 {
@@ -176,8 +182,14 @@ class ErrorHandler
     /**
      * Sets a logger to non assigned errors levels.
      *
+<<<<<<< HEAD
      * @param array|int $levels  An array map of E_* to LogLevel::* or an integer bit field of E_* constants
      * @param bool      $replace Whether to replace or not any existing logger
+=======
+     * @param LoggerInterface $logger  A PSR-3 logger to put as default for the given levels
+     * @param array|int       $levels  An array map of E_* to LogLevel::* or an integer bit field of E_* constants
+     * @param bool            $replace Whether to replace or not any existing logger
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function setDefaultLogger(LoggerInterface $logger, $levels = E_ALL, $replace = false)
     {
@@ -226,14 +238,22 @@ class ErrorHandler
             if (!\is_array($log)) {
                 $log = [$log];
             } elseif (!\array_key_exists(0, $log)) {
+<<<<<<< HEAD
                 throw new \InvalidArgumentException('No logger provided.');
+=======
+                throw new \InvalidArgumentException('No logger provided');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             if (null === $log[0]) {
                 $this->loggedErrors &= ~$type;
             } elseif ($log[0] instanceof LoggerInterface) {
                 $this->loggedErrors |= $type;
             } else {
+<<<<<<< HEAD
                 throw new \InvalidArgumentException('Invalid logger provided.');
+=======
+                throw new \InvalidArgumentException('Invalid logger provided');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
             $this->loggers[$type] = $log + $prev[$type];
 
@@ -352,7 +372,11 @@ class ErrorHandler
     /**
      * Re-registers as a PHP error handler if levels changed.
      */
+<<<<<<< HEAD
     private function reRegister(int $prev)
+=======
+    private function reRegister($prev)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if ($prev !== $this->thrownErrors | $this->loggedErrors) {
             $handler = set_error_handler('var_dump');
@@ -499,7 +523,11 @@ class ErrorHandler
         if ($this->isRecursive) {
             $log = 0;
         } else {
+<<<<<<< HEAD
             if (\PHP_VERSION_ID < (\PHP_VERSION_ID < 70400 ? 70316 : 70404) && !\defined('HHVM_VERSION')) {
+=======
+            if (!\defined('HHVM_VERSION')) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $currentErrorHandler = set_error_handler('var_dump');
                 restore_error_handler();
             }
@@ -511,7 +539,11 @@ class ErrorHandler
             } finally {
                 $this->isRecursive = false;
 
+<<<<<<< HEAD
                 if (\PHP_VERSION_ID < (\PHP_VERSION_ID < 70400 ? 70316 : 70404) && !\defined('HHVM_VERSION')) {
+=======
+                if (!\defined('HHVM_VERSION')) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     set_error_handler($currentErrorHandler);
                 }
             }
@@ -691,7 +723,11 @@ class ErrorHandler
     /**
      * Cleans the trace by removing function arguments and the frames added by the error handler and DebugClassLoader.
      */
+<<<<<<< HEAD
     private function cleanTrace(array $backtrace, int $type, string $file, int $line, bool $throw): array
+=======
+    private function cleanTrace($backtrace, $type, $file, $line, $throw)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $lightTrace = $backtrace;
 

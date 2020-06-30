@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 4.4.0
 -----
 
@@ -16,6 +17,8 @@ CHANGELOG
  * added `SessionHandlerFactory` to create session handlers with a DSN
  * added `IpUtils::anonymize()` to help with GDPR compliance.
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 

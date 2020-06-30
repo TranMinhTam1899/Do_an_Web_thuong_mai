@@ -2,8 +2,13 @@
 
 namespace Illuminate\Hashing;
 
+<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Contracts\Hashing\Hasher as HasherContract;
+=======
+use Illuminate\Contracts\Hashing\Hasher as HasherContract;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class BcryptHasher extends AbstractHasher implements HasherContract
 {

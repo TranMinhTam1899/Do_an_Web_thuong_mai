@@ -3,10 +3,17 @@
 namespace Illuminate\Pagination;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Htmlable;
+=======
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Illuminate\Support\Traits\ForwardsCalls;
 
 /**
@@ -172,8 +179,13 @@ abstract class AbstractPaginator implements Htmlable
             $parameters = array_merge($this->query, $parameters);
         }
 
+<<<<<<< HEAD
         return $this->path
                         .(Str::contains($this->path, '?') ? '&' : '?')
+=======
+        return $this->path()
+                        .(Str::contains($this->path(), '?') ? '&' : '?')
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         .Arr::query($parameters)
                         .$this->buildFragment();
     }
@@ -401,6 +413,19 @@ abstract class AbstractPaginator implements Htmlable
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get the base path for paginator generated URLs.
+     *
+     * @return string|null
+     */
+    public function path()
+    {
+        return $this->path;
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Resolve the current request path or return the default value.
      *
      * @param  string  $default

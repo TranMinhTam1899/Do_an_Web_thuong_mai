@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * This file is part of the Monolog package.
@@ -11,6 +15,11 @@
 
 namespace Monolog\Handler;
 
+<<<<<<< HEAD
+=======
+use Monolog\Logger;
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * Used for testing purposes.
  *
@@ -65,8 +74,13 @@ namespace Monolog\Handler;
  */
 class TestHandler extends AbstractProcessingHandler
 {
+<<<<<<< HEAD
     protected $records = array();
     protected $recordsByLevel = array();
+=======
+    protected $records = [];
+    protected $recordsByLevel = [];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private $skipReset = false;
 
     public function getRecords()
@@ -76,8 +90,13 @@ class TestHandler extends AbstractProcessingHandler
 
     public function clear()
     {
+<<<<<<< HEAD
         $this->records = array();
         $this->recordsByLevel = array();
+=======
+        $this->records = [];
+        $this->recordsByLevel = [];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function reset()
@@ -87,21 +106,40 @@ class TestHandler extends AbstractProcessingHandler
         }
     }
 
+<<<<<<< HEAD
     public function setSkipReset($skipReset)
+=======
+    public function setSkipReset(bool $skipReset)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->skipReset = $skipReset;
     }
 
+<<<<<<< HEAD
     public function hasRecords($level)
     {
         return isset($this->recordsByLevel[$level]);
+=======
+    /**
+     * @param string|int $level Logging level value or name
+     */
+    public function hasRecords($level): bool
+    {
+        return isset($this->recordsByLevel[Logger::toMonologLevel($level)]);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * @param string|array $record Either a message string or an array containing message and optionally context keys that will be checked against all records
+<<<<<<< HEAD
      * @param int          $level  Logger::LEVEL constant value
      */
     public function hasRecord($record, $level)
+=======
+     * @param string|int   $level  Logging level value or name
+     */
+    public function hasRecord($record, $level): bool
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (is_string($record)) {
             $record = array('message' => $record);
@@ -114,29 +152,56 @@ class TestHandler extends AbstractProcessingHandler
             if (isset($record['context']) && $rec['context'] !== $record['context']) {
                 return false;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             return true;
         }, $level);
     }
 
+<<<<<<< HEAD
     public function hasRecordThatContains($message, $level)
+=======
+    /**
+     * @param string|int $level Logging level value or name
+     */
+    public function hasRecordThatContains(string $message, $level): bool
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->hasRecordThatPasses(function ($rec) use ($message) {
             return strpos($rec['message'], $message) !== false;
         }, $level);
     }
 
+<<<<<<< HEAD
     public function hasRecordThatMatches($regex, $level)
+=======
+    /**
+     * @param string|int $level Logging level value or name
+     */
+    public function hasRecordThatMatches(string $regex, $level): bool
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->hasRecordThatPasses(function ($rec) use ($regex) {
             return preg_match($regex, $rec['message']) > 0;
         }, $level);
     }
 
+<<<<<<< HEAD
     public function hasRecordThatPasses($predicate, $level)
     {
         if (!is_callable($predicate)) {
             throw new \InvalidArgumentException("Expected a callable for hasRecordThatSucceeds");
         }
+=======
+    /**
+     * @param string|int $level Logging level value or name
+     */
+    public function hasRecordThatPasses(callable $predicate, $level)
+    {
+        $level = Logger::toMonologLevel($level);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!isset($this->recordsByLevel[$level])) {
             return false;
@@ -154,7 +219,11 @@ class TestHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     protected function write(array $record)
+=======
+    protected function write(array $record): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->recordsByLevel[$record['level']][] = $record;
         $this->records[] = $record;
@@ -168,7 +237,11 @@ class TestHandler extends AbstractProcessingHandler
             if (method_exists($this, $genericMethod)) {
                 $args[] = $level;
 
+<<<<<<< HEAD
                 return call_user_func_array(array($this, $genericMethod), $args);
+=======
+                return call_user_func_array([$this, $genericMethod], $args);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

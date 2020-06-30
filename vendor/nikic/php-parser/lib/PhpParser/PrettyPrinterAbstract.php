@@ -756,13 +756,27 @@ abstract class PrettyPrinterAbstract
                 $itemEndPos = $origArrItem->getEndTokenPos();
                 \assert($itemStartPos >= 0 && $itemEndPos >= 0);
 
+<<<<<<< HEAD
+=======
+                if ($itemEndPos < $itemStartPos) {
+                    // End can be before start for Nop nodes, because offsets refer to non-whitespace
+                    // locations, which for an "empty" node might result in an inverted order.
+                    assert($origArrItem instanceof Stmt\Nop);
+                    continue;
+                }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $origIndentLevel = $this->indentLevel;
                 $lastElemIndentLevel = $this->origTokens->getIndentationBefore($itemStartPos) + $indentAdjustment;
                 $this->setIndentLevel($lastElemIndentLevel);
 
                 $comments = $arrItem->getComments();
                 $origComments = $origArrItem->getComments();
+<<<<<<< HEAD
                 $commentStartPos = $origComments ? $origComments[0]->getStartTokenPos() : $itemStartPos;
+=======
+                $commentStartPos = $origComments ? $origComments[0]->getTokenPos() : $itemStartPos;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 \assert($commentStartPos >= 0);
 
                 $commentsChanged = $comments !== $origComments;
@@ -1288,7 +1302,10 @@ abstract class PrettyPrinterAbstract
             //'Expr_ShellExec->parts' => '', // TODO These need to be treated more carefully
             //'Scalar_Encapsed->parts' => '',
             'Stmt_Catch->types' => '|',
+<<<<<<< HEAD
             'UnionType->types' => '|',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             'Stmt_If->elseifs' => ' ',
             'Stmt_TryCatch->catches' => ' ',
 
@@ -1390,7 +1407,10 @@ abstract class PrettyPrinterAbstract
              * Stmt_TraitUseAdaptation_Precedence->insteadof
              * Stmt_Unset->vars
              * Stmt_Use->uses
+<<<<<<< HEAD
              * UnionType->types
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
              */
 
             /* TODO

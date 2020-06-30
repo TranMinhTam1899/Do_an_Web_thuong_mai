@@ -48,7 +48,11 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
+<<<<<<< HEAD
         return join(' ', $result);
+=======
+        return join($result, ' ');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -61,7 +65,11 @@ class Company extends \Faker\Provider\Company
             $result[] = static::randomElement($word);
         }
 
+<<<<<<< HEAD
         return join(' ', $result);
+=======
+        return join($result, ' ');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

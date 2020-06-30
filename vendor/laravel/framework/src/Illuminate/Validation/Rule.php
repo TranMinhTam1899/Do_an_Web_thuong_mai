@@ -2,8 +2,13 @@
 
 namespace Illuminate\Validation;
 
+<<<<<<< HEAD
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
+=======
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Traits\Macroable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Rule
 {

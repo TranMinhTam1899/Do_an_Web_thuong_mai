@@ -110,6 +110,11 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
         $response->headers->set('Age', $this->age);
 
         if ($this->isNotCacheableResponseEmbedded) {
+<<<<<<< HEAD
+=======
+            $response->setExpires($response->getDate());
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             if ($this->flagDirectives['no-store']) {
                 $response->headers->set('Cache-Control', 'no-cache, no-store, must-revalidate');
             } else {
@@ -128,6 +133,10 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
         $response->headers->set('Cache-Control', implode(', ', array_keys($flags)));
 
         $maxAge = null;
+<<<<<<< HEAD
+=======
+        $sMaxage = null;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (is_numeric($this->ageDirectives['max-age'])) {
             $maxAge = $this->ageDirectives['max-age'] + $this->age;
@@ -153,8 +162,15 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
      * RFC2616, Section 13.4.
      *
      * @see https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.4
+<<<<<<< HEAD
      */
     private function willMakeFinalResponseUncacheable(Response $response): bool
+=======
+     *
+     * @return bool
+     */
+    private function willMakeFinalResponseUncacheable(Response $response)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // RFC2616: A response received with a status code of 200, 203, 300, 301 or 410
         // MAY be stored by a cache […] unless a cache-control directive prohibits caching.
@@ -198,8 +214,17 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
      *
      * If the value is lower than the currently stored value, we update the value, to keep a rolling
      * minimal value of each instruction. If the value is NULL, the directive will not be set on the final response.
+<<<<<<< HEAD
      */
     private function storeRelativeAgeDirective(string $directive, ?int $value, int $age)
+=======
+     *
+     * @param string   $directive
+     * @param int|null $value
+     * @param int      $age
+     */
+    private function storeRelativeAgeDirective($directive, $value, $age)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $value) {
             $this->ageDirectives[$directive] = false;

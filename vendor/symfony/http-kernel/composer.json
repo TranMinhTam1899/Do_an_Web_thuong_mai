@@ -17,14 +17,22 @@
     ],
     "require": {
         "php": "^7.1.3",
+<<<<<<< HEAD
         "symfony/error-handler": "^4.4",
         "symfony/event-dispatcher": "^4.4",
         "symfony/http-foundation": "^4.4|^5.0",
         "symfony/polyfill-ctype": "^1.8",
+=======
+        "symfony/event-dispatcher": "^4.3",
+        "symfony/http-foundation": "^4.1.1",
+        "symfony/debug": "~3.4|~4.0",
+        "symfony/polyfill-ctype": "~1.8",
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "symfony/polyfill-php73": "^1.9",
         "psr/log": "~1.0"
     },
     "require-dev": {
+<<<<<<< HEAD
         "symfony/browser-kit": "^4.3|^5.0",
         "symfony/config": "^3.4|^4.0|^5.0",
         "symfony/console": "^3.4|^4.0",
@@ -41,6 +49,25 @@
         "symfony/translation-contracts": "^1.1|^2",
         "psr/cache": "~1.0",
         "twig/twig": "^1.34|^2.4|^3.0"
+=======
+        "symfony/browser-kit": "^4.3",
+        "symfony/config": "~3.4|~4.0",
+        "symfony/console": "~3.4|~4.0",
+        "symfony/css-selector": "~3.4|~4.0",
+        "symfony/dependency-injection": "^4.3",
+        "symfony/dom-crawler": "~3.4|~4.0",
+        "symfony/expression-language": "~3.4|~4.0",
+        "symfony/finder": "~3.4|~4.0",
+        "symfony/process": "~3.4|~4.0",
+        "symfony/routing": "~3.4|~4.0",
+        "symfony/stopwatch": "~3.4|~4.0",
+        "symfony/templating": "~3.4|~4.0",
+        "symfony/translation": "~4.2",
+        "symfony/translation-contracts": "^1.1",
+        "symfony/var-dumper": "^4.1.1",
+        "psr/cache": "~1.0",
+        "twig/twig": "^1.34|^2.4"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "provide": {
         "psr/log-implementation": "1.0"
@@ -48,16 +75,27 @@
     "conflict": {
         "symfony/browser-kit": "<4.3",
         "symfony/config": "<3.4",
+<<<<<<< HEAD
         "symfony/console": ">=5",
         "symfony/dependency-injection": "<4.3",
         "symfony/translation": "<4.2",
+=======
+        "symfony/dependency-injection": "<4.3",
+        "symfony/translation": "<4.2",
+        "symfony/var-dumper": "<4.1.1",
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         "twig/twig": "<1.34|<2.4,>=2"
     },
     "suggest": {
         "symfony/browser-kit": "",
         "symfony/config": "",
         "symfony/console": "",
+<<<<<<< HEAD
         "symfony/dependency-injection": ""
+=======
+        "symfony/dependency-injection": "",
+        "symfony/var-dumper": ""
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "autoload": {
         "psr-4": { "Symfony\\Component\\HttpKernel\\": "" },
@@ -68,7 +106,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "4.4-dev"
+=======
+            "dev-master": "4.3-dev"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 }

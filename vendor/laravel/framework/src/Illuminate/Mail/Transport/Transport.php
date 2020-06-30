@@ -2,10 +2,17 @@
 
 namespace Illuminate\Mail\Transport;
 
+<<<<<<< HEAD
 use Swift_Transport;
 use Swift_Events_SendEvent;
 use Swift_Mime_SimpleMessage;
 use Swift_Events_EventListener;
+=======
+use Swift_Events_EventListener;
+use Swift_Events_SendEvent;
+use Swift_Mime_SimpleMessage;
+use Swift_Transport;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 abstract class Transport implements Swift_Transport
 {

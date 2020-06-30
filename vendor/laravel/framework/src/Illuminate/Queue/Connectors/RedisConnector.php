@@ -2,8 +2,13 @@
 
 namespace Illuminate\Queue\Connectors;
 
+<<<<<<< HEAD
 use Illuminate\Queue\RedisQueue;
 use Illuminate\Contracts\Redis\Factory as Redis;
+=======
+use Illuminate\Contracts\Redis\Factory as Redis;
+use Illuminate\Queue\RedisQueue;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RedisConnector implements ConnectorInterface
 {

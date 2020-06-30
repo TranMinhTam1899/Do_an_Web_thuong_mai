@@ -1,9 +1,21 @@
 language: php
+<<<<<<< HEAD
 
 php: [ 7.1, 7.2, 7.3, 7.4 ]
 
 matrix:
   fast_finish: true
+=======
+php: [ 7.1, 7.2, nightly ]
+sudo: false
+
+env:
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: nightly
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 install:
   - travis_retry composer install --no-interaction --prefer-dist --optimize-autoloader
@@ -26,7 +38,11 @@ jobs:
       php: 7.1
       before_script:
         - travis_retry wget --no-verbose https://phar.io/releases/phive.phar
+<<<<<<< HEAD
         - travis_retry php phive.phar --no-progress install --trust-gpg-keys CF1A108D0E7AE720 phpstan
+=======
+        - travis_retry php phive.phar --no-progress install --trust-gpg-keys 8E730BA25823D8B5 phpstan
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
       script:
         - ./tools/phpstan analyse src --level max --configuration phpstan.neon
 

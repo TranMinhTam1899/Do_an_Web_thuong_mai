@@ -35,7 +35,11 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
     public function __construct($translator, LoggerInterface $logger)
     {
         if (!$translator instanceof LegacyTranslatorInterface && !$translator instanceof TranslatorInterface) {
+<<<<<<< HEAD
             throw new \TypeError(sprintf('Argument 1 passed to "%s()" must be an instance of "%s", "%s" given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+=======
+            throw new \TypeError(sprintf('Argument 1 passed to %s() must be an instance of %s, %s given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
         if (!$translator instanceof TranslatorBagInterface || !$translator instanceof LocaleAwareInterface) {
             throw new InvalidArgumentException(sprintf('The Translator "%s" must implement TranslatorInterface, TranslatorBagInterface and LocaleAwareInterface.', \get_class($translator)));
@@ -130,8 +134,17 @@ class LoggingTranslator implements TranslatorInterface, LegacyTranslatorInterfac
 
     /**
      * Logs for missing translations.
+<<<<<<< HEAD
      */
     private function log(?string $id, ?string $domain, ?string $locale)
+=======
+     *
+     * @param string      $id
+     * @param string|null $domain
+     * @param string|null $locale
+     */
+    private function log($id, $domain, $locale)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (null === $domain) {
             $domain = 'messages';

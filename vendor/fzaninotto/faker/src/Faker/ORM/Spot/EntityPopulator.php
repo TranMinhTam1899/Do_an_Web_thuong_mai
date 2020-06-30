@@ -141,6 +141,10 @@ class EntityPopulator
         foreach ($relations as $relation) {
             // We don't need any other relation here.
             if ($relation instanceof BelongsTo) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $fieldName = $relation->localKey();
                 $entityName = $relation->entityName();
                 $field = $fields[$fieldName];
@@ -161,12 +165,22 @@ class EntityPopulator
                         if (empty($records)) {
                             return null;
                         }
+<<<<<<< HEAD
 
                         return $records[mt_rand(0, count($records) - 1)]['id'];
+=======
+                        $id = $records[mt_rand(0, count($records) - 1)]['id'];
+
+                        return $id;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     }
 
                     return null;
                 };
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 

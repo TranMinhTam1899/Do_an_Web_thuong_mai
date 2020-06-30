@@ -16,6 +16,12 @@ use PHPUnit\Framework\TestSuite;
 use PHPUnit\Framework\Warning;
 use PHPUnit\Util\Test as TestUtil;
 
+<<<<<<< HEAD
+=======
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class TestListenerAdapter implements TestListener
 {
     /**
@@ -112,7 +118,11 @@ final class TestListenerAdapter implements TestListener
 
     public function endTest(Test $test, float $time): void
     {
+<<<<<<< HEAD
         if ($this->lastTestWasNotSuccessful !== true) {
+=======
+        if (!$this->lastTestWasNotSuccessful) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ($this->hooks as $hook) {
                 if ($hook instanceof AfterSuccessfulTestHook) {
                     $hook->executeAfterSuccessfulTest(TestUtil::describeAsString($test), $time);

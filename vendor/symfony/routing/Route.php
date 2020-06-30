@@ -45,10 +45,17 @@ class Route implements \Serializable
      * @param array           $defaults     An array of default parameter values
      * @param array           $requirements An array of requirements for parameters (regexes)
      * @param array           $options      An array of options
+<<<<<<< HEAD
      * @param string|null     $host         The host pattern to match
      * @param string|string[] $schemes      A required URI scheme or an array of restricted schemes
      * @param string|string[] $methods      A required HTTP method or an array of restricted methods
      * @param string|null     $condition    A condition that should evaluate to true for the route to match
+=======
+     * @param string          $host         The host pattern to match
+     * @param string|string[] $schemes      A required URI scheme or an array of restricted schemes
+     * @param string|string[] $methods      A required HTTP method or an array of restricted methods
+     * @param string          $condition    A condition that should evaluate to true for the route to match
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function __construct(string $path, array $defaults = [], array $requirements = [], array $options = [], ?string $host = '', $schemes = [], $methods = [], ?string $condition = '')
     {
@@ -78,8 +85,11 @@ class Route implements \Serializable
     }
 
     /**
+<<<<<<< HEAD
      * @return string
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @internal since Symfony 4.3
      * @final since Symfony 4.3
      */
@@ -269,6 +279,11 @@ class Route implements \Serializable
      *
      * This method implements a fluent interface.
      *
+<<<<<<< HEAD
+=======
+     * @param array $options The options
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return $this
      */
     public function setOptions(array $options)
@@ -285,6 +300,11 @@ class Route implements \Serializable
      *
      * This method implements a fluent interface.
      *
+<<<<<<< HEAD
+=======
+     * @param array $options The options
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return $this
      */
     public function addOptions(array $options)
@@ -376,10 +396,13 @@ class Route implements \Serializable
      */
     public function addDefaults(array $defaults)
     {
+<<<<<<< HEAD
         if (isset($defaults['_locale']) && $this->isLocalized()) {
             unset($defaults['_locale']);
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($defaults as $name => $default) {
             $this->defaults[$name] = $default;
         }
@@ -422,10 +445,13 @@ class Route implements \Serializable
      */
     public function setDefault($name, $default)
     {
+<<<<<<< HEAD
         if ('_locale' === $name && $this->isLocalized()) {
             return $this;
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->defaults[$name] = $default;
         $this->compiled = null;
 
@@ -469,10 +495,13 @@ class Route implements \Serializable
      */
     public function addRequirements(array $requirements)
     {
+<<<<<<< HEAD
         if (isset($requirements['_locale']) && $this->isLocalized()) {
             unset($requirements['_locale']);
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($requirements as $key => $regex) {
             $this->requirements[$key] = $this->sanitizeRequirement($key, $regex);
         }
@@ -515,10 +544,13 @@ class Route implements \Serializable
      */
     public function setRequirement($key, $regex)
     {
+<<<<<<< HEAD
         if ('_locale' === $key && $this->isLocalized()) {
             return $this;
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->requirements[$key] = $this->sanitizeRequirement($key, $regex);
         $this->compiled = null;
 
@@ -573,7 +605,11 @@ class Route implements \Serializable
         return $this->compiled = $class::compile($this);
     }
 
+<<<<<<< HEAD
     private function sanitizeRequirement(string $key, $regex)
+=======
+    private function sanitizeRequirement($key, $regex)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!\is_string($regex)) {
             throw new \InvalidArgumentException(sprintf('Routing requirement for "%s" must be a string.', $key));
@@ -593,9 +629,12 @@ class Route implements \Serializable
 
         return $regex;
     }
+<<<<<<< HEAD
 
     private function isLocalized(): bool
     {
         return isset($this->defaults['_locale']) && isset($this->defaults['_canonical_route']) && ($this->requirements['_locale'] ?? null) === preg_quote($this->defaults['_locale'], RouteCompiler::REGEX_DELIMITER);
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

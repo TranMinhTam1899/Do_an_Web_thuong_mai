@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -11,7 +15,15 @@ namespace PHPUnit\Util;
 
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
 class ConfigurationGeneratorTest extends TestCase
+=======
+/**
+ * @small
+ * @covers \PHPUnit\Util\ConfigurationGenerator
+ */
+final class ConfigurationGeneratorTest extends TestCase
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     public function testGeneratesConfigurationCorrectly(): void
     {
@@ -22,6 +34,10 @@ class ConfigurationGeneratorTest extends TestCase
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/X.Y.Z/phpunit.xsd"
          bootstrap="vendor/autoload.php"
+<<<<<<< HEAD
+=======
+         executionOrder="depends,defects"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
          forceCoversAnnotation="true"
          beStrictAboutCoversAnnotation="true"
          beStrictAboutOutputDuringTests="true"

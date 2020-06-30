@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -7,6 +11,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
 
 namespace SebastianBergmann\CodeCoverage\Report;
 
@@ -15,21 +20,39 @@ use SebastianBergmann\CodeCoverage\CodeCoverage;
 use SebastianBergmann\CodeCoverage\Filter;
 use SebastianBergmann\CodeCoverage\TestCase;
 use SebastianBergmann\CodeCoverage\Node\Builder;
+=======
+namespace SebastianBergmann\CodeCoverage\Report;
+
+use SebastianBergmann\CodeCoverage\Node\Builder;
+use SebastianBergmann\CodeCoverage\TestCase;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class BuilderTest extends TestCase
 {
     protected $factory;
 
+<<<<<<< HEAD
     protected function setUp()
+=======
+    protected function setUp(): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->factory = new Builder;
     }
 
+<<<<<<< HEAD
     public function testSomething()
     {
         $root = $this->getCoverageForBankAccount()->getReport();
 
         $expectedPath = rtrim(TEST_FILES_PATH, DIRECTORY_SEPARATOR);
+=======
+    public function testSomething(): void
+    {
+        $root = $this->getCoverageForBankAccount()->getReport();
+
+        $expectedPath = \rtrim(TEST_FILES_PATH, \DIRECTORY_SEPARATOR);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->assertEquals($expectedPath, $root->getName());
         $this->assertEquals($expectedPath, $root->getPath());
         $this->assertEquals(10, $root->getNumExecutableLines());
@@ -116,11 +139,19 @@ class BuilderTest extends TestCase
                         'fullPackage' => '',
                         'category'    => '',
                         'package'     => '',
+<<<<<<< HEAD
                         'subpackage'  => ''
                     ],
                     'link'      => 'BankAccount.php.html#2',
                     'className' => 'BankAccount'
                 ]
+=======
+                        'subpackage'  => '',
+                    ],
+                    'link'      => 'BankAccount.php.html#2',
+                    'className' => 'BankAccount',
+                ],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ],
             $root->getClasses()
         );
@@ -128,22 +159,40 @@ class BuilderTest extends TestCase
         $this->assertEquals([], $root->getFunctions());
     }
 
+<<<<<<< HEAD
     public function testNotCrashParsing()
     {
         $coverage = $this->getCoverageForCrashParsing();
         $root = $coverage->getReport();
 
         $expectedPath = rtrim(TEST_FILES_PATH, DIRECTORY_SEPARATOR);
+=======
+    public function testNotCrashParsing(): void
+    {
+        $coverage = $this->getCoverageForCrashParsing();
+        $root     = $coverage->getReport();
+
+        $expectedPath = \rtrim(TEST_FILES_PATH, \DIRECTORY_SEPARATOR);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->assertEquals($expectedPath, $root->getName());
         $this->assertEquals($expectedPath, $root->getPath());
         $this->assertEquals(2, $root->getNumExecutableLines());
         $this->assertEquals(0, $root->getNumExecutedLines());
+<<<<<<< HEAD
         $data = $coverage->getData();
         $expectedFile = $expectedPath . DIRECTORY_SEPARATOR . 'Crash.php';
         $this->assertSame([$expectedFile => [1 => [], 2 => []]], $data);
     }
 
     public function testBuildDirectoryStructure()
+=======
+        $data         = $coverage->getData();
+        $expectedFile = $expectedPath . \DIRECTORY_SEPARATOR . 'Crash.php';
+        $this->assertSame([$expectedFile => [1 => [], 2 => []]], $data);
+    }
+
+    public function testBuildDirectoryStructure(): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $s = \DIRECTORY_SEPARATOR;
 
@@ -159,20 +208,33 @@ class BuilderTest extends TestCase
                 'src' => [
                     'Money.php/f'    => [],
                     'MoneyBag.php/f' => [],
+<<<<<<< HEAD
                     'Foo' => [
+=======
+                    'Foo'            => [
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                         'Bar' => [
                             'Baz' => [
                                 'Foo.php/f' => [],
                             ],
                         ],
                     ],
+<<<<<<< HEAD
                 ]
+=======
+                ],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ],
             $method->invoke(
                 $this->factory,
                 [
+<<<<<<< HEAD
                     "src{$s}Money.php" => [],
                     "src{$s}MoneyBag.php" => [],
+=======
+                    "src{$s}Money.php"                    => [],
+                    "src{$s}MoneyBag.php"                 => [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     "src{$s}Foo{$s}Bar{$s}Baz{$s}Foo.php" => [],
                 ]
             )
@@ -182,7 +244,11 @@ class BuilderTest extends TestCase
     /**
      * @dataProvider reducePathsProvider
      */
+<<<<<<< HEAD
     public function testReducePaths($reducedPaths, $commonPath, $paths)
+=======
+    public function testReducePaths($reducedPaths, $commonPath, $paths): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $method = new \ReflectionMethod(
             Builder::class,
@@ -203,12 +269,18 @@ class BuilderTest extends TestCase
 
         yield [
             [],
+<<<<<<< HEAD
             ".",
             []
+=======
+            '.',
+            [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         ];
 
         $prefixes = ["C:$s", "$s"];
 
+<<<<<<< HEAD
         foreach($prefixes as $p){
             yield [
                 [
@@ -218,30 +290,61 @@ class BuilderTest extends TestCase
                 [
                     "{$p}home{$s}sb{$s}Money{$s}Money.php" => []
                 ]
+=======
+        foreach ($prefixes as $p) {
+            yield [
+                [
+                    'Money.php' => [],
+                ],
+                "{$p}home{$s}sb{$s}Money{$s}",
+                [
+                    "{$p}home{$s}sb{$s}Money{$s}Money.php" => [],
+                ],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ];
 
             yield [
                 [
+<<<<<<< HEAD
                     "Money.php"    => [],
                     "MoneyBag.php" => []
+=======
+                    'Money.php'    => [],
+                    'MoneyBag.php' => [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 ],
                 "{$p}home{$s}sb{$s}Money",
                 [
                     "{$p}home{$s}sb{$s}Money{$s}Money.php"    => [],
+<<<<<<< HEAD
                     "{$p}home{$s}sb{$s}Money{$s}MoneyBag.php" => []
                 ]
+=======
+                    "{$p}home{$s}sb{$s}Money{$s}MoneyBag.php" => [],
+                ],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             ];
 
             yield [
                 [
+<<<<<<< HEAD
                     "Money.php"          => [],
                     "MoneyBag.php"       => [],
+=======
+                    'Money.php'             => [],
+                    'MoneyBag.php'          => [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     "Cash.phar{$s}Cash.php" => [],
                 ],
                 "{$p}home{$s}sb{$s}Money",
                 [
+<<<<<<< HEAD
                     "{$p}home{$s}sb{$s}Money{$s}Money.php"                 => [],
                     "{$p}home{$s}sb{$s}Money{$s}MoneyBag.php"              => [],
+=======
+                    "{$p}home{$s}sb{$s}Money{$s}Money.php"                    => [],
+                    "{$p}home{$s}sb{$s}Money{$s}MoneyBag.php"                 => [],
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     "phar://{$p}home{$s}sb{$s}Money{$s}Cash.phar{$s}Cash.php" => [],
                 ],
             ];

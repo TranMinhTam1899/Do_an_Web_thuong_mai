@@ -65,7 +65,11 @@ class WorkerOptions
      * @param  bool  $stopWhenEmpty
      * @return void
      */
+<<<<<<< HEAD
     public function __construct($delay = 0, $memory = 128, $timeout = 60, $sleep = 3, $maxTries = 0, $force = false, $stopWhenEmpty = false)
+=======
+    public function __construct($delay = 0, $memory = 128, $timeout = 60, $sleep = 3, $maxTries = 1, $force = false, $stopWhenEmpty = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->delay = $delay;
         $this->sleep = $sleep;

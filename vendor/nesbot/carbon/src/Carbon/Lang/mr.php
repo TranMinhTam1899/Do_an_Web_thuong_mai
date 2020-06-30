@@ -34,7 +34,10 @@ return [
     'before' => ':timeपूर्वी',
     'after' => ':timeनंतर',
 
+<<<<<<< HEAD
     'diff_now' => 'आत्ता',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'काल',
     'diff_tomorrow' => 'उद्या',
 

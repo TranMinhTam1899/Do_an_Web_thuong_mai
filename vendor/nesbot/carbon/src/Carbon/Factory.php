@@ -42,7 +42,11 @@ use Closure;
  *                                                                                                                                                                                               values for $minute and $second will be their now() values.
  *                                                                                                                                                                                               If $hour is not null then the default values for $minute and $second
  *                                                                                                                                                                                               will be 0.
+<<<<<<< HEAD
  *                                                                                                                                                                                               If one of the set values is not valid, an InvalidDateException
+=======
+ *                                                                                                                                                                                               If one of the set values is not valid, an \InvalidArgumentException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  *                                                                                                                                                                                               will be thrown.
  * @method Carbon                                             disableHumanDiffOption($humanDiffOption)                                                                                           @deprecated To avoid conflict between different third-party libraries, static setters should not be used.
  *                                                                                                                                                                                                           You should rather use the ->settings() method.
@@ -63,18 +67,28 @@ use Closure;
  * @method array                                              getIsoUnits()                                                                                                                      Returns list of locale units for ISO formatting.
  * @method Carbon                                             getLastErrors()                                                                                                                    {@inheritdoc}
  * @method string                                             getLocale()                                                                                                                        Get the current translator locale.
+<<<<<<< HEAD
  * @method callable|null                                      getMacro($name)                                                                                                                    Get the raw callable macro registered globally for a given name.
  * @method int                                                getMidDayAt()                                                                                                                      get midday/noon hour
  * @method Closure|Carbon                                     getTestNow()                                                                                                                       Get the Carbon instance (real or mock) to be returned when a "now"
  *                                                                                                                                                                                               instance is created.
  * @method string                                             getTimeFormatByPrecision($unitPrecision)                                                                                           Return a format from H:i to H:i:s.u according to given unit precision.
+=======
+ * @method int                                                getMidDayAt()                                                                                                                      get midday/noon hour
+ * @method Closure|Carbon                                     getTestNow()                                                                                                                       Get the Carbon instance (real or mock) to be returned when a "now"
+ *                                                                                                                                                                                               instance is created.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method string                                             getTranslationMessageWith($translator, string $key, string $locale = null, string $default = null)                                 Returns raw translation message for a given key.
  * @method \Symfony\Component\Translation\TranslatorInterface getTranslator()                                                                                                                    Get the default translator instance in use.
  * @method int                                                getWeekEndsAt()                                                                                                                    Get the last day of week
  * @method int                                                getWeekStartsAt()                                                                                                                  Get the first day of week
  * @method array                                              getWeekendDays()                                                                                                                   Get weekend days
  * @method bool                                               hasFormat($date, $format)                                                                                                          Checks if the (date)time string is in a given format.
+<<<<<<< HEAD
  * @method bool                                               hasMacro($name)                                                                                                                    Checks if macro is registered globally.
+=======
+ * @method bool                                               hasMacro($name)                                                                                                                    Checks if macro is registered.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @method bool                                               hasRelativeKeywords($time)                                                                                                         Determine if a time string will produce a relative date.
  * @method bool                                               hasTestNow()                                                                                                                       Determine if there is a valid test instance set. A valid test instance
  *                                                                                                                                                                                               is anything that is not null.

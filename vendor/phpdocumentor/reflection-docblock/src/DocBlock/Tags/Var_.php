@@ -1,13 +1,21 @@
 <?php
+<<<<<<< HEAD
 
 declare(strict_types=1);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * This file is part of phpDocumentor.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
+<<<<<<< HEAD
+=======
+ * @copyright 2010-2015 Mike van Riel<mike@phpdoc.org>
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * @link      http://phpdoc.org
  */
 
@@ -19,6 +27,7 @@ use phpDocumentor\Reflection\Type;
 use phpDocumentor\Reflection\TypeResolver;
 use phpDocumentor\Reflection\Types\Context as TypeContext;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 use function array_shift;
 use function array_unshift;
 use function implode;
@@ -26,10 +35,13 @@ use function preg_split;
 use function strpos;
 use function substr;
 use const PREG_SPLIT_DELIM_CAPTURE;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Reflection class for a {@}var tag in a Docblock.
  */
+<<<<<<< HEAD
 final class Var_ extends TagWithType implements Factory\StaticMethod
 {
     /** @var string|null */
@@ -40,11 +52,34 @@ final class Var_ extends TagWithType implements Factory\StaticMethod
         Assert::string($variableName);
 
         $this->name         = 'var';
+=======
+class Var_ extends BaseTag implements Factory\StaticMethod
+{
+    /** @var string */
+    protected $name = 'var';
+
+    /** @var Type */
+    private $type;
+
+    /** @var string */
+    protected $variableName = '';
+
+    /**
+     * @param string      $variableName
+     * @param Type        $type
+     * @param Description $description
+     */
+    public function __construct($variableName, Type $type = null, Description $description = null)
+    {
+        Assert::string($variableName);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->variableName = $variableName;
         $this->type         = $type;
         $this->description  = $description;
     }
 
+<<<<<<< HEAD
     public static function create(
         string $body,
         ?TypeResolver $typeResolver = null,
@@ -59,10 +94,26 @@ final class Var_ extends TagWithType implements Factory\StaticMethod
 
         $parts = preg_split('/(\s+)/Su', $body, 2, PREG_SPLIT_DELIM_CAPTURE);
         Assert::isArray($parts);
+=======
+    /**
+     * {@inheritdoc}
+     */
+    public static function create(
+        $body,
+        TypeResolver $typeResolver = null,
+        DescriptionFactory $descriptionFactory = null,
+        TypeContext $context = null
+    ) {
+        Assert::stringNotEmpty($body);
+        Assert::allNotNull([$typeResolver, $descriptionFactory]);
+
+        $parts        = preg_split('/(\s+)/Su', $body, 3, PREG_SPLIT_DELIM_CAPTURE);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $type         = null;
         $variableName = '';
 
         // if the first item that is encountered is not a variable; it is a type
+<<<<<<< HEAD
         if ($firstPart && $firstPart[0] !== '$') {
             $type = $typeResolver->resolve($firstPart, $context);
         } else {
@@ -78,6 +129,21 @@ final class Var_ extends TagWithType implements Factory\StaticMethod
             Assert::notNull($variableName);
 
             $variableName = substr($variableName, 1);
+=======
+        if (isset($parts[0]) && (strlen($parts[0]) > 0) && ($parts[0][0] !== '$')) {
+            $type = $typeResolver->resolve(array_shift($parts), $context);
+            array_shift($parts);
+        }
+
+        // if the next item starts with a $ or ...$ it must be the variable name
+        if (isset($parts[0]) && (strlen($parts[0]) > 0) && ($parts[0][0] === '$')) {
+            $variableName = array_shift($parts);
+            array_shift($parts);
+
+            if (substr($variableName, 0, 1) === '$') {
+                $variableName = substr($variableName, 1);
+            }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $description = $descriptionFactory->create(implode('', $parts), $context);
@@ -87,19 +153,47 @@ final class Var_ extends TagWithType implements Factory\StaticMethod
 
     /**
      * Returns the variable's name.
+<<<<<<< HEAD
      */
     public function getVariableName() : ?string
+=======
+     *
+     * @return string
+     */
+    public function getVariableName()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->variableName;
     }
 
     /**
+<<<<<<< HEAD
      * Returns a string representation for this tag.
      */
     public function __toString() : string
     {
         return ($this->type ? $this->type . ' ' : '')
             . (empty($this->variableName) ? '' : '$' . $this->variableName)
+=======
+     * Returns the variable's type or null if unknown.
+     *
+     * @return Type|null
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Returns a string representation for this tag.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return ($this->type ? $this->type . ' ' : '')
+            . (empty($this->variableName) ? null : ('$' . $this->variableName))
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             . ($this->description ? ' ' . $this->description : '');
     }
 }

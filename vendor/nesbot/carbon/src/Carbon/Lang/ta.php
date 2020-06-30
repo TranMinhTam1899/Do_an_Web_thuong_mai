@@ -9,12 +9,19 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - François B
  * - JD Isaacks
+<<<<<<< HEAD
  * - Satheez
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => ':count வருடம்|:count ஆண்டுகள்',
@@ -40,9 +47,12 @@ return [
     's' => ':count விநா.',
     'ago' => ':time முன்',
     'from_now' => ':time இல்',
+<<<<<<< HEAD
     'before' => ':time முன்',
     'after' => ':time பின்',
     'diff_now' => 'இப்போது',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'நேற்று',
     'diff_tomorrow' => 'நாளை',
     'formats' => [

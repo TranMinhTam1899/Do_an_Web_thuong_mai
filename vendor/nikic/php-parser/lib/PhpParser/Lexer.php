@@ -143,6 +143,7 @@ class Lexer
             return true;
         }
 
+<<<<<<< HEAD
         if (PHP_VERSION_ID >= 80000) {
             // PHP 8 converts the "bad character" case into a parse error, rather than treating
             // it as a lexing warning. To preserve previous behavior, we need to assume that an
@@ -153,6 +154,8 @@ class Lexer
             return true;
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         return null !== error_get_last();
     }
 
@@ -300,6 +303,7 @@ class Lexer
                 $this->line += substr_count($value, "\n");
                 $this->filePos += \strlen($value);
             } else {
+<<<<<<< HEAD
                 $origLine = $this->line;
                 $origFilePos = $this->filePos;
                 $this->line += substr_count($token[1], "\n");
@@ -317,6 +321,19 @@ class Lexer
                         $startAttributes['comments'][] = $comment;
                     }
                 }
+=======
+                if (\T_COMMENT === $token[0] || \T_DOC_COMMENT === $token[0]) {
+                    if ($this->attributeCommentsUsed) {
+                        $comment = \T_DOC_COMMENT === $token[0]
+                            ? new Comment\Doc($token[1], $this->line, $this->filePos, $this->pos)
+                            : new Comment($token[1], $this->line, $this->filePos, $this->pos);
+                        $startAttributes['comments'][] = $comment;
+                    }
+                }
+
+                $this->line += substr_count($token[1], "\n");
+                $this->filePos += \strlen($token[1]);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 continue;
             }
 

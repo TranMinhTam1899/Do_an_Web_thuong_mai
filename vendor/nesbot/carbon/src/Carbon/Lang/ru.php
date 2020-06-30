@@ -33,7 +33,10 @@
  * - Pavel Skripkin (psxx)
  * - AlexWalkerson
  * - Vladislav UnsealedOne
+<<<<<<< HEAD
  * - dima-bzz
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 $transformDiff = function ($input) {
     return strtr($input, [
@@ -77,11 +80,14 @@ return [
     'before' => function ($time) use ($transformDiff) {
         return $transformDiff($time).' до';
     },
+<<<<<<< HEAD
     'diff_now' => 'только что',
     'diff_yesterday' => 'вчера',
     'diff_tomorrow' => 'завтра',
     'diff_before_yesterday' => 'позавчера',
     'diff_after_tomorrow' => 'послезавтра',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'H:mm',
         'LTS' => 'H:mm:ss',
@@ -172,7 +178,11 @@ return [
     'months_standalone' => ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
     'months_short' => ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
     'months_short_standalone' => ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+<<<<<<< HEAD
     'months_regexp' => '/(DD?o?\.?(\[[^\[\]]*\]|\s)+MMMM?|L{2,4}|l{2,4})/',
+=======
+    'months_regexp' => '/DD?o?\.?(\[[^\[\]]*\]|\s)+MMMM?/',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'weekdays' => ['воскресенье', 'понедельник', 'вторник', 'среду', 'четверг', 'пятницу', 'субботу'],
     'weekdays_standalone' => ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
     'weekdays_short' => ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],

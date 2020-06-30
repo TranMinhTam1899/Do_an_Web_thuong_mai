@@ -2,12 +2,21 @@
 
 namespace Illuminate\Database\Eloquent\Relations;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+=======
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Str;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class BelongsToMany extends Relation
 {
@@ -920,11 +929,19 @@ class BelongsToMany extends Relation
     /**
      * Create an array of new instances of the related models.
      *
+<<<<<<< HEAD
      * @param  array  $records
      * @param  array  $joinings
      * @return array
      */
     public function createMany(array $records, array $joinings = [])
+=======
+     * @param  iterable  $records
+     * @param  array  $joinings
+     * @return array
+     */
+    public function createMany(iterable $records, array $joinings = [])
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $instances = [];
 
@@ -1133,4 +1150,17 @@ class BelongsToMany extends Relation
     {
         return $this->accessor;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Get the pivot columns for this relationship.
+     *
+     * @return array
+     */
+    public function getPivotColumns()
+    {
+        return $this->pivotColumns;
+    }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

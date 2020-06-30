@@ -105,8 +105,11 @@ class Person extends \Faker\Provider\Person
         'Меркушев', 'Лыткин', 'Туров',
     );
 
+<<<<<<< HEAD
     protected static $lastNameSuffix = array('a', '');
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Return male middle name
      *
@@ -156,6 +159,7 @@ class Person extends \Faker\Provider\Person
             static::GENDER_FEMALE,
         )));
     }
+<<<<<<< HEAD
 
     /**
      * Return last name for the specified gender.
@@ -176,4 +180,6 @@ class Person extends \Faker\Provider\Person
 
         return $lastName . static::randomElement(static::$lastNameSuffix);
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

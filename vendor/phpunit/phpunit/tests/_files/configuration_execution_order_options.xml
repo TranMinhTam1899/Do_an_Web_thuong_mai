@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <phpunit executionOrder="reverse"
          resolveDependencies="true"
+=======
+<phpunit executionOrder="no-depends,reverse"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
          cacheResultFile="MultiDependencyTest_result_cache.txt">
 
     <php>

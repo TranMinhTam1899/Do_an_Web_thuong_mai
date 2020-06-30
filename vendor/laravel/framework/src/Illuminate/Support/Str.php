@@ -2,11 +2,19 @@
 
 namespace Illuminate\Support;
 
+<<<<<<< HEAD
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidFactory;
 use Illuminate\Support\Traits\Macroable;
 use Ramsey\Uuid\Generator\CombGenerator;
 use Ramsey\Uuid\Codec\TimestampFirstCombCodec;
+=======
+use Illuminate\Support\Traits\Macroable;
+use Ramsey\Uuid\Codec\TimestampFirstCombCodec;
+use Ramsey\Uuid\Generator\CombGenerator;
+use Ramsey\Uuid\Uuid;
+use Ramsey\Uuid\UuidFactory;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Str
 {
@@ -34,6 +42,16 @@ class Str
     protected static $studlyCache = [];
 
     /**
+<<<<<<< HEAD
+=======
+     * The callback that should be used to generate UUIDs.
+     *
+     * @var callable
+     */
+    protected static $uuidFactory;
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Return the remainder of a string after a given value.
      *
      * @param  string  $subject
@@ -566,7 +584,13 @@ class Str
      */
     public static function uuid()
     {
+<<<<<<< HEAD
         return Uuid::uuid4();
+=======
+        return static::$uuidFactory
+                    ? call_user_func(static::$uuidFactory)
+                    : Uuid::uuid4();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -576,7 +600,15 @@ class Str
      */
     public static function orderedUuid()
     {
+<<<<<<< HEAD
         $factory = new UuidFactory;
+=======
+        if (static::$uuidFactory) {
+            return call_user_func(static::$uuidFactory);
+        }
+
+        $factory = new UuidFactory();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $factory->setRandomGenerator(new CombGenerator(
             $factory->getRandomGenerator(),
@@ -591,6 +623,30 @@ class Str
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Set the callable that will be used to generate UUIDs.
+     *
+     * @param  callable  $factory
+     * @return void
+     */
+    public static function createUuidsUsing(callable $factory = null)
+    {
+        static::$uuidFactory = $factory;
+    }
+
+    /**
+     * Indicate that UUIDs should be created normally and not using a custom factory.
+     *
+     * @return void
+     */
+    public static function createUuidsNormally()
+    {
+        static::$uuidFactory = null;
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Returns the replacements for the ascii method.
      *
      * Note: Adapted from Stringy\Stringy.

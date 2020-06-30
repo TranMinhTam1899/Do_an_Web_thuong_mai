@@ -21,9 +21,12 @@ use Symfony\Component\Mime\Part\Multipart\FormDataPart;
 use Symfony\Component\Mime\Part\TextPart;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
+<<<<<<< HEAD
 // Help opcache.preload discover always-needed symbols
 class_exists(ResponseHeaderBag::class);
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /**
  * An implementation of a Symfony HTTP kernel using a "real" HTTP client.
  *
@@ -42,7 +45,11 @@ final class HttpClientKernel implements HttpKernelInterface
         $this->client = $client ?? HttpClient::create();
     }
 
+<<<<<<< HEAD
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true): Response
+=======
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $headers = $this->getHeaders($request);
         $body = '';
@@ -59,7 +66,11 @@ final class HttpClientKernel implements HttpKernelInterface
         $response = new Response($response->getContent(!$catch), $response->getStatusCode(), $response->getHeaders(!$catch));
 
         $response->headers = new class($response->headers->all()) extends ResponseHeaderBag {
+<<<<<<< HEAD
             protected function computeCacheControlValue(): string
+=======
+            protected function computeCacheControlValue()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             {
                 return $this->getCacheControlHeader(); // preserve the original value
             }

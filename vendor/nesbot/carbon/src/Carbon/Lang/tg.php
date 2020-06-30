@@ -8,12 +8,19 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+<<<<<<< HEAD
+=======
+\Symfony\Component\Translation\PluralizationRules::set(function ($number) {
+    return $number === 1 ? 0 : 1;
+}, 'tg');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /*
  * Authors:
  * - Orif N. Jr
  */
 return [
+<<<<<<< HEAD
     'year' => '{1}як сол|:count сол',
     'month' => '{1}як моҳ|:count моҳ',
     'week' => '{1}як ҳафта|:count ҳафта',
@@ -21,6 +28,15 @@ return [
     'hour' => '{1}як соат|:count соат',
     'minute' => '{1}як дақиқа|:count дақиқа',
     'second' => '{1}якчанд сония|:count сония',
+=======
+    'year' => 'як сол|:count сол',
+    'month' => 'як моҳ|:count моҳ',
+    'week' => 'як ҳафта|:count ҳафта',
+    'day' => 'як рӯз|:count рӯз',
+    'hour' => 'як соат|:count соат',
+    'minute' => 'як дақиқа|:count дақиқа',
+    'second' => 'якчанд сония|:count сония',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => ':time пеш',
     'from_now' => 'баъди :time',
     'formats' => [

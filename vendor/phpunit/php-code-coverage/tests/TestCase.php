@@ -11,17 +11,26 @@
 namespace SebastianBergmann\CodeCoverage;
 
 use SebastianBergmann\CodeCoverage\Driver\Driver;
+<<<<<<< HEAD
 
 /**
  * Abstract base class for test case classes.
  *
  * @since Class available since Release 1.0.0
  */
+=======
+use SebastianBergmann\CodeCoverage\Report\Xml\Coverage;
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     protected static $TEST_TMP_PATH;
 
+<<<<<<< HEAD
     public static function setUpBeforeClass()
+=======
+    public static function setUpBeforeClass(): void
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         self::$TEST_TMP_PATH = TEST_FILES_PATH . 'tmp';
     }
@@ -78,10 +87,16 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         ];
     }
 
+<<<<<<< HEAD
     protected function getCoverageForBankAccount()
     {
         $data = $this->getXdebugDataForBankAccount();
         require_once TEST_FILES_PATH . '/BankAccountTest.php';
+=======
+    protected function getCoverageForBankAccount(): CodeCoverage
+    {
+        $data = $this->getXdebugDataForBankAccount();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $stub = $this->createMock(Driver::class);
 
@@ -145,7 +160,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $coverage;
     }
 
+<<<<<<< HEAD
     protected function getCoverageForBankAccountForFirstTwoTests()
+=======
+    protected function getCoverageForBankAccountForFirstTwoTests(): CodeCoverage
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $data = $this->getXdebugDataForBankAccount();
 
@@ -230,7 +249,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $coverage;
     }
 
+<<<<<<< HEAD
     protected function getExpectedDataArrayForBankAccount()
+=======
+    protected function getExpectedDataArrayForBankAccount(): array
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             TEST_FILES_PATH . 'BankAccount.php' => [
@@ -264,7 +287,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         ];
     }
 
+<<<<<<< HEAD
     protected function getExpectedDataArrayForBankAccountInReverseOrder()
+=======
+    protected function getExpectedDataArrayForBankAccountInReverseOrder(): array
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             TEST_FILES_PATH . 'BankAccount.php' => [
@@ -298,7 +325,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         ];
     }
 
+<<<<<<< HEAD
     protected function getCoverageForFileWithIgnoredLines()
+=======
+    protected function getCoverageForFileWithIgnoredLines(): CodeCoverage
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $filter = new Filter;
         $filter->addFileToWhitelist(TEST_FILES_PATH . 'source_with_ignore.php');
@@ -314,7 +345,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $coverage;
     }
 
+<<<<<<< HEAD
     protected function setUpXdebugStubForFileWithIgnoredLines()
+=======
+    protected function setUpXdebugStubForFileWithIgnoredLines(): Driver
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $stub = $this->createMock(Driver::class);
 
@@ -334,7 +369,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $stub;
     }
 
+<<<<<<< HEAD
     protected function getCoverageForClassWithAnonymousFunction()
+=======
+    protected function getCoverageForClassWithAnonymousFunction(): CodeCoverage
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $filter = new Filter;
         $filter->addFileToWhitelist(TEST_FILES_PATH . 'source_with_class_and_anonymous_function.php');
@@ -350,7 +389,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $coverage;
     }
 
+<<<<<<< HEAD
     protected function setUpXdebugStubForClassWithAnonymousFunction()
+=======
+    protected function setUpXdebugStubForClassWithAnonymousFunction(): Driver
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $stub = $this->createMock(Driver::class);
 
@@ -375,7 +418,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         return $stub;
     }
 
+<<<<<<< HEAD
     protected function getCoverageForCrashParsing()
+=======
+    protected function getCoverageForCrashParsing(): CodeCoverage
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $filter = new Filter;
         $filter->addFileToWhitelist(TEST_FILES_PATH . 'Crash.php');
@@ -387,7 +434,11 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
         );
     }
 
+<<<<<<< HEAD
     protected function setUpXdebugStubForCrashParsing()
+=======
+    protected function setUpXdebugStubForCrashParsing(): Driver
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $stub = $this->createMock(Driver::class);
 

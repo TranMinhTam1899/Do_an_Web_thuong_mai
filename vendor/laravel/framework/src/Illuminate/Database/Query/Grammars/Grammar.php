@@ -2,12 +2,21 @@
 
 namespace Illuminate\Database\Query\Grammars;
 
+<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\JoinClause;
 use Illuminate\Database\Grammar as BaseGrammar;
+=======
+use Illuminate\Database\Grammar as BaseGrammar;
+use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Query\JoinClause;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Grammar extends BaseGrammar
 {
@@ -34,7 +43,10 @@ class Grammar extends BaseGrammar
         'orders',
         'limit',
         'offset',
+<<<<<<< HEAD
         'unions',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         'lock',
     ];
 
@@ -66,6 +78,13 @@ class Grammar extends BaseGrammar
             $this->compileComponents($query))
         );
 
+<<<<<<< HEAD
+=======
+        if ($query->unions) {
+            $sql = $this->wrapUnion($sql).' '.$this->compileUnions($query);
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $query->columns = $original;
 
         return $sql;
@@ -109,7 +128,13 @@ class Grammar extends BaseGrammar
         // If the query has a "distinct" constraint and we're not asking for all columns
         // we need to prepend "distinct" onto the column name so that the query takes
         // it into account when it performs the aggregating operations on the data.
+<<<<<<< HEAD
         if ($query->distinct && $column !== '*') {
+=======
+        if (is_array($query->distinct)) {
+            $column = 'distinct '.$this->columnize($query->distinct);
+        } elseif ($query->distinct && $column !== '*') {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $column = 'distinct '.$column;
         }
 
@@ -132,7 +157,15 @@ class Grammar extends BaseGrammar
             return;
         }
 
+<<<<<<< HEAD
         $select = $query->distinct ? 'select distinct ' : 'select ';
+=======
+        if ($query->distinct) {
+            $select = 'select distinct ';
+        } else {
+            $select = 'select ';
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $select.$this->columnize($columns);
     }
@@ -298,6 +331,7 @@ class Grammar extends BaseGrammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a where in sub-select clause.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -322,6 +356,8 @@ class Grammar extends BaseGrammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Compile a "where in raw" clause.
      *
      * For safety, whereIntegerInRaw ensures this method is only used with integer values.
@@ -811,7 +847,22 @@ class Grammar extends BaseGrammar
     {
         $conjunction = $union['all'] ? ' union all ' : ' union ';
 
+<<<<<<< HEAD
         return $conjunction.$union['query']->toSql();
+=======
+        return $conjunction.$this->wrapUnion($union['query']->toSql());
+    }
+
+    /**
+     * Wrap a union subquery in parentheses.
+     *
+     * @param  string  $sql
+     * @return string
+     */
+    protected function wrapUnion($sql)
+    {
+        return '('.$sql.')';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -856,6 +907,13 @@ class Grammar extends BaseGrammar
         // basic routine regardless of an amount of records given to us to insert.
         $table = $this->wrapTable($query->from);
 
+<<<<<<< HEAD
+=======
+        if (empty($values)) {
+            return "insert into {$table} default values";
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (! is_array(reset($values))) {
             $values = [$values];
         }
@@ -917,6 +975,7 @@ class Grammar extends BaseGrammar
      * @param  array  $values
      * @return string
      */
+<<<<<<< HEAD
     public function compileUpdate(Builder $query, $values)
     {
         $table = $this->wrapTable($query->from);
@@ -943,6 +1002,65 @@ class Grammar extends BaseGrammar
         $wheres = $this->compileWheres($query);
 
         return trim("update {$table}{$joins} set $columns $wheres");
+=======
+    public function compileUpdate(Builder $query, array $values)
+    {
+        $table = $this->wrapTable($query->from);
+
+        $columns = $this->compileUpdateColumns($query, $values);
+
+        $where = $this->compileWheres($query);
+
+        return trim(
+            isset($query->joins)
+                ? $this->compileUpdateWithJoins($query, $table, $columns, $where)
+                : $this->compileUpdateWithoutJoins($query, $table, $columns, $where)
+        );
+    }
+
+    /**
+     * Compile the columns for an update statement.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $values
+     * @return string
+     */
+    protected function compileUpdateColumns(Builder $query, array $values)
+    {
+        return collect($values)->map(function ($value, $key) {
+            return $this->wrap($key).' = '.$this->parameter($value);
+        })->implode(', ');
+    }
+
+    /**
+     * Compile an update statement without joins into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $table
+     * @param  string  $columns
+     * @param  string  $where
+     * @return string
+     */
+    protected function compileUpdateWithoutJoins(Builder $query, $table, $columns, $where)
+    {
+        return "update {$table} set {$columns} {$where}";
+    }
+
+    /**
+     * Compile an update statement with joins into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $table
+     * @param  string  $columns
+     * @param  string  $where
+     * @return string
+     */
+    protected function compileUpdateWithJoins(Builder $query, $table, $columns, $where)
+    {
+        $joins = $this->compileJoins($query, $query->joins);
+
+        return "update {$table} {$joins} set {$columns} {$where}";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -969,9 +1087,51 @@ class Grammar extends BaseGrammar
      */
     public function compileDelete(Builder $query)
     {
+<<<<<<< HEAD
         $wheres = is_array($query->wheres) ? $this->compileWheres($query) : '';
 
         return trim("delete from {$this->wrapTable($query->from)} $wheres");
+=======
+        $table = $this->wrapTable($query->from);
+
+        $where = $this->compileWheres($query);
+
+        return trim(
+            isset($query->joins)
+                ? $this->compileDeleteWithJoins($query, $table, $where)
+                : $this->compileDeleteWithoutJoins($query, $table, $where)
+        );
+    }
+
+    /**
+     * Compile a delete statement without joins into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $table
+     * @param  string  $where
+     * @return string
+     */
+    protected function compileDeleteWithoutJoins(Builder $query, $table, $where)
+    {
+        return "delete from {$table} {$where}";
+    }
+
+    /**
+     * Compile a delete statement with joins into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $table
+     * @param  string  $where
+     * @return string
+     */
+    protected function compileDeleteWithJoins(Builder $query, $table, $where)
+    {
+        $alias = last(explode(' as ', $table));
+
+        $joins = $this->compileJoins($query, $query->joins);
+
+        return "delete {$alias} from {$table} {$joins} {$where}";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -995,7 +1155,11 @@ class Grammar extends BaseGrammar
      */
     public function compileTruncate(Builder $query)
     {
+<<<<<<< HEAD
         return ['truncate '.$this->wrapTable($query->from) => []];
+=======
+        return ['truncate table '.$this->wrapTable($query->from) => []];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

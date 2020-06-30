@@ -16,8 +16,11 @@ class Company extends Base
 
     /**
      * @example 'Acme Ltd'
+<<<<<<< HEAD
      *
      * @return string
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function company()
     {
@@ -28,8 +31,11 @@ class Company extends Base
 
     /**
      * @example 'Ltd'
+<<<<<<< HEAD
      *
      * @return string
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public static function companySuffix()
     {
@@ -38,8 +44,11 @@ class Company extends Base
 
     /**
      * @example 'Job'
+<<<<<<< HEAD
      *
      * @return string
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function jobTitle()
     {

@@ -2,6 +2,7 @@
 
 namespace Illuminate\Auth;
 
+<<<<<<< HEAD
 use RuntimeException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -15,6 +16,21 @@ use Illuminate\Contracts\Auth\SupportsBasicAuth;
 use Illuminate\Contracts\Cookie\QueueingFactory as CookieJar;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+=======
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\StatefulGuard;
+use Illuminate\Contracts\Auth\SupportsBasicAuth;
+use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Contracts\Cookie\QueueingFactory as CookieJar;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use RuntimeException;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SessionGuard implements StatefulGuard, SupportsBasicAuth
 {
@@ -532,6 +548,35 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Log the user out of the application on their current device only.
+     *
+     * @return void
+     */
+    public function logoutCurrentDevice()
+    {
+        $user = $this->user();
+
+        // If we have an event dispatcher instance, we can fire off the logout event
+        // so any further processing can be done. This allows the developer to be
+        // listening for anytime a user signs out of this application manually.
+        $this->clearUserDataFromStorage();
+
+        if (isset($this->events)) {
+            $this->events->dispatch(new Events\CurrentDeviceLogout($this->name, $user));
+        }
+
+        // Once we have fired the logout event we will clear the users out of memory
+        // so they are no longer available as the user is no longer considered as
+        // being signed into this application and should not be available here.
+        $this->user = null;
+
+        $this->loggedOut = true;
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Invalidate other sessions for the current user.
      *
      * The application must be using the AuthenticateSession middleware.

@@ -191,16 +191,28 @@ class ProgressIndicator
             return;
         }
 
+<<<<<<< HEAD
         $this->overwrite(preg_replace_callback("{%([a-z\-_]+)(?:\:([^%]+))?%}i", function ($matches) {
             if ($formatter = self::getPlaceholderFormatterDefinition($matches[1])) {
                 return $formatter($this);
+=======
+        $self = $this;
+
+        $this->overwrite(preg_replace_callback("{%([a-z\-_]+)(?:\:([^%]+))?%}i", function ($matches) use ($self) {
+            if ($formatter = $self::getPlaceholderFormatterDefinition($matches[1])) {
+                return $formatter($self);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return $matches[0];
         }, $this->format));
     }
 
+<<<<<<< HEAD
     private function determineBestFormat(): string
+=======
+    private function determineBestFormat()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         switch ($this->output->getVerbosity()) {
             // OutputInterface::VERBOSITY_QUIET: display is disabled anyway
@@ -227,12 +239,20 @@ class ProgressIndicator
         }
     }
 
+<<<<<<< HEAD
     private function getCurrentTimeInMilliseconds(): float
+=======
+    private function getCurrentTimeInMilliseconds()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return round(microtime(true) * 1000);
     }
 
+<<<<<<< HEAD
     private static function initPlaceholderFormatters(): array
+=======
+    private static function initPlaceholderFormatters()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             'indicator' => function (self $indicator) {
@@ -250,7 +270,11 @@ class ProgressIndicator
         ];
     }
 
+<<<<<<< HEAD
     private static function initFormats(): array
+=======
+    private static function initFormats()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return [
             'normal' => ' %indicator% %message%',

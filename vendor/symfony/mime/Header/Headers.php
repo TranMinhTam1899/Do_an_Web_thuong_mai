@@ -13,11 +13,20 @@ namespace Symfony\Component\Mime\Header;
 
 use Symfony\Component\Mime\Address;
 use Symfony\Component\Mime\Exception\LogicException;
+<<<<<<< HEAD
+=======
+use Symfony\Component\Mime\NamedAddress;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * A collection of headers.
  *
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
+=======
+ *
+ * @experimental in 4.3
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 final class Headers
 {
@@ -59,21 +68,37 @@ final class Headers
     }
 
     /**
+<<<<<<< HEAD
      * @param (Address|string)[] $addresses
      *
      * @return $this
      */
     public function addMailboxListHeader(string $name, array $addresses): self
+=======
+     * @param (NamedAddress|Address|string)[] $addresses
+     *
+     * @return $this
+     */
+    public function addMailboxListHeader(string $name, array $addresses)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new MailboxListHeader($name, Address::createArray($addresses)));
     }
 
     /**
+<<<<<<< HEAD
      * @param Address|string $address
      *
      * @return $this
      */
     public function addMailboxHeader(string $name, $address): self
+=======
+     * @param NamedAddress|Address|string $address
+     *
+     * @return $this
+     */
+    public function addMailboxHeader(string $name, $address)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new MailboxHeader($name, Address::create($address)));
     }
@@ -83,7 +108,11 @@ final class Headers
      *
      * @return $this
      */
+<<<<<<< HEAD
     public function addIdHeader(string $name, $ids): self
+=======
+    public function addIdHeader(string $name, $ids)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new IdentificationHeader($name, $ids));
     }
@@ -93,7 +122,11 @@ final class Headers
      *
      * @return $this
      */
+<<<<<<< HEAD
     public function addPathHeader(string $name, $path): self
+=======
+    public function addPathHeader(string $name, $path)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new PathHeader($name, $path instanceof Address ? $path : new Address($path)));
     }
@@ -101,7 +134,11 @@ final class Headers
     /**
      * @return $this
      */
+<<<<<<< HEAD
     public function addDateHeader(string $name, \DateTimeInterface $dateTime): self
+=======
+    public function addDateHeader(string $name, \DateTimeInterface $dateTime)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new DateHeader($name, $dateTime));
     }
@@ -109,7 +146,11 @@ final class Headers
     /**
      * @return $this
      */
+<<<<<<< HEAD
     public function addTextHeader(string $name, string $value): self
+=======
+    public function addTextHeader(string $name, string $value)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new UnstructuredHeader($name, $value));
     }
@@ -117,7 +158,11 @@ final class Headers
     /**
      * @return $this
      */
+<<<<<<< HEAD
     public function addParameterizedHeader(string $name, string $value, array $params = []): self
+=======
+    public function addParameterizedHeader(string $name, string $value, array $params = [])
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->add(new ParameterizedHeader($name, $value, $params));
     }
@@ -130,7 +175,11 @@ final class Headers
     /**
      * @return $this
      */
+<<<<<<< HEAD
     public function add(HeaderInterface $header): self
+=======
+    public function add(HeaderInterface $header)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         static $map = [
             'date' => DateHeader::class,

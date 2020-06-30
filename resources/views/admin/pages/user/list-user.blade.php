@@ -52,18 +52,18 @@ Danh sách user
 
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
-                                                        style="width: 81px;">role
+                                                        style="width: 81px;">Role
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 34px;"
-                                                        aria-label="Age: activate to sort column ascending">first-name
+                                                        aria-label="Age: activate to sort column ascending">First-name
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 74px;"
                                                         aria-label="Start date: activate to sort column ascending">
-                                                        last-name</th>
+                                                        Last-name</th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 60px;"
@@ -72,7 +72,7 @@ Danh sách user
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 43px;"
-                                                        aria-label="Extn.: activate to sort column ascending">SDDT</th>
+                                                        aria-label="Extn.: activate to sort column ascending">Phone</th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
@@ -103,12 +103,12 @@ Danh sách user
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
-                                                        aria-label="E-mail: activate to sort column ascending">created
+                                                        aria-label="E-mail: activate to sort column ascending">Created
                                                     </th>
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
                                                         style="width: 166px;"
-                                                        aria-label="E-mail: activate to sort column ascending">updated
+                                                        aria-label="E-mail: activate to sort column ascending">Updated
                                                     </th>
                                                     <th  tabindex="0"
                                                         aria-controls="datatable-responsive" rowspan="1" colspan="1"
@@ -134,13 +134,8 @@ Danh sách user
                                                     <td>{{$ur -> created_at}}</td>
                                                     <td>{{$ur -> updated_at}}</td>
                                                     <td class="text-center">
-                                                        <a href="#" class="btn btn-warning">
-                                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                                                        </a>
-                                                        <button class="btn btn-danger">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </button>
-
+                                                        <a href="{{route('user.cap-nhat',['id'=>$ur->id])}}" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                                        <a href="{{route('user.xoa',['id'=>$ur->id])}}" class="btn btn-danger" onclick="return confirm('Bạn có chắc muốn xóa???')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                     </td>
                                                 </tr>
                                                 @endforeach

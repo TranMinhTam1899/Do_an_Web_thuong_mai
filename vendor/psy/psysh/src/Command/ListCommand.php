@@ -142,8 +142,11 @@ HELP
         if ($reflector !== null) {
             $this->setCommandScopeVariables($reflector);
         }
+<<<<<<< HEAD
 
         return 0;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

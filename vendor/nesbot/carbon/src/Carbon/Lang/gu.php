@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - Kaushik Thanki
@@ -34,7 +38,10 @@ return [
     'from_now' => ':time મા',
     'after' => ':time પછી',
     'before' => ':time પહેલા',
+<<<<<<< HEAD
     'diff_now' => 'હમણાં',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'diff_yesterday' => 'ગઇકાલે',
     'diff_tomorrow' => 'કાલે',
     'formats' => [

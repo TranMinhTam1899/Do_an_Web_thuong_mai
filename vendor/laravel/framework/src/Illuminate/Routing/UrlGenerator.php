@@ -3,6 +3,7 @@
 namespace Illuminate\Routing;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,6 +13,18 @@ use Illuminate\Support\Traits\Macroable;
 use Illuminate\Support\InteractsWithTime;
 use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Contracts\Routing\UrlGenerator as UrlGeneratorContract;
+=======
+use Illuminate\Contracts\Routing\UrlGenerator as UrlGeneratorContract;
+use Illuminate\Contracts\Routing\UrlRoutable;
+use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\InteractsWithTime;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use InvalidArgumentException;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class UrlGenerator implements UrlGeneratorContract
 {
@@ -355,18 +368,53 @@ class UrlGenerator implements UrlGeneratorContract
      */
     public function hasValidSignature(Request $request, $absolute = true)
     {
+<<<<<<< HEAD
+=======
+        return $this->hasCorrectSignature($request, $absolute)
+            && $this->signatureHasNotExpired($request);
+    }
+
+    /**
+     * Determine if the signature from the given request matches the URL.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  bool  $absolute
+     * @return bool
+     */
+    public function hasCorrectSignature(Request $request, $absolute = true)
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $url = $absolute ? $request->url() : '/'.$request->path();
 
         $original = rtrim($url.'?'.Arr::query(
             Arr::except($request->query(), 'signature')
         ), '?');
 
+<<<<<<< HEAD
         $expires = $request->query('expires');
 
         $signature = hash_hmac('sha256', $original, call_user_func($this->keyResolver));
 
         return hash_equals($signature, (string) $request->query('signature', '')) &&
                ! ($expires && Carbon::now()->getTimestamp() > $expires);
+=======
+        $signature = hash_hmac('sha256', $original, call_user_func($this->keyResolver));
+
+        return hash_equals($signature, (string) $request->query('signature', ''));
+    }
+
+    /**
+     * Determine if the expires timestamp from the given request is not from the past.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return bool
+     */
+    public function signatureHasNotExpired(Request $request)
+    {
+        $expires = $request->query('expires');
+
+        return ! ($expires && Carbon::now()->getTimestamp() > $expires);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -377,7 +425,11 @@ class UrlGenerator implements UrlGeneratorContract
      * @param  bool  $absolute
      * @return string
      *
+<<<<<<< HEAD
      * @throws \InvalidArgumentException
+=======
+     * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     public function route($name, $parameters = [], $absolute = true)
     {
@@ -385,7 +437,11 @@ class UrlGenerator implements UrlGeneratorContract
             return $this->toRoute($route, $parameters, $absolute);
         }
 
+<<<<<<< HEAD
         throw new InvalidArgumentException("Route [{$name}] not defined.");
+=======
+        throw new RouteNotFoundException("Route [{$name}] not defined.");
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -398,7 +454,11 @@ class UrlGenerator implements UrlGeneratorContract
      *
      * @throws \Illuminate\Routing\Exceptions\UrlGenerationException
      */
+<<<<<<< HEAD
     protected function toRoute($route, $parameters, $absolute)
+=======
+    public function toRoute($route, $parameters, $absolute)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->routeUrl()->to(
             $route, $this->formatParameters($parameters), $absolute

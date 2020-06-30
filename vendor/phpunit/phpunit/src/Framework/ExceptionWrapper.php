@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -20,8 +24,15 @@ use Throwable;
  *
  * Unlike PHPUnit\Framework_\Exception, the complete stack of previous Exceptions
  * is processed.
+<<<<<<< HEAD
  */
 class ExceptionWrapper extends Exception
+=======
+ *
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class ExceptionWrapper extends Exception
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var string
@@ -41,9 +52,12 @@ class ExceptionWrapper extends Exception
         $this->setOriginalException($t);
     }
 
+<<<<<<< HEAD
     /**
      * @throws \InvalidArgumentException
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function __toString(): string
     {
         $string = TestFailure::exceptionToString($this);

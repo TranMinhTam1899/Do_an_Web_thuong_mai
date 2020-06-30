@@ -135,6 +135,7 @@ class ChoiceQuestion extends Question
                     throw new InvalidArgumentException(sprintf($errorMessage, $selected));
                 }
 
+<<<<<<< HEAD
                 $selectedChoices = explode(',', $selected);
             } else {
                 $selectedChoices = [$selected];
@@ -144,6 +145,11 @@ class ChoiceQuestion extends Question
                 foreach ($selectedChoices as $k => $v) {
                     $selectedChoices[$k] = trim($v);
                 }
+=======
+                $selectedChoices = array_map('trim', explode(',', $selected));
+            } else {
+                $selectedChoices = [trim($selected)];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $multiselectChoices = [];
@@ -156,7 +162,11 @@ class ChoiceQuestion extends Question
                 }
 
                 if (\count($results) > 1) {
+<<<<<<< HEAD
                     throw new InvalidArgumentException(sprintf('The provided answer is ambiguous. Value should be one of "%s".', implode('" or "', $results)));
+=======
+                    throw new InvalidArgumentException(sprintf('The provided answer is ambiguous. Value should be one of %s.', implode(' or ', $results)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 }
 
                 $result = array_search($value, $choices);

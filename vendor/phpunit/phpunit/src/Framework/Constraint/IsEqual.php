@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -22,7 +26,11 @@ use SebastianBergmann\Comparator\Factory as ComparatorFactory;
  *
  * The expected value is passed in the constructor.
  */
+<<<<<<< HEAD
 class IsEqual extends Constraint
+=======
+final class IsEqual extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var mixed
@@ -35,11 +43,14 @@ class IsEqual extends Constraint
     private $delta;
 
     /**
+<<<<<<< HEAD
      * @var int
      */
     private $maxDepth;
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @var bool
      */
     private $canonicalize;
@@ -51,11 +62,16 @@ class IsEqual extends Constraint
 
     public function __construct($value, float $delta = 0.0, int $maxDepth = 10, bool $canonicalize = false, bool $ignoreCase = false)
     {
+<<<<<<< HEAD
         parent::__construct();
 
         $this->value        = $value;
         $this->delta        = $delta;
         $this->maxDepth     = $maxDepth;
+=======
+        $this->value        = $value;
+        $this->delta        = $delta;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->canonicalize = $canonicalize;
         $this->ignoreCase   = $ignoreCase;
     }
@@ -70,6 +86,7 @@ class IsEqual extends Constraint
      * a boolean value instead: true in case of success, false in case of a
      * failure.
      *
+<<<<<<< HEAD
      * @param mixed  $other        value or object to evaluate
      * @param string $description  Additional information about the test
      * @param bool   $returnResult Whether to return a result or throw an exception
@@ -77,6 +94,11 @@ class IsEqual extends Constraint
      * @throws ExpectationFailedException
      */
     public function evaluate($other, $description = '', $returnResult = false)
+=======
+     * @throws ExpectationFailedException
+     */
+    public function evaluate($other, string $description = '', bool $returnResult = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         // If $this->value and $other are identical, they are also equal.
         // This is the most common path and will allow us to skip
@@ -143,7 +165,11 @@ class IsEqual extends Constraint
 
         return \sprintf(
             'is equal to %s%s',
+<<<<<<< HEAD
             $this->exporter->export($this->value),
+=======
+            $this->exporter()->export($this->value),
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $delta
         );
     }

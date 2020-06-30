@@ -18,7 +18,11 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/polyfill-mbstring": "^1.3",
+<<<<<<< HEAD
         "symfony/polyfill-php72": "^1.10"
+=======
+        "symfony/polyfill-php72": "^1.9"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     },
     "autoload": {
         "psr-4": { "Symfony\\Polyfill\\Intl\\Idn\\": "" },
@@ -30,7 +34,11 @@
     "minimum-stability": "dev",
     "extra": {
         "branch-alias": {
+<<<<<<< HEAD
             "dev-master": "1.17-dev"
+=======
+            "dev-master": "1.12-dev"
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 }

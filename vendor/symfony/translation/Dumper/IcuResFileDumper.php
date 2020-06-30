@@ -82,14 +82,22 @@ class IcuResFileDumper extends FileDumper
         return $header.$root.$data;
     }
 
+<<<<<<< HEAD
     private function writePadding(string $data): ?string
+=======
+    private function writePadding($data)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $padding = \strlen($data) % 4;
 
         return $padding ? str_repeat("\xAA", 4 - $padding) : null;
     }
 
+<<<<<<< HEAD
     private function getPosition(string $data)
+=======
+    private function getPosition($data)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return (\strlen($data) + 28) / 4;
     }

@@ -3,11 +3,19 @@
 namespace Illuminate\Session;
 
 use Closure;
+<<<<<<< HEAD
 use stdClass;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use SessionHandlerInterface;
 use Illuminate\Contracts\Session\Session;
+=======
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use SessionHandlerInterface;
+use stdClass;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Store implements Session
 {

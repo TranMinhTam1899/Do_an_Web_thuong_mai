@@ -3,10 +3,17 @@
 namespace Illuminate\Validation;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\Validation\Factory as FactoryContract;
+=======
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Translation\Translator;
+use Illuminate\Contracts\Validation\Factory as FactoryContract;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Factory implements FactoryContract
 {

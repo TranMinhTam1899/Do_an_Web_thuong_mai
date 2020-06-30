@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Console;
 
 use Closure;
 use Exception;
+<<<<<<< HEAD
 use Throwable;
 use ReflectionClass;
 use Illuminate\Support\Arr;
@@ -17,6 +18,22 @@ use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Console\Kernel as KernelContract;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
+=======
+use Illuminate\Console\Application as Artisan;
+use Illuminate\Console\Command;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Contracts\Console\Kernel as KernelContract;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Env;
+use Illuminate\Support\Str;
+use ReflectionClass;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Symfony\Component\Finder\Finder;
+use Throwable;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Kernel implements KernelContract
 {
@@ -99,6 +116,7 @@ class Kernel implements KernelContract
     protected function defineConsoleSchedule()
     {
         $this->app->singleton(Schedule::class, function ($app) {
+<<<<<<< HEAD
             return (new Schedule($this->scheduleTimezone()))
                     ->useCache($this->scheduleCache());
         });
@@ -106,6 +124,12 @@ class Kernel implements KernelContract
         $schedule = $this->app->make(Schedule::class);
 
         $this->schedule($schedule);
+=======
+            return tap(new Schedule($this->scheduleTimezone()), function ($schedule) {
+                $this->schedule($schedule->useCache($this->scheduleCache()));
+            });
+        });
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -115,7 +139,11 @@ class Kernel implements KernelContract
      */
     protected function scheduleCache()
     {
+<<<<<<< HEAD
         return $_ENV['SCHEDULE_CACHE_DRIVER'] ?? null;
+=======
+        return Env::get('SCHEDULE_CACHE_DRIVER');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

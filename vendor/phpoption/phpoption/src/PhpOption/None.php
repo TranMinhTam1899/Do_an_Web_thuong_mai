@@ -20,6 +20,7 @@ namespace PhpOption;
 
 use EmptyIterator;
 
+<<<<<<< HEAD
 /**
  * @extends Option<mixed>
  */
@@ -31,6 +32,12 @@ final class None extends Option
     /**
      * @return None
      */
+=======
+final class None extends Option
+{
+    private static $instance;
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public static function create()
     {
         if (null === self::$instance) {
@@ -47,7 +54,11 @@ final class None extends Option
 
     public function getOrCall($callable)
     {
+<<<<<<< HEAD
         return $callable();
+=======
+        return call_user_func($callable);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     public function getOrElse($default)
@@ -75,6 +86,12 @@ final class None extends Option
         return $else;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @deprecated Use forAll() instead.
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function ifDefined($callable)
     {
         // Just do nothing in that case.
@@ -130,7 +147,11 @@ final class None extends Option
         return $initialValue;
     }
 
+<<<<<<< HEAD
     private function __construct()
     {
     }
+=======
+    private function __construct() { }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

@@ -34,11 +34,14 @@ class RedirectResponse extends Response
      */
     public function __construct(?string $url, int $status = 302, array $headers = [])
     {
+<<<<<<< HEAD
         if (null === $url) {
             @trigger_error(sprintf('Passing a null url when instantiating a "%s" is deprecated since Symfony 4.4.', __CLASS__), E_USER_DEPRECATED);
             $url = '';
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         parent::__construct('', $status, $headers);
 
         $this->setTargetUrl($url);
@@ -47,7 +50,11 @@ class RedirectResponse extends Response
             throw new \InvalidArgumentException(sprintf('The HTTP status code is not a redirect ("%s" given).', $status));
         }
 
+<<<<<<< HEAD
         if (301 == $status && !\array_key_exists('cache-control', array_change_key_case($headers, CASE_LOWER))) {
+=======
+        if (301 == $status && !\array_key_exists('cache-control', array_change_key_case($headers, \CASE_LOWER))) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             $this->headers->remove('cache-control');
         }
     }
@@ -87,7 +94,11 @@ class RedirectResponse extends Response
      */
     public function setTargetUrl($url)
     {
+<<<<<<< HEAD
         if ('' === ($url ?? '')) {
+=======
+        if (empty($url)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             throw new \InvalidArgumentException('Cannot redirect to an empty URL.');
         }
 
@@ -98,7 +109,11 @@ class RedirectResponse extends Response
 <html>
     <head>
         <meta charset="UTF-8" />
+<<<<<<< HEAD
         <meta http-equiv="refresh" content="0;url=\'%1$s\'" />
+=======
+        <meta http-equiv="refresh" content="0;url=%1$s" />
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         <title>Redirecting to %1$s</title>
     </head>

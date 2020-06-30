@@ -2,10 +2,17 @@
 
 namespace Illuminate\Foundation\Testing\Concerns;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Console\OutputStyle;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\PendingCommand;
+=======
+use Illuminate\Console\OutputStyle;
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Testing\PendingCommand;
+use Illuminate\Support\Arr;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 trait InteractsWithConsole
 {

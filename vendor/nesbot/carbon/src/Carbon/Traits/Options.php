@@ -417,12 +417,15 @@ trait Options
             return $var;
         });
 
+<<<<<<< HEAD
         foreach (['dumpProperties', 'constructedObjectId'] as $property) {
             if (isset($infos[$property])) {
                 unset($infos[$property]);
             }
         }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         // @codeCoverageIgnoreStart
 
         if ($this instanceof CarbonInterface || $this instanceof DateTimeInterface) {

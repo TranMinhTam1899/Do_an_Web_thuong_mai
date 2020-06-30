@@ -11,15 +11,21 @@
 
 namespace Symfony\Component\Console\Style;
 
+<<<<<<< HEAD
 use Symfony\Component\Console\Exception\InvalidArgumentException;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Exception\RuntimeException;
 use Symfony\Component\Console\Formatter\OutputFormatter;
 use Symfony\Component\Console\Helper\Helper;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Helper\SymfonyQuestionHelper;
 use Symfony\Component\Console\Helper\Table;
+<<<<<<< HEAD
 use Symfony\Component\Console\Helper\TableCell;
 use Symfony\Component\Console\Helper\TableSeparator;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -194,6 +200,7 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+<<<<<<< HEAD
      * Formats a horizontal table.
      */
     public function horizontalTable(array $headers, array $rows)
@@ -257,6 +264,8 @@ class SymfonyStyle extends OutputStyle
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * {@inheritdoc}
      */
     public function ask($question, $default = null, $validator = null)
@@ -295,7 +304,11 @@ class SymfonyStyle extends OutputStyle
     {
         if (null !== $default) {
             $values = array_flip($choices);
+<<<<<<< HEAD
             $default = isset($values[$default]) ? $values[$default] : $default;
+=======
+            $default = $values[$default];
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $this->askQuestion(new ChoiceQuestion($question, $choices, $default));
@@ -454,7 +467,11 @@ class SymfonyStyle extends OutputStyle
         $this->bufferedOutput->write(substr($message, -4), $newLine, $type);
     }
 
+<<<<<<< HEAD
     private function createBlock(iterable $messages, string $type = null, string $style = null, string $prefix = ' ', bool $padding = false, bool $escape = false): array
+=======
+    private function createBlock(iterable $messages, string $type = null, string $style = null, string $prefix = ' ', bool $padding = false, bool $escape = false)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $indentLength = 0;
         $prefixLength = Helper::strlenWithoutDecoration($this->getFormatter(), $prefix);

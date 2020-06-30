@@ -8,6 +8,10 @@ use Symfony\Component\CssSelector\Exception\ExceptionInterface;
 use TijsVerkoyen\CssToInlineStyles\Css\Processor;
 use TijsVerkoyen\CssToInlineStyles\Css\Property\Processor as PropertyProcessor;
 use TijsVerkoyen\CssToInlineStyles\Css\Rule\Processor as RuleProcessor;
+<<<<<<< HEAD
+=======
+use TijsVerkoyen\CssToInlineStyles\Css\Rule\Rule;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CssToInlineStyles
 {
@@ -28,7 +32,10 @@ class CssToInlineStyles
      *
      * @param string $html
      * @param string $css
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     public function convert($html, $css = null)
@@ -55,7 +62,10 @@ class CssToInlineStyles
      *
      * @param \DOMElement             $element
      * @param Css\Property\Property[] $properties
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return \DOMElement
      */
     public function inlineCssOnElement(\DOMElement $element, array $properties)
@@ -90,7 +100,10 @@ class CssToInlineStyles
      * Get the current inline styles for a given DOMElement
      *
      * @param \DOMElement $element
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return Css\Property\Property[]
      */
     public function getInlineStyles(\DOMElement $element)
@@ -106,7 +119,10 @@ class CssToInlineStyles
 
     /**
      * @param string $html
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return \DOMDocument
      */
     protected function createDomDocumentFromHtml($html)
@@ -122,7 +138,10 @@ class CssToInlineStyles
 
     /**
      * @param \DOMDocument $document
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return string
      */
     protected function getHtmlFromDocument(\DOMDocument $document)
@@ -149,7 +168,10 @@ class CssToInlineStyles
     /**
      * @param \DOMDocument    $document
      * @param Css\Rule\Rule[] $rules
+<<<<<<< HEAD
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return \DOMDocument
      */
     protected function inline(\DOMDocument $document, array $rules)

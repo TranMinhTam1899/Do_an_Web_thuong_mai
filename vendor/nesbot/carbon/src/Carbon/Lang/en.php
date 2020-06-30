@@ -13,7 +13,10 @@
  * Authors:
  * - Milos Sakovic
  * - Paul
+<<<<<<< HEAD
  * - Pete Scopes (pdscopes)
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 return [
     'year' => '{1}:count year|{0}:count years|]1,Inf[:count years',
@@ -37,9 +40,12 @@ return [
     'second' => '{1}:count second|{0}:count seconds|]1,Inf[:count seconds',
     'a_second' => '{1}a few seconds|{0}:count seconds|]1,Inf[:count seconds',
     's' => ':counts',
+<<<<<<< HEAD
     'millisecond' => '{1}:count millisecond|{0}:count milliseconds|]1,Inf[:count milliseconds',
     'a_millisecond' => '{1}a millisecond|{0}:count milliseconds|]1,Inf[:count milliseconds',
     'ms' => ':countms',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'ago' => ':time ago',
     'from_now' => ':time from now',
     'after' => ':time after',

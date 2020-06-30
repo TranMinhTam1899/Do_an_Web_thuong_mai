@@ -12,7 +12,10 @@
 namespace Symfony\Component\HttpKernel\Profiler;
 
 use Psr\Log\LoggerInterface;
+<<<<<<< HEAD
 use Symfony\Component\Debug\Exception\FatalThrowableError;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\HttpFoundation\Exception\ConflictingHeadersException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -139,6 +142,7 @@ class Profiler implements ResetInterface
     /**
      * Collects data for the given Response.
      *
+<<<<<<< HEAD
      * @param \Throwable|null $exception
      *
      * @return Profile|null A Profile instance or null if the profiler is disabled
@@ -147,6 +151,12 @@ class Profiler implements ResetInterface
     {
         $exception = 2 < \func_num_args() ? func_get_arg(2) : null;
 
+=======
+     * @return Profile|null A Profile instance or null if the profiler is disabled
+     */
+    public function collect(Request $request, Response $response, \Exception $exception = null)
+    {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (false === $this->enabled) {
             return null;
         }
@@ -168,6 +178,7 @@ class Profiler implements ResetInterface
 
         $response->headers->set('X-Debug-Token', $profile->getToken());
 
+<<<<<<< HEAD
         $wrappedException = null;
         foreach ($this->collectors as $collector) {
             if (($e = $exception) instanceof \Error) {
@@ -176,6 +187,11 @@ class Profiler implements ResetInterface
             }
 
             $collector->collect($request, $response, $e);
+=======
+        foreach ($this->collectors as $collector) {
+            $collector->collect($request, $response, $exception);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             // we need to clone for sub-requests
             $profile->addCollector(clone $collector);
         }

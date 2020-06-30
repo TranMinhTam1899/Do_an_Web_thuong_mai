@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -10,6 +14,7 @@
 namespace PHPUnit\Framework\MockObject\Stub;
 
 use PHPUnit\Framework\MockObject\Invocation;
+<<<<<<< HEAD
 use PHPUnit\Framework\MockObject\Stub;
 use SebastianBergmann\Exporter\Exporter;
 
@@ -17,6 +22,14 @@ use SebastianBergmann\Exporter\Exporter;
  * Stubs a method by raising a user-defined exception.
  */
 class Exception implements Stub
+=======
+use SebastianBergmann\Exporter\Exporter;
+
+/**
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class Exception implements Stub
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     private $exception;
 
@@ -25,6 +38,12 @@ class Exception implements Stub
         $this->exception = $exception;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @throws \Throwable
+     */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function invoke(Invocation $invocation): void
     {
         throw $this->exception;

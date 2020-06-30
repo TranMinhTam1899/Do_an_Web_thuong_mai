@@ -151,7 +151,11 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
             $eventName = $swap;
 
             if (!$event instanceof Event) {
+<<<<<<< HEAD
                 throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an instance of "%s", "%s" given.', EventDispatcherInterface::class, Event::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+=======
+                throw new \TypeError(sprintf('Argument 1 passed to "%s::dispatch()" must be an instance of %s, %s given.', EventDispatcherInterface::class, Event::class, \is_object($event) ? \get_class($event) : \gettype($event)));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
         }
 
@@ -323,7 +327,11 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
     {
     }
 
+<<<<<<< HEAD
     private function preProcess(string $eventName)
+=======
+    private function preProcess($eventName)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$this->dispatcher->hasListeners($eventName)) {
             $this->orphanedEvents[$this->currentRequestHash][] = $eventName;
@@ -341,7 +349,11 @@ class TraceableEventDispatcher implements TraceableEventDispatcherInterface
         }
     }
 
+<<<<<<< HEAD
     private function postProcess(string $eventName)
+=======
+    private function postProcess($eventName)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         unset($this->wrappedListeners[$eventName]);
         $skipped = false;

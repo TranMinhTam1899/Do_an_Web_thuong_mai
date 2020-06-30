@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -15,6 +19,7 @@ use PHPUnit\Framework\Error\Notice;
 use PHPUnit\Framework\Error\Warning;
 
 /**
+<<<<<<< HEAD
  * Error handler that converts PHP errors and warnings to exceptions.
  */
 final class ErrorHandler
@@ -31,10 +36,76 @@ final class ErrorHandler
 
     public static function handleError(int $errorNumber, string $errorString, string $errorFile, int $errorLine): bool
     {
+=======
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
+ */
+final class ErrorHandler
+{
+    /**
+     * @var bool
+     */
+    private $convertDeprecationsToExceptions;
+
+    /**
+     * @var bool
+     */
+    private $convertErrorsToExceptions;
+
+    /**
+     * @var bool
+     */
+    private $convertNoticesToExceptions;
+
+    /**
+     * @var bool
+     */
+    private $convertWarningsToExceptions;
+
+    /**
+     * @var bool
+     */
+    private $registered = false;
+
+    public static function invokeIgnoringWarnings(callable $callable)
+    {
+        \set_error_handler(
+            static function ($errorNumber, $errorString) {
+                if ($errorNumber === \E_WARNING) {
+                    return;
+                }
+
+                return false;
+            }
+        );
+
+        $result = $callable();
+
+        \restore_error_handler();
+
+        return $result;
+    }
+
+    public function __construct(bool $convertDeprecationsToExceptions, bool $convertErrorsToExceptions, bool $convertNoticesToExceptions, bool $convertWarningsToExceptions)
+    {
+        $this->convertDeprecationsToExceptions = $convertDeprecationsToExceptions;
+        $this->convertErrorsToExceptions       = $convertErrorsToExceptions;
+        $this->convertNoticesToExceptions      = $convertNoticesToExceptions;
+        $this->convertWarningsToExceptions     = $convertWarningsToExceptions;
+    }
+
+    public function __invoke(int $errorNumber, string $errorString, string $errorFile, int $errorLine): bool
+    {
+        /*
+         * Do not raise an exception when the error suppression operator (@) was used.
+         *
+         * @see https://github.com/sebastianbergmann/phpunit/issues/3739
+         */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         if (!($errorNumber & \error_reporting())) {
             return false;
         }
 
+<<<<<<< HEAD
         self::$errorStack[] = [$errorNumber, $errorString, $errorFile, $errorLine];
 
         $trace = \debug_backtrace();
@@ -102,5 +173,66 @@ final class ErrorHandler
         );
 
         return $terminator;
+=======
+        switch ($errorNumber) {
+            case \E_NOTICE:
+            case \E_USER_NOTICE:
+            case \E_STRICT:
+                if (!$this->convertNoticesToExceptions) {
+                    return false;
+                }
+
+                throw new Notice($errorString, $errorNumber, $errorFile, $errorLine);
+
+            case \E_WARNING:
+            case \E_USER_WARNING:
+                if (!$this->convertWarningsToExceptions) {
+                    return false;
+                }
+
+                throw new Warning($errorString, $errorNumber, $errorFile, $errorLine);
+
+            case \E_DEPRECATED:
+            case \E_USER_DEPRECATED:
+                if (!$this->convertDeprecationsToExceptions) {
+                    return false;
+                }
+
+                throw new Deprecated($errorString, $errorNumber, $errorFile, $errorLine);
+
+            default:
+                if (!$this->convertErrorsToExceptions) {
+                    return false;
+                }
+
+                throw new Error($errorString, $errorNumber, $errorFile, $errorLine);
+        }
+    }
+
+    public function register(): void
+    {
+        if ($this->registered) {
+            return;
+        }
+
+        $oldErrorHandler = \set_error_handler($this);
+
+        if ($oldErrorHandler !== null) {
+            \restore_error_handler();
+
+            return;
+        }
+
+        $this->registered = true;
+    }
+
+    public function unregister(): void
+    {
+        if (!$this->registered) {
+            return;
+        }
+
+        \restore_error_handler();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

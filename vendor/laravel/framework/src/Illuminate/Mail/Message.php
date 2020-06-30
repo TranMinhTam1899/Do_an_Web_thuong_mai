@@ -2,9 +2,15 @@
 
 namespace Illuminate\Mail;
 
+<<<<<<< HEAD
 use Swift_Image;
 use Swift_Attachment;
 use Illuminate\Support\Traits\ForwardsCalls;
+=======
+use Illuminate\Support\Traits\ForwardsCalls;
+use Swift_Attachment;
+use Swift_Image;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * @mixin \Swift_Message

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,6 +17,12 @@ use PHPUnit\Framework\Exception;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\TestFailure;
 
+<<<<<<< HEAD
+=======
+/**
+ * @small
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 final class LogicalAndTest extends ConstraintTestCase
 {
     public function testSetConstraintsRejectsInvalidConstraint(): void
@@ -67,9 +77,13 @@ final class LogicalAndTest extends ConstraintTestCase
             return \NamedConstraint::fromName($name);
         }, $names);
 
+<<<<<<< HEAD
         $constraint = new LogicalAnd;
 
         $constraint->setConstraints($constraints);
+=======
+        $constraint = LogicalAnd::fromConstraints(...$constraints);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $expected = \implode(' and ', $names);
 

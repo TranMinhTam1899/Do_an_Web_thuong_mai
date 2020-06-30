@@ -1,7 +1,11 @@
 --TEST--
 https://github.com/sebastianbergmann/phpunit/issues/1468
 --FILE--
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 $_SERVER['argv'][1] = '--no-configuration';
 $_SERVER['argv'][2] = '--disallow-todo-tests';
 $_SERVER['argv'][3] = 'Issue1468Test';

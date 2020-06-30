@@ -2,11 +2,19 @@
 
 namespace Illuminate\Database;
 
+<<<<<<< HEAD
 use Illuminate\Database\Schema\SQLiteBuilder;
 use Illuminate\Database\Query\Processors\SQLiteProcessor;
 use Doctrine\DBAL\Driver\PDOSqlite\Driver as DoctrineDriver;
 use Illuminate\Database\Query\Grammars\SQLiteGrammar as QueryGrammar;
 use Illuminate\Database\Schema\Grammars\SQLiteGrammar as SchemaGrammar;
+=======
+use Doctrine\DBAL\Driver\PDOSqlite\Driver as DoctrineDriver;
+use Illuminate\Database\Query\Grammars\SQLiteGrammar as QueryGrammar;
+use Illuminate\Database\Query\Processors\SQLiteProcessor;
+use Illuminate\Database\Schema\Grammars\SQLiteGrammar as SchemaGrammar;
+use Illuminate\Database\Schema\SQLiteBuilder;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SQLiteConnection extends Connection
 {

@@ -2,9 +2,15 @@
 
 namespace Illuminate\Routing;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Exceptions\UrlGenerationException;
+=======
+use Illuminate\Routing\Exceptions\UrlGenerationException;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class RouteUrlGenerator
 {
@@ -197,9 +203,18 @@ class RouteUrlGenerator
         $path = $this->replaceNamedParameters($path, $parameters);
 
         $path = preg_replace_callback('/\{.*?\}/', function ($match) use (&$parameters) {
+<<<<<<< HEAD
             return (empty($parameters) && ! Str::endsWith($match[0], '?}'))
                         ? $match[0]
                         : array_shift($parameters);
+=======
+            // Reset only the numeric keys...
+            $parameters = array_merge($parameters);
+
+            return (empty($parameters) && ! Str::endsWith($match[0], '?}'))
+                        ? $match[0]
+                        : Arr::pull($parameters, 0);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }, $path);
 
         return trim(preg_replace('/\{.*?\?\}/', '', $path), '/');
@@ -274,7 +289,13 @@ class RouteUrlGenerator
             );
         }
 
+<<<<<<< HEAD
         return '?'.trim($query, '&');
+=======
+        $query = trim($query, '&');
+
+        return $query === '' ? '' : "?{$query}";
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

@@ -26,7 +26,11 @@ final class SessionValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function supports(Request $request, ArgumentMetadata $argument): bool
+=======
+    public function supports(Request $request, ArgumentMetadata $argument)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!$request->hasSession()) {
             return false;
@@ -43,7 +47,11 @@ final class SessionValueResolver implements ArgumentValueResolverInterface
     /**
      * {@inheritdoc}
      */
+<<<<<<< HEAD
     public function resolve(Request $request, ArgumentMetadata $argument): iterable
+=======
+    public function resolve(Request $request, ArgumentMetadata $argument)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         yield $request->getSession();
     }

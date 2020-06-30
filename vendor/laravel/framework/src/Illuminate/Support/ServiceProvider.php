@@ -15,6 +15,7 @@ abstract class ServiceProvider
     protected $app;
 
     /**
+<<<<<<< HEAD
      * Indicates if loading of the provider is deferred.
      *
      * @deprecated Implement the \Illuminate\Contracts\Support\DeferrableProvider interface instead. Will be removed in Laravel 6.0.
@@ -24,6 +25,8 @@ abstract class ServiceProvider
     protected $defer = false;
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * The paths that should be published.
      *
      * @var array
@@ -67,9 +70,17 @@ abstract class ServiceProvider
      */
     protected function mergeConfigFrom($path, $key)
     {
+<<<<<<< HEAD
         $config = $this->app['config']->get($key, []);
 
         $this->app['config']->set($key, array_merge(require $path, $config));
+=======
+        if (! $this->app->configurationIsCached()) {
+            $this->app['config']->set($key, array_merge(
+                require $path, $this->app['config']->get($key, [])
+            ));
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -94,7 +105,11 @@ abstract class ServiceProvider
      */
     protected function loadViewsFrom($path, $namespace)
     {
+<<<<<<< HEAD
         if (isset($this->app->config['view']['paths']) && is_array($this->app->config['view']['paths'])) {
+=======
+        if (is_array($this->app->config['view']['paths'])) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             foreach ($this->app->config['view']['paths'] as $viewPath) {
                 if (is_dir($appPath = $viewPath.'/vendor/'.$namespace)) {
                     $this->app['view']->addNamespace($namespace, $appPath);
@@ -308,6 +323,10 @@ abstract class ServiceProvider
      */
     public function isDeferred()
     {
+<<<<<<< HEAD
         return $this->defer || $this instanceof DeferrableProvider;
+=======
+        return $this instanceof DeferrableProvider;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

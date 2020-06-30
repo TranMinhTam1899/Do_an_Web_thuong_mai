@@ -54,6 +54,7 @@ return [
     's' => ':count s',
     'ago' => ':time sitten',
     'from_now' => ':time päästä',
+<<<<<<< HEAD
     'year_from_now' => ':count vuoden',
     'month_from_now' => ':count kuukauden',
     'week_from_now' => ':count viikon',
@@ -61,14 +62,19 @@ return [
     'hour_from_now' => ':count tunnin',
     'minute_from_now' => ':count minuutin',
     'second_from_now' => ':count sekunnin',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'after' => ':time sen jälkeen',
     'before' => ':time ennen',
     'first_day_of_week' => 1,
     'day_of_first_week_of_year' => 4,
     'list' => [', ', ' ja '],
+<<<<<<< HEAD
     'diff_now' => 'nyt',
     'diff_yesterday' => 'eilen',
     'diff_tomorrow' => 'huomenna',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH.mm',
         'LTS' => 'HH.mm:ss',

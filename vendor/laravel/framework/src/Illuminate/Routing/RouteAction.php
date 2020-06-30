@@ -2,9 +2,15 @@
 
 namespace Illuminate\Routing;
 
+<<<<<<< HEAD
 use LogicException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+=======
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+use LogicException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use UnexpectedValueException;
 
 class RouteAction

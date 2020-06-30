@@ -3,8 +3,13 @@
 namespace Illuminate\Routing\Middleware;
 
 use Closure;
+<<<<<<< HEAD
 use Illuminate\Redis\Limiters\DurationLimiter;
 use Illuminate\Contracts\Redis\Factory as Redis;
+=======
+use Illuminate\Contracts\Redis\Factory as Redis;
+use Illuminate\Redis\Limiters\DurationLimiter;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class ThrottleRequestsWithRedis extends ThrottleRequests
 {
@@ -47,13 +52,23 @@ class ThrottleRequestsWithRedis extends ThrottleRequests
      * @param  \Closure  $next
      * @param  int|string  $maxAttempts
      * @param  float|int  $decayMinutes
+<<<<<<< HEAD
+=======
+     * @param  string  $prefix
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return mixed
      *
      * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
+<<<<<<< HEAD
     public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1)
     {
         $key = $this->resolveRequestSignature($request);
+=======
+    public function handle($request, Closure $next, $maxAttempts = 60, $decayMinutes = 1, $prefix = '')
+    {
+        $key = $prefix.$this->resolveRequestSignature($request);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         $maxAttempts = $this->resolveMaxAttempts($request, $maxAttempts);
 

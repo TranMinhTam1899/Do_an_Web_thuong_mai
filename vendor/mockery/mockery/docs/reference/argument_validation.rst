@@ -229,6 +229,7 @@ methods to call.
 
     There is no Hamcrest version of the ``ducktype()`` matcher.
 
+<<<<<<< HEAD
 Capturing Arguments
 -------------------
 
@@ -250,6 +251,8 @@ then perform additional validation using assertions.
     The ``capture`` matcher always evaluates to ``true``. As such, we should always
     perform additional argument validation.
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 Additional Argument Matchers
 ----------------------------
 

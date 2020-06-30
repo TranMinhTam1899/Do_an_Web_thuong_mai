@@ -11,7 +11,10 @@
 
 namespace Symfony\Component\Process;
 
+<<<<<<< HEAD
 use Symfony\Component\Process\Exception\LogicException;
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 use Symfony\Component\Process\Exception\RuntimeException;
 
 /**
@@ -51,6 +54,7 @@ class PhpProcess extends Process
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritdoc}
      */
     public static function fromShellCommandline(string $command, string $cwd = null, array $env = null, $input = null, ?float $timeout = 60)
@@ -59,6 +63,8 @@ class PhpProcess extends Process
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Sets the path to the PHP binary to use.
      *
      * @deprecated since Symfony 4.2, use the $php argument of the constructor instead.

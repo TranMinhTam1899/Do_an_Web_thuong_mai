@@ -1,6 +1,7 @@
 CHANGELOG
 =========
 
+<<<<<<< HEAD
 4.4.0
 -----
 
@@ -24,6 +25,8 @@ CHANGELOG
  * Deprecated methods `ExceptionEvent::get/setException()`, use `get/setThrowable()` instead
  * Deprecated class `ExceptionListener`, use `ErrorListener` instead
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 4.3.0
 -----
 
@@ -54,8 +57,13 @@ CHANGELOG
 
  * deprecated `KernelInterface::getRootDir()` and the `kernel.root_dir` parameter
  * deprecated `KernelInterface::getName()` and the `kernel.name` parameter
+<<<<<<< HEAD
  * deprecated the first and second constructor argument of `ConfigDataCollector`
  * deprecated `ConfigDataCollector::getApplicationName()`
+=======
+ * deprecated the first and second constructor argument of `ConfigDataCollector` 
+ * deprecated `ConfigDataCollector::getApplicationName()` 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * deprecated `ConfigDataCollector::getApplicationVersion()`
 
 4.1.0

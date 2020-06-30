@@ -11,15 +11,28 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
 
     protected static $zeroToEight = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
 
+<<<<<<< HEAD
     protected static $oneToEight = array(1, 2, 3, 4, 5, 6, 7, 8);
+=======
+    protected static $oneToNine = array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     protected static $mobileNumberFormats = array(
         '{{internationalCodePrefix}}9{{zeroToEight}}## ####',
         '{{internationalCodePrefix}} 9{{zeroToEight}}## ####',
         '9{{zeroToEight}}## ####',
+<<<<<<< HEAD
         '{{internationalCodePrefix}}8{{oneToEight}}## ####',
         '{{internationalCodePrefix}} 8{{oneToEight}}## ####',
         '8{{oneToEight}}## ####',
+=======
+        '{{internationalCodePrefix}}8{{oneToNine}}## ####',
+        '{{internationalCodePrefix}} 8{{oneToNine}}## ####',
+        '8{{oneToNine}}## ####',
+        '{{internationalCodePrefix}}7{{oneToNine}}## ####',
+        '{{internationalCodePrefix}} 7{{oneToNine}}## ####',
+        '7{{oneToNine}}## ####',
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     );
 
     protected static $fixedLineNumberFormats = array(
@@ -100,8 +113,14 @@ class PhoneNumber extends \Faker\Provider\PhoneNumber
         return static::randomElement(static::$zeroToEight);
     }
 
+<<<<<<< HEAD
     public function oneToEight()
     {
         return static::randomElement(static::$oneToEight);
+=======
+    public function oneToNine()
+    {
+        return static::randomElement(static::$oneToNine);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 }

@@ -3,8 +3,13 @@
 namespace Illuminate\Database\Console\Migrations;
 
 use Illuminate\Console\Command;
+<<<<<<< HEAD
 use Symfony\Component\Console\Input\InputOption;
 use Illuminate\Database\Migrations\MigrationRepositoryInterface;
+=======
+use Illuminate\Database\Migrations\MigrationRepositoryInterface;
+use Symfony\Component\Console\Input\InputOption;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class InstallCommand extends Command
 {

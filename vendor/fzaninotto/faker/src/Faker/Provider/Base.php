@@ -173,7 +173,11 @@ class Base
     /**
      * Returns randomly ordered subsequence of $count elements from a provided array
      *
+<<<<<<< HEAD
      * @param  array            $array           Array to take elements from. Defaults to a-c
+=======
+     * @param  array            $array           Array to take elements from. Defaults to a-f
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @param  integer          $count           Number of elements to take.
      * @param  boolean          $allowDuplicates Allow elements to be picked several times. Defaults to false
      * @throws \LengthException When requesting more elements than provided
@@ -492,7 +496,11 @@ class Base
         // All A-F inside of [] become ABCDEF
         $regex = preg_replace_callback('/\[([^\]]+)\]/', function ($matches) {
             return '[' . preg_replace_callback('/(\w|\d)\-(\w|\d)/', function ($range) {
+<<<<<<< HEAD
                 return implode('', range($range[1], $range[2]));
+=======
+                return implode(range($range[1], $range[2]), '');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }, $matches[1]) . ']';
         }, $regex);
         // All [ABC] become B (or A or C)
@@ -590,10 +598,17 @@ class Base
      * <code>
      * $values = array();
      * $evenValidator = function ($digit) {
+<<<<<<< HEAD
      *   return $digit % 2 === 0;
      * };
      * for ($i=0; $i < 10; $i++) {
      *   $values []= $faker->valid($evenValidator)->randomDigit;
+=======
+     * 	 return $digit % 2 === 0;
+     * };
+     * for ($i=0; $i < 10; $i++) {
+     * 	 $values []= $faker->valid($evenValidator)->randomDigit;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * }
      * print_r($values); // [0, 4, 8, 4, 2, 6, 0, 8, 8, 6]
      * </code>

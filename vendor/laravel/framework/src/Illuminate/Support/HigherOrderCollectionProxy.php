@@ -3,14 +3,22 @@
 namespace Illuminate\Support;
 
 /**
+<<<<<<< HEAD
  * @mixin \Illuminate\Support\Collection
+=======
+ * @mixin \Illuminate\Support\Enumerable
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  */
 class HigherOrderCollectionProxy
 {
     /**
      * The collection being operated on.
      *
+<<<<<<< HEAD
      * @var \Illuminate\Support\Collection
+=======
+     * @var \Illuminate\Support\Enumerable
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     protected $collection;
 
@@ -24,11 +32,19 @@ class HigherOrderCollectionProxy
     /**
      * Create a new proxy instance.
      *
+<<<<<<< HEAD
      * @param  \Illuminate\Support\Collection  $collection
      * @param  string  $method
      * @return void
      */
     public function __construct(Collection $collection, $method)
+=======
+     * @param  \Illuminate\Support\Enumerable  $collection
+     * @param  string  $method
+     * @return void
+     */
+    public function __construct(Enumerable $collection, $method)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $this->method = $method;
         $this->collection = $collection;

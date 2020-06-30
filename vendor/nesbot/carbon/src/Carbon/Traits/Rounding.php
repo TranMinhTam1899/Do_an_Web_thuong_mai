@@ -11,7 +11,13 @@
 namespace Carbon\Traits;
 
 use Carbon\CarbonInterface;
+<<<<<<< HEAD
 use Carbon\Exceptions\UnknownUnitException;
+=======
+use Carbon\CarbonInterval;
+use DateInterval;
+use InvalidArgumentException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 /**
  * Trait Rounding.
@@ -21,12 +27,19 @@ use Carbon\Exceptions\UnknownUnitException;
  * Depends on the following methods:
  *
  * @method CarbonInterface copy()
+<<<<<<< HEAD
  * @method CarbonInterface startOfWeek(int $weekStartsAt = null)
  */
 trait Rounding
 {
     use IntervalRounding;
 
+=======
+ * @method CarbonInterface startOfWeek()
+ */
+trait Rounding
+{
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     /**
      * Round the current instance at the given unit with given precision if specified and the given function.
      *
@@ -69,7 +82,11 @@ trait Rounding
         $precision *= $factor;
 
         if (!isset($ranges[$normalizedUnit])) {
+<<<<<<< HEAD
             throw new UnknownUnitException($unit);
+=======
+            throw new InvalidArgumentException("Unknown unit '$unit' to floor");
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $found = false;
@@ -150,7 +167,26 @@ trait Rounding
      */
     public function round($precision = 1, $function = 'round')
     {
+<<<<<<< HEAD
         return $this->roundWith($precision, $function);
+=======
+        $unit = 'second';
+
+        if ($precision instanceof DateInterval) {
+            $precision = (string) CarbonInterval::instance($precision);
+        }
+
+        if (is_string($precision) && preg_match('/^\s*(?<precision>\d+)?\s*(?<unit>\w+)(?<other>\W.*)?$/', $precision, $match)) {
+            if (trim($match['other'] ?? '') !== '') {
+                throw new InvalidArgumentException('Rounding is only possible with single unit intervals.');
+            }
+
+            $precision = (int) ($match['precision'] ?: 1);
+            $unit = $match['unit'];
+        }
+
+        return $this->roundUnit($unit, $precision, $function);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

@@ -2,9 +2,14 @@
 
 namespace Illuminate\Database\Query\Grammars;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Query\JsonExpression;
+=======
+use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Str;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class MySqlGrammar extends Grammar
 {
@@ -16,6 +21,7 @@ class MySqlGrammar extends Grammar
     protected $operators = ['sounds like'];
 
     /**
+<<<<<<< HEAD
      * The components that make up a select clause.
      *
      * @var array
@@ -56,6 +62,8 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Compile an insert ignore statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -97,6 +105,7 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a single union statement.
      *
      * @param  array  $union
@@ -110,6 +119,8 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Compile the random statement into SQL.
      *
      * @param  string  $seed
@@ -137,12 +148,17 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile an update statement into SQL.
+=======
+     * Compile an insert statement into SQL.
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      *
      * @param  \Illuminate\Database\Query\Builder  $query
      * @param  array  $values
      * @return string
      */
+<<<<<<< HEAD
     public function compileUpdate(Builder $query, $values)
     {
         $table = $this->wrapTable($query->from);
@@ -196,6 +212,29 @@ class MySqlGrammar extends Grammar
         return collect($values)->map(function ($value, $key) {
             if ($this->isJsonSelector($key)) {
                 return $this->compileJsonUpdateColumn($key, new JsonExpression($value));
+=======
+    public function compileInsert(Builder $query, array $values)
+    {
+        if (empty($values)) {
+            $values = [[]];
+        }
+
+        return parent::compileInsert($query, $values);
+    }
+
+    /**
+     * Compile the columns for an update statement.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  array  $values
+     * @return string
+     */
+    protected function compileUpdateColumns(Builder $query, array $values)
+    {
+        return collect($values)->map(function ($value, $key) {
+            if ($this->isJsonSelector($key)) {
+                return $this->compileJsonUpdateColumn($key, $value);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             return $this->wrap($key).' = '.$this->parameter($value);
@@ -203,6 +242,7 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Prepares a JSON column being updated using the JSON_SET function.
      *
      * @param  string  $key
@@ -214,6 +254,51 @@ class MySqlGrammar extends Grammar
         [$field, $path] = $this->wrapJsonFieldAndPath($key);
 
         return "{$field} = json_set({$field}{$path}, {$value->getValue()})";
+=======
+     * Prepare a JSON column being updated using the JSON_SET function.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return string
+     */
+    protected function compileJsonUpdateColumn($key, $value)
+    {
+        if (is_bool($value)) {
+            $value = $value ? 'true' : 'false';
+        } elseif (is_array($value)) {
+            $value = 'cast(? as json)';
+        } else {
+            $value = $this->parameter($value);
+        }
+
+        [$field, $path] = $this->wrapJsonFieldAndPath($key);
+
+        return "{$field} = json_set({$field}{$path}, {$value})";
+    }
+
+    /**
+     * Compile an update statement without joins into SQL.
+     *
+     * @param  \Illuminate\Database\Query\Builder  $query
+     * @param  string  $table
+     * @param  string  $columns
+     * @param  string  $where
+     * @return string
+     */
+    protected function compileUpdateWithoutJoins(Builder $query, $table, $columns, $where)
+    {
+        $sql = parent::compileUpdateWithoutJoins($query, $table, $columns, $where);
+
+        if (! empty($query->orders)) {
+            $sql .= ' '.$this->compileOrders($query, $query->orders);
+        }
+
+        if (isset($query->limit)) {
+            $sql .= ' '.$this->compileLimit($query, $query->limit);
+        }
+
+        return $sql;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -229,12 +314,18 @@ class MySqlGrammar extends Grammar
     {
         $values = collect($values)->reject(function ($value, $column) {
             return $this->isJsonSelector($column) && is_bool($value);
+<<<<<<< HEAD
+=======
+        })->map(function ($value) {
+            return is_array($value) ? json_encode($value) : $value;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         })->all();
 
         return parent::prepareBindingsForUpdate($bindings, $values);
     }
 
     /**
+<<<<<<< HEAD
      * Compile a delete statement into SQL.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -252,6 +343,8 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Compile a delete query that does not use joins.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -259,9 +352,15 @@ class MySqlGrammar extends Grammar
      * @param  string  $where
      * @return string
      */
+<<<<<<< HEAD
     protected function compileDeleteWithoutJoins($query, $table, $where)
     {
         $sql = trim("delete from {$table} {$where}");
+=======
+    protected function compileDeleteWithoutJoins(Builder $query, $table, $where)
+    {
+        $sql = parent::compileDeleteWithoutJoins($query, $table, $where);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // When using MySQL, delete statements may contain order by statements and limits
         // so we will compile both of those here. Once we have finished compiling this
@@ -278,6 +377,7 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+<<<<<<< HEAD
      * Compile a delete query that uses joins.
      *
      * @param  \Illuminate\Database\Query\Builder  $query
@@ -296,6 +396,8 @@ class MySqlGrammar extends Grammar
     }
 
     /**
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Wrap a single string in keyword identifiers.
      *
      * @param  string  $value

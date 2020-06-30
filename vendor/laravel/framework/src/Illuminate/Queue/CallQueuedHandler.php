@@ -3,10 +3,19 @@
 namespace Illuminate\Queue;
 
 use Exception;
+<<<<<<< HEAD
 use ReflectionClass;
 use Illuminate\Contracts\Queue\Job;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+=======
+use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Contracts\Queue\Job;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Pipeline\Pipeline;
+use ReflectionClass;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class CallQueuedHandler
 {
@@ -18,6 +27,7 @@ class CallQueuedHandler
     protected $dispatcher;
 
     /**
+<<<<<<< HEAD
      * Create a new handler instance.
      *
      * @param  \Illuminate\Contracts\Bus\Dispatcher  $dispatcher
@@ -25,6 +35,24 @@ class CallQueuedHandler
      */
     public function __construct(Dispatcher $dispatcher)
     {
+=======
+     * The container instance.
+     *
+     * @var \Illuminate\Contracts\Container\Container
+     */
+    protected $container;
+
+    /**
+     * Create a new handler instance.
+     *
+     * @param  \Illuminate\Contracts\Bus\Dispatcher  $dispatcher
+     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @return void
+     */
+    public function __construct(Dispatcher $dispatcher, Container $container)
+    {
+        $this->container = $container;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->dispatcher = $dispatcher;
     }
 
@@ -45,9 +73,13 @@ class CallQueuedHandler
             return $this->handleModelNotFound($job, $e);
         }
 
+<<<<<<< HEAD
         $this->dispatcher->dispatchNow(
             $command, $this->resolveHandler($job, $command)
         );
+=======
+        $this->dispatchThroughMiddleware($job, $command);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (! $job->hasFailed() && ! $job->isReleased()) {
             $this->ensureNextJobInChainIsDispatched($command);
@@ -59,6 +91,27 @@ class CallQueuedHandler
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Dispatch the given job / command through its specified middleware.
+     *
+     * @param  \Illuminate\Contracts\Queue\Job  $job
+     * @param  mixed  $command
+     * @return mixed
+     */
+    protected function dispatchThroughMiddleware(Job $job, $command)
+    {
+        return (new Pipeline($this->container))->send($command)
+                ->through(array_merge(method_exists($command, 'middleware') ? $command->middleware() : [], $command->middleware ?? []))
+                ->then(function ($command) use ($job) {
+                    return $this->dispatcher->dispatchNow(
+                        $command, $this->resolveHandler($job, $command)
+                    );
+                });
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Resolve the handler for the given command.
      *
      * @param  \Illuminate\Contracts\Queue\Job  $job

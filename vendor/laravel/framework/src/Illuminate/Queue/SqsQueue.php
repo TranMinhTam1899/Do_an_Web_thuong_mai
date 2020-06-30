@@ -3,8 +3,13 @@
 namespace Illuminate\Queue;
 
 use Aws\Sqs\SqsClient;
+<<<<<<< HEAD
 use Illuminate\Queue\Jobs\SqsJob;
 use Illuminate\Contracts\Queue\Queue as QueueContract;
+=======
+use Illuminate\Contracts\Queue\Queue as QueueContract;
+use Illuminate\Queue\Jobs\SqsJob;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SqsQueue extends Queue implements QueueContract
 {

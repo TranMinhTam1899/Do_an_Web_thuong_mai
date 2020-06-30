@@ -6,5 +6,5 @@
 @endsection
 
 @section('main_content')
-<h1>Danh sach thoong ke</h1>
+<h1>Danh sach thống ke</h1>
 @endsection

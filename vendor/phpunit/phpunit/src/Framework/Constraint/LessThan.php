@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -13,7 +17,11 @@ namespace PHPUnit\Framework\Constraint;
  * Constraint that asserts that the value it is evaluated for is less than
  * a given value.
  */
+<<<<<<< HEAD
 class LessThan extends Constraint
+=======
+final class LessThan extends Constraint
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 {
     /**
      * @var float|int
@@ -25,8 +33,11 @@ class LessThan extends Constraint
      */
     public function __construct($value)
     {
+<<<<<<< HEAD
         parent::__construct();
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->value = $value;
     }
 
@@ -37,7 +48,11 @@ class LessThan extends Constraint
      */
     public function toString(): string
     {
+<<<<<<< HEAD
         return 'is less than ' . $this->exporter->export($this->value);
+=======
+        return 'is less than ' . $this->exporter()->export($this->value);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**

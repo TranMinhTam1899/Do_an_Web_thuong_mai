@@ -51,7 +51,11 @@ class ResponseHeaderBag extends HeaderBag
     {
         $headers = [];
         foreach ($this->all() as $name => $value) {
+<<<<<<< HEAD
             $headers[$this->headerNames[$name] ?? $name] = $value;
+=======
+            $headers[isset($this->headerNames[$name]) ? $this->headerNames[$name] : $name] = $value;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         return $headers;
@@ -87,6 +91,7 @@ class ResponseHeaderBag extends HeaderBag
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
      *
      * @param string|null $key The name of the headers to return or null to get them all
      */
@@ -100,6 +105,12 @@ class ResponseHeaderBag extends HeaderBag
             return 'set-cookie' !== $key ? $headers[$key] ?? [] : array_map('strval', $this->getCookies());
         }
 
+=======
+     */
+    public function all()
+    {
+        $headers = parent::all();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         foreach ($this->getCookies() as $cookie) {
             $headers['set-cookie'][] = (string) $cookie;
         }
@@ -112,7 +123,11 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function set($key, $values, $replace = true)
     {
+<<<<<<< HEAD
         $uniqueKey = strtr($key, self::UPPER, self::LOWER);
+=======
+        $uniqueKey = str_replace('_', '-', strtolower($key));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if ('set-cookie' === $uniqueKey) {
             if ($replace) {
@@ -143,7 +158,11 @@ class ResponseHeaderBag extends HeaderBag
      */
     public function remove($key)
     {
+<<<<<<< HEAD
         $uniqueKey = strtr($key, self::UPPER, self::LOWER);
+=======
+        $uniqueKey = str_replace('_', '-', strtolower($key));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         unset($this->headerNames[$uniqueKey]);
 
         if ('set-cookie' === $uniqueKey) {
@@ -252,6 +271,7 @@ class ResponseHeaderBag extends HeaderBag
      * @param string $domain
      * @param bool   $secure
      * @param bool   $httpOnly
+<<<<<<< HEAD
      * @param string $sameSite
      */
     public function clearCookie($name, $path = '/', $domain = null, $secure = false, $httpOnly = true/*, $sameSite = null*/)
@@ -259,6 +279,12 @@ class ResponseHeaderBag extends HeaderBag
         $sameSite = \func_num_args() > 5 ? func_get_arg(5) : null;
 
         $this->setCookie(new Cookie($name, null, 1, $path, $domain, $secure, $httpOnly, false, $sameSite));
+=======
+     */
+    public function clearCookie($name, $path = '/', $domain = null, $secure = false, $httpOnly = true)
+    {
+        $this->setCookie(new Cookie($name, null, 1, $path, $domain, $secure, $httpOnly, false, null));
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -279,6 +305,7 @@ class ResponseHeaderBag extends HeaderBag
      */
     protected function computeCacheControlValue()
     {
+<<<<<<< HEAD
         if (!$this->cacheControl) {
             if ($this->has('Last-Modified') || $this->has('Expires')) {
                 return 'private, must-revalidate'; // allows for heuristic expiration (RFC 7234 Section 4.2.2) in the case of "Last-Modified"
@@ -286,6 +313,15 @@ class ResponseHeaderBag extends HeaderBag
 
             // conservative by default
             return 'no-cache, private';
+=======
+        if (!$this->cacheControl && !$this->has('ETag') && !$this->has('Last-Modified') && !$this->has('Expires')) {
+            return 'no-cache, private';
+        }
+
+        if (!$this->cacheControl) {
+            // conservative by default
+            return 'private, must-revalidate';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         $header = $this->getCacheControlHeader();
@@ -301,7 +337,11 @@ class ResponseHeaderBag extends HeaderBag
         return $header;
     }
 
+<<<<<<< HEAD
     private function initDate(): void
+=======
+    private function initDate()
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         $now = \DateTime::createFromFormat('U', time());
         $now->setTimezone(new \DateTimeZone('UTC'));

@@ -2,6 +2,7 @@
 
 namespace Illuminate\Foundation\Console;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 use Illuminate\Console\Command;
 use League\Flysystem\MountManager;
@@ -9,6 +10,15 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem as Flysystem;
 use League\Flysystem\Adapter\Local as LocalAdapter;
+=======
+use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Arr;
+use Illuminate\Support\ServiceProvider;
+use League\Flysystem\Adapter\Local as LocalAdapter;
+use League\Flysystem\Filesystem as Flysystem;
+use League\Flysystem\MountManager;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class VendorPublishCommand extends Command
 {

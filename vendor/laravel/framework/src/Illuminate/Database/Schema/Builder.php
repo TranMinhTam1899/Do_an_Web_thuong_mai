@@ -3,10 +3,17 @@
 namespace Illuminate\Database\Schema;
 
 use Closure;
+<<<<<<< HEAD
 use LogicException;
 use RuntimeException;
 use Doctrine\DBAL\Types\Type;
 use Illuminate\Database\Connection;
+=======
+use Doctrine\DBAL\Types\Type;
+use Illuminate\Database\Connection;
+use LogicException;
+use RuntimeException;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Builder
 {
@@ -230,6 +237,21 @@ class Builder
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Get all of the table names for the database.
+     *
+     * @return void
+     *
+     * @throws \LogicException
+     */
+    public function getAllTables()
+    {
+        throw new LogicException('This database driver does not support getting all tables.');
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Rename a table on the schema.
      *
      * @param  string  $from

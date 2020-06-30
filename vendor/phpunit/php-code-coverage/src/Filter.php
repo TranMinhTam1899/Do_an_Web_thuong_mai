@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -48,7 +52,17 @@ final class Filter
      */
     public function addFileToWhitelist(string $filename): void
     {
+<<<<<<< HEAD
         $this->whitelistedFiles[\realpath($filename)] = true;
+=======
+        $filename = \realpath($filename);
+
+        if (!$filename) {
+            return;
+        }
+
+        $this->whitelistedFiles[$filename] = true;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -83,6 +97,13 @@ final class Filter
     {
         $filename = \realpath($filename);
 
+<<<<<<< HEAD
+=======
+        if (!$filename || !isset($this->whitelistedFiles[$filename])) {
+            return;
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         unset($this->whitelistedFiles[$filename]);
     }
 

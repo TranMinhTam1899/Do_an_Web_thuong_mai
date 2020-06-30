@@ -64,8 +64,11 @@ class CompiledRoute implements \Serializable
     }
 
     /**
+<<<<<<< HEAD
      * @return string
      *
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @internal since Symfony 4.3
      * @final since Symfony 4.3
      */

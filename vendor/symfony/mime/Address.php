@@ -20,6 +20,7 @@ use Symfony\Component\Mime\Exception\RfcComplianceException;
 
 /**
  * @author Fabien Potencier <fabien@symfony.com>
+<<<<<<< HEAD
  */
 final class Address
 {
@@ -32,13 +33,25 @@ final class Address
      */
     private const FROM_STRING_PATTERN = '~(?<displayName>[^<]*)<(?<addrSpec>.*)>[^>]*~';
 
+=======
+ *
+ * @experimental in 4.3
+ */
+class Address
+{
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     private static $validator;
     private static $encoder;
 
     private $address;
+<<<<<<< HEAD
     private $name;
 
     public function __construct(string $address, string $name = '')
+=======
+
+    public function __construct(string $address)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         if (!class_exists(EmailValidator::class)) {
             throw new LogicException(sprintf('The "%s" class cannot be used as it needs "%s"; try running "composer require egulias/email-validator".', __CLASS__, EmailValidator::class));
@@ -49,7 +62,10 @@ final class Address
         }
 
         $this->address = trim($address);
+<<<<<<< HEAD
         $this->name = trim(str_replace(["\n", "\r"], '', $name));
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         if (!self::$validator->isValid($this->address, new RFCValidation())) {
             throw new RfcComplianceException(sprintf('Email "%s" does not comply with addr-spec of RFC 2822.', $address));
@@ -61,11 +77,14 @@ final class Address
         return $this->address;
     }
 
+<<<<<<< HEAD
     public function getName(): string
     {
         return $this->name;
     }
 
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function getEncodedAddress(): string
     {
         if (null === self::$encoder) {
@@ -77,7 +96,11 @@ final class Address
 
     public function toString(): string
     {
+<<<<<<< HEAD
         return ($n = $this->getName()) ? $n.' <'.$this->getEncodedAddress().'>' : $this->getEncodedAddress();
+=======
+        return $this->getEncodedAddress();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -109,6 +132,7 @@ final class Address
 
         return $addrs;
     }
+<<<<<<< HEAD
 
     public static function fromString(string $string): self
     {
@@ -122,4 +146,6 @@ final class Address
 
         return new self($matches['addrSpec'], trim($matches['displayName'], ' \'"'));
     }
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 }

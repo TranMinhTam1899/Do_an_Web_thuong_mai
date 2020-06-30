@@ -2,8 +2,13 @@
 
 namespace Illuminate\Notifications\Messages;
 
+<<<<<<< HEAD
 use Illuminate\Notifications\Action;
 use Illuminate\Contracts\Support\Htmlable;
+=======
+use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Notifications\Action;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class SimpleMessage
 {

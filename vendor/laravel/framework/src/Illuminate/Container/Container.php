@@ -2,6 +2,7 @@
 
 namespace Illuminate\Container;
 
+<<<<<<< HEAD
 use Closure;
 use Exception;
 use ArrayAccess;
@@ -11,6 +12,18 @@ use ReflectionParameter;
 use Illuminate\Support\Arr;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Contracts\Container\Container as ContainerContract;
+=======
+use ArrayAccess;
+use Closure;
+use Exception;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Contracts\Container\Container as ContainerContract;
+use Illuminate\Support\Arr;
+use LogicException;
+use ReflectionClass;
+use ReflectionException;
+use ReflectionParameter;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Container implements ArrayAccess, ContainerContract
 {
@@ -358,6 +371,23 @@ class Container implements ArrayAccess, ContainerContract
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Register a shared binding if it hasn't already been registered.
+     *
+     * @param  string  $abstract
+     * @param  \Closure|string|null  $concrete
+     * @return void
+     */
+    public function singletonIf($abstract, $concrete = null)
+    {
+        if (! $this->bound($abstract)) {
+            $this->singleton($abstract, $concrete);
+        }
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * "Extend" an abstract type in the container.
      *
      * @param  string    $abstract
@@ -785,7 +815,15 @@ class Container implements ArrayAccess, ContainerContract
             return $concrete($this, $this->getLastParameterOverride());
         }
 
+<<<<<<< HEAD
         $reflector = new ReflectionClass($concrete);
+=======
+        try {
+            $reflector = new ReflectionClass($concrete);
+        } catch (ReflectionException $e) {
+            throw new BindingResolutionException("Target class [$concrete] does not exist.", 0, $e);
+        }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         // If the type is not instantiable, the developer is attempting to resolve
         // an abstract type such as an Interface or Abstract Class and there is

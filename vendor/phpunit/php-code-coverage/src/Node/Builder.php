@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of the php-code-coverage package.
  *
@@ -35,7 +39,13 @@ final class Builder
     private function addItems(Directory $root, array $items, array $tests, bool $cacheTokens): void
     {
         foreach ($items as $key => $value) {
+<<<<<<< HEAD
             if (\substr($key, -2) == '/f') {
+=======
+            $key = (string) $key;
+
+            if (\substr($key, -2) === '/f') {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                 $key = \substr($key, 0, -2);
 
                 if (\file_exists($root->getPath() . \DIRECTORY_SEPARATOR . $key)) {
@@ -100,7 +110,11 @@ final class Builder
             for ($i = 0; $i < $max; $i++) {
                 $type = '';
 
+<<<<<<< HEAD
                 if ($i == ($max - 1)) {
+=======
+                if ($i === ($max - 1)) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $type = '/f';
                 }
 
@@ -190,7 +204,11 @@ final class Builder
             for ($i = 0; $i < $max - 1; $i++) {
                 if (!isset($paths[$i][0]) ||
                     !isset($paths[$i + 1][0]) ||
+<<<<<<< HEAD
                     $paths[$i][0] != $paths[$i + 1][0]) {
+=======
+                    $paths[$i][0] !== $paths[$i + 1][0]) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $done = true;
 
                     break;
@@ -200,7 +218,11 @@ final class Builder
             if (!$done) {
                 $commonPath .= $paths[0][0];
 
+<<<<<<< HEAD
                 if ($paths[0][0] != \DIRECTORY_SEPARATOR) {
+=======
+                if ($paths[0][0] !== \DIRECTORY_SEPARATOR) {
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
                     $commonPath .= \DIRECTORY_SEPARATOR;
                 }
 

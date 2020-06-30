@@ -10,7 +10,11 @@ use \Spoofchecker;
 class SpoofCheckValidation implements EmailValidation
 {
     /**
+<<<<<<< HEAD
      * @var InvalidEmail|null
+=======
+     * @var InvalidEmail
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      */
     private $error;
 
@@ -21,9 +25,12 @@ class SpoofCheckValidation implements EmailValidation
         }
     }
 
+<<<<<<< HEAD
     /**
      * @psalm-suppress InvalidArgument
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function isValid($email, EmailLexer $emailLexer)
     {
         $checker = new Spoofchecker();
@@ -36,9 +43,12 @@ class SpoofCheckValidation implements EmailValidation
         return $this->error === null;
     }
 
+<<<<<<< HEAD
     /**
      * @return InvalidEmail|null
      */
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     public function getError()
     {
         return $this->error;

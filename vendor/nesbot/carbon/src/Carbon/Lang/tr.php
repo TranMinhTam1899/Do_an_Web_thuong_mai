@@ -9,7 +9,11 @@
  * file that was distributed with this source code.
  */
 
+<<<<<<< HEAD
 /*
+=======
+/**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
  * Authors:
  * - Josh Soref
  * - Alan Agius
@@ -47,11 +51,14 @@ return [
     'from_now' => ':time sonra',
     'after' => ':time sonra',
     'before' => ':time önce',
+<<<<<<< HEAD
     'diff_now' => 'şimdi',
     'diff_yesterday' => 'dün',
     'diff_tomorrow' => 'yarın',
     'diff_before_yesterday' => 'evvelsi gün',
     'diff_after_tomorrow' => 'öbür gün',
+=======
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     'formats' => [
         'LT' => 'HH:mm',
         'LTS' => 'HH:mm:ss',

@@ -17,7 +17,11 @@ class Parsedown
 {
     # ~
 
+<<<<<<< HEAD
     const version = '1.7.4';
+=======
+    const version = '1.7.3';
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
     # ~
 
@@ -1489,6 +1493,7 @@ class Parsedown
             }
         }
 
+<<<<<<< HEAD
         $permitRawHtml = false;
 
         if (isset($Element['text']))
@@ -1509,12 +1514,20 @@ class Parsedown
             $markup .= '>';
 
             if (!isset($Element['nonNestables']))
+=======
+        if (isset($Element['text']))
+        {
+            $markup .= '>';
+
+            if (!isset($Element['nonNestables'])) 
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             {
                 $Element['nonNestables'] = array();
             }
 
             if (isset($Element['handler']))
             {
+<<<<<<< HEAD
                 $markup .= $this->{$Element['handler']}($text, $Element['nonNestables']);
             }
             elseif (!$permitRawHtml)
@@ -1524,6 +1537,13 @@ class Parsedown
             else
             {
                 $markup .= $text;
+=======
+                $markup .= $this->{$Element['handler']}($Element['text'], $Element['nonNestables']);
+            }
+            else
+            {
+                $markup .= self::escape($Element['text'], true);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
             }
 
             $markup .= '</'.$Element['name'].'>';

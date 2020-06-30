@@ -65,7 +65,11 @@ abstract class AbstractProxy
      */
     public function isActive()
     {
+<<<<<<< HEAD
         return PHP_SESSION_ACTIVE === session_status();
+=======
+        return \PHP_SESSION_ACTIVE === session_status();
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -88,7 +92,11 @@ abstract class AbstractProxy
     public function setId($id)
     {
         if ($this->isActive()) {
+<<<<<<< HEAD
             throw new \LogicException('Cannot change the ID of an active session.');
+=======
+            throw new \LogicException('Cannot change the ID of an active session');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         session_id($id);
@@ -114,7 +122,11 @@ abstract class AbstractProxy
     public function setName($name)
     {
         if ($this->isActive()) {
+<<<<<<< HEAD
             throw new \LogicException('Cannot change the name of an active session.');
+=======
+            throw new \LogicException('Cannot change the name of an active session');
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
 
         session_name($name);

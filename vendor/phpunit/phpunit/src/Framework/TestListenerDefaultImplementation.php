@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php declare(strict_types=1);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 /*
  * This file is part of PHPUnit.
  *
@@ -9,6 +13,12 @@
  */
 namespace PHPUnit\Framework;
 
+<<<<<<< HEAD
+=======
+/**
+ * @deprecated The `TestListener` interface is deprecated
+ */
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 trait TestListenerDefaultImplementation
 {
     public function addError(Test $test, \Throwable $t, float $time): void

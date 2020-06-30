@@ -108,10 +108,16 @@ abstract class NodeAbstract implements Node, \JsonSerializable
     /**
      * Gets the doc comment of the node.
      *
+<<<<<<< HEAD
+=======
+     * The doc comment has to be the last comment associated with the node.
+     *
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return null|Comment\Doc Doc comment object or null
      */
     public function getDocComment() {
         $comments = $this->getComments();
+<<<<<<< HEAD
         for ($i = count($comments) - 1; $i >= 0; $i--) {
             $comment = $comments[$i];
             if ($comment instanceof Comment\Doc) {
@@ -120,6 +126,18 @@ abstract class NodeAbstract implements Node, \JsonSerializable
         }
 
         return null;
+=======
+        if (!$comments) {
+            return null;
+        }
+
+        $lastComment = $comments[count($comments) - 1];
+        if (!$lastComment instanceof Comment\Doc) {
+            return null;
+        }
+
+        return $lastComment;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
@@ -131,6 +149,7 @@ abstract class NodeAbstract implements Node, \JsonSerializable
      */
     public function setDocComment(Comment\Doc $docComment) {
         $comments = $this->getComments();
+<<<<<<< HEAD
         for ($i = count($comments) - 1; $i >= 0; $i--) {
             if ($comments[$i] instanceof Comment\Doc) {
                 // Replace existing doc comment.
@@ -142,6 +161,18 @@ abstract class NodeAbstract implements Node, \JsonSerializable
 
         // Append new doc comment.
         $comments[] = $docComment;
+=======
+
+        $numComments = count($comments);
+        if ($numComments > 0 && $comments[$numComments - 1] instanceof Comment\Doc) {
+            // Replace existing doc comment
+            $comments[$numComments - 1] = $docComment;
+        } else {
+            // Append new comment
+            $comments[] = $docComment;
+        }
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->setAttribute('comments', $comments);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Illuminate\Console;
 
+<<<<<<< HEAD
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
 use Illuminate\Contracts\Support\Arrayable;
@@ -14,6 +15,22 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
+=======
+use Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+use Symfony\Component\Console\Command\Command as SymfonyCommand;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
+use Symfony\Component\Console\Helper\Table;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\NullOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ChoiceQuestion;
+use Symfony\Component\Console\Question\Question;
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
 class Command extends SymfonyCommand
 {
@@ -62,6 +79,16 @@ class Command extends SymfonyCommand
     protected $description;
 
     /**
+<<<<<<< HEAD
+=======
+     * The console command help text.
+     *
+     * @var string
+     */
+    protected $help;
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Indicates whether the command should be shown in the Artisan command list.
      *
      * @var bool
@@ -109,6 +136,11 @@ class Command extends SymfonyCommand
         // the command we'll set the arguments and the options on this command.
         $this->setDescription($this->description);
 
+<<<<<<< HEAD
+=======
+        $this->setHelp($this->help);
+
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         $this->setHidden($this->isHidden());
 
         if (! isset($this->signature)) {
@@ -145,11 +177,27 @@ class Command extends SymfonyCommand
         // set them all on the base command instance. This specifies what can get
         // passed into these commands as "parameters" to control the execution.
         foreach ($this->getArguments() as $arguments) {
+<<<<<<< HEAD
             call_user_func_array([$this, 'addArgument'], $arguments);
         }
 
         foreach ($this->getOptions() as $options) {
             call_user_func_array([$this, 'addOption'], $options);
+=======
+            if ($arguments instanceof InputArgument) {
+                $this->getDefinition()->addArgument($arguments);
+            } else {
+                call_user_func_array([$this, 'addArgument'], $arguments);
+            }
+        }
+
+        foreach ($this->getOptions() as $options) {
+            if ($options instanceof InputOption) {
+                $this->getDefinition()->addOption($options);
+            } else {
+                call_user_func_array([$this, 'addOption'], $options);
+            }
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         }
     }
 
@@ -186,36 +234,98 @@ class Command extends SymfonyCommand
     /**
      * Call another console command.
      *
+<<<<<<< HEAD
      * @param  string  $command
      * @param  array   $arguments
+=======
+     * @param  \Symfony\Component\Console\Command\Command|string  $command
+     * @param  array  $arguments
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return int
      */
     public function call($command, array $arguments = [])
     {
+<<<<<<< HEAD
         $arguments['command'] = $command;
 
         return $this->getApplication()->find($command)->run(
             $this->createInputFromArguments($arguments), $this->output
         );
+=======
+        return $this->runCommand($command, $arguments, $this->output);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     }
 
     /**
      * Call another console command silently.
      *
+<<<<<<< HEAD
      * @param  string  $command
      * @param  array   $arguments
+=======
+     * @param  \Symfony\Component\Console\Command\Command|string  $command
+     * @param  array  $arguments
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * @return int
      */
     public function callSilent($command, array $arguments = [])
     {
+<<<<<<< HEAD
         $arguments['command'] = $command;
 
         return $this->getApplication()->find($command)->run(
             $this->createInputFromArguments($arguments), new NullOutput
+=======
+        return $this->runCommand($command, $arguments, new NullOutput);
+    }
+
+    /**
+     * Run the given the console command.
+     *
+     * @param  \Symfony\Component\Console\Command\Command|string $command
+     * @param  array  $arguments
+     * @param  \Symfony\Component\Console\Output\OutputInterface  $output
+     * @return int
+     */
+    protected function runCommand($command, array $arguments, OutputInterface $output)
+    {
+        $arguments['command'] = $command;
+
+        return $this->resolveCommand($command)->run(
+            $this->createInputFromArguments($arguments), $output
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
         );
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Resolve the console command instance for the given command.
+     *
+     * @param  \Symfony\Component\Console\Command\Command|string  $command
+     * @return \Symfony\Component\Console\Command\Command
+     */
+    protected function resolveCommand($command)
+    {
+        if (! class_exists($command)) {
+            return $this->getApplication()->find($command);
+        }
+
+        $command = $this->laravel->make($command);
+
+        if ($command instanceof SymfonyCommand) {
+            $command->setApplication($this->getApplication());
+        }
+
+        if ($command instanceof self) {
+            $command->setLaravel($this->getLaravel());
+        }
+
+        return $command;
+    }
+
+    /**
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
      * Create an input instance from the given arguments.
      *
      * @param  array  $arguments
@@ -348,11 +458,19 @@ class Command extends SymfonyCommand
      * Prompt the user for input with auto completion.
      *
      * @param  string  $question
+<<<<<<< HEAD
      * @param  array   $choices
      * @param  string|null  $default
      * @return mixed
      */
     public function anticipate($question, array $choices, $default = null)
+=======
+     * @param  array|callable  $choices
+     * @param  string|null  $default
+     * @return mixed
+     */
+    public function anticipate($question, $choices, $default = null)
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
     {
         return $this->askWithCompletion($question, $choices, $default);
     }
@@ -361,6 +479,7 @@ class Command extends SymfonyCommand
      * Prompt the user for input with auto completion.
      *
      * @param  string  $question
+<<<<<<< HEAD
      * @param  array   $choices
      * @param  string|null  $default
      * @return mixed
@@ -370,6 +489,19 @@ class Command extends SymfonyCommand
         $question = new Question($question, $default);
 
         $question->setAutocompleterValues($choices);
+=======
+     * @param  array|callable $choices
+     * @param  string|null  $default
+     * @return mixed
+     */
+    public function askWithCompletion($question, $choices, $default = null)
+    {
+        $question = new Question($question, $default);
+
+        is_callable($choices)
+            ? $question->setAutocompleterCallback($choices)
+            : $question->setAutocompleterValues($choices);
+>>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
 
         return $this->output->askQuestion($question);
     }
