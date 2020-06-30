@@ -95,7 +95,7 @@ Route::prefix('vendor')->group(function(){
         Route::post('add-vendor/create','VendorController@store')->name('xu-ly-them-moi-vendor');
         Route::get('cap-nhap/{id}','VendorController@edit')->name('cap-nhat-vendor');
         Route::post('cap-nhap/{id}','VendorController@update')->name('xu-ly-cap-nhat-vendor');
-        Route::get('xoa/{id}', 'VendorController@destroy')->name('xoa-vendor');
+        Route::get('xoa/{id}', 'VendorController@destroy')->name('xoa');
     });
 });
 

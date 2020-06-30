@@ -31,9 +31,9 @@ add shop
                             <label class="control-label col-md-2 col-sm-2">Username</label>
                             <div class="col-md-10 col-sm-10 ">
                                 <select name="id_user" id="" class="form-control">
-                                @foreach($dataUser as $data)
+                                    @foreach($dataUser as $data)
                                     <option value="{{ $data->id}}">{{ $data->user_name}}</option>
-                                  @endforeach
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -43,7 +43,9 @@ add shop
                             <label class="control-label col-md-2 col-sm-2 ">Banner</label>
                             <div class="col-md-10 col-sm-10 ">
                                 <input type="file" name="bannerFile" id="bannerFile">
-                                <img src="" alt="img_banner"  style="height: 30px; width: 50px;">
+                                <img alt="img_banner" id="img_banner" style="height: 30px; width: 50px;">
+                                <!-- show img -->
+                               
                             </div>
                         </div>
                         <div class="form-group row col-md-6 col-sm-6">

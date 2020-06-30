@@ -44,14 +44,15 @@ class VendorController extends Controller
         $vendor->status ="1";
         // images banner
         if($get_images_banner && $get_images_logo){
-            $new_images_banner=$request->bannerFile->getClientOriginalName();
-            $new_images_logo=$request->logoFile->getClientOriginalName();
+            $new_images_banner=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->bannerFile->getClientOriginalName();
+            $new_images_logo=time() . "_" . rand(0,9999999) . "_" . md5(rand(0,9999999)) . "." .$request->logoFile->getClientOriginalName();
             $get_images_banner->move('upload/banner', $new_images_banner);
             $get_images_logo->move('upload/logo', $new_images_logo);
             $vendor->banner = $new_images_banner;
             $vendor->logo = $new_images_logo;
             $vendor->save();
         }
+       
       
         $vendor->save();
         return redirect()->route('vendor.listVendor');

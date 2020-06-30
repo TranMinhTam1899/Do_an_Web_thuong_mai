@@ -101,27 +101,10 @@ list shop
                                                             class="btn btn-warning">
                                                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                                                         </a>
-                                                        <a  onclick="del()" href="#" class="btn btn-danger">
+                                                        <a   href="{{route('vendor.xoa',['id'=>$vend->id])}}" onclick="return confirm('Bạn có thật sự muốn xóa')"  class="btn btn-danger">
                                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
                                                         </a>
-                                                        <script>
-                                                        function del() {
-                                                            Swal.fire({
-                                                                title: 'Bạn có chắc chấn xóa !',
-                                                                type: 'warning',
-                                                                showCancelButton: true,
-                                                                confirmButtonColor: '#3085d6',
-                                                                cancelButtonColor: '#d33',
-                                                                confirmButtonText: 'Có',
-                                                                cancelButtonText: 'không'
-                                                            }).then((result) => {
-                                                                if (result.value) {
-                                                                    open("{{route('vendor.xoa-vendor', ['id'=>$vend->id])}}",
-                                                                        "_self")
-                                                                }
-                                                            })
-                                                        };
-                                                        </script>
+                                                       
 
                                                     </td>
                                                 </tr>

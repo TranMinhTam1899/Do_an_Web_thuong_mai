@@ -1855,6 +1855,7 @@ ul.ht-menu a:hover {
 	width: auto;
 	background-size: auto;
 	background-position: inherit;
+	z-index: 101;
 }
 .megamenu-static-holder .hb-megamenu > li {
 	width: 25%;
