@@ -31,11 +31,6 @@ Route::get('/admin', function () {
 Route::prefix('admin')->group(function(){
     Route::name('admin.')->group(function(){
 
-        // user
-        Route::get('/add-user', function () {
-            return view('admin.pages.user.add-user');
-        })->name('add-user');
-        Route::get('/list-user', 'UserController@index')->name('list-user');
 
         Route::get('/add-statistical', function () {
             return view('admin.pages.statistical.add-statistical');
@@ -134,6 +129,7 @@ Route::prefix('sub_category')->group(function(){
 Route::prefix('customer')->group(function(){
     Route::name('customer.')->group(function(){
         Route::get('/', 'CustomerController@index')->name('listCustomer');
+        Route::get('add-customer','CustomerController@create')->name('them-moi-customer');
     });
 });
 

@@ -8,7 +8,7 @@ thêm mới user
 <div class="row">
     <div class="col-md-12" style="margin: 0 auto;">
         <div class="x_panel">
-            <div class="x_title">@if(isset($addUser))Cập nhật @else Thêm @endif User </h4><br>
+            <div class="x_title"><h2 > @if(isset($addUser))Cập nhật @else Thêm @endif User </h2><br>
             @if(isset($addUser))
             <form action="{{route('user.xu-ly-cap-nhat',['id'=>$addUser->id])}}" method="POST" >
             @else
@@ -78,11 +78,11 @@ thêm mới user
                         </div>
                     </div>
                     <div class="row">
+                       
                         <div class="form-group row col-md-6 col-sm-6 ">
                             <label class="control-label col-md-2 col-sm-2 ">Address</label>
                             <div class="col-md-10 col-sm-10 ">
-                                <textarea  name="address" cols="10" rows="5" class="form-control"
-                                placeholder="Address....." @if(isset($addUser)) value ="{{ $addUser->address }}" @endif></textarea>
+                                <input type="text" name="address" class="form-control" placeholder="Address....." @if(isset($addUser)) value ="{{ $addUser->address }}" @endif>
                             </div>
                         </div>
 
@@ -120,13 +120,13 @@ thêm mới user
                     <div class="ln_solid"></div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12 text-center">
-<<<<<<< HEAD
-                            <button type="submit" class="btn btn_submit">Add user</button>
-=======
-                            <button type="submit" class="btn btn-success">
-                            @if(isset($addUser))Cập nhật @else Thêm @endif
+
+                            <button type="submit" class="btn btn_submit">
+                            @if(isset($addUser))Update User @else Add User @endif
                             </button>
->>>>>>> 4475649eee65427b8375bc7f700d53cc0b35e933
+
+                            
+
                         </div>
                     </div>
 

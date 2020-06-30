@@ -32,7 +32,7 @@ Danh sách user
                                 class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                    <a href="{{route('admin.add-user')}}" class="btn bg_btnAdd">Add user &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <a href="{{route('user.them-moi')}}" class="btn bg_btnAdd">Add user &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </div>
                                     <div class="col-sm-6">
 
